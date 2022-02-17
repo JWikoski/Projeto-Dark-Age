@@ -43,11 +43,11 @@ namespace Dark_Age
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(276, 13);
+            this.label1.Font = new System.Drawing.Font("Segoe Script", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
+            this.label1.Location = new System.Drawing.Point(368, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 45);
+            this.label1.Size = new System.Drawing.Size(216, 61);
             this.label1.TabIndex = 9;
             this.label1.Text = "Anotações";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -56,10 +56,10 @@ namespace Dark_Age
             // 
             this.LblFecharPassivas.BackColor = System.Drawing.Color.Transparent;
             this.LblFecharPassivas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LblFecharPassivas.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblFecharPassivas.ForeColor = System.Drawing.Color.White;
+            this.LblFecharPassivas.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LblFecharPassivas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(40)))));
             this.LblFecharPassivas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.LblFecharPassivas.Location = new System.Drawing.Point(673, 9);
+            this.LblFecharPassivas.Location = new System.Drawing.Point(770, 54);
             this.LblFecharPassivas.Name = "LblFecharPassivas";
             this.LblFecharPassivas.Size = new System.Drawing.Size(42, 40);
             this.LblFecharPassivas.TabIndex = 12;
@@ -76,48 +76,55 @@ namespace Dark_Age
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Font = new System.Drawing.Font("Segoe Script", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
             this.label2.Location = new System.Drawing.Point(3, 4);
-            this.label2.MaximumSize = new System.Drawing.Size(700, 0);
+            this.label2.MaximumSize = new System.Drawing.Size(680, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 19);
+            this.label2.Size = new System.Drawing.Size(0, 31);
             this.label2.TabIndex = 11;
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
-            this.panel1.AutoScrollMinSize = new System.Drawing.Size(0, 2000);
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(2, 93);
+            this.panel1.Font = new System.Drawing.Font("Segoe Script", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
+            this.panel1.Location = new System.Drawing.Point(152, 169);
             this.panel1.MaximumSize = new System.Drawing.Size(727, 2000);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(722, 983);
+            this.panel1.Size = new System.Drawing.Size(660, 682);
             this.panel1.TabIndex = 13;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // txt_ativas
             // 
+            this.txt_ativas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(229)))), ((int)(((byte)(171)))));
             this.txt_ativas.Enabled = false;
-            this.txt_ativas.Location = new System.Drawing.Point(5, 64);
+            this.txt_ativas.Font = new System.Drawing.Font("Segoe Script", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txt_ativas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
+            this.txt_ativas.Location = new System.Drawing.Point(152, 126);
             this.txt_ativas.Multiline = true;
             this.txt_ativas.Name = "txt_ativas";
-            this.txt_ativas.Size = new System.Drawing.Size(716, 23);
+            this.txt_ativas.Size = new System.Drawing.Size(660, 23);
             this.txt_ativas.TabIndex = 14;
+            this.txt_ativas.Visible = false;
             this.txt_ativas.TextChanged += new System.EventHandler(this.txt_ativas_TextChanged);
             // 
             // Editar
             // 
             this.Editar.AutoSize = true;
-            this.Editar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Editar.Location = new System.Drawing.Point(12, 39);
+            this.Editar.BackColor = System.Drawing.Color.Transparent;
+            this.Editar.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Editar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
+            this.Editar.Location = new System.Drawing.Point(155, 72);
             this.Editar.Name = "Editar";
-            this.Editar.Size = new System.Drawing.Size(56, 19);
+            this.Editar.Size = new System.Drawing.Size(95, 37);
             this.Editar.TabIndex = 12;
             this.Editar.Text = "Editar";
-            this.Editar.UseVisualStyleBackColor = true;
+            this.Editar.UseVisualStyleBackColor = false;
             this.Editar.CheckedChanged += new System.EventHandler(this.Editar_CheckedChanged);
             // 
             // Habilidades_ativas
@@ -125,8 +132,9 @@ namespace Dark_Age
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(40)))), ((int)(((byte)(52)))));
+            this.BackgroundImage = global::Dark_Age.Properties.Resources.Tz04p___Imgur;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(727, 1080);
+            this.ClientSize = new System.Drawing.Size(994, 947);
             this.Controls.Add(this.Editar);
             this.Controls.Add(this.txt_ativas);
             this.Controls.Add(this.panel1);

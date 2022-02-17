@@ -83,6 +83,16 @@ namespace Dark_Age.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _27d73469bbc9ede8f086363867373eb0 {
+            get {
+                object obj = ResourceManager.GetObject("27d73469bbc9ede8f086363867373eb0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap alchemist {
             get {
                 object obj = ResourceManager.GetObject("alchemist", resourceCulture);
@@ -136,6 +146,46 @@ namespace Dark_Age.Properties {
         internal static System.Drawing.Bitmap castlvania {
             get {
                 object obj = ResourceManager.GetObject("castlvania", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fe281c65_2d68_416b_80b4_139ec9364539_image {
+            get {
+                object obj = ResourceManager.GetObject("fe281c65-2d68-416b-80b4-139ec9364539-image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fe281c65_2d68_416b_80b4_139ec9364539_image1 {
+            get {
+                object obj = ResourceManager.GetObject("fe281c65-2d68-416b-80b4-139ec9364539-image1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fe281c65_2d68_416b_80b4_139ec9364539_image2 {
+            get {
+                object obj = ResourceManager.GetObject("fe281c65-2d68-416b-80b4-139ec9364539-image2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fe281c65_2d68_416b_80b4_139ec9364539_image3 {
+            get {
+                object obj = ResourceManager.GetObject("fe281c65-2d68-416b-80b4-139ec9364539-image3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -338,6 +388,26 @@ namespace Dark_Age.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap old_opened_book_empty_pages_260nw_72791266 {
+            get {
+                object obj = ResourceManager.GetObject("old-opened-book-empty-pages-260nw-72791266", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap old_opened_book_empty_pages_260nw_727912661 {
+            get {
+                object obj = ResourceManager.GetObject("old-opened-book-empty-pages-260nw-727912661", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap png_clipart_triangle_point_green_leaf_up_arrow_file_angle_web_design {
             get {
                 object obj = ResourceManager.GetObject("png-clipart-triangle-point-green-leaf-up-arrow-file-angle-web-design", resourceCulture);
@@ -391,6 +461,16 @@ namespace Dark_Age.Properties {
         internal static System.Drawing.Bitmap teste {
             get {
                 object obj = ResourceManager.GetObject("teste", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tz04p___Imgur {
+            get {
+                object obj = ResourceManager.GetObject("Tz04p - Imgur", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

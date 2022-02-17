@@ -29,6 +29,8 @@ namespace Dark_Age
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // visualizar_imagem
@@ -37,12 +39,14 @@ namespace Dark_Age
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImage = global::Dark_Age.Properties.Resources.castle2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1538, 864);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "visualizar_imagem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "visualizar_imagem";
+            this.Deactivate += new System.EventHandler(this.visualizar_imagem_Deactivate);
             this.Load += new System.EventHandler(this.visualizar_imagem_Load);
             this.Click += new System.EventHandler(this.visualizar_imagem_Click);
             this.ResumeLayout(false);
@@ -50,5 +54,7 @@ namespace Dark_Age
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer timer1;
     }
 }

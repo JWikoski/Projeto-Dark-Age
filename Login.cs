@@ -12,13 +12,14 @@ using Npgsql;
 namespace Dark_Age
 {
 
+
     public partial class Login : Form
     {
         
         public DataTable nda;
         public static string senha = " ";
         public static int jogador = 0;
-
+        Timer timer1 = new Timer();
 
         public Login()
         {
@@ -63,6 +64,7 @@ namespace Dark_Age
         private void LblFecharLogin_Click(object sender, EventArgs e)
         {
             Application.Exit();
+
         }
 
         private void LblFecharLogin_MouseHover(object sender, EventArgs e)
@@ -78,6 +80,18 @@ namespace Dark_Age
            
             LblFecharLogin.BackColor = Color.Transparent;
        
+        }
+        
+
+        void fadeOut(object sender, EventArgs e)
+        {
+            if (Opacity <= 0)     //check if opacity is 0
+            {
+                timer1.Stop();    //if it is, we stop the timer
+                Close();   //and we try to close the form
+            }
+            else
+                Opacity -= 0.05;
         }
 
         private void TbSenha_KeyDown(object sender, KeyEventArgs e)
@@ -102,17 +116,17 @@ namespace Dark_Age
                     jogador = (int)nda.GetValue(1);
                     Ficha.pers_criado = (bool)nda.GetValue(2);
                 }
-                
 
-              
-                if(nda.HasRows)
+
+
+                if (nda.HasRows)
                 {
                     this.Hide();
                     Form1 frm = new Form1();
                     frm.Closed += (s, args) => this.Close();
                     frm.Show();
                     e.Handled = true;
-                     e.SuppressKeyPress = true;
+                    e.SuppressKeyPress = true;
                 }
                 else
                 {
@@ -123,8 +137,15 @@ namespace Dark_Age
                     comm.Dispose();
                     conn.Close();
                 }
+               
 
-            }
+           
+
+               
+
+
+        }
+
 
         }
 
@@ -135,7 +156,18 @@ namespace Dark_Age
 
         private void Login_Load(object sender, EventArgs e)
         {
+            Opacity = 0;      //first the opacity is 0
 
+            timer1.Interval = 10;  //we'll increase the opacity every 10ms
+            timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
+            timer1.Start();
+        }
+        void fadeIn(object sender, EventArgs e)
+        {
+            if (Opacity >= 1)
+                timer1.Stop();   //this stops the timer if the form is completely displayed
+            else
+                Opacity += 0.05;
         }
     }
 }

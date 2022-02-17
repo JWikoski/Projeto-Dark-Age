@@ -143,10 +143,22 @@ namespace Dark_Age
 
         private void Ficha_Load(object sender, EventArgs e)
         {
+            Opacity = 0;      //first the opacity is 0
 
+            timer1.Interval = 10;  //we'll increase the opacity every 10ms
+            timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
+            timer1.Start();
+        }
+        void fadeIn(object sender, EventArgs e)
+        {
+            if (Opacity >= 1)
+                timer1.Stop();   //this stops the timer if the form is completely displayed
+            else
+                Opacity += 0.05;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+
+    private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -368,11 +380,11 @@ namespace Dark_Age
                 + Convert.ToInt32(enganacao.Value) + Convert.ToInt32(esconder.Value) + Convert.ToInt32(percepcao.Value) + Convert.ToInt32(academicos.Value) + Convert.ToInt32(ocultismo.Value)
                 + Convert.ToInt32(sobrevivencia.Value) + Convert.ToInt32(investigacao.Value) + Convert.ToInt32(intuicao.Value) + Convert.ToInt32(etiqueta.Value) + Convert.ToInt32(sanidade.Value) - 3;
             if (pontos_hab > 15) { 
-                MessageBox.Show("Você tentou adicionar " + pontos_hab + " pontos de habilidade, sendo que existem 15 pontos para serem adicionados");
+                MessageBox.Show("Você tentou adicionar " + pontos_hab + " pontos de habilidade, sendo que existem apenas 15 pontos para serem adicionados");
                                  }
             else {
 
-                NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=DarkAge_Server;user Id=João;Password=AEsrNA95");
+                NpgsqlConnection conn = new("Server=localhost;Port=5432;Database=DarkAge_Server;user Id=João;Password=AEsrNA95");
                 conn.Open();
                 NpgsqlCommand come = new NpgsqlCommand();
                 come.Connection = conn;

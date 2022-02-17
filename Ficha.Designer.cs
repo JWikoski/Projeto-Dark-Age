@@ -29,6 +29,7 @@ namespace Dark_Age
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ficha));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -129,6 +130,7 @@ namespace Dark_Age
             this.sanidade = new System.Windows.Forms.NumericUpDown();
             this.label37 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ataque)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.esquiva)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.defesa)).BeginInit();
@@ -1719,6 +1721,7 @@ namespace Dark_Age
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Ficha";
+            this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ficha";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -1850,5 +1853,6 @@ namespace Dark_Age
         private System.Windows.Forms.NumericUpDown sanidade;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Timer timer1;
     }
 }

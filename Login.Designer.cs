@@ -60,12 +60,13 @@ namespace Dark_Age
             // 
             this.TbSenha.AcceptsReturn = true;
             this.TbSenha.BackColor = System.Drawing.Color.Silver;
+            this.TbSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TbSenha.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TbSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TbSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
             this.TbSenha.Location = new System.Drawing.Point(167, 255);
             this.TbSenha.Name = "TbSenha";
             this.TbSenha.ShortcutsEnabled = false;
-            this.TbSenha.Size = new System.Drawing.Size(271, 36);
+            this.TbSenha.Size = new System.Drawing.Size(271, 29);
             this.TbSenha.TabIndex = 3;
             this.TbSenha.UseSystemPasswordChar = true;
             this.TbSenha.TextChanged += new System.EventHandler(this.TbSenha_TextChanged);

@@ -17,7 +17,9 @@ namespace Dark_Age
         public Habilidades_ativas()
         {
             InitializeComponent();
-            this.BackColor = Color.FromArgb(14, 40, 52);
+            this.BackColor = Color.Black;
+            this.TransparencyKey = Color.FromArgb(10, Color.Black);
+
             NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=DarkAge_Server;user Id=João;Password=AEsrNA95");
             conn.Open();
             NpgsqlCommand comm = new NpgsqlCommand();
@@ -96,13 +98,14 @@ namespace Dark_Age
         {
             if (Editar.Checked)
             {
+                txt_ativas.Visible = true;
                 txt_ativas.Enabled = true;
-                txt_ativas.Height = 1000;
+                txt_ativas.Height = 700;
             }
             else
             {
                 txt_ativas.Enabled = false;
-
+                txt_ativas.Visible = false;
                 txt_ativas.Height = 23;
             }
 

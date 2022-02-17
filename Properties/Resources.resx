@@ -127,6 +127,9 @@
   <data name="alchemist" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\alchemist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minimizar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimizar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="maxscreen2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\maxscreen2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -144,6 +147,9 @@
   </data>
   <data name="image (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fe281c65-2d68-416b-80b4-139ec9364539-image1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fe281c65-2d68-416b-80b4-139ec9364539-image1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="image (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,6 +169,9 @@
   <data name="image (2backg)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image (2backg).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fe281c65-2d68-416b-80b4-139ec9364539-image3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fe281c65-2d68-416b-80b4-139ec9364539-image3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="maxscreen1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\maxscreen1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -181,17 +190,29 @@
   <data name="kisspng-computer-icons-icon-design-cut-copy-and-paste-cl-taobao-clothing-promotional-copy-5b08bad091a807.0208443015272987685966" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kisspng-computer-icons-icon-design-cut-copy-and-paste-cl-taobao-clothing-promotional-copy-5b08bad091a807.0208443015272987685966.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="27d73469bbc9ede8f086363867373eb0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\27d73469bbc9ede8f086363867373eb0.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fe281c65-2d68-416b-80b4-139ec9364539-image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fe281c65-2d68-416b-80b4-139ec9364539-image.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="kisspng-computer-icons-icon-design-cut-copy-and-paste-cl-taobao-clothing-promotional-copy-5b08bad091a8073" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kisspng-computer-icons-icon-design-cut-copy-and-paste-cl-taobao-clothing-promotional-copy-5b08bad091a807.02084430152729876859663.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="kisspng-computer-icons-icon-design-cut-copy-and-paste-cl-taobao-clothing-promotional-copy-5b08bad091a807" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kisspng-computer-icons-icon-design-cut-copy-and-paste-cl-taobao-clothing-promotional-copy-5b08bad091a807.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fe281c65-2d68-416b-80b4-139ec9364539-image2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fe281c65-2d68-416b-80b4-139ec9364539-image2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pordosol" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pordosol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="war" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\war.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="old-opened-book-empty-pages-260nw-72791266" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\old-opened-book-empty-pages-260nw-72791266.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="por do sol" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\por do sol.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,6 +229,9 @@
   <data name="kisspng-computer-icons-icon-design-cut-copy-and-paste-cl-taobao-clothing-promotional-copy-5b08bad091a8072" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kisspng-computer-icons-icon-design-cut-copy-and-paste-cl-taobao-clothing-promotional-copy-5b08bad091a807.02084430152729876859662.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Tz04p - Imgur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tz04p - Imgur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="k7wvl1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\k7wvl1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -217,7 +241,7 @@
   <data name="teste" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\teste.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minimizar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minimizar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="old-opened-book-empty-pages-260nw-727912661" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\old-opened-book-empty-pages-260nw-727912661.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

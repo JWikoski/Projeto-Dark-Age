@@ -22,21 +22,41 @@ namespace Dark_Age
         public static string texto_imagem;
         public Boolean minmax = true;
         public int talento;
+        public int vida_maxima = 25;
+        public int vida_atual = 25;
+        public int sanidade_max;
+        public int sanidade_atual;
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
+
+       
         public Form1()
         {
             InitializeComponent();
             label1.BackColor = Color.FromArgb(15, 39, 45);
             pn_personagens.BackColor = Color.FromArgb(150, Color.Black);
             ficha_resumida.BackColor = Color.FromArgb(0, Color.Black);
-            panel1.BackColor = Color.Transparent;
+            panel1.BackColor = Color.Transparent; 
             panel2.BackColor = Color.Transparent;
             panel5.BackColor = Color.Transparent;
             panel6.BackColor = Color.Transparent;
             this.BackColor = Color.FromArgb(14, 40, 52);
             btn_open.BackColor = Color.FromArgb(14, 40, 52);
+            numericUpDown1.Value = vida_maxima;
+            numericUpDown1.Maximum = vida_maxima;
+
+
+            btn_cria_personagem.Controls.Add(new Label()
+            { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
+            btn_anotacoes.Controls.Add(new Label()
+            { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
+            btn_inventario.Controls.Add(new Label()
+            { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
+            btn_descanso.Controls.Add(new Label()
+            { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
+
+           
 
 
             if (Ficha.pers_criado == false)
@@ -261,8 +281,8 @@ namespace Dark_Age
             if (ndp.Read())
             {
                 Ficha.bd_sanidade = (int)ndp.GetValue(0);
-                res_sanidade.Maximum = Ficha.bd_sanidade;
-                res_sanidade.Value = Ficha.bd_sanidade;
+                sanidade_max = Ficha.bd_sanidade;
+                sanidade_atual = Ficha.bd_sanidade;
             }
             ndp.Dispose();
             conn2.Close();
@@ -288,8 +308,21 @@ namespace Dark_Age
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            
+            Opacity = 0;      //first the opacity is 0
+
+            timer1.Interval = 10;  //we'll increase the opacity every 10ms
+            timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
+            timer1.Start();
         }
+        void fadeIn(object sender, EventArgs e)
+        {
+            if (Opacity >= 1)
+                timer1.Stop();   //this stops the timer if the form is completely displayed
+            else
+                Opacity += 0.05;
+        }
+
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -301,7 +334,6 @@ namespace Dark_Age
             
             Ficha frm = new Ficha();
             frm.ShowDialog();
-            this.Hide();
 
         }
 
@@ -315,6 +347,7 @@ namespace Dark_Age
             Task.Delay(150).Wait();
             btn_open.ForeColor = Color.White;
             btn_open.ImageAlign = ContentAlignment.MiddleCenter;
+
         }
 
         private void btn_open_MouseLeave(object sender, EventArgs e)
@@ -333,31 +366,39 @@ namespace Dark_Age
         private void btn_change_MouseHover(object sender, EventArgs e)
         {
             var button = (Button)sender;
+           
             button.FlatAppearance.MouseOverBackColor = Color.FromArgb(20, Color.White);
+            button.FlatAppearance.BorderColor = Color.FromArgb(200, Color.White);
+
         }
 
         private void btn_change_MouseEnter(object sender, EventArgs e)
         {
             var button = (Button)sender;
             button.FlatAppearance.MouseOverBackColor = Color.FromArgb(20, Color.White);
+            button.FlatAppearance.BorderColor = Color.FromArgb(200, Color.White);
         }
 
         private void btn_change_MouseLeave(object sender, EventArgs e)
         {
             var button = (Button)sender;
             button.BackColor = Color.Transparent;
+            button.FlatAppearance.BorderColor = Color.FromArgb(150, Color.White);
+
+            button.Controls.Remove(new Label());
         }
 
         private void btn_change_MouseDown(object sender, MouseEventArgs e)
         {
             var button = (Button)sender;
             button.FlatAppearance.MouseOverBackColor = Color.FromArgb(30, Color.White);
+            button.FlatAppearance.BorderColor = Color.FromArgb(200, Color.White);
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText("!(1d20+"+res_forca.Text+"+"+modificador.Text+")");
+            Clipboard.SetText("Teste de Força - "+"!(1d20+"+res_forca.Text+"+"+modificador.Text+")");
         }
 
         private void btn_cria_personagem_Click(object sender, EventArgs e)
@@ -401,10 +442,6 @@ namespace Dark_Age
                     Locais.BackgroundImage = global::Dark_Age.Properties.Resources.lenore;
                     
                 }
-                if (mudaimagem.Text == "por do sol")
-                {
-                    Form1.ActiveForm.BackgroundImage = global::Dark_Age.Properties.Resources.pordosol;
-                }
                 e.Handled = true;
                 e.SuppressKeyPress = true;
             }
@@ -429,17 +466,26 @@ namespace Dark_Age
         {
             Form1.ActiveForm.BackgroundImage = global::Dark_Age.Properties.Resources.k7wvl1;
         }
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(10, 16, 20);
+            Form1.ActiveForm.BackgroundImage = null;
+        }
+
 
         private void Locais_Click(object sender, EventArgs e)
         {
             visualizar_imagem vimg = new visualizar_imagem();
-           vimg.ShowDialog();
+           vimg.Show();
         }
 
         private void button23_Click(object sender, EventArgs e)
         {
             Inventario vinv = new Inventario();
             vinv.ShowDialog();
+
+            ouro.Text = Inventario.moedas_de_ouro.ToString();
+            prata.Text = Inventario.moedas_de_prata.ToString();
         }
 
 
@@ -494,5 +540,39 @@ namespace Dark_Age
         {
 
         }
+
+        private void mudaimagem_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_sessao_Click(object sender, EventArgs e)
+        {
+
+
+           
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            
+            lbl_vida.Text = numericUpDown1.Value + "/" + vida_maxima;
+            double porcentagem = ((vida_atual - Convert.ToInt32(numericUpDown1.Value))*100)/vida_maxima;
+            porcentagem = (porcentagem * 220) / 100;
+            panel9.Width -= Convert.ToInt32(porcentagem);
+            
+            vida_atual = Convert.ToInt32(numericUpDown1.Value);
+
+            if(numericUpDown1.Value < 6)
+            {
+                panel9.BackColor = Color.Red;
+            }
+            else
+            {
+                panel9.BackColor = Color.LimeGreen;
+            }
+        }
+
+       
     }
 }

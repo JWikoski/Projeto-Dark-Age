@@ -16,9 +16,12 @@ namespace Dark_Age
         public string inventario_texto;
         public Boolean minmax = true;
 
+        public static int moedas_de_ouro;
+        public static int moedas_de_prata;
+
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
-
+        
         public Inventario()
         {
             InitializeComponent();
@@ -101,6 +104,10 @@ namespace Dark_Age
             NpgsqlDataReader nda = coss.ExecuteReader();
             coss.Dispose();
             conn.Close();
+            moedas_de_ouro = Convert.ToInt32(moedas_ouro.Value);
+            moedas_de_prata = Convert.ToInt32(moedas_prata.Value);
+
+
             this.Close();
         }
       
@@ -151,6 +158,28 @@ namespace Dark_Age
         }
 
         private void Inventario_Load(object sender, EventArgs e)
+        {
+            Opacity = 0;      //first the opacity is 0
+
+            timer1.Interval = 5;  //we'll increase the opacity every 10ms
+            timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
+            timer1.Start();
+        }
+
+        void fadeIn(object sender, EventArgs e)
+        {
+            if (Opacity >= 1)
+                timer1.Stop();   //this stops the timer if the form is completely displayed
+            else
+                Opacity += 0.1;
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -29,6 +29,7 @@ namespace Dark_Age
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventario));
             this.txt_inventario = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -44,6 +45,7 @@ namespace Dark_Age
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.moedas_ouro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moedas_prata)).BeginInit();
             this.panel2.SuspendLayout();
@@ -60,6 +62,8 @@ namespace Dark_Age
             this.txt_inventario.Name = "txt_inventario";
             this.txt_inventario.Size = new System.Drawing.Size(512, 31);
             this.txt_inventario.TabIndex = 0;
+            this.txt_inventario.Text = "Consumiveis:\r\n\r\n\r\nArmas/Armaduras:\r\n\r\n\r\nItens de quest:\r\n\r\n\r\nFerramentas e compon" +
+    "entes de profissão: \r\n";
             this.txt_inventario.TextChanged += new System.EventHandler(this.txt_inventario_TextChanged);
             // 
             // panel1
@@ -216,6 +220,7 @@ namespace Dark_Age
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(321, 776);
             this.panel2.TabIndex = 85;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel3
             // 
@@ -246,6 +251,7 @@ namespace Dark_Age
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = global::Dark_Age.Properties.Resources.castle2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1661, 800);
@@ -256,6 +262,7 @@ namespace Dark_Age
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Inventario";
+            this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventario";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -287,5 +294,6 @@ namespace Dark_Age
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Timer timer1;
     }
 }
