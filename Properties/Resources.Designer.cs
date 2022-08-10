@@ -468,6 +468,16 @@ namespace Dark_Age.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap thumb_1920_1159325 {
+            get {
+                object obj = ResourceManager.GetObject("thumb-1920-1159325", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Tz04p___Imgur {
             get {
                 object obj = ResourceManager.GetObject("Tz04p - Imgur", resourceCulture);

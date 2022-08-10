@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Npgsql;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Npgsql;
 
 namespace Dark_Age
 {
@@ -21,7 +16,7 @@ namespace Dark_Age
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
-        
+
         public Inventario()
         {
             InitializeComponent();
@@ -110,7 +105,7 @@ namespace Dark_Age
 
             this.Close();
         }
-      
+
 
         private void label3_Click(object sender, EventArgs e)
         {

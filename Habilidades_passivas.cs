@@ -17,7 +17,6 @@ namespace Dark_Age
         public Habilidades_passivas()
         {
             InitializeComponent();
-            this.BackColor = Color.FromArgb(14, 40, 52);
             NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=DarkAge_Server;user Id=João;Password=AEsrNA95");
             conn.Open();
             NpgsqlCommand comm = new NpgsqlCommand();
@@ -47,7 +46,6 @@ namespace Dark_Age
         }
         private void LblFecharPassivas_MouseHover(object sender, EventArgs e)
         {
-
 
             LblFecharPassivas.BackColor = Color.FromArgb(25, Color.LightGray);
 
@@ -104,6 +102,21 @@ namespace Dark_Age
                 txt_passivas.Enabled = false;
 
                 txt_passivas.Height = 23;
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Editar2.Checked)
+            {
+                txt_passivas2.Enabled = true;
+                txt_passivas2.Height = 1000;
+            }
+            else
+            {
+                txt_passivas2.Enabled = false;
+
+                txt_passivas2.Height = 23;
             }
         }
     }

@@ -16,7 +16,6 @@ namespace Dark_Age
 {
     public partial class Form1 : Form
     {
-
         public int valorHabilidade;
         public int expand = 1;
         public static string texto_imagem;
@@ -333,7 +332,7 @@ namespace Dark_Age
         {
             
             Ficha frm = new Ficha();
-            frm.ShowDialog();
+            frm.Show();
 
         }
 

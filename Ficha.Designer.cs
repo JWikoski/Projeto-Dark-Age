@@ -130,6 +130,8 @@ namespace Dark_Age
             this.sanidade = new System.Windows.Forms.NumericUpDown();
             this.label37 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label38 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ataque)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.esquiva)).BeginInit();
@@ -494,6 +496,7 @@ namespace Dark_Age
             this.lbl_forca.TabIndex = 40;
             this.lbl_forca.Text = "0";
             this.lbl_forca.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_forca.TextChanged += new System.EventHandler(this.lbl_forca_TextChanged);
             this.lbl_forca.Click += new System.EventHandler(this.lbl_forca_Click);
             // 
             // lbl_magia
@@ -1688,6 +1691,45 @@ namespace Dark_Age
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(878, 654);
             this.panel13.TabIndex = 142;
+            this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel13_Paint);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.BackColor = System.Drawing.Color.White;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox1.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.comboBox1.Location = new System.Drawing.Point(1154, 795);
+            this.comboBox1.MaxDropDownItems = 5;
+            this.comboBox1.MaxLength = 1;
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(45, 28);
+            this.comboBox1.TabIndex = 142;
+            this.comboBox1.Text = "1";
+            this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
+            this.comboBox1.Click += new System.EventHandler(this.comboBox1_Click);
+            // 
+            // label38
+            // 
+            this.label38.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label38.AutoSize = true;
+            this.label38.BackColor = System.Drawing.Color.Transparent;
+            this.label38.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label38.ForeColor = System.Drawing.SystemColors.Control;
+            this.label38.Location = new System.Drawing.Point(1099, 797);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(49, 21);
+            this.label38.TabIndex = 143;
+            this.label38.Text = "Nível:";
+            this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Ficha
             // 
@@ -1697,7 +1739,9 @@ namespace Dark_Age
             this.BackgroundImage = global::Dark_Age.Properties.Resources.image__2_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1720, 850);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.classe);
+            this.Controls.Add(this.label38);
             this.Controls.Add(this.label36);
             this.Controls.Add(this.btn_cria_personagem);
             this.Controls.Add(this.label29);
@@ -1854,5 +1898,7 @@ namespace Dark_Age
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
