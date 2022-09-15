@@ -23,7 +23,7 @@ namespace Dark_Age
             Screen screen = Screen.FromPoint(Cursor.Position);
             this.Location = screen.Bounds.Location;
             this.BackColor = Color.FromArgb(14, 40, 52);
-            NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=DarkAge_Server;user Id=João;Password=AEsrNA95");
+            NpgsqlConnection conn = new NpgsqlConnection("Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80");
             conn.Open();
             NpgsqlCommand comm = new NpgsqlCommand();
             comm.Connection = conn;
@@ -87,12 +87,13 @@ namespace Dark_Age
         private void LblFecharPassivas_Click(object sender, EventArgs e)
         {
             this.Close();
-            NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=DarkAge_Server;user Id=João;Password=AEsrNA95");
+            NpgsqlConnection conn = new NpgsqlConnection("Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80");
             conn.Open();
             NpgsqlCommand coss = new NpgsqlCommand();
             coss.Connection = conn;
             coss.CommandType = CommandType.Text;
-            coss.CommandText = "update \"Dark_Age_Connection\".\"Personagens\" set inventario = @inventario, gold = @ouro, silver = @prata";
+            coss.CommandText = "update \"Dark_Age_Connection\".\"Personagens\" set inventario = @inventario, gold = @ouro, silver = @prata where fk_id_jogador = @jogador";
+            coss.Parameters.AddWithValue("@jogador", Login.jogador); 
             coss.Parameters.AddWithValue("@inventario", inventario_texto);
             coss.Parameters.AddWithValue("@ouro", moedas_ouro.Value);
             coss.Parameters.AddWithValue("@prata", moedas_prata.Value);
@@ -175,6 +176,11 @@ namespace Dark_Age
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }

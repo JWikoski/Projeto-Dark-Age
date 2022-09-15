@@ -130,6 +130,7 @@ namespace Dark_Age
             this.sanidade = new System.Windows.Forms.NumericUpDown();
             this.label37 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.label40 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label38 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -161,7 +162,7 @@ namespace Dark_Age
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCyan;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.button1.Image = global::Dark_Age.Properties.Resources.Castlevania;
@@ -180,7 +181,7 @@ namespace Dark_Age
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.button2.Image = global::Dark_Age.Properties.Resources.caçadordemonstros;
@@ -198,6 +199,8 @@ namespace Dark_Age
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button3.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
             this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.button3.Image = global::Dark_Age.Properties.Resources.forgemaster;
@@ -215,6 +218,8 @@ namespace Dark_Age
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
             this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gold;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Image = global::Dark_Age.Properties.Resources.alchemist;
@@ -232,6 +237,8 @@ namespace Dark_Age
             this.button5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button5.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
             this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Crimson;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Image = global::Dark_Age.Properties.Resources.TEMPLARIO;
@@ -529,6 +536,9 @@ namespace Dark_Age
             this.btn_forcasum.Text = "+";
             this.btn_forcasum.UseVisualStyleBackColor = false;
             this.btn_forcasum.Click += new System.EventHandler(this.btn_forcasum_Click);
+            this.btn_forcasum.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
+            this.btn_forcasum.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
+            this.btn_forcasum.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
             // 
             // btn_forcasub
             // 
@@ -545,6 +555,9 @@ namespace Dark_Age
             this.btn_forcasub.Text = "-";
             this.btn_forcasub.UseVisualStyleBackColor = false;
             this.btn_forcasub.Click += new System.EventHandler(this.btn_forcasub_Click);
+            this.btn_forcasub.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
+            this.btn_forcasub.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
+            this.btn_forcasub.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
             // 
             // btn_destrezasub
             // 
@@ -561,6 +574,9 @@ namespace Dark_Age
             this.btn_destrezasub.Text = "-";
             this.btn_destrezasub.UseVisualStyleBackColor = false;
             this.btn_destrezasub.Click += new System.EventHandler(this.btn_destrezasub_Click);
+            this.btn_destrezasub.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
+            this.btn_destrezasub.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
+            this.btn_destrezasub.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
             // 
             // btn_destrezasum
             // 
@@ -577,6 +593,9 @@ namespace Dark_Age
             this.btn_destrezasum.Text = "+";
             this.btn_destrezasum.UseVisualStyleBackColor = false;
             this.btn_destrezasum.Click += new System.EventHandler(this.btn_destrezasum_Click);
+            this.btn_destrezasum.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
+            this.btn_destrezasum.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
+            this.btn_destrezasum.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
             // 
             // btn_vigorsub
             // 
@@ -593,6 +612,9 @@ namespace Dark_Age
             this.btn_vigorsub.Text = "-";
             this.btn_vigorsub.UseVisualStyleBackColor = false;
             this.btn_vigorsub.Click += new System.EventHandler(this.btn_vigorsub_Click);
+            this.btn_vigorsub.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
+            this.btn_vigorsub.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
+            this.btn_vigorsub.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
             // 
             // btn_vigorsum
             // 
@@ -609,6 +631,9 @@ namespace Dark_Age
             this.btn_vigorsum.Text = "+";
             this.btn_vigorsum.UseVisualStyleBackColor = false;
             this.btn_vigorsum.Click += new System.EventHandler(this.btn_vigorsum_Click);
+            this.btn_vigorsum.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
+            this.btn_vigorsum.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
+            this.btn_vigorsum.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
             // 
             // btn_carismasub
             // 
@@ -625,6 +650,9 @@ namespace Dark_Age
             this.btn_carismasub.Text = "-";
             this.btn_carismasub.UseVisualStyleBackColor = false;
             this.btn_carismasub.Click += new System.EventHandler(this.btn_carismasub_Click);
+            this.btn_carismasub.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
+            this.btn_carismasub.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
+            this.btn_carismasub.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
             // 
             // btn_carismasum
             // 
@@ -641,6 +669,9 @@ namespace Dark_Age
             this.btn_carismasum.Text = "+";
             this.btn_carismasum.UseVisualStyleBackColor = false;
             this.btn_carismasum.Click += new System.EventHandler(this.btn_carismasum_Click);
+            this.btn_carismasum.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
+            this.btn_carismasum.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
+            this.btn_carismasum.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
             // 
             // btn_raciosub
             // 
@@ -657,6 +688,9 @@ namespace Dark_Age
             this.btn_raciosub.Text = "-";
             this.btn_raciosub.UseVisualStyleBackColor = false;
             this.btn_raciosub.Click += new System.EventHandler(this.btn_raciosub_Click);
+            this.btn_raciosub.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
+            this.btn_raciosub.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
+            this.btn_raciosub.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
             // 
             // btn_raciosum
             // 
@@ -673,6 +707,9 @@ namespace Dark_Age
             this.btn_raciosum.Text = "+";
             this.btn_raciosum.UseVisualStyleBackColor = false;
             this.btn_raciosum.Click += new System.EventHandler(this.btn_raciosum_Click);
+            this.btn_raciosum.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
+            this.btn_raciosum.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
+            this.btn_raciosum.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
             // 
             // btn_magiasub
             // 
@@ -689,6 +726,9 @@ namespace Dark_Age
             this.btn_magiasub.Text = "-";
             this.btn_magiasub.UseVisualStyleBackColor = false;
             this.btn_magiasub.Click += new System.EventHandler(this.btn_magiasub_Click);
+            this.btn_magiasub.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
+            this.btn_magiasub.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
+            this.btn_magiasub.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
             // 
             // btn_magiasum
             // 
@@ -705,6 +745,9 @@ namespace Dark_Age
             this.btn_magiasum.Text = "+";
             this.btn_magiasum.UseVisualStyleBackColor = false;
             this.btn_magiasum.Click += new System.EventHandler(this.btn_magiasum_Click);
+            this.btn_magiasum.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
+            this.btn_magiasum.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
+            this.btn_magiasum.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
             // 
             // label14
             // 
@@ -921,16 +964,12 @@ namespace Dark_Age
             this.ataque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ataque.ForeColor = System.Drawing.Color.Black;
             this.ataque.Location = new System.Drawing.Point(353, 168);
-            this.ataque.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
             this.ataque.Name = "ataque";
             this.ataque.Size = new System.Drawing.Size(40, 23);
             this.ataque.TabIndex = 79;
             this.ataque.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ataque.ValueChanged += new System.EventHandler(this.ataque_ValueChanged);
+            this.ataque.Click += new System.EventHandler(this.ataque_Click);
             // 
             // lbl_briga
             // 
@@ -966,16 +1005,12 @@ namespace Dark_Age
             this.esquiva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.esquiva.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.esquiva.Location = new System.Drawing.Point(353, 224);
-            this.esquiva.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
             this.esquiva.Name = "esquiva";
             this.esquiva.Size = new System.Drawing.Size(40, 23);
             this.esquiva.TabIndex = 81;
             this.esquiva.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.esquiva.ValueChanged += new System.EventHandler(this.esquiva_ValueChanged);
+            this.esquiva.Click += new System.EventHandler(this.ataque_Click);
             // 
             // label20
             // 
@@ -997,16 +1032,12 @@ namespace Dark_Age
             this.defesa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.defesa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.defesa.Location = new System.Drawing.Point(353, 290);
-            this.defesa.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
             this.defesa.Name = "defesa";
             this.defesa.Size = new System.Drawing.Size(40, 23);
             this.defesa.TabIndex = 83;
             this.defesa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.defesa.ValueChanged += new System.EventHandler(this.defesa_ValueChanged);
+            this.defesa.Click += new System.EventHandler(this.ataque_Click);
             // 
             // label21
             // 
@@ -1084,11 +1115,11 @@ namespace Dark_Age
             this.label25.BackColor = System.Drawing.Color.Transparent;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label25.ForeColor = System.Drawing.SystemColors.Control;
-            this.label25.Location = new System.Drawing.Point(444, 286);
+            this.label25.Location = new System.Drawing.Point(419, 290);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(111, 24);
+            this.label25.Size = new System.Drawing.Size(132, 24);
             this.label25.TabIndex = 96;
-            this.label25.Text = "Sedução";
+            this.label25.Text = "Sedução/Enganação";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label25.Click += new System.EventHandler(this.label25_Click);
             // 
@@ -1098,11 +1129,11 @@ namespace Dark_Age
             this.label26.BackColor = System.Drawing.Color.Transparent;
             this.label26.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label26.ForeColor = System.Drawing.SystemColors.Control;
-            this.label26.Location = new System.Drawing.Point(446, 352);
+            this.label26.Location = new System.Drawing.Point(439, 339);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(111, 24);
+            this.label26.Size = new System.Drawing.Size(111, 45);
             this.label26.TabIndex = 98;
-            this.label26.Text = "Enganação";
+            this.label26.Text = "Roubo/\r\nArrombamento";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label26.Click += new System.EventHandler(this.label26_Click);
             // 
@@ -1239,16 +1270,12 @@ namespace Dark_Age
             this.lancarmagia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lancarmagia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lancarmagia.Location = new System.Drawing.Point(353, 486);
-            this.lancarmagia.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
             this.lancarmagia.Name = "lancarmagia";
             this.lancarmagia.Size = new System.Drawing.Size(40, 23);
             this.lancarmagia.TabIndex = 121;
             this.lancarmagia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.lancarmagia.ValueChanged += new System.EventHandler(this.lancarmagia_ValueChanged);
+            this.lancarmagia.Click += new System.EventHandler(this.ataque_Click);
             // 
             // arematirar
             // 
@@ -1256,16 +1283,12 @@ namespace Dark_Age
             this.arematirar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.arematirar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.arematirar.Location = new System.Drawing.Point(355, 419);
-            this.arematirar.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
             this.arematirar.Name = "arematirar";
             this.arematirar.Size = new System.Drawing.Size(40, 23);
             this.arematirar.TabIndex = 120;
             this.arematirar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.arematirar.ValueChanged += new System.EventHandler(this.arematirar_ValueChanged);
+            this.arematirar.Click += new System.EventHandler(this.ataque_Click);
             // 
             // contrataque
             // 
@@ -1274,16 +1297,12 @@ namespace Dark_Age
             this.contrataque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.contrataque.ForeColor = System.Drawing.Color.Black;
             this.contrataque.Location = new System.Drawing.Point(355, 354);
-            this.contrataque.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
             this.contrataque.Name = "contrataque";
             this.contrataque.Size = new System.Drawing.Size(40, 23);
             this.contrataque.TabIndex = 119;
             this.contrataque.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.contrataque.ValueChanged += new System.EventHandler(this.contrataque_ValueChanged);
+            this.contrataque.Click += new System.EventHandler(this.ataque_Click);
             // 
             // seduzir
             // 
@@ -1291,16 +1310,12 @@ namespace Dark_Age
             this.seduzir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.seduzir.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.seduzir.Location = new System.Drawing.Point(554, 290);
-            this.seduzir.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
             this.seduzir.Name = "seduzir";
             this.seduzir.Size = new System.Drawing.Size(40, 23);
             this.seduzir.TabIndex = 124;
             this.seduzir.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.seduzir.ValueChanged += new System.EventHandler(this.seduzir_ValueChanged);
+            this.seduzir.Click += new System.EventHandler(this.ataque_Click);
             // 
             // intimidacao
             // 
@@ -1308,16 +1323,12 @@ namespace Dark_Age
             this.intimidacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.intimidacao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.intimidacao.Location = new System.Drawing.Point(554, 224);
-            this.intimidacao.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
             this.intimidacao.Name = "intimidacao";
             this.intimidacao.Size = new System.Drawing.Size(40, 23);
             this.intimidacao.TabIndex = 123;
             this.intimidacao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.intimidacao.ValueChanged += new System.EventHandler(this.intimidacao_ValueChanged);
+            this.intimidacao.Click += new System.EventHandler(this.ataque_Click);
             // 
             // labia
             // 
@@ -1326,16 +1337,12 @@ namespace Dark_Age
             this.labia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labia.ForeColor = System.Drawing.Color.Black;
             this.labia.Location = new System.Drawing.Point(554, 168);
-            this.labia.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
             this.labia.Name = "labia";
             this.labia.Size = new System.Drawing.Size(40, 23);
             this.labia.TabIndex = 122;
             this.labia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.labia.ValueChanged += new System.EventHandler(this.labia_ValueChanged);
+            this.labia.Click += new System.EventHandler(this.ataque_Click);
             // 
             // percepcao
             // 
@@ -1343,16 +1350,12 @@ namespace Dark_Age
             this.percepcao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.percepcao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.percepcao.Location = new System.Drawing.Point(554, 485);
-            this.percepcao.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
             this.percepcao.Name = "percepcao";
             this.percepcao.Size = new System.Drawing.Size(40, 23);
             this.percepcao.TabIndex = 127;
             this.percepcao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.percepcao.ValueChanged += new System.EventHandler(this.percepcao_ValueChanged);
+            this.percepcao.Click += new System.EventHandler(this.ataque_Click);
             // 
             // esconder
             // 
@@ -1360,16 +1363,12 @@ namespace Dark_Age
             this.esconder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.esconder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.esconder.Location = new System.Drawing.Point(556, 418);
-            this.esconder.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
             this.esconder.Name = "esconder";
             this.esconder.Size = new System.Drawing.Size(40, 23);
             this.esconder.TabIndex = 126;
             this.esconder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.esconder.ValueChanged += new System.EventHandler(this.esconder_ValueChanged);
+            this.esconder.Click += new System.EventHandler(this.ataque_Click);
             // 
             // enganacao
             // 
@@ -1378,16 +1377,12 @@ namespace Dark_Age
             this.enganacao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.enganacao.ForeColor = System.Drawing.Color.Black;
             this.enganacao.Location = new System.Drawing.Point(556, 353);
-            this.enganacao.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
             this.enganacao.Name = "enganacao";
             this.enganacao.Size = new System.Drawing.Size(40, 23);
             this.enganacao.TabIndex = 125;
             this.enganacao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.enganacao.ValueChanged += new System.EventHandler(this.enganacao_ValueChanged);
+            this.enganacao.Click += new System.EventHandler(this.ataque_Click);
             // 
             // etiqueta
             // 
@@ -1395,16 +1390,12 @@ namespace Dark_Age
             this.etiqueta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.etiqueta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.etiqueta.Location = new System.Drawing.Point(755, 488);
-            this.etiqueta.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
             this.etiqueta.Name = "etiqueta";
             this.etiqueta.Size = new System.Drawing.Size(40, 23);
             this.etiqueta.TabIndex = 130;
             this.etiqueta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.etiqueta.ValueChanged += new System.EventHandler(this.etiqueta_ValueChanged);
+            this.etiqueta.Click += new System.EventHandler(this.ataque_Click);
             // 
             // intuicao
             // 
@@ -1412,16 +1403,12 @@ namespace Dark_Age
             this.intuicao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.intuicao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.intuicao.Location = new System.Drawing.Point(757, 415);
-            this.intuicao.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
             this.intuicao.Name = "intuicao";
             this.intuicao.Size = new System.Drawing.Size(40, 23);
             this.intuicao.TabIndex = 129;
             this.intuicao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.intuicao.ValueChanged += new System.EventHandler(this.intuicao_ValueChanged);
+            this.intuicao.Click += new System.EventHandler(this.ataque_Click);
             // 
             // investigacao
             // 
@@ -1430,16 +1417,12 @@ namespace Dark_Age
             this.investigacao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.investigacao.ForeColor = System.Drawing.Color.Black;
             this.investigacao.Location = new System.Drawing.Point(757, 350);
-            this.investigacao.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
             this.investigacao.Name = "investigacao";
             this.investigacao.Size = new System.Drawing.Size(40, 23);
             this.investigacao.TabIndex = 128;
             this.investigacao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.investigacao.ValueChanged += new System.EventHandler(this.investigacao_ValueChanged);
+            this.investigacao.Click += new System.EventHandler(this.ataque_Click);
             // 
             // sobrevivencia
             // 
@@ -1447,16 +1430,12 @@ namespace Dark_Age
             this.sobrevivencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.sobrevivencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sobrevivencia.Location = new System.Drawing.Point(757, 289);
-            this.sobrevivencia.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
             this.sobrevivencia.Name = "sobrevivencia";
             this.sobrevivencia.Size = new System.Drawing.Size(40, 23);
             this.sobrevivencia.TabIndex = 133;
             this.sobrevivencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.sobrevivencia.ValueChanged += new System.EventHandler(this.sobrevivencia_ValueChanged);
+            this.sobrevivencia.Click += new System.EventHandler(this.ataque_Click);
             // 
             // ocultismo
             // 
@@ -1464,16 +1443,12 @@ namespace Dark_Age
             this.ocultismo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ocultismo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ocultismo.Location = new System.Drawing.Point(755, 224);
-            this.ocultismo.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
             this.ocultismo.Name = "ocultismo";
             this.ocultismo.Size = new System.Drawing.Size(40, 23);
             this.ocultismo.TabIndex = 132;
             this.ocultismo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ocultismo.ValueChanged += new System.EventHandler(this.ocultismo_ValueChanged);
+            this.ocultismo.Click += new System.EventHandler(this.ataque_Click);
             // 
             // academicos
             // 
@@ -1482,16 +1457,12 @@ namespace Dark_Age
             this.academicos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.academicos.ForeColor = System.Drawing.Color.Black;
             this.academicos.Location = new System.Drawing.Point(755, 168);
-            this.academicos.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
             this.academicos.Name = "academicos";
             this.academicos.Size = new System.Drawing.Size(40, 23);
             this.academicos.TabIndex = 131;
             this.academicos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.academicos.ValueChanged += new System.EventHandler(this.academicos_ValueChanged);
+            this.academicos.Click += new System.EventHandler(this.ataque_Click);
             // 
             // nome_personagem
             // 
@@ -1569,11 +1540,6 @@ namespace Dark_Age
             this.sanidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.sanidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sanidade.Location = new System.Drawing.Point(819, 603);
-            this.sanidade.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
             this.sanidade.Minimum = new decimal(new int[] {
             3,
             0,
@@ -1589,6 +1555,7 @@ namespace Dark_Age
             0,
             0});
             this.sanidade.ValueChanged += new System.EventHandler(this.sanidade_ValueChanged);
+            this.sanidade.Click += new System.EventHandler(this.ataque_Click);
             // 
             // label37
             // 
@@ -1608,6 +1575,7 @@ namespace Dark_Age
             // 
             this.panel13.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel13.BackColor = System.Drawing.Color.Transparent;
+            this.panel13.Controls.Add(this.label40);
             this.panel13.Controls.Add(this.sanidade);
             this.panel13.Controls.Add(this.label6);
             this.panel13.Controls.Add(this.label37);
@@ -1693,6 +1661,18 @@ namespace Dark_Age
             this.panel13.TabIndex = 142;
             this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel13_Paint);
             // 
+            // label40
+            // 
+            this.label40.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label40.BackColor = System.Drawing.Color.Transparent;
+            this.label40.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label40.ForeColor = System.Drawing.SystemColors.Control;
+            this.label40.Location = new System.Drawing.Point(376, 550);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(275, 24);
+            this.label40.TabIndex = 143;
+            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // comboBox1
             // 
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -1714,6 +1694,7 @@ namespace Dark_Age
             this.comboBox1.Size = new System.Drawing.Size(45, 28);
             this.comboBox1.TabIndex = 142;
             this.comboBox1.Text = "1";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
             this.comboBox1.Click += new System.EventHandler(this.comboBox1_Click);
             // 
@@ -1900,5 +1881,6 @@ namespace Dark_Age
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label40;
     }
 }

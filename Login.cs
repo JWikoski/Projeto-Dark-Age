@@ -21,6 +21,10 @@ namespace Dark_Age
         public static int jogador = 0;
         Timer timer1 = new Timer();
 
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
         public Login()
         {
             InitializeComponent();
@@ -103,7 +107,7 @@ namespace Dark_Age
                 senha = TbSenha.Text;
 
 
-                NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=DarkAge_Server;user Id=João;Password=AEsrNA95");
+                NpgsqlConnection conn = new NpgsqlConnection("Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80");
                 conn.Open();
                 NpgsqlCommand comm = new NpgsqlCommand();
                 comm.Connection = conn;
@@ -121,12 +125,22 @@ namespace Dark_Age
 
                 if (nda.HasRows)
                 {
-                    this.Hide();
-                    Form1 frm = new Form1();
-                    frm.Closed += (s, args) => this.Close();
-                    frm.Show();
-                    e.Handled = true;
-                    e.SuppressKeyPress = true;
+                    if (Ficha.pers_criado == false)
+                    {
+                        this.Hide();
+                        Ficha frm = new Ficha();
+                        frm.ShowDialog();
+                       
+                    }
+                    else
+                    {
+                        this.Hide();
+                        Form1 frm = new Form1();
+                        frm.Closed += (s, args) => this.Close();
+                        frm.Show();
+                        e.Handled = true;
+                        e.SuppressKeyPress = true;
+                    }
                 }
                 else
                 {
@@ -138,12 +152,6 @@ namespace Dark_Age
                     conn.Close();
                 }
                
-
-           
-
-               
-
-
         }
 
 
@@ -168,6 +176,25 @@ namespace Dark_Age
                 timer1.Stop();   //this stops the timer if the form is completely displayed
             else
                 Opacity += 0.05;
+        }
+
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        private void panel8_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -13,23 +13,23 @@ namespace Dark_Age
 {
     public partial class Habilidades_ativas : Form
     {
-        public string ativas = "";
+        public string anotacoes = "";
         public Habilidades_ativas()
         {
             InitializeComponent();
             this.BackColor = Color.Black;
             this.TransparencyKey = Color.FromArgb(10, Color.Black);
 
-            NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=DarkAge_Server;user Id=João;Password=AEsrNA95");
+            NpgsqlConnection conn = new NpgsqlConnection("Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80");
             conn.Open();
             NpgsqlCommand comm = new NpgsqlCommand();
             comm.Connection = conn;
             comm.CommandType = CommandType.Text;
-            comm.CommandText = "select ativas from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = @jogador";
+            comm.CommandText = "select anotacoes from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = @jogador";
             comm.Parameters.AddWithValue("@jogador", Login.jogador);
             string nda = (string)comm.ExecuteScalar();
 
-            ativas = nda;
+            anotacoes = nda;
             label2.Text = nda;
             txt_ativas.Text = nda;
 
@@ -40,9 +40,19 @@ namespace Dark_Age
 
         private void Habilidades_Load(object sender, EventArgs e)
         {
+            Opacity = 0;      //first the opacity is 0
 
+            timer1.Interval = 5;  //we'll increase the opacity every 10ms
+            timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
+            timer1.Start();
         }
-
+        void fadeIn(object sender, EventArgs e)
+        {
+            if (Opacity >= 1)
+                timer1.Stop();   //this stops the timer if the form is completely displayed
+            else
+                Opacity += 0.1;
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -64,20 +74,21 @@ namespace Dark_Age
 
         private void txt_ativas_TextChanged(object sender, EventArgs e)
         {
-            ativas = txt_ativas.Text;
-            label2.Text = ativas;
-            txt_ativas.Text = ativas;
+            anotacoes = txt_ativas.Text;
+            label2.Text = anotacoes;
+            txt_ativas.Text = anotacoes;
         }
 
         private void LblFecharLogin_Click(object sender, EventArgs e)
         {
-            NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=DarkAge_Server;user Id=João;Password=AEsrNA95");
+            NpgsqlConnection conn = new NpgsqlConnection("Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80");
             conn.Open();
             NpgsqlCommand coss = new NpgsqlCommand();
             coss.Connection = conn;
             coss.CommandType = CommandType.Text;
-            coss.CommandText = "update \"Dark_Age_Connection\".\"Personagens\" set ativas = @ativas";
-            coss.Parameters.AddWithValue("@ativas", ativas);
+            coss.CommandText = "update \"Dark_Age_Connection\".\"Personagens\" set anotacoes = @anotacoes where fk_id_jogador = @jogador";
+            coss.Parameters.AddWithValue("@jogador", Login.jogador);
+            coss.Parameters.AddWithValue("@anotacoes", anotacoes);
             NpgsqlDataReader nda = coss.ExecuteReader();
             coss.Dispose();
             conn.Close();

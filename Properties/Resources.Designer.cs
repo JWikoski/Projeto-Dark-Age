@@ -153,6 +153,16 @@ namespace Dark_Age.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap download {
+            get {
+                object obj = ResourceManager.GetObject("download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fe281c65_2d68_416b_80b4_139ec9364539_image {
             get {
                 object obj = ResourceManager.GetObject("fe281c65-2d68-416b-80b4-139ec9364539-image", resourceCulture);

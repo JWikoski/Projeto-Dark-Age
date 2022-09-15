@@ -20,11 +20,10 @@ namespace Dark_Age
         public int expand = 1;
         public static string texto_imagem;
         public Boolean minmax = true;
-        public int talento;
-        public int vida_maxima = 25;
-        public int vida_atual = 25;
-        public int sanidade_max;
-        public int sanidade_atual;
+        public static int vida_maxima;
+        public static int vida_atual;
+        public static int sanidade_max;
+        public static int sanidade_atual;
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -34,7 +33,7 @@ namespace Dark_Age
         {
             InitializeComponent();
             label1.BackColor = Color.FromArgb(15, 39, 45);
-            pn_personagens.BackColor = Color.FromArgb(150, Color.Black);
+            painel_jogadores.BackColor = Color.FromArgb(150, Color.Black);
             ficha_resumida.BackColor = Color.FromArgb(0, Color.Black);
             panel1.BackColor = Color.Transparent; 
             panel2.BackColor = Color.Transparent;
@@ -42,8 +41,8 @@ namespace Dark_Age
             panel6.BackColor = Color.Transparent;
             this.BackColor = Color.FromArgb(14, 40, 52);
             btn_open.BackColor = Color.FromArgb(14, 40, 52);
-            numericUpDown1.Value = vida_maxima;
-            numericUpDown1.Maximum = vida_maxima;
+            
+
 
 
             btn_cria_personagem.Controls.Add(new Label()
@@ -58,15 +57,8 @@ namespace Dark_Age
            
 
 
-            if (Ficha.pers_criado == false)
-            {
-                Ficha frm = new Ficha();
-                frm.ShowDialog();
-
-            }
-            else
-            {
-                NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=DarkAge_Server;user Id=João;Password=AEsrNA95");
+            
+                NpgsqlConnection conn = new NpgsqlConnection("Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80");
                 conn.Open();
                 NpgsqlCommand comm = new NpgsqlCommand();
                 comm.Connection = conn;
@@ -79,9 +71,7 @@ namespace Dark_Age
 
                 if (nda.Read())
                 {
-                    personagem1.Text = (string)nda.GetValue(0);
                     bemvindo.Text = "Bem Vindo, " + nda.GetValue(0) + "!";
-                    classe_jogador1.Text = nda.GetValue(1).ToString();
                     Ficha.idpersonagem = (int)nda.GetValue(2);
                 }
 
@@ -101,13 +91,13 @@ namespace Dark_Age
                 jogador1.Text = ndj;
                 conn.Close();
 
-            }
-            NpgsqlConnection conn3 = new NpgsqlConnection("Server=localhost;Port=5432;Database=DarkAge_Server;user Id=João;Password=AEsrNA95");
+            
+            NpgsqlConnection conn3 = new NpgsqlConnection("Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80");
             conn3.Open();
             NpgsqlCommand comi = new NpgsqlCommand();
             comi.Connection = conn3;
             comi.CommandType = CommandType.Text;
-            comi.CommandText = "select forca, destreza, vigor, carisma, raciocinio, magia from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = @jogador";
+            comi.CommandText = "select forca, destreza, vigor, carisma, raciocinio, magia, silver, gold, vida_atual, vida_max, sanidade_atual, sanidade_max from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = @jogador";
             comi.Parameters.AddWithValue("@jogador", Login.jogador);
             NpgsqlDataReader nds = comi.ExecuteReader();
 
@@ -120,17 +110,45 @@ namespace Dark_Age
                 res_carisma.Text = nds.GetValue(3).ToString();
                 res_raciocinio.Text = nds.GetValue(4).ToString();
                 res_magia.Text = nds.GetValue(5).ToString();
+                prata.Text = nds.GetValue(6).ToString();
+                ouro.Text = nds.GetValue(7).ToString();
+                vida_atual = (int)nds.GetValue(8);
+                vida_maxima = (int)nds.GetValue(9);
+                sanidade_atual = (int)nds.GetValue(10);
+                sanidade_max = (int)nds.GetValue(11);
+                mana.Text = "Mana: "+((int)nds.GetValue(5)*2).ToString();
+                movimento.Text = "Movimento: " + (6+ (int)nds.GetValue(1)).ToString();
+
+                numericUpDown1.Maximum = vida_maxima;
+                numericUpDown1.Value = vida_atual;
+                numericUpDown2.Maximum = sanidade_max;
+                numericUpDown2.Value = sanidade_atual;
+
+                lbl_vida.Text = vida_atual + "/" + vida_maxima;
+                lbl_sanidade.Text = sanidade_atual + "/" + sanidade_max;
+
+                panel9.Width = 220;
+
+                
+                decimal porcentagem3 = (decimal)vida_atual / (decimal)vida_maxima;
+                porcentagem3 = porcentagem3 * 220;
+                panel9.Width = Convert.ToInt32(porcentagem3);
+
+                decimal porcentagem4 = (decimal)sanidade_atual / (decimal)sanidade_max;
+                porcentagem4 = porcentagem4 * 220;
+                lbl_barra2.Width = Convert.ToInt32(porcentagem4);
+
             }
 
 
-                NpgsqlConnection conn2 = new NpgsqlConnection("Server=localhost;Port=5432;Database=DarkAge_Server;user Id=João;Password=AEsrNA95");
+
+            NpgsqlConnection conn2 = new NpgsqlConnection("Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80");
             conn2.Open();
             NpgsqlCommand comt = new NpgsqlCommand();
             comt.Connection = conn2;
             comt.CommandType = CommandType.Text; 
             comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 1 and fk_id_personagem = @personagem";
-            comt.Parameters.AddWithValue("@talento", talento);
-            comt.Parameters.AddWithValue("@personagem",Ficha.idpersonagem);
+            comt.Parameters.AddWithValue("@personagem",Login.jogador);
             
             NpgsqlDataReader ndp = comt.ExecuteReader();
             if (ndp.Read())
@@ -287,7 +305,6 @@ namespace Dark_Age
             conn2.Close();
             
 
-
         }
         
 
@@ -330,7 +347,20 @@ namespace Dark_Age
 
         private void btn_open_Click(object sender, EventArgs e)
         {
-            
+            NpgsqlConnection conn = new("Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80");
+            conn.Open();
+            NpgsqlCommand como = new NpgsqlCommand();
+            como.Connection = conn;
+            como.CommandType = CommandType.Text;
+            como.CommandText = "update \"Dark_Age_Connection\".\"Personagens\" set vida_atual = @vida_atual, vida_max = @vida_max, sanidade_atual = @sanidade_atual, sanidade_max = @sanidade_max where fk_id_jogador = @jogador";
+            como.Parameters.AddWithValue("@vida_atual", vida_atual);
+            como.Parameters.AddWithValue("@vida_max", vida_maxima);
+            como.Parameters.AddWithValue("@sanidade_atual", sanidade_atual);
+            como.Parameters.AddWithValue("@sanidade_max", sanidade_max);
+            como.Parameters.AddWithValue("@jogador", Login.jogador);
+            como.ExecuteNonQuery();
+
+            this.Hide();
             Ficha frm = new Ficha();
             frm.Show();
 
@@ -482,7 +512,6 @@ namespace Dark_Age
         {
             Inventario vinv = new Inventario();
             vinv.ShowDialog();
-
             ouro.Text = Inventario.moedas_de_ouro.ToString();
             prata.Text = Inventario.moedas_de_prata.ToString();
         }
@@ -513,7 +542,20 @@ namespace Dark_Age
 
         private void LblFecharPassivas_Click(object sender, EventArgs e)
         {
-            this.Close();
+            NpgsqlConnection conn = new("Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80");
+            conn.Open();
+            NpgsqlCommand come = new NpgsqlCommand();
+            come.Connection = conn;
+            come.CommandType = CommandType.Text;
+            come.CommandText = "update \"Dark_Age_Connection\".\"Personagens\" set vida_atual = @vida_atual, vida_max = @vida_max, sanidade_atual = @sanidade_atual, sanidade_max = @sanidade_max where fk_id_jogador = @jogador";
+            come.Parameters.AddWithValue("@vida_atual", vida_atual);
+            come.Parameters.AddWithValue("@vida_max", vida_maxima);
+            come.Parameters.AddWithValue("@sanidade_atual", sanidade_atual);
+            come.Parameters.AddWithValue("@sanidade_max", sanidade_max);
+            come.Parameters.AddWithValue("@jogador", Login.jogador);
+            come.ExecuteNonQuery();
+
+            Application.Exit();
         }
         private void LblFecharPassivas_MouseHover(object sender, EventArgs e)
         {
@@ -556,13 +598,14 @@ namespace Dark_Age
         {
             
             lbl_vida.Text = numericUpDown1.Value + "/" + vida_maxima;
-            double porcentagem = ((vida_atual - Convert.ToInt32(numericUpDown1.Value))*100)/vida_maxima;
-            porcentagem = (porcentagem * 220) / 100;
-            panel9.Width -= Convert.ToInt32(porcentagem);
             
-            vida_atual = Convert.ToInt32(numericUpDown1.Value);
+            
+            decimal porcentagem = (((decimal)vida_atual - (decimal)Convert.ToInt32(numericUpDown1.Value)) * 100) / (decimal)vida_maxima;
+            porcentagem = ((decimal)porcentagem * 220) / 100;
+            panel9.Width -= Convert.ToInt32(porcentagem);
 
-            if(numericUpDown1.Value < 6)
+            vida_atual = Convert.ToInt32(numericUpDown1.Value);
+            if (numericUpDown1.Value < 6)
             {
                 panel9.BackColor = Color.Red;
             }
@@ -572,6 +615,67 @@ namespace Dark_Age
             }
         }
 
-       
+        private void label86_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void res_labia_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        {
+            lbl_sanidade.Text = numericUpDown2.Value + "/" + sanidade_max;
+            decimal porcentagem2 = (((decimal)sanidade_atual - (decimal)Convert.ToInt32(numericUpDown2.Value)) * 100) / (decimal)sanidade_max;
+            porcentagem2 = ((decimal)porcentagem2 * 220) / 100;
+            lbl_barra2.Width -= Convert.ToInt32(porcentagem2);
+
+            sanidade_atual = Convert.ToInt32(numericUpDown2.Value);
+            if (numericUpDown2.Value < 3)
+            {
+                lbl_barra2.BackColor = Color.DarkSlateGray;
+            }
+            else
+            {
+                lbl_barra2.BackColor = Color.CadetBlue;
+            }
+        }
+
+        private void mana_MouseHover(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+            button.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, Color.White);
+        }
+
+        private void btn_forcasum_Click(object sender, EventArgs e)
+        {
+            int escudo = Convert.ToInt32(label24.Text);
+            label24.Text = (escudo + 1).ToString();
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            if(panel12.Visible == true)
+            {
+                panel12.Visible = false;
+            }
+            else
+            {
+                panel12.Visible = true;
+            }
+            
+        }
+
+        private void btn_forcasub_Click(object sender, EventArgs e)
+        {
+            int escudo = Convert.ToInt32(label24.Text);
+            label24.Text = (escudo - 1).ToString();
+            if(escudo == 1)
+            {
+                panel12.Visible = false;
+            }
+        }
     }
 }

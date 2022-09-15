@@ -92,12 +92,12 @@ namespace Dark_Age
             | System.Windows.Forms.AnchorStyles.Right)));
             this.itens_inventario.AutoSize = true;
             this.itens_inventario.BackColor = System.Drawing.Color.Transparent;
-            this.itens_inventario.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.itens_inventario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.itens_inventario.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.itens_inventario.Location = new System.Drawing.Point(371, 126);
             this.itens_inventario.MaximumSize = new System.Drawing.Size(600, 0);
             this.itens_inventario.Name = "itens_inventario";
-            this.itens_inventario.Size = new System.Drawing.Size(0, 19);
+            this.itens_inventario.Size = new System.Drawing.Size(0, 21);
             this.itens_inventario.TabIndex = 12;
             // 
             // ouro
@@ -234,6 +234,7 @@ namespace Dark_Age
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(678, 797);
             this.panel3.TabIndex = 86;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // panel8
             // 

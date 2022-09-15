@@ -29,6 +29,7 @@ namespace Dark_Age
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Habilidades_ativas));
             this.label1 = new System.Windows.Forms.Label();
             this.LblFecharPassivas = new System.Windows.Forms.Label();
@@ -36,6 +37,7 @@ namespace Dark_Age
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_ativas = new System.Windows.Forms.TextBox();
             this.Editar = new System.Windows.Forms.CheckBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -162,5 +164,6 @@ namespace Dark_Age
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txt_ativas;
         private System.Windows.Forms.CheckBox Editar;
+        private System.Windows.Forms.Timer timer1;
     }
 }

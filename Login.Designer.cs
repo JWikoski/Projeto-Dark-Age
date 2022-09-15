@@ -39,6 +39,7 @@ namespace Dark_Age
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.LblFecharLogin = new System.Windows.Forms.Label();
             this.LblSenhaInvalida = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -102,6 +103,7 @@ namespace Dark_Age
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.WaitOnLoad = true;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // ShowPass
             // 
@@ -153,6 +155,16 @@ namespace Dark_Age
             this.LblSenhaInvalida.Text = "Senha Inválida, tente novamente.";
             this.LblSenhaInvalida.Visible = false;
             // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Transparent;
+            this.panel8.Enabled = false;
+            this.panel8.Location = new System.Drawing.Point(148, 3);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(59, 137);
+            this.panel8.TabIndex = 89;
+            this.panel8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel8_MouseDown);
+            // 
             // Login
             // 
             this.AllowDrop = true;
@@ -160,6 +172,7 @@ namespace Dark_Age
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(623, 357);
+            this.Controls.Add(this.panel8);
             this.Controls.Add(this.LblSenhaInvalida);
             this.Controls.Add(this.LblFecharLogin);
             this.Controls.Add(this.pictureBox3);
@@ -170,6 +183,7 @@ namespace Dark_Age
             this.Controls.Add(this.TbSenha);
             this.Controls.Add(this.Lbl_senha);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.Alpha;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -193,5 +207,6 @@ namespace Dark_Age
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label LblFecharLogin;
         private System.Windows.Forms.Label LblSenhaInvalida;
+        private System.Windows.Forms.Panel panel8;
     }
 }

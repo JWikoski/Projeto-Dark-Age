@@ -29,6 +29,7 @@ namespace Dark_Age
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Habilidades_passivas));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,11 +37,12 @@ namespace Dark_Age
             this.txt_passivas = new System.Windows.Forms.TextBox();
             this.Editar = new System.Windows.Forms.CheckBox();
             this.Editar2 = new System.Windows.Forms.CheckBox();
-            this.txt_passivas2 = new System.Windows.Forms.TextBox();
+            this.txt_ativas = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.LblFecharPassivas = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -89,7 +91,7 @@ namespace Dark_Age
             // 
             // txt_passivas
             // 
-            this.txt_passivas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(98)))), ((int)(((byte)(180)))));
+            this.txt_passivas.BackColor = System.Drawing.Color.SlateGray;
             this.txt_passivas.Enabled = false;
             this.txt_passivas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_passivas.Location = new System.Drawing.Point(2, 57);
@@ -117,7 +119,7 @@ namespace Dark_Age
             // 
             this.Editar2.AutoSize = true;
             this.Editar2.BackColor = System.Drawing.Color.Transparent;
-            this.Editar2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Editar2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Editar2.Location = new System.Drawing.Point(857, 26);
             this.Editar2.Name = "Editar2";
             this.Editar2.Size = new System.Drawing.Size(56, 19);
@@ -126,17 +128,19 @@ namespace Dark_Age
             this.Editar2.UseVisualStyleBackColor = false;
             this.Editar2.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // txt_passivas2
+            // txt_ativas
             // 
-            this.txt_passivas2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(94)))), ((int)(((byte)(178)))));
-            this.txt_passivas2.Enabled = false;
-            this.txt_passivas2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_passivas2.Location = new System.Drawing.Point(847, 51);
-            this.txt_passivas2.Multiline = true;
-            this.txt_passivas2.Name = "txt_passivas2";
-            this.txt_passivas2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_passivas2.Size = new System.Drawing.Size(722, 23);
-            this.txt_passivas2.TabIndex = 20;
+            this.txt_ativas.BackColor = System.Drawing.Color.SlateGray;
+            this.txt_ativas.Enabled = false;
+            this.txt_ativas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_ativas.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.txt_ativas.Location = new System.Drawing.Point(847, 51);
+            this.txt_ativas.Multiline = true;
+            this.txt_ativas.Name = "txt_ativas";
+            this.txt_ativas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txt_ativas.Size = new System.Drawing.Size(722, 23);
+            this.txt_ativas.TabIndex = 20;
+            this.txt_ativas.TextChanged += new System.EventHandler(this.txt_passivas2_TextChanged);
             // 
             // panel2
             // 
@@ -159,7 +163,7 @@ namespace Dark_Age
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(3, 4);
             this.label3.MaximumSize = new System.Drawing.Size(700, 0);
             this.label3.Name = "label3";
@@ -171,7 +175,7 @@ namespace Dark_Age
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(1065, 2);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(281, 45);
@@ -199,12 +203,11 @@ namespace Dark_Age
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.BackgroundImage = global::Dark_Age.Properties.Resources.thumb_1920_1159325;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1605, 1080);
             this.Controls.Add(this.Editar2);
-            this.Controls.Add(this.txt_passivas2);
+            this.Controls.Add(this.txt_ativas);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Editar);
@@ -236,10 +239,11 @@ namespace Dark_Age
         private System.Windows.Forms.TextBox txt_passivas;
         private System.Windows.Forms.CheckBox Editar;
         private System.Windows.Forms.CheckBox Editar2;
-        private System.Windows.Forms.TextBox txt_passivas2;
+        private System.Windows.Forms.TextBox txt_ativas;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label LblFecharPassivas;
+        private System.Windows.Forms.Timer timer1;
     }
 }
