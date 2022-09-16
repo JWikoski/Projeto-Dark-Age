@@ -192,6 +192,17 @@ namespace Dark_Age
             this.lbl_sanidade = new System.Windows.Forms.Label();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.label26 = new System.Windows.Forms.Label();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.pn_adicional = new System.Windows.Forms.Panel();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.label30 = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.lbl_barra_mana3 = new System.Windows.Forms.Panel();
+            this.lbl_mana = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel12 = new System.Windows.Forms.Panel();
             this.btn_forcasub = new System.Windows.Forms.Button();
@@ -220,6 +231,12 @@ namespace Dark_Age
             this.lbl_barra2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
+            this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            this.panel14.SuspendLayout();
+            this.lbl_barra_mana3.SuspendLayout();
             this.panel12.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -234,9 +251,9 @@ namespace Dark_Age
             this.btn_open.ForeColor = System.Drawing.Color.Silver;
             this.btn_open.Image = global::Dark_Age.Properties.Resources.image__1_;
             this.btn_open.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_open.Location = new System.Drawing.Point(95, 732);
+            this.btn_open.Location = new System.Drawing.Point(12, 749);
             this.btn_open.Name = "btn_open";
-            this.btn_open.Size = new System.Drawing.Size(550, 67);
+            this.btn_open.Size = new System.Drawing.Size(187, 67);
             this.btn_open.TabIndex = 0;
             this.btn_open.Text = "Criar Personagem";
             this.btn_open.UseVisualStyleBackColor = false;
@@ -664,7 +681,6 @@ namespace Dark_Age
             // 
             this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox5.BackgroundImage = global::Dark_Age.Properties.Resources.alchemist;
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureBox5.Location = new System.Drawing.Point(33, 497);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(84, 80);
@@ -797,7 +813,6 @@ namespace Dark_Age
             // movimento
             // 
             this.movimento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.movimento.Cursor = System.Windows.Forms.Cursors.Default;
             this.movimento.FlatAppearance.BorderSize = 0;
             this.movimento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.movimento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -834,7 +849,6 @@ namespace Dark_Age
             // mana
             // 
             this.mana.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.mana.Cursor = System.Windows.Forms.Cursors.Default;
             this.mana.FlatAppearance.BorderSize = 0;
             this.mana.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.mana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -2692,7 +2706,7 @@ namespace Dark_Age
             this.label3.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Location = new System.Drawing.Point(3, 28);
+            this.label3.Location = new System.Drawing.Point(9, 48);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label3.Size = new System.Drawing.Size(90, 46);
@@ -2708,7 +2722,7 @@ namespace Dark_Age
             this.label12.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label12.Location = new System.Drawing.Point(341, 28);
+            this.label12.Location = new System.Drawing.Point(348, 48);
             this.label12.Name = "label12";
             this.label12.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label12.Size = new System.Drawing.Size(278, 46);
@@ -2721,7 +2735,7 @@ namespace Dark_Age
             this.panel9.Controls.Add(this.lbl_vida);
             this.panel9.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel9.ForeColor = System.Drawing.Color.White;
-            this.panel9.Location = new System.Drawing.Point(90, 40);
+            this.panel9.Location = new System.Drawing.Point(98, 56);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(220, 32);
             this.panel9.TabIndex = 9;
@@ -2742,7 +2756,7 @@ namespace Dark_Age
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericUpDown1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.numericUpDown1.Location = new System.Drawing.Point(309, 40);
+            this.numericUpDown1.Location = new System.Drawing.Point(317, 56);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(17, 32);
             this.numericUpDown1.TabIndex = 10;
@@ -2759,7 +2773,7 @@ namespace Dark_Age
             this.lbl_barra2.Controls.Add(this.lbl_sanidade);
             this.lbl_barra2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_barra2.ForeColor = System.Drawing.Color.White;
-            this.lbl_barra2.Location = new System.Drawing.Point(622, 39);
+            this.lbl_barra2.Location = new System.Drawing.Point(623, 56);
             this.lbl_barra2.Name = "lbl_barra2";
             this.lbl_barra2.Size = new System.Drawing.Size(220, 32);
             this.lbl_barra2.TabIndex = 11;
@@ -2769,7 +2783,7 @@ namespace Dark_Age
             this.lbl_sanidade.AutoSize = true;
             this.lbl_sanidade.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_sanidade.ForeColor = System.Drawing.Color.White;
-            this.lbl_sanidade.Location = new System.Drawing.Point(3, -1);
+            this.lbl_sanidade.Location = new System.Drawing.Point(3, 0);
             this.lbl_sanidade.Name = "lbl_sanidade";
             this.lbl_sanidade.Size = new System.Drawing.Size(46, 30);
             this.lbl_sanidade.TabIndex = 0;
@@ -2779,7 +2793,7 @@ namespace Dark_Age
             // 
             this.numericUpDown2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericUpDown2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.numericUpDown2.Location = new System.Drawing.Point(839, 39);
+            this.numericUpDown2.Location = new System.Drawing.Point(843, 56);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(17, 32);
             this.numericUpDown2.TabIndex = 12;
@@ -2794,6 +2808,14 @@ namespace Dark_Age
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.Controls.Add(this.iconButton2);
+            this.panel4.Controls.Add(this.numericUpDown5);
+            this.panel4.Controls.Add(this.panel13);
+            this.panel4.Controls.Add(this.numericUpDown4);
+            this.panel4.Controls.Add(this.pn_adicional);
+            this.panel4.Controls.Add(this.numericUpDown3);
+            this.panel4.Controls.Add(this.label30);
+            this.panel4.Controls.Add(this.panel14);
             this.panel4.Controls.Add(this.iconButton1);
             this.panel4.Controls.Add(this.panel12);
             this.panel4.Controls.Add(this.lbl_barra2);
@@ -2804,11 +2826,157 @@ namespace Dark_Age
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.panel11);
             this.panel4.Controls.Add(this.panel10);
-            this.panel4.Location = new System.Drawing.Point(682, 711);
+            this.panel4.Location = new System.Drawing.Point(301, 711);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(870, 109);
+            this.panel4.Size = new System.Drawing.Size(1251, 109);
             this.panel4.TabIndex = 0;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconButton2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.ShieldAlt;
+            this.iconButton2.IconColor = System.Drawing.Color.White;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 25;
+            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.iconButton2.Location = new System.Drawing.Point(487, 11);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(33, 32);
+            this.iconButton2.TabIndex = 155;
+            this.iconButton2.UseVisualStyleBackColor = true;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            // 
+            // numericUpDown5
+            // 
+            this.numericUpDown5.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numericUpDown5.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.numericUpDown5.Location = new System.Drawing.Point(535, 11);
+            this.numericUpDown5.Name = "numericUpDown5";
+            this.numericUpDown5.Size = new System.Drawing.Size(17, 32);
+            this.numericUpDown5.TabIndex = 154;
+            this.numericUpDown5.Value = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.Orange;
+            this.panel13.Controls.Add(this.label26);
+            this.panel13.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.panel13.ForeColor = System.Drawing.Color.White;
+            this.panel13.Location = new System.Drawing.Point(552, 11);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(120, 32);
+            this.panel13.TabIndex = 151;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label26.ForeColor = System.Drawing.Color.White;
+            this.label26.Location = new System.Drawing.Point(37, 1);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(46, 30);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "0/0";
+            // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numericUpDown4.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.numericUpDown4.Location = new System.Drawing.Point(672, 11);
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(17, 32);
+            this.numericUpDown4.TabIndex = 152;
+            this.numericUpDown4.Value = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            // 
+            // pn_adicional
+            // 
+            this.pn_adicional.BackColor = System.Drawing.Color.Lavender;
+            this.pn_adicional.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pn_adicional.ForeColor = System.Drawing.Color.White;
+            this.pn_adicional.Location = new System.Drawing.Point(534, 11);
+            this.pn_adicional.Name = "pn_adicional";
+            this.pn_adicional.Size = new System.Drawing.Size(154, 32);
+            this.pn_adicional.TabIndex = 153;
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.numericUpDown3.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.numericUpDown3.Location = new System.Drawing.Point(1223, 56);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(17, 32);
+            this.numericUpDown3.TabIndex = 149;
+            this.numericUpDown3.Value = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.numericUpDown3.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
+            // 
+            // label30
+            // 
+            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.Transparent;
+            this.label30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label30.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label30.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label30.Location = new System.Drawing.Point(896, 48);
+            this.label30.Name = "label30";
+            this.label30.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label30.Size = new System.Drawing.Size(106, 46);
+            this.label30.TabIndex = 147;
+            this.label30.Text = "Mana:";
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel14.Controls.Add(this.lbl_barra_mana3);
+            this.panel14.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.panel14.ForeColor = System.Drawing.Color.White;
+            this.panel14.Location = new System.Drawing.Point(1003, 56);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(220, 32);
+            this.panel14.TabIndex = 150;
+            // 
+            // lbl_barra_mana3
+            // 
+            this.lbl_barra_mana3.BackColor = System.Drawing.Color.DodgerBlue;
+            this.lbl_barra_mana3.Controls.Add(this.lbl_mana);
+            this.lbl_barra_mana3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_barra_mana3.ForeColor = System.Drawing.Color.White;
+            this.lbl_barra_mana3.Location = new System.Drawing.Point(0, -1);
+            this.lbl_barra_mana3.Name = "lbl_barra_mana3";
+            this.lbl_barra_mana3.Size = new System.Drawing.Size(225, 33);
+            this.lbl_barra_mana3.TabIndex = 148;
+            // 
+            // lbl_mana
+            // 
+            this.lbl_mana.AutoSize = true;
+            this.lbl_mana.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_mana.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_mana.ForeColor = System.Drawing.Color.White;
+            this.lbl_mana.Location = new System.Drawing.Point(5, 0);
+            this.lbl_mana.Name = "lbl_mana";
+            this.lbl_mana.Size = new System.Drawing.Size(46, 30);
+            this.lbl_mana.TabIndex = 0;
+            this.lbl_mana.Text = "0/0";
             // 
             // iconButton1
             // 
@@ -2824,7 +2992,7 @@ namespace Dark_Age
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 25;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.iconButton1.Location = new System.Drawing.Point(56, 3);
+            this.iconButton1.Location = new System.Drawing.Point(52, 15);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(33, 32);
             this.iconButton1.TabIndex = 146;
@@ -2842,7 +3010,7 @@ namespace Dark_Age
             this.panel12.Controls.Add(this.label24);
             this.panel12.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel12.ForeColor = System.Drawing.Color.White;
-            this.panel12.Location = new System.Drawing.Point(90, 6);
+            this.panel12.Location = new System.Drawing.Point(98, 20);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(104, 25);
             this.panel12.TabIndex = 14;
@@ -2903,7 +3071,7 @@ namespace Dark_Age
             this.panel11.BackColor = System.Drawing.Color.Lavender;
             this.panel11.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel11.ForeColor = System.Drawing.Color.White;
-            this.panel11.Location = new System.Drawing.Point(622, 39);
+            this.panel11.Location = new System.Drawing.Point(623, 56);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(220, 32);
             this.panel11.TabIndex = 13;
@@ -2913,7 +3081,7 @@ namespace Dark_Age
             this.panel10.BackColor = System.Drawing.Color.PaleGreen;
             this.panel10.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel10.ForeColor = System.Drawing.Color.White;
-            this.panel10.Location = new System.Drawing.Point(90, 40);
+            this.panel10.Location = new System.Drawing.Point(98, 56);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(220, 32);
             this.panel10.TabIndex = 10;
@@ -2979,6 +3147,14 @@ namespace Dark_Age
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            this.panel14.ResumeLayout(false);
+            this.lbl_barra_mana3.ResumeLayout(false);
+            this.lbl_barra_mana3.PerformLayout();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.ResumeLayout(false);
@@ -3156,6 +3332,17 @@ namespace Dark_Age
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button btn_forcasub;
         private System.Windows.Forms.Button btn_forcasum;
+        private System.Windows.Forms.Panel lbl_barra_mana3;
+        private System.Windows.Forms.Label lbl_mana;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.NumericUpDown numericUpDown5;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.Panel pn_adicional;
+        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }
 
