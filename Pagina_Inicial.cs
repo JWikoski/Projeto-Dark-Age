@@ -2,8 +2,10 @@
 using System;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Resources.ResXFileRef;
 
 namespace Dark_Age
 {
@@ -21,6 +23,8 @@ namespace Dark_Age
         public static int mana_maxima;
         public static int adicional_atual;
         public static int adicional_max;
+        public static byte[] imagem_personagem;
+
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -94,7 +98,7 @@ namespace Dark_Age
             NpgsqlCommand comi = new NpgsqlCommand();
             comi.Connection = conn3;
             comi.CommandType = CommandType.Text;
-            comi.CommandText = "select forca, destreza, vigor, carisma, raciocinio, magia, silver, gold, vida_atual, vida_max, sanidade_atual, sanidade_max, mana_atual, adicional_atual, adicional_max from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = @jogador";
+            comi.CommandText = "select forca, destreza, vigor, carisma, raciocinio, magia, silver, gold, vida_atual, vida_max, sanidade_atual, sanidade_max, mana_atual, adicional_atual, adicional_max, imagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = @jogador";
             comi.Parameters.AddWithValue("@jogador", Login.jogador);
             NpgsqlDataReader nds = comi.ExecuteReader();
 
@@ -116,8 +120,7 @@ namespace Dark_Age
                 mana_atual = (int)nds.GetValue(12);
                 mana_maxima = ((int)nds.GetValue(5) * 2);
                 adicional_atual = (int)nds.GetValue(13);
-                adicional_max = (int)nds.GetValue(14);
-              //  mana.Text = "Mana: " + ((int)nds.GetValue(5) * 2).ToString();
+                adicional_max = (int)nds.GetValue(14);                
                 movimento.Text = "Movimento: " + (6 + (int)nds.GetValue(1)).ToString();
 
                 numericUpDown1.Maximum = vida_maxima;
@@ -134,6 +137,13 @@ namespace Dark_Age
                 lbl_sanidade.Text = sanidade_atual + "/" + sanidade_max;
                 lbl_mana.Text = mana_atual + "/" + mana_maxima;
                 lbl_adicional.Text = adicional_atual + "/" + adicional_max;
+
+                object teste = nds.GetValue(15).ToString();
+                if (teste != "")
+                {
+                    imagem_personagem = (byte[])nds.GetValue(15);
+                    Locais.Image = byteArrayToImage(imagem_personagem);
+                }
 
                 panel9.Width = 220;
 
@@ -527,8 +537,46 @@ namespace Dark_Age
 
         private void Locais_Click(object sender, EventArgs e)
         {
-            visualizar_imagem vimg = new visualizar_imagem();
-            vimg.Show();
+            OpenFileDialog dialogo = new OpenFileDialog();
+
+            dialogo.Title = "Procurar arquivos no computador";
+
+            dialogo.InitialDirectory = @"C:\";
+
+            dialogo.Filter = "Todos os arquivos (*.*)|*.*";
+
+
+            DialogResult resposta = dialogo.ShowDialog();
+
+            if (resposta == DialogResult.OK)
+
+            {
+                string caminhoCompleto = dialogo.FileName;
+              //  Locais.Image = Image.FromFile(caminhoCompleto);
+                Locais.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+
+                Image imagem_personagem = Image.FromFile(caminhoCompleto);
+
+                Locais.Image = imagem_personagem;
+
+                byte[] imagembyte_personagem = imageToByteArray(imagem_personagem);
+
+
+                NpgsqlConnection conn = new("Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80");
+                conn.Open();
+                NpgsqlCommand como = new NpgsqlCommand();
+                como.Connection = conn;
+                como.CommandType = CommandType.Text;
+                como.CommandText = $@"update ""Dark_Age_Connection"".""Personagens"" 
+                         set imagem = @imagembyte_personagem
+                       where fk_id_jogador = @jogador";
+                como.Parameters.AddWithValue("@imagembyte_personagem", imagembyte_personagem);
+                como.Parameters.AddWithValue("@jogador", Login.jogador);
+                como.ExecuteNonQuery();
+            }
+
+        //    visualizar_imagem vimg = new visualizar_imagem();
+        //    vimg.Show();
         }
 
         private void button23_Click(object sender, EventArgs e)
@@ -751,6 +799,20 @@ namespace Dark_Age
             numericUpDown5.Maximum = numericUpDown6.Value;
             adicional_atual = Convert.ToInt32(numericUpDown5.Value);
             lbl_adicional.Text = numericUpDown5.Value + "/" + numericUpDown6.Value;
+        }
+
+        public Image byteArrayToImage(byte[] BytepraImagem)
+        {
+            MemoryStream ms = new MemoryStream(BytepraImagem);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+        }
+
+        public byte[] imageToByteArray(System.Drawing.Image imageIn)
+        {
+            MemoryStream ms = new MemoryStream();
+            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+            return ms.ToArray();
         }
     }
 }

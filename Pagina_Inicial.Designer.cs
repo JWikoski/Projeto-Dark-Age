@@ -53,10 +53,10 @@ namespace Dark_Age
             this.label5 = new System.Windows.Forms.Label();
             this.classe_jogador1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.name5 = new System.Windows.Forms.Label();
-            this.name_3 = new System.Windows.Forms.Label();
-            this.name3 = new System.Windows.Forms.Label();
-            this.name2 = new System.Windows.Forms.Label();
+            this.personagem5 = new System.Windows.Forms.Label();
+            this.personagem4 = new System.Windows.Forms.Label();
+            this.personagem3 = new System.Windows.Forms.Label();
+            this.personagem2 = new System.Windows.Forms.Label();
             this.personagem1 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -286,10 +286,10 @@ namespace Dark_Age
             this.painel_jogadores.Controls.Add(this.label5);
             this.painel_jogadores.Controls.Add(this.classe_jogador1);
             this.painel_jogadores.Controls.Add(this.label2);
-            this.painel_jogadores.Controls.Add(this.name5);
-            this.painel_jogadores.Controls.Add(this.name_3);
-            this.painel_jogadores.Controls.Add(this.name3);
-            this.painel_jogadores.Controls.Add(this.name2);
+            this.painel_jogadores.Controls.Add(this.personagem5);
+            this.painel_jogadores.Controls.Add(this.personagem4);
+            this.painel_jogadores.Controls.Add(this.personagem3);
+            this.painel_jogadores.Controls.Add(this.personagem2);
             this.painel_jogadores.Controls.Add(this.personagem1);
             this.painel_jogadores.Controls.Add(this.pictureBox5);
             this.painel_jogadores.Controls.Add(this.pictureBox4);
@@ -602,65 +602,65 @@ namespace Dark_Age
             this.label2.TabIndex = 4;
             this.label2.Text = "Classe:";
             // 
-            // name5
+            // personagem5
             // 
-            this.name5.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.name5.AutoSize = true;
-            this.name5.BackColor = System.Drawing.Color.Transparent;
-            this.name5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.name5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.name5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.name5.Location = new System.Drawing.Point(138, 497);
-            this.name5.Name = "name5";
-            this.name5.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.name5.Size = new System.Drawing.Size(91, 33);
-            this.name5.TabIndex = 8;
-            this.name5.Text = "Name5";
+            this.personagem5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.personagem5.AutoSize = true;
+            this.personagem5.BackColor = System.Drawing.Color.Transparent;
+            this.personagem5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.personagem5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.personagem5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.personagem5.Location = new System.Drawing.Point(138, 497);
+            this.personagem5.Name = "personagem5";
+            this.personagem5.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.personagem5.Size = new System.Drawing.Size(91, 33);
+            this.personagem5.TabIndex = 8;
+            this.personagem5.Text = "Name5";
             // 
-            // name_3
+            // personagem4
             // 
-            this.name_3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.name_3.AutoSize = true;
-            this.name_3.BackColor = System.Drawing.Color.Transparent;
-            this.name_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.name_3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.name_3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.name_3.Location = new System.Drawing.Point(138, 388);
-            this.name_3.Name = "name_3";
-            this.name_3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.name_3.Size = new System.Drawing.Size(91, 33);
-            this.name_3.TabIndex = 7;
-            this.name_3.Text = "Name4";
+            this.personagem4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.personagem4.AutoSize = true;
+            this.personagem4.BackColor = System.Drawing.Color.Transparent;
+            this.personagem4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.personagem4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.personagem4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.personagem4.Location = new System.Drawing.Point(138, 388);
+            this.personagem4.Name = "personagem4";
+            this.personagem4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.personagem4.Size = new System.Drawing.Size(91, 33);
+            this.personagem4.TabIndex = 7;
+            this.personagem4.Text = "Name4";
             // 
-            // name3
+            // personagem3
             // 
-            this.name3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.name3.AutoSize = true;
-            this.name3.BackColor = System.Drawing.Color.Transparent;
-            this.name3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.name3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.name3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.name3.Location = new System.Drawing.Point(138, 283);
-            this.name3.Name = "name3";
-            this.name3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.name3.Size = new System.Drawing.Size(91, 33);
-            this.name3.TabIndex = 6;
-            this.name3.Text = "Name3";
+            this.personagem3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.personagem3.AutoSize = true;
+            this.personagem3.BackColor = System.Drawing.Color.Transparent;
+            this.personagem3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.personagem3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.personagem3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.personagem3.Location = new System.Drawing.Point(138, 283);
+            this.personagem3.Name = "personagem3";
+            this.personagem3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.personagem3.Size = new System.Drawing.Size(91, 33);
+            this.personagem3.TabIndex = 6;
+            this.personagem3.Text = "Name3";
             // 
-            // name2
+            // personagem2
             // 
-            this.name2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.name2.AutoSize = true;
-            this.name2.BackColor = System.Drawing.Color.Transparent;
-            this.name2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.name2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.name2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.name2.Location = new System.Drawing.Point(138, 173);
-            this.name2.Name = "name2";
-            this.name2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.name2.Size = new System.Drawing.Size(91, 33);
-            this.name2.TabIndex = 5;
-            this.name2.Text = "Name2";
+            this.personagem2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.personagem2.AutoSize = true;
+            this.personagem2.BackColor = System.Drawing.Color.Transparent;
+            this.personagem2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.personagem2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.personagem2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.personagem2.Location = new System.Drawing.Point(138, 173);
+            this.personagem2.Name = "personagem2";
+            this.personagem2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.personagem2.Size = new System.Drawing.Size(91, 33);
+            this.personagem2.TabIndex = 5;
+            this.personagem2.Text = "Name2";
             // 
             // personagem1
             // 
@@ -3144,10 +3144,10 @@ namespace Dark_Age
         public System.Windows.Forms.Button btn_open;
         private System.Windows.Forms.Panel painel_jogadores;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label name5;
-        private System.Windows.Forms.Label name_3;
-        private System.Windows.Forms.Label name3;
-        private System.Windows.Forms.Label name2;
+        private System.Windows.Forms.Label personagem5;
+        private System.Windows.Forms.Label personagem4;
+        private System.Windows.Forms.Label personagem3;
+        private System.Windows.Forms.Label personagem2;
         private System.Windows.Forms.Label personagem1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
