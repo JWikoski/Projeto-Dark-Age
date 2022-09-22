@@ -28,38 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Grid_lista_itens = new System.Windows.Forms.DataGridView();
+            this.text_descricao = new System.Windows.Forms.RichTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_lista_itens)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // Grid_lista_itens
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 24);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(674, 610);
-            this.dataGridView1.TabIndex = 0;
+            this.Grid_lista_itens.AllowUserToAddRows = false;
+            this.Grid_lista_itens.AllowUserToDeleteRows = false;
+            this.Grid_lista_itens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grid_lista_itens.Location = new System.Drawing.Point(3, 100);
+            this.Grid_lista_itens.Name = "Grid_lista_itens";
+            this.Grid_lista_itens.ReadOnly = true;
+            this.Grid_lista_itens.RowTemplate.Height = 25;
+            this.Grid_lista_itens.Size = new System.Drawing.Size(519, 536);
+            this.Grid_lista_itens.TabIndex = 0;
+            this.Grid_lista_itens.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_lista_itens_CellClick);
+            // 
+            // text_descricao
+            // 
+            this.text_descricao.Location = new System.Drawing.Point(550, 280);
+            this.text_descricao.Name = "text_descricao";
+            this.text_descricao.Size = new System.Drawing.Size(329, 194);
+            this.text_descricao.TabIndex = 1;
+            this.text_descricao.Text = "";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.Grid_lista_itens);
+            this.panel1.Controls.Add(this.text_descricao);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(901, 636);
+            this.panel1.TabIndex = 2;
             // 
             // Lista_itens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1450, 660);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(923, 660);
+            this.Controls.Add(this.panel1);
             this.Name = "Lista_itens";
             this.Text = "Lista_itens";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Lista_itens_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_lista_itens)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Grid_lista_itens;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricao;
@@ -67,5 +90,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn profissao;
         private System.Windows.Forms.DataGridViewTextBoxColumn dificuldade;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox text_descricao;
+        private System.Windows.Forms.Panel panel1;
     }
 }

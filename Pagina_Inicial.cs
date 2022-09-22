@@ -758,5 +758,11 @@ namespace Dark_Age
             adicional_atual = Convert.ToInt32(numericUpDown5.Value);
             lbl_adicional.Text = numericUpDown5.Value + "/" + numericUpDown6.Value;
         }
+
+        private void botao_itens_Click(object sender, EventArgs e)
+        {
+            Lista_itens lista = new Lista_itens();
+            lista.ShowDialog();
+        }
     }
 }

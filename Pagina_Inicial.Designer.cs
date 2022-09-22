@@ -68,6 +68,7 @@ namespace Dark_Age
             this.ficha_resumida = new System.Windows.Forms.Panel();
             this.Locais = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.botao_itens = new FontAwesome.Sharp.IconButton();
             this.movimento = new FontAwesome.Sharp.IconButton();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
@@ -238,6 +239,7 @@ namespace Dark_Age
             this.panel14.SuspendLayout();
             this.lbl_barra_mana3.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_open
@@ -797,6 +799,7 @@ namespace Dark_Age
             // panel6
             // 
             this.panel6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel6.Controls.Add(this.botao_itens);
             this.panel6.Controls.Add(this.movimento);
             this.panel6.Controls.Add(this.iconPictureBox2);
             this.panel6.Controls.Add(this.iconPictureBox1);
@@ -808,6 +811,27 @@ namespace Dark_Age
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(442, 159);
             this.panel6.TabIndex = 141;
+            this.panel6.Click += new System.EventHandler(this.botao_itens_Click);
+            // 
+            // botao_itens
+            // 
+            this.botao_itens.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.botao_itens.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botao_itens.FlatAppearance.BorderSize = 0;
+            this.botao_itens.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.botao_itens.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botao_itens.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.botao_itens.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.botao_itens.IconChar = FontAwesome.Sharp.IconChar.Tools;
+            this.botao_itens.IconColor = System.Drawing.Color.BlanchedAlmond;
+            this.botao_itens.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.botao_itens.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.botao_itens.Location = new System.Drawing.Point(209, 13);
+            this.botao_itens.Name = "botao_itens";
+            this.botao_itens.Size = new System.Drawing.Size(53, 52);
+            this.botao_itens.TabIndex = 146;
+            this.botao_itens.UseVisualStyleBackColor = true;
+            this.botao_itens.Click += new System.EventHandler(this.botao_itens_Click);
             // 
             // movimento
             // 
@@ -2711,7 +2735,7 @@ namespace Dark_Age
             this.panel9.Controls.Add(this.lbl_vida);
             this.panel9.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel9.ForeColor = System.Drawing.Color.White;
-            this.panel9.Location = new System.Drawing.Point(98, 56);
+            this.panel9.Location = new System.Drawing.Point(0, 0);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(220, 32);
             this.panel9.TabIndex = 9;
@@ -2792,7 +2816,6 @@ namespace Dark_Age
             this.panel4.Controls.Add(this.iconButton1);
             this.panel4.Controls.Add(this.panel12);
             this.panel4.Controls.Add(this.lbl_barra2);
-            this.panel4.Controls.Add(this.panel9);
             this.panel4.Controls.Add(this.numericUpDown2);
             this.panel4.Controls.Add(this.numericUpDown1);
             this.panel4.Controls.Add(this.label12);
@@ -3055,6 +3078,7 @@ namespace Dark_Age
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.PaleGreen;
+            this.panel10.Controls.Add(this.panel9);
             this.panel10.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel10.ForeColor = System.Drawing.Color.White;
             this.panel10.Location = new System.Drawing.Point(98, 56);
@@ -3134,6 +3158,7 @@ namespace Dark_Age
             this.lbl_barra_mana3.PerformLayout();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3319,6 +3344,7 @@ namespace Dark_Age
         private System.Windows.Forms.NumericUpDown numericUpDown6;
         private System.Windows.Forms.Label lbl_adicional;
         private System.Windows.Forms.Panel pn_adicional;
+        private FontAwesome.Sharp.IconButton botao_itens;
     }
 }
 
