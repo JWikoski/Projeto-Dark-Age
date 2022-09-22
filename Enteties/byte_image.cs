@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dark_Age
+namespace Dark_Age.Enteties
 {
     public static class byte_image
     {
@@ -17,7 +17,7 @@ namespace Dark_Age
             return returnImage;
         }
 
-        public static byte[] imageToByteArray(System.Drawing.Image imageIn)
+        public static byte[] imageToByteArray(Image imageIn)
         {
             MemoryStream ms = new MemoryStream();
             imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);

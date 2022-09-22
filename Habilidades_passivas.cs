@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dark_Age.Enteties;
 using Npgsql;
 
 namespace Dark_Age
@@ -19,7 +20,7 @@ namespace Dark_Age
         public Habilidades_passivas()
         {
             InitializeComponent();
-            NpgsqlConnection conn = new NpgsqlConnection("Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80");
+            NpgsqlConnection conn = new NpgsqlConnection(Conexao_BD.Caminho_DB());
             conn.Open();
             NpgsqlCommand comm = new NpgsqlCommand();
             comm.Connection = conn;
@@ -87,7 +88,7 @@ namespace Dark_Age
 
         private void LblFecharLogin_Click(object sender, EventArgs e)
         {
-            NpgsqlConnection conn = new NpgsqlConnection("Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80");
+            NpgsqlConnection conn = new NpgsqlConnection(Conexao_BD.Caminho_DB());
             conn.Open();
             NpgsqlCommand coss = new NpgsqlCommand();
             coss.Connection = conn;
@@ -100,7 +101,7 @@ namespace Dark_Age
 
             conn.Close();
 
-            NpgsqlConnection cont = new NpgsqlConnection("Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80");
+            NpgsqlConnection cont = new NpgsqlConnection(Conexao_BD.Caminho_DB());
             cont.Open();
             NpgsqlCommand cosa = new NpgsqlCommand();
             cosa.Connection = cont;

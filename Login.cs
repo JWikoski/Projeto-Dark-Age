@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dark_Age.Enteties;
 using Npgsql;
 
 namespace Dark_Age
@@ -107,7 +108,7 @@ namespace Dark_Age
                 senha = TbSenha.Text;
 
 
-                NpgsqlConnection conn = new NpgsqlConnection("Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80");
+                NpgsqlConnection conn = new NpgsqlConnection(Conexao_BD.Caminho_DB());
                 conn.Open();
                 NpgsqlCommand comm = new NpgsqlCommand();
                 comm.Connection = conn;

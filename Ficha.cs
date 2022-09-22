@@ -1,4 +1,5 @@
-﻿using Npgsql;
+﻿using Dark_Age.Enteties;
+using Npgsql;
 using System;
 using System.Data;
 using System.Drawing;
@@ -47,7 +48,7 @@ namespace Dark_Age
                 btn_cria_personagem.Text = "Finalizar Edição de Personagem";
 
 
-                NpgsqlConnection conn2 = new NpgsqlConnection("Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80");
+                NpgsqlConnection conn2 = new(Conexao_BD.Caminho_DB());
                 conn2.Open();
                 NpgsqlCommand comt = new NpgsqlCommand();
                 comt.Connection = conn2;
@@ -193,7 +194,7 @@ namespace Dark_Age
 
             if (pers_criado == true)
             {
-                NpgsqlConnection conn = new NpgsqlConnection("Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80");
+                NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
                 conn.Open();
                 NpgsqlCommand comi = new NpgsqlCommand();
                 comi.Connection = conn;
@@ -515,8 +516,9 @@ namespace Dark_Age
 
         private void btn_cria_personagem_Click(object sender, EventArgs e)
         {
-
-            NpgsqlConnection conn = new("Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80");
+            
+            
+            NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
             conn.Open();
             NpgsqlCommand come = new NpgsqlCommand();
             come.Connection = conn;
@@ -1209,7 +1211,7 @@ namespace Dark_Age
 
         public void UpdateImagemBanco(byte[] imagembyte_personagem)
         {
-            NpgsqlConnection conn = new("Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80");
+            NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
             conn.Open();
             NpgsqlCommand como = new NpgsqlCommand();
             como.Connection = conn;
