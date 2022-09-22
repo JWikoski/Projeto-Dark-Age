@@ -23,9 +23,7 @@
 	<Compile Update="Habilidades_passivas.cs">
 		<SubType>Form</SubType>
 	</Compile>
-	  <Compile Update="Ficha.cs">
-		  <SubType>Form</SubType>
-	  </Compile>
+	  <Compile Update="Ficha.cs" />
 	  <Compile Update="Inventario.cs">
 		  <SubType>Form</SubType>
 	  </Compile>
