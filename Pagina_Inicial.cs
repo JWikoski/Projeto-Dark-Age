@@ -716,20 +716,26 @@ namespace Dark_Age
 
         private void numericUpDown3_ValueChanged(object sender, EventArgs e)
         {
-
-            lbl_mana.Text = numericUpDown3.Value + "/" + mana_maxima;
-            decimal porcentagem5 = (((decimal)mana_atual - (decimal)Convert.ToInt32(numericUpDown3.Value)) * 100) / (decimal)mana_maxima;
-            porcentagem5 = ((decimal)porcentagem5 * 220) / 100;
-            lbl_barra_mana3.Width -= Convert.ToInt32(porcentagem5);
-
-            mana_atual = Convert.ToInt32(numericUpDown3.Value);
-            if (numericUpDown3.Value <= 2)
+            if (mana_maxima > 0)
             {
-                lbl_barra_mana3.BackColor = Color.DeepSkyBlue;
 
+                lbl_mana.Text = numericUpDown3.Value + "/" + mana_maxima;
+                decimal porcentagem5 = (((decimal)mana_atual - (decimal)Convert.ToInt32(numericUpDown3.Value)) * 100) / (decimal)mana_maxima;
+                porcentagem5 = ((decimal)porcentagem5 * 220) / 100;
+                lbl_barra_mana3.Width -= Convert.ToInt32(porcentagem5);
+
+                mana_atual = Convert.ToInt32(numericUpDown3.Value);
+                if (numericUpDown3.Value <= 2)
+                {
+                    lbl_barra_mana3.BackColor = Color.DeepSkyBlue;
+
+                } else
+                {
+                    lbl_barra_mana3.BackColor = Color.DodgerBlue;
+                }
             } else
             {
-                lbl_barra_mana3.BackColor = Color.DodgerBlue;
+                lbl_mana.Text = "0/0";
             }
         }
 

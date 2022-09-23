@@ -56,5 +56,11 @@ namespace Dark_Age
             DataGridViewRow row = this.Grid_lista_itens.Rows[e.RowIndex];
             this.text_descricao.Text = row.Cells[5].Value.ToString();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            adicionar_editar_itens adicionar = new adicionar_editar_itens();
+            adicionar.ShowDialog();
+        }
     }
 }
