@@ -97,15 +97,7 @@ namespace Dark_Age
 
         private void button1_Click(object sender, EventArgs e)
         {
-            NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
-            conn.Open();
-            NpgsqlCommand como = new NpgsqlCommand();
-            como.Connection = conn;
-            como.CommandType = CommandType.Text;
-            como.CommandText = $@"";
-            como.Parameters.AddWithValue("@imagembyte_personagem", imagembyte_personagem);
-            como.Parameters.AddWithValue("@jogador", Login.jogador);
-            como.ExecuteNonQuery();
+            
         }
 
         private void combox_profissao_Click(object sender, EventArgs e)

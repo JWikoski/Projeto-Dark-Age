@@ -169,9 +169,9 @@ namespace Dark_Age
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.button1.Image = global::Dark_Age.Properties.Resources.Castlevania;
-            this.button1.Location = new System.Drawing.Point(896, 55);
+            this.button1.Location = new System.Drawing.Point(896, 37);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 325);
+            this.button1.Size = new System.Drawing.Size(154, 453);
             this.button1.TabIndex = 2;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -188,9 +188,9 @@ namespace Dark_Age
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.button2.Image = global::Dark_Age.Properties.Resources.caçadordemonstros;
-            this.button2.Location = new System.Drawing.Point(1056, 95);
+            this.button2.Location = new System.Drawing.Point(1056, 78);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(154, 325);
+            this.button2.Size = new System.Drawing.Size(154, 453);
             this.button2.TabIndex = 3;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -207,9 +207,9 @@ namespace Dark_Age
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.button3.Image = global::Dark_Age.Properties.Resources.forgemaster;
-            this.button3.Location = new System.Drawing.Point(1376, 95);
+            this.button3.Location = new System.Drawing.Point(1376, 78);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(154, 325);
+            this.button3.Size = new System.Drawing.Size(154, 453);
             this.button3.TabIndex = 5;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -226,9 +226,9 @@ namespace Dark_Age
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Image = global::Dark_Age.Properties.Resources.alchemist;
-            this.button4.Location = new System.Drawing.Point(1216, 55);
+            this.button4.Location = new System.Drawing.Point(1216, 37);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(154, 325);
+            this.button4.Size = new System.Drawing.Size(154, 453);
             this.button4.TabIndex = 4;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -245,9 +245,9 @@ namespace Dark_Age
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Image = global::Dark_Age.Properties.Resources.TEMPLARIO;
-            this.button5.Location = new System.Drawing.Point(1536, 55);
+            this.button5.Location = new System.Drawing.Point(1536, 37);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(154, 325);
+            this.button5.Size = new System.Drawing.Size(154, 453);
             this.button5.TabIndex = 6;
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
@@ -262,7 +262,7 @@ namespace Dark_Age
             this.lbl_fechar_personagem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_fechar_personagem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_fechar_personagem.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbl_fechar_personagem.Location = new System.Drawing.Point(1621, 9);
+            this.lbl_fechar_personagem.Location = new System.Drawing.Point(1639, 9);
             this.lbl_fechar_personagem.Name = "lbl_fechar_personagem";
             this.lbl_fechar_personagem.Size = new System.Drawing.Size(69, 21);
             this.lbl_fechar_personagem.TabIndex = 7;
@@ -759,7 +759,7 @@ namespace Dark_Age
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label14.ForeColor = System.Drawing.SystemColors.Control;
-            this.label14.Location = new System.Drawing.Point(950, 392);
+            this.label14.Location = new System.Drawing.Point(951, 503);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(46, 15);
             this.label14.TabIndex = 64;
@@ -773,7 +773,7 @@ namespace Dark_Age
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.SystemColors.Control;
-            this.label15.Location = new System.Drawing.Point(1076, 73);
+            this.label15.Location = new System.Drawing.Point(1076, 52);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(123, 15);
             this.label15.TabIndex = 65;
@@ -800,7 +800,7 @@ namespace Dark_Age
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label17.ForeColor = System.Drawing.SystemColors.Control;
-            this.label17.Location = new System.Drawing.Point(1262, 392);
+            this.label17.Location = new System.Drawing.Point(1260, 503);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(65, 15);
             this.label17.TabIndex = 66;
@@ -814,7 +814,7 @@ namespace Dark_Age
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label18.ForeColor = System.Drawing.SystemColors.Control;
-            this.label18.Location = new System.Drawing.Point(1411, 73);
+            this.label18.Location = new System.Drawing.Point(1411, 52);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(93, 15);
             this.label18.TabIndex = 67;
@@ -828,7 +828,7 @@ namespace Dark_Age
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label19.ForeColor = System.Drawing.SystemColors.Control;
-            this.label19.Location = new System.Drawing.Point(1588, 392);
+            this.label19.Location = new System.Drawing.Point(1585, 503);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(62, 15);
             this.label19.TabIndex = 68;
@@ -1690,7 +1690,7 @@ namespace Dark_Age
             "3",
             "4",
             "5"});
-            this.comboBox1.Location = new System.Drawing.Point(1154, 795);
+            this.comboBox1.Location = new System.Drawing.Point(1154, 780);
             this.comboBox1.MaxDropDownItems = 5;
             this.comboBox1.MaxLength = 1;
             this.comboBox1.Name = "comboBox1";
@@ -1708,7 +1708,7 @@ namespace Dark_Age
             this.label38.BackColor = System.Drawing.Color.Transparent;
             this.label38.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label38.ForeColor = System.Drawing.SystemColors.Control;
-            this.label38.Location = new System.Drawing.Point(1099, 797);
+            this.label38.Location = new System.Drawing.Point(1099, 783);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(49, 21);
             this.label38.TabIndex = 143;
@@ -1718,11 +1718,13 @@ namespace Dark_Age
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Dark_Age.Properties.Resources.Sem_imagem;
-            this.pictureBox1.Location = new System.Drawing.Point(1060, 451);
+            this.pictureBox1.Location = new System.Drawing.Point(1411, 583);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(470, 292);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.Size = new System.Drawing.Size(236, 146);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 144;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -1734,7 +1736,7 @@ namespace Dark_Age
             this.label39.BackColor = System.Drawing.Color.Transparent;
             this.label39.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label39.ForeColor = System.Drawing.SystemColors.Control;
-            this.label39.Location = new System.Drawing.Point(925, 590);
+            this.label39.Location = new System.Drawing.Point(1276, 644);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(125, 15);
             this.label39.TabIndex = 145;

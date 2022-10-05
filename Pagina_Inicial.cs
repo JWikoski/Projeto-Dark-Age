@@ -25,6 +25,7 @@ namespace Dark_Age
         public static int adicional_atual;
         public static int adicional_max;
         public static byte[] imagem_personagem;
+        public static Image imagem_person;
 
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -79,20 +80,146 @@ namespace Dark_Age
 
             conn.Close();
 
-
+            // Info jogador 1
             conn.Open();
             NpgsqlCommand comj = new NpgsqlCommand();
             comj.Connection = conn;
             comj.CommandType = CommandType.Text;
-            comj.CommandText = "select nome_jogador from \"Dark_Age_Connection\".\"Jogadores\" where id_jogador = @jogador";
+            comj.CommandText = "select nome_jogador from \"Dark_Age_Connection\".\"Jogadores\" where id_jogador = 1";
             comj.Parameters.AddWithValue("@jogador", Login.jogador);
-
 
             string ndj = (string)comj.ExecuteScalar();
 
             jogador1.Text = ndj;
+
+
+            NpgsqlCommand comk = new NpgsqlCommand();
+            comk.Connection = conn;
+            comk.CommandType = CommandType.Text;
+            comk.CommandText = "select nome_personagem, classe_personagem, imagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = 1";
+            NpgsqlDataReader ndk = comk.ExecuteReader();
+
+            if (ndk.Read())
+            {
+                personagem1.Text = (string)ndk.GetValue(0);
+                classe_jogador1.Text = (string)ndk.GetValue(1);
+                byte[] byte_image_personagem = (byte[])ndk.GetValue(2);
+                imagem_person = byte_image.byteArrayToImage(byte_image_personagem);
+                pictureBox1.Image = imagem_person;
+                pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            }
+            conn.Close();
             conn.Close();
 
+
+            // Info jogador 2
+
+            conn.Open();
+            comj.CommandText = "select nome_jogador from \"Dark_Age_Connection\".\"Jogadores\" where id_jogador = 2";
+            comj.Parameters.AddWithValue("@jogador", Login.jogador);
+
+            ndj = (string)comj.ExecuteScalar();
+
+            jogador2.Text = ndj;
+
+            comk.CommandType = CommandType.Text;
+            comk.CommandText = "select nome_personagem, classe_personagem, imagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = 2";
+            ndk = comk.ExecuteReader();
+
+            if (ndk.Read())
+            {
+                personagem2.Text = (string)ndk.GetValue(0);
+                classe_jogador1.Text = (string)ndk.GetValue(1);
+                byte[] byte_image_personagem = (byte[])ndk.GetValue(2);
+                imagem_person = byte_image.byteArrayToImage(byte_image_personagem);
+                pictureBox2.Image = imagem_person;
+                pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            }
+            conn.Close();
+
+            conn.Close();
+
+
+            // Info jogador 3
+
+            conn.Open();
+            comj.CommandText = "select nome_jogador from \"Dark_Age_Connection\".\"Jogadores\" where id_jogador = 3";
+            comj.Parameters.AddWithValue("@jogador", Login.jogador);
+
+            ndj = (string)comj.ExecuteScalar();
+
+            jogador3.Text = ndj;
+
+            comk.CommandType = CommandType.Text;
+            comk.CommandText = "select nome_personagem, classe_personagem, imagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = 3";
+            ndk = comk.ExecuteReader();
+
+            if (ndk.Read())
+            {
+                personagem3.Text = (string)ndk.GetValue(0);
+                classe_jogador3.Text = (string)ndk.GetValue(1);
+                byte[] byte_image_personagem = (byte[])ndk.GetValue(2);
+                imagem_person = byte_image.byteArrayToImage(byte_image_personagem);
+                pictureBox3.Image = imagem_person;
+                pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            }
+            conn.Close();
+
+            conn.Close();
+
+
+            // Info jogador 4
+
+            conn.Open();
+            comj.CommandText = "select nome_jogador from \"Dark_Age_Connection\".\"Jogadores\" where id_jogador = 4";
+            comj.Parameters.AddWithValue("@jogador", Login.jogador);
+            ndj = (string)comj.ExecuteScalar();
+
+            jogador4.Text = ndj;
+            comk.CommandText = "select nome_personagem, classe_personagem, imagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = 4";
+            ndk = comk.ExecuteReader();
+
+            if (ndk.Read())
+            {
+                personagem4.Text = (string)ndk.GetValue(0);
+                classe_jogador4.Text = (string)ndk.GetValue(0);
+                byte[] byte_image_personagem = (byte[])ndk.GetValue(2);
+                imagem_person = byte_image.byteArrayToImage(byte_image_personagem);
+                pictureBox4.Image = imagem_person;
+                pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            }
+            conn.Close();
+
+
+            // Info jogador 5
+
+            conn.Open();
+            comj.CommandText = "select nome_jogador from \"Dark_Age_Connection\".\"Jogadores\" where id_jogador = 5";
+            comj.Parameters.AddWithValue("@jogador", Login.jogador);
+
+            ndj = (string)comj.ExecuteScalar();
+
+            jogador5.Text = ndj;
+
+            comk.CommandType = CommandType.Text;
+            comk.CommandText = "select nome_personagem, classe_personagem, imagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = 5";
+            ndk = comk.ExecuteReader();
+
+            if (ndk.Read())
+            {
+                personagem5.Text = (string)ndk.GetValue(0);
+                classe_jogador5.Text = (string)ndk.GetValue(1);
+                byte[] byte_image_personagem = (byte[])ndk.GetValue(2);
+                imagem_person = byte_image.byteArrayToImage(byte_image_personagem);
+                pictureBox5.Image = imagem_person;
+                pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            }
+            conn.Close();
+
+            conn.Close();
+
+
+            //fim jogadores
 
             NpgsqlConnection conn3 = new NpgsqlConnection(Conexao_BD.Caminho_DB());
             conn3.Open();
@@ -126,12 +253,15 @@ namespace Dark_Age
 
                 numericUpDown1.Maximum = vida_maxima;
                 numericUpDown1.Value = vida_atual;
-                numericUpDown2.Maximum = sanidade_max;
                 numericUpDown2.Value = sanidade_atual;
-                numericUpDown3.Maximum = mana_maxima;
                 numericUpDown3.Value = mana_atual;
+
+                numericUpDown2.Maximum = sanidade_max;
+                numericUpDown3.Maximum = mana_maxima;
+
                 numericUpDown5.Value = adicional_atual;
                 numericUpDown6.Value = adicional_max;
+
 
 
                 lbl_vida.Text = vida_atual + "/" + vida_maxima;
@@ -151,10 +281,13 @@ namespace Dark_Age
                 decimal porcentagem4 = (decimal)sanidade_atual / (decimal)sanidade_max;
                 porcentagem4 = porcentagem4 * 220;
                 lbl_barra2.Width = Convert.ToInt32(porcentagem4);
+                if(mana_atual > 0)
+                {
+                    decimal porcentagem5 = (decimal)mana_atual / (decimal)mana_maxima;
+                    porcentagem5 = porcentagem5 * 220;
+                    lbl_barra_mana3.Width = Convert.ToInt32(porcentagem5);
 
-                decimal porcentagem5 = (decimal)mana_atual / (decimal)mana_maxima;
-                porcentagem5 = porcentagem5 * 220;
-                lbl_barra_mana3.Width = Convert.ToInt32(porcentagem5);
+                }
 
             }
 
@@ -316,8 +449,6 @@ namespace Dark_Age
             if (ndp.Read())
             {
                 Ficha.bd_sanidade = (int)ndp.GetValue(0);
-                sanidade_max = Ficha.bd_sanidade;
-                sanidade_atual = Ficha.bd_sanidade;
             }
             ndp.Dispose();
             conn2.Close();
@@ -344,6 +475,7 @@ namespace Dark_Age
 
             Opacity = 0;      //first the opacity is 0
 
+            radioButton2.Checked = true;
             timer1.Interval = 10;  //we'll increase the opacity every 10ms
             timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
             timer1.Start();
@@ -517,7 +649,7 @@ namespace Dark_Age
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            Form1.ActiveForm.BackgroundImage = global::Dark_Age.Properties.Resources.pordosol;
+            Form1.ActiveForm.BackgroundImage = global::Dark_Age.Properties.Resources.festival2;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -769,6 +901,11 @@ namespace Dark_Age
         {
             Lista_itens lista = new Lista_itens();
             lista.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

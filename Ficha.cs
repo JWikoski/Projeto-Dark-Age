@@ -23,7 +23,7 @@ namespace Dark_Age
         public static int bd_ataque2, bd_esquiva2, bd_defesa2, bd_contra_atq2, bd_arematirar2, bd_lancarmagia2, bd_labia2, bd_intimidacao2, bd_esconder2, bd_seduzir2, bd_enganacao2,
             bd_percepcao2, bd_academicos2, bd_ocultismo2, bd_sobrevivencia2, bd_investigacao2, bd_intuicao2, bd_etiqueta2;
         public static int bd_sanidade = 3;
-        public static int bd_sanidade2;
+        public static int bd_sanidade2 = 3;
         public static string classe_escolhida = "";
         public static string nomepersonagem = "";
         public static int idpersonagem = 0;
@@ -536,10 +536,10 @@ namespace Dark_Age
             comz.Connection = conn;
             comz.CommandType = CommandType.Text;
 
-            if (classe_escolhida == "Orador" ^ classe_escolhida == "alquimista")
+            if (classe_escolhida == "Orador" || classe_escolhida == "Alquimista")
             {
                 Form1.vida_maxima = (8 * nivel) + (2 * vigor);
-            } else if (classe_escolhida == "Mestre da Forja" ^ classe_escolhida == "Caçador de Monstros")
+            } else if (classe_escolhida == "Mestre da Forja" || classe_escolhida == "Caçador de Monstros")
             {
                 Form1.vida_maxima = (10 * nivel) + (2 * vigor);
             } else if (classe_escolhida == "Templário")
@@ -560,7 +560,7 @@ namespace Dark_Age
 
                 bd_sanidade += carisma;
 
-                come.CommandText = "insert into \"Dark_Age_Connection\".\"Personagens\" (nome_personagem, classe_personagem, fk_id_jogador, forca, destreza, vigor, carisma, raciocinio, magia, nivel, passivas, ativas, inventario, silver, gold, vida_atual, vida_max, sanidade_atual, sanidade_max) values(@nome, @classe, @idjogador, @forca, @destreza, @vigor, @carisma, @raciocinio, @magia, @nivel, ' ', ' ', ' ', 0, 0, @vida_atual, @vida_max, @sanidade_atual, @sanidade_max)";
+                come.CommandText = "insert into \"Dark_Age_Connection\".\"Personagens\" (nome_personagem, classe_personagem, fk_id_jogador, forca, destreza, vigor, carisma, raciocinio, magia, nivel, passivas, ativas, inventario, silver, gold, vida_atual, vida_max, sanidade_atual, sanidade_max, mana_atual, adicional_atual, adicional_max) values(@nome, @classe, @idjogador, @forca, @destreza, @vigor, @carisma, @raciocinio, @magia, @nivel, ' ', ' ', ' ', 0, 0, @vida_atual, @vida_max, @sanidade_atual, @sanidade_max, @mana_atual, '0', '0')";
                 come.Parameters.AddWithValue("@nome", nomepersonagem);
                 come.Parameters.AddWithValue("@classe", classe_escolhida);
                 come.Parameters.AddWithValue("@idjogador", Login.jogador);
@@ -575,6 +575,7 @@ namespace Dark_Age
                 come.Parameters.AddWithValue("@vida_max", Form1.vida_maxima);
                 come.Parameters.AddWithValue("@sanidade_atual", bd_sanidade);
                 come.Parameters.AddWithValue("@sanidade_max", bd_sanidade);
+                come.Parameters.AddWithValue("@mana_atual", (magia*2));
                 come.ExecuteNonQuery();
 
                 come.CommandText = "update \"Dark_Age_Connection\".\"Jogadores\" set pers_criado = true where id_jogador = @idjogador";
@@ -611,7 +612,15 @@ namespace Dark_Age
                 comr.Parameters.AddWithValue("@sanidade", bd_sanidade2);
                 comr.ExecuteNonQuery();
 
-                bd_ataque += forca;
+                if(forca >= destreza)
+                {
+                    bd_ataque += forca;
+                }
+                else
+                {
+                    bd_ataque += destreza;
+                }
+               
                 bd_esquiva += destreza;
                 bd_defesa += carisma;
                 bd_contra_atq += forca;
@@ -674,7 +683,7 @@ namespace Dark_Age
                 }
                 bd_sanidade = bd_sanidade2 + carisma;
                 idpersonagem = Login.jogador;
-                come.CommandText = "update \"Dark_Age_Connection\".\"Personagens\" set forca = @forca, destreza = @destreza, vigor = @vigor, carisma = @carisma, raciocinio = @raciocinio, magia = @magia, nivel = @nivel, vida_max = @vida_max, sanidade_max = @sanidade_max where fk_id_jogador = @jogador";
+                come.CommandText = "update \"Dark_Age_Connection\".\"Personagens\" set forca = @forca, destreza = @destreza, vigor = @vigor, carisma = @carisma, raciocinio = @raciocinio, magia = @magia, nivel = @nivel, vida_max = @vida_max, sanidade_max = @sanidade_max, mana_atual = @mana_atual where fk_id_jogador = @jogador";
                 come.Parameters.AddWithValue("@forca", forca);
                 come.Parameters.AddWithValue("@destreza", destreza);
                 come.Parameters.AddWithValue("@vigor", vigor);
@@ -685,6 +694,7 @@ namespace Dark_Age
                 come.Parameters.AddWithValue("@jogador", Login.jogador);
                 come.Parameters.AddWithValue("@vida_max", Form1.vida_maxima);
                 come.Parameters.AddWithValue("@sanidade_max", bd_sanidade);
+                come.Parameters.AddWithValue("@mana_atual", Form1.mana_atual);
                 come.ExecuteNonQuery();
 
                 int[] specs2 = new int[] {bd_ataque2, bd_esquiva2, bd_defesa2, bd_contra_atq2, bd_arematirar2, bd_lancarmagia2, bd_labia2, bd_intimidacao2, bd_seduzir2, bd_enganacao2, bd_esconder2
@@ -703,7 +713,15 @@ namespace Dark_Age
                     comh.ExecuteNonQuery();
                 }
 
-                bd_ataque = bd_ataque2 + forca;
+
+                if (forca >= destreza)
+                {
+                    bd_ataque = bd_ataque2 + forca;
+                }
+                else
+                {
+                    bd_ataque+= bd_ataque2 + destreza;
+                }
                 bd_esquiva = bd_esquiva2 + destreza;
                 bd_defesa = bd_defesa2 + vigor;
                 bd_contra_atq = bd_contra_atq2 + forca;
@@ -989,7 +1007,7 @@ namespace Dark_Age
             {
                 string caminhoCompleto = dialogo.FileName;
 
-                pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+                pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 
                 Image imagem_personagem = Image.FromFile(caminhoCompleto);
 

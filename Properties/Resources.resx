@@ -139,9 +139,6 @@
   <data name="forgemaster" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\forgemaster.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="pngegg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngegg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,14 +160,20 @@
   <data name="k7wvl1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\k7wvl1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minimizar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minimizar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="teste" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\teste.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1217172" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1217172.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="esquerda_festival" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\esquerda_festival.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Castlevania" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Castlevania.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="castle2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\castle2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Tz04p - Imgur" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tz04p - Imgur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -186,6 +189,9 @@
   </data>
   <data name="castlvania" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\castlvania.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kisspng-computer-icons-icon-design-cut-copy-and-paste-cl-taobao-clothing-promotional-copy-5b08bad091a8071" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kisspng-computer-icons-icon-design-cut-copy-and-paste-cl-taobao-clothing-promotional-copy-5b08bad091a807.02084430152729876859661.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="162959477396072404" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\162959477396072404.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,26 +211,32 @@
   <data name="kisspng-computer-icons-icon-design-cut-copy-and-paste-cl-taobao-clothing-promotional-copy-5b08bad091a807" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kisspng-computer-icons-icon-design-cut-copy-and-paste-cl-taobao-clothing-promotional-copy-5b08bad091a807.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="image (2backg)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image (2backg).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="festival" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\festival.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fe281c65-2d68-416b-80b4-139ec9364539-image2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fe281c65-2d68-416b-80b4-139ec9364539-image2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="teste" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\teste.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="kisspng-computer-icons-icon-design-cut-copy-and-paste-cl-taobao-clothing-promotional-copy-5b08bad091a8071" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\kisspng-computer-icons-icon-design-cut-copy-and-paste-cl-taobao-clothing-promotional-copy-5b08bad091a807.02084430152729876859661.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Sem imagem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sem imagem.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="war" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\war.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="giphy1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\giphy1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="old-opened-book-empty-pages-260nw-72791266" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\old-opened-book-empty-pages-260nw-72791266.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="por do sol" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\por do sol.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="direita_festival" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\direita_festival.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="maxscreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\maxscreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,11 +247,17 @@
   <data name="png-clipart-triangle-point-green-leaf-up-arrow-file-angle-web-design" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\png-clipart-triangle-point-green-leaf-up-arrow-file-angle-web-design.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minimizar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimizar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="thumb-1920-1159325" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thumb-1920-1159325.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="castle2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\castle2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="giphy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\giphy.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="image (2backg)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image (2backg).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="kisspng-computer-icons-icon-design-cut-copy-and-paste-cl-taobao-clothing-promotional-copy-5b08bad091a8072" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kisspng-computer-icons-icon-design-cut-copy-and-paste-cl-taobao-clothing-promotional-copy-5b08bad091a807.02084430152729876859662.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -250,7 +268,7 @@
   <data name="fe281c65-2d68-416b-80b4-139ec9364539-image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fe281c65-2d68-416b-80b4-139ec9364539-image.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Sem imagem" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sem imagem.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="festival2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\festival2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

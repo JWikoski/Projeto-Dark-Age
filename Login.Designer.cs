@@ -39,7 +39,6 @@ namespace Dark_Age
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.LblFecharLogin = new System.Windows.Forms.Label();
             this.LblSenhaInvalida = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -83,7 +82,8 @@ namespace Dark_Age
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = global::Dark_Age.Properties.Resources.esquerda_festival;
             this.pictureBox1.Location = new System.Drawing.Point(-3, -6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(145, 366);
@@ -95,7 +95,7 @@ namespace Dark_Age
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Image = global::Dark_Age.Properties.Resources.direita_festival;
             this.pictureBox2.Location = new System.Drawing.Point(486, -6);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(144, 366);
@@ -119,13 +119,15 @@ namespace Dark_Age
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(213, 3);
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox3.Image = global::Dark_Age.Properties.Resources.giphy1;
+            this.pictureBox3.Location = new System.Drawing.Point(141, -6);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(267, 137);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.Size = new System.Drawing.Size(349, 182);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // LblFecharLogin
             // 
@@ -155,16 +157,6 @@ namespace Dark_Age
             this.LblSenhaInvalida.Text = "Senha Inválida, tente novamente.";
             this.LblSenhaInvalida.Visible = false;
             // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Transparent;
-            this.panel8.Enabled = false;
-            this.panel8.Location = new System.Drawing.Point(148, 3);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(59, 137);
-            this.panel8.TabIndex = 89;
-            this.panel8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel8_MouseDown);
-            // 
             // Login
             // 
             this.AllowDrop = true;
@@ -172,16 +164,15 @@ namespace Dark_Age
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(623, 357);
-            this.Controls.Add(this.panel8);
             this.Controls.Add(this.LblSenhaInvalida);
             this.Controls.Add(this.LblFecharLogin);
-            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.ShowPass);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.TbSenha);
             this.Controls.Add(this.Lbl_senha);
+            this.Controls.Add(this.pictureBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.Alpha;
@@ -207,6 +198,5 @@ namespace Dark_Age
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label LblFecharLogin;
         private System.Windows.Forms.Label LblSenhaInvalida;
-        private System.Windows.Forms.Panel panel8;
     }
 }

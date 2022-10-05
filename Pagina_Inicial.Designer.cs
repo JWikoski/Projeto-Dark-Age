@@ -33,23 +33,23 @@ namespace Dark_Age
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btn_open = new System.Windows.Forms.Button();
             this.painel_jogadores = new System.Windows.Forms.Panel();
-            this.label20 = new System.Windows.Forms.Label();
+            this.jogador5 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.jogador4 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.jogador3 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.jogador2 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.jogador1 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.classe_jogador5 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.classe_jogador4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.classe_jogador3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.classe_jogador2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.classe_jogador1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -255,7 +255,7 @@ namespace Dark_Age
             this.btn_open.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_open.Location = new System.Drawing.Point(12, 749);
             this.btn_open.Name = "btn_open";
-            this.btn_open.Size = new System.Drawing.Size(187, 67);
+            this.btn_open.Size = new System.Drawing.Size(292, 67);
             this.btn_open.TabIndex = 0;
             this.btn_open.Text = "Criar Personagem";
             this.btn_open.UseVisualStyleBackColor = false;
@@ -268,23 +268,23 @@ namespace Dark_Age
             // 
             this.painel_jogadores.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.painel_jogadores.BackColor = System.Drawing.Color.DimGray;
-            this.painel_jogadores.Controls.Add(this.label20);
+            this.painel_jogadores.Controls.Add(this.jogador5);
             this.painel_jogadores.Controls.Add(this.label21);
-            this.painel_jogadores.Controls.Add(this.label18);
+            this.painel_jogadores.Controls.Add(this.jogador4);
             this.painel_jogadores.Controls.Add(this.label19);
-            this.painel_jogadores.Controls.Add(this.label16);
+            this.painel_jogadores.Controls.Add(this.jogador3);
             this.painel_jogadores.Controls.Add(this.label17);
-            this.painel_jogadores.Controls.Add(this.label14);
+            this.painel_jogadores.Controls.Add(this.jogador2);
             this.painel_jogadores.Controls.Add(this.label15);
             this.painel_jogadores.Controls.Add(this.jogador1);
             this.painel_jogadores.Controls.Add(this.label13);
-            this.painel_jogadores.Controls.Add(this.label10);
+            this.painel_jogadores.Controls.Add(this.classe_jogador5);
             this.painel_jogadores.Controls.Add(this.label11);
-            this.painel_jogadores.Controls.Add(this.label8);
+            this.painel_jogadores.Controls.Add(this.classe_jogador4);
             this.painel_jogadores.Controls.Add(this.label9);
-            this.painel_jogadores.Controls.Add(this.label6);
+            this.painel_jogadores.Controls.Add(this.classe_jogador3);
             this.painel_jogadores.Controls.Add(this.label7);
-            this.painel_jogadores.Controls.Add(this.label4);
+            this.painel_jogadores.Controls.Add(this.classe_jogador2);
             this.painel_jogadores.Controls.Add(this.label5);
             this.painel_jogadores.Controls.Add(this.classe_jogador1);
             this.painel_jogadores.Controls.Add(this.label2);
@@ -303,20 +303,19 @@ namespace Dark_Age
             this.painel_jogadores.Size = new System.Drawing.Size(438, 639);
             this.painel_jogadores.TabIndex = 1;
             // 
-            // label20
+            // jogador5
             // 
-            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label20.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label20.Location = new System.Drawing.Point(195, 563);
-            this.label20.Name = "label20";
-            this.label20.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.label20.Size = new System.Drawing.Size(13, 14);
-            this.label20.TabIndex = 27;
-            this.label20.Text = "5";
+            this.jogador5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.jogador5.AutoSize = true;
+            this.jogador5.BackColor = System.Drawing.Color.Transparent;
+            this.jogador5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.jogador5.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.jogador5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.jogador5.Location = new System.Drawing.Point(247, 569);
+            this.jogador5.Name = "jogador5";
+            this.jogador5.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.jogador5.Size = new System.Drawing.Size(0, 14);
+            this.jogador5.TabIndex = 27;
             // 
             // label21
             // 
@@ -326,27 +325,26 @@ namespace Dark_Age
             this.label21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label21.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label21.Location = new System.Drawing.Point(145, 563);
+            this.label21.Location = new System.Drawing.Point(197, 569);
             this.label21.Name = "label21";
             this.label21.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label21.Size = new System.Drawing.Size(52, 14);
             this.label21.TabIndex = 26;
             this.label21.Text = "Jogador:";
             // 
-            // label18
+            // jogador4
             // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label18.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label18.Location = new System.Drawing.Point(195, 454);
-            this.label18.Name = "label18";
-            this.label18.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.label18.Size = new System.Drawing.Size(13, 14);
-            this.label18.TabIndex = 25;
-            this.label18.Text = "4";
+            this.jogador4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.jogador4.AutoSize = true;
+            this.jogador4.BackColor = System.Drawing.Color.Transparent;
+            this.jogador4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.jogador4.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.jogador4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.jogador4.Location = new System.Drawing.Point(247, 460);
+            this.jogador4.Name = "jogador4";
+            this.jogador4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.jogador4.Size = new System.Drawing.Size(0, 14);
+            this.jogador4.TabIndex = 25;
             // 
             // label19
             // 
@@ -356,27 +354,26 @@ namespace Dark_Age
             this.label19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label19.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label19.Location = new System.Drawing.Point(145, 454);
+            this.label19.Location = new System.Drawing.Point(197, 460);
             this.label19.Name = "label19";
             this.label19.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label19.Size = new System.Drawing.Size(52, 14);
             this.label19.TabIndex = 24;
             this.label19.Text = "Jogador:";
             // 
-            // label16
+            // jogador3
             // 
-            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label16.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label16.Location = new System.Drawing.Point(195, 349);
-            this.label16.Name = "label16";
-            this.label16.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.label16.Size = new System.Drawing.Size(31, 14);
-            this.label16.TabIndex = 23;
-            this.label16.Text = "Juan";
+            this.jogador3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.jogador3.AutoSize = true;
+            this.jogador3.BackColor = System.Drawing.Color.Transparent;
+            this.jogador3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.jogador3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.jogador3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.jogador3.Location = new System.Drawing.Point(247, 355);
+            this.jogador3.Name = "jogador3";
+            this.jogador3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.jogador3.Size = new System.Drawing.Size(0, 14);
+            this.jogador3.TabIndex = 23;
             // 
             // label17
             // 
@@ -386,27 +383,26 @@ namespace Dark_Age
             this.label17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label17.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label17.Location = new System.Drawing.Point(145, 349);
+            this.label17.Location = new System.Drawing.Point(197, 355);
             this.label17.Name = "label17";
             this.label17.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label17.Size = new System.Drawing.Size(52, 14);
             this.label17.TabIndex = 22;
             this.label17.Text = "Jogador:";
             // 
-            // label14
+            // jogador2
             // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label14.Location = new System.Drawing.Point(195, 239);
-            this.label14.Name = "label14";
-            this.label14.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.label14.Size = new System.Drawing.Size(34, 14);
-            this.label14.TabIndex = 21;
-            this.label14.Text = "Surdi";
+            this.jogador2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.jogador2.AutoSize = true;
+            this.jogador2.BackColor = System.Drawing.Color.Transparent;
+            this.jogador2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.jogador2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.jogador2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.jogador2.Location = new System.Drawing.Point(247, 245);
+            this.jogador2.Name = "jogador2";
+            this.jogador2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.jogador2.Size = new System.Drawing.Size(0, 14);
+            this.jogador2.TabIndex = 21;
             // 
             // label15
             // 
@@ -416,7 +412,7 @@ namespace Dark_Age
             this.label15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label15.Location = new System.Drawing.Point(145, 239);
+            this.label15.Location = new System.Drawing.Point(197, 245);
             this.label15.Name = "label15";
             this.label15.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label15.Size = new System.Drawing.Size(52, 14);
@@ -431,12 +427,11 @@ namespace Dark_Age
             this.jogador1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.jogador1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.jogador1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.jogador1.Location = new System.Drawing.Point(195, 133);
+            this.jogador1.Location = new System.Drawing.Point(247, 139);
             this.jogador1.Name = "jogador1";
             this.jogador1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.jogador1.Size = new System.Drawing.Size(45, 14);
+            this.jogador1.Size = new System.Drawing.Size(0, 14);
             this.jogador1.TabIndex = 19;
-            this.jogador1.Text = "Alemão";
             // 
             // label13
             // 
@@ -446,27 +441,26 @@ namespace Dark_Age
             this.label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label13.Location = new System.Drawing.Point(145, 133);
+            this.label13.Location = new System.Drawing.Point(197, 139);
             this.label13.Name = "label13";
             this.label13.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label13.Size = new System.Drawing.Size(52, 14);
             this.label13.TabIndex = 18;
             this.label13.Text = "Jogador:";
             // 
-            // label10
+            // classe_jogador5
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label10.Location = new System.Drawing.Point(190, 539);
-            this.label10.Name = "label10";
-            this.label10.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.label10.Size = new System.Drawing.Size(53, 20);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Orador";
+            this.classe_jogador5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.classe_jogador5.AutoSize = true;
+            this.classe_jogador5.BackColor = System.Drawing.Color.Transparent;
+            this.classe_jogador5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.classe_jogador5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.classe_jogador5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.classe_jogador5.Location = new System.Drawing.Point(242, 545);
+            this.classe_jogador5.Name = "classe_jogador5";
+            this.classe_jogador5.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.classe_jogador5.Size = new System.Drawing.Size(0, 20);
+            this.classe_jogador5.TabIndex = 17;
             // 
             // label11
             // 
@@ -476,27 +470,26 @@ namespace Dark_Age
             this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label11.Location = new System.Drawing.Point(143, 539);
+            this.label11.Location = new System.Drawing.Point(195, 545);
             this.label11.Name = "label11";
             this.label11.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label11.Size = new System.Drawing.Size(50, 20);
             this.label11.TabIndex = 16;
             this.label11.Text = "Classe:";
             // 
-            // label8
+            // classe_jogador4
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label8.Location = new System.Drawing.Point(190, 430);
-            this.label8.Name = "label8";
-            this.label8.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.label8.Size = new System.Drawing.Size(53, 20);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Orador";
+            this.classe_jogador4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.classe_jogador4.AutoSize = true;
+            this.classe_jogador4.BackColor = System.Drawing.Color.Transparent;
+            this.classe_jogador4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.classe_jogador4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.classe_jogador4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.classe_jogador4.Location = new System.Drawing.Point(242, 436);
+            this.classe_jogador4.Name = "classe_jogador4";
+            this.classe_jogador4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.classe_jogador4.Size = new System.Drawing.Size(0, 20);
+            this.classe_jogador4.TabIndex = 15;
             // 
             // label9
             // 
@@ -506,27 +499,26 @@ namespace Dark_Age
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label9.Location = new System.Drawing.Point(143, 430);
+            this.label9.Location = new System.Drawing.Point(195, 436);
             this.label9.Name = "label9";
             this.label9.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label9.Size = new System.Drawing.Size(50, 20);
             this.label9.TabIndex = 14;
             this.label9.Text = "Classe:";
             // 
-            // label6
+            // classe_jogador3
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(190, 325);
-            this.label6.Name = "label6";
-            this.label6.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.label6.Size = new System.Drawing.Size(68, 20);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Templário";
+            this.classe_jogador3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.classe_jogador3.AutoSize = true;
+            this.classe_jogador3.BackColor = System.Drawing.Color.Transparent;
+            this.classe_jogador3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.classe_jogador3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.classe_jogador3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.classe_jogador3.Location = new System.Drawing.Point(242, 331);
+            this.classe_jogador3.Name = "classe_jogador3";
+            this.classe_jogador3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.classe_jogador3.Size = new System.Drawing.Size(0, 20);
+            this.classe_jogador3.TabIndex = 13;
             // 
             // label7
             // 
@@ -536,27 +528,26 @@ namespace Dark_Age
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(143, 325);
+            this.label7.Location = new System.Drawing.Point(195, 331);
             this.label7.Name = "label7";
             this.label7.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label7.Size = new System.Drawing.Size(50, 20);
             this.label7.TabIndex = 12;
             this.label7.Text = "Classe:";
             // 
-            // label4
+            // classe_jogador2
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(190, 215);
-            this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.label4.Size = new System.Drawing.Size(105, 20);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Mestre da Forja";
+            this.classe_jogador2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.classe_jogador2.AutoSize = true;
+            this.classe_jogador2.BackColor = System.Drawing.Color.Transparent;
+            this.classe_jogador2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.classe_jogador2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.classe_jogador2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.classe_jogador2.Location = new System.Drawing.Point(242, 221);
+            this.classe_jogador2.Name = "classe_jogador2";
+            this.classe_jogador2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.classe_jogador2.Size = new System.Drawing.Size(0, 20);
+            this.classe_jogador2.TabIndex = 11;
             // 
             // label5
             // 
@@ -566,7 +557,7 @@ namespace Dark_Age
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(143, 215);
+            this.label5.Location = new System.Drawing.Point(195, 221);
             this.label5.Name = "label5";
             this.label5.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label5.Size = new System.Drawing.Size(50, 20);
@@ -581,12 +572,11 @@ namespace Dark_Age
             this.classe_jogador1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.classe_jogador1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.classe_jogador1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.classe_jogador1.Location = new System.Drawing.Point(190, 108);
+            this.classe_jogador1.Location = new System.Drawing.Point(242, 114);
             this.classe_jogador1.Name = "classe_jogador1";
             this.classe_jogador1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.classe_jogador1.Size = new System.Drawing.Size(73, 20);
+            this.classe_jogador1.Size = new System.Drawing.Size(0, 20);
             this.classe_jogador1.TabIndex = 9;
-            this.classe_jogador1.Text = "Alquimista";
             this.classe_jogador1.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
@@ -597,7 +587,7 @@ namespace Dark_Age
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(143, 108);
+            this.label2.Location = new System.Drawing.Point(195, 114);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label2.Size = new System.Drawing.Size(50, 20);
@@ -612,7 +602,7 @@ namespace Dark_Age
             this.personagem5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.personagem5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.personagem5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.personagem5.Location = new System.Drawing.Point(138, 497);
+            this.personagem5.Location = new System.Drawing.Point(190, 503);
             this.personagem5.Name = "personagem5";
             this.personagem5.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.personagem5.Size = new System.Drawing.Size(91, 33);
@@ -627,7 +617,7 @@ namespace Dark_Age
             this.personagem4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.personagem4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.personagem4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.personagem4.Location = new System.Drawing.Point(138, 388);
+            this.personagem4.Location = new System.Drawing.Point(190, 394);
             this.personagem4.Name = "personagem4";
             this.personagem4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.personagem4.Size = new System.Drawing.Size(91, 33);
@@ -642,7 +632,7 @@ namespace Dark_Age
             this.personagem3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.personagem3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.personagem3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.personagem3.Location = new System.Drawing.Point(138, 283);
+            this.personagem3.Location = new System.Drawing.Point(190, 289);
             this.personagem3.Name = "personagem3";
             this.personagem3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.personagem3.Size = new System.Drawing.Size(91, 33);
@@ -657,7 +647,7 @@ namespace Dark_Age
             this.personagem2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.personagem2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.personagem2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.personagem2.Location = new System.Drawing.Point(138, 173);
+            this.personagem2.Location = new System.Drawing.Point(190, 179);
             this.personagem2.Name = "personagem2";
             this.personagem2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.personagem2.Size = new System.Drawing.Size(91, 33);
@@ -672,7 +662,7 @@ namespace Dark_Age
             this.personagem1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.personagem1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.personagem1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.personagem1.Location = new System.Drawing.Point(138, 67);
+            this.personagem1.Location = new System.Drawing.Point(190, 73);
             this.personagem1.Name = "personagem1";
             this.personagem1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.personagem1.Size = new System.Drawing.Size(91, 33);
@@ -682,59 +672,62 @@ namespace Dark_Age
             // pictureBox5
             // 
             this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox5.BackgroundImage = global::Dark_Age.Properties.Resources.alchemist;
-            this.pictureBox5.Location = new System.Drawing.Point(33, 497);
+            this.pictureBox5.BackgroundImage = global::Dark_Age.Properties.Resources._162959477396072404;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox5.Location = new System.Drawing.Point(50, 503);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(84, 80);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.Size = new System.Drawing.Size(128, 80);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 4;
             this.pictureBox5.TabStop = false;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox4.BackgroundImage = global::Dark_Age.Properties.Resources.caçadordemonstros;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox4.Location = new System.Drawing.Point(33, 388);
+            this.pictureBox4.BackgroundImage = global::Dark_Age.Properties.Resources._162959477396072404;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox4.Location = new System.Drawing.Point(48, 394);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(84, 80);
+            this.pictureBox4.Size = new System.Drawing.Size(130, 80);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox3.BackgroundImage = global::Dark_Age.Properties.Resources.TEMPLARIO;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox3.Location = new System.Drawing.Point(33, 283);
+            this.pictureBox3.BackgroundImage = global::Dark_Age.Properties.Resources._162959477396072404;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(48, 289);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(84, 80);
+            this.pictureBox3.Size = new System.Drawing.Size(130, 80);
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox2.BackgroundImage = global::Dark_Age.Properties.Resources.forgemaster;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox2.Location = new System.Drawing.Point(33, 173);
+            this.pictureBox2.BackgroundImage = global::Dark_Age.Properties.Resources._162959477396072404;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(48, 179);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(84, 80);
+            this.pictureBox2.Size = new System.Drawing.Size(128, 80);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox1.BackgroundImage = global::Dark_Age.Properties.Resources.alchemist;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.BackgroundImage = global::Dark_Age.Properties.Resources._162959477396072404;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(33, 67);
+            this.pictureBox1.Location = new System.Drawing.Point(48, 73);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(84, 80);
+            this.pictureBox1.Size = new System.Drawing.Size(128, 80);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.WaitOnLoad = true;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
@@ -811,12 +804,12 @@ namespace Dark_Age
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(442, 159);
             this.panel6.TabIndex = 141;
-            this.panel6.Click += new System.EventHandler(this.botao_itens_Click);
             // 
             // botao_itens
             // 
             this.botao_itens.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.botao_itens.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.botao_itens.Enabled = false;
             this.botao_itens.FlatAppearance.BorderSize = 0;
             this.botao_itens.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.botao_itens.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -2569,9 +2562,9 @@ namespace Dark_Age
             this.radioButton2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.radioButton2.Location = new System.Drawing.Point(373, 10);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(60, 19);
+            this.radioButton2.Size = new System.Drawing.Size(67, 19);
             this.radioButton2.TabIndex = 8;
-            this.radioButton2.Text = "Sunset";
+            this.radioButton2.Text = "Especial";
             this.radioButton2.UseVisualStyleBackColor = false;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
@@ -2905,12 +2898,15 @@ namespace Dark_Age
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.IconSize = 25;
             this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.iconButton2.Location = new System.Drawing.Point(1206, 14);
+            this.iconButton2.Location = new System.Drawing.Point(1212, 14);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(33, 32);
             this.iconButton2.TabIndex = 155;
             this.iconButton2.UseVisualStyleBackColor = true;
             this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            this.iconButton2.MouseEnter += new System.EventHandler(this.btn_change_MouseEnter);
+            this.iconButton2.MouseLeave += new System.EventHandler(this.btn_change_MouseLeave);
+            this.iconButton2.MouseHover += new System.EventHandler(this.btn_change_MouseHover);
             // 
             // numericUpDown3
             // 
@@ -3181,23 +3177,23 @@ namespace Dark_Age
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label classe_jogador1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label jogador5;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label jogador4;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label jogador3;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label jogador2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label jogador1;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label classe_jogador5;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label classe_jogador4;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label classe_jogador3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label classe_jogador2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label bemvindo;
         private System.Windows.Forms.Panel ficha_resumida;
