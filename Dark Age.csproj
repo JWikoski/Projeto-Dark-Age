@@ -10,32 +10,20 @@
   <ItemGroup>
     <PackageReference Include="Control.Draggable" Version="1.0.5049.269" />
     <PackageReference Include="FontAwesome" Version="4.7.0" />
-    <PackageReference Include="FontAwesome.Sharp" Version="5.15.3" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
-    <PackageReference Include="Npgsql" Version="6.0.0-preview7" />
+    <PackageReference Include="FontAwesome.Sharp" Version="6.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
+    <PackageReference Include="Npgsql" Version="6.0.7" />
     <PackageReference Include="StackBlur" Version="1.1.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Habilidades_ativas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-	<Compile Update="Habilidades_passivas.cs">
-		<SubType>Form</SubType>
-	</Compile>
+    <Compile Update="Habilidades_ativas.cs" />
+	<Compile Update="Habilidades_passivas.cs" />
 	  <Compile Update="Ficha.cs" />
-	  <Compile Update="Inventario.cs">
-		  <SubType>Form</SubType>
-	  </Compile>
-	  <Compile Update="Login.cs">
-		  <SubType>Form</SubType>
-	  </Compile>
-	  <Compile Update="Pagina_inicial.cs">
-		  <SubType>Form</SubType>
-	  </Compile>
-	  <Compile Update="visualizar_imagem.cs">
-		  <SubType>Form</SubType>
-	  </Compile>
+	  <Compile Update="Inventario.cs" />
+	  <Compile Update="Login.cs" />
+	  <Compile Update="Pagina_inicial.cs" />
+	  <Compile Update="visualizar_imagem.cs" />
 	  
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>

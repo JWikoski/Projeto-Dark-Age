@@ -35,7 +35,7 @@ namespace Dark_Age
         public Form1()
         {
             InitializeComponent();
-            label1.BackColor = Color.FromArgb(15, 39, 45);
+            label1.BackColor = Color.FromArgb(150, Color.Black);
             painel_jogadores.BackColor = Color.FromArgb(150, Color.Black);
             ficha_resumida.BackColor = Color.FromArgb(0, Color.Black);
             panel1.BackColor = Color.Transparent;
@@ -246,6 +246,16 @@ namespace Dark_Age
                 sanidade_atual = (int)nds.GetValue(10);
                 sanidade_max = (int)nds.GetValue(11);
                 mana_atual = (int)nds.GetValue(12);
+
+                if(mana_atual <= 0)
+                {
+                    label30.Visible = false;
+                    lbl_mana.Visible = false;
+                    lbl_barra_mana3.Visible = false;
+                    numericUpDown3.Visible = false;
+                    panel14.Visible = false;
+                }
+
                 mana_maxima = ((int)nds.GetValue(5) * 2);
                 adicional_atual = (int)nds.GetValue(13);
                 adicional_max = (int)nds.GetValue(14);                
@@ -472,10 +482,9 @@ namespace Dark_Age
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-
             Opacity = 0;      //first the opacity is 0
 
-            radioButton2.Checked = true;
+            radioButton5.Checked = true;
             timer1.Interval = 10;  //we'll increase the opacity every 10ms
             timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
             timer1.Start();
@@ -630,7 +639,6 @@ namespace Dark_Age
                 if (mudaimagem.Text == "lenore")
                 {
                     Locais.BackgroundImage = global::Dark_Age.Properties.Resources.lenore;
-
                 }
                 e.Handled = true;
                 e.SuppressKeyPress = true;
@@ -904,6 +912,11 @@ namespace Dark_Age
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
         {
 
         }
