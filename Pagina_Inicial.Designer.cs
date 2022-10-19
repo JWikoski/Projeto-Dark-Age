@@ -251,7 +251,7 @@ namespace Dark_Age
             this.btn_open.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_open.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_open.ForeColor = System.Drawing.Color.Silver;
-            this.btn_open.Image = global::Dark_Age.Properties.Resources.image__1_;
+            this.btn_open.Image = global::Dark_Age.Properties.Resources.image__2backg_;
             this.btn_open.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_open.Location = new System.Drawing.Point(12, 749);
             this.btn_open.Name = "btn_open";
@@ -721,7 +721,7 @@ namespace Dark_Age
             this.pictureBox1.BackgroundImage = global::Dark_Age.Properties.Resources._162959477396072404;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(48, 73);
+            this.pictureBox1.Location = new System.Drawing.Point(50, 73);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(128, 80);
             this.pictureBox1.TabIndex = 0;
@@ -809,7 +809,6 @@ namespace Dark_Age
             // 
             this.botao_itens.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.botao_itens.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.botao_itens.Enabled = false;
             this.botao_itens.FlatAppearance.BorderSize = 0;
             this.botao_itens.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.botao_itens.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

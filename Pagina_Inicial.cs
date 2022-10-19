@@ -649,7 +649,7 @@ namespace Dark_Age
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            Form1.ActiveForm.BackgroundImage = global::Dark_Age.Properties.Resources.festival2;
+      //      Form1.ActiveForm.BackgroundImage = global::Dark_Age.Properties.Resources.festival2;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)

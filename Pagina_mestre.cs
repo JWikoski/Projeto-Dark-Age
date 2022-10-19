@@ -16,5 +16,10 @@ namespace Dark_Age
         {
             InitializeComponent();
         }
+
+        private void Pagina_mestre_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

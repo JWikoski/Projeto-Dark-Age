@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_finalizar = new System.Windows.Forms.Button();
             this.text_nome = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.combox_tipo = new System.Windows.Forms.ComboBox();
@@ -41,15 +41,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // btn_finalizar
             // 
-            this.button1.Location = new System.Drawing.Point(244, 485);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 29);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_finalizar.Location = new System.Drawing.Point(244, 485);
+            this.btn_finalizar.Name = "btn_finalizar";
+            this.btn_finalizar.Size = new System.Drawing.Size(112, 29);
+            this.btn_finalizar.TabIndex = 0;
+            this.btn_finalizar.Text = "Finalizar";
+            this.btn_finalizar.UseVisualStyleBackColor = true;
+            this.btn_finalizar.Click += new System.EventHandler(this.btn_finalizar_Click);
             // 
             // text_nome
             // 
@@ -155,7 +155,7 @@
             this.Controls.Add(this.combox_tipo);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.text_nome);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_finalizar);
             this.Name = "adicionar_editar_itens";
             this.Text = "adicionar_editar_itens";
             this.Load += new System.EventHandler(this.adicionar_editar_itens_Load);
@@ -166,7 +166,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_finalizar;
         private System.Windows.Forms.TextBox text_nome;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.ComboBox combox_tipo;

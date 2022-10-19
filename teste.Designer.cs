@@ -1,6 +1,6 @@
 ﻿namespace Dark_Age
 {
-    partial class Pagina_mestre
+    partial class teste
     {
         /// <summary>
         /// Required designer variable.
@@ -28,23 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label_com_image1 = new Dark_Age.Componente.label_com_image();
             this.SuspendLayout();
-            
             // 
-            // Pagina_mestre
+            // label_com_image1
+            // 
+            this.label_com_image1.Location = new System.Drawing.Point(12, 12);
+            this.label_com_image1.Name = "label_com_image1";
+            this.label_com_image1.Size = new System.Drawing.Size(424, 114);
+            this.label_com_image1.TabIndex = 0;
+            // 
+            // teste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Dark_Age.Properties.Resources.image;
-            this.ClientSize = new System.Drawing.Size(1568, 822);
-            this.Name = "Pagina_mestre";
-            this.Text = "Pagina_mestre";
-            this.Load += new System.EventHandler(this.Pagina_mestre_Load);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label_com_image1);
+            this.Name = "teste";
+            this.Text = "teste";
+            this.Load += new System.EventHandler(this.teste_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private Componente.label_com_image label_com_image1;
     }
 }
