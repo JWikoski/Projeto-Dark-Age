@@ -23,7 +23,7 @@ namespace Dark_Age
 
         private void teste_Load(object sender, EventArgs e)
         {
-            label_com_image1.receber_valores(nome_c, nome_p, nome_u);
+           // label_com_image1.receber_valores(nome_c, nome_p, nome_u);
         }
     }
 }
