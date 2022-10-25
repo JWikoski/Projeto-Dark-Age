@@ -155,7 +155,8 @@ namespace Dark_Age
                 como.ExecuteNonQuery();
                 conn.Close();
             }
-            Lista_itens.carregar_data_grid();
+            Lista_itens lista_atualiza = new Lista_itens();
+            lista_atualiza.carregar_data_grid();
             this.Close();
         }
     }

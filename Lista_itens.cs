@@ -59,7 +59,7 @@ namespace Dark_Age
             adicionar.ShowDialog();
         }
 
-        public static void carregar_data_grid()
+        public void carregar_data_grid()
         {
             try
             {                

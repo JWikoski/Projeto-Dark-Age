@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Dark_Age
+namespace Dark_Age.Componente
 {
     class Adicionar_habilidade
     {
-       
+
 
         public Label gerarTitulo(int num_hab, string titulo)
         {

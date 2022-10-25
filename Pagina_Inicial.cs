@@ -1,12 +1,12 @@
-﻿using Dark_Age.Enteties;
+﻿using Dark_Age.Componente;
+using Dark_Age.Enteties;
 using Npgsql;
 using System;
 using System.Data;
 using System.Drawing;
-using System.IO;
+using System.Drawing.Printing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Resources.ResXFileRef;
 
 namespace Dark_Age
 {
@@ -59,7 +59,7 @@ namespace Dark_Age
 
 
 
-
+/*
 
             NpgsqlConnection conn = new NpgsqlConnection(Conexao_BD.Caminho_DB());
             conn.Open();
@@ -216,7 +216,7 @@ namespace Dark_Age
             }
             conn.Close();
 
-            conn.Close();
+            conn.Close();*/
 
 
             //fim jogadores
@@ -247,7 +247,7 @@ namespace Dark_Age
                 sanidade_max = (int)nds.GetValue(11);
                 mana_atual = (int)nds.GetValue(12);
 
-                if(mana_atual <= 0)
+                if (mana_atual <= 0)
                 {
                     label30.Visible = false;
                     lbl_mana.Visible = false;
@@ -258,7 +258,7 @@ namespace Dark_Age
 
                 mana_maxima = ((int)nds.GetValue(5) * 2);
                 adicional_atual = (int)nds.GetValue(13);
-                adicional_max = (int)nds.GetValue(14);                
+                adicional_max = (int)nds.GetValue(14);
                 movimento.Text = "Movimento: " + (6 + (int)nds.GetValue(1)).ToString();
 
                 numericUpDown1.Maximum = vida_maxima;
@@ -279,7 +279,7 @@ namespace Dark_Age
                 lbl_mana.Text = mana_atual + "/" + mana_maxima;
                 lbl_adicional.Text = adicional_atual + "/" + adicional_max;
 
-                
+
 
                 panel9.Width = 220;
 
@@ -291,7 +291,7 @@ namespace Dark_Age
                 decimal porcentagem4 = (decimal)sanidade_atual / (decimal)sanidade_max;
                 porcentagem4 = porcentagem4 * 220;
                 lbl_barra2.Width = Convert.ToInt32(porcentagem4);
-                if(mana_atual > 0)
+                if (mana_atual > 0)
                 {
                     decimal porcentagem5 = (decimal)mana_atual / (decimal)mana_maxima;
                     porcentagem5 = porcentagem5 * 220;
@@ -488,6 +488,8 @@ namespace Dark_Age
             timer1.Interval = 10;  //we'll increase the opacity every 10ms
             timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
             timer1.Start();
+
+            Lista_de_personagens();
         }
         void fadeIn(object sender, EventArgs e)
         {
@@ -657,7 +659,7 @@ namespace Dark_Age
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-      //      Form1.ActiveForm.BackgroundImage = global::Dark_Age.Properties.Resources.festival2;
+            //      Form1.ActiveForm.BackgroundImage = global::Dark_Age.Properties.Resources.festival2;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -673,8 +675,8 @@ namespace Dark_Age
 
         private void Locais_Click(object sender, EventArgs e)
         {
-           visualizar_imagem vimg = new visualizar_imagem();
-           vimg.Show();
+            visualizar_imagem vimg = new visualizar_imagem();
+            vimg.Show();
         }
 
         private void button23_Click(object sender, EventArgs e)
@@ -919,6 +921,74 @@ namespace Dark_Age
         private void pictureBox6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Lista_itens teste = new Lista_itens();
+            teste.ShowDialog();
+        }
+
+        public void Lista_de_personagens()
+        {
+            string nome_c;
+            string nome_p;
+            string nome_u;
+            Image image_p;
+            int distancia = 0;
+            try
+            {
+
+                NpgsqlConnection conn = new NpgsqlConnection(Conexao_BD.Caminho_DB());
+                conn.Open();
+                NpgsqlCommand comm = new NpgsqlCommand();
+                comm.Connection = conn;
+                comm.CommandType = CommandType.Text;
+                comm.CommandText = @$"select nome_personagem 
+                         , classe_personagem
+                         , nome_jogador
+                         , imagem 
+                        from ""Dark_Age_Connection"".""Personagens""
+                        join ""Dark_Age_Connection"".""Jogadores"" ON ""Personagens"".fk_id_jogador = ""Jogadores"".id_jogador ";
+                NpgsqlDataReader ndv = comm.ExecuteReader();
+
+                while (ndv.Read())
+                {
+                    label_com_image personagens = new label_com_image();
+                    nome_p = ndv.GetValue(0).ToString();
+                    nome_c = ("Classe: " + ndv.GetValue(1).ToString());
+                    nome_u = ("Usuario: " + ndv.GetValue(2).ToString());
+                    byte[] imagem_byte = (byte[])ndv.GetValue(3);
+                    image_p = byte_image.byteArrayToImage(imagem_byte);                    
+
+                    personagens.receber_valores(nome_p, nome_c, nome_u, image_p);
+                    personagens.Dock = DockStyle.None;                                      
+                    personagens.Left = 40;
+
+                    Panel pnlDefault = new Panel();
+                    pnlDefault.BackColor = Color.Transparent;
+                    pnlDefault.Dock = DockStyle.None;
+                    pnlDefault.Top = (personagens.Size.Height * distancia + 10);
+                    pnlDefault.AutoSize = true;
+                   // pnlDefault.BorderStyle = BorderStyle.FixedSingle;
+
+                    painel_jogadores.Controls.Add(pnlDefault);
+                    pnlDefault.Controls.Add(personagens);
+
+                    distancia++;
+                }
+
+
+            } catch (Exception a)
+            {
+                MessageBox.Show("ERRO no carregar as informações", "Erro:" + a);
+            }
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            Campanha campanha = new Campanha();
+            campanha.ShowDialog();
         }
     }
 }

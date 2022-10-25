@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Grid_lista_itens = new System.Windows.Forms.DataGridView();
+            this.Grid_lista_itens = new System.Windows.Forms.DataGridView();
             this.text_descricao = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.LblFecharPassivas = new System.Windows.Forms.Label();
@@ -39,25 +39,25 @@
             this.btn_adicionar = new System.Windows.Forms.Button();
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_eliminar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(Grid_lista_itens)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_lista_itens)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // Grid_lista_itens
             // 
-            Grid_lista_itens.AllowUserToAddRows = false;
-            Grid_lista_itens.AllowUserToDeleteRows = false;
-            Grid_lista_itens.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
-            Grid_lista_itens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            Grid_lista_itens.Location = new System.Drawing.Point(12, 46);
-            Grid_lista_itens.MultiSelect = false;
-            Grid_lista_itens.Name = "Grid_lista_itens";
-            Grid_lista_itens.ReadOnly = true;
-            Grid_lista_itens.RowTemplate.Height = 25;
-            Grid_lista_itens.Size = new System.Drawing.Size(519, 481);
-            Grid_lista_itens.TabIndex = 0;
-            Grid_lista_itens.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_lista_itens_CellClick);
+            this.Grid_lista_itens.AllowUserToAddRows = false;
+            this.Grid_lista_itens.AllowUserToDeleteRows = false;
+            this.Grid_lista_itens.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            this.Grid_lista_itens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grid_lista_itens.Location = new System.Drawing.Point(12, 46);
+            this.Grid_lista_itens.MultiSelect = false;
+            this.Grid_lista_itens.Name = "Grid_lista_itens";
+            this.Grid_lista_itens.ReadOnly = true;
+            this.Grid_lista_itens.RowTemplate.Height = 25;
+            this.Grid_lista_itens.Size = new System.Drawing.Size(519, 481);
+            this.Grid_lista_itens.TabIndex = 0;
+            this.Grid_lista_itens.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_lista_itens_CellClick);
             // 
             // text_descricao
             // 
@@ -78,7 +78,7 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(Grid_lista_itens);
+            this.panel1.Controls.Add(this.Grid_lista_itens);
             this.panel1.Controls.Add(this.text_descricao);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(0, -1);
@@ -207,7 +207,7 @@
             this.ShowInTaskbar = false;
             this.Text = "Lista_itens";
             this.Load += new System.EventHandler(this.Lista_itens_Load);
-            ((System.ComponentModel.ISupportInitialize)(Grid_lista_itens)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_lista_itens)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -233,6 +233,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label LblFecharPassivas;
-        public static System.Windows.Forms.DataGridView Grid_lista_itens;
+        public System.Windows.Forms.DataGridView Grid_lista_itens;
     }
 }

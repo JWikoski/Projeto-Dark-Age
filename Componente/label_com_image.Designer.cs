@@ -37,39 +37,46 @@
             // 
             // image_pers
             // 
-            this.image_pers.Location = new System.Drawing.Point(0, 0);
+            this.image_pers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.image_pers.Image = global::Dark_Age.Properties.Resources.download;
+            this.image_pers.InitialImage = global::Dark_Age.Properties.Resources.download;
+            this.image_pers.Location = new System.Drawing.Point(0, 9);
             this.image_pers.Name = "image_pers";
-            this.image_pers.Size = new System.Drawing.Size(132, 113);
+            this.image_pers.Size = new System.Drawing.Size(132, 108);
+            this.image_pers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.image_pers.TabIndex = 0;
             this.image_pers.TabStop = false;
             // 
             // nome_perso
             // 
             this.nome_perso.AutoSize = true;
-            this.nome_perso.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nome_perso.Location = new System.Drawing.Point(138, 15);
+            this.nome_perso.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nome_perso.ForeColor = System.Drawing.SystemColors.Control;
+            this.nome_perso.Location = new System.Drawing.Point(138, 14);
             this.nome_perso.Name = "nome_perso";
-            this.nome_perso.Size = new System.Drawing.Size(61, 25);
+            this.nome_perso.Size = new System.Drawing.Size(79, 31);
             this.nome_perso.TabIndex = 1;
             this.nome_perso.Text = "Nome";
             // 
             // nome_classe
             // 
             this.nome_classe.AutoSize = true;
-            this.nome_classe.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nome_classe.Location = new System.Drawing.Point(138, 63);
+            this.nome_classe.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nome_classe.ForeColor = System.Drawing.SystemColors.Control;
+            this.nome_classe.Location = new System.Drawing.Point(138, 61);
             this.nome_classe.Name = "nome_classe";
-            this.nome_classe.Size = new System.Drawing.Size(47, 19);
+            this.nome_classe.Size = new System.Drawing.Size(50, 20);
             this.nome_classe.TabIndex = 2;
             this.nome_classe.Text = "Classe";
             // 
             // nome_user
             // 
             this.nome_user.AutoSize = true;
-            this.nome_user.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nome_user.Location = new System.Drawing.Point(138, 88);
+            this.nome_user.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nome_user.ForeColor = System.Drawing.SystemColors.Control;
+            this.nome_user.Location = new System.Drawing.Point(138, 90);
             this.nome_user.Name = "nome_user";
-            this.nome_user.Size = new System.Drawing.Size(95, 19);
+            this.nome_user.Size = new System.Drawing.Size(102, 20);
             this.nome_user.TabIndex = 3;
             this.nome_user.Text = "Nome usuario";
             // 
@@ -77,12 +84,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.nome_user);
             this.Controls.Add(this.nome_classe);
             this.Controls.Add(this.nome_perso);
             this.Controls.Add(this.image_pers);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "label_com_image";
-            this.Size = new System.Drawing.Size(412, 114);
+            this.Size = new System.Drawing.Size(398, 123);
             this.Load += new System.EventHandler(this.label_com_image_Load);
             ((System.ComponentModel.ISupportInitialize)(this.image_pers)).EndInit();
             this.ResumeLayout(false);

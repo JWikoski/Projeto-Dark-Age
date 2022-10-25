@@ -13,8 +13,8 @@ namespace Dark_Age.Enteties
     {
         public static string Caminho_DB()
         {
-            return "Server=db.lrtxyttihecehnpzgeus.supabase.co;Port=5432;Database=postgres;user Id=postgres;Password=ProjetoDark@ge123";
-            //return "Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80";
+            //return "Server=db.lrtxyttihecehnpzgeus.supabase.co;Port=5432;Database=postgres;user Id=postgres;Password=ProjetoDark@ge123";
+            return "Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80";
         }
 
 
@@ -36,7 +36,7 @@ namespace Dark_Age.Enteties
                 return dt_table_retorno_difi;
             } catch (NpgsqlException a)
             {
-                MessageBox.Show("ERRO nos enums dificuldade", "Erro:" + a);
+                MessageBox.Show("ERRO nos enums dificuldade" + a);
                 return null;
             }           
         } 
@@ -58,7 +58,7 @@ namespace Dark_Age.Enteties
 
             } catch (NpgsqlException a)
             {
-                MessageBox.Show("ERRO no tipo de itens", "Erro:" + a);
+                MessageBox.Show("ERRO no tipo de itens: " + a);
                 return null;
             }
         }
@@ -80,7 +80,7 @@ namespace Dark_Age.Enteties
 
             } catch (NpgsqlException a)
             {
-                MessageBox.Show("ERRO nas profissoes", "Erro:" + a);
+                MessageBox.Show("ERRO nas profissoes: " + a);
                 return null;
             }
         }
@@ -89,24 +89,67 @@ namespace Dark_Age.Enteties
             try
             {
                 NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"select id_itens 
-                                                             , nome_itens 
-                                                             , dificuldade 
-                                                             , nome_tipo_itens
-                                                             , nome_profissao
-                                                             , descricao
-                                                          from ""Dark_Age_Connection"".""Itens""
-                                                          join ""Dark_Age_Connection"".""Profissao"" on id_profissao = fk_id_profissao 
-                                                          join ""Dark_Age_Connection"".""Tipo_itens"" on id_tipo_itens = fk_id_tipo_itens ;", Conexao_BD.Caminho_DB());
+                                                                             , nome_itens 
+                                                                             , dificuldade 
+                                                                             , nome_tipo_itens
+                                                                             , nome_profissao
+                                                                             , descricao
+                                                                          from ""Dark_Age_Connection"".""Itens""
+                                                                          join ""Dark_Age_Connection"".""Profissao"" on id_profissao = fk_id_profissao 
+                                                                          join ""Dark_Age_Connection"".""Tipo_itens"" on id_tipo_itens = fk_id_tipo_itens ;", Conexao_BD.Caminho_DB());
                 NpgsqlCommandBuilder cBuilder = new NpgsqlCommandBuilder(dt_adapter);
                 DataTable dt_table = new DataTable();
 
                 dt_adapter.Fill(dt_table);
                 return dt_table;
-            } catch
+            } catch (Exception e)
             {
+                MessageBox.Show("ERRO nas select personagem: " + e);
                 return null;
             }
         }
 
+        public static DataTable select_campanha()
+        {
+            try
+            {
+                NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"select id_campanha 
+	                                                                         , nome_campanha 
+                                                                          from ""Dark_Age_Connection"".""Campanha"";", Conexao_BD.Caminho_DB());
+                NpgsqlCommandBuilder cBuilder = new NpgsqlCommandBuilder(dt_adapter);
+                DataTable dt_table = new DataTable();
+
+                dt_adapter.Fill(dt_table);
+                return dt_table;
+            } catch (Exception e)
+            {
+                MessageBox.Show("ERRO nas select personagem: " + e);
+                return null;
+            }
+        }
+        public static DataTable select_personagem_campanha(int id_jogador, int id_campanha)
+        {
+            try
+            {                
+                NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"select id_personagem
+	                                                                         , nome_personagem
+	                                                                         , mestre 
+                                                                         from ""Dark_Age_Connection"".""Inter_camp_pers"" 
+                                                                         join ""Dark_Age_Connection"".""Jogadores"" on id_jogador = fk_id_jogador 
+                                                                         join ""Dark_Age_Connection"".""Personagens"" on id_personagem = fk_id_personagem
+                                                                        where id_jogador ="+ id_jogador+  
+                                                                          "and fk_id_campanha = "+ id_campanha+";", Conexao_BD.Caminho_DB());
+                
+                NpgsqlCommandBuilder cBuilder = new NpgsqlCommandBuilder(dt_adapter);
+                DataTable dt_table = new DataTable();
+
+                dt_adapter.Fill(dt_table);
+                return dt_table;
+            } catch(Exception e)
+            {
+                MessageBox.Show("ERRO nas select personagem: " + e);
+                return null;
+            }
+        }
     }
 }
