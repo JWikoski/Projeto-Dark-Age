@@ -17,6 +17,9 @@ namespace Dark_Age
     {
         public static Boolean editar_adicionar;
         public static int id_item;
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
         public Lista_itens()
         {
             InitializeComponent();
@@ -24,7 +27,26 @@ namespace Dark_Age
 
         private void Lista_itens_Load(object sender, EventArgs e)
         {
+            
+
+            Grid_lista_itens.DataSource = Conexao_BD.select_data_gridlist();
             carregar_data_grid();
+
+            //Carrega as profissãoao abrir a tela
+            combox_profissao.DataSource = Conexao_BD.select_profissao();
+            combox_profissao.ValueMember = "id_profissao";
+            combox_profissao.DisplayMember = "nome_profissao";
+
+            //carrega os tipos dos itens
+            combox_tipo.DataSource = Conexao_BD.select_tipo_itens();
+            combox_tipo.ValueMember = "id_tipo_itens";
+            combox_tipo.DisplayMember = "nome_tipo_itens";
+
+            //carrega os enum do dificuldade da base de dados
+            combox_dificuldade.DataSource = Conexao_BD.select_enums();
+            combox_dificuldade.ValueMember = "nome_enum_difi";
+            combox_dificuldade.DisplayMember = "nome_enum_difi";
+
         }
 
         private void Grid_lista_itens_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -37,7 +59,7 @@ namespace Dark_Age
                 }
 
                 DataGridViewRow row = Grid_lista_itens.Rows[e.RowIndex];                
-                this.text_descricao.Text = row.Cells[5].Value.ToString();
+                text_descricao.Text = row.Cells[5].Value.ToString();
                 id_item = (int)row.Cells[0].Value;
             } catch (Exception a)
             {
@@ -50,6 +72,9 @@ namespace Dark_Age
             editar_adicionar = false;
             adicionar_editar_itens adicionar = new adicionar_editar_itens();
             adicionar.ShowDialog();
+
+            Grid_lista_itens.DataSource = Conexao_BD.select_data_gridlist();
+            carregar_data_grid();
         }
 
         private void btn_editar_Click(object sender, EventArgs e)
@@ -57,13 +82,42 @@ namespace Dark_Age
             editar_adicionar = true;
             adicionar_editar_itens adicionar = new adicionar_editar_itens();
             adicionar.ShowDialog();
+
+            Grid_lista_itens.DataSource = Conexao_BD.select_data_gridlist();
+            carregar_data_grid();
+        }
+
+        private void BindGrid()
+        {
+
+            Grid_lista_itens.AllowUserToAddRows = false;
+
+            Grid_lista_itens.Columns.Clear();
+
+
+            if (cmp_procura.Text == "")
+            {
+
+                Grid_lista_itens.DataSource = Conexao_BD.select_data_gridlist();
+                carregar_data_grid();
+
+            }
+            else
+            {
+                    string procura_nome = cmp_procura.Text;
+                    Grid_lista_itens.DataSource = Conexao_BD.filtro_data_gridlist(procura_nome);
+                    carregar_data_grid();
+                    //preenche o datatable via dataadapter
+               
+
+            }
+
         }
 
         public void carregar_data_grid()
         {
             try
-            {                
-                Grid_lista_itens.DataSource = Conexao_BD.select_data_gridlist();
+            {   
 
                 Grid_lista_itens.Columns["id_itens"].HeaderText = "ID";
                 Grid_lista_itens.Columns["nome_itens"].HeaderText = "Nome";
@@ -72,11 +126,17 @@ namespace Dark_Age
                 Grid_lista_itens.Columns["nome_profissao"].HeaderText = "Profissão";
 
                 Grid_lista_itens.Columns["descricao"].Visible = false;
+                
+                foreach (DataGridViewRow x in Grid_lista_itens.Rows)
+                {
+                    x.MinimumHeight = 30;
+                }
 
             } catch (Exception a)
             {
                 MessageBox.Show("ERRO no data grid ", "Erro:" + a);
             }
+
         }
 
 
@@ -95,18 +155,232 @@ namespace Dark_Age
                 como.Parameters.AddWithValue("@id_itens", id_item);
                 como.ExecuteNonQuery();
                 conn.Close();
+                Grid_lista_itens.DataSource = Conexao_BD.select_data_gridlist();
                 carregar_data_grid();
             }
+
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-
+          
         }
 
         private void LblFecharPassivas_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            this.BindGrid();
+        }
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private void Form1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            if (pnl_filtro.Visible == true)
+            {
+                pnl_filtro.Visible = false;
+            }
+            else
+            {
+                pnl_filtro.Visible = true;
+            }
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = Grid_lista_itens.DataSource;
+            limpar_filtros1.Visible = true;
+            if (filtro_dificuldade.Checked == true && filtro_profissoes.Checked == false && filtro_tipo.Checked == false)
+            {
+
+                bs.Filter = "dificuldade LIKE '" + combox_dificuldade.Text + "'";
+
+            }
+            else if (filtro_dificuldade.Checked == false && filtro_profissoes.Checked == true && filtro_tipo.Checked == false)
+            {
+
+                bs.Filter = "nome_profissao LIKE '" + combox_profissao.Text + "'";
+
+            }
+            else if (filtro_dificuldade.Checked == false && filtro_profissoes.Checked == false && filtro_tipo.Checked == true)
+            {
+
+                bs.Filter = "nome_tipo_itens LIKE '" + combox_tipo.Text + "'";
+
+            }
+            else if (filtro_dificuldade.Checked == true && filtro_profissoes.Checked == true && filtro_tipo.Checked == false)
+            {
+
+                bs.Filter = "dificuldade LIKE '" + combox_dificuldade.Text + "' and nome_profissao LIKE '" + combox_profissao.Text + "'";
+
+            }
+            else if (filtro_dificuldade.Checked == true && filtro_profissoes.Checked == false && filtro_tipo.Checked == true)
+            {
+
+                bs.Filter = "dificuldade LIKE '" + combox_dificuldade.Text + "' and nome_tipo_itens LIKE '" + combox_tipo.Text + "'";
+
+            }
+            else if (filtro_dificuldade.Checked == false && filtro_profissoes.Checked == true && filtro_tipo.Checked == true)
+            {
+
+                bs.Filter = "nome_profissao LIKE '" + combox_profissao.Text + "' and nome_tipo_itens LIKE '" + combox_tipo.Text + "'";
+
+            }
+            else if (filtro_dificuldade.Checked == true && filtro_profissoes.Checked == true && filtro_tipo.Checked == true)
+            {
+
+                bs.Filter = "dificuldade LIKE '" + combox_dificuldade.Text + "' and nome_tipo_itens LIKE '" + combox_tipo.Text + "' and nome_profissao LIKE '" + combox_profissao.Text + "'";
+
+            }
+            
+
+            Grid_lista_itens.DataSource = bs;
+            pnl_filtro.Visible = false;
+
+            if (filtro_dificuldade.Checked == false && filtro_profissoes.Checked == false && filtro_tipo.Checked == false)
+            {
+                {
+                    Grid_lista_itens.DataSource = Conexao_BD.select_data_gridlist();
+                    carregar_data_grid();
+                    limpar_filtros1.Visible = false;
+                }
+            }
+
+            foreach (DataGridViewRow x in Grid_lista_itens.Rows)
+            {
+                x.MinimumHeight = 30;
+            }
+        }
+
+        private void Grid_lista_itens_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void iconButton1_MouseEnter(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+            button.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 50, 67);
+        }
+
+        private void iconButton1_MouseLeave(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+            button.FlatAppearance.MouseOverBackColor = Color.Transparent;
+        }
+
+        private void combox_dificuldade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void combox_dificuldade_Click(object sender, EventArgs e)
+        {
+            filtro_dificuldade.Checked = true;
+        }
+
+        private void combox_profissao_Click(object sender, EventArgs e)
+        {
+            filtro_profissoes.Checked = true;
+        }
+
+        private void combox_tipo_Click(object sender, EventArgs e)
+        {
+            filtro_tipo.Checked = true;
+        }
+
+
+        private void limpar_filtros2_Click(object sender, EventArgs e)
+        {
+            filtro_tipo.Checked = false;
+            filtro_profissoes.Checked = false;
+            filtro_dificuldade.Checked = false;
+            limpar_filtros1.Visible = false;
+            limpar_filtros2.Visible = false;
+        }
+
+        private void limpar_filtros2_MouseEnter(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+            button.FlatAppearance.MouseOverBackColor = Color.FromArgb(20, Color.Salmon);
+            button.ForeColor = Color.Salmon;
+        }
+
+        private void limpar_filtros2_MouseLeave(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+            button.FlatAppearance.MouseOverBackColor = Color.Transparent;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            pnl_filtro.Visible = false;
+            if (filtro_dificuldade.Checked == false && filtro_profissoes.Checked == false && filtro_tipo.Checked == false)
+            {
+                Grid_lista_itens.DataSource = Conexao_BD.select_data_gridlist();
+                carregar_data_grid();
+            }
+        }
+
+        private void remove_filtros1_Click(object sender, EventArgs e)
+        {
+            filtro_tipo.Checked = false;
+            filtro_profissoes.Checked = false;
+            filtro_dificuldade.Checked = false;
+            Grid_lista_itens.DataSource = Conexao_BD.select_data_gridlist();
+            carregar_data_grid();
+            limpar_filtros1.Visible = false;
+            limpar_filtros2.Visible = false;
+        }
+
+        private void filtro_dificuldade_CheckedChanged(object sender, EventArgs e)
+        {
+            if(filtro_dificuldade.Checked == true)
+            {
+                limpar_filtros2.Visible = true;
+            }
+        }
+
+        private void filtro_tipo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (filtro_tipo.Checked == true)
+            {
+                limpar_filtros2.Visible = true;
+            }
+        }
+        private void filtro_profissoes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (filtro_profissoes.Checked == true)
+            {
+                limpar_filtros2.Visible = true;
+            }
+        }
+
+
+        private void Grid_lista_itens_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            foreach (DataGridViewRow x in Grid_lista_itens.Rows)
+            {
+                x.MinimumHeight = 30;
+            }
         }
     }
 }

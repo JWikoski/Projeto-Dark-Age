@@ -139,8 +139,6 @@ namespace Dark_Age
             // 
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Goldenrod;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.Snow;

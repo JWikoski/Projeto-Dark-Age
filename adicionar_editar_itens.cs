@@ -24,11 +24,23 @@ namespace Dark_Age
         public string dificuldade;
         public string descricao;
         public int id_tipo_itens;
+
+
         public adicionar_editar_itens()
         {
             InitializeComponent();
         }
-
+        
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        private void Form1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                Lista_itens.SendMessage(Handle, Lista_itens.WM_NCLBUTTONDOWN, Lista_itens.HT_CAPTION, 0);
+            }
+        }
         private void adicionar_editar_itens_Load(object sender, EventArgs e)
         {
 
@@ -77,6 +89,7 @@ namespace Dark_Age
             }
         }
 
+       
         private void cc(object sender, EventArgs e)
         {
             
@@ -155,10 +168,14 @@ namespace Dark_Age
                 como.ExecuteNonQuery();
                 conn.Close();
             }
-            Lista_itens lista_atualiza = new Lista_itens();
-            lista_atualiza.carregar_data_grid();
+            Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }
+
 }
 

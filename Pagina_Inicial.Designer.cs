@@ -315,7 +315,6 @@ namespace Dark_Age
             this.botao_itens.Size = new System.Drawing.Size(53, 52);
             this.botao_itens.TabIndex = 146;
             this.botao_itens.UseVisualStyleBackColor = true;
-            this.botao_itens.Visible = false;
             this.botao_itens.Click += new System.EventHandler(this.botao_itens_Click);
             // 
             // movimento

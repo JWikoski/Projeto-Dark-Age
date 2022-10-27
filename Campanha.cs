@@ -39,10 +39,8 @@ namespace Dark_Age
             {
                 data_grid_campanha.DataSource = Conexao_BD.select_campanha();
 
-
                 data_grid_campanha.Columns["nome_campanha"].HeaderText = "Nome";
                 data_grid_campanha.Columns["id_campanha"].Visible = false;
-
 
             } catch (Exception a)
             {
