@@ -199,12 +199,14 @@ namespace Dark_Age
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+    
     }
 }
