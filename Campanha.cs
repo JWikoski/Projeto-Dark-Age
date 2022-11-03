@@ -142,7 +142,7 @@ namespace Dark_Age
         }
         private void data_grid_campanha_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            selecao_personagem(e);
+            //selecao_personagem(e);
         }
         private void btn_nova_campanha_Click(object sender, EventArgs e)
         {
@@ -154,8 +154,9 @@ namespace Dark_Age
         }
         private void btn_confirmar_camp_Click(object sender, EventArgs e)
         {
-            Conexao_BD.criar_nova_campanha(txt_nome_campanha.Text, id_jogador);            
-            MessageBox.Show("Criado com sucesso campanha e vinculo do mestre");
+            Conexao_BD.criar_nova_campanha(txt_nome_campanha.Text, id_jogador); 
+			pnl_nome_campanha.Visible = false;			
+            MessageBox.Show("Criado com sucesso campanha e vinculo do mestre");			
             carrega_data_grid_campanha();
             //this.Close();
         }
@@ -182,13 +183,11 @@ namespace Dark_Age
                 btn_criar_novo.Visible = true;
             }
         }
-
        
         private void lbl_fechar_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         private void btn_criar_novo_Click(object sender, EventArgs e)
         {
             if (id_campanha != 0)
@@ -202,7 +201,6 @@ namespace Dark_Age
                 MessageBox.Show("Selecione a campanha que deseja criar o personagem!");
             }
         }
-
         private void btn_entrar_mestre_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Não temos a tela ainda pronto, aguarde!");

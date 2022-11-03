@@ -560,8 +560,8 @@ namespace Dark_Age
             {
 
                 bd_sanidade += carisma;
-                come.CommandText = @" insert into ""Dark_Age_Connection"".""Personagens"" (nome_personagem, classe_personagem, forca, destreza, vigor, carisma, raciocinio, magia, nivel, passivas, ativas, inventario, silver, gold, vida_atual, vida_max, sanidade_atual, sanidade_max, mana_atual, adicional_atual, adicional_max) 
-                                           values(@nome, @classe, @forca, @destreza, @vigor, @carisma, @raciocinio, @magia, @nivel, ' ', ' ', ' ', 0, 0, @vida_atual, @vida_max, @sanidade_atual, @sanidade_max, @mana_atual, '0', '0') 
+                come.CommandText = @" insert into ""Dark_Age_Connection"".""Personagens"" (nome_personagem, classe_personagem, forca, destreza, vigor, carisma, raciocinio, magia, nivel,  inventario, silver, gold, vida_atual, vida_max, sanidade_atual, sanidade_max, mana_atual, adicional_atual, adicional_max) 
+                                           values(@nome, @classe, @forca, @destreza, @vigor, @carisma, @raciocinio, @magia, @nivel, ' ', 0, 0, @vida_atual, @vida_max, @sanidade_atual, @sanidade_max, @mana_atual, '0', '0') 
                                            returning id_personagem";
                 come.Parameters.AddWithValue("@nome", nomepersonagem);
                 come.Parameters.AddWithValue("@classe", classe_escolhida);
