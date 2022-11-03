@@ -47,7 +47,6 @@ namespace Dark_Age
 
 
 
-
             btn_cria_personagem.Controls.Add(new Label()
             { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
             btn_anotacoes.Controls.Add(new Label()
@@ -58,176 +57,28 @@ namespace Dark_Age
             { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
 
 
-
-/*
-
-            NpgsqlConnection conn = new NpgsqlConnection(Conexao_BD.Caminho_DB());
-            conn.Open();
-            NpgsqlCommand comm = new NpgsqlCommand();
-            comm.Connection = conn;
-            comm.CommandType = CommandType.Text;
-            comm.CommandText = "select nome_personagem, classe_personagem, id_personagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = @jogador";
-            comm.Parameters.AddWithValue("@jogador", Login.jogador);
-            btn_open.Text = "Editar ficha do personagem";
-
-            NpgsqlDataReader nda = comm.ExecuteReader();
-
-            if (nda.Read())
-            {
-                bemvindo.Text = "Bem Vindo, " + nda.GetValue(0) + "!";
-                Ficha.idpersonagem = (int)nda.GetValue(2);
-            }
-
-            conn.Close();
-
-            // Info jogador 1
-            conn.Open();
-            NpgsqlCommand comj = new NpgsqlCommand();
-            comj.Connection = conn;
-            comj.CommandType = CommandType.Text;
-            comj.CommandText = "select nome_jogador from \"Dark_Age_Connection\".\"Jogadores\" where id_jogador = 1";
-            comj.Parameters.AddWithValue("@jogador", Login.jogador);
-
-            string ndj = (string)comj.ExecuteScalar();
-
-            jogador1.Text = ndj;
-
-
-            NpgsqlCommand comk = new NpgsqlCommand();
-            comk.Connection = conn;
-            comk.CommandType = CommandType.Text;
-            comk.CommandText = "select nome_personagem, classe_personagem, imagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = 1";
-            NpgsqlDataReader ndk = comk.ExecuteReader();
-
-            if (ndk.Read())
-            {
-                personagem1.Text = (string)ndk.GetValue(0);
-                classe_jogador1.Text = (string)ndk.GetValue(1);
-                byte[] byte_image_personagem = (byte[])ndk.GetValue(2);
-                imagem_person = byte_image.byteArrayToImage(byte_image_personagem);
-                pictureBox1.Image = imagem_person;
-                pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            }
-            conn.Close();
-            conn.Close();
-
-
-            // Info jogador 2
-
-            conn.Open();
-            comj.CommandText = "select nome_jogador from \"Dark_Age_Connection\".\"Jogadores\" where id_jogador = 2";
-            comj.Parameters.AddWithValue("@jogador", Login.jogador);
-
-            ndj = (string)comj.ExecuteScalar();
-
-            jogador2.Text = ndj;
-
-            comk.CommandType = CommandType.Text;
-            comk.CommandText = "select nome_personagem, classe_personagem, imagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = 2";
-            ndk = comk.ExecuteReader();
-
-            if (ndk.Read())
-            {
-                personagem2.Text = (string)ndk.GetValue(0);
-                classe_jogador1.Text = (string)ndk.GetValue(1);
-                byte[] byte_image_personagem = (byte[])ndk.GetValue(2);
-                imagem_person = byte_image.byteArrayToImage(byte_image_personagem);
-                pictureBox2.Image = imagem_person;
-                pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            }
-            conn.Close();
-
-            conn.Close();
-
-
-            // Info jogador 3
-
-            conn.Open();
-            comj.CommandText = "select nome_jogador from \"Dark_Age_Connection\".\"Jogadores\" where id_jogador = 3";
-            comj.Parameters.AddWithValue("@jogador", Login.jogador);
-
-            ndj = (string)comj.ExecuteScalar();
-
-            jogador3.Text = ndj;
-
-            comk.CommandType = CommandType.Text;
-            comk.CommandText = "select nome_personagem, classe_personagem, imagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = 3";
-            ndk = comk.ExecuteReader();
-
-            if (ndk.Read())
-            {
-                personagem3.Text = (string)ndk.GetValue(0);
-                classe_jogador3.Text = (string)ndk.GetValue(1);
-                byte[] byte_image_personagem = (byte[])ndk.GetValue(2);
-                imagem_person = byte_image.byteArrayToImage(byte_image_personagem);
-                pictureBox3.Image = imagem_person;
-                pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            }
-            conn.Close();
-
-            conn.Close();
-
-
-            // Info jogador 4
-
-            conn.Open();
-            comj.CommandText = "select nome_jogador from \"Dark_Age_Connection\".\"Jogadores\" where id_jogador = 4";
-            comj.Parameters.AddWithValue("@jogador", Login.jogador);
-            ndj = (string)comj.ExecuteScalar();
-
-            jogador4.Text = ndj;
-            comk.CommandText = "select nome_personagem, classe_personagem, imagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = 4";
-            ndk = comk.ExecuteReader();
-
-            if (ndk.Read())
-            {
-                personagem4.Text = (string)ndk.GetValue(0);
-                classe_jogador4.Text = (string)ndk.GetValue(0);
-                byte[] byte_image_personagem = (byte[])ndk.GetValue(2);
-                imagem_person = byte_image.byteArrayToImage(byte_image_personagem);
-                pictureBox4.Image = imagem_person;
-                pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            }
-            conn.Close();
-
-
-            // Info jogador 5
-
-            conn.Open();
-            comj.CommandText = "select nome_jogador from \"Dark_Age_Connection\".\"Jogadores\" where id_jogador = 5";
-            comj.Parameters.AddWithValue("@jogador", Login.jogador);
-
-            ndj = (string)comj.ExecuteScalar();
-
-            jogador5.Text = ndj;
-
-            comk.CommandType = CommandType.Text;
-            comk.CommandText = "select nome_personagem, classe_personagem, imagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = 5";
-            ndk = comk.ExecuteReader();
-
-            if (ndk.Read())
-            {
-                personagem5.Text = (string)ndk.GetValue(0);
-                classe_jogador5.Text = (string)ndk.GetValue(1);
-                byte[] byte_image_personagem = (byte[])ndk.GetValue(2);
-                imagem_person = byte_image.byteArrayToImage(byte_image_personagem);
-                pictureBox5.Image = imagem_person;
-                pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            }
-            conn.Close();
-
-            conn.Close();*/
-
-
-            //fim jogadores
-
             NpgsqlConnection conn3 = new NpgsqlConnection(Conexao_BD.Caminho_DB());
             conn3.Open();
             NpgsqlCommand comi = new NpgsqlCommand();
             comi.Connection = conn3;
             comi.CommandType = CommandType.Text;
-            comi.CommandText = "select forca, destreza, vigor, carisma, raciocinio, magia, silver, gold, vida_atual, vida_max, sanidade_atual, sanidade_max, mana_atual, adicional_atual, adicional_max from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = @jogador";
-            comi.Parameters.AddWithValue("@jogador", Login.jogador);
+            comi.CommandText = $@"select forca, destreza
+	                                   , vigor
+	                                   , carisma
+	                                   , raciocinio
+	                                   , magia
+	                                   , silver
+	                                   , gold
+	                                   , vida_atual
+	                                   , vida_max
+	                                   , sanidade_atual
+	                                   , sanidade_max
+	                                   , mana_atual
+	                                   , adicional_atual
+	                                   , adicional_max 
+                                    from ""Dark_Age_Connection"".""Personagens"" 
+                                   where id_personagem = @id_personagem";
+            comi.Parameters.AddWithValue("@id_personagem", Campanha.id_personagem);
             NpgsqlDataReader nds = comi.ExecuteReader();
 
 
@@ -308,8 +159,8 @@ namespace Dark_Age
             NpgsqlCommand comt = new NpgsqlCommand();
             comt.Connection = conn2;
             comt.CommandType = CommandType.Text;
-            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 1 and fk_id_personagem = @personagem";
-            comt.Parameters.AddWithValue("@personagem", Login.jogador);
+            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 1 and fk_id_personagem = @id_personagem";
+            comt.Parameters.AddWithValue("@id_personagem", Campanha.id_personagem);
 
             NpgsqlDataReader ndp = comt.ExecuteReader();
             if (ndp.Read())
@@ -318,7 +169,7 @@ namespace Dark_Age
                 res_ataque.Text = Ficha.bd_ataque.ToString();
             }
             ndp.Close();
-            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 2 and fk_id_personagem = @personagem";
+            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 2 and fk_id_personagem = @id_personagem";
             ndp = comt.ExecuteReader();
             if (ndp.Read())
             {
@@ -326,7 +177,7 @@ namespace Dark_Age
                 res_esquiva.Text = Ficha.bd_esquiva.ToString();
             }
             ndp.Close();
-            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 3 and fk_id_personagem = @personagem";
+            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 3 and fk_id_personagem = @id_personagem";
             ndp = comt.ExecuteReader();
             if (ndp.Read())
             {
@@ -334,7 +185,7 @@ namespace Dark_Age
                 res_defesa.Text = Ficha.bd_defesa.ToString();
             }
             ndp.Close();
-            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 4 and fk_id_personagem = @personagem";
+            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 4 and fk_id_personagem = @id_personagem";
             ndp = comt.ExecuteReader();
             if (ndp.Read())
             {
@@ -342,7 +193,7 @@ namespace Dark_Age
                 res_contrataque.Text = Ficha.bd_contra_atq.ToString();
             }
             ndp.Close();
-            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 5 and fk_id_personagem = @personagem";
+            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 5 and fk_id_personagem = @id_personagem";
             ndp = comt.ExecuteReader();
             if (ndp.Read())
             {
@@ -350,7 +201,7 @@ namespace Dark_Age
                 res_atirar.Text = Ficha.bd_arematirar.ToString();
             }
             ndp.Close();
-            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 6 and fk_id_personagem = @personagem";
+            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 6 and fk_id_personagem = @id_personagem";
             ndp = comt.ExecuteReader();
             if (ndp.Read())
             {
@@ -358,7 +209,7 @@ namespace Dark_Age
                 res_conjurar.Text = Ficha.bd_lancarmagia.ToString();
             }
             ndp.Close();
-            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 7 and fk_id_personagem = @personagem";
+            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 7 and fk_id_personagem = @id_personagem";
             ndp = comt.ExecuteReader();
             if (ndp.Read())
             {
@@ -366,7 +217,7 @@ namespace Dark_Age
                 res_labia.Text = Ficha.bd_labia.ToString();
             }
             ndp.Close();
-            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 8 and fk_id_personagem = @personagem";
+            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 8 and fk_id_personagem = @id_personagem";
             ndp = comt.ExecuteReader();
             if (ndp.Read())
             {
@@ -374,7 +225,7 @@ namespace Dark_Age
                 res_intimidacao.Text = Ficha.bd_intimidacao.ToString();
             }
             ndp.Close();
-            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 9 and fk_id_personagem = @personagem";
+            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 9 and fk_id_personagem = @id_personagem";
             ndp = comt.ExecuteReader();
             if (ndp.Read())
             {
@@ -382,7 +233,7 @@ namespace Dark_Age
                 res_seducao.Text = Ficha.bd_seduzir.ToString();
             }
             ndp.Close();
-            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 10 and fk_id_personagem = @personagem";
+            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 10 and fk_id_personagem = @id_personagem";
             ndp = comt.ExecuteReader();
             if (ndp.Read())
             {
@@ -390,7 +241,7 @@ namespace Dark_Age
                 res_enganacao.Text = Ficha.bd_enganacao.ToString();
             }
             ndp.Close();
-            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 11 and fk_id_personagem = @personagem";
+            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 11 and fk_id_personagem = @id_personagem";
             ndp = comt.ExecuteReader();
             if (ndp.Read())
             {
@@ -398,7 +249,7 @@ namespace Dark_Age
                 res_esconder.Text = Ficha.bd_esconder.ToString();
             }
             ndp.Close();
-            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 12 and fk_id_personagem = @personagem";
+            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 12 and fk_id_personagem = @id_personagem";
             ndp = comt.ExecuteReader();
             if (ndp.Read())
             {
@@ -406,7 +257,7 @@ namespace Dark_Age
                 res_percepcao.Text = Ficha.bd_percepcao.ToString();
             }
             ndp.Close();
-            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 13 and fk_id_personagem = @personagem";
+            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 13 and fk_id_personagem = @id_personagem";
             ndp = comt.ExecuteReader();
             if (ndp.Read())
             {
@@ -414,7 +265,7 @@ namespace Dark_Age
                 res_acad.Text = Ficha.bd_academicos.ToString();
             }
             ndp.Close();
-            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 14 and fk_id_personagem = @personagem";
+            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 14 and fk_id_personagem = @id_personagem";
             ndp = comt.ExecuteReader();
             if (ndp.Read())
             {
@@ -422,7 +273,7 @@ namespace Dark_Age
                 res_ocultismo.Text = Ficha.bd_ocultismo.ToString();
             }
             ndp.Close();
-            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 15 and fk_id_personagem = @personagem";
+            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 15 and fk_id_personagem = @id_personagem";
             ndp = comt.ExecuteReader();
             if (ndp.Read())
             {
@@ -430,7 +281,7 @@ namespace Dark_Age
                 res_sobrevivencia.Text = Ficha.bd_sobrevivencia.ToString();
             }
             ndp.Close();
-            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 16 and fk_id_personagem = @personagem";
+            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 16 and fk_id_personagem = @id_personagem";
             ndp = comt.ExecuteReader();
             if (ndp.Read())
             {
@@ -438,7 +289,7 @@ namespace Dark_Age
                 res_investigacao.Text = Ficha.bd_investigacao.ToString();
             }
             ndp.Close();
-            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 17 and fk_id_personagem = @personagem";
+            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 17 and fk_id_personagem = @id_personagem";
             ndp = comt.ExecuteReader();
             if (ndp.Read())
             {
@@ -446,7 +297,7 @@ namespace Dark_Age
                 res_intuicao.Text = Ficha.bd_intuicao.ToString();
             }
             ndp.Close();
-            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 18 and fk_id_personagem = @personagem";
+            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 18 and fk_id_personagem = @id_personagem";
             ndp = comt.ExecuteReader();
             if (ndp.Read())
             {
@@ -454,7 +305,7 @@ namespace Dark_Age
                 res_etiqueta.Text = Ficha.bd_etiqueta.ToString();
             }
             ndp.Close();
-            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 19 and fk_id_personagem = @personagem";
+            comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos\" where fk_id_talento = 19 and fk_id_personagem = @id_personagem";
             ndp = comt.ExecuteReader();
             if (ndp.Read())
             {
@@ -521,7 +372,7 @@ namespace Dark_Age
                                        , mana_atual = @mana_atual 
                                        , adicional_atual = @adicional_atual
                                        , adicional_max = @adicional_max 
-                                   where fk_id_jogador = @jogador";
+                                   where fk_id_jogador = @id_personagem";
             como.Parameters.AddWithValue("@vida_atual", vida_atual);
             como.Parameters.AddWithValue("@vida_max", vida_maxima);
             como.Parameters.AddWithValue("@sanidade_atual", sanidade_atual);
@@ -529,11 +380,12 @@ namespace Dark_Age
             como.Parameters.AddWithValue("@mana_atual", mana_atual);
             como.Parameters.AddWithValue("@adicional_atual", adicional_atual);
             como.Parameters.AddWithValue("@adicional_max", adicional_max);
-            como.Parameters.AddWithValue("@jogador", Login.jogador);
+            como.Parameters.AddWithValue("@id_personagem", Campanha.id_personagem);
             como.ExecuteNonQuery();
 
             this.Hide();
-            Ficha frm = new Ficha();
+            Ficha.pers_criado = true;
+            Ficha frm = new Ficha();            
             frm.Show();
 
         }
@@ -725,7 +577,7 @@ namespace Dark_Age
                                        , mana_atual = @mana_atual 
                                        , adicional_atual = @adicional_atual
                                        , adicional_max = @adicional_max 
-                                   where fk_id_jogador = @jogador";
+                                   where fk_id_jogador = @id_personagem";
             come.Parameters.AddWithValue("@vida_atual", vida_atual);
             come.Parameters.AddWithValue("@vida_max", vida_maxima);
             come.Parameters.AddWithValue("@sanidade_atual", sanidade_atual);
@@ -733,7 +585,7 @@ namespace Dark_Age
             come.Parameters.AddWithValue("@sanidade_max", sanidade_max);
             come.Parameters.AddWithValue("@adicional_atual", adicional_atual);
             come.Parameters.AddWithValue("@adicional_max", adicional_max);
-            come.Parameters.AddWithValue("@jogador", Login.jogador);
+            come.Parameters.AddWithValue("@id_personagem", Campanha.id_personagem);
             come.ExecuteNonQuery();
 
             Application.Exit();
@@ -945,11 +797,13 @@ namespace Dark_Age
                 comm.Connection = conn;
                 comm.CommandType = CommandType.Text;
                 comm.CommandText = @$"select nome_personagem 
-                         , classe_personagem
-                         , nome_jogador
-                         , imagem 
-                        from ""Dark_Age_Connection"".""Personagens""
-                        join ""Dark_Age_Connection"".""Jogadores"" ON ""Personagens"".fk_id_jogador = ""Jogadores"".id_jogador ";
+                                           , classe_personagem
+                                           , nome_jogador
+                                           , imagem 
+                                        from ""Dark_Age_Connection"".""Inter_camp_pers"" 
+                                        join ""Dark_Age_Connection"".""Jogadores"" on id_jogador = fk_id_jogador 
+                                        join ""Dark_Age_Connection"".""Personagens"" on id_personagem = fk_id_personagem 
+                                       where fk_id_campanha =" + Campanha.id_campanha;
                 NpgsqlDataReader ndv = comm.ExecuteReader();
 
                 while (ndv.Read())
@@ -963,7 +817,7 @@ namespace Dark_Age
 
                     personagens.receber_valores(nome_p, nome_c, nome_u, image_p);
                     personagens.Dock = DockStyle.None;                                      
-                    personagens.Left = 40;
+                    personagens.Left = 20;
 
                     Panel pnlDefault = new Panel();
                     pnlDefault.BackColor = Color.Transparent;

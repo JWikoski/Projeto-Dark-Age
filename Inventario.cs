@@ -29,8 +29,8 @@ namespace Dark_Age
             NpgsqlCommand comm = new NpgsqlCommand();
             comm.Connection = conn;
             comm.CommandType = CommandType.Text;
-            comm.CommandText = "select inventario, gold, silver from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = @jogador";
-            comm.Parameters.AddWithValue("@jogador", Login.jogador);
+            comm.CommandText = "select inventario, gold, silver from \"Dark_Age_Connection\".\"Personagens\" where id_personagem = @id_personagem";
+            comm.Parameters.AddWithValue("@id_personagem", Campanha.id_personagem);
 
             NpgsqlDataReader nda = comm.ExecuteReader();
 
@@ -93,8 +93,8 @@ namespace Dark_Age
             NpgsqlCommand coss = new NpgsqlCommand();
             coss.Connection = conn;
             coss.CommandType = CommandType.Text;
-            coss.CommandText = "update \"Dark_Age_Connection\".\"Personagens\" set inventario = @inventario, gold = @ouro, silver = @prata where fk_id_jogador = @jogador";
-            coss.Parameters.AddWithValue("@jogador", Login.jogador); 
+            coss.CommandText = "update \"Dark_Age_Connection\".\"Personagens\" set inventario = @inventario, gold = @ouro, silver = @prata where id_personagem = @id_personagem";
+            coss.Parameters.AddWithValue("@id_personagem", Campanha.id_personagem); 
             coss.Parameters.AddWithValue("@inventario", inventario_texto);
             coss.Parameters.AddWithValue("@ouro", moedas_ouro.Value);
             coss.Parameters.AddWithValue("@prata", moedas_prata.Value);

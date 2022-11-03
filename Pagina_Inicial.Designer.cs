@@ -161,7 +161,6 @@ namespace Dark_Age
             this.lbl_mana = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.ficha_resumida.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Locais)).BeginInit();
             this.panel6.SuspendLayout();
@@ -198,12 +197,11 @@ namespace Dark_Age
             this.btn_open.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_open.ForeColor = System.Drawing.Color.Silver;
             this.btn_open.Image = global::Dark_Age.Properties.Resources.image__2backg_;
-            this.btn_open.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_open.Location = new System.Drawing.Point(12, 749);
             this.btn_open.Name = "btn_open";
             this.btn_open.Size = new System.Drawing.Size(292, 67);
             this.btn_open.TabIndex = 0;
-            this.btn_open.Text = "Criar Personagem";
+            this.btn_open.Text = "Editar Ficha do Personagem";
             this.btn_open.UseVisualStyleBackColor = false;
             this.btn_open.Click += new System.EventHandler(this.btn_open_Click);
             this.btn_open.MouseEnter += new System.EventHandler(this.btn_open_MouseEnter);
@@ -2197,16 +2195,6 @@ namespace Dark_Age
             this.panel10.Size = new System.Drawing.Size(220, 32);
             this.panel10.TabIndex = 10;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(616, 70);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 89;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
-            // 
             // Form1
             // 
             this.AllowDrop = true;
@@ -2215,7 +2203,6 @@ namespace Dark_Age
             this.BackgroundImage = global::Dark_Age.Properties.Resources.image;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1584, 861);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.LblFecharPassivas);
@@ -2411,7 +2398,6 @@ namespace Dark_Age
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Button button1;
     }
 }
 

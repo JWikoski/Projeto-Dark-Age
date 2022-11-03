@@ -113,19 +113,19 @@ namespace Dark_Age
                 NpgsqlCommand comm = new NpgsqlCommand();
                 comm.Connection = conn;
                 comm.CommandType = CommandType.Text;
-                comm.CommandText = "select senha_jogador, id_jogador, pers_criado from \"Dark_Age_Connection\".\"Jogadores\" where senha_jogador = @senha";
+                comm.CommandText = "select senha_jogador, id_jogador from \"Dark_Age_Connection\".\"Jogadores\" where senha_jogador = @senha";
                 comm.Parameters.AddWithValue("@senha", senha);
                 NpgsqlDataReader nda = comm.ExecuteReader();
                 if (nda.Read())
                 {
-                    jogador = (int)nda.GetValue(1);
-                    Ficha.pers_criado = (bool)nda.GetValue(2);
+                    jogador = (int)nda.GetValue(1);                    
                 }
 
 
 
                 if (nda.HasRows)
                 {
+                    /*
                     if (Ficha.pers_criado == false)
                     {
                         this.Hide();
@@ -141,7 +141,11 @@ namespace Dark_Age
                         frm.Show();
                         e.Handled = true;
                         e.SuppressKeyPress = true;
-                    }
+                    }*/
+                 this.Hide();
+                 Campanha frm = new Campanha();
+                 frm.ShowDialog();
+
                 }
                 else
                 {

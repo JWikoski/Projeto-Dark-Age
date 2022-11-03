@@ -3,9 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Forms;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace Dark_Age.Enteties
 {
@@ -114,7 +117,8 @@ namespace Dark_Age.Enteties
             try
             {
                 NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"select id_campanha 
-	                                                                         , nome_campanha 
+	                                                                         , nome_campanha
+                                                                             , fk_id_jogador_mestre       
                                                                           from ""Dark_Age_Connection"".""Campanha"";", Conexao_BD.Caminho_DB());
                 NpgsqlCommandBuilder cBuilder = new NpgsqlCommandBuilder(dt_adapter);
                 DataTable dt_table = new DataTable();
@@ -132,13 +136,12 @@ namespace Dark_Age.Enteties
             try
             {                
                 NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"select id_personagem
-	                                                                         , nome_personagem
-	                                                                         , mestre 
+	                                                                         , nome_personagem	                                                                         
                                                                          from ""Dark_Age_Connection"".""Inter_camp_pers"" 
                                                                          join ""Dark_Age_Connection"".""Jogadores"" on id_jogador = fk_id_jogador 
                                                                          join ""Dark_Age_Connection"".""Personagens"" on id_personagem = fk_id_personagem
-                                                                        where id_jogador ="+ id_jogador+  
-                                                                          "and fk_id_campanha = "+ id_campanha+";", Conexao_BD.Caminho_DB());
+                                                                        where id_jogador =" + id_jogador +  
+                                                                         "and fk_id_campanha = " + id_campanha + ";", Conexao_BD.Caminho_DB());
                 
                 NpgsqlCommandBuilder cBuilder = new NpgsqlCommandBuilder(dt_adapter);
                 DataTable dt_table = new DataTable();
@@ -150,6 +153,90 @@ namespace Dark_Age.Enteties
                 MessageBox.Show("ERRO nas select personagem: " + e);
                 return null;
             }
+        }
+        public static DataTable select_personagem_campanha_mestre(int id_campanha)
+        {
+            try
+            {
+                NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"select id_personagem
+	                                                                         , nome_personagem	                                                                         
+                                                                         from ""Dark_Age_Connection"".""Inter_camp_pers""                                                                          
+                                                                         join ""Dark_Age_Connection"".""Personagens"" on id_personagem = fk_id_personagem
+                                                                        where fk_id_campanha = " + id_campanha + ";", Conexao_BD.Caminho_DB());
+                NpgsqlCommandBuilder cBuilder = new NpgsqlCommandBuilder(dt_adapter);
+                DataTable dt_table = new DataTable();
+                dt_adapter.Fill(dt_table);
+                return dt_table;
+            } catch (Exception e)
+            {
+                MessageBox.Show("ERRO nas select personagem: " + e);
+                return null;
+            }
+        }
+
+        public static void deletar_personagem(int id_personagem, int id_campanha)
+        {
+            NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
+            conn.Open();
+            NpgsqlCommand como = new NpgsqlCommand();
+            como.Connection = conn;
+            como.CommandType = CommandType.Text;
+            como.CommandText = $@"call ""Dark_Age_Connection"".sp_deletar_personagem(@id_personagem, @id_campanha);";
+            como.Parameters.AddWithValue("@id_personagem", id_personagem);
+            como.Parameters.AddWithValue("@id_campanha", id_campanha);
+            como.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public static void criar_nova_campanha(string nome_campanha, int id_jogador)
+        {
+            NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
+            conn.Open();
+            NpgsqlCommand como = new NpgsqlCommand();
+            como.Connection = conn;
+            como.CommandType = CommandType.Text;
+            como.CommandText = $@"INSERT INTO ""Dark_Age_Connection"".""Campanha"" (nome_campanha, fk_id_jogador_mestre )
+                                       VALUES (@nome_campanha, @fk_id_jogador_mestre )
+                                       returning id_campanha;";
+            como.Parameters.AddWithValue("@nome_campanha", nome_campanha);
+            como.Parameters.AddWithValue("@fk_id_jogador_mestre", id_jogador);
+            object id_camp =  como.ExecuteScalar();
+
+            Campanha.id_campanha = Convert.ToInt32(id_camp);
+            conn.Close();
+        }
+
+        public static void deletar_campanha(int id_campanha, int id_jogador)
+        {
+            NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
+            conn.Open();
+            NpgsqlCommand como = new NpgsqlCommand();
+            como.Connection = conn;
+            como.CommandType = CommandType.Text;
+            como.CommandText = $@"DELETE FROM ""Dark_Age_Connection"".""Campanha""
+                                        WHERE id_campanha = @id_campanha;
+                                          and fk_id_jogador_mestre = @id_jogador";
+            como.Parameters.AddWithValue("@id_campanha", id_campanha);
+            como.Parameters.AddWithValue("@id_jogador", id_jogador);
+            como.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public static void insert_inter_camp_pers(int id_pers, int id_camp, int id_jog)
+        {            
+            NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
+            conn.Open();
+            NpgsqlCommand cone = new NpgsqlCommand();
+            cone.Connection = conn;
+
+            cone.CommandText = $@"INSERT INTO ""Dark_Age_Connection"".""Inter_camp_pers""
+                                                (fk_id_campanha, fk_id_jogador, fk_id_personagem)
+                                                VALUES(@id_campanha, @id_jogador, @id_personagem);";
+            cone.Parameters.AddWithValue("@id_campanha", id_camp);
+            cone.Parameters.AddWithValue("@id_jogador", id_jog);
+            cone.Parameters.AddWithValue("@id_personagem", id_pers);            
+            cone.ExecuteNonQuery();
+            conn.Close();
         }
     }
 }
