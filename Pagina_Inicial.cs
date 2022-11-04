@@ -35,6 +35,7 @@ namespace Dark_Age
         public Form1()
         {
             InitializeComponent();
+            Opacity = 0;      //first the opacity is 0
             label1.BackColor = Color.FromArgb(150, Color.Black);
             painel_jogadores.BackColor = Color.FromArgb(150, Color.Black);
             ficha_resumida.BackColor = Color.FromArgb(0, Color.Black);
@@ -56,167 +57,168 @@ namespace Dark_Age
             { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
             btn_descanso.Controls.Add(new Label()
             { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
+            botao_itens.Controls.Add(new Label()
+            { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
 
 
+            /*
 
-/*
+                        NpgsqlConnection conn = new NpgsqlConnection(Conexao_BD.Caminho_DB());
+                        conn.Open();
+                        NpgsqlCommand comm = new NpgsqlCommand();
+                        comm.Connection = conn;
+                        comm.CommandType = CommandType.Text;
+                        comm.CommandText = "select nome_personagem, classe_personagem, id_personagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = @jogador";
+                        comm.Parameters.AddWithValue("@jogador", Login.jogador);
+                        btn_open.Text = "Editar ficha do personagem";
 
-            NpgsqlConnection conn = new NpgsqlConnection(Conexao_BD.Caminho_DB());
-            conn.Open();
-            NpgsqlCommand comm = new NpgsqlCommand();
-            comm.Connection = conn;
-            comm.CommandType = CommandType.Text;
-            comm.CommandText = "select nome_personagem, classe_personagem, id_personagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = @jogador";
-            comm.Parameters.AddWithValue("@jogador", Login.jogador);
-            btn_open.Text = "Editar ficha do personagem";
+                        NpgsqlDataReader nda = comm.ExecuteReader();
 
-            NpgsqlDataReader nda = comm.ExecuteReader();
+                        if (nda.Read())
+                        {
+                            bemvindo.Text = "Bem Vindo, " + nda.GetValue(0) + "!";
+                            Ficha.idpersonagem = (int)nda.GetValue(2);
+                        }
 
-            if (nda.Read())
-            {
-                bemvindo.Text = "Bem Vindo, " + nda.GetValue(0) + "!";
-                Ficha.idpersonagem = (int)nda.GetValue(2);
-            }
+                        conn.Close();
 
-            conn.Close();
+                        // Info jogador 1
+                        conn.Open();
+                        NpgsqlCommand comj = new NpgsqlCommand();
+                        comj.Connection = conn;
+                        comj.CommandType = CommandType.Text;
+                        comj.CommandText = "select nome_jogador from \"Dark_Age_Connection\".\"Jogadores\" where id_jogador = 1";
+                        comj.Parameters.AddWithValue("@jogador", Login.jogador);
 
-            // Info jogador 1
-            conn.Open();
-            NpgsqlCommand comj = new NpgsqlCommand();
-            comj.Connection = conn;
-            comj.CommandType = CommandType.Text;
-            comj.CommandText = "select nome_jogador from \"Dark_Age_Connection\".\"Jogadores\" where id_jogador = 1";
-            comj.Parameters.AddWithValue("@jogador", Login.jogador);
+                        string ndj = (string)comj.ExecuteScalar();
 
-            string ndj = (string)comj.ExecuteScalar();
-
-            jogador1.Text = ndj;
-
-
-            NpgsqlCommand comk = new NpgsqlCommand();
-            comk.Connection = conn;
-            comk.CommandType = CommandType.Text;
-            comk.CommandText = "select nome_personagem, classe_personagem, imagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = 1";
-            NpgsqlDataReader ndk = comk.ExecuteReader();
-
-            if (ndk.Read())
-            {
-                personagem1.Text = (string)ndk.GetValue(0);
-                classe_jogador1.Text = (string)ndk.GetValue(1);
-                byte[] byte_image_personagem = (byte[])ndk.GetValue(2);
-                imagem_person = byte_image.byteArrayToImage(byte_image_personagem);
-                pictureBox1.Image = imagem_person;
-                pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            }
-            conn.Close();
-            conn.Close();
+                        jogador1.Text = ndj;
 
 
-            // Info jogador 2
+                        NpgsqlCommand comk = new NpgsqlCommand();
+                        comk.Connection = conn;
+                        comk.CommandType = CommandType.Text;
+                        comk.CommandText = "select nome_personagem, classe_personagem, imagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = 1";
+                        NpgsqlDataReader ndk = comk.ExecuteReader();
 
-            conn.Open();
-            comj.CommandText = "select nome_jogador from \"Dark_Age_Connection\".\"Jogadores\" where id_jogador = 2";
-            comj.Parameters.AddWithValue("@jogador", Login.jogador);
-
-            ndj = (string)comj.ExecuteScalar();
-
-            jogador2.Text = ndj;
-
-            comk.CommandType = CommandType.Text;
-            comk.CommandText = "select nome_personagem, classe_personagem, imagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = 2";
-            ndk = comk.ExecuteReader();
-
-            if (ndk.Read())
-            {
-                personagem2.Text = (string)ndk.GetValue(0);
-                classe_jogador1.Text = (string)ndk.GetValue(1);
-                byte[] byte_image_personagem = (byte[])ndk.GetValue(2);
-                imagem_person = byte_image.byteArrayToImage(byte_image_personagem);
-                pictureBox2.Image = imagem_person;
-                pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            }
-            conn.Close();
-
-            conn.Close();
+                        if (ndk.Read())
+                        {
+                            personagem1.Text = (string)ndk.GetValue(0);
+                            classe_jogador1.Text = (string)ndk.GetValue(1);
+                            byte[] byte_image_personagem = (byte[])ndk.GetValue(2);
+                            imagem_person = byte_image.byteArrayToImage(byte_image_personagem);
+                            pictureBox1.Image = imagem_person;
+                            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                        }
+                        conn.Close();
+                        conn.Close();
 
 
-            // Info jogador 3
+                        // Info jogador 2
 
-            conn.Open();
-            comj.CommandText = "select nome_jogador from \"Dark_Age_Connection\".\"Jogadores\" where id_jogador = 3";
-            comj.Parameters.AddWithValue("@jogador", Login.jogador);
+                        conn.Open();
+                        comj.CommandText = "select nome_jogador from \"Dark_Age_Connection\".\"Jogadores\" where id_jogador = 2";
+                        comj.Parameters.AddWithValue("@jogador", Login.jogador);
 
-            ndj = (string)comj.ExecuteScalar();
+                        ndj = (string)comj.ExecuteScalar();
 
-            jogador3.Text = ndj;
+                        jogador2.Text = ndj;
 
-            comk.CommandType = CommandType.Text;
-            comk.CommandText = "select nome_personagem, classe_personagem, imagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = 3";
-            ndk = comk.ExecuteReader();
+                        comk.CommandType = CommandType.Text;
+                        comk.CommandText = "select nome_personagem, classe_personagem, imagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = 2";
+                        ndk = comk.ExecuteReader();
 
-            if (ndk.Read())
-            {
-                personagem3.Text = (string)ndk.GetValue(0);
-                classe_jogador3.Text = (string)ndk.GetValue(1);
-                byte[] byte_image_personagem = (byte[])ndk.GetValue(2);
-                imagem_person = byte_image.byteArrayToImage(byte_image_personagem);
-                pictureBox3.Image = imagem_person;
-                pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            }
-            conn.Close();
+                        if (ndk.Read())
+                        {
+                            personagem2.Text = (string)ndk.GetValue(0);
+                            classe_jogador1.Text = (string)ndk.GetValue(1);
+                            byte[] byte_image_personagem = (byte[])ndk.GetValue(2);
+                            imagem_person = byte_image.byteArrayToImage(byte_image_personagem);
+                            pictureBox2.Image = imagem_person;
+                            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                        }
+                        conn.Close();
 
-            conn.Close();
-
-
-            // Info jogador 4
-
-            conn.Open();
-            comj.CommandText = "select nome_jogador from \"Dark_Age_Connection\".\"Jogadores\" where id_jogador = 4";
-            comj.Parameters.AddWithValue("@jogador", Login.jogador);
-            ndj = (string)comj.ExecuteScalar();
-
-            jogador4.Text = ndj;
-            comk.CommandText = "select nome_personagem, classe_personagem, imagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = 4";
-            ndk = comk.ExecuteReader();
-
-            if (ndk.Read())
-            {
-                personagem4.Text = (string)ndk.GetValue(0);
-                classe_jogador4.Text = (string)ndk.GetValue(0);
-                byte[] byte_image_personagem = (byte[])ndk.GetValue(2);
-                imagem_person = byte_image.byteArrayToImage(byte_image_personagem);
-                pictureBox4.Image = imagem_person;
-                pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            }
-            conn.Close();
+                        conn.Close();
 
 
-            // Info jogador 5
+                        // Info jogador 3
 
-            conn.Open();
-            comj.CommandText = "select nome_jogador from \"Dark_Age_Connection\".\"Jogadores\" where id_jogador = 5";
-            comj.Parameters.AddWithValue("@jogador", Login.jogador);
+                        conn.Open();
+                        comj.CommandText = "select nome_jogador from \"Dark_Age_Connection\".\"Jogadores\" where id_jogador = 3";
+                        comj.Parameters.AddWithValue("@jogador", Login.jogador);
 
-            ndj = (string)comj.ExecuteScalar();
+                        ndj = (string)comj.ExecuteScalar();
 
-            jogador5.Text = ndj;
+                        jogador3.Text = ndj;
 
-            comk.CommandType = CommandType.Text;
-            comk.CommandText = "select nome_personagem, classe_personagem, imagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = 5";
-            ndk = comk.ExecuteReader();
+                        comk.CommandType = CommandType.Text;
+                        comk.CommandText = "select nome_personagem, classe_personagem, imagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = 3";
+                        ndk = comk.ExecuteReader();
 
-            if (ndk.Read())
-            {
-                personagem5.Text = (string)ndk.GetValue(0);
-                classe_jogador5.Text = (string)ndk.GetValue(1);
-                byte[] byte_image_personagem = (byte[])ndk.GetValue(2);
-                imagem_person = byte_image.byteArrayToImage(byte_image_personagem);
-                pictureBox5.Image = imagem_person;
-                pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            }
-            conn.Close();
+                        if (ndk.Read())
+                        {
+                            personagem3.Text = (string)ndk.GetValue(0);
+                            classe_jogador3.Text = (string)ndk.GetValue(1);
+                            byte[] byte_image_personagem = (byte[])ndk.GetValue(2);
+                            imagem_person = byte_image.byteArrayToImage(byte_image_personagem);
+                            pictureBox3.Image = imagem_person;
+                            pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                        }
+                        conn.Close();
 
-            conn.Close();*/
+                        conn.Close();
+
+
+                        // Info jogador 4
+
+                        conn.Open();
+                        comj.CommandText = "select nome_jogador from \"Dark_Age_Connection\".\"Jogadores\" where id_jogador = 4";
+                        comj.Parameters.AddWithValue("@jogador", Login.jogador);
+                        ndj = (string)comj.ExecuteScalar();
+
+                        jogador4.Text = ndj;
+                        comk.CommandText = "select nome_personagem, classe_personagem, imagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = 4";
+                        ndk = comk.ExecuteReader();
+
+                        if (ndk.Read())
+                        {
+                            personagem4.Text = (string)ndk.GetValue(0);
+                            classe_jogador4.Text = (string)ndk.GetValue(0);
+                            byte[] byte_image_personagem = (byte[])ndk.GetValue(2);
+                            imagem_person = byte_image.byteArrayToImage(byte_image_personagem);
+                            pictureBox4.Image = imagem_person;
+                            pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                        }
+                        conn.Close();
+
+
+                        // Info jogador 5
+
+                        conn.Open();
+                        comj.CommandText = "select nome_jogador from \"Dark_Age_Connection\".\"Jogadores\" where id_jogador = 5";
+                        comj.Parameters.AddWithValue("@jogador", Login.jogador);
+
+                        ndj = (string)comj.ExecuteScalar();
+
+                        jogador5.Text = ndj;
+
+                        comk.CommandType = CommandType.Text;
+                        comk.CommandText = "select nome_personagem, classe_personagem, imagem from \"Dark_Age_Connection\".\"Personagens\" where fk_id_jogador = 5";
+                        ndk = comk.ExecuteReader();
+
+                        if (ndk.Read())
+                        {
+                            personagem5.Text = (string)ndk.GetValue(0);
+                            classe_jogador5.Text = (string)ndk.GetValue(1);
+                            byte[] byte_image_personagem = (byte[])ndk.GetValue(2);
+                            imagem_person = byte_image.byteArrayToImage(byte_image_personagem);
+                            pictureBox5.Image = imagem_person;
+                            pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+                        }
+                        conn.Close();
+
+                        conn.Close();*/
 
 
             //fim jogadores
@@ -989,6 +991,11 @@ namespace Dark_Age
         {
             Campanha campanha = new Campanha();
             campanha.ShowDialog();
+        }
+
+        private void btn_descanso_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

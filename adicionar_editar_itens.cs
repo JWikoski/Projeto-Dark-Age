@@ -43,6 +43,10 @@ namespace Dark_Age
         }
         private void adicionar_editar_itens_Load(object sender, EventArgs e)
         {
+            panel1.BackColor = Lista_itens.bordas;
+            panel2.BackColor = Lista_itens.bordas;
+            panel3.BackColor = Lista_itens.bordas;
+            panel4.BackColor = Lista_itens.bordas;
 
             //Carrega as profissãoao abrir a tela
                 combox_profissao.DataSource = Conexao_BD.select_profissao();

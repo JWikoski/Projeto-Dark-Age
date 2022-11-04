@@ -17,6 +17,7 @@ namespace Dark_Age
     {
         public static Boolean editar_adicionar;
         public static int id_item;
+        public static Color bordas; 
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -70,6 +71,7 @@ namespace Dark_Age
         private void btn_adicionar_Click_1(object sender, EventArgs e)
         {
             editar_adicionar = false;
+            bordas = Color.FromArgb(45, 196, 118);
             adicionar_editar_itens adicionar = new adicionar_editar_itens();
             adicionar.ShowDialog();
 
@@ -80,6 +82,7 @@ namespace Dark_Age
         private void btn_editar_Click(object sender, EventArgs e)
         {
             editar_adicionar = true;
+            bordas = Color.FromArgb(112, 38, 192);
             adicionar_editar_itens adicionar = new adicionar_editar_itens();
             adicionar.ShowDialog();
 
@@ -382,5 +385,13 @@ namespace Dark_Age
                 x.MinimumHeight = 30;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Pagina_mestre mestre = new Pagina_mestre();
+            mestre.ShowDialog();
+        }
+
+       
     }
 }
