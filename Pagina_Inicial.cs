@@ -35,6 +35,7 @@ namespace Dark_Age
         public Form1()
         {
             InitializeComponent();
+            Opacity = 0;      //first the opacity is 0
             label1.BackColor = Color.FromArgb(150, Color.Black);
             painel_jogadores.BackColor = Color.FromArgb(150, Color.Black);
             ficha_resumida.BackColor = Color.FromArgb(0, Color.Black);
@@ -54,6 +55,8 @@ namespace Dark_Age
             btn_inventario.Controls.Add(new Label()
             { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
             btn_descanso.Controls.Add(new Label()
+            { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
+            botao_itens.Controls.Add(new Label()
             { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
 
 
@@ -313,8 +316,6 @@ namespace Dark_Age
             }
             ndp.Dispose();
             conn2.Close();
-
-
         }
 
 
@@ -350,13 +351,6 @@ namespace Dark_Age
                 Opacity += 0.05;
         }
 
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_open_Click(object sender, EventArgs e)
         {
             NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
@@ -390,10 +384,6 @@ namespace Dark_Age
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_open_MouseHover(object sender, EventArgs e)
         {
@@ -466,20 +456,7 @@ namespace Dark_Age
             frn.ShowDialog();
         }
 
-        private void progressBar2_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -610,22 +587,6 @@ namespace Dark_Age
 
         }
 
-        private void panel8_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void mudaimagem_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_sessao_Click(object sender, EventArgs e)
-        {
-
-
-
-        }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
@@ -640,22 +601,13 @@ namespace Dark_Age
             vida_atual = Convert.ToInt32(numericUpDown1.Value);
             if (numericUpDown1.Value < 6)
             {
-                panel9.BackColor = Color.Red;
+                panel9.BackColor = Color.Salmon;
             } else
             {
-                panel9.BackColor = Color.LimeGreen;
+                panel9.BackColor = Color.MediumSpringGreen;
             }
         }
 
-        private void label86_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void res_labia_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
         {
@@ -765,15 +717,7 @@ namespace Dark_Age
             lista.ShowDialog();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void button1_Click_1(object sender, EventArgs e)
         {

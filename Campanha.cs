@@ -15,7 +15,9 @@ namespace Dark_Age
     {
         public static int id_campanha = 0;
         public static int id_personagem = 0;
-        public static int id_jogador = Login.jogador;        
+        public static int id_jogador = Login.jogador;
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
         public Campanha()
         {
             InitializeComponent();
@@ -23,7 +25,8 @@ namespace Dark_Age
 
         private void Campanha_Load(object sender, EventArgs e)
         {
-            carrega_data_grid_campanha();            
+            lbl_bvd.Text = "Seja Bem-Vindo(a) a tela de campanhas, " + Login.nome_jogador;
+            carrega_data_grid_campanha();
         }
 
 
@@ -33,12 +36,16 @@ namespace Dark_Age
             try
             {
                 data_grid_campanha.DataSource = Conexao_BD.select_campanha();
-                data_grid_campanha.Columns["nome_campanha"].HeaderText = "Nome";
+                data_grid_campanha.Columns["nome_campanha"].HeaderText = "Campanhas";
                 data_grid_campanha.Columns["id_campanha"].Visible = false;
                 data_grid_campanha.Columns["fk_id_jogador_mestre"].Visible = false;
             } catch (Exception a)
             {
                 MessageBox.Show("ERRO no data grid campanha ", "Erro:" + a);
+            }
+            foreach (DataGridViewRow x in data_grid_campanha.Rows)
+            {
+                x.MinimumHeight = 40;
             }
         }
 
@@ -51,7 +58,7 @@ namespace Dark_Age
                     data_grid_pers_camp.DataSource = Conexao_BD.select_personagem_campanha(id_jogador, id_campanha);
                     if (data_grid_pers_camp.DataSource != null)
                     {
-                        data_grid_pers_camp.Columns["nome_personagem"].HeaderText = "Nomes Personagens";
+                        data_grid_pers_camp.Columns["nome_personagem"].HeaderText = "Personagens";
                         data_grid_pers_camp.Columns["id_personagem"].Visible = false;
                     }
                 } else
@@ -59,7 +66,7 @@ namespace Dark_Age
                     data_grid_pers_camp.DataSource = Conexao_BD.select_personagem_campanha_mestre(id_campanha);
                     if (data_grid_pers_camp.DataSource != null)
                     {
-                        data_grid_pers_camp.Columns["nome_personagem"].HeaderText = "Nomes Personagens";
+                        data_grid_pers_camp.Columns["nome_personagem"].HeaderText = "Personagens";
                         data_grid_pers_camp.Columns["id_personagem"].Visible = false;
                     }
                 }                
@@ -67,6 +74,10 @@ namespace Dark_Age
             } catch (Exception a)
             {
                 MessageBox.Show("ERRO no data grid campanha ", "Erro:" + a);
+            }
+            foreach (DataGridViewRow x in data_grid_pers_camp.Rows)
+            {
+                x.MinimumHeight = 40;
             }
         }
 
@@ -203,7 +214,38 @@ namespace Dark_Age
         }
         private void btn_entrar_mestre_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Não temos a tela ainda pronto, aguarde!");
+            Pagina_mestre mestre = new Pagina_mestre();
+            mestre.ShowDialog();
+        }
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private void Campanha_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void data_grid_campanha_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            foreach (DataGridViewRow x in data_grid_campanha.Rows)
+            {
+                x.MinimumHeight = 40;
+            }
+        }
+
+        private void data_grid_pers_camp_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            foreach (DataGridViewRow x in data_grid_pers_camp.Rows)
+            {
+                x.MinimumHeight = 40;
+            }
         }
     }
 }

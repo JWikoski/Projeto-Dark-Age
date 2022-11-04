@@ -20,8 +20,8 @@ namespace Dark_Age
         public DataTable nda;
         public static string senha = " ";
         public static int jogador = 0;
+        public static string nome_jogador;
         Timer timer1 = new Timer();
-
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -38,22 +38,6 @@ namespace Dark_Age
             
 
         }
-     
-            
-      
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       
-
         private void ShowPass_CheckedChanged(object sender, EventArgs e)
         {
             if (ShowPass.Checked == true)
@@ -113,12 +97,13 @@ namespace Dark_Age
                 NpgsqlCommand comm = new NpgsqlCommand();
                 comm.Connection = conn;
                 comm.CommandType = CommandType.Text;
-                comm.CommandText = "select senha_jogador, id_jogador from \"Dark_Age_Connection\".\"Jogadores\" where senha_jogador = @senha";
+                comm.CommandText = "select senha_jogador, id_jogador, nome_jogador from \"Dark_Age_Connection\".\"Jogadores\" where senha_jogador = @senha";
                 comm.Parameters.AddWithValue("@senha", senha);
                 NpgsqlDataReader nda = comm.ExecuteReader();
                 if (nda.Read())
                 {
-                    jogador = (int)nda.GetValue(1);                    
+                    jogador = (int)nda.GetValue(1);
+                    nome_jogador = nda.GetValue(2).ToString();
                 }
 
 
@@ -162,11 +147,6 @@ namespace Dark_Age
 
         }
 
-        private void TbSenha_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Login_Load(object sender, EventArgs e)
         {
             Opacity = 0;      //first the opacity is 0
@@ -197,14 +177,7 @@ namespace Dark_Age
             }
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
+      
 
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
