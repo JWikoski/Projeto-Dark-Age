@@ -16,8 +16,6 @@ namespace Dark_Age.Componente
         {
             InitializeComponent();
         }
-
-
         public System.Windows.Forms.Control receber_valores( string nome_p, string nome_c, string nome_u, Image image_p)
         {
             nome_perso.Text = nome_p.ToString();

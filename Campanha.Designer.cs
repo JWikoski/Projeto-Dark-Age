@@ -189,7 +189,9 @@
             this.data_grid_campanha.Size = new System.Drawing.Size(267, 423);
             this.data_grid_campanha.TabIndex = 0;
             this.data_grid_campanha.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_grid_campanha_CellClick);
+            this.data_grid_campanha.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_grid_campanha_CellContentClick);
             this.data_grid_campanha.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_grid_campanha_CellEnter);
+            this.data_grid_campanha.SelectionChanged += new System.EventHandler(this.data_grid_campanha_SelectionChanged);
             // 
             // pnl_nome_campanha
             // 

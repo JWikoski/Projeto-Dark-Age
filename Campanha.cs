@@ -36,6 +36,13 @@ namespace Dark_Age
                 data_grid_campanha.Columns["nome_campanha"].HeaderText = "Nome";
                 data_grid_campanha.Columns["id_campanha"].Visible = false;
                 data_grid_campanha.Columns["fk_id_jogador_mestre"].Visible = false;
+                if (data_grid_campanha.Rows.Count > 0)
+                {
+                    data_grid_campanha.Rows[0].Selected = true;
+                    DataGridViewRow cell1 = data_grid_campanha.Rows[0];
+                    DataGridViewRow cell2 = data_grid_campanha.Rows[0];
+                    selecao_campanha((int)cell1.Cells[0].Value, (int)cell1.Cells[2].Value);
+                }
             } catch (Exception a)
             {
                 MessageBox.Show("ERRO no data grid campanha ", "Erro:" + a);
@@ -46,24 +53,24 @@ namespace Dark_Age
         {
             try
             {
-                if(id_mestre != id_jogador)
+                if (id_mestre != id_jogador)
                 {
                     data_grid_pers_camp.DataSource = Conexao_BD.select_personagem_campanha(id_jogador, id_campanha);
-                    if (data_grid_pers_camp.DataSource != null)
-                    {
-                        data_grid_pers_camp.Columns["nome_personagem"].HeaderText = "Nomes Personagens";
-                        data_grid_pers_camp.Columns["id_personagem"].Visible = false;
-                    }
                 } else
                 {
                     data_grid_pers_camp.DataSource = Conexao_BD.select_personagem_campanha_mestre(id_campanha);
-                    if (data_grid_pers_camp.DataSource != null)
+                }
+                if (data_grid_pers_camp.DataSource != null)
+                {
+                    data_grid_pers_camp.Columns["nome_personagem"].HeaderText = "Nomes Personagens";
+                    data_grid_pers_camp.Columns["id_personagem"].Visible = false;
+                    if (data_grid_pers_camp.Rows.Count > 0)
                     {
-                        data_grid_pers_camp.Columns["nome_personagem"].HeaderText = "Nomes Personagens";
-                        data_grid_pers_camp.Columns["id_personagem"].Visible = false;
+                        data_grid_pers_camp.Rows[0].Selected = true;
+                        DataGridViewRow cell1 = data_grid_pers_camp.Rows[0];
+                        selecao_personagem((int)cell1.Cells[0].Value);
                     }
                 }                
-
             } catch (Exception a)
             {
                 MessageBox.Show("ERRO no data grid campanha ", "Erro:" + a);
@@ -71,13 +78,37 @@ namespace Dark_Age
         }
 
         private void data_grid_campanha_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            selecao_campanha(e);
+        {   
+            try
+            {
+                if (e.RowIndex == -1)
+                {
+                    return;
+                }
+                DataGridViewRow row = data_grid_campanha.Rows[e.RowIndex];
+                id_campanha = (int)row.Cells[0].Value;
+                int id_mestre = (int)row.Cells[2].Value;
+                selecao_campanha(id_campanha, id_mestre);
+            } catch (Exception a)
+            {
+                MessageBox.Show("ERRO click na grid da campanha ", "Erro:" + a);
+            }
         }
 
         private void data_grid_pers_camp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            selecao_personagem(e);
+            try
+            {
+                if (e.RowIndex == -1)
+                {
+                    return;
+                }
+                DataGridViewRow row = data_grid_pers_camp.Rows[e.RowIndex];
+                selecao_personagem((int)row.Cells[0].Value);
+            } catch (Exception a)
+            {
+                MessageBox.Show("ERRO click na grid de personagem " + a);
+            }
         }
 
         private void btn_entrar_Click(object sender, EventArgs e)
@@ -106,39 +137,17 @@ namespace Dark_Age
                 MessageBox.Show("Selecione o personagem que deseja deletar. Não recomendo deletar;");
             }
         }
-        public void selecao_personagem(DataGridViewCellEventArgs e)
+        public void selecao_personagem(int e)
         {
-            try
-            {
-                if (e.RowIndex == -1)
-                {
-                    return;
-                }
-                DataGridViewRow row = data_grid_pers_camp.Rows[e.RowIndex];
-                id_personagem = (int)row.Cells[0].Value;
-            } catch (Exception a)
-            {
-                MessageBox.Show("ERRO click na grid de personagem " + a);
-            }
+            id_personagem = e;
         }
 
-        public void selecao_campanha(DataGridViewCellEventArgs e)
+        public void selecao_campanha(int id_camp, int id_m)
         {
-            try
-            {
-                if (e.RowIndex == -1)
-                {
-                    return;
-                }
-                DataGridViewRow row = data_grid_campanha.Rows[e.RowIndex];
-                id_campanha = (int)row.Cells[0].Value;
-                int id_mestre = (int)row.Cells[2].Value;
+                id_campanha = id_camp;
+                int id_mestre = id_m;
                 esconder_btn(id_mestre);
                 carrega_data_grid_pers_camp(id_jogador, id_campanha, id_mestre);
-            } catch (Exception a)
-            {
-                MessageBox.Show("ERRO click na grid da campanha ", "Erro:" + a);
-            }
         }
         private void data_grid_campanha_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -204,6 +213,16 @@ namespace Dark_Age
         private void btn_entrar_mestre_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Não temos a tela ainda pronto, aguarde!");
+        }
+
+        private void data_grid_campanha_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void data_grid_campanha_SelectionChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine();
         }
     }
 }

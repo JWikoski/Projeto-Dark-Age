@@ -16,8 +16,8 @@ namespace Dark_Age.Enteties
     {
         public static string Caminho_DB()
         {
-            return "Server=db.lrtxyttihecehnpzgeus.supabase.co;Port=5432;Database=postgres;user Id=postgres;Password=ProjetoDark@ge123";
-            //return "Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80";
+            //return "Server=db.lrtxyttihecehnpzgeus.supabase.co;Port=5432;Database=postgres;user Id=postgres;Password=ProjetoDark@ge123";
+            return "Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80";
         }
 
         public static DataTable select_enums()
@@ -256,6 +256,23 @@ namespace Dark_Age.Enteties
             cone.Parameters.AddWithValue("@id_campanha", id_camp);
             cone.Parameters.AddWithValue("@id_jogador", id_jog);
             cone.Parameters.AddWithValue("@id_personagem", id_pers);            
+            cone.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public static void insert_item_inventario(int id_item ,int qtd)
+        {
+            NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
+            conn.Open();
+            NpgsqlCommand cone = new NpgsqlCommand();
+            cone.Connection = conn;
+
+            cone.CommandText = $@"INSERT INTO ""Dark_Age_Connection"".""Inventario""
+                                    (fk_id_item, fk_id_personagem, quantidade)
+                                    VALUES(@id_item, @id_personagem, @qtd);";
+            cone.Parameters.AddWithValue("@id_item", id_item);
+            cone.Parameters.AddWithValue("@id_personagem", Campanha.id_personagem);
+            cone.Parameters.AddWithValue("@qtd", qtd);
             cone.ExecuteNonQuery();
             conn.Close();
         }
