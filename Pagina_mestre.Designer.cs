@@ -39,7 +39,6 @@
             this.txt_sanidade = new System.Windows.Forms.RichTextBox();
             this.lbl_titulo = new System.Windows.Forms.Label();
             this.txt_historia = new System.Windows.Forms.RichTextBox();
-
             this.bemvindo = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.lbl_npc = new System.Windows.Forms.Label();
@@ -57,7 +56,6 @@
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
-
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -69,8 +67,8 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.txt_outros);
@@ -85,8 +83,8 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.btn_outros);
             this.panel2.Controls.Add(this.btn_sanidades);
@@ -204,7 +202,7 @@
             // 
             // txt_outros
             // 
-            this.txt_outros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.txt_outros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_outros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
             this.txt_outros.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -219,7 +217,7 @@
             // 
             // txt_regras
             // 
-            this.txt_regras.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.txt_regras.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_regras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
             this.txt_regras.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -234,7 +232,7 @@
             // 
             // txt_sanidade
             // 
-            this.txt_sanidade.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.txt_sanidade.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_sanidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
             this.txt_sanidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -249,7 +247,7 @@
             // 
             // lbl_titulo
             // 
-            this.lbl_titulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lbl_titulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_titulo.AutoSize = true;
             this.lbl_titulo.BackColor = System.Drawing.Color.Transparent;
@@ -266,7 +264,7 @@
             // 
             // txt_historia
             // 
-            this.txt_historia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.txt_historia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_historia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
             this.txt_historia.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -277,31 +275,6 @@
             this.txt_historia.Size = new System.Drawing.Size(740, 697);
             this.txt_historia.TabIndex = 1;
             this.txt_historia.Text = "\n";
-            // 
-            // btn_loja
-            // 
-            this.btn_loja.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_loja.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_loja.FlatAppearance.BorderSize = 0;
-            this.btn_loja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_loja.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_loja.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_loja.IconChar = FontAwesome.Sharp.IconChar.Store;
-            this.btn_loja.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.btn_loja.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_loja.IconSize = 30;
-            this.btn_loja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_loja.Location = new System.Drawing.Point(744, -1);
-            this.btn_loja.Name = "btn_loja";
-            this.btn_loja.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
-            this.btn_loja.Size = new System.Drawing.Size(172, 52);
-            this.btn_loja.TabIndex = 148;
-            this.btn_loja.Text = "Itens";
-            this.btn_loja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_loja.UseVisualStyleBackColor = true;
-            this.btn_loja.Click += new System.EventHandler(this.iconButton1_Click_1);
-            this.btn_loja.MouseEnter += new System.EventHandler(this.btn_historia_MouseEnter);
-            this.btn_loja.MouseHover += new System.EventHandler(this.btn_historia_MouseEnter);
             // 
             // bemvindo
             // 
@@ -330,7 +303,7 @@
             // 
             // lbl_npc
             // 
-            this.lbl_npc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lbl_npc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_npc.AutoSize = true;
             this.lbl_npc.BackColor = System.Drawing.Color.Transparent;
@@ -344,26 +317,10 @@
             this.lbl_npc.Size = new System.Drawing.Size(70, 33);
             this.lbl_npc.TabIndex = 6;
             this.lbl_npc.Text = "NPCs";
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(255, 18);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.label1.Size = new System.Drawing.Size(70, 33);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "NPCs";
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.iconButton6);
             this.panel4.Controls.Add(this.btn_loja);
@@ -445,7 +402,7 @@
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
@@ -470,7 +427,7 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
@@ -487,7 +444,7 @@
             // 
             // panel5
             // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.Controls.Add(this.panel7);
             this.panel5.Controls.Add(this.iconButton1);
@@ -553,7 +510,6 @@
             this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton3.UseVisualStyleBackColor = true;
-            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
             // iconButton4
             // 
@@ -572,7 +528,6 @@
             this.iconButton4.Name = "iconButton4";
             this.iconButton4.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
             this.iconButton4.Size = new System.Drawing.Size(135, 52);
-       
             this.iconButton4.TabIndex = 144;
             this.iconButton4.Text = "NPCs";
             this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -604,8 +559,6 @@
             this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton5.UseVisualStyleBackColor = true;
-            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
-            this.iconButton5.MouseEnter += new System.EventHandler(this.iconButton5_MouseEnter);
             // 
             // iconButton2
             // 
@@ -632,8 +585,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
-            this.ClientSize = new System.Drawing.Size(1600, 900);2);
-            this.Controls.Add(this.btn_loja);
+            this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.bemvindo);
@@ -643,7 +596,6 @@
             this.Name = "Pagina_mestre";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pagina_mestre";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Pagina_mestre_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -654,6 +606,9 @@
             this.panel6.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -673,8 +628,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label lbl_npc;
-        private FontAwesome.Sharp.IconButton btn_loja;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel7;
