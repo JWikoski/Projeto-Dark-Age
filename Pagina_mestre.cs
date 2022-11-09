@@ -15,6 +15,8 @@ namespace Dark_Age
 {
     public partial class Pagina_mestre : Form
     {
+
+
         public Pagina_mestre()
         {
             InitializeComponent();
@@ -22,8 +24,10 @@ namespace Dark_Age
 
         private void Pagina_mestre_Load(object sender, EventArgs e)
         {
-            
+
         }
+
+
 
         private void btn_anotacoes_Click(object sender, EventArgs e)
         {
@@ -99,6 +103,7 @@ namespace Dark_Age
             Lista_itens lista = new Lista_itens();
             lista.ShowDialog();
         }
+
         private void iconButton4_Click(object sender, EventArgs e)
         {
             lbl_npc.Text = "NPC's";
@@ -107,7 +112,8 @@ namespace Dark_Age
         private void iconButton4_MouseEnter(object sender, EventArgs e)
         {
             var button = (Button)sender;
-            button.FlatAppearance.MouseOverBackColor = Color.FromArgb(25, 255, 255,192);
+            button.FlatAppearance.MouseOverBackColor = Color.FromArgb(25, 255, 255, 192);
+        }
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
@@ -125,5 +131,5 @@ namespace Dark_Age
             button.FlatAppearance.MouseOverBackColor = Color.FromArgb(25, Color.Salmon);
         }
     }
-    
+
 }

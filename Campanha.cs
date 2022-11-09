@@ -39,14 +39,8 @@ namespace Dark_Age
                 data_grid_campanha.Columns["nome_campanha"].HeaderText = "Campanhas";
                 data_grid_campanha.Columns["id_campanha"].Visible = false;
                 data_grid_campanha.Columns["fk_id_jogador_mestre"].Visible = false;
-                if (data_grid_campanha.Rows.Count > 0)
-                {
-                    data_grid_campanha.Rows[0].Selected = true;
-                    DataGridViewRow cell1 = data_grid_campanha.Rows[0];
-                    DataGridViewRow cell2 = data_grid_campanha.Rows[0];
-                    selecao_campanha((int)cell1.Cells[0].Value, (int)cell1.Cells[2].Value);
-                }
-            } catch (Exception a)
+            }
+            catch (Exception a)
             {
                 MessageBox.Show("ERRO no data grid campanha ", "Erro:" + a);
             }
@@ -63,32 +57,24 @@ namespace Dark_Age
                 if (id_mestre != id_jogador)
                 {
                     data_grid_pers_camp.DataSource = Conexao_BD.select_personagem_campanha(id_jogador, id_campanha);
-
                     if (data_grid_pers_camp.DataSource != null)
                     {
                         data_grid_pers_camp.Columns["nome_personagem"].HeaderText = "Personagens";
                         data_grid_pers_camp.Columns["id_personagem"].Visible = false;
-                 
-                } else
+                    }
+                }
+                else
                 {
                     data_grid_pers_camp.DataSource = Conexao_BD.select_personagem_campanha_mestre(id_campanha);
-                }
-                if (data_grid_pers_camp.DataSource != null)
-                {
-                    data_grid_pers_camp.Columns["nome_personagem"].HeaderText = "Nomes Personagens";
-                    data_grid_pers_camp.Columns["id_personagem"].Visible = false;
-                    if (data_grid_pers_camp.Rows.Count > 0)
+                    if (data_grid_pers_camp.DataSource != null)
                     {
-
                         data_grid_pers_camp.Columns["nome_personagem"].HeaderText = "Personagens";
                         data_grid_pers_camp.Columns["id_personagem"].Visible = false;
-                        data_grid_pers_camp.Rows[0].Selected = true;
-                        DataGridViewRow cell1 = data_grid_pers_camp.Rows[0];
-                        selecao_personagem((int)cell1.Cells[0].Value);
-
                     }
-                }                
-            } catch (Exception a)
+                }
+
+            }
+            catch (Exception a)
             {
                 MessageBox.Show("ERRO no data grid campanha ", "Erro:" + a);
             }
@@ -99,7 +85,62 @@ namespace Dark_Age
         }
 
         private void data_grid_campanha_CellClick(object sender, DataGridViewCellEventArgs e)
-        {   
+        {
+            selecao_campanha(e);
+        }
+
+        private void data_grid_pers_camp_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selecao_personagem(e);
+        }
+
+        private void btn_entrar_Click(object sender, EventArgs e)
+        {
+            if (id_personagem != 0)
+            {
+                Form1 pagina_inicial = new Form1();
+                pagina_inicial.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecione o personagem para abrir a ficha dele, ou crie um novo personagem.");
+            }
+        }
+        private void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            if (id_personagem != 0)
+            {
+                if (MessageBox.Show("Tem certeza que deseja deletar a ficha do personagem, não tem volta depois?", "Excluir personagem", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Conexao_BD.deletar_personagem(id_personagem, id_campanha);
+                    carrega_data_grid_pers_camp(id_jogador, id_campanha, 0);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione o personagem que deseja deletar. Não recomendo deletar;");
+            }
+        }
+        public void selecao_personagem(DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex == -1)
+                {
+                    return;
+                }
+                DataGridViewRow row = data_grid_pers_camp.Rows[e.RowIndex];
+                id_personagem = (int)row.Cells[0].Value;
+            }
+            catch (Exception a)
+            {
+                MessageBox.Show("ERRO click na grid de personagem " + a);
+            }
+        }
+
+        public void selecao_campanha(DataGridViewCellEventArgs e)
+        {
             try
             {
                 if (e.RowIndex == -1)
@@ -109,66 +150,13 @@ namespace Dark_Age
                 DataGridViewRow row = data_grid_campanha.Rows[e.RowIndex];
                 id_campanha = (int)row.Cells[0].Value;
                 int id_mestre = (int)row.Cells[2].Value;
-                selecao_campanha(id_campanha, id_mestre);
-            } catch (Exception a)
+                esconder_btn(id_mestre);
+                carrega_data_grid_pers_camp(id_jogador, id_campanha, id_mestre);
+            }
+            catch (Exception a)
             {
                 MessageBox.Show("ERRO click na grid da campanha ", "Erro:" + a);
             }
-        }
-
-        private void data_grid_pers_camp_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                if (e.RowIndex == -1)
-                {
-                    return;
-                }
-                DataGridViewRow row = data_grid_pers_camp.Rows[e.RowIndex];
-                selecao_personagem((int)row.Cells[0].Value);
-            } catch (Exception a)
-            {
-                MessageBox.Show("ERRO click na grid de personagem " + a);
-            }
-        }
-
-        private void btn_entrar_Click(object sender, EventArgs e)
-        {
-            if (id_personagem != 0)
-            {
-                Form1 pagina_inicial = new Form1();                
-                pagina_inicial.ShowDialog();
-                this.Close();
-            } else
-            {
-                MessageBox.Show("Por favor, selecione o personagem para abrir a ficha dele, ou crie um novo personagem.");
-            }
-        }
-        private void btn_eliminar_Click(object sender, EventArgs e)
-        {
-            if(id_personagem != 0)
-            {
-                if (MessageBox.Show("Tem certeza que deseja deletar a ficha do personagem, não tem volta depois?", "Excluir personagem", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    Conexao_BD.deletar_personagem(id_personagem, id_campanha);
-                    carrega_data_grid_pers_camp(id_jogador, id_campanha, 0);
-                }
-            } else
-            {
-                MessageBox.Show("Selecione o personagem que deseja deletar. Não recomendo deletar;");
-            }
-        }
-        public void selecao_personagem(int e)
-        {
-            id_personagem = e;
-        }
-
-        public void selecao_campanha(int id_camp, int id_m)
-        {
-                id_campanha = id_camp;
-                int id_mestre = id_m;
-                esconder_btn(id_mestre);
-                carrega_data_grid_pers_camp(id_jogador, id_campanha, id_mestre);
         }
         private void data_grid_campanha_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -184,9 +172,9 @@ namespace Dark_Age
         }
         private void btn_confirmar_camp_Click(object sender, EventArgs e)
         {
-            Conexao_BD.criar_nova_campanha(txt_nome_campanha.Text, id_jogador); 
-			pnl_nome_campanha.Visible = false;			
-            MessageBox.Show("Criado com sucesso campanha e vinculo do mestre");			
+            Conexao_BD.criar_nova_campanha(txt_nome_campanha.Text, id_jogador);
+            pnl_nome_campanha.Visible = false;
+            MessageBox.Show("Criado com sucesso campanha e vinculo do mestre");
             carrega_data_grid_campanha();
             //this.Close();
         }
@@ -205,7 +193,8 @@ namespace Dark_Age
                 btn_entrar.Visible = false;
                 btn_eliminar.Visible = false;
                 btn_criar_novo.Visible = false;
-            } else
+            }
+            else
             {
                 btn_entrar_mestre.Visible = false;
                 btn_entrar.Visible = true;
@@ -213,7 +202,7 @@ namespace Dark_Age
                 btn_criar_novo.Visible = true;
             }
         }
-       
+
         private void lbl_fechar_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -226,7 +215,8 @@ namespace Dark_Age
                 Ficha ficha = new Ficha();
                 ficha.ShowDialog();
                 this.Close();
-            } else
+            }
+            else
             {
                 MessageBox.Show("Selecione a campanha que deseja criar o personagem!");
             }
@@ -265,16 +255,6 @@ namespace Dark_Age
             {
                 x.MinimumHeight = 40;
             }
-        }
-
-        private void data_grid_campanha_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void data_grid_campanha_SelectionChanged(object sender, EventArgs e)
-        {
-            Console.WriteLine();
         }
     }
 }
