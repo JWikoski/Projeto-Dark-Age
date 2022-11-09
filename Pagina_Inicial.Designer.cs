@@ -235,7 +235,6 @@ namespace Dark_Age
             this.label1.Size = new System.Drawing.Size(234, 52);
             this.label1.TabIndex = 2;
             this.label1.Text = "Personagens";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // bemvindo
             // 
@@ -1021,7 +1020,6 @@ namespace Dark_Age
             this.res_labia.Size = new System.Drawing.Size(22, 26);
             this.res_labia.TabIndex = 62;
             this.res_labia.Text = "0";
-            this.res_labia.Click += new System.EventHandler(this.res_labia_Click);
             // 
             // res_enganacao
             // 
@@ -1082,7 +1080,6 @@ namespace Dark_Age
             this.label86.Size = new System.Drawing.Size(88, 43);
             this.label86.TabIndex = 90;
             this.label86.Text = "Sedução/\r\nEnganação:";
-            this.label86.Click += new System.EventHandler(this.label86_Click);
             // 
             // res_seducao
             // 
@@ -1634,7 +1631,6 @@ namespace Dark_Age
             this.mudaimagem.Name = "mudaimagem";
             this.mudaimagem.Size = new System.Drawing.Size(196, 16);
             this.mudaimagem.TabIndex = 6;
-            this.mudaimagem.TextChanged += new System.EventHandler(this.mudaimagem_TextChanged);
             this.mudaimagem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // radioButton1
@@ -1782,7 +1778,6 @@ namespace Dark_Age
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1582, 62);
             this.panel8.TabIndex = 88;
-            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             this.panel8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // label3
@@ -1819,7 +1814,7 @@ namespace Dark_Age
             // 
             // panel9
             // 
-            this.panel9.BackColor = System.Drawing.Color.LimeGreen;
+            this.panel9.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.panel9.Controls.Add(this.lbl_vida);
             this.panel9.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel9.ForeColor = System.Drawing.Color.White;
@@ -1914,7 +1909,6 @@ namespace Dark_Age
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1251, 109);
             this.panel4.TabIndex = 0;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // pn_adicional
             // 
@@ -2207,7 +2201,6 @@ namespace Dark_Age
             this.BackgroundImage = global::Dark_Age.Properties.Resources.image;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1600, 900);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.LblFecharPassivas);

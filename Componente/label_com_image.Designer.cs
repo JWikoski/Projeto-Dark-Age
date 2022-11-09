@@ -63,7 +63,7 @@
             this.nome_classe.AutoSize = true;
             this.nome_classe.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nome_classe.ForeColor = System.Drawing.SystemColors.Control;
-            this.nome_classe.Location = new System.Drawing.Point(138, 61);
+            this.nome_classe.Location = new System.Drawing.Point(138, 59);
             this.nome_classe.Name = "nome_classe";
             this.nome_classe.Size = new System.Drawing.Size(50, 20);
             this.nome_classe.TabIndex = 2;
@@ -74,7 +74,7 @@
             this.nome_user.AutoSize = true;
             this.nome_user.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nome_user.ForeColor = System.Drawing.SystemColors.Control;
-            this.nome_user.Location = new System.Drawing.Point(138, 90);
+            this.nome_user.Location = new System.Drawing.Point(138, 88);
             this.nome_user.Name = "nome_user";
             this.nome_user.Size = new System.Drawing.Size(102, 20);
             this.nome_user.TabIndex = 3;

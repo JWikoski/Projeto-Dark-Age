@@ -16,7 +16,6 @@ namespace Dark_Age
     public partial class Lista_itens : Form
     {
         public static Boolean editar_adicionar;
-        public static int id_item;
         public static Color bordas; 
         public static int id_item = 0;
 
@@ -280,11 +279,6 @@ namespace Dark_Age
             button.FlatAppearance.MouseOverBackColor = Color.Transparent;
         }
 
-        private void combox_dificuldade_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void combox_dificuldade_Click(object sender, EventArgs e)
         {
             filtro_dificuldade.Checked = true;
@@ -375,7 +369,6 @@ namespace Dark_Age
                 x.MinimumHeight = 30;
             }
         }
-
         private void btn_adicionar_inv_Click(object sender, EventArgs e)
         {
             if (id_item > 0)
@@ -411,7 +404,5 @@ namespace Dark_Age
             Pagina_mestre mestre = new Pagina_mestre();
             mestre.ShowDialog();
         }
-
-       
     }
 }

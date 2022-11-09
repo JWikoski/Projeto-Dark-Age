@@ -58,6 +58,7 @@
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.text_descricao = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
+
             this.btn_adicionar_inv = new System.Windows.Forms.Button();
             this.Grid_lista_itens = new System.Windows.Forms.DataGridView();
             this.limpar_filtros1 = new FontAwesome.Sharp.IconButton();
@@ -69,6 +70,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Grid_lista_itens)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel3
             // 
             // Grid_lista_itens
             // 
@@ -387,7 +390,6 @@
             this.combox_dificuldade.Name = "combox_dificuldade";
             this.combox_dificuldade.Size = new System.Drawing.Size(121, 23);
             this.combox_dificuldade.TabIndex = 93;
-            this.combox_dificuldade.SelectedIndexChanged += new System.EventHandler(this.combox_dificuldade_SelectedIndexChanged);
             this.combox_dificuldade.Click += new System.EventHandler(this.combox_dificuldade_Click);
             // 
             // label3
@@ -578,6 +580,60 @@
             this.Grid_lista_itens.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_lista_itens_CellContentClick);
             this.Grid_lista_itens.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_lista_itens_ColumnHeaderMouseClick);
             // 
+            // Grid_lista_itens
+            // 
+            this.Grid_lista_itens.AllowUserToAddRows = false;
+            this.Grid_lista_itens.AllowUserToDeleteRows = false;
+            this.Grid_lista_itens.AllowUserToOrderColumns = true;
+            this.Grid_lista_itens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Grid_lista_itens.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.Grid_lista_itens.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            this.Grid_lista_itens.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Grid_lista_itens.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.Grid_lista_itens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(37)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_lista_itens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.Grid_lista_itens.ColumnHeadersHeight = 30;
+            this.Grid_lista_itens.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Grid_lista_itens.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Grid_lista_itens.EnableHeadersVisualStyles = false;
+            this.Grid_lista_itens.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            this.Grid_lista_itens.Location = new System.Drawing.Point(60, 182);
+            this.Grid_lista_itens.MultiSelect = false;
+            this.Grid_lista_itens.Name = "Grid_lista_itens";
+            this.Grid_lista_itens.ReadOnly = true;
+            this.Grid_lista_itens.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_lista_itens.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.Grid_lista_itens.RowTemplate.Height = 10;
+            this.Grid_lista_itens.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_lista_itens.Size = new System.Drawing.Size(996, 582);
+            this.Grid_lista_itens.TabIndex = 0;
+            this.Grid_lista_itens.VirtualMode = true;
+            this.Grid_lista_itens.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_lista_itens_CellClick);
+            this.Grid_lista_itens.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_lista_itens_CellContentClick);
+            this.Grid_lista_itens.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_lista_itens_ColumnHeaderMouseClick);
+            // 
             // limpar_filtros1
             // 
             this.limpar_filtros1.BackColor = System.Drawing.Color.Transparent;
@@ -694,6 +750,13 @@
         private System.Windows.Forms.Button btn_adicionar;
         private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.Button btn_eliminar;
+
+        private System.Windows.Forms.RichTextBox text_descricao;
+        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.DataGridView Grid_lista_itens;
+        private FontAwesome.Sharp.IconButton limpar_filtros1;
+        private System.Windows.Forms.Panel panel1;
+
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;

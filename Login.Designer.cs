@@ -54,7 +54,6 @@ namespace Dark_Age
             this.Lbl_senha.Size = new System.Drawing.Size(106, 45);
             this.Lbl_senha.TabIndex = 2;
             this.Lbl_senha.Text = "Senha";
-            this.Lbl_senha.Click += new System.EventHandler(this.label2_Click);
             // 
             // TbSenha
             // 
@@ -69,7 +68,6 @@ namespace Dark_Age
             this.TbSenha.Size = new System.Drawing.Size(271, 29);
             this.TbSenha.TabIndex = 3;
             this.TbSenha.UseSystemPasswordChar = true;
-            this.TbSenha.TextChanged += new System.EventHandler(this.TbSenha_TextChanged);
             this.TbSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbSenha_KeyDown);
             // 
             // panel3
@@ -91,7 +89,7 @@ namespace Dark_Age
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.WaitOnLoad = true;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel8_MouseDown);
             // 
             // pictureBox2
             // 
@@ -103,7 +101,7 @@ namespace Dark_Age
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.WaitOnLoad = true;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel8_MouseDown);
             // 
             // ShowPass
             // 
@@ -127,7 +125,7 @@ namespace Dark_Age
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.pictureBox3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel8_MouseDown);
             // 
             // LblFecharLogin
             // 
@@ -180,6 +178,7 @@ namespace Dark_Age
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Login_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel8_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

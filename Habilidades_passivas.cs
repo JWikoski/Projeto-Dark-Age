@@ -168,17 +168,7 @@ namespace Dark_Age
             this.Close();
         }
 
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-            
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-       
+        
 
     
 
