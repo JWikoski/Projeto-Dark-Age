@@ -32,6 +32,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.iconButton5 = new FontAwesome.Sharp.IconButton();
+            this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_qtd = new System.Windows.Forms.Label();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -54,6 +58,8 @@
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.text_descricao = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
+
+            this.btn_adicionar_inv = new System.Windows.Forms.Button();
             this.Grid_lista_itens = new System.Windows.Forms.DataGridView();
             this.limpar_filtros1 = new FontAwesome.Sharp.IconButton();
             this.btn_historia = new FontAwesome.Sharp.IconButton();
@@ -67,6 +73,12 @@
             // 
             // panel3
             // 
+            // Grid_lista_itens
+            // 
+            this.panel3.Controls.Add(this.iconButton5);
+            this.panel3.Controls.Add(this.iconButton4);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.lbl_qtd);
             this.panel3.Controls.Add(this.iconButton3);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.iconButton1);
@@ -76,7 +88,7 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.text_descricao);
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.btn_adicionar_inv);
             this.panel3.Controls.Add(this.Grid_lista_itens);
             this.panel3.Controls.Add(this.limpar_filtros1);
             this.panel3.Controls.Add(this.btn_historia);
@@ -85,6 +97,69 @@
             this.panel3.Size = new System.Drawing.Size(1577, 804);
             this.panel3.TabIndex = 89;
             this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            // 
+            // iconButton5
+            // 
+            this.iconButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.iconButton5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton5.FlatAppearance.BorderSize = 0;
+            this.iconButton5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconButton5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.iconButton5.IconColor = System.Drawing.Color.White;
+            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton5.IconSize = 45;
+            this.iconButton5.Location = new System.Drawing.Point(1288, 586);
+            this.iconButton5.Name = "iconButton5";
+            this.iconButton5.Size = new System.Drawing.Size(33, 32);
+            this.iconButton5.TabIndex = 148;
+            this.iconButton5.UseVisualStyleBackColor = true;
+            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
+            // 
+            // iconButton4
+            // 
+            this.iconButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.iconButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton4.FlatAppearance.BorderSize = 0;
+            this.iconButton4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconButton4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.iconButton4.IconColor = System.Drawing.Color.White;
+            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton4.IconSize = 45;
+            this.iconButton4.Location = new System.Drawing.Point(1239, 586);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Size = new System.Drawing.Size(33, 32);
+            this.iconButton4.TabIndex = 147;
+            this.iconButton4.UseVisualStyleBackColor = true;
+            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(1056, 588);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(119, 28);
+            this.label4.TabIndex = 104;
+            this.label4.Text = "Quantidade:";
+            // 
+            // lbl_qtd
+            // 
+            this.lbl_qtd.AutoSize = true;
+            this.lbl_qtd.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_qtd.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_qtd.ForeColor = System.Drawing.Color.White;
+            this.lbl_qtd.Location = new System.Drawing.Point(1181, 579);
+            this.lbl_qtd.Name = "lbl_qtd";
+            this.lbl_qtd.Size = new System.Drawing.Size(38, 46);
+            this.lbl_qtd.TabIndex = 103;
+            this.lbl_qtd.Text = "1";
             // 
             // iconButton3
             // 
@@ -434,7 +509,7 @@
             this.text_descricao.TabIndex = 1;
             this.text_descricao.Text = "";
             // 
-            // button1
+            // btn_adicionar_inv
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(126)))), ((int)(((byte)(155)))));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -449,6 +524,61 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Adicionar Item ao Inventario";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Grid_lista_itens
+            // 
+            this.Grid_lista_itens.AllowUserToAddRows = false;
+            this.Grid_lista_itens.AllowUserToDeleteRows = false;
+            this.Grid_lista_itens.AllowUserToOrderColumns = true;
+            this.Grid_lista_itens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Grid_lista_itens.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.Grid_lista_itens.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            this.Grid_lista_itens.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Grid_lista_itens.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.Grid_lista_itens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(37)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_lista_itens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.Grid_lista_itens.ColumnHeadersHeight = 30;
+            this.Grid_lista_itens.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Grid_lista_itens.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Grid_lista_itens.EnableHeadersVisualStyles = false;
+            this.Grid_lista_itens.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            this.Grid_lista_itens.Location = new System.Drawing.Point(60, 182);
+            this.Grid_lista_itens.MultiSelect = false;
+            this.Grid_lista_itens.Name = "Grid_lista_itens";
+            this.Grid_lista_itens.ReadOnly = true;
+            this.Grid_lista_itens.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_lista_itens.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.Grid_lista_itens.RowTemplate.Height = 10;
+            this.Grid_lista_itens.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_lista_itens.Size = new System.Drawing.Size(996, 582);
+            this.Grid_lista_itens.TabIndex = 0;
+            this.Grid_lista_itens.VirtualMode = true;
+            this.Grid_lista_itens.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_lista_itens_CellClick);
+            this.Grid_lista_itens.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_lista_itens_CellContentClick);
+            this.Grid_lista_itens.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_lista_itens_ColumnHeaderMouseClick);
             // 
             // Grid_lista_itens
             // 
@@ -620,11 +750,28 @@
         private System.Windows.Forms.Button btn_adicionar;
         private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.Button btn_eliminar;
+
         private System.Windows.Forms.RichTextBox text_descricao;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.DataGridView Grid_lista_itens;
         private FontAwesome.Sharp.IconButton limpar_filtros1;
         private System.Windows.Forms.Panel panel1;
+
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_adicionar_inv;
+        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.DataGridView Grid_lista_itens;
+        private FontAwesome.Sharp.IconButton limpar_filtros1;
+        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private System.Windows.Forms.Label lbl_qtd;
+        private System.Windows.Forms.Label label4;
+        private FontAwesome.Sharp.IconButton iconButton4;
+        private FontAwesome.Sharp.IconButton iconButton5;
         private FontAwesome.Sharp.IconButton btn_historia;
     }
 }

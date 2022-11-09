@@ -788,5 +788,10 @@ namespace Dark_Age
             Campanha campanha = new Campanha();
             campanha.ShowDialog();
         }
+
+        private void btn_descanso_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

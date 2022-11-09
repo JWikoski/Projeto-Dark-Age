@@ -16,38 +16,34 @@ namespace Dark_Age
     public partial class Lista_itens : Form
     {
         public static Boolean editar_adicionar;
-        public static int id_item;
         public static Color bordas; 
+        public static int id_item = 0;
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
+        public int qtd = 1;
         public Lista_itens()
         {
             InitializeComponent();
         }
 
         private void Lista_itens_Load(object sender, EventArgs e)
-        {
-            
-
+        {          
             Grid_lista_itens.DataSource = Conexao_BD.select_data_gridlist();
             carregar_data_grid();
-
             //Carrega as profissãoao abrir a tela
             combox_profissao.DataSource = Conexao_BD.select_profissao();
             combox_profissao.ValueMember = "id_profissao";
             combox_profissao.DisplayMember = "nome_profissao";
-
             //carrega os tipos dos itens
             combox_tipo.DataSource = Conexao_BD.select_tipo_itens();
             combox_tipo.ValueMember = "id_tipo_itens";
             combox_tipo.DisplayMember = "nome_tipo_itens";
-
             //carrega os enum do dificuldade da base de dados
             combox_dificuldade.DataSource = Conexao_BD.select_enums();
             combox_dificuldade.ValueMember = "nome_enum_difi";
             combox_dificuldade.DisplayMember = "nome_enum_difi";
-
+            qtd_lbl();
         }
 
         private void Grid_lista_itens_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -58,7 +54,6 @@ namespace Dark_Age
                 {
                     return;
                 }
-
                 DataGridViewRow row = Grid_lista_itens.Rows[e.RowIndex];                
                 text_descricao.Text = row.Cells[5].Value.ToString();
                 id_item = (int)row.Cells[0].Value;
@@ -92,44 +87,38 @@ namespace Dark_Age
 
         private void BindGrid()
         {
-
             Grid_lista_itens.AllowUserToAddRows = false;
-
             Grid_lista_itens.Columns.Clear();
-
-
             if (cmp_procura.Text == "")
             {
-
                 Grid_lista_itens.DataSource = Conexao_BD.select_data_gridlist();
                 carregar_data_grid();
-
             }
             else
             {
                     string procura_nome = cmp_procura.Text;
                     Grid_lista_itens.DataSource = Conexao_BD.filtro_data_gridlist(procura_nome);
-                    carregar_data_grid();
-                    //preenche o datatable via dataadapter
-               
-
+                    carregar_data_grid();                            
             }
-
         }
 
         public void carregar_data_grid()
         {
             try
             {   
-
                 Grid_lista_itens.Columns["id_itens"].HeaderText = "ID";
                 Grid_lista_itens.Columns["nome_itens"].HeaderText = "Nome";
                 Grid_lista_itens.Columns["dificuldade"].HeaderText = "Dificuldade";
                 Grid_lista_itens.Columns["nome_tipo_itens"].HeaderText = "Tipo do Item";
                 Grid_lista_itens.Columns["nome_profissao"].HeaderText = "Profissão";
-
                 Grid_lista_itens.Columns["descricao"].Visible = false;
-                
+                if (Grid_lista_itens.Rows.Count > 0)
+                {
+                    Grid_lista_itens.Rows[0].Selected = true;
+                    DataGridViewRow cell1 = Grid_lista_itens.Rows[0];
+                    text_descricao.Text = cell1.Cells[5].Value.ToString();
+                    id_item = (int)cell1.Cells[0].Value;
+                }
                 foreach (DataGridViewRow x in Grid_lista_itens.Rows)
                 {
                     x.MinimumHeight = 30;
@@ -380,6 +369,40 @@ namespace Dark_Age
                 x.MinimumHeight = 30;
             }
         }
+        private void btn_adicionar_inv_Click(object sender, EventArgs e)
+        {
+            if (id_item > 0)
+            {
+                Conexao_BD.insert_item_inventario(id_item, qtd);
+            } else
+            {
+                MessageBox.Show("Selecione o item antes de inserir no inventario!");
+            }
+        }
 
+        private void iconButton5_Click(object sender, EventArgs e)
+        {            
+            qtd++;
+            qtd_lbl();
+        }
+
+        private void iconButton4_Click(object sender, EventArgs e)
+        {
+            if (qtd > 1)
+            {
+                qtd--;
+                qtd_lbl();
+            }            
+        }
+        public void qtd_lbl()
+        {
+            lbl_qtd.Text = Convert.ToString(qtd);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Pagina_mestre mestre = new Pagina_mestre();
+            mestre.ShowDialog();
+        }
     }
 }

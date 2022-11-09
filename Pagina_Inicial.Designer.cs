@@ -54,7 +54,6 @@ namespace Dark_Age
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label90 = new System.Windows.Forms.Label();
-            this.modificador = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.res_academicos = new System.Windows.Forms.Label();
             this.res_magia = new System.Windows.Forms.Label();
@@ -160,6 +159,8 @@ namespace Dark_Age
             this.lbl_mana = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.modificador = new System.Windows.Forms.TextBox();
             this.ficha_resumida.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Locais)).BeginInit();
             this.panel6.SuspendLayout();
@@ -415,6 +416,7 @@ namespace Dark_Age
             this.btn_descanso.TabIndex = 89;
             this.btn_descanso.UseVisualStyleBackColor = true;
             this.btn_descanso.Visible = false;
+            this.btn_descanso.Click += new System.EventHandler(this.btn_descanso_Click);
             this.btn_descanso.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_change_MouseDown);
             this.btn_descanso.MouseEnter += new System.EventHandler(this.btn_change_MouseEnter);
             this.btn_descanso.MouseLeave += new System.EventHandler(this.btn_change_MouseLeave);
@@ -587,17 +589,6 @@ namespace Dark_Age
             this.label90.TabIndex = 89;
             this.label90.Text = "Modificador";
             this.label90.Visible = false;
-            // 
-            // modificador
-            // 
-            this.modificador.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.modificador.Location = new System.Drawing.Point(325, 217);
-            this.modificador.Name = "modificador";
-            this.modificador.Size = new System.Drawing.Size(82, 23);
-            this.modificador.TabIndex = 88;
-            this.modificador.Text = "0";
-            this.modificador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.modificador.Visible = false;
             // 
             // panel2
             // 
@@ -2180,6 +2171,27 @@ namespace Dark_Age
             this.panel10.Size = new System.Drawing.Size(220, 32);
             this.panel10.TabIndex = 10;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(616, 70);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 89;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // modificador
+            // 
+            this.modificador.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.modificador.Location = new System.Drawing.Point(325, 217);
+            this.modificador.Name = "modificador";
+            this.modificador.Size = new System.Drawing.Size(82, 23);
+            this.modificador.TabIndex = 88;
+            this.modificador.Text = "0";
+            this.modificador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.modificador.Visible = false;
+            // 
             // Form1
             // 
             this.AllowDrop = true;
@@ -2381,6 +2393,7 @@ namespace Dark_Age
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox modificador;
     }
 }

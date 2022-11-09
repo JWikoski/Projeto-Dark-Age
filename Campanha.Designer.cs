@@ -201,6 +201,46 @@
             this.panel3.Size = new System.Drawing.Size(448, 611);
             this.panel3.TabIndex = 1;
             // 
+
+            // data_grid_pers_camp
+            // 
+            this.data_grid_pers_camp.AllowUserToAddRows = false;
+            this.data_grid_pers_camp.AllowUserToDeleteRows = false;
+            this.data_grid_pers_camp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.data_grid_pers_camp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_grid_pers_camp.Location = new System.Drawing.Point(0, 0);
+            this.data_grid_pers_camp.Name = "data_grid_pers_camp";
+            this.data_grid_pers_camp.ReadOnly = true;
+            this.data_grid_pers_camp.RowTemplate.Height = 25;
+            this.data_grid_pers_camp.Size = new System.Drawing.Size(276, 423);
+            this.data_grid_pers_camp.TabIndex = 0;
+            this.data_grid_pers_camp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_grid_pers_camp_CellClick);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.data_grid_campanha);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(270, 423);
+            this.panel2.TabIndex = 0;
+            // 
+            // data_grid_campanha
+            // 
+            this.data_grid_campanha.AllowUserToAddRows = false;
+            this.data_grid_campanha.AllowUserToDeleteRows = false;
+            this.data_grid_campanha.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.data_grid_campanha.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_grid_campanha.Location = new System.Drawing.Point(0, 0);
+            this.data_grid_campanha.Name = "data_grid_campanha";
+            this.data_grid_campanha.ReadOnly = true;
+            this.data_grid_campanha.RowTemplate.Height = 25;
+            this.data_grid_campanha.Size = new System.Drawing.Size(267, 423);
+            this.data_grid_campanha.TabIndex = 0;
+            this.data_grid_campanha.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_grid_campanha_CellClick);
+            this.data_grid_campanha.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_grid_campanha_CellContentClick);
+            this.data_grid_campanha.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_grid_campanha_CellEnter);
+            this.data_grid_campanha.SelectionChanged += new System.EventHandler(this.data_grid_campanha_SelectionChanged);
+            // 
             // pnl_nome_campanha
             // 
             this.pnl_nome_campanha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(37)))));
