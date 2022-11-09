@@ -35,6 +35,7 @@ namespace Dark_Age
         public Form1()
         {
             InitializeComponent();
+            Opacity = 0;      //first the opacity is 0
             label1.BackColor = Color.FromArgb(150, Color.Black);
             painel_jogadores.BackColor = Color.FromArgb(150, Color.Black);
             ficha_resumida.BackColor = Color.FromArgb(0, Color.Black);
@@ -54,6 +55,8 @@ namespace Dark_Age
             btn_inventario.Controls.Add(new Label()
             { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
             btn_descanso.Controls.Add(new Label()
+            { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
+            botao_itens.Controls.Add(new Label()
             { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
 
 
@@ -843,6 +846,11 @@ namespace Dark_Age
         {
             Campanha campanha = new Campanha();
             campanha.ShowDialog();
+        }
+
+        private void btn_descanso_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

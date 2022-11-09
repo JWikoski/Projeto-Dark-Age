@@ -16,6 +16,8 @@ namespace Dark_Age
     public partial class Lista_itens : Form
     {
         public static Boolean editar_adicionar;
+        public static int id_item;
+        public static Color bordas; 
         public static int id_item = 0;
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
@@ -65,6 +67,7 @@ namespace Dark_Age
         private void btn_adicionar_Click_1(object sender, EventArgs e)
         {
             editar_adicionar = false;
+            bordas = Color.FromArgb(45, 196, 118);
             adicionar_editar_itens adicionar = new adicionar_editar_itens();
             adicionar.ShowDialog();
 
@@ -75,6 +78,7 @@ namespace Dark_Age
         private void btn_editar_Click(object sender, EventArgs e)
         {
             editar_adicionar = true;
+            bordas = Color.FromArgb(112, 38, 192);
             adicionar_editar_itens adicionar = new adicionar_editar_itens();
             adicionar.ShowDialog();
 
@@ -401,5 +405,13 @@ namespace Dark_Age
         {
             lbl_qtd.Text = Convert.ToString(qtd);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Pagina_mestre mestre = new Pagina_mestre();
+            mestre.ShowDialog();
+        }
+
+       
     }
 }
