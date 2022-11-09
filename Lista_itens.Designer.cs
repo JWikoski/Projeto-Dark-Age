@@ -58,6 +58,7 @@
             this.limpar_filtros1 = new FontAwesome.Sharp.IconButton();
             this.btn_historia = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_qtd = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.pnl_filtro.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -67,6 +68,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lbl_qtd);
             this.panel3.Controls.Add(this.iconButton3);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.iconButton1);
@@ -430,7 +432,7 @@
             this.text_descricao.ForeColor = System.Drawing.Color.White;
             this.text_descricao.Location = new System.Drawing.Point(1131, 200);
             this.text_descricao.Name = "text_descricao";
-            this.text_descricao.Size = new System.Drawing.Size(381, 493);
+            this.text_descricao.Size = new System.Drawing.Size(381, 452);
             this.text_descricao.TabIndex = 1;
             this.text_descricao.Text = "";
             // 
@@ -563,6 +565,17 @@
             this.panel1.Size = new System.Drawing.Size(1580, 807);
             this.panel1.TabIndex = 2;
             // 
+            // lbl_qtd
+            // 
+            this.lbl_qtd.AutoSize = true;
+            this.lbl_qtd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_qtd.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lbl_qtd.Location = new System.Drawing.Point(1131, 683);
+            this.lbl_qtd.Name = "lbl_qtd";
+            this.lbl_qtd.Size = new System.Drawing.Size(45, 19);
+            this.lbl_qtd.TabIndex = 146;
+            this.lbl_qtd.Text = "label2";
+            // 
             // Lista_itens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -626,5 +639,6 @@
         private FontAwesome.Sharp.IconButton limpar_filtros1;
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconButton btn_historia;
+        private System.Windows.Forms.Label lbl_qtd;
     }
 }
