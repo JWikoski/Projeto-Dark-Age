@@ -16,8 +16,45 @@ namespace Dark_Age.Enteties
     {
         public static string Caminho_DB()
         {
-            //return "Server=db.lrtxyttihecehnpzgeus.supabase.co;Port=5432;Database=postgres;user Id=postgres;Password=ProjetoDark@ge123";
-            return "Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80";
+            return "Server=db.lrtxyttihecehnpzgeus.supabase.co;Port=5432;Database=postgres;user Id=postgres;Password=ProjetoDark@ge123";
+            //return "Server=26.45.149.194;Port=5432;Database=DarkAge_Server;user Id=João;Password=ANlsPD80";
+        }
+
+        public static void Select_historia_e_anotacoes(ref string historia, ref string anotacoes)
+        {
+
+        NpgsqlConnection conn = new NpgsqlConnection(Caminho_DB());
+            conn.Open();
+            NpgsqlCommand comt = new NpgsqlCommand();
+            comt.Connection = conn;
+            comt.CommandType = CommandType.Text;
+            comt.CommandText = "select historia_campanha, anotacoes_campanha from \"Dark_Age_Connection\".\"Campanha\" where id_campanha = @id_campanha";
+            comt.Parameters.AddWithValue("@id_campanha", Campanha.id_campanha);
+
+            NpgsqlDataReader ndp = comt.ExecuteReader();
+            if (ndp.Read())
+            {
+                historia = ndp.GetValue(0).ToString();
+                anotacoes = ndp.GetValue(1).ToString();
+            }
+        }
+
+        public static void Select_Regras(ref string regras, ref string sanidades)
+        {
+
+            NpgsqlConnection conn = new NpgsqlConnection(Caminho_DB());
+            conn.Open();
+            NpgsqlCommand comt = new NpgsqlCommand();
+            comt.Connection = conn;
+            comt.CommandType = CommandType.Text;
+            comt.CommandText = "select regras_gerais, sanidades from \"Dark_Age_Connection\".\"Regras\"";
+
+            NpgsqlDataReader ndp = comt.ExecuteReader();
+            if (ndp.Read())
+            {
+                regras = ndp.GetValue(0).ToString();
+                sanidades = ndp.GetValue(1).ToString();
+            }
         }
 
         public static DataTable select_enums()
@@ -28,7 +65,7 @@ namespace Dark_Age.Enteties
                                                                                   , enumsortorder   AS ordem
                                                                                from pg_type t 
                                                                                JOIN pg_enum e ON t.oid = e.enumtypid 
-                                                                              WHERE typname = 'enum_dificuldade' 
+                                                                              WHERE typname = 'enum_dificuldade'
                                                                               order by ordem;", Conexao_BD.Caminho_DB());
 
                 DataTable dt_table_retorno_difi = new DataTable();
@@ -157,7 +194,9 @@ namespace Dark_Age.Enteties
             try
             {                
                 NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"select id_personagem
-	                                                                         , nome_personagem	                                                                         
+	                                                                         , nome_personagem	
+                                                                             , classe_personagem
+                                                                             , nivel
                                                                          from ""Dark_Age_Connection"".""Inter_camp_pers"" 
                                                                          join ""Dark_Age_Connection"".""Jogadores"" on id_jogador = fk_id_jogador 
                                                                          join ""Dark_Age_Connection"".""Personagens"" on id_personagem = fk_id_personagem

@@ -25,6 +25,7 @@ namespace Dark_Age
         public static int bd_sanidade = 3;
         public static int bd_sanidade2 = 3;
         public static string classe_escolhida = "";
+        public static int id_classe;
         public static string nomepersonagem = "";
         public static int idpersonagem = 0;
         public static int pontos_max = 10;
@@ -465,30 +466,35 @@ namespace Dark_Age
         {
             classe_escolhida = "Orador";
             classe.Text = classe_escolhida;
+            Campanha.classe_personagem = 4;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             classe_escolhida = "Caçador de Monstros";
             classe.Text = classe_escolhida;
+            Campanha.classe_personagem = 3;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             classe_escolhida = "Alquimista";
             classe.Text = classe_escolhida;
+            Campanha.classe_personagem = 1;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             classe_escolhida = "Mestre da Forja";
             classe.Text = classe_escolhida;
+            Campanha.classe_personagem = 2;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             classe_escolhida = "Templário";
             classe.Text = classe_escolhida;
+            Campanha.classe_personagem = 5;
         }
 
         private void btn_cria_personagem_MouseHover(object sender, EventArgs e)
@@ -515,8 +521,6 @@ namespace Dark_Age
 
         private void btn_cria_personagem_Click(object sender, EventArgs e)
         {
-            
-            
             NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
             conn.Open();
             NpgsqlCommand come = new NpgsqlCommand();
@@ -558,10 +562,9 @@ namespace Dark_Age
 
             if (pers_criado == false)
             {
-
                 bd_sanidade += carisma;
                 come.CommandText = @" insert into ""Dark_Age_Connection"".""Personagens"" (nome_personagem, classe_personagem, forca, destreza, vigor, carisma, raciocinio, magia, nivel,  inventario, silver, gold, vida_atual, vida_max, sanidade_atual, sanidade_max, mana_atual, adicional_atual, adicional_max) 
-                                           values(@nome, @classe, @forca, @destreza, @vigor, @carisma, @raciocinio, @magia, @nivel, ' ', 0, 0, @vida_atual, @vida_max, @sanidade_atual, @sanidade_max, @mana_atual, '0', '0') 
+                                           values (@nome, @classe, @forca, @destreza, @vigor, @carisma, @raciocinio, @magia, @nivel, ' ', 0, 0, @vida_atual, @vida_max, @sanidade_atual, @sanidade_max, @mana_atual, '0', '0') 
                                            returning id_personagem";
                 come.Parameters.AddWithValue("@nome", nomepersonagem);
                 come.Parameters.AddWithValue("@classe", classe_escolhida);
@@ -627,7 +630,7 @@ namespace Dark_Age
                 bd_labia = bd_labia2 + carisma;
                 bd_intimidacao = bd_intimidacao2 + carisma;
                 bd_seduzir = bd_seduzir2 + carisma;
-                bd_enganacao = bd_enganacao2 + destreza;
+                bd_enganacao = bd_enganacao2 + carisma;
                 bd_esconder = bd_esconder2 + destreza;
                 bd_percepcao = bd_percepcao2 + raciocinio;
                 bd_academicos = bd_academicos2 + raciocinio;
@@ -724,7 +727,7 @@ namespace Dark_Age
                 bd_labia = bd_labia2 + carisma;
                 bd_intimidacao = bd_intimidacao2 + carisma;
                 bd_seduzir = bd_seduzir2 + carisma;
-                bd_enganacao = bd_enganacao2 + destreza;
+                bd_enganacao = bd_enganacao2 + carisma;
                 bd_esconder = bd_esconder2 + destreza;
                 bd_percepcao = bd_percepcao2 + raciocinio;
                 bd_academicos = bd_academicos2 + raciocinio;
@@ -881,107 +884,6 @@ namespace Dark_Age
         {
             nomepersonagem = nome_personagem.Text;
         }
-
-        private void label37_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_pontos_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label35_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label34_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label33_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label32_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label31_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label30_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label28_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label27_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label26_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label25_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label24_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label23_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label22_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label21_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label_esquiva_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_briga_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialogo = new OpenFileDialog();
@@ -1010,71 +912,6 @@ namespace Dark_Age
 
         }
 
-        private void panel12_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel11_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel10_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel9_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel8_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_forca_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_forca_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
             if (comboBox1.Text == "1")
@@ -1084,6 +921,7 @@ namespace Dark_Age
                 nivel = 1;
                 pontos = pontos_max - forca - destreza - vigor - carisma - raciocinio - magia;
                 lbl_pontos.Text = "Pontos: " + pontos;
+                Campanha.nivel_personagem = 1;
             } else if (comboBox1.Text == "2")
             {
                 pontos_totais = 12;
@@ -1091,6 +929,7 @@ namespace Dark_Age
                 nivel = 2;
                 pontos = pontos_max - forca - destreza - vigor - carisma - raciocinio - magia;
                 lbl_pontos.Text = "Pontos: " + pontos;
+                Campanha.nivel_personagem = 2;
             } else if (comboBox1.Text == "3")
             {
                 pontos_totais = 14;
@@ -1098,6 +937,7 @@ namespace Dark_Age
                 nivel = 3;
                 pontos = pontos_max - forca - destreza - vigor - carisma - raciocinio - magia;
                 lbl_pontos.Text = "Pontos: " + pontos;
+                Campanha.nivel_personagem = 3;
             } else if (comboBox1.Text == "4")
             {
                 pontos_totais = 16;
@@ -1105,6 +945,7 @@ namespace Dark_Age
                 nivel = 4;
                 pontos = pontos_max - forca - destreza - vigor - carisma - raciocinio - magia;
                 lbl_pontos.Text = "Pontos: " + pontos;
+                Campanha.nivel_personagem = 4;
             } else if (comboBox1.Text == "5")
             {
                 pontos_totais = 18;
@@ -1112,6 +953,7 @@ namespace Dark_Age
                 nivel = 5;
                 pontos = pontos_max - forca - destreza - vigor - carisma - raciocinio - magia;
                 lbl_pontos.Text = "Pontos: " + pontos;
+                Campanha.nivel_personagem = 5;
             }
         }
 
@@ -1128,96 +970,6 @@ namespace Dark_Age
                 + Convert.ToInt32(sobrevivencia.Value) + Convert.ToInt32(investigacao.Value) + Convert.ToInt32(intuicao.Value) + Convert.ToInt32(etiqueta.Value) + Convert.ToInt32(sanidade.Value) - 3;
 
             label40.Text = "Pontos de habilidade restantes: " + (pontos_totais - pontos_hab).ToString();
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_magia_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_raciocinio_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_carisma_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lbl_vigor_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_destreza_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         public void UpdateImagemBanco(byte[] imagembyte_personagem)

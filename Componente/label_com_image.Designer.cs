@@ -92,7 +92,6 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "label_com_image";
             this.Size = new System.Drawing.Size(398, 123);
-            this.Load += new System.EventHandler(this.label_com_image_Load);
             ((System.ComponentModel.ISupportInitialize)(this.image_pers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

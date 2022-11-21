@@ -24,6 +24,7 @@ namespace Dark_Age
         public static int mana_maxima;
         public static int adicional_atual;
         public static int adicional_max;
+        public static int escudo;
         public static byte[] imagem_personagem;
         public static Image imagem_person;
 
@@ -79,6 +80,7 @@ namespace Dark_Age
 	                                   , mana_atual
 	                                   , adicional_atual
 	                                   , adicional_max 
+                                       , escudo
                                     from ""Dark_Age_Connection"".""Personagens"" 
                                    where id_personagem = @id_personagem";
             comi.Parameters.AddWithValue("@id_personagem", Campanha.id_personagem);
@@ -101,7 +103,7 @@ namespace Dark_Age
                 sanidade_max = (int)nds.GetValue(11);
                 mana_atual = (int)nds.GetValue(12);
 
-                if (mana_atual <= 0)
+                if ((int)nds.GetValue(5) <= 0)
                 {
                     label30.Visible = false;
                     lbl_mana.Visible = false;
@@ -109,11 +111,30 @@ namespace Dark_Age
                     numericUpDown3.Visible = false;
                     panel14.Visible = false;
                 }
+                else
+                {
+                        label30.Visible = true;
+                        lbl_mana.Visible = true;
+                        lbl_barra_mana3.Visible = true;
+                        numericUpDown3.Visible = true;
+                        panel14.Visible = true;
+                }
 
                 mana_maxima = ((int)nds.GetValue(5) * 2);
                 adicional_atual = (int)nds.GetValue(13);
                 adicional_max = (int)nds.GetValue(14);
+                if (adicional_atual > 0)
+                {
+                    pn_adicional.Visible = true;
+                }
+                escudo = (int)nds.GetValue(15);
+                label24.Text = nds.GetValue(15).ToString(); 
+                if(escudo > 0)
+                {
+                    panel12.Visible = true;
+                }
                 movimento.Text = "Movimento: " + (6 + (int)nds.GetValue(1)).ToString();
+                iniciativa.Text = "Iniciativa: + " + ((int)nds.GetValue(1)).ToString();
 
                 numericUpDown1.Maximum = vida_maxima;
                 numericUpDown1.Value = vida_atual;
@@ -133,26 +154,7 @@ namespace Dark_Age
                 lbl_mana.Text = mana_atual + "/" + mana_maxima;
                 lbl_adicional.Text = adicional_atual + "/" + adicional_max;
 
-
-
-                panel9.Width = 220;
-
-
-                decimal porcentagem3 = (decimal)vida_atual / (decimal)vida_maxima;
-                porcentagem3 = porcentagem3 * 220;
-                panel9.Width = Convert.ToInt32(porcentagem3);
-
-                decimal porcentagem4 = (decimal)sanidade_atual / (decimal)sanidade_max;
-                porcentagem4 = porcentagem4 * 220;
-                lbl_barra2.Width = Convert.ToInt32(porcentagem4);
-                if (mana_atual > 0)
-                {
-                    decimal porcentagem5 = (decimal)mana_atual / (decimal)mana_maxima;
-                    porcentagem5 = porcentagem5 * 220;
-                    lbl_barra_mana3.Width = Convert.ToInt32(porcentagem5);
-
-                }
-
+                corrige_barras();
             }
 
 
@@ -326,20 +328,46 @@ namespace Dark_Age
 
         private void Form1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
         {
+            iconButton3.IconChar = FontAwesome.Sharp.IconChar.Square;
+            minmax = false;
             if (e.Button == MouseButtons.Left)
             {
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
+        public void corrige_barras()
+        {
+            panel9.Width = 220;
+
+
+            decimal porcentagem3 = (decimal)vida_atual / (decimal)vida_maxima;
+            porcentagem3 = porcentagem3 * 220;
+            panel9.Width = Convert.ToInt32(porcentagem3);
+
+            decimal porcentagem4 = (decimal)sanidade_atual / (decimal)sanidade_max;
+            porcentagem4 = porcentagem4 * 220;
+            lbl_barra2.Width = Convert.ToInt32(porcentagem4);
+            if (mana_atual > 0)
+            {
+                decimal porcentagem5 = (decimal)mana_atual / (decimal)mana_maxima;
+                porcentagem5 = porcentagem5 * 220;
+                lbl_barra_mana3.Width = Convert.ToInt32(porcentagem5);
+
+            }
+
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             Opacity = 0;      //first the opacity is 0
 
+            iconButton3.IconChar = FontAwesome.Sharp.IconChar.Minimize;
             radioButton5.Checked = true;
             timer1.Interval = 10;  //we'll increase the opacity every 10ms
             timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
             timer1.Start();
+            bemvindo.Text = "Bem-Vindo(a), "+Campanha.nome_personagem+"!";
 
             Lista_de_personagens();
         }
@@ -448,12 +476,17 @@ namespace Dark_Age
         {
             Habilidades_passivas frm = new Habilidades_passivas();
             frm.ShowDialog();
+            numericUpDown1.Value = vida_atual;
+            numericUpDown2.Value = sanidade_atual;
+            numericUpDown3.Value = mana_atual;
+            numericUpDown5.Value = adicional_atual;
+            corrige_barras();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             Habilidades_ativas frn = new Habilidades_ativas();
-            frn.ShowDialog();
+            frn.Show();
         }
 
 
@@ -517,23 +550,6 @@ namespace Dark_Age
         }
 
 
-        private void Label28_Click(object sender, EventArgs e)
-        {
-            if (minmax == true)
-            {
-                this.WindowState = FormWindowState.Normal;
-                this.CenterToScreen();
-                label28.Image = global::Dark_Age.Properties.Resources.maxscreen2;
-                minmax = false;
-                panel8.Enabled = true;
-            } else
-            {
-                this.WindowState = FormWindowState.Maximized;
-                label28.Image = global::Dark_Age.Properties.Resources.minimizar;
-                minmax = true;
-                panel8.Enabled = false;
-            }
-        }
         private void label29_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -553,8 +569,9 @@ namespace Dark_Age
                                        , sanidade_max = @sanidade_max
                                        , mana_atual = @mana_atual 
                                        , adicional_atual = @adicional_atual
-                                       , adicional_max = @adicional_max 
-                                   where fk_id_jogador = @id_personagem";
+                                       , adicional_max = @adicional_max
+                                       , escudo = @escudo
+                                   where id_personagem = @id_personagem";
             come.Parameters.AddWithValue("@vida_atual", vida_atual);
             come.Parameters.AddWithValue("@vida_max", vida_maxima);
             come.Parameters.AddWithValue("@sanidade_atual", sanidade_atual);
@@ -562,6 +579,7 @@ namespace Dark_Age
             come.Parameters.AddWithValue("@sanidade_max", sanidade_max);
             come.Parameters.AddWithValue("@adicional_atual", adicional_atual);
             come.Parameters.AddWithValue("@adicional_max", adicional_max);
+            come.Parameters.AddWithValue("@escudo", escudo);
             come.Parameters.AddWithValue("@id_personagem", Campanha.id_personagem);
             come.ExecuteNonQuery();
 
@@ -604,7 +622,7 @@ namespace Dark_Age
                 panel9.BackColor = Color.Salmon;
             } else
             {
-                panel9.BackColor = Color.MediumSpringGreen;
+                panel9.BackColor = Color.LimeGreen;
             }
         }
 
@@ -634,8 +652,9 @@ namespace Dark_Age
 
         private void btn_forcasum_Click(object sender, EventArgs e)
         {
-            int escudo = Convert.ToInt32(label24.Text);
-            label24.Text = (escudo + 1).ToString();
+            escudo = Convert.ToInt32(label24.Text);
+            escudo = escudo + 1;
+            label24.Text = escudo.ToString();
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
@@ -652,11 +671,14 @@ namespace Dark_Age
 
         private void btn_forcasub_Click(object sender, EventArgs e)
         {
-            int escudo = Convert.ToInt32(label24.Text);
-            label24.Text = (escudo - 1).ToString();
-            if (escudo == 1)
+            escudo = Convert.ToInt32(label24.Text);
+            escudo = escudo - 1;
+            label24.Text = escudo.ToString();
+            if (escudo == 0)
             {
                 panel12.Visible = false;
+                escudo = escudo + 1;
+                label24.Text = escudo.ToString();
             }
         }
 
@@ -714,16 +736,9 @@ namespace Dark_Age
         private void botao_itens_Click(object sender, EventArgs e)
         {
             Lista_itens lista = new Lista_itens();
-            lista.ShowDialog();
+            lista.Show();
         }
 
-      
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            Lista_itens teste = new Lista_itens();
-            teste.ShowDialog();
-        }
 
         public void Lista_de_personagens()
         {
@@ -793,5 +808,30 @@ namespace Dark_Age
         {
 
         }
+
+        private void iconButton4_MouseEnter(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+            Color cor = button.ForeColor;
+            button.FlatAppearance.MouseOverBackColor = Color.FromArgb(25, cor);
+        }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+             if (minmax == true)
+            {
+                this.WindowState = FormWindowState.Normal;
+                iconButton3.IconChar = FontAwesome.Sharp.IconChar.Square;
+                this.CenterToScreen();
+                minmax = false;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+                iconButton3.IconChar = FontAwesome.Sharp.IconChar.Minimize;
+                minmax = true;
+            }
+        }
+
     }
 }

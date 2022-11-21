@@ -11,6 +11,9 @@
     <Compile Update="Componente\label_com_image.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Componente\painel_habilidade.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Componente\Painel_NPC.cs">
       <SubType>UserControl</SubType>
     </Compile>

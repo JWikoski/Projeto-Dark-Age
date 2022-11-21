@@ -26,9 +26,5 @@ namespace Dark_Age.Componente
             //   image_pers.Image = nome_p.Image; PictureBox image_p,
         }
 
-        private void label_com_image_Load(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

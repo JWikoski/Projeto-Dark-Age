@@ -44,6 +44,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.cbx_material = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btn_finalizar
@@ -93,7 +94,6 @@
             this.combox_tipo.Name = "combox_tipo";
             this.combox_tipo.Size = new System.Drawing.Size(121, 23);
             this.combox_tipo.TabIndex = 3;
-            this.combox_tipo.SelectedIndexChanged += new System.EventHandler(this.combox_tipo_SelectedIndexChanged);
             // 
             // combox_profissao
             // 
@@ -106,8 +106,6 @@
             this.combox_profissao.Name = "combox_profissao";
             this.combox_profissao.Size = new System.Drawing.Size(121, 23);
             this.combox_profissao.TabIndex = 4;
-            this.combox_profissao.SelectedIndexChanged += new System.EventHandler(this.combox_profissao_SelectedIndexChanged);
-            this.combox_profissao.Click += new System.EventHandler(this.combox_profissao_Click);
             // 
             // combox_dificuldade
             // 
@@ -120,7 +118,6 @@
             this.combox_dificuldade.Name = "combox_dificuldade";
             this.combox_dificuldade.Size = new System.Drawing.Size(121, 23);
             this.combox_dificuldade.TabIndex = 5;
-            this.combox_dificuldade.SelectedIndexChanged += new System.EventHandler(this.combox_dificuldade_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -163,7 +160,6 @@
             this.label4.Size = new System.Drawing.Size(58, 15);
             this.label4.TabIndex = 9;
             this.label4.Text = "Profissão:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -231,12 +227,24 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // cbx_material
+            // 
+            this.cbx_material.AutoSize = true;
+            this.cbx_material.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.cbx_material.Location = new System.Drawing.Point(30, 485);
+            this.cbx_material.Name = "cbx_material";
+            this.cbx_material.Size = new System.Drawing.Size(69, 19);
+            this.cbx_material.TabIndex = 108;
+            this.cbx_material.Text = "Material";
+            this.cbx_material.UseVisualStyleBackColor = true;
+            // 
             // adicionar_editar_itens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(400, 535);
+            this.Controls.Add(this.cbx_material);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -282,5 +290,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox cbx_material;
     }
 }
