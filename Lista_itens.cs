@@ -371,19 +371,21 @@ namespace Dark_Age
         }
         private void btn_adicionar_inv_Click(object sender, EventArgs e)
         {
-            if (id_item > 0)
-            {
-                Conexao_BD.insert_item_inventario(id_item, qtd);
-            } else
-            {
-                MessageBox.Show("Selecione o item antes de inserir no inventario!");
-            }
+            MessageBox.Show("O inventário automático ainda está em desenvolvimento :( Por favor, adicione o item manualmente pela tela principal > Inventário");
+            //if (id_item > 0)
+            //{
+            //    Conexao_BD.insert_item_inventario(id_item, qtd);
+            //} else
+            //{
+            //    MessageBox.Show("Selecione o item antes de inserir no inventario!");
+            //}
         }
 
         private void iconButton5_Click(object sender, EventArgs e)
         {            
             qtd++;
             qtd_lbl();
+            remove_qtd.Visible = true;
         }
 
         private void iconButton4_Click(object sender, EventArgs e)
@@ -392,7 +394,11 @@ namespace Dark_Age
             {
                 qtd--;
                 qtd_lbl();
-            }            
+            }   
+            if(qtd == 1)
+            {
+                remove_qtd.Visible = false;
+            }
         }
         public void qtd_lbl()
         {
@@ -404,5 +410,6 @@ namespace Dark_Age
             Pagina_mestre mestre = new Pagina_mestre();
             mestre.ShowDialog();
         }
+
     }
 }

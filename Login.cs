@@ -129,7 +129,7 @@ namespace Dark_Age
                     }*/
                  this.Hide();
                  Campanha frm = new Campanha();
-                 frm.ShowDialog();
+                 frm.Show();
 
                 }
                 else

@@ -15,9 +15,12 @@ namespace Dark_Age
     {
         public static int id_campanha = 0;
         public static int id_personagem = 0;
+        public static string nome_campanha;
+        public static int classe_personagem;
+        public static int nivel_personagem;
         public static int id_jogador = Login.jogador;
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
+        public static int id_mestre_campanha;
+        public static string nome_personagem;
         public Campanha()
         {
             InitializeComponent();
@@ -25,7 +28,7 @@ namespace Dark_Age
 
         private void Campanha_Load(object sender, EventArgs e)
         {
-            lbl_bvd.Text = "Seja Bem-Vindo(a) a tela de campanhas, " + Login.nome_jogador;
+            lbl_bvd.Text = "Seja Bem-Vindo(a) a tela de campanhas, " + Login.nome_jogador+".";
             carrega_data_grid_campanha();
         }
 
@@ -56,20 +59,41 @@ namespace Dark_Age
             {
                 if (id_mestre != id_jogador)
                 {
+                    id_mestre_campanha = 0;
                     data_grid_pers_camp.DataSource = Conexao_BD.select_personagem_campanha(id_jogador, id_campanha);
-                    if (data_grid_pers_camp.DataSource != null)
+                    data_grid_pers_camp.Columns["nome_personagem"].HeaderText = "Nome";
+                    data_grid_pers_camp.Columns["nome_personagem"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    data_grid_pers_camp.Columns["classe_personagem"].HeaderText = "Classe";
+                    data_grid_pers_camp.Columns["nivel"].HeaderText = "Nível";
+                    data_grid_pers_camp.Columns["nivel"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                    data_grid_pers_camp.Columns["id_personagem"].Visible = false;
+
+                    if (data_grid_pers_camp.Rows.Count > 0)
                     {
-                        data_grid_pers_camp.Columns["nome_personagem"].HeaderText = "Personagens";
-                        data_grid_pers_camp.Columns["id_personagem"].Visible = false;
+                        btn_entrar_mestre.Visible = false;
+                        btn_entrar.Visible = true;
+                        btn_eliminar.Visible = true;
+                        btn_criar_novo.Visible = true;
+                        btn_eliminar_campanha.Visible = false;
+                    }
+                    else
+                    {
+                        btn_entrar_mestre.Visible = false;
+                        btn_entrar.Visible = false;
+                        btn_eliminar.Visible = false;
+                        btn_criar_novo.Visible = true;
+                        btn_eliminar_campanha.Visible = false;
                     }
                 }
                 else
                 {
+                    id_mestre_campanha = id_jogador;
                     data_grid_pers_camp.DataSource = Conexao_BD.select_personagem_campanha_mestre(id_campanha);
                     if (data_grid_pers_camp.DataSource != null)
                     {
                         data_grid_pers_camp.Columns["nome_personagem"].HeaderText = "Personagens";
                         data_grid_pers_camp.Columns["id_personagem"].Visible = false;
+
                     }
                 }
 
@@ -132,6 +156,29 @@ namespace Dark_Age
                 }
                 DataGridViewRow row = data_grid_pers_camp.Rows[e.RowIndex];
                 id_personagem = (int)row.Cells[0].Value;
+                nome_personagem = row.Cells[1].Value.ToString();
+                if (row.Cells[2].Value.ToString() == "Alquimista")
+                {
+                    classe_personagem = 1;
+
+                }else if(row.Cells[2].Value.ToString() == "Mestre da Forja")
+                {
+                    classe_personagem = 2;
+                }
+                else if (row.Cells[2].Value.ToString() == "Caçador de Monstros")
+                {
+                    classe_personagem = 3;
+                }
+                else if (row.Cells[2].Value.ToString() == "Orador")
+                {
+                    classe_personagem = 4;
+                }
+                else if (row.Cells[2].Value.ToString() == "Templário")
+                {
+                    classe_personagem = 5;
+                }
+
+                nivel_personagem = (int)row.Cells[3].Value;
             }
             catch (Exception a)
             {
@@ -149,6 +196,7 @@ namespace Dark_Age
                 }
                 DataGridViewRow row = data_grid_campanha.Rows[e.RowIndex];
                 id_campanha = (int)row.Cells[0].Value;
+                nome_campanha = row.Cells[1].Value.ToString(); 
                 int id_mestre = (int)row.Cells[2].Value;
                 esconder_btn(id_mestre);
                 carrega_data_grid_pers_camp(id_jogador, id_campanha, id_mestre);
@@ -193,13 +241,7 @@ namespace Dark_Age
                 btn_entrar.Visible = false;
                 btn_eliminar.Visible = false;
                 btn_criar_novo.Visible = false;
-            }
-            else
-            {
-                btn_entrar_mestre.Visible = false;
-                btn_entrar.Visible = true;
-                btn_eliminar.Visible = true;
-                btn_criar_novo.Visible = true;
+                btn_eliminar_campanha.Visible = true;
             }
         }
 
@@ -237,7 +279,7 @@ namespace Dark_Age
             if (e.Button == MouseButtons.Left)
             {
                 ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+                SendMessage(Handle, Login.WM_NCLBUTTONDOWN, Login.HT_CAPTION, 0);
             }
         }
 
@@ -256,5 +298,15 @@ namespace Dark_Age
                 x.MinimumHeight = 40;
             }
         }
+
+     
+
+        private void lbl_fechar_MouseEnter(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+            button.FlatAppearance.MouseOverBackColor = Color.FromArgb(25, Color.Salmon);
+            button.ForeColor = Color.Salmon;
+        }
+
     }
 }

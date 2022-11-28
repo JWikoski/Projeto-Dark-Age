@@ -301,7 +301,6 @@ namespace Dark_Age
             this.label2.TabIndex = 18;
             this.label2.Text = "Força";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -315,7 +314,6 @@ namespace Dark_Age
             this.label3.TabIndex = 19;
             this.label3.Text = "Destreza";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -329,7 +327,6 @@ namespace Dark_Age
             this.label4.TabIndex = 20;
             this.label4.Text = "Vigor";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -343,7 +340,6 @@ namespace Dark_Age
             this.label5.TabIndex = 21;
             this.label5.Text = "Carisma";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label7
             // 
@@ -357,7 +353,6 @@ namespace Dark_Age
             this.label7.TabIndex = 24;
             this.label7.Text = "Magia";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -371,7 +366,6 @@ namespace Dark_Age
             this.label8.TabIndex = 23;
             this.label8.Text = "Raciocínio";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // lbl_destreza
             // 
@@ -386,7 +380,6 @@ namespace Dark_Age
             this.lbl_destreza.TabIndex = 25;
             this.lbl_destreza.Text = "0";
             this.lbl_destreza.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_destreza.Click += new System.EventHandler(this.lbl_destreza_Click);
             // 
             // lbl_vigor
             // 
@@ -401,7 +394,6 @@ namespace Dark_Age
             this.lbl_vigor.TabIndex = 26;
             this.lbl_vigor.Text = "0";
             this.lbl_vigor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_vigor.Click += new System.EventHandler(this.lbl_vigor_Click);
             // 
             // panel2
             // 
@@ -411,7 +403,6 @@ namespace Dark_Age
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(97, 1);
             this.panel2.TabIndex = 31;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel3
             // 
@@ -421,7 +412,6 @@ namespace Dark_Age
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(97, 1);
             this.panel3.TabIndex = 32;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // panel4
             // 
@@ -431,7 +421,6 @@ namespace Dark_Age
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(97, 1);
             this.panel4.TabIndex = 34;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // panel5
             // 
@@ -441,7 +430,6 @@ namespace Dark_Age
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(97, 1);
             this.panel5.TabIndex = 33;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // panel6
             // 
@@ -451,7 +439,6 @@ namespace Dark_Age
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(97, 1);
             this.panel6.TabIndex = 36;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // panel7
             // 
@@ -461,7 +448,6 @@ namespace Dark_Age
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(97, 1);
             this.panel7.TabIndex = 35;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // lbl_raciocinio
             // 
@@ -476,7 +462,6 @@ namespace Dark_Age
             this.lbl_raciocinio.TabIndex = 38;
             this.lbl_raciocinio.Text = "0";
             this.lbl_raciocinio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_raciocinio.Click += new System.EventHandler(this.lbl_raciocinio_Click);
             // 
             // lbl_carisma
             // 
@@ -491,7 +476,6 @@ namespace Dark_Age
             this.lbl_carisma.TabIndex = 37;
             this.lbl_carisma.Text = "0";
             this.lbl_carisma.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_carisma.Click += new System.EventHandler(this.lbl_carisma_Click);
             // 
             // lbl_forca
             // 
@@ -506,8 +490,6 @@ namespace Dark_Age
             this.lbl_forca.TabIndex = 40;
             this.lbl_forca.Text = "0";
             this.lbl_forca.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_forca.TextChanged += new System.EventHandler(this.lbl_forca_TextChanged);
-            this.lbl_forca.Click += new System.EventHandler(this.lbl_forca_Click);
             // 
             // lbl_magia
             // 
@@ -522,7 +504,6 @@ namespace Dark_Age
             this.lbl_magia.TabIndex = 39;
             this.lbl_magia.Text = "0";
             this.lbl_magia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_magia.Click += new System.EventHandler(this.lbl_magia_Click);
             // 
             // btn_forcasum
             // 
@@ -848,7 +829,6 @@ namespace Dark_Age
             this.label6.TabIndex = 69;
             this.label6.Text = "Atributos";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // panel8
             // 
@@ -858,7 +838,6 @@ namespace Dark_Age
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(125, 1);
             this.panel8.TabIndex = 32;
-            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             // 
             // panel9
             // 
@@ -868,7 +847,6 @@ namespace Dark_Age
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(550, 1);
             this.panel9.TabIndex = 70;
-            this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
             // 
             // label9
             // 
@@ -883,7 +861,6 @@ namespace Dark_Age
             this.label9.TabIndex = 71;
             this.label9.Text = "Talentos";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
@@ -898,7 +875,6 @@ namespace Dark_Age
             this.label10.TabIndex = 72;
             this.label10.Text = "Combate";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
             // 
@@ -913,7 +889,6 @@ namespace Dark_Age
             this.label11.TabIndex = 73;
             this.label11.Text = "Perícias";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 
@@ -928,7 +903,6 @@ namespace Dark_Age
             this.label12.TabIndex = 74;
             this.label12.Text = "Conhecimentos";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // panel10
             // 
@@ -938,7 +912,6 @@ namespace Dark_Age
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(150, 1);
             this.panel10.TabIndex = 71;
-            this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
             // 
             // panel11
             // 
@@ -948,7 +921,6 @@ namespace Dark_Age
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(150, 1);
             this.panel11.TabIndex = 72;
-            this.panel11.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
             // 
             // panel12
             // 
@@ -958,7 +930,6 @@ namespace Dark_Age
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(150, 1);
             this.panel12.TabIndex = 75;
-            this.panel12.Paint += new System.Windows.Forms.PaintEventHandler(this.panel12_Paint);
             // 
             // ataque
             // 
@@ -986,7 +957,6 @@ namespace Dark_Age
             this.lbl_briga.TabIndex = 80;
             this.lbl_briga.Text = "Ataque corpo a corpo";
             this.lbl_briga.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_briga.Click += new System.EventHandler(this.lbl_briga_Click);
             // 
             // label_esquiva
             // 
@@ -1000,7 +970,6 @@ namespace Dark_Age
             this.label_esquiva.TabIndex = 82;
             this.label_esquiva.Text = "Esquiva";
             this.label_esquiva.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_esquiva.Click += new System.EventHandler(this.label_esquiva_Click);
             // 
             // esquiva
             // 
@@ -1027,7 +996,6 @@ namespace Dark_Age
             this.label20.TabIndex = 84;
             this.label20.Text = "Defesa";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
             // defesa
             // 
@@ -1054,7 +1022,6 @@ namespace Dark_Age
             this.label21.TabIndex = 86;
             this.label21.Text = "Contra-Ataque";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
             // label22
             // 
@@ -1068,7 +1035,6 @@ namespace Dark_Age
             this.label22.TabIndex = 88;
             this.label22.Text = "Arremesso/Atirar";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
             // label13
             // 
@@ -1082,7 +1048,6 @@ namespace Dark_Age
             this.label13.TabIndex = 90;
             this.label13.Text = "Conjurar Magia";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label23
             // 
@@ -1096,7 +1061,6 @@ namespace Dark_Age
             this.label23.TabIndex = 92;
             this.label23.Text = "Mentir/Detectar Mentiras";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label23.Click += new System.EventHandler(this.label23_Click);
             // 
             // label24
             // 
@@ -1110,7 +1074,6 @@ namespace Dark_Age
             this.label24.TabIndex = 94;
             this.label24.Text = "Intimidação";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label24.Click += new System.EventHandler(this.label24_Click);
             // 
             // label25
             // 
@@ -1124,7 +1087,6 @@ namespace Dark_Age
             this.label25.TabIndex = 96;
             this.label25.Text = "Sedução/Enganação";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label25.Click += new System.EventHandler(this.label25_Click);
             // 
             // label26
             // 
@@ -1138,7 +1100,6 @@ namespace Dark_Age
             this.label26.TabIndex = 98;
             this.label26.Text = "Roubo/\r\nArrombamento";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label26.Click += new System.EventHandler(this.label26_Click);
             // 
             // label27
             // 
@@ -1152,7 +1113,6 @@ namespace Dark_Age
             this.label27.TabIndex = 100;
             this.label27.Text = "Esconder";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label27.Click += new System.EventHandler(this.label27_Click);
             // 
             // label28
             // 
@@ -1166,7 +1126,6 @@ namespace Dark_Age
             this.label28.TabIndex = 102;
             this.label28.Text = "Escutar/Observar";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label28.Click += new System.EventHandler(this.label28_Click);
             // 
             // label30
             // 
@@ -1180,7 +1139,6 @@ namespace Dark_Age
             this.label30.TabIndex = 106;
             this.label30.Text = "Acadêmicos";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label30.Click += new System.EventHandler(this.label30_Click);
             // 
             // label31
             // 
@@ -1194,7 +1152,6 @@ namespace Dark_Age
             this.label31.TabIndex = 108;
             this.label31.Text = "Ocultismo";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label31.Click += new System.EventHandler(this.label31_Click);
             // 
             // label32
             // 
@@ -1208,7 +1165,6 @@ namespace Dark_Age
             this.label32.TabIndex = 110;
             this.label32.Text = "Sobrevivência";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label32.Click += new System.EventHandler(this.label32_Click);
             // 
             // label33
             // 
@@ -1222,7 +1178,6 @@ namespace Dark_Age
             this.label33.TabIndex = 112;
             this.label33.Text = "Investigação";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label33.Click += new System.EventHandler(this.label33_Click);
             // 
             // label34
             // 
@@ -1236,7 +1191,6 @@ namespace Dark_Age
             this.label34.TabIndex = 114;
             this.label34.Text = " Intuição";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label34.Click += new System.EventHandler(this.label34_Click);
             // 
             // label35
             // 
@@ -1250,7 +1204,6 @@ namespace Dark_Age
             this.label35.TabIndex = 116;
             this.label35.Text = "Etiqueta";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label35.Click += new System.EventHandler(this.label35_Click);
             // 
             // lbl_pontos
             // 
@@ -1265,7 +1218,6 @@ namespace Dark_Age
             this.lbl_pontos.Size = new System.Drawing.Size(0, 15);
             this.lbl_pontos.TabIndex = 118;
             this.lbl_pontos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_pontos.Click += new System.EventHandler(this.lbl_pontos_Click);
             // 
             // lancarmagia
             // 
@@ -1572,7 +1524,6 @@ namespace Dark_Age
             this.label37.TabIndex = 140;
             this.label37.Text = "Sanidade";
             this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label37.Click += new System.EventHandler(this.label37_Click);
             // 
             // panel13
             // 
@@ -1697,9 +1648,7 @@ namespace Dark_Age
             this.comboBox1.Size = new System.Drawing.Size(45, 28);
             this.comboBox1.TabIndex = 142;
             this.comboBox1.Text = "1";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
-            this.comboBox1.Click += new System.EventHandler(this.comboBox1_Click);
             // 
             // label38
             // 

@@ -32,6 +32,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.remove_qtd = new FontAwesome.Sharp.IconButton();
+            this.adiciona_qtd = new FontAwesome.Sharp.IconButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.text_descricao = new System.Windows.Forms.RichTextBox();
+            this.lbl_qtd = new System.Windows.Forms.Label();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -52,14 +58,13 @@
             this.btn_adicionar = new System.Windows.Forms.Button();
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_eliminar = new System.Windows.Forms.Button();
-            this.text_descricao = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.Grid_lista_itens = new System.Windows.Forms.DataGridView();
             this.limpar_filtros1 = new FontAwesome.Sharp.IconButton();
             this.btn_historia = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl_qtd = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.pnl_filtro.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_lista_itens)).BeginInit();
@@ -68,6 +73,10 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.remove_qtd);
+            this.panel3.Controls.Add(this.adiciona_qtd);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.lbl_qtd);
             this.panel3.Controls.Add(this.iconButton3);
             this.panel3.Controls.Add(this.panel4);
@@ -77,7 +86,6 @@
             this.panel3.Controls.Add(this.cmp_procura);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.panel2);
-            this.panel3.Controls.Add(this.text_descricao);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.Grid_lista_itens);
             this.panel3.Controls.Add(this.limpar_filtros1);
@@ -87,6 +95,89 @@
             this.panel3.Size = new System.Drawing.Size(1577, 804);
             this.panel3.TabIndex = 89;
             this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            // 
+            // remove_qtd
+            // 
+            this.remove_qtd.FlatAppearance.BorderSize = 0;
+            this.remove_qtd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
+            this.remove_qtd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
+            this.remove_qtd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.remove_qtd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.remove_qtd.ForeColor = System.Drawing.Color.MediumSpringGreen;
+            this.remove_qtd.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.remove_qtd.IconColor = System.Drawing.Color.Salmon;
+            this.remove_qtd.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.remove_qtd.IconSize = 30;
+            this.remove_qtd.Location = new System.Drawing.Point(1140, 679);
+            this.remove_qtd.Name = "remove_qtd";
+            this.remove_qtd.Size = new System.Drawing.Size(30, 30);
+            this.remove_qtd.TabIndex = 150;
+            this.remove_qtd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.remove_qtd.UseVisualStyleBackColor = true;
+            this.remove_qtd.Visible = false;
+            this.remove_qtd.Click += new System.EventHandler(this.iconButton4_Click);
+            // 
+            // adiciona_qtd
+            // 
+            this.adiciona_qtd.FlatAppearance.BorderSize = 0;
+            this.adiciona_qtd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.adiciona_qtd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.adiciona_qtd.ForeColor = System.Drawing.Color.MediumSpringGreen;
+            this.adiciona_qtd.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.adiciona_qtd.IconColor = System.Drawing.Color.MediumSpringGreen;
+            this.adiciona_qtd.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.adiciona_qtd.IconSize = 30;
+            this.adiciona_qtd.Location = new System.Drawing.Point(1173, 679);
+            this.adiciona_qtd.Name = "adiciona_qtd";
+            this.adiciona_qtd.Size = new System.Drawing.Size(30, 30);
+            this.adiciona_qtd.TabIndex = 149;
+            this.adiciona_qtd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.adiciona_qtd.UseVisualStyleBackColor = true;
+            this.adiciona_qtd.Click += new System.EventHandler(this.iconButton5_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label2.Location = new System.Drawing.Point(1311, 666);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(181, 19);
+            this.label2.TabIndex = 148;
+            this.label2.Text = "Quantidade no inventário: 0";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            this.panel5.Controls.Add(this.text_descricao);
+            this.panel5.Location = new System.Drawing.Point(1131, 200);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(381, 466);
+            this.panel5.TabIndex = 147;
+            // 
+            // text_descricao
+            // 
+            this.text_descricao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            this.text_descricao.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.text_descricao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.text_descricao.ForeColor = System.Drawing.Color.White;
+            this.text_descricao.Location = new System.Drawing.Point(10, 7);
+            this.text_descricao.Name = "text_descricao";
+            this.text_descricao.ReadOnly = true;
+            this.text_descricao.Size = new System.Drawing.Size(361, 456);
+            this.text_descricao.TabIndex = 1;
+            this.text_descricao.Text = "";
+            // 
+            // lbl_qtd
+            // 
+            this.lbl_qtd.AutoSize = true;
+            this.lbl_qtd.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_qtd.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lbl_qtd.Location = new System.Drawing.Point(1210, 676);
+            this.lbl_qtd.Name = "lbl_qtd";
+            this.lbl_qtd.Size = new System.Drawing.Size(27, 32);
+            this.lbl_qtd.TabIndex = 146;
+            this.lbl_qtd.Text = "1";
             // 
             // iconButton3
             // 
@@ -424,18 +515,6 @@
             this.btn_eliminar.MouseLeave += new System.EventHandler(this.iconButton1_MouseLeave);
             this.btn_eliminar.MouseHover += new System.EventHandler(this.iconButton1_MouseEnter);
             // 
-            // text_descricao
-            // 
-            this.text_descricao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
-            this.text_descricao.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.text_descricao.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.text_descricao.ForeColor = System.Drawing.Color.White;
-            this.text_descricao.Location = new System.Drawing.Point(1131, 200);
-            this.text_descricao.Name = "text_descricao";
-            this.text_descricao.Size = new System.Drawing.Size(381, 452);
-            this.text_descricao.TabIndex = 1;
-            this.text_descricao.Text = "";
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(126)))), ((int)(((byte)(155)))));
@@ -451,6 +530,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Adicionar Item ao Inventario";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btn_adicionar_inv_Click);
             // 
             // Grid_lista_itens
             // 
@@ -565,17 +645,6 @@
             this.panel1.Size = new System.Drawing.Size(1580, 807);
             this.panel1.TabIndex = 2;
             // 
-            // lbl_qtd
-            // 
-            this.lbl_qtd.AutoSize = true;
-            this.lbl_qtd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_qtd.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lbl_qtd.Location = new System.Drawing.Point(1131, 683);
-            this.lbl_qtd.Name = "lbl_qtd";
-            this.lbl_qtd.Size = new System.Drawing.Size(45, 19);
-            this.lbl_qtd.TabIndex = 146;
-            this.lbl_qtd.Text = "label2";
-            // 
             // Lista_itens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -595,6 +664,7 @@
             this.Load += new System.EventHandler(this.Lista_itens_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
             this.pnl_filtro.ResumeLayout(false);
             this.pnl_filtro.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -639,6 +709,10 @@
         private FontAwesome.Sharp.IconButton limpar_filtros1;
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconButton btn_historia;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel5;
+        private FontAwesome.Sharp.IconButton adiciona_qtd;
         private System.Windows.Forms.Label lbl_qtd;
+        private FontAwesome.Sharp.IconButton remove_qtd;
     }
 }
