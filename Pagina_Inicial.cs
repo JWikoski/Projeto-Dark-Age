@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Ink;
 
 namespace Dark_Age
 {
