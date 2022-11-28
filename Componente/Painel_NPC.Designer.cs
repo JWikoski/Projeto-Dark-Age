@@ -63,6 +63,8 @@ namespace Dark_Age.Componente
             // 
             this.iconButton1.CausesValidation = false;
             this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.iconButton1.ForeColor = System.Drawing.Color.MediumSpringGreen;
@@ -250,6 +252,8 @@ namespace Dark_Age.Componente
             // 
             this.iconButton6.CausesValidation = false;
             this.iconButton6.FlatAppearance.BorderSize = 0;
+            this.iconButton6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.iconButton6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.iconButton6.ForeColor = System.Drawing.Color.DeepSkyBlue;
