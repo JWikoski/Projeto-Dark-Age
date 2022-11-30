@@ -34,6 +34,7 @@ namespace Dark_Age
             label2.Text = nda;
             txt_ativas.Text = nda;
 
+
             comm.Dispose();
             conn.Close();
 
@@ -90,7 +91,8 @@ namespace Dark_Age
             coss.CommandText = "update \"Dark_Age_Connection\".\"Personagens\" set anotacoes = @anotacoes where id_personagem = @id_personagem";
             coss.Parameters.AddWithValue("@id_personagem", Campanha.id_personagem);
             coss.Parameters.AddWithValue("@anotacoes", anotacoes);
-            NpgsqlDataReader nda = coss.ExecuteReader();
+            coss.ExecuteReader();
+
             coss.Dispose();
             conn.Close();
             this.Close();

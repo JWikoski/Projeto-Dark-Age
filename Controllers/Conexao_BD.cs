@@ -37,6 +37,9 @@ namespace Dark_Age.Enteties
                 historia = ndp.GetValue(0).ToString();
                 anotacoes = ndp.GetValue(1).ToString();
             }
+            ndp.Close();
+            comt.Dispose();
+            conn.Close();
         }
 
         public static void Select_Regras(ref string regras, ref string sanidades)
@@ -55,6 +58,9 @@ namespace Dark_Age.Enteties
                 regras = ndp.GetValue(0).ToString();
                 sanidades = ndp.GetValue(1).ToString();
             }
+            ndp.Close();
+            comt.Dispose();
+            conn.Close();
         }
 
         public static DataTable select_enums()
@@ -133,6 +139,7 @@ namespace Dark_Age.Enteties
                                                                              , nome_tipo_itens
                                                                              , nome_profissao
                                                                              , descricao
+                                                                             , material
                                                                           from ""Dark_Age_Connection"".""Itens""
                                                                           join ""Dark_Age_Connection"".""Profissao"" on id_profissao = fk_id_profissao 
                                                                           join ""Dark_Age_Connection"".""Tipo_itens"" on id_tipo_itens = fk_id_tipo_itens ;", Conexao_BD.Caminho_DB());
@@ -157,6 +164,7 @@ namespace Dark_Age.Enteties
                                                              , nome_tipo_itens
                                                              , nome_profissao
                                                              , descricao
+                                                             , material
                                                           from ""Dark_Age_Connection"".""Itens""
                                                           join ""Dark_Age_Connection"".""Profissao"" on id_profissao = fk_id_profissao 
                                                           join ""Dark_Age_Connection"".""Tipo_itens"" on id_tipo_itens = fk_id_tipo_itens 
@@ -245,6 +253,7 @@ namespace Dark_Age.Enteties
             como.Parameters.AddWithValue("@id_personagem", id_personagem);
             como.Parameters.AddWithValue("@id_campanha", id_campanha);
             como.ExecuteNonQuery();
+            como.Dispose();
             conn.Close();
         }
 
@@ -263,6 +272,7 @@ namespace Dark_Age.Enteties
             object id_camp =  como.ExecuteScalar();
 
             Campanha.id_campanha = Convert.ToInt32(id_camp);
+            como.Dispose();
             conn.Close();
         }
 
@@ -279,6 +289,7 @@ namespace Dark_Age.Enteties
             como.Parameters.AddWithValue("@id_campanha", id_campanha);
             como.Parameters.AddWithValue("@id_jogador", id_jogador);
             como.ExecuteNonQuery();
+            como.Dispose();
             conn.Close();
         }
 
@@ -296,6 +307,7 @@ namespace Dark_Age.Enteties
             cone.Parameters.AddWithValue("@id_jogador", id_jog);
             cone.Parameters.AddWithValue("@id_personagem", id_pers);            
             cone.ExecuteNonQuery();
+            cone.Dispose();
             conn.Close();
         }
 
@@ -313,6 +325,7 @@ namespace Dark_Age.Enteties
             cone.Parameters.AddWithValue("@id_personagem", Campanha.id_personagem);
             cone.Parameters.AddWithValue("@qtd", qtd);
             cone.ExecuteNonQuery();
+            cone.Dispose();
             conn.Close();
         }
     }

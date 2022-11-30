@@ -42,6 +42,7 @@ namespace Dark_Age
                 moedas_ouro.Value = (int)nda.GetValue(1);
                 moedas_prata.Value = (int)nda.GetValue(2);
             }
+            nda.Close();
             comm.Dispose();
             conn.Close();
 
@@ -87,7 +88,7 @@ namespace Dark_Age
 
         private void LblFecharPassivas_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
             NpgsqlConnection conn = new NpgsqlConnection(Conexao_BD.Caminho_DB());
             conn.Open();
             NpgsqlCommand coss = new NpgsqlCommand();
@@ -104,6 +105,9 @@ namespace Dark_Age
             moedas_de_ouro = Convert.ToInt32(moedas_ouro.Value);
             moedas_de_prata = Convert.ToInt32(moedas_prata.Value);
 
+            coss.Dispose();
+            conn.Close();
+            nda.Close();
 
             this.Close();
         }
@@ -171,19 +175,5 @@ namespace Dark_Age
                 Opacity += 0.1;
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

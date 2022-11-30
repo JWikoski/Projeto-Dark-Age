@@ -123,7 +123,7 @@ namespace Dark_Age
             if (id_personagem != 0)
             {
                 Form1 pagina_inicial = new Form1();
-                pagina_inicial.ShowDialog();
+                pagina_inicial.Show();
                 this.Close();
             }
             else
@@ -255,7 +255,7 @@ namespace Dark_Age
             {
                 Ficha.pers_criado = false;
                 Ficha ficha = new Ficha();
-                ficha.ShowDialog();
+                ficha.Show();
                 this.Close();
             }
             else
