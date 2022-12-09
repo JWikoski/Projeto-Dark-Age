@@ -189,6 +189,8 @@ namespace Dark_Age
                     Ficha.bd_sanidade2 = (int)ndp.GetValue(0);
                 }
                 ndp.Dispose();
+                comt.Dispose();
+                ndp.Close();
                 conn2.Close();
 
             }
@@ -259,7 +261,7 @@ namespace Dark_Age
                     imagem_pers = byte_image.byteArrayToImage(byte_image_personagem);
                     pictureBox1.Image = imagem_pers;
 
-
+                    nda.Close();
                     comi.Dispose();
                     conn.Close();
                 } else
@@ -277,8 +279,6 @@ namespace Dark_Age
                 lbl_carisma.Text = carisma.ToString();
                 lbl_raciocinio.Text = raciocinio.ToString();
                 lbl_magia.Text = magia.ToString();
-
-
             }
         }
 
@@ -289,7 +289,7 @@ namespace Dark_Age
             timer1.Interval = 10;  // increase the opacity every 10ms
             timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
             timer1.Start();
-
+            ataque_Click(comboBox1, e);
         }
         void fadeIn(object sender, EventArgs e)
         {
@@ -298,15 +298,6 @@ namespace Dark_Age
             else
                 Opacity += 0.05;
         }
-
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -581,9 +572,9 @@ namespace Dark_Age
                 come.Parameters.AddWithValue("@sanidade_max", bd_sanidade);
                 come.Parameters.AddWithValue("@mana_atual", (magia*2));
                 object id = come.ExecuteScalar();
-
+                
                 Campanha.id_personagem = Convert.ToInt32(id);
-
+                
                 Conexao_BD.insert_inter_camp_pers(Campanha.id_personagem, Campanha.id_campanha, Campanha.id_jogador);
 
                 pers_criado = true;
@@ -708,6 +699,7 @@ namespace Dark_Age
                     comh.Parameters.AddWithValue("@cod", t + 1);
                     comh.Parameters.AddWithValue("@id_personagem", Campanha.id_personagem);
                     comh.ExecuteNonQuery();
+                    comh.Dispose();
                 }
 
 
@@ -751,6 +743,7 @@ namespace Dark_Age
                     comu.Parameters.AddWithValue("@cod", i + 1);
                     comu.Parameters.AddWithValue("@personagem", Campanha.id_personagem);
                     comu.ExecuteNonQuery();
+                    comu.Dispose();
                 }
 
                 
@@ -760,8 +753,13 @@ namespace Dark_Age
 
             }
 
-            comt.Dispose();
+            comt.Dispose(); 
             come.Dispose();
+            coms.Dispose();
+            comt.Dispose();
+            comr.Dispose();
+            comz.Dispose();
+            cone.Dispose();
 
             conn.Close();
 
@@ -916,45 +914,38 @@ namespace Dark_Age
         {
             if (comboBox1.Text == "1")
             {
-                pontos_totais = 10;
-                pontos_max = 10;
+                pontos_totais = 5;
+                pontos_max = 5;
                 nivel = 1;
-                pontos = pontos_max - forca - destreza - vigor - carisma - raciocinio - magia;
-                lbl_pontos.Text = "Pontos: " + pontos;
                 Campanha.nivel_personagem = 1;
             } else if (comboBox1.Text == "2")
             {
-                pontos_totais = 12;
-                pontos_max = 12;
+                pontos_totais = 6;
+                pontos_max = 7;
                 nivel = 2;
-                pontos = pontos_max - forca - destreza - vigor - carisma - raciocinio - magia;
-                lbl_pontos.Text = "Pontos: " + pontos;
                 Campanha.nivel_personagem = 2;
             } else if (comboBox1.Text == "3")
             {
-                pontos_totais = 14;
-                pontos_max = 14;
+                pontos_totais = 7;
+                pontos_max = 9;
                 nivel = 3;
-                pontos = pontos_max - forca - destreza - vigor - carisma - raciocinio - magia;
-                lbl_pontos.Text = "Pontos: " + pontos;
                 Campanha.nivel_personagem = 3;
             } else if (comboBox1.Text == "4")
             {
-                pontos_totais = 16;
-                pontos_max = 16;
+                pontos_totais = 8;
+                pontos_max = 11;
                 nivel = 4;
-                pontos = pontos_max - forca - destreza - vigor - carisma - raciocinio - magia;
-                lbl_pontos.Text = "Pontos: " + pontos;
                 Campanha.nivel_personagem = 4;
             } else if (comboBox1.Text == "5")
             {
-                pontos_totais = 18;
-                pontos_max = 18;
+                pontos_totais = 10;
+                pontos_max = 14;
                 nivel = 5;
-                pontos = pontos_max - forca - destreza - vigor - carisma - raciocinio - magia;
-                lbl_pontos.Text = "Pontos: " + pontos;
                 Campanha.nivel_personagem = 5;
             }
+            pontos = pontos_max - forca - destreza - vigor - carisma - raciocinio - magia;
+            lbl_pontos.Text = "Pontos: " + pontos;
+            ataque_Click(comboBox1, e);
         }
 
         private void panel13_Paint(object sender, PaintEventArgs e)
@@ -985,6 +976,8 @@ namespace Dark_Age
             como.Parameters.AddWithValue("@imagembyte_personagem", imagembyte_personagem);
             como.Parameters.AddWithValue("@id_personagem", Campanha.id_personagem);
             como.ExecuteNonQuery();
+            como.Dispose();
+            conn.Close();
         }
 
 

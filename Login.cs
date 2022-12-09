@@ -29,12 +29,6 @@ namespace Dark_Age
         public Login()
         {
             InitializeComponent();
-
-            var pos = this.PointToScreen(LblFecharLogin.Location);
-            pos = pictureBox2.PointToClient(pos);
-            LblFecharLogin.Parent = pictureBox2;
-            LblFecharLogin.Location = pos;
-            LblFecharLogin.BackColor = Color.Transparent;
             
 
         }
@@ -127,8 +121,12 @@ namespace Dark_Age
                         e.Handled = true;
                         e.SuppressKeyPress = true;
                     }*/
+
                  this.Hide();
-                 Campanha frm = new Campanha();
+                    nda.Close();
+                    comm.Dispose();
+                    conn.Close();
+                    Campanha frm = new Campanha();
                  frm.Show();
 
                 }
@@ -138,11 +136,11 @@ namespace Dark_Age
                     TbSenha.Text = "";
                     e.Handled = true;
                     e.SuppressKeyPress = true;
-                    comm.Dispose();
-                    conn.Close();
+                    
                 }
-               
-        }
+                comm.Dispose();
+                conn.Close();
+            }
 
 
         }

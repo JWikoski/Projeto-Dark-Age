@@ -56,11 +56,10 @@ namespace Dark_Age
             { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
             btn_inventario.Controls.Add(new Label()
             { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
-            btn_descanso.Controls.Add(new Label()
-            { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
             botao_itens.Controls.Add(new Label()
             { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
-
+            btn_pet.Controls.Add(new Label()
+            { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
 
             NpgsqlConnection conn3 = new NpgsqlConnection(Conexao_BD.Caminho_DB());
             conn3.Open();
@@ -156,6 +155,10 @@ namespace Dark_Age
                 lbl_adicional.Text = adicional_atual + "/" + adicional_max;
 
                 corrige_barras();
+
+                nds.Close();
+                conn3.Close();
+                comi.Dispose();
             }
 
 
@@ -318,6 +321,8 @@ namespace Dark_Age
                 Ficha.bd_sanidade = (int)ndp.GetValue(0);
             }
             ndp.Dispose();
+            ndp.Close();
+            comt.Dispose();
             conn2.Close();
         }
 
@@ -410,7 +415,8 @@ namespace Dark_Age
             Ficha.pers_criado = true;
             Ficha frm = new Ficha();            
             frm.Show();
-
+            como.Dispose();
+            conn.Close();
         }
 
 
@@ -522,7 +528,7 @@ namespace Dark_Age
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            //      Form1.ActiveForm.BackgroundImage = global::Dark_Age.Properties.Resources.festival2;
+            Form1.ActiveForm.BackgroundImage = global::Dark_Age.Properties.Resources.festival2;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -583,6 +589,9 @@ namespace Dark_Age
             come.Parameters.AddWithValue("@escudo", escudo);
             come.Parameters.AddWithValue("@id_personagem", Campanha.id_personagem);
             come.ExecuteNonQuery();
+
+            come.Dispose();
+            conn.Close();
 
             Application.Exit();
         }
@@ -791,7 +800,9 @@ namespace Dark_Age
 
                     distancia++;
                 }
-
+                comm.Dispose();
+                ndv.Close();
+                conn.Close();
 
             } catch (Exception a)
             {
@@ -834,5 +845,9 @@ namespace Dark_Age
             }
         }
 
+        private void btn_pet_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

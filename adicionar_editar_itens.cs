@@ -97,6 +97,9 @@ namespace Dark_Age
                     }
                     
                 }
+                comm.Dispose();
+                nds.Close();
+                conn.Close();
             }
         }
 
@@ -124,7 +127,7 @@ namespace Dark_Age
                 NpgsqlCommand como = new NpgsqlCommand();
                 como.Connection = conn;
                 como.CommandType = CommandType.Text;
-                como.CommandText = $@"insert into ""Dark_Age_Connection"".""Itens"" (nome_itens, dificuldade, fk_id_profissao, descricao, , material) 
+                como.CommandText = $@"insert into ""Dark_Age_Connection"".""Itens"" (nome_itens, dificuldade, fk_id_profissao, descricao, fk_id_tipo_itens,  material) 
                                        values (@nome_items, (@dificuldade)::""Dark_Age_Connection"".""enum_dificuldade"", @id_profissao, @descricao, @id_tipo_itens, @material)";
                 como.Parameters.AddWithValue("@nome_items", nome_item);
                 como.Parameters.AddWithValue("@dificuldade", dificuldade);
@@ -134,6 +137,7 @@ namespace Dark_Age
                 como.Parameters.AddWithValue("@material", material);
 
                 como.ExecuteNonQuery();
+                como.Dispose();
                 conn.Close();
             } else if (Lista_itens.editar_adicionar == true)
             {
@@ -158,6 +162,7 @@ namespace Dark_Age
                 como.Parameters.AddWithValue("@id_itens", Lista_itens.id_item);
                 como.Parameters.AddWithValue("@material", material);
                 como.ExecuteNonQuery();
+                como.Dispose();
                 conn.Close();
             }
             Close();

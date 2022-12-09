@@ -181,6 +181,9 @@ namespace Dark_Age
             comt.Parameters.AddWithValue("@regras", regras);
             comt.Parameters.AddWithValue("@sanidades", sanidades);
             comt.ExecuteNonQuery();
+
+            comt.Dispose();
+            conn.Close();
         }
 
         private void txt_historia_TextChanged(object sender, EventArgs e)

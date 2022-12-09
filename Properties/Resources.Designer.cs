@@ -93,6 +93,16 @@ namespace Dark_Age.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _307364_Sepik {
+            get {
+                object obj = ResourceManager.GetObject("307364-Sepik", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap alchemist {
             get {
                 object obj = ResourceManager.GetObject("alchemist", resourceCulture);

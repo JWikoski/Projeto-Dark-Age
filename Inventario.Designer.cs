@@ -220,7 +220,6 @@ namespace Dark_Age
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(321, 776);
             this.panel2.TabIndex = 85;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel3
             // 
@@ -234,7 +233,6 @@ namespace Dark_Age
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(678, 797);
             this.panel3.TabIndex = 86;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // panel8
             // 

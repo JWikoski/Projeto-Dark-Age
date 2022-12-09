@@ -22,6 +22,7 @@ namespace Dark_Age
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
         public int qtd = 1;
+        public Boolean filtros = true;
         public Lista_itens()
         {
             InitializeComponent();
@@ -112,6 +113,7 @@ namespace Dark_Age
                 Grid_lista_itens.Columns["nome_tipo_itens"].HeaderText = "Tipo do Item";
                 Grid_lista_itens.Columns["nome_profissao"].HeaderText = "Profissão";
                 Grid_lista_itens.Columns["descricao"].Visible = false;
+                Grid_lista_itens.Columns["material"].HeaderText = "Material";
                 if (Grid_lista_itens.Rows.Count > 0)
                 {
                     Grid_lista_itens.Rows[0].Selected = true;
@@ -146,6 +148,8 @@ namespace Dark_Age
                                         where id_itens = @id_itens";
                 como.Parameters.AddWithValue("@id_itens", id_item);
                 como.ExecuteNonQuery();
+
+                como.Dispose();
                 conn.Close();
                 Grid_lista_itens.DataSource = Conexao_BD.select_data_gridlist();
                 carregar_data_grid();
@@ -191,6 +195,7 @@ namespace Dark_Age
             else
             {
                 pnl_filtro.Visible = true;
+                pnl_filtro.Focus();
             }
             
         }
@@ -242,18 +247,26 @@ namespace Dark_Age
                 bs.Filter = "dificuldade LIKE '" + combox_dificuldade.Text + "' and nome_tipo_itens LIKE '" + combox_tipo.Text + "' and nome_profissao LIKE '" + combox_profissao.Text + "'";
 
             }
-            
+            else
+            {
+                filtros = false;
+            }
+
+            if(filtros == false && cbx_materiais.Text == "Mostrar tudo")
+            {
+
+                bs.Filter = Grid_lista_itens.Rows+" like true";
+
+            }
 
             Grid_lista_itens.DataSource = bs;
             pnl_filtro.Visible = false;
 
             if (filtro_dificuldade.Checked == false && filtro_profissoes.Checked == false && filtro_tipo.Checked == false)
             {
-                {
                     Grid_lista_itens.DataSource = Conexao_BD.select_data_gridlist();
                     carregar_data_grid();
                     limpar_filtros1.Visible = false;
-                }
             }
 
             foreach (DataGridViewRow x in Grid_lista_itens.Rows)
@@ -262,10 +275,6 @@ namespace Dark_Age
             }
         }
 
-        private void Grid_lista_itens_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void iconButton1_MouseEnter(object sender, EventArgs e)
         {

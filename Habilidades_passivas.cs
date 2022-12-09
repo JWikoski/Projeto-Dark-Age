@@ -171,9 +171,14 @@ namespace Dark_Age
                         tipo_luz.Visible = true;
                     }
                 }
+              
             }
             num_hab = 0;
             num_hab2 = 0;
+            conn.Close();
+            comm.Dispose();
+            comj.Dispose();
+            ndv.Close();
         }
 
         

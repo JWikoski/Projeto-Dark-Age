@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.remove_qtd = new FontAwesome.Sharp.IconButton();
             this.adiciona_qtd = new FontAwesome.Sharp.IconButton();
@@ -42,6 +42,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.pnl_filtro = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbx_materiais = new System.Windows.Forms.ComboBox();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.limpar_filtros2 = new FontAwesome.Sharp.IconButton();
             this.filtro_tipo = new System.Windows.Forms.CheckBox();
@@ -240,6 +242,8 @@
             // pnl_filtro
             // 
             this.pnl_filtro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_filtro.Controls.Add(this.label4);
+            this.pnl_filtro.Controls.Add(this.cbx_materiais);
             this.pnl_filtro.Controls.Add(this.iconButton2);
             this.pnl_filtro.Controls.Add(this.limpar_filtros2);
             this.pnl_filtro.Controls.Add(this.filtro_tipo);
@@ -251,9 +255,39 @@
             this.pnl_filtro.Controls.Add(this.combox_dificuldade);
             this.pnl_filtro.Location = new System.Drawing.Point(150, 98);
             this.pnl_filtro.Name = "pnl_filtro";
-            this.pnl_filtro.Size = new System.Drawing.Size(366, 189);
+            this.pnl_filtro.Size = new System.Drawing.Size(509, 229);
             this.pnl_filtro.TabIndex = 93;
             this.pnl_filtro.Visible = false;
+            this.pnl_filtro.Leave += new System.EventHandler(this.label4_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(258, 113);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 15);
+            this.label4.TabIndex = 104;
+            this.label4.Text = "Materiais";
+            // 
+            // cbx_materiais
+            // 
+            this.cbx_materiais.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            this.cbx_materiais.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbx_materiais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_materiais.Enabled = false;
+            this.cbx_materiais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbx_materiais.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.cbx_materiais.FormattingEnabled = true;
+            this.cbx_materiais.Items.AddRange(new object[] {
+            "Mostrar tudo",
+            "Mostrar apenas Materiais",
+            "Não mostrar"});
+            this.cbx_materiais.Location = new System.Drawing.Point(258, 137);
+            this.cbx_materiais.Name = "cbx_materiais";
+            this.cbx_materiais.Size = new System.Drawing.Size(155, 23);
+            this.cbx_materiais.TabIndex = 103;
+            this.cbx_materiais.Tag = "0";
             // 
             // iconButton2
             // 
@@ -268,7 +302,7 @@
             this.iconButton2.IconColor = System.Drawing.Color.Salmon;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.IconSize = 20;
-            this.iconButton2.Location = new System.Drawing.Point(329, 6);
+            this.iconButton2.Location = new System.Drawing.Point(461, 9);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(28, 28);
             this.iconButton2.TabIndex = 101;
@@ -292,7 +326,7 @@
             this.limpar_filtros2.IconColor = System.Drawing.Color.Salmon;
             this.limpar_filtros2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.limpar_filtros2.IconSize = 20;
-            this.limpar_filtros2.Location = new System.Drawing.Point(203, 145);
+            this.limpar_filtros2.Location = new System.Drawing.Point(375, 186);
             this.limpar_filtros2.Name = "limpar_filtros2";
             this.limpar_filtros2.Size = new System.Drawing.Size(28, 28);
             this.limpar_filtros2.TabIndex = 100;
@@ -310,7 +344,7 @@
             this.filtro_tipo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.filtro_tipo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.filtro_tipo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.filtro_tipo.Location = new System.Drawing.Point(187, 24);
+            this.filtro_tipo.Location = new System.Drawing.Point(258, 26);
             this.filtro_tipo.Name = "filtro_tipo";
             this.filtro_tipo.Size = new System.Drawing.Size(93, 19);
             this.filtro_tipo.TabIndex = 99;
@@ -338,7 +372,7 @@
             this.filtro_profissoes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.filtro_profissoes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.filtro_profissoes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.filtro_profissoes.Location = new System.Drawing.Point(23, 104);
+            this.filtro_profissoes.Location = new System.Drawing.Point(23, 112);
             this.filtro_profissoes.Name = "filtro_profissoes";
             this.filtro_profissoes.Size = new System.Drawing.Size(79, 19);
             this.filtro_profissoes.TabIndex = 97;
@@ -355,7 +389,7 @@
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(248, 142);
+            this.button2.Location = new System.Drawing.Point(420, 183);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 28);
             this.button2.TabIndex = 96;
@@ -374,9 +408,9 @@
             this.combox_profissao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.combox_profissao.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.combox_profissao.FormattingEnabled = true;
-            this.combox_profissao.Location = new System.Drawing.Point(23, 129);
+            this.combox_profissao.Location = new System.Drawing.Point(23, 137);
             this.combox_profissao.Name = "combox_profissao";
-            this.combox_profissao.Size = new System.Drawing.Size(121, 23);
+            this.combox_profissao.Size = new System.Drawing.Size(155, 23);
             this.combox_profissao.TabIndex = 95;
             this.combox_profissao.Click += new System.EventHandler(this.combox_profissao_Click);
             // 
@@ -388,9 +422,9 @@
             this.combox_tipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.combox_tipo.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.combox_tipo.FormattingEnabled = true;
-            this.combox_tipo.Location = new System.Drawing.Point(187, 47);
+            this.combox_tipo.Location = new System.Drawing.Point(258, 49);
             this.combox_tipo.Name = "combox_tipo";
-            this.combox_tipo.Size = new System.Drawing.Size(121, 23);
+            this.combox_tipo.Size = new System.Drawing.Size(155, 23);
             this.combox_tipo.TabIndex = 94;
             this.combox_tipo.Click += new System.EventHandler(this.combox_tipo_Click);
             // 
@@ -406,7 +440,7 @@
             "Todos"});
             this.combox_dificuldade.Location = new System.Drawing.Point(23, 47);
             this.combox_dificuldade.Name = "combox_dificuldade";
-            this.combox_dificuldade.Size = new System.Drawing.Size(121, 23);
+            this.combox_dificuldade.Size = new System.Drawing.Size(155, 23);
             this.combox_dificuldade.TabIndex = 93;
             this.combox_dificuldade.Click += new System.EventHandler(this.combox_dificuldade_Click);
             // 
@@ -543,25 +577,25 @@
             this.Grid_lista_itens.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grid_lista_itens.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.Grid_lista_itens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(37)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_lista_itens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(37)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_lista_itens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.Grid_lista_itens.ColumnHeadersHeight = 30;
             this.Grid_lista_itens.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Grid_lista_itens.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Grid_lista_itens.DefaultCellStyle = dataGridViewCellStyle5;
             this.Grid_lista_itens.EnableHeadersVisualStyles = false;
             this.Grid_lista_itens.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
             this.Grid_lista_itens.Location = new System.Drawing.Point(60, 182);
@@ -569,21 +603,20 @@
             this.Grid_lista_itens.Name = "Grid_lista_itens";
             this.Grid_lista_itens.ReadOnly = true;
             this.Grid_lista_itens.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(57)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_lista_itens.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_lista_itens.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.Grid_lista_itens.RowTemplate.Height = 10;
             this.Grid_lista_itens.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Grid_lista_itens.Size = new System.Drawing.Size(996, 582);
             this.Grid_lista_itens.TabIndex = 0;
             this.Grid_lista_itens.VirtualMode = true;
             this.Grid_lista_itens.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_lista_itens_CellClick);
-            this.Grid_lista_itens.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_lista_itens_CellContentClick);
             this.Grid_lista_itens.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_lista_itens_ColumnHeaderMouseClick);
             // 
             // limpar_filtros1
@@ -714,5 +747,7 @@
         private FontAwesome.Sharp.IconButton adiciona_qtd;
         private System.Windows.Forms.Label lbl_qtd;
         private FontAwesome.Sharp.IconButton remove_qtd;
+        private System.Windows.Forms.ComboBox cbx_materiais;
+        private System.Windows.Forms.Label label4;
     }
 }
