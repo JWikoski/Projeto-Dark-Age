@@ -42,6 +42,12 @@ namespace Dark_Age
                 data_grid_campanha.Columns["nome_campanha"].HeaderText = "Campanhas";
                 data_grid_campanha.Columns["id_campanha"].Visible = false;
                 data_grid_campanha.Columns["fk_id_jogador_mestre"].Visible = false;
+                if (data_grid_campanha.Rows.Count > 0)
+                {
+                    data_grid_campanha.Rows[0].Selected = true;
+                    DataGridViewRow cell1 = data_grid_campanha.Rows[0];
+                    selecao_campanha(cell1);
+                }
             }
             catch (Exception a)
             {
@@ -91,10 +97,19 @@ namespace Dark_Age
                     data_grid_pers_camp.DataSource = Conexao_BD.select_personagem_campanha_mestre(id_campanha);
                     if (data_grid_pers_camp.DataSource != null)
                     {
-                        data_grid_pers_camp.Columns["nome_personagem"].HeaderText = "Personagens";
+                        data_grid_pers_camp.Columns["nome_personagem"].HeaderText = "Nome";
+                        data_grid_pers_camp.Columns["nome_personagem"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                        data_grid_pers_camp.Columns["classe_personagem"].HeaderText = "Classe";
+                        data_grid_pers_camp.Columns["nivel"].HeaderText = "Nível";
+                        data_grid_pers_camp.Columns["nivel"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                         data_grid_pers_camp.Columns["id_personagem"].Visible = false;
-
                     }
+                }
+                if (data_grid_pers_camp.Rows.Count > 0)
+                {
+                    data_grid_pers_camp.Rows[0].Selected = true;
+                    DataGridViewRow cell1 = data_grid_pers_camp.Rows[0];
+                    selecao_personagem(cell1);
                 }
 
             }
@@ -110,12 +125,34 @@ namespace Dark_Age
 
         private void data_grid_campanha_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            selecao_campanha(e);
+            try
+            {
+                if (e.RowIndex == -1)
+                {
+                    return;
+                }
+                DataGridViewRow row = data_grid_campanha.Rows[e.RowIndex];
+                selecao_campanha(row);
+            } catch (Exception a)
+            {
+                MessageBox.Show("ERRO click na grid de campanha" + a);
+            }
         }
 
         private void data_grid_pers_camp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            selecao_personagem(e);
+            try
+            {
+                if (e.RowIndex == -1)
+                {
+                    return;
+                }
+                DataGridViewRow row = data_grid_pers_camp.Rows[e.RowIndex];
+                selecao_personagem(row);
+            } catch (Exception a)
+            {
+                MessageBox.Show("ERRO click na grid de personagem " + a);
+            }
         }
 
         private void btn_entrar_Click(object sender, EventArgs e)
@@ -146,39 +183,35 @@ namespace Dark_Age
                 MessageBox.Show("Selecione o personagem que deseja deletar. Não recomendo deletar;");
             }
         }
-        public void selecao_personagem(DataGridViewCellEventArgs e)
+        public void selecao_personagem(DataGridViewRow e)
         {
             try
             {
-                if (e.RowIndex == -1)
+                DataGridViewRow row = e;
+                if (row.Index == -1)
                 {
                     return;
                 }
-                DataGridViewRow row = data_grid_pers_camp.Rows[e.RowIndex];
                 id_personagem = (int)row.Cells[0].Value;
                 nome_personagem = row.Cells[1].Value.ToString();
                 if (row.Cells[2].Value.ToString() == "Alquimista")
                 {
                     classe_personagem = 1;
 
-                }else if(row.Cells[2].Value.ToString() == "Mestre da Forja")
+                } else if (row.Cells[2].Value.ToString() == "Mestre da Forja")
                 {
                     classe_personagem = 2;
-                }
-                else if (row.Cells[2].Value.ToString() == "Caçador de Monstros")
+                } else if (row.Cells[2].Value.ToString() == "Caçador de Monstros")
                 {
                     classe_personagem = 3;
-                }
-                else if (row.Cells[2].Value.ToString() == "Orador")
+                } else if (row.Cells[2].Value.ToString() == "Orador")
                 {
                     classe_personagem = 4;
-                }
-                else if (row.Cells[2].Value.ToString() == "Templário")
+                } else if (row.Cells[2].Value.ToString() == "Templário")
                 {
                     classe_personagem = 5;
                 }
-
-                nivel_personagem = (int)row.Cells[3].Value;
+                nivel_personagem = (int)row.Cells[3].Value;                                        
             }
             catch (Exception a)
             {
@@ -186,22 +219,21 @@ namespace Dark_Age
             }
         }
 
-        public void selecao_campanha(DataGridViewCellEventArgs e)
+        public void selecao_campanha(DataGridViewRow e)
         {
             try
             {
-                if (e.RowIndex == -1)
+                DataGridViewRow row = e;
+                if (row.Index == -1)
                 {
                     return;
                 }
-                DataGridViewRow row = data_grid_campanha.Rows[e.RowIndex];
                 id_campanha = (int)row.Cells[0].Value;
-                nome_campanha = row.Cells[1].Value.ToString(); 
+                nome_campanha = row.Cells[1].Value.ToString();
                 int id_mestre = (int)row.Cells[2].Value;
                 esconder_btn(id_mestre);
                 carrega_data_grid_pers_camp(id_jogador, id_campanha, id_mestre);
-            }
-            catch (Exception a)
+            } catch (Exception a)
             {
                 MessageBox.Show("ERRO click na grid da campanha ", "Erro:" + a);
             }
@@ -267,6 +299,7 @@ namespace Dark_Age
         {
             Pagina_mestre mestre = new Pagina_mestre();
             mestre.ShowDialog();
+            this.Close();
         }
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]

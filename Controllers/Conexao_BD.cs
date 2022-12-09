@@ -219,7 +219,9 @@ namespace Dark_Age.Enteties
             try
             {
                 NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"select id_personagem
-	                                                                         , nome_personagem	                                                                         
+	                                                                         , nome_personagem
+                                                                             , classe_personagem
+                                                                             , nivel
                                                                          from ""Dark_Age_Connection"".""Inter_camp_pers""                                                                          
                                                                          join ""Dark_Age_Connection"".""Personagens"" on id_personagem = fk_id_personagem
                                                                         where fk_id_campanha = " + id_campanha + ";", Conexao_BD.Caminho_DB());
