@@ -297,9 +297,11 @@ namespace Dark_Age
         }
         private void btn_entrar_mestre_Click(object sender, EventArgs e)
         {
+
             Pagina_mestre mestre = new Pagina_mestre();
-            mestre.ShowDialog();
             this.Close();
+            mestre.ShowDialog();
+            
         }
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]

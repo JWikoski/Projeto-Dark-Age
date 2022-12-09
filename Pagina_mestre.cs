@@ -160,9 +160,9 @@ namespace Dark_Age
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
-        {
-            this.Close();
+        {            
             salvar_alteracoes();
+            this.Close();
         }
        public void salvar_alteracoes()
         {
