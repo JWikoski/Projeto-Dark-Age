@@ -1,10 +1,13 @@
 ﻿using Dark_Age.Componente;
+using Dark_Age.Controllers;
 using Dark_Age.Enteties;
 using Npgsql;
 using System;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.Net;
+using System.Runtime.Intrinsics.Arm;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Ink;
@@ -61,7 +64,7 @@ namespace Dark_Age
             btn_pet.Controls.Add(new Label()
             { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
 
-            NpgsqlConnection conn3 = new NpgsqlConnection(Conexao_BD.Caminho_DB());
+           /* NpgsqlConnection conn3 = new NpgsqlConnection(Conexao_BD.Caminho_DB());
             conn3.Open();
             NpgsqlCommand comi = new NpgsqlCommand();
             comi.Connection = conn3;
@@ -159,10 +162,10 @@ namespace Dark_Age
                 nds.Close();
                 conn3.Close();
                 comi.Dispose();
-            }
+            }/*
 
 
-
+            /*
             NpgsqlConnection conn2 = new NpgsqlConnection(Conexao_BD.Caminho_DB());
             conn2.Open();
             NpgsqlCommand comt = new NpgsqlCommand();
@@ -323,9 +326,149 @@ namespace Dark_Age
             ndp.Dispose();
             ndp.Close();
             comt.Dispose();
-            conn2.Close();
+            conn2.Close();*/
+        }
+        public void select_atributos()
+        {
+            using NpgsqlDataReader nds = Conexao_BD.select_atributos(Campanha.id_personagem, "S");
+
+            while (nds.Read())
+            {
+                Ficha.forca = (int)nds.GetValue(0);
+                Ficha.destreza = (int)nds.GetValue(1);
+                Ficha.vigor = (int)nds.GetValue(2);
+                Ficha.carisma = (int)nds.GetValue(3);
+                Ficha.raciocinio = (int)nds.GetValue(4);
+                Ficha.magia = (int)nds.GetValue(5);
+            }
         }
 
+        public void select_talentos()
+        {                     
+            using NpgsqlDataReader ndp = Conexao_BD.select_talentos(Campanha.id_personagem, "S");
+
+            while (ndp.Read())
+            {
+                Ficha.bd_ataque = (int)ndp.GetValue(0);
+                Ficha.bd_esquiva = (int)ndp.GetValue(1);
+                Ficha.bd_defesa = (int)ndp.GetValue(2);
+                Ficha.bd_contra_atq = (int)ndp.GetValue(3);
+                Ficha.bd_arematirar = (int)ndp.GetValue(4);
+                Ficha.bd_lancarmagia = (int)ndp.GetValue(5);
+                Ficha.bd_labia = (int)ndp.GetValue(6);
+                Ficha.bd_intimidacao = (int)ndp.GetValue(7);
+                Ficha.bd_seduzir = (int)ndp.GetValue(8);
+                Ficha.bd_enganacao = (int)ndp.GetValue(9);
+                Ficha.bd_esconder = (int)ndp.GetValue(10);
+                Ficha.bd_percepcao = (int)ndp.GetValue(11);
+                Ficha.bd_academicos = (int)ndp.GetValue(12);
+                Ficha.bd_ocultismo = (int)ndp.GetValue(13);
+                Ficha.bd_sobrevivencia = (int)ndp.GetValue(14);
+                Ficha.bd_investigacao = (int)ndp.GetValue(15);
+                Ficha.bd_intuicao = (int)ndp.GetValue(16);
+                Ficha.bd_etiqueta = (int)ndp.GetValue(17);
+                Ficha.bd_sanidade = (int)ndp.GetValue(18);
+            }
+        }
+
+        public void select_personagem()
+        {
+            using NpgsqlDataReader ndp = Conexao_BD.select_info_personagem(Campanha.id_personagem);
+
+            while (ndp.Read())
+            {
+                Inventario.moedas_de_prata = (int)ndp.GetValue(0);
+                Inventario.moedas_de_ouro = (int)ndp.GetValue(1);
+                vida_atual = (int)ndp.GetValue(2);
+                vida_maxima = (int)ndp.GetValue(3);
+                sanidade_atual = (int)ndp.GetValue(4);
+                sanidade_max = (int)ndp.GetValue(5);
+                mana_atual = (int)ndp.GetValue(6);
+                adicional_atual = (int)ndp.GetValue(7);
+                adicional_max = (int)ndp.GetValue(8);
+                escudo = (int)ndp.GetValue(9);
+            }
+        }
+
+        public void preencher_info_tela()
+        {
+            select_personagem();
+            select_atributos();
+            select_talentos();
+            res_ataque.Text = Ficha.bd_ataque.ToString();
+            res_esquiva.Text = Ficha.bd_esquiva.ToString();
+            res_defesa.Text = Ficha.bd_defesa.ToString();
+            res_contrataque.Text = Ficha.bd_contra_atq.ToString();
+            res_atirar.Text = Ficha.bd_arematirar.ToString();
+            res_conjurar.Text = Ficha.bd_lancarmagia.ToString();
+            res_labia.Text = Ficha.bd_labia.ToString();
+            res_intimidacao.Text = Ficha.bd_intimidacao.ToString();
+            res_seducao.Text = Ficha.bd_seduzir.ToString();
+            res_enganacao.Text = Ficha.bd_enganacao.ToString();
+            res_esconder.Text = Ficha.bd_esconder.ToString();
+            res_percepcao.Text = Ficha.bd_percepcao.ToString();
+            res_acad.Text = Ficha.bd_academicos.ToString();
+            res_ocultismo.Text = Ficha.bd_ocultismo.ToString();
+            res_sobrevivencia.Text = Ficha.bd_sobrevivencia.ToString();
+            res_investigacao.Text = Ficha.bd_investigacao.ToString();
+            res_intuicao.Text = Ficha.bd_intuicao.ToString();
+            res_etiqueta.Text = Ficha.bd_etiqueta.ToString();
+
+            res_forca.Text = Ficha.forca.ToString();
+            res_destreza.Text = Ficha.destreza.ToString();
+            res_vigor.Text = Ficha.vigor.ToString();
+            res_carisma.Text = Ficha.carisma.ToString();
+            res_raciocinio.Text = Ficha.raciocinio.ToString();
+            res_magia.Text = Ficha.magia.ToString();
+
+            prata.Text = Inventario.moedas_de_prata.ToString();
+            ouro.Text = Inventario.moedas_de_ouro.ToString();
+
+            if (Ficha.magia <= 0)
+            {
+                panel_mana.Visible = false;
+
+            } else
+            {
+                panel_mana.Visible = true;
+            }
+            mana_maxima = (Ficha.magia * 2);
+
+            label24.Text = escudo.ToString();
+            if (escudo > 0)
+            {
+                panel12.Visible = true;
+            }
+
+            movimento.Text = "Movimento: " + (6 + Ficha.destreza);
+            iniciativa.Text = "Iniciativa: + " + Ficha.destreza;
+
+            numericUpDown1.Maximum = vida_maxima;
+            numericUpDown1.Value = vida_atual;
+
+            numericUpDown2.Value = sanidade_atual;
+            numericUpDown2.Maximum = sanidade_max;
+
+            numericUpDown3.Value = mana_atual;
+            numericUpDown3.Maximum = mana_maxima;
+
+            numericUpDown5.Value = adicional_atual;
+            numericUpDown6.Value = adicional_max;
+
+            lbl_vida.Text = vida_atual + "/" + vida_maxima;
+            lbl_sanidade.Text = sanidade_atual + "/" + sanidade_max;
+            lbl_mana.Text = mana_atual + "/" + mana_maxima;
+            lbl_adicional.Text = adicional_atual + "/" + adicional_max;
+
+            corrige_barras();
+
+            if (adicional_atual > 0)
+            {
+                pn_adicional.Visible = true;
+            }
+
+            Lista_de_personagens();
+        }
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
@@ -344,26 +487,26 @@ namespace Dark_Age
         }
         public void corrige_barras()
         {
-            panel9.Width = 220;
-
-
-            decimal porcentagem3 = (decimal)vida_atual / (decimal)vida_maxima;
-            porcentagem3 = porcentagem3 * 220;
-            panel9.Width = Convert.ToInt32(porcentagem3);
-
-            decimal porcentagem4 = (decimal)sanidade_atual / (decimal)sanidade_max;
-            porcentagem4 = porcentagem4 * 220;
-            lbl_barra2.Width = Convert.ToInt32(porcentagem4);
+            if (vida_maxima > 0)
+            {
+                panel9.Width = 220;
+                decimal porcentagem3 = (decimal)vida_atual / (decimal)vida_maxima;
+                porcentagem3 = porcentagem3 * 220;
+                panel9.Width = Convert.ToInt32(porcentagem3);
+            }
+            if (sanidade_max > 0)
+            {
+                decimal porcentagem4 = (decimal)sanidade_atual / (decimal)sanidade_max;
+                porcentagem4 = porcentagem4 * 220;
+                lbl_barra2.Width = Convert.ToInt32(porcentagem4);
+            }
             if (mana_atual > 0)
             {
                 decimal porcentagem5 = (decimal)mana_atual / (decimal)mana_maxima;
                 porcentagem5 = porcentagem5 * 220;
                 lbl_barra_mana3.Width = Convert.ToInt32(porcentagem5);
-
             }
-
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             Opacity = 0;      //first the opacity is 0
@@ -376,6 +519,7 @@ namespace Dark_Age
             bemvindo.Text = "Bem-Vindo(a), "+Campanha.nome_personagem+"!";
 
             Lista_de_personagens();
+            preencher_info_tela();
         }
         void fadeIn(object sender, EventArgs e)
         {
@@ -387,36 +531,11 @@ namespace Dark_Age
 
         private void btn_open_Click(object sender, EventArgs e)
         {
-            NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
-            conn.Open();
-            NpgsqlCommand como = new NpgsqlCommand();
-            como.Connection = conn;
-            como.CommandType = CommandType.Text;
-            como.CommandText = $@"update ""Dark_Age_Connection"".""Personagens"" 
-                                     set vida_atual = @vida_atual
-                                       , vida_max = @vida_max
-                                       , sanidade_atual = @sanidade_atual
-                                       , sanidade_max = @sanidade_max
-                                       , mana_atual = @mana_atual 
-                                       , adicional_atual = @adicional_atual
-                                       , adicional_max = @adicional_max 
-                                   where fk_id_jogador = @id_personagem";
-            como.Parameters.AddWithValue("@vida_atual", vida_atual);
-            como.Parameters.AddWithValue("@vida_max", vida_maxima);
-            como.Parameters.AddWithValue("@sanidade_atual", sanidade_atual);
-            como.Parameters.AddWithValue("@sanidade_max", sanidade_max);
-            como.Parameters.AddWithValue("@mana_atual", mana_atual);
-            como.Parameters.AddWithValue("@adicional_atual", adicional_atual);
-            como.Parameters.AddWithValue("@adicional_max", adicional_max);
-            como.Parameters.AddWithValue("@id_personagem", Campanha.id_personagem);
-            como.ExecuteNonQuery();
-
+            salvar_info_pers();
             this.Hide();
             Ficha.pers_criado = true;
             Ficha frm = new Ficha();            
             frm.Show();
-            como.Dispose();
-            conn.Close();
         }
 
 
@@ -564,35 +683,7 @@ namespace Dark_Age
 
         private void LblFecharPassivas_Click(object sender, EventArgs e)
         {
-            NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
-            conn.Open();
-            NpgsqlCommand come = new NpgsqlCommand();
-            come.Connection = conn;
-            come.CommandType = CommandType.Text;
-            come.CommandText = $@"update ""Dark_Age_Connection"".""Personagens"" 
-                                     set vida_atual = @vida_atual
-                                       , vida_max = @vida_max
-                                       , sanidade_atual = @sanidade_atual
-                                       , sanidade_max = @sanidade_max
-                                       , mana_atual = @mana_atual 
-                                       , adicional_atual = @adicional_atual
-                                       , adicional_max = @adicional_max
-                                       , escudo = @escudo
-                                   where id_personagem = @id_personagem";
-            come.Parameters.AddWithValue("@vida_atual", vida_atual);
-            come.Parameters.AddWithValue("@vida_max", vida_maxima);
-            come.Parameters.AddWithValue("@sanidade_atual", sanidade_atual);
-            come.Parameters.AddWithValue("@mana_atual", mana_atual);
-            come.Parameters.AddWithValue("@sanidade_max", sanidade_max);
-            come.Parameters.AddWithValue("@adicional_atual", adicional_atual);
-            come.Parameters.AddWithValue("@adicional_max", adicional_max);
-            come.Parameters.AddWithValue("@escudo", escudo);
-            come.Parameters.AddWithValue("@id_personagem", Campanha.id_personagem);
-            come.ExecuteNonQuery();
-
-            come.Dispose();
-            conn.Close();
-
+            salvar_info_pers();
             Application.Exit();
         }
         private void LblFecharPassivas_MouseHover(object sender, EventArgs e)
@@ -619,38 +710,41 @@ namespace Dark_Age
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
-            lbl_vida.Text = numericUpDown1.Value + "/" + vida_maxima;
-
-
-            decimal porcentagem = (((decimal)vida_atual - (decimal)Convert.ToInt32(numericUpDown1.Value)) * 100) / (decimal)vida_maxima;
-            porcentagem = ((decimal)porcentagem * 220) / 100;
-            panel9.Width -= Convert.ToInt32(porcentagem);
-
-            vida_atual = Convert.ToInt32(numericUpDown1.Value);
-            if (numericUpDown1.Value < 6)
+            if (vida_maxima > 0)
             {
-                panel9.BackColor = Color.Salmon;
-            } else
-            {
-                panel9.BackColor = Color.LimeGreen;
-            }
+                lbl_vida.Text = numericUpDown1.Value + "/" + vida_maxima;
+                decimal porcentagem = (((decimal)vida_atual - (decimal)Convert.ToInt32(numericUpDown1.Value)) * 100) / (decimal)vida_maxima;
+                porcentagem = ((decimal)porcentagem * 220) / 100;
+                panel9.Width -= Convert.ToInt32(porcentagem);
+                vida_atual = Convert.ToInt32(numericUpDown1.Value);
+                if (numericUpDown1.Value < 6)
+                {
+                    panel9.BackColor = Color.Salmon;
+                } else
+                {
+                    panel9.BackColor = Color.LimeGreen;
+                }
+            }           
         }
 
 
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
         {
-            lbl_sanidade.Text = numericUpDown2.Value + "/" + sanidade_max;
-            decimal porcentagem2 = (((decimal)sanidade_atual - (decimal)Convert.ToInt32(numericUpDown2.Value)) * 100) / (decimal)sanidade_max;
-            porcentagem2 = ((decimal)porcentagem2 * 220) / 100;
-            lbl_barra2.Width -= Convert.ToInt32(porcentagem2);
+            if (sanidade_max > 0)
+            {
+                lbl_sanidade.Text = numericUpDown2.Value + "/" + sanidade_max;
+                decimal porcentagem2 = (((decimal)sanidade_atual - (decimal)Convert.ToInt32(numericUpDown2.Value)) * 100) / (decimal)sanidade_max;
+                porcentagem2 = ((decimal)porcentagem2 * 220) / 100;
+                lbl_barra2.Width -= Convert.ToInt32(porcentagem2);
 
-            sanidade_atual = Convert.ToInt32(numericUpDown2.Value);
-            if (numericUpDown2.Value < 3)
-            {
-                lbl_barra2.BackColor = Color.DarkSlateGray;
-            } else
-            {
-                lbl_barra2.BackColor = Color.CadetBlue;
+                sanidade_atual = Convert.ToInt32(numericUpDown2.Value);
+                if (numericUpDown2.Value < 3)
+                {
+                    lbl_barra2.BackColor = Color.DarkSlateGray;
+                } else
+                {
+                    lbl_barra2.BackColor = Color.CadetBlue;
+                }
             }
         }
 
@@ -823,10 +917,10 @@ namespace Dark_Age
 
         private void iconButton4_MouseEnter(object sender, EventArgs e)
         {
-            var button = (Button)sender;
-            Color cor = button.ForeColor;
-            button.FlatAppearance.MouseOverBackColor = Color.FromArgb(25, cor);
+            style.houver_botao(sender);
         }
+
+
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
@@ -848,6 +942,53 @@ namespace Dark_Age
         private void btn_pet_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void recaregar_Click(object sender, EventArgs e)
+        {
+            preencher_info_tela();
+        }
+
+        public void salvar_info_pers()
+        {
+            using NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
+            conn.Open();
+            using NpgsqlCommand como = new NpgsqlCommand();
+            como.Connection = conn;
+            como.CommandType = CommandType.Text;
+            como.CommandText = $@"update ""Dark_Age_Connection"".""Personagens"" 
+                                     set vida_atual = @vida_atual
+                                       , vida_max = @vida_max
+                                       , sanidade_atual = @sanidade_atual
+                                       , sanidade_max = @sanidade_max
+                                       , mana_atual = @mana_atual 
+                                       , adicional_atual = @adicional_atual
+                                       , adicional_max = @adicional_max 
+                                   where id_personagem = @id_personagem";
+            como.Parameters.AddWithValue("@vida_atual", vida_atual);
+            como.Parameters.AddWithValue("@vida_max", vida_maxima);
+            como.Parameters.AddWithValue("@sanidade_atual", sanidade_atual);
+            como.Parameters.AddWithValue("@sanidade_max", sanidade_max);
+            como.Parameters.AddWithValue("@mana_atual", mana_atual);
+            como.Parameters.AddWithValue("@adicional_atual", adicional_atual);
+            como.Parameters.AddWithValue("@adicional_max", adicional_max);
+            como.Parameters.AddWithValue("@id_personagem", Campanha.id_personagem);
+            como.ExecuteNonQuery();
+        }
+
+        private void btn_gravar_Click(object sender, EventArgs e)
+        {
+            salvar_info_pers();
+        }
+
+        private void recaregar_MouseEnter(object sender, EventArgs e)
+        {
+            style.houver_botao(sender);
+        }
+
+        private void btn_gravar_MouseEnter(object sender, EventArgs e)
+        {
+            style.houver_botao(sender);
         }
     }
 }

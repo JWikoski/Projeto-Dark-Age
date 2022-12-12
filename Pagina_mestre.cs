@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dark_Age.Componente;
+using Dark_Age.Controllers;
 using Dark_Age.Enteties;
 using Npgsql;
 
@@ -138,9 +139,8 @@ namespace Dark_Age
 
         private void HoverEnter_MouseEnter(object sender, EventArgs e)
         {
-            var button = (Button)sender;
-            Color cor = button.ForeColor;
-            button.FlatAppearance.MouseOverBackColor = Color.FromArgb(25, cor);
+
+            style.houver_botao(sender);
         }
 
         private void iconButton5_MouseEnter(object sender, EventArgs e)

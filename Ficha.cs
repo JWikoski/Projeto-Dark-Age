@@ -9,12 +9,12 @@ namespace Dark_Age
 {
     public partial class Ficha : Form
     {
-        public int forca = 0;
-        public int destreza = 0;
-        public int vigor = 0;
-        public int carisma = 0;
-        public int raciocinio = 0;
-        public int magia = 0;
+        public static int forca = 0;
+        public static int destreza = 0;
+        public static int vigor = 0;
+        public static int carisma = 0;
+        public static int raciocinio = 0;
+        public static int magia = 0;
         public static int pontos = 10;
         public static int pontos_hab = 0;
         public static int pontos_totais = 10;
@@ -980,6 +980,9 @@ namespace Dark_Age
             conn.Close();
         }
 
+        public void preencher_Info_tela()
+        {
 
+        }
     }
 }

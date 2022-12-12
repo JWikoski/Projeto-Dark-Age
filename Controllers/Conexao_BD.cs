@@ -330,5 +330,75 @@ namespace Dark_Age.Enteties
             cone.Dispose();
             conn.Close();
         }
+
+        public static NpgsqlDataReader select_info_personagem(int id_personagem)
+        {
+            using NpgsqlConnection conn3 = new(Conexao_BD.Caminho_DB());
+            conn3.Open();
+            using NpgsqlCommand comi = new NpgsqlCommand();
+            comi.Connection = conn3;
+            comi.CommandType = CommandType.Text;
+            comi.CommandText = $@"select silver
+	                                , gold
+	                                , vida_atual
+	                                , vida_max
+	                                , sanidade_atual
+	                                , sanidade_max
+	                                , mana_atual
+	                                , adicional_atual
+	                                , adicional_max 
+                                    , escudo
+                                from ""Dark_Age_Connection"".""Personagens"" 
+                                where id_personagem = @id_personagem";
+            comi.Parameters.AddWithValue("@id_personagem", id_personagem);
+            return comi.ExecuteReader();
+        }
+
+        public static NpgsqlDataReader select_talentos(int id_personagem, string situacao)
+        {
+            using NpgsqlConnection conn = new NpgsqlConnection(Conexao_BD.Caminho_DB());
+            conn.Open();
+            using NpgsqlCommand comm = new NpgsqlCommand();
+            comm.Connection = conn;
+            comm.CommandType = CommandType.Text;
+            comm.CommandText = @$"select o_talento_briga 
+	                                   , o_talento_esquiva 
+	                                   , o_talento_defesa 
+	                                   , o_talento_contra_atq 
+	                                   , o_talento_arematirar 
+	                                   , o_talento_lancamagia 
+	                                   , o_talento_labia 
+	                                   , o_talento_intimidacao 
+	                                   , o_talento_seduzir 
+	                                   , o_talento_enganacao 
+	                                   , o_talento_esconder 
+	                                   , o_talento_percepcao 
+	                                   , o_talento_academicos 
+	                                   , o_talento_ocultismo 
+	                                   , o_talento_sobrevivencia 
+	                                   , o_talento_invesigacao 
+	                                   , o_talento_intuicao 
+	                                   , o_talento_etiqueta 
+	                                   , o_talento_sanidade 
+                                    from ""Dark_Age_Connection"".traz_atributos(" + id_personagem + ", "+ situacao +")";
+            return comm.ExecuteReader();
+        }
+
+        public static NpgsqlDataReader select_atributos(int id_personagem, string situacao)
+        {
+            using NpgsqlConnection conn = new NpgsqlConnection(Conexao_BD.Caminho_DB());
+            conn.Open();
+            using NpgsqlCommand comm = new NpgsqlCommand();
+            comm.Connection = conn;
+            comm.CommandType = CommandType.Text;
+            comm.CommandText = @$"select o_atributo_forca 
+                                       , o_atributo_destreza 
+ 	                                   , o_atributo_vigor
+	                                   , o_atributo_carisma 
+	                                   , o_atributo_raciocinio 
+	                                   , o_atributo_magia  
+                                    from ""Dark_Age_Connection"".traz_atributos(" + id_personagem + ", " + situacao + ")";
+            return comm.ExecuteReader();
+        }
     }
 }
