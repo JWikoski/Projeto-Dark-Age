@@ -488,6 +488,16 @@ namespace Dark_Age.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap papers_co_sk61_dark_purple_blur_gradation_36_3840x2400_4k_wallpaper {
+            get {
+                object obj = ResourceManager.GetObject("papers.co-sk61-dark-purple-blur-gradation-36-3840x2400-4k-wallpaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap photo_1523821741446_edb2b68777bb7a0 {
             get {
                 object obj = ResourceManager.GetObject("photo-1523821741446-edb2b68777bb7a0", resourceCulture);
@@ -511,6 +521,26 @@ namespace Dark_Age.Properties {
         internal static System.Drawing.Bitmap png_clipart_triangle_point_green_leaf_up_arrow_file_angle_web_design {
             get {
                 object obj = ResourceManager.GetObject("png-clipart-triangle-point-green-leaf-up-arrow-file-angle-web-design", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap png_sparkle_clean_effect_white_icon_11640489625soujl6hden {
+            get {
+                object obj = ResourceManager.GetObject("png-sparkle-clean-effect-white-icon-11640489625soujl6hden", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap png_sparkle_clean_effect_white_icon_11640489625soujl6hden1 {
+            get {
+                object obj = ResourceManager.GetObject("png-sparkle-clean-effect-white-icon-11640489625soujl6hden1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

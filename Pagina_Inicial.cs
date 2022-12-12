@@ -400,7 +400,7 @@ namespace Dark_Age
                                        , mana_atual = @mana_atual 
                                        , adicional_atual = @adicional_atual
                                        , adicional_max = @adicional_max 
-                                   where fk_id_jogador = @id_personagem";
+                                   where id_Personagem = @id_personagem";
             como.Parameters.AddWithValue("@vida_atual", vida_atual);
             como.Parameters.AddWithValue("@vida_max", vida_maxima);
             como.Parameters.AddWithValue("@sanidade_atual", sanidade_atual);
@@ -412,6 +412,7 @@ namespace Dark_Age
             como.ExecuteNonQuery();
 
             this.Hide();
+            Ficha.tipo_entidade = 1;
             Ficha.pers_criado = true;
             Ficha frm = new Ficha();            
             frm.Show();
@@ -847,7 +848,8 @@ namespace Dark_Age
 
         private void btn_pet_Click(object sender, EventArgs e)
         {
-
+            Pets pets = new Pets();
+            pets.Show();
         }
     }
 }

@@ -114,15 +114,15 @@ namespace Dark_Age
             this.prata = new System.Windows.Forms.Label();
             this.ouro = new System.Windows.Forms.Label();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.Locais = new System.Windows.Forms.PictureBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.btn_pet = new FontAwesome.Sharp.IconButton();
             this.botao_itens = new FontAwesome.Sharp.IconButton();
             this.btn_inventario = new FontAwesome.Sharp.IconButton();
+            this.btn_pet = new FontAwesome.Sharp.IconButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btn_anotacoes = new FontAwesome.Sharp.IconButton();
             this.btn_cria_personagem = new FontAwesome.Sharp.IconButton();
-            this.Locais = new System.Windows.Forms.PictureBox();
             this.mudaimagem = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -169,10 +169,10 @@ namespace Dark_Age
             this.panel1.SuspendLayout();
             this.panel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Locais)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Locais)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -1502,6 +1502,21 @@ namespace Dark_Age
             this.iconPictureBox2.TabIndex = 143;
             this.iconPictureBox2.TabStop = false;
             // 
+            // Locais
+            // 
+            this.Locais.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Locais.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Locais.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Locais.Location = new System.Drawing.Point(207, 1);
+            this.Locais.Name = "Locais";
+            this.Locais.Size = new System.Drawing.Size(191, 112);
+            this.Locais.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Locais.TabIndex = 11;
+            this.Locais.TabStop = false;
+            this.Locais.Visible = false;
+            this.Locais.WaitOnLoad = true;
+            this.Locais.Click += new System.EventHandler(this.Locais_Click);
+            // 
             // iconPictureBox1
             // 
             this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -1518,38 +1533,13 @@ namespace Dark_Age
             // panel6
             // 
             this.panel6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel6.Controls.Add(this.btn_pet);
             this.panel6.Controls.Add(this.botao_itens);
             this.panel6.Controls.Add(this.btn_inventario);
+            this.panel6.Controls.Add(this.btn_pet);
             this.panel6.Location = new System.Drawing.Point(589, 403);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(401, 232);
             this.panel6.TabIndex = 141;
-            // 
-            // btn_pet
-            // 
-            this.btn_pet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_pet.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_pet.Enabled = false;
-            this.btn_pet.FlatAppearance.BorderSize = 0;
-            this.btn_pet.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_pet.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_pet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_pet.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_pet.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_pet.IconChar = FontAwesome.Sharp.IconChar.Paw;
-            this.btn_pet.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_pet.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_pet.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_pet.Location = new System.Drawing.Point(2, 28);
-            this.btn_pet.Name = "btn_pet";
-            this.btn_pet.Size = new System.Drawing.Size(396, 50);
-            this.btn_pet.TabIndex = 147;
-            this.btn_pet.Text = "Pet\'s e Invocações";
-            this.btn_pet.UseVisualStyleBackColor = true;
-            this.btn_pet.Click += new System.EventHandler(this.btn_pet_Click);
-            this.btn_pet.MouseEnter += new System.EventHandler(this.btn_change_MouseEnter);
-            this.btn_pet.MouseHover += new System.EventHandler(this.btn_change_MouseEnter);
             // 
             // botao_itens
             // 
@@ -1600,6 +1590,30 @@ namespace Dark_Age
             this.btn_inventario.MouseLeave += new System.EventHandler(this.btn_change_MouseLeave);
             this.btn_inventario.MouseHover += new System.EventHandler(this.btn_change_MouseHover);
             // 
+            // btn_pet
+            // 
+            this.btn_pet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_pet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_pet.FlatAppearance.BorderSize = 0;
+            this.btn_pet.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_pet.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_pet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pet.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_pet.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.btn_pet.IconChar = FontAwesome.Sharp.IconChar.Paw;
+            this.btn_pet.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.btn_pet.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_pet.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_pet.Location = new System.Drawing.Point(2, 28);
+            this.btn_pet.Name = "btn_pet";
+            this.btn_pet.Size = new System.Drawing.Size(396, 50);
+            this.btn_pet.TabIndex = 147;
+            this.btn_pet.Text = "Pet\'s e Invocações";
+            this.btn_pet.UseVisualStyleBackColor = true;
+            this.btn_pet.Click += new System.EventHandler(this.btn_pet_Click);
+            this.btn_pet.MouseEnter += new System.EventHandler(this.btn_change_MouseEnter);
+            this.btn_pet.MouseHover += new System.EventHandler(this.btn_change_MouseEnter);
+            // 
             // panel5
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1619,7 +1633,7 @@ namespace Dark_Age
             this.btn_anotacoes.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_anotacoes.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_anotacoes.IconChar = FontAwesome.Sharp.IconChar.Book;
-            this.btn_anotacoes.IconColor = System.Drawing.Color.DarkGoldenrod;
+            this.btn_anotacoes.IconColor = System.Drawing.Color.PeachPuff;
             this.btn_anotacoes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_anotacoes.IconSize = 40;
             this.btn_anotacoes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1659,21 +1673,6 @@ namespace Dark_Age
             this.btn_cria_personagem.MouseEnter += new System.EventHandler(this.btn_change_MouseEnter);
             this.btn_cria_personagem.MouseLeave += new System.EventHandler(this.btn_change_MouseLeave);
             this.btn_cria_personagem.MouseHover += new System.EventHandler(this.btn_change_MouseHover);
-            // 
-            // Locais
-            // 
-            this.Locais.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Locais.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Locais.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Locais.Location = new System.Drawing.Point(207, 1);
-            this.Locais.Name = "Locais";
-            this.Locais.Size = new System.Drawing.Size(191, 112);
-            this.Locais.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Locais.TabIndex = 11;
-            this.Locais.TabStop = false;
-            this.Locais.Visible = false;
-            this.Locais.WaitOnLoad = true;
-            this.Locais.Click += new System.EventHandler(this.Locais_Click);
             // 
             // mudaimagem
             // 
@@ -2298,10 +2297,10 @@ namespace Dark_Age
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Locais)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Locais)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
