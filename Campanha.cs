@@ -285,6 +285,7 @@ namespace Dark_Age
         {
             if (id_campanha != 0)
             {
+                Ficha.tipo_entidade = 1;
                 Ficha.pers_criado = false;
                 Ficha ficha = new Ficha();
                 ficha.Show();

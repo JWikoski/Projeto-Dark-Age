@@ -533,6 +533,7 @@ namespace Dark_Age
         {
             salvar_info_pers();
             this.Hide();
+            Ficha.tipo_entidade = 1;
             Ficha.pers_criado = true;
             Ficha frm = new Ficha();            
             frm.Show();
@@ -941,6 +942,8 @@ namespace Dark_Age
 
         private void btn_pet_Click(object sender, EventArgs e)
         {
+            Pets pets = new Pets();
+            pets.Show();
 
         }
 

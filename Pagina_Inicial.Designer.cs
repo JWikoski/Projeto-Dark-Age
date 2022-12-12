@@ -117,9 +117,9 @@ namespace Dark_Age
             this.Locais = new System.Windows.Forms.PictureBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.btn_pet = new FontAwesome.Sharp.IconButton();
             this.botao_itens = new FontAwesome.Sharp.IconButton();
             this.btn_inventario = new FontAwesome.Sharp.IconButton();
+            this.btn_pet = new FontAwesome.Sharp.IconButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btn_anotacoes = new FontAwesome.Sharp.IconButton();
             this.btn_cria_personagem = new FontAwesome.Sharp.IconButton();
@@ -1537,38 +1537,13 @@ namespace Dark_Age
             // panel6
             // 
             this.panel6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel6.Controls.Add(this.btn_pet);
             this.panel6.Controls.Add(this.botao_itens);
             this.panel6.Controls.Add(this.btn_inventario);
+            this.panel6.Controls.Add(this.btn_pet);
             this.panel6.Location = new System.Drawing.Point(589, 403);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(401, 232);
             this.panel6.TabIndex = 141;
-            // 
-            // btn_pet
-            // 
-            this.btn_pet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_pet.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_pet.Enabled = false;
-            this.btn_pet.FlatAppearance.BorderSize = 0;
-            this.btn_pet.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_pet.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btn_pet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_pet.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_pet.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_pet.IconChar = FontAwesome.Sharp.IconChar.Paw;
-            this.btn_pet.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_pet.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_pet.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_pet.Location = new System.Drawing.Point(2, 28);
-            this.btn_pet.Name = "btn_pet";
-            this.btn_pet.Size = new System.Drawing.Size(396, 50);
-            this.btn_pet.TabIndex = 147;
-            this.btn_pet.Text = "Pet\'s e Invocações";
-            this.btn_pet.UseVisualStyleBackColor = true;
-            this.btn_pet.Click += new System.EventHandler(this.btn_pet_Click);
-            this.btn_pet.MouseEnter += new System.EventHandler(this.btn_change_MouseEnter);
-            this.btn_pet.MouseHover += new System.EventHandler(this.btn_change_MouseEnter);
             // 
             // botao_itens
             // 
@@ -1619,6 +1594,30 @@ namespace Dark_Age
             this.btn_inventario.MouseLeave += new System.EventHandler(this.btn_change_MouseLeave);
             this.btn_inventario.MouseHover += new System.EventHandler(this.btn_change_MouseHover);
             // 
+            // btn_pet
+            // 
+            this.btn_pet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_pet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_pet.FlatAppearance.BorderSize = 0;
+            this.btn_pet.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_pet.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_pet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pet.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_pet.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.btn_pet.IconChar = FontAwesome.Sharp.IconChar.Paw;
+            this.btn_pet.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.btn_pet.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_pet.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_pet.Location = new System.Drawing.Point(2, 28);
+            this.btn_pet.Name = "btn_pet";
+            this.btn_pet.Size = new System.Drawing.Size(396, 50);
+            this.btn_pet.TabIndex = 147;
+            this.btn_pet.Text = "Pet\'s e Invocações";
+            this.btn_pet.UseVisualStyleBackColor = true;
+            this.btn_pet.Click += new System.EventHandler(this.btn_pet_Click);
+            this.btn_pet.MouseEnter += new System.EventHandler(this.btn_change_MouseEnter);
+            this.btn_pet.MouseHover += new System.EventHandler(this.btn_change_MouseEnter);
+            // 
             // panel5
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -1638,7 +1637,7 @@ namespace Dark_Age
             this.btn_anotacoes.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_anotacoes.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_anotacoes.IconChar = FontAwesome.Sharp.IconChar.Book;
-            this.btn_anotacoes.IconColor = System.Drawing.Color.DarkGoldenrod;
+            this.btn_anotacoes.IconColor = System.Drawing.Color.PeachPuff;
             this.btn_anotacoes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_anotacoes.IconSize = 40;
             this.btn_anotacoes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;

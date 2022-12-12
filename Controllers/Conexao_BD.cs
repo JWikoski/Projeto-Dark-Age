@@ -330,6 +330,62 @@ namespace Dark_Age.Enteties
             cone.Dispose();
             conn.Close();
         }
+        public static DataTable select_pet_jogador(int id_jogador, int id_campanha, int pessoal)
+        {
+            try
+            {
+                NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"select fk_id_jogador
+                                                                             , id_personagem
+	                                                                         , nome_personagem
+                                                                             , vida_max1
+                                                                             , vida_atual1
+                                                                             , mana_atual1
+                                                                             , escudo1
+                                                                             , tipo_personagem
+                                                                             , tamanho
+                                                                         from ""Dark_Age_Connection"".""Inter_status_pers"" 
+                                                                         join ""Dark_Age_Connection"".""Personagens"" on id_personagem = fk_id_personagem
+                                                                        where tipo_personagem = 'Pet' 
+                                                                        and fk_id_jogador = " +id_jogador+" or "+ pessoal+ " = 0" +
+                                                                        "and fk_id_campanha = " +id_campanha +" or "+ pessoal+ " = 0 " +
+                                                                        " group by 1,2,3,4,5,6,7,8,9 " +
+                                                                        " order by 2; ", Conexao_BD.Caminho_DB());
+
+                NpgsqlCommandBuilder cBuilder = new NpgsqlCommandBuilder(dt_adapter);
+                DataTable dt_table = new DataTable();
+
+                dt_adapter.Fill(dt_table);
+                return dt_table;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("ERRO nas select personagem: " + e);
+                return null;
+            }
+        }
+        public static void adotar_novo_pet(int id_campanha, int id_jogador, int id_personagem, int vida, int vida_max, int mana_atual, string tamanho)
+        {
+            NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
+            conn.Open();
+            NpgsqlCommand como = new NpgsqlCommand();
+            como.Connection = conn;
+            como.CommandType = CommandType.Text;
+            como.CommandText = $@"INSERT INTO ""Dark_Age_Connection"".""Inter_status_pers"" (fk_id_personagem, fk_id_jogador, fk_id_campanha, vida_atual1, vida_max1, mana_atual1, tamanho)
+                                       VALUES (@fk_id_personagem, @fk_id_jogador, @fk_id_campanha, @vida_atual1, @vida_max1, @mana_atual1, @tamanho)
+                                       returning id_campanha;";
+            como.Parameters.AddWithValue("@fk_id_personagem", id_personagem);
+            como.Parameters.AddWithValue("@fk_id_jogador", id_jogador);
+            como.Parameters.AddWithValue("@fk_id_campanha", id_campanha);
+            como.Parameters.AddWithValue("@vida_atual1", vida);
+            como.Parameters.AddWithValue("@vida_max1", vida_max);
+            como.Parameters.AddWithValue("@mana_atual1", mana_atual);
+            como.Parameters.AddWithValue("@tamanho", tamanho);
+            como.ExecuteScalar();
+
+
+            como.Dispose();
+            conn.Close();
+        }
 
         public static NpgsqlDataReader select_info_personagem(int id_personagem)
         {

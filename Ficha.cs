@@ -32,9 +32,11 @@ namespace Dark_Age
         public static int nivel = 1;
         public static Boolean pers_criado = false;
         public static Image imagem_pers;
+        public static int tipo_entidade;  //     | 1 - Personagem | 2 - Pet | 3 - NPC | 4- monstro |
         public Ficha()
         {
             InitializeComponent();
+            muda_ficha();
 
             this.BackColor = Color.FromArgb(14, 40, 52);
             button1.ForeColor = Color.FromArgb(150, Color.White);
@@ -43,7 +45,7 @@ namespace Dark_Age
             button4.ForeColor = Color.FromArgb(150, Color.White);
             button5.ForeColor = Color.FromArgb(150, Color.White);
 
-            if (pers_criado == true)
+            if (pers_criado == true && tipo_entidade == 1)
             {
                 label1.Text = "Edição de Ficha";
                 btn_cria_personagem.Text = "Finalizar Edição de Personagem";
@@ -237,6 +239,7 @@ namespace Dark_Age
                     pontos = pontos_max - forca - destreza - vigor - carisma - raciocinio - magia;
                     lbl_pontos.Text = "Pontos: " + pontos;
 
+
                     ataque.Value = bd_ataque2;
                     esquiva.Value = bd_esquiva2;
                     defesa.Value = bd_defesa2;
@@ -266,7 +269,7 @@ namespace Dark_Age
                     conn.Close();
                 } else
                 {
-                    MessageBox.Show("Alguma coisa deu errado, não me pergunte oq '-', culpa do surdi!");
+                    MessageBox.Show("Alguma coisa deu errado, não me pergunte oq '-'!");
                 }
 
             } else
@@ -279,6 +282,37 @@ namespace Dark_Age
                 lbl_carisma.Text = carisma.ToString();
                 lbl_raciocinio.Text = raciocinio.ToString();
                 lbl_magia.Text = magia.ToString();
+            }
+        }
+
+        public void muda_ficha()   //     | 1 - Personagem | 2 - Pet | 3 - NPC | 4- monstro |
+        {
+            if (tipo_entidade == 2)
+            {
+                pnl_classes.Visible = false;
+                pnl_talentos.Visible = false;
+                label1.Text = "Criação de Pet";
+                btn_cria_personagem.Text = "Finalizar Criação do Pet";
+                pnl_status.Visible = true;
+            }
+            else if (tipo_entidade == 3)
+            {
+                pnl_classes.Visible = false;
+                pnl_talentos.Visible = false;
+                label1.Text = "Criação de NPC";
+                btn_cria_personagem.Text = "Finalizar Criação do NPC";
+            }
+            else if (tipo_entidade == 4)
+            {
+                pnl_classes.Visible = false;
+                pnl_talentos.Visible = true;
+                label1.Text = "Criação de Monstro";
+                btn_cria_personagem.Text = "Finalizar Criação do Monstro";
+            }
+            else
+            {
+                pnl_classes.Visible = true;
+                pnl_talentos.Visible = true;
             }
         }
 
@@ -474,6 +508,26 @@ namespace Dark_Age
             Campanha.classe_personagem = 1;
         }
 
+        private void tipo_criacao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(tipo_criacao.SelectedIndex == 0)
+            {
+                tipo_entidade = 1;
+            }else if (tipo_criacao.SelectedIndex == 1)
+            {
+                tipo_entidade = 2;
+            }
+            else if (tipo_criacao.SelectedIndex == 2)
+            {
+                tipo_entidade = 3;
+            }
+            else if (tipo_criacao.SelectedIndex == 3)
+            {
+                tipo_entidade = 4;
+            }
+            muda_ficha();
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             classe_escolhida = "Mestre da Forja";
@@ -512,6 +566,9 @@ namespace Dark_Age
 
         private void btn_cria_personagem_Click(object sender, EventArgs e)
         {
+
+            if (tipo_entidade == 1)
+            {
             NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
             conn.Open();
             NpgsqlCommand come = new NpgsqlCommand();
@@ -548,9 +605,6 @@ namespace Dark_Age
             }
 
 
-
-
-
             if (pers_criado == false)
             {
                 bd_sanidade += carisma;
@@ -570,11 +624,11 @@ namespace Dark_Age
                 come.Parameters.AddWithValue("@vida_max", Form1.vida_maxima);
                 come.Parameters.AddWithValue("@sanidade_atual", bd_sanidade);
                 come.Parameters.AddWithValue("@sanidade_max", bd_sanidade);
-                come.Parameters.AddWithValue("@mana_atual", (magia*2));
+                come.Parameters.AddWithValue("@mana_atual", (magia * 2));
                 object id = come.ExecuteScalar();
-                
+
                 Campanha.id_personagem = Convert.ToInt32(id);
-                
+
                 Conexao_BD.insert_inter_camp_pers(Campanha.id_personagem, Campanha.id_campanha, Campanha.id_jogador);
 
                 pers_criado = true;
@@ -655,7 +709,7 @@ namespace Dark_Age
                 comt.Parameters.AddWithValue("@intuicao", bd_intuicao);
                 comt.Parameters.AddWithValue("@etiqueta", bd_etiqueta);
                 comt.Parameters.AddWithValue("@sanidade", bd_sanidade);
-                comt.ExecuteNonQuery();                
+                comt.ExecuteNonQuery();
                 byte[] imagembyte_personagem = byte_image.imageToByteArray(pictureBox1.Image);
                 UpdateImagemBanco(imagembyte_personagem);
 
@@ -671,7 +725,7 @@ namespace Dark_Age
                     comz.ExecuteNonQuery();
                 }
                 bd_sanidade = bd_sanidade2 + carisma;
-                
+
                 come.CommandText = "update \"Dark_Age_Connection\".\"Personagens\" set forca = @forca, destreza = @destreza, vigor = @vigor, carisma = @carisma, raciocinio = @raciocinio, magia = @magia, nivel = @nivel, vida_max = @vida_max, sanidade_max = @sanidade_max, mana_atual = @mana_atual where id_personagem = @id_personagem";
                 come.Parameters.AddWithValue("@forca", forca);
                 come.Parameters.AddWithValue("@destreza", destreza);
@@ -709,7 +763,7 @@ namespace Dark_Age
                 }
                 else
                 {
-                    bd_ataque+= bd_ataque2 + destreza;
+                    bd_ataque += bd_ataque2 + destreza;
                 }
                 bd_esquiva = bd_esquiva2 + destreza;
                 bd_defesa = bd_defesa2 + vigor;
@@ -746,23 +800,16 @@ namespace Dark_Age
                     comu.Dispose();
                 }
 
-                
+
                 byte[] imagembyte_personagem = byte_image.imageToByteArray(pictureBox1.Image);
                 UpdateImagemBanco(imagembyte_personagem);
 
 
             }
-
-            comt.Dispose(); 
-            come.Dispose();
-            coms.Dispose();
-            comt.Dispose();
-            comr.Dispose();
-            comz.Dispose();
-            cone.Dispose();
-
-            conn.Close();
-
+        }else if (tipo_entidade == 2)
+            {
+                
+            }
 
             Form1 frm = new Form1();
             frm.Show();
@@ -920,26 +967,26 @@ namespace Dark_Age
                 Campanha.nivel_personagem = 1;
             } else if (comboBox1.Text == "2")
             {
-                pontos_totais = 6;
-                pontos_max = 7;
+                pontos_totais = 7;
+                pontos_max = 6;
                 nivel = 2;
                 Campanha.nivel_personagem = 2;
             } else if (comboBox1.Text == "3")
             {
-                pontos_totais = 7;
-                pontos_max = 9;
+                pontos_totais = 9;
+                pontos_max = 7;
                 nivel = 3;
                 Campanha.nivel_personagem = 3;
             } else if (comboBox1.Text == "4")
             {
-                pontos_totais = 8;
-                pontos_max = 11;
+                pontos_totais = 11;
+                pontos_max = 8;
                 nivel = 4;
                 Campanha.nivel_personagem = 4;
             } else if (comboBox1.Text == "5")
             {
-                pontos_totais = 10;
-                pontos_max = 14;
+                pontos_totais = 14;
+                pontos_max = 10;
                 nivel = 5;
                 Campanha.nivel_personagem = 5;
             }
