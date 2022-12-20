@@ -1,4 +1,5 @@
-﻿using Dark_Age.Enteties;
+﻿using Dark_Age.Controllers;
+using Dark_Age.Enteties;
 using Npgsql;
 using System;
 using System.Data;
@@ -15,9 +16,9 @@ namespace Dark_Age
         public static int carisma = 0;
         public static int raciocinio = 0;
         public static int magia = 0;
-        public static int pontos = 10;
+        public static int pontos = 0;
         public static int pontos_hab = 0;
-        public static int pontos_totais = 10;
+        public static int pontos_totais = 0;
         public static int bd_ataque, bd_esquiva, bd_defesa, bd_contra_atq, bd_arematirar, bd_lancarmagia, bd_labia, bd_intimidacao, bd_esconder, bd_seduzir, bd_enganacao,
             bd_percepcao, bd_academicos, bd_ocultismo, bd_sobrevivencia, bd_investigacao, bd_intuicao, bd_etiqueta;
         public static int bd_ataque2, bd_esquiva2, bd_defesa2, bd_contra_atq2, bd_arematirar2, bd_lancarmagia2, bd_labia2, bd_intimidacao2, bd_esconder2, bd_seduzir2, bd_enganacao2,
@@ -33,10 +34,13 @@ namespace Dark_Age
         public static Boolean pers_criado = false;
         public static Image imagem_pers;
         public static int tipo_entidade;  //     | 1 - Personagem | 2 - Pet | 3 - NPC | 4- monstro |
+        public DataTable tb_nivel;
+        public static byte[] imagembyte_personagem;
+        public static int id_entidade;
+
         public Ficha()
         {
             InitializeComponent();
-            muda_ficha();
 
             this.BackColor = Color.FromArgb(14, 40, 52);
             button1.ForeColor = Color.FromArgb(150, Color.White);
@@ -44,245 +48,6 @@ namespace Dark_Age
             button3.ForeColor = Color.FromArgb(150, Color.White);
             button4.ForeColor = Color.FromArgb(150, Color.White);
             button5.ForeColor = Color.FromArgb(150, Color.White);
-
-            if (pers_criado == true && tipo_entidade == 1)
-            {
-                label1.Text = "Edição de Ficha";
-                btn_cria_personagem.Text = "Finalizar Edição de Personagem";
-
-
-                NpgsqlConnection conn2 = new(Conexao_BD.Caminho_DB());
-                conn2.Open();
-                NpgsqlCommand comt = new NpgsqlCommand();
-                comt.Connection = conn2;
-                comt.CommandType = CommandType.Text;
-                comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos2\" where fk_id_talento = 1 and fk_id_personagem = @personagem";
-                comt.Parameters.AddWithValue("@personagem", Campanha.id_personagem);
-
-                NpgsqlDataReader ndp = comt.ExecuteReader();
-                if (ndp.Read())
-                {
-                    Ficha.bd_ataque2 = (int)ndp.GetValue(0);
-                }
-                ndp.Close();
-                comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos2\" where fk_id_talento = 2 and fk_id_personagem = @personagem";
-                ndp = comt.ExecuteReader();
-                if (ndp.Read())
-                {
-                    Ficha.bd_esquiva2 = (int)ndp.GetValue(0);
-                }
-                ndp.Close();
-                comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos2\" where fk_id_talento = 3 and fk_id_personagem = @personagem";
-                ndp = comt.ExecuteReader();
-                if (ndp.Read())
-                {
-                    Ficha.bd_defesa2 = (int)ndp.GetValue(0);
-                }
-                ndp.Close();
-                comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos2\" where fk_id_talento = 4 and fk_id_personagem = @personagem";
-                ndp = comt.ExecuteReader();
-                if (ndp.Read())
-                {
-                    Ficha.bd_contra_atq2 = (int)ndp.GetValue(0);
-                }
-                ndp.Close();
-                comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos2\" where fk_id_talento = 5 and fk_id_personagem = @personagem";
-                ndp = comt.ExecuteReader();
-                if (ndp.Read())
-                {
-                    Ficha.bd_arematirar2 = (int)ndp.GetValue(0);
-                }
-                ndp.Close();
-                comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos2\" where fk_id_talento = 6 and fk_id_personagem = @personagem";
-                ndp = comt.ExecuteReader();
-                if (ndp.Read())
-                {
-                    Ficha.bd_lancarmagia2 = (int)ndp.GetValue(0);
-                }
-                ndp.Close();
-                comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos2\" where fk_id_talento = 7 and fk_id_personagem = @personagem";
-                ndp = comt.ExecuteReader();
-                if (ndp.Read())
-                {
-                    Ficha.bd_labia2 = (int)ndp.GetValue(0);
-                }
-                ndp.Close();
-                comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos2\" where fk_id_talento = 8 and fk_id_personagem = @personagem";
-                ndp = comt.ExecuteReader();
-                if (ndp.Read())
-                {
-                    Ficha.bd_intimidacao2 = (int)ndp.GetValue(0);
-                }
-                ndp.Close();
-                comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos2\" where fk_id_talento = 9 and fk_id_personagem = @personagem";
-                ndp = comt.ExecuteReader();
-                if (ndp.Read())
-                {
-                    Ficha.bd_seduzir2 = (int)ndp.GetValue(0);
-                }
-                ndp.Close();
-                comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos2\" where fk_id_talento = 10 and fk_id_personagem = @personagem";
-                ndp = comt.ExecuteReader();
-                if (ndp.Read())
-                {
-                    Ficha.bd_enganacao2 = (int)ndp.GetValue(0);
-                }
-                ndp.Close();
-                comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos2\" where fk_id_talento = 11 and fk_id_personagem = @personagem";
-                ndp = comt.ExecuteReader();
-                if (ndp.Read())
-                {
-                    Ficha.bd_esconder2 = (int)ndp.GetValue(0);
-                }
-                ndp.Close();
-                comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos2\" where fk_id_talento = 12 and fk_id_personagem = @personagem";
-                ndp = comt.ExecuteReader();
-                if (ndp.Read())
-                {
-                    Ficha.bd_percepcao2 = (int)ndp.GetValue(0);
-                }
-                ndp.Close();
-                comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos2\" where fk_id_talento = 13 and fk_id_personagem = @personagem";
-                ndp = comt.ExecuteReader();
-                if (ndp.Read())
-                {
-                    Ficha.bd_academicos2 = (int)ndp.GetValue(0);
-                }
-                ndp.Close();
-                comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos2\" where fk_id_talento = 14 and fk_id_personagem = @personagem";
-                ndp = comt.ExecuteReader();
-                if (ndp.Read())
-                {
-                    Ficha.bd_ocultismo2 = (int)ndp.GetValue(0);
-                }
-                ndp.Close();
-                comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos2\" where fk_id_talento = 15 and fk_id_personagem = @personagem";
-                ndp = comt.ExecuteReader();
-                if (ndp.Read())
-                {
-                    Ficha.bd_sobrevivencia2 = (int)ndp.GetValue(0);
-                }
-                ndp.Close();
-                comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos2\" where fk_id_talento = 16 and fk_id_personagem = @personagem";
-                ndp = comt.ExecuteReader();
-                if (ndp.Read())
-                {
-                    Ficha.bd_investigacao2 = (int)ndp.GetValue(0);
-                }
-                ndp.Close();
-                comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos2\" where fk_id_talento = 17 and fk_id_personagem = @personagem";
-                ndp = comt.ExecuteReader();
-                if (ndp.Read())
-                {
-                    Ficha.bd_intuicao2 = (int)ndp.GetValue(0);
-                }
-                ndp.Close();
-                comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos2\" where fk_id_talento = 18 and fk_id_personagem = @personagem";
-                ndp = comt.ExecuteReader();
-                if (ndp.Read())
-                {
-                    Ficha.bd_etiqueta2 = (int)ndp.GetValue(0);
-                }
-                ndp.Close();
-                comt.CommandText = "select valor_talento from \"Dark_Age_Connection\".\"Inter_talentos2\" where fk_id_talento = 19 and fk_id_personagem = @personagem";
-                ndp = comt.ExecuteReader();
-                if (ndp.Read())
-                {
-                    Ficha.bd_sanidade2 = (int)ndp.GetValue(0);
-                }
-                ndp.Dispose();
-                comt.Dispose();
-                ndp.Close();
-                conn2.Close();
-
-            }
-
-            if (pers_criado == true)
-            {
-                NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
-                conn.Open();
-                NpgsqlCommand comi = new NpgsqlCommand();
-                comi.Connection = conn;
-                comi.CommandType = CommandType.Text;
-                comi.CommandText = "select forca, destreza, vigor, carisma, raciocinio, magia, nome_personagem, classe_personagem, nivel, imagem from \"Dark_Age_Connection\".\"Personagens\" where id_personagem = @id_personagem";
-                comi.Parameters.AddWithValue("@id_personagem", Campanha.id_personagem);
-                NpgsqlDataReader nda = comi.ExecuteReader();
-
-
-                if (nda.Read())
-                {
-                    forca = (int)nda.GetValue(0);
-                    destreza = (int)nda.GetValue(1);
-                    vigor = (int)nda.GetValue(2);
-                    carisma = (int)nda.GetValue(3);
-                    raciocinio = (int)nda.GetValue(4);
-                    magia = (int)nda.GetValue(5);
-                    classe_escolhida = (string)nda.GetValue(7);
-                    nomepersonagem = (string)nda.GetValue(6);
-                    nivel = (int)nda.GetValue(8);
-                    byte[] byte_image_personagem = (byte[])nda.GetValue(9); 
-                   
-
-                    classe.Text = classe_escolhida;
-                    nome_personagem.Text = nomepersonagem;
-
-
-
-                    lbl_forca.Text = forca.ToString();
-                    lbl_destreza.Text = destreza.ToString();
-                    lbl_vigor.Text = vigor.ToString();
-                    lbl_carisma.Text = carisma.ToString();
-                    lbl_raciocinio.Text = raciocinio.ToString();
-                    lbl_magia.Text = magia.ToString();
-                    comboBox1.Text = nivel.ToString();
-
-                    pontos = pontos_max - forca - destreza - vigor - carisma - raciocinio - magia;
-                    lbl_pontos.Text = "Pontos: " + pontos;
-
-
-                    ataque.Value = bd_ataque2;
-                    esquiva.Value = bd_esquiva2;
-                    defesa.Value = bd_defesa2;
-                    contrataque.Value = bd_contra_atq2;
-                    arematirar.Value = bd_arematirar2;
-                    lancarmagia.Value = bd_lancarmagia2;
-                    labia.Value = bd_labia2;
-                    intimidacao.Value = bd_intimidacao2;
-                    seduzir.Value = bd_seduzir2;
-                    enganacao.Value = bd_enganacao2;
-                    esconder.Value = bd_esconder2;
-                    percepcao.Value = bd_percepcao2;
-                    academicos.Value = bd_academicos2;
-                    ocultismo.Value = bd_ocultismo2;
-                    sobrevivencia.Value = bd_sobrevivencia2;
-                    investigacao.Value = bd_investigacao2;
-                    intuicao.Value = bd_intuicao2;
-                    etiqueta.Value = bd_etiqueta2;
-                    sanidade.Value = bd_sanidade2;
-
-                    
-                    imagem_pers = byte_image.byteArrayToImage(byte_image_personagem);
-                    pictureBox1.Image = imagem_pers;
-
-                    nda.Close();
-                    comi.Dispose();
-                    conn.Close();
-                } else
-                {
-                    MessageBox.Show("Alguma coisa deu errado, não me pergunte oq '-'!");
-                }
-
-            } else
-            {
-
-                lbl_pontos.Text = "Pontos: " + pontos;
-                lbl_forca.Text = forca.ToString();
-                lbl_destreza.Text = destreza.ToString();
-                lbl_vigor.Text = vigor.ToString();
-                lbl_carisma.Text = carisma.ToString();
-                lbl_raciocinio.Text = raciocinio.ToString();
-                lbl_magia.Text = magia.ToString();
-            }
         }
 
         public void muda_ficha()   //     | 1 - Personagem | 2 - Pet | 3 - NPC | 4- monstro |
@@ -294,22 +59,19 @@ namespace Dark_Age
                 label1.Text = "Criação de Pet";
                 btn_cria_personagem.Text = "Finalizar Criação do Pet";
                 pnl_status.Visible = true;
-            }
-            else if (tipo_entidade == 3)
+            } else if (tipo_entidade == 3)
             {
                 pnl_classes.Visible = false;
                 pnl_talentos.Visible = false;
                 label1.Text = "Criação de NPC";
                 btn_cria_personagem.Text = "Finalizar Criação do NPC";
-            }
-            else if (tipo_entidade == 4)
+            } else if (tipo_entidade == 4)
             {
                 pnl_classes.Visible = false;
                 pnl_talentos.Visible = true;
                 label1.Text = "Criação de Monstro";
                 btn_cria_personagem.Text = "Finalizar Criação do Monstro";
-            }
-            else
+            } else
             {
                 pnl_classes.Visible = true;
                 pnl_talentos.Visible = true;
@@ -323,7 +85,7 @@ namespace Dark_Age
             timer1.Interval = 10;  // increase the opacity every 10ms
             timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
             timer1.Start();
-            ataque_Click(comboBox1, e);
+            preencher_Info_tela();
         }
         void fadeIn(object sender, EventArgs e)
         {
@@ -358,8 +120,6 @@ namespace Dark_Age
                 lbl_forca.Text = Convert.ToString(forca);
             }
         }
-
-
         private void btn_destrezasum_Click(object sender, EventArgs e)
         {
 
@@ -371,8 +131,6 @@ namespace Dark_Age
                 lbl_destreza.Text = Convert.ToString(destreza);
             }
         }
-
-
         private void btn_vigorsum_Click(object sender, EventArgs e)
         {
 
@@ -384,8 +142,6 @@ namespace Dark_Age
                 lbl_vigor.Text = Convert.ToString(vigor);
             }
         }
-
-
         private void btn_carismasum_Click(object sender, EventArgs e)
         {
 
@@ -397,11 +153,8 @@ namespace Dark_Age
                 lbl_carisma.Text = Convert.ToString(carisma);
             }
         }
-
-
         private void btn_raciosum_Click(object sender, EventArgs e)
         {
-
             if (raciocinio < 5 && pontos > 0)
             {
                 pontos--;
@@ -410,10 +163,8 @@ namespace Dark_Age
                 lbl_raciocinio.Text = Convert.ToString(raciocinio);
             }
         }
-
         private void btn_magiasum_Click(object sender, EventArgs e)
         {
-
             if (magia < 5 && pontos > 0)
             {
                 pontos--;
@@ -424,7 +175,6 @@ namespace Dark_Age
         }
         private void btn_forcasub_Click(object sender, EventArgs e)
         {
-
             if (forca > 0)
             {
                 pontos++;
@@ -435,7 +185,6 @@ namespace Dark_Age
         }
         private void btn_destrezasub_Click(object sender, EventArgs e)
         {
-
             if (destreza > 0)
             {
                 pontos++;
@@ -446,7 +195,6 @@ namespace Dark_Age
         }
         private void btn_vigorsub_Click(object sender, EventArgs e)
         {
-
             if (vigor > 0)
             {
                 pontos++;
@@ -478,7 +226,6 @@ namespace Dark_Age
         }
         private void btn_magiasub_Click(object sender, EventArgs e)
         {
-
             if (magia > 0)
             {
                 pontos++;
@@ -487,59 +234,53 @@ namespace Dark_Age
                 lbl_magia.Text = Convert.ToString(magia);
             }
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            classe_escolhida = "Orador";
-            classe.Text = classe_escolhida;
-            Campanha.classe_personagem = 4;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            classe_escolhida = "Caçador de Monstros";
-            classe.Text = classe_escolhida;
-            Campanha.classe_personagem = 3;
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             classe_escolhida = "Alquimista";
             classe.Text = classe_escolhida;
             Campanha.classe_personagem = 1;
         }
-
-        private void tipo_criacao_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(tipo_criacao.SelectedIndex == 0)
-            {
-                tipo_entidade = 1;
-            }else if (tipo_criacao.SelectedIndex == 1)
-            {
-                tipo_entidade = 2;
-            }
-            else if (tipo_criacao.SelectedIndex == 2)
-            {
-                tipo_entidade = 3;
-            }
-            else if (tipo_criacao.SelectedIndex == 3)
-            {
-                tipo_entidade = 4;
-            }
-            muda_ficha();
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             classe_escolhida = "Mestre da Forja";
             classe.Text = classe_escolhida;
             Campanha.classe_personagem = 2;
         }
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+            classe_escolhida = "Caçador de Monstros";
+            classe.Text = classe_escolhida;
+            Campanha.classe_personagem = 3;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            classe_escolhida = "Orador";
+            classe.Text = classe_escolhida;
+            Campanha.classe_personagem = 4;
+        }
         private void button5_Click(object sender, EventArgs e)
         {
             classe_escolhida = "Templário";
             classe.Text = classe_escolhida;
             Campanha.classe_personagem = 5;
+        }
+
+        private void tipo_criacao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tipo_criacao.SelectedIndex == 0)
+            {
+                tipo_entidade = 1;
+            } else if (tipo_criacao.SelectedIndex == 1)
+            {
+                tipo_entidade = 2;
+            } else if (tipo_criacao.SelectedIndex == 2)
+            {
+                tipo_entidade = 3;
+            } else if (tipo_criacao.SelectedIndex == 3)
+            {
+                tipo_entidade = 4;
+            }
+            muda_ficha();
         }
 
         private void btn_cria_personagem_MouseHover(object sender, EventArgs e)
@@ -566,256 +307,10 @@ namespace Dark_Age
 
         private void btn_cria_personagem_Click(object sender, EventArgs e)
         {
-
-            if (tipo_entidade == 1)
-            {
-            NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
-            conn.Open();
-            NpgsqlCommand come = new NpgsqlCommand();
-            come.Connection = conn;
-            come.CommandType = CommandType.Text;
-            NpgsqlCommand coms = new NpgsqlCommand();
-            coms.Connection = conn;
-            coms.CommandType = CommandType.Text;
-            NpgsqlCommand comt = new NpgsqlCommand();
-            comt.Connection = conn;
-            comt.CommandType = CommandType.Text;
-            NpgsqlCommand comr = new NpgsqlCommand();
-            comr.Connection = conn;
-            comr.CommandType = CommandType.Text;
-            NpgsqlCommand comz = new NpgsqlCommand();
-            comz.Connection = conn;
-            comz.CommandType = CommandType.Text;
-            NpgsqlCommand cone = new NpgsqlCommand();
-            cone.Connection = conn;
-            cone.CommandType = CommandType.Text;
-
-            if (classe_escolhida == "Orador" || classe_escolhida == "Alquimista")
-            {
-                Form1.vida_maxima = (8 * nivel) + (2 * vigor);
-            } else if (classe_escolhida == "Mestre da Forja" || classe_escolhida == "Caçador de Monstros")
-            {
-                Form1.vida_maxima = (10 * nivel) + (2 * vigor);
-            } else if (classe_escolhida == "Templário")
-            {
-                Form1.vida_maxima = (12 * nivel) + (2 * vigor);
-            } else
-            {
-                Form1.vida_maxima = (12 * nivel) + (2 * vigor);
-            }
-
-
-            if (pers_criado == false)
-            {
-                bd_sanidade += carisma;
-                come.CommandText = @" insert into ""Dark_Age_Connection"".""Personagens"" (nome_personagem, classe_personagem, forca, destreza, vigor, carisma, raciocinio, magia, nivel,  inventario, silver, gold, vida_atual, vida_max, sanidade_atual, sanidade_max, mana_atual, adicional_atual, adicional_max) 
-                                           values (@nome, @classe, @forca, @destreza, @vigor, @carisma, @raciocinio, @magia, @nivel, ' ', 0, 0, @vida_atual, @vida_max, @sanidade_atual, @sanidade_max, @mana_atual, '0', '0') 
-                                           returning id_personagem";
-                come.Parameters.AddWithValue("@nome", nomepersonagem);
-                come.Parameters.AddWithValue("@classe", classe_escolhida);
-                come.Parameters.AddWithValue("@forca", forca);
-                come.Parameters.AddWithValue("@destreza", destreza);
-                come.Parameters.AddWithValue("@vigor", vigor);
-                come.Parameters.AddWithValue("@carisma", carisma);
-                come.Parameters.AddWithValue("@raciocinio", raciocinio);
-                come.Parameters.AddWithValue("@magia", magia);
-                come.Parameters.AddWithValue("@nivel", nivel);
-                come.Parameters.AddWithValue("@vida_atual", Form1.vida_maxima);
-                come.Parameters.AddWithValue("@vida_max", Form1.vida_maxima);
-                come.Parameters.AddWithValue("@sanidade_atual", bd_sanidade);
-                come.Parameters.AddWithValue("@sanidade_max", bd_sanidade);
-                come.Parameters.AddWithValue("@mana_atual", (magia * 2));
-                object id = come.ExecuteScalar();
-
-                Campanha.id_personagem = Convert.ToInt32(id);
-
-                Conexao_BD.insert_inter_camp_pers(Campanha.id_personagem, Campanha.id_campanha, Campanha.id_jogador);
-
-                pers_criado = true;
-
-
-                comr.CommandText = " insert into  \"Dark_Age_Connection\".\"Inter_talentos2\" (fk_id_personagem, fk_id_talento, valor_talento) values (@personagem, 1, @ataque), (@personagem, 2, @esquiva), (@personagem, 3, @defesa)," +
-                    "(@personagem, 4, @contra_atq), (@personagem, 5, @arematirar), (@personagem, 6, @lancarmagia), (@personagem, 7, @labia), (@personagem, 8, @intimidacao), (@personagem, 9, @seduzir), (@personagem, 10, @enganacao)," +
-                    "(@personagem, 11, @esconder), (@personagem, 12, @percepcao), (@personagem, 13, @academicos), (@personagem, 14, @ocultismo), (@personagem, 15, @sobrevivencia), (@personagem, 16, @investigacao), (@personagem, 17, @intuicao), " +
-                    "(@personagem, 18, @etiqueta), (@personagem, 19, @sanidade)";
-                comr.Parameters.AddWithValue("@personagem", Campanha.id_personagem);
-                comr.Parameters.AddWithValue("@ataque", bd_ataque2);
-                comr.Parameters.AddWithValue("@esquiva", bd_esquiva2);
-                comr.Parameters.AddWithValue("@defesa", bd_defesa2);
-                comr.Parameters.AddWithValue("@contra_atq", bd_contra_atq2);
-                comr.Parameters.AddWithValue("@arematirar", bd_arematirar2);
-                comr.Parameters.AddWithValue("@lancarmagia", bd_lancarmagia2);
-                comr.Parameters.AddWithValue("@labia", bd_labia2);
-                comr.Parameters.AddWithValue("@intimidacao", bd_intimidacao2);
-                comr.Parameters.AddWithValue("@seduzir", bd_seduzir2);
-                comr.Parameters.AddWithValue("@enganacao", bd_enganacao2);
-                comr.Parameters.AddWithValue("@esconder", bd_esconder2);
-                comr.Parameters.AddWithValue("@percepcao", bd_percepcao2);
-                comr.Parameters.AddWithValue("@academicos", bd_academicos2);
-                comr.Parameters.AddWithValue("@ocultismo", bd_ocultismo2);
-                comr.Parameters.AddWithValue("@sobrevivencia", bd_sobrevivencia2);
-                comr.Parameters.AddWithValue("@investigacao", bd_investigacao2);
-                comr.Parameters.AddWithValue("@intuicao", bd_intuicao2);
-                comr.Parameters.AddWithValue("@etiqueta", bd_etiqueta2);
-                comr.Parameters.AddWithValue("@sanidade", bd_sanidade2);
-                comr.ExecuteNonQuery();
-
-                if (forca >= destreza)
-                {
-                    bd_ataque = bd_ataque2 + forca;
-                } else
-                {
-                    bd_ataque += bd_ataque2 + destreza;
-                }
-                bd_esquiva = bd_esquiva2 + destreza;
-                bd_defesa = bd_defesa2 + vigor;
-                bd_contra_atq = bd_contra_atq2 + forca;
-                bd_arematirar = bd_arematirar2 + destreza;
-                bd_lancarmagia = bd_lancarmagia2 + magia;
-                bd_labia = bd_labia2 + carisma;
-                bd_intimidacao = bd_intimidacao2 + carisma;
-                bd_seduzir = bd_seduzir2 + carisma;
-                bd_enganacao = bd_enganacao2 + carisma;
-                bd_esconder = bd_esconder2 + destreza;
-                bd_percepcao = bd_percepcao2 + raciocinio;
-                bd_academicos = bd_academicos2 + raciocinio;
-                bd_ocultismo = bd_ocultismo2 + raciocinio;
-                bd_sobrevivencia = bd_sobrevivencia2 + raciocinio;
-                bd_investigacao = bd_investigacao2 + raciocinio;
-                bd_intuicao = bd_intuicao2 + raciocinio;
-                bd_etiqueta = bd_etiqueta2 + carisma;
-
-                comt.CommandText = " insert into  \"Dark_Age_Connection\".\"Inter_talentos\" (fk_id_personagem, fk_id_talento, valor_talento) values (@personagem, 1, @ataque), (@personagem, 2, @esquiva), (@personagem, 3, @defesa)," +
-                    "(@personagem, 4, @contra_atq), (@personagem, 5, @arematirar), (@personagem, 6, @lancarmagia), (@personagem, 7, @labia), (@personagem, 8, @intimidacao), (@personagem, 9, @seduzir), (@personagem, 10, @enganacao)," +
-                    "(@personagem, 11, @esconder), (@personagem, 12, @percepcao), (@personagem, 13, @academicos), (@personagem, 14, @ocultismo), (@personagem, 15, @sobrevivencia), (@personagem, 16, @investigacao), (@personagem, 17, @intuicao), " +
-                    "(@personagem, 18, @etiqueta), (@personagem, 19, @sanidade)";
-                comt.Parameters.AddWithValue("@personagem", Campanha.id_personagem);
-                comt.Parameters.AddWithValue("@ataque", bd_ataque);
-                comt.Parameters.AddWithValue("@esquiva", bd_esquiva);
-                comt.Parameters.AddWithValue("@defesa", bd_defesa);
-                comt.Parameters.AddWithValue("@contra_atq", bd_contra_atq);
-                comt.Parameters.AddWithValue("@arematirar", bd_arematirar);
-                comt.Parameters.AddWithValue("@lancarmagia", bd_lancarmagia);
-                comt.Parameters.AddWithValue("@labia", bd_labia);
-                comt.Parameters.AddWithValue("@intimidacao", bd_intimidacao);
-                comt.Parameters.AddWithValue("@seduzir", bd_seduzir);
-                comt.Parameters.AddWithValue("@enganacao", bd_enganacao);
-                comt.Parameters.AddWithValue("@esconder", bd_esconder);
-                comt.Parameters.AddWithValue("@percepcao", bd_percepcao);
-                comt.Parameters.AddWithValue("@academicos", bd_academicos);
-                comt.Parameters.AddWithValue("@ocultismo", bd_ocultismo);
-                comt.Parameters.AddWithValue("@sobrevivencia", bd_sobrevivencia);
-                comt.Parameters.AddWithValue("@investigacao", bd_investigacao);
-                comt.Parameters.AddWithValue("@intuicao", bd_intuicao);
-                comt.Parameters.AddWithValue("@etiqueta", bd_etiqueta);
-                comt.Parameters.AddWithValue("@sanidade", bd_sanidade);
-                comt.ExecuteNonQuery();
-                byte[] imagembyte_personagem = byte_image.imageToByteArray(pictureBox1.Image);
-                UpdateImagemBanco(imagembyte_personagem);
-
-
-            } else
-            {
-                if (Form1.vida_atual > Form1.vida_maxima)
-                {
-                    Form1.vida_atual = Form1.vida_maxima;
-                    comz.CommandText = "update \"Dark_Age_Connection\".\"Personagens\" set vida_atual = @vida_atual where id_personagem = @id_personagem";
-                    comz.Parameters.AddWithValue("@vida_atual", Form1.vida_atual);
-                    comz.Parameters.AddWithValue("@id_personagem", Campanha.id_personagem);
-                    comz.ExecuteNonQuery();
-                }
-                bd_sanidade = bd_sanidade2 + carisma;
-
-                come.CommandText = "update \"Dark_Age_Connection\".\"Personagens\" set forca = @forca, destreza = @destreza, vigor = @vigor, carisma = @carisma, raciocinio = @raciocinio, magia = @magia, nivel = @nivel, vida_max = @vida_max, sanidade_max = @sanidade_max, mana_atual = @mana_atual where id_personagem = @id_personagem";
-                come.Parameters.AddWithValue("@forca", forca);
-                come.Parameters.AddWithValue("@destreza", destreza);
-                come.Parameters.AddWithValue("@vigor", vigor);
-                come.Parameters.AddWithValue("@carisma", carisma);
-                come.Parameters.AddWithValue("@raciocinio", raciocinio);
-                come.Parameters.AddWithValue("@magia", magia);
-                come.Parameters.AddWithValue("@nivel", nivel);
-                come.Parameters.AddWithValue("@id_personagem", Campanha.id_personagem);
-                come.Parameters.AddWithValue("@vida_max", Form1.vida_maxima);
-                come.Parameters.AddWithValue("@sanidade_max", bd_sanidade);
-                come.Parameters.AddWithValue("@mana_atual", Form1.mana_atual);
-                come.ExecuteNonQuery();
-
-                int[] specs2 = new int[] {bd_ataque2, bd_esquiva2, bd_defesa2, bd_contra_atq2, bd_arematirar2, bd_lancarmagia2, bd_labia2, bd_intimidacao2, bd_seduzir2, bd_enganacao2, bd_esconder2
-                        , bd_percepcao2, bd_academicos2, bd_ocultismo2, bd_sobrevivencia2, bd_investigacao2, bd_intuicao2, bd_etiqueta2, bd_sanidade2};
-
-                for (int t = 0; t < specs2.Length; ++t)
-                {
-                    NpgsqlCommand comh = new NpgsqlCommand();
-                    comh.Connection = conn;
-                    comh.CommandType = CommandType.Text;
-                    comh.CommandText = "update \"Dark_Age_Connection\".\"Inter_talentos2\" set valor_talento = @ataque where fk_id_talento = @cod and fk_id_personagem = @id_personagem";
-                    comh.Parameters.AddWithValue("@ataque", specs2[t]);
-                    comh.Parameters.AddWithValue("@cod", t + 1);
-                    comh.Parameters.AddWithValue("@id_personagem", Campanha.id_personagem);
-                    comh.ExecuteNonQuery();
-                    comh.Dispose();
-                }
-
-
-                if (forca >= destreza)
-                {
-                    bd_ataque = bd_ataque2 + forca;
-                }
-                else
-                {
-                    bd_ataque += bd_ataque2 + destreza;
-                }
-                bd_esquiva = bd_esquiva2 + destreza;
-                bd_defesa = bd_defesa2 + vigor;
-                bd_contra_atq = bd_contra_atq2 + forca;
-                bd_arematirar = bd_arematirar2 + destreza;
-                bd_lancarmagia = bd_lancarmagia2 + magia;
-                bd_labia = bd_labia2 + carisma;
-                bd_intimidacao = bd_intimidacao2 + carisma;
-                bd_seduzir = bd_seduzir2 + carisma;
-                bd_enganacao = bd_enganacao2 + carisma;
-                bd_esconder = bd_esconder2 + destreza;
-                bd_percepcao = bd_percepcao2 + raciocinio;
-                bd_academicos = bd_academicos2 + raciocinio;
-                bd_ocultismo = bd_ocultismo2 + raciocinio;
-                bd_sobrevivencia = bd_sobrevivencia2 + raciocinio;
-                bd_investigacao = bd_investigacao2 + raciocinio;
-                bd_intuicao = bd_intuicao2 + raciocinio;
-                bd_etiqueta = bd_etiqueta2 + carisma;
-
-
-                int[] specs = new int[] {bd_ataque, bd_esquiva, bd_defesa, bd_contra_atq , bd_arematirar, bd_lancarmagia, bd_labia, bd_intimidacao, bd_seduzir, bd_enganacao, bd_esconder
-                        , bd_percepcao, bd_academicos, bd_ocultismo, bd_sobrevivencia, bd_investigacao, bd_intuicao, bd_etiqueta, bd_sanidade};
-
-                for (int i = 0; i < specs.Length; ++i)
-                {
-                    NpgsqlCommand comu = new NpgsqlCommand();
-                    comu.Connection = conn;
-                    comu.CommandType = CommandType.Text;
-                    comu.CommandText = "update \"Dark_Age_Connection\".\"Inter_talentos\" set valor_talento = @ataque where fk_id_talento = @cod and fk_id_personagem = @personagem";
-                    comu.Parameters.AddWithValue("@ataque", specs[i]);
-                    comu.Parameters.AddWithValue("@cod", i + 1);
-                    comu.Parameters.AddWithValue("@personagem", Campanha.id_personagem);
-                    comu.ExecuteNonQuery();
-                    comu.Dispose();
-                }
-
-
-                byte[] imagembyte_personagem = byte_image.imageToByteArray(pictureBox1.Image);
-                UpdateImagemBanco(imagembyte_personagem);
-
-
-            }
-        }else if (tipo_entidade == 2)
-            {
-                
-            }
-
+            cria_ou_update_pers();
             Form1 frm = new Form1();
             frm.Show();
             this.Close();
-
-
         }
 
         private void button1_Enter(object sender, EventArgs e)
@@ -956,43 +451,44 @@ namespace Dark_Age
 
 
         }
+        public void carregar_nivel()
+        {
+            comboBox1.DataSource = Conexao_BD.select_nivel(0);
+            comboBox1.ValueMember = "nivel";
+            comboBox1.DisplayMember = "nivel";
+            comboBox1.SelectedValue = nivel;
+            definir_pontos_nivel();
+        }
 
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
-            if (comboBox1.Text == "1")
+            definir_pontos_nivel();
+            ataque_Click(comboBox1, e);
+        }
+
+        public void definir_pontos_nivel()
+        {
+            nivel = (int)comboBox1.SelectedValue;
+            tb_nivel = Conexao_BD.select_nivel(nivel);
+            DataRow[] oDataRow = tb_nivel.Select();
+            foreach (DataRow row in oDataRow)
             {
-                pontos_totais = 5;
-                pontos_max = 5;
-                nivel = 1;
-                Campanha.nivel_personagem = 1;
-            } else if (comboBox1.Text == "2")
-            {
-                pontos_totais = 7;
-                pontos_max = 6;
-                nivel = 2;
-                Campanha.nivel_personagem = 2;
-            } else if (comboBox1.Text == "3")
-            {
-                pontos_totais = 9;
-                pontos_max = 7;
-                nivel = 3;
-                Campanha.nivel_personagem = 3;
-            } else if (comboBox1.Text == "4")
-            {
-                pontos_totais = 11;
-                pontos_max = 8;
-                nivel = 4;
-                Campanha.nivel_personagem = 4;
-            } else if (comboBox1.Text == "5")
-            {
-                pontos_totais = 14;
-                pontos_max = 10;
-                nivel = 5;
-                Campanha.nivel_personagem = 5;
+                pontos_max = (int)row[1];
+                pontos_totais = (int)row[2];
             }
+            label_pontos();
+        }
+
+        public void label_pontos()
+        {
             pontos = pontos_max - forca - destreza - vigor - carisma - raciocinio - magia;
             lbl_pontos.Text = "Pontos: " + pontos;
-            ataque_Click(comboBox1, e);
+
+            pontos_hab = Convert.ToInt32(ataque.Value) + Convert.ToInt32(esquiva.Value) + Convert.ToInt32(defesa.Value) + Convert.ToInt32(contrataque.Value)
+                + Convert.ToInt32(arematirar.Value) + Convert.ToInt32(lancarmagia.Value) + Convert.ToInt32(labia.Value) + Convert.ToInt32(intimidacao.Value) + Convert.ToInt32(seduzir.Value)
+                + Convert.ToInt32(enganacao.Value) + Convert.ToInt32(esconder.Value) + Convert.ToInt32(percepcao.Value) + Convert.ToInt32(academicos.Value) + Convert.ToInt32(ocultismo.Value)
+                + Convert.ToInt32(sobrevivencia.Value) + Convert.ToInt32(investigacao.Value) + Convert.ToInt32(intuicao.Value) + Convert.ToInt32(etiqueta.Value) + Convert.ToInt32(sanidade.Value) - 3;
+            label40.Text = "Pontos de habilidade restantes: " + (pontos_totais - pontos_hab).ToString();
         }
 
         private void panel13_Paint(object sender, PaintEventArgs e)
@@ -1002,13 +498,9 @@ namespace Dark_Age
 
         private void ataque_Click(object sender, EventArgs e)
         {
-            pontos_hab = Convert.ToInt32(ataque.Value) + Convert.ToInt32(esquiva.Value) + Convert.ToInt32(defesa.Value) + Convert.ToInt32(contrataque.Value)
-                + Convert.ToInt32(arematirar.Value) + Convert.ToInt32(lancarmagia.Value) + Convert.ToInt32(labia.Value) + Convert.ToInt32(intimidacao.Value) + Convert.ToInt32(seduzir.Value)
-                + Convert.ToInt32(enganacao.Value) + Convert.ToInt32(esconder.Value) + Convert.ToInt32(percepcao.Value) + Convert.ToInt32(academicos.Value) + Convert.ToInt32(ocultismo.Value)
-                + Convert.ToInt32(sobrevivencia.Value) + Convert.ToInt32(investigacao.Value) + Convert.ToInt32(intuicao.Value) + Convert.ToInt32(etiqueta.Value) + Convert.ToInt32(sanidade.Value) - 3;
-
-            label40.Text = "Pontos de habilidade restantes: " + (pontos_totais - pontos_hab).ToString();
+            label_pontos();
         }
+
 
         public void UpdateImagemBanco(byte[] imagembyte_personagem)
         {
@@ -1029,7 +521,59 @@ namespace Dark_Age
 
         public void preencher_Info_tela()
         {
+            if (pers_criado == true)
+            {
+                label1.Text = "Edição de Ficha";
+                btn_cria_personagem.Text = "Finalizar Edição de Personagem";
+                info_entidade.select_atributos(Campanha.id_personagem, "'N'");
+                info_entidade.select_talentos(Campanha.id_personagem, "'N'");
+                info_entidade.select_personagem(Campanha.id_personagem);
 
+                imagem_pers = byte_image.byteArrayToImage(imagembyte_personagem);
+                pictureBox1.Image = imagem_pers;
+            }
+
+            lbl_forca.Text = forca.ToString();
+            lbl_destreza.Text = destreza.ToString();
+            lbl_vigor.Text = vigor.ToString();
+            lbl_carisma.Text = carisma.ToString();
+            lbl_raciocinio.Text = raciocinio.ToString();
+            lbl_magia.Text = magia.ToString();
+
+            classe.Text = classe_escolhida;
+            nome_personagem.Text = nomepersonagem;
+            comboBox1.SelectedValue = nivel;
+
+            ataque.Value = bd_ataque;
+            esquiva.Value = bd_esquiva;
+            defesa.Value = bd_defesa;
+            contrataque.Value = bd_contra_atq;
+            arematirar.Value = bd_arematirar;
+            lancarmagia.Value = bd_lancarmagia;
+            labia.Value = bd_labia;
+            intimidacao.Value = bd_intimidacao;
+            seduzir.Value = bd_seduzir;
+            enganacao.Value = bd_enganacao;
+            esconder.Value = bd_esconder;
+            percepcao.Value = bd_percepcao;
+            academicos.Value = bd_academicos;
+            ocultismo.Value = bd_ocultismo;
+            sobrevivencia.Value = bd_sobrevivencia;
+            investigacao.Value = bd_investigacao;
+            intuicao.Value = bd_intuicao;
+            etiqueta.Value = bd_etiqueta;
+            sanidade.Value = bd_sanidade;
+            carregar_nivel();
+            muda_ficha();
+        }
+
+        public void cria_ou_update_pers()
+        {
+            int[] atributos = new int[] {forca, destreza, vigor, carisma, raciocinio, magia};
+            int[] talentos = new int[] {bd_ataque2, bd_esquiva2, bd_defesa2, bd_contra_atq2, bd_arematirar2, bd_lancarmagia2, bd_labia2, bd_intimidacao2, bd_seduzir2, bd_enganacao2, bd_esconder2
+                        , bd_percepcao2, bd_academicos2, bd_ocultismo2, bd_sobrevivencia2, bd_investigacao2, bd_intuicao2, bd_etiqueta2, bd_sanidade2};
+            imagembyte_personagem = byte_image.imageToByteArray(pictureBox1.Image);
+            info_entidade.insert_update_perso(Campanha.id_personagem, Campanha.id_entidade, tipo_entidade, nomepersonagem, id_classe, nivel, imagembyte_personagem, atributos, talentos, Campanha.id_campanha, Campanha.id_jogador);
         }
     }
 }

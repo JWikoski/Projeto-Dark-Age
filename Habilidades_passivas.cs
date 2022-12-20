@@ -76,13 +76,13 @@ namespace Dark_Age
 
             comj.CommandText = "SELECT COUNT(*) from \"Dark_Age_Connection\".\"Habilidades\" where id_classe = @classe and nivel_hab <= @nivel";
             comj.Parameters.AddWithValue("@classe", Campanha.classe_personagem);
-            comj.Parameters.AddWithValue("@nivel", Campanha.nivel_personagem);
+            comj.Parameters.AddWithValue("@nivel", Ficha.nivel);
             int ndj = Convert.ToInt32(comj.ExecuteScalar());
 
 
             comm.CommandText = "select id_classe, nivel_hab, titulo_hab, desc_hab, tipo_hab, custo_hab, tipo_custo, custo_adicional, id_habilidade from \"Dark_Age_Connection\".\"Habilidades\" where id_classe = @classe and nivel_hab <= @nivel order by nivel_hab, id_habilidade";
             comm.Parameters.AddWithValue("@classe", Campanha.classe_personagem);
-            comm.Parameters.AddWithValue("@nivel", Campanha.nivel_personagem);
+            comm.Parameters.AddWithValue("@nivel", Ficha.nivel);
             NpgsqlDataReader ndv = comm.ExecuteReader();
 
             for (int i = 0; i < ndj; ++i)
@@ -243,7 +243,7 @@ namespace Dark_Age
             num_hab = 0;
             num_hab2 = 0;
             Campanha.classe_personagem = 1;
-            Campanha.nivel_personagem = 5;
+            Ficha.nivel = 5;
             Carregar_habilidades();
         }
 
@@ -254,7 +254,7 @@ namespace Dark_Age
             num_hab = 0;
             num_hab2 = 0;
             Campanha.classe_personagem = 2;
-            Campanha.nivel_personagem = 5;
+            Ficha.nivel = 5;
             Carregar_habilidades();
         }
 
@@ -265,7 +265,7 @@ namespace Dark_Age
             num_hab = 0;
             num_hab2 = 0;
             Campanha.classe_personagem = 3;
-            Campanha.nivel_personagem = 5;
+            Ficha.nivel = 5;
             Carregar_habilidades();
         }
 
@@ -276,7 +276,7 @@ namespace Dark_Age
             num_hab = 0;
             num_hab2 = 0;
             Campanha.classe_personagem = 4;
-            Campanha.nivel_personagem = 5;
+            Ficha.nivel = 5;
             Carregar_habilidades();
         }
 
@@ -287,7 +287,7 @@ namespace Dark_Age
             num_hab = 0;
             num_hab2 = 0;
             Campanha.classe_personagem = 5;
-            Campanha.nivel_personagem = 5;
+            Ficha.nivel = 5;
 
             Carregar_habilidades();
         }

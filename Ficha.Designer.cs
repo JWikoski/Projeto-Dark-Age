@@ -140,12 +140,12 @@ namespace Dark_Age
             this.tipo_criacao = new System.Windows.Forms.ComboBox();
             this.label41 = new System.Windows.Forms.Label();
             this.pnl_status = new System.Windows.Forms.Panel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.mana_entidade = new System.Windows.Forms.TextBox();
             this.vida_entidade = new System.Windows.Forms.TextBox();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.label16 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ataque)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.esquiva)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.defesa)).BeginInit();
@@ -1644,20 +1644,13 @@ namespace Dark_Age
             this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
             this.comboBox1.Location = new System.Drawing.Point(1154, 780);
             this.comboBox1.MaxDropDownItems = 5;
             this.comboBox1.MaxLength = 1;
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(45, 28);
             this.comboBox1.TabIndex = 142;
-            this.comboBox1.Text = "1";
-            this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
+            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_TextChanged);
             // 
             // label38
             // 
@@ -1776,6 +1769,41 @@ namespace Dark_Age
             this.pnl_status.TabIndex = 149;
             this.pnl_status.Visible = false;
             // 
+            // comboBox2
+            // 
+            this.comboBox2.AutoCompleteCustomSource.AddRange(new string[] {
+            "Personagem",
+            "Pet",
+            "NPC",
+            "Monstro"});
+            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Pequeno",
+            "Médio",
+            "Grande",
+            "Gigante"});
+            this.comboBox2.Location = new System.Drawing.Point(97, 69);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 28);
+            this.comboBox2.TabIndex = 152;
+            this.comboBox2.Visible = false;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label16.ForeColor = System.Drawing.SystemColors.Control;
+            this.label16.Location = new System.Drawing.Point(12, 71);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(76, 21);
+            this.label16.TabIndex = 151;
+            this.label16.Text = "Tamanho:";
+            // 
             // mana_entidade
             // 
             this.mana_entidade.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -1837,41 +1865,6 @@ namespace Dark_Age
             this.iconButton1.Text = "Vida:";
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = true;
-            // 
-            // label16
-            // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label16.ForeColor = System.Drawing.SystemColors.Control;
-            this.label16.Location = new System.Drawing.Point(12, 71);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(76, 21);
-            this.label16.TabIndex = 151;
-            this.label16.Text = "Tamanho:";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.AutoCompleteCustomSource.AddRange(new string[] {
-            "Personagem",
-            "Pet",
-            "NPC",
-            "Monstro"});
-            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Pequeno",
-            "Médio",
-            "Grande",
-            "Gigante"});
-            this.comboBox2.Location = new System.Drawing.Point(97, 69);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 28);
-            this.comboBox2.TabIndex = 152;
-            this.comboBox2.Visible = false;
             // 
             // Ficha
             // 

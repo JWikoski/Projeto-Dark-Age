@@ -104,25 +104,7 @@ namespace Dark_Age
 
                 if (nda.HasRows)
                 {
-                    /*
-                    if (Ficha.pers_criado == false)
-                    {
-                        this.Hide();
-                        Ficha frm = new Ficha();
-                        frm.ShowDialog();
-                       
-                    }
-                    else
-                    {
-                        this.Hide();
-                        Form1 frm = new Form1();
-                        frm.Closed += (s, args) => this.Close();
-                        frm.Show();
-                        e.Handled = true;
-                        e.SuppressKeyPress = true;
-                    }*/
-
-                 this.Hide();
+                    this.Hide();
                     nda.Close();
                     comm.Dispose();
                     conn.Close();

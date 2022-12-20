@@ -328,73 +328,12 @@ namespace Dark_Age
             comt.Dispose();
             conn2.Close();*/
         }
-        public void select_atributos()
-        {
-            using NpgsqlDataReader nds = Conexao_BD.select_atributos(Campanha.id_personagem, "S");
-
-            while (nds.Read())
-            {
-                Ficha.forca = (int)nds.GetValue(0);
-                Ficha.destreza = (int)nds.GetValue(1);
-                Ficha.vigor = (int)nds.GetValue(2);
-                Ficha.carisma = (int)nds.GetValue(3);
-                Ficha.raciocinio = (int)nds.GetValue(4);
-                Ficha.magia = (int)nds.GetValue(5);
-            }
-        }
-
-        public void select_talentos()
-        {                     
-            using NpgsqlDataReader ndp = Conexao_BD.select_talentos(Campanha.id_personagem, "S");
-
-            while (ndp.Read())
-            {
-                Ficha.bd_ataque = (int)ndp.GetValue(0);
-                Ficha.bd_esquiva = (int)ndp.GetValue(1);
-                Ficha.bd_defesa = (int)ndp.GetValue(2);
-                Ficha.bd_contra_atq = (int)ndp.GetValue(3);
-                Ficha.bd_arematirar = (int)ndp.GetValue(4);
-                Ficha.bd_lancarmagia = (int)ndp.GetValue(5);
-                Ficha.bd_labia = (int)ndp.GetValue(6);
-                Ficha.bd_intimidacao = (int)ndp.GetValue(7);
-                Ficha.bd_seduzir = (int)ndp.GetValue(8);
-                Ficha.bd_enganacao = (int)ndp.GetValue(9);
-                Ficha.bd_esconder = (int)ndp.GetValue(10);
-                Ficha.bd_percepcao = (int)ndp.GetValue(11);
-                Ficha.bd_academicos = (int)ndp.GetValue(12);
-                Ficha.bd_ocultismo = (int)ndp.GetValue(13);
-                Ficha.bd_sobrevivencia = (int)ndp.GetValue(14);
-                Ficha.bd_investigacao = (int)ndp.GetValue(15);
-                Ficha.bd_intuicao = (int)ndp.GetValue(16);
-                Ficha.bd_etiqueta = (int)ndp.GetValue(17);
-                Ficha.bd_sanidade = (int)ndp.GetValue(18);
-            }
-        }
-
-        public void select_personagem()
-        {
-            using NpgsqlDataReader ndp = Conexao_BD.select_info_personagem(Campanha.id_personagem);
-
-            while (ndp.Read())
-            {
-                Inventario.moedas_de_prata = (int)ndp.GetValue(0);
-                Inventario.moedas_de_ouro = (int)ndp.GetValue(1);
-                vida_atual = (int)ndp.GetValue(2);
-                vida_maxima = (int)ndp.GetValue(3);
-                sanidade_atual = (int)ndp.GetValue(4);
-                sanidade_max = (int)ndp.GetValue(5);
-                mana_atual = (int)ndp.GetValue(6);
-                adicional_atual = (int)ndp.GetValue(7);
-                adicional_max = (int)ndp.GetValue(8);
-                escudo = (int)ndp.GetValue(9);
-            }
-        }
-
         public void preencher_info_tela()
         {
-            select_personagem();
-            select_atributos();
-            select_talentos();
+            info_entidade.select_personagem(Campanha.id_personagem);
+            info_entidade.select_atributos(Campanha.id_personagem, "'S'");
+            info_entidade.select_talentos(Campanha.id_personagem, "'S'");
+
             res_ataque.Text = Ficha.bd_ataque.ToString();
             res_esquiva.Text = Ficha.bd_esquiva.ToString();
             res_defesa.Text = Ficha.bd_defesa.ToString();

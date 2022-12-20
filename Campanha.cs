@@ -21,6 +21,7 @@ namespace Dark_Age
         public static int id_jogador = Login.jogador;
         public static int id_mestre_campanha;
         public static string nome_personagem;
+        public static int id_entidade = 0;
         public Campanha()
         {
             InitializeComponent();
@@ -211,7 +212,7 @@ namespace Dark_Age
                 {
                     classe_personagem = 5;
                 }
-                nivel_personagem = (int)row.Cells[3].Value;                                        
+                Ficha.nivel = (int)row.Cells[3].Value;                                        
             }
             catch (Exception a)
             {
@@ -284,7 +285,8 @@ namespace Dark_Age
         private void btn_criar_novo_Click(object sender, EventArgs e)
         {
             if (id_campanha != 0)
-            {
+            {               
+                Ficha.nivel = 1;
                 Ficha.tipo_entidade = 1;
                 Ficha.pers_criado = false;
                 Ficha ficha = new Ficha();

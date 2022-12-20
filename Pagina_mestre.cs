@@ -127,7 +127,7 @@ namespace Dark_Age
         private void iconButton1_Click_1(object sender, EventArgs e)
         {
             Campanha.classe_personagem = 1;
-            Campanha.nivel_personagem = 5;
+            Ficha.nivel = 5;
             Habilidades_passivas lista = new Habilidades_passivas();
             lista.Show();
         }
