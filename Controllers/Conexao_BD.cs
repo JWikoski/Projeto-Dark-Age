@@ -134,6 +134,7 @@ namespace Dark_Age.Enteties
                                                                              , nome_profissao
                                                                              , descricao
                                                                              , material
+                                                                             , dano
                                                                           from ""Dark_Age_Connection"".""Itens""
                                                                           join ""Dark_Age_Connection"".""Profissao"" on id_profissao = fk_id_profissao 
                                                                           join ""Dark_Age_Connection"".""Tipo_itens"" on id_tipo_itens = fk_id_tipo_itens ;", Conexao_BD.Caminho_DB());
@@ -159,6 +160,7 @@ namespace Dark_Age.Enteties
                                                              , nome_profissao
                                                              , descricao
                                                              , material
+                                                             , dano
                                                           from ""Dark_Age_Connection"".""Itens""
                                                           join ""Dark_Age_Connection"".""Profissao"" on id_profissao = fk_id_profissao 
                                                           join ""Dark_Age_Connection"".""Tipo_itens"" on id_tipo_itens = fk_id_tipo_itens 

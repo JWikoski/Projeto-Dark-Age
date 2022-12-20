@@ -45,6 +45,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.cbx_material = new System.Windows.Forms.CheckBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_dano = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pnl_dano = new System.Windows.Forms.Panel();
+            this.pnl_dano.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_finalizar
@@ -53,7 +58,7 @@
             this.btn_finalizar.FlatAppearance.BorderSize = 0;
             this.btn_finalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_finalizar.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btn_finalizar.Location = new System.Drawing.Point(244, 485);
+            this.btn_finalizar.Location = new System.Drawing.Point(262, 504);
             this.btn_finalizar.Name = "btn_finalizar";
             this.btn_finalizar.Size = new System.Drawing.Size(112, 29);
             this.btn_finalizar.TabIndex = 0;
@@ -77,7 +82,7 @@
             this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.richTextBox1.Location = new System.Drawing.Point(30, 274);
+            this.richTextBox1.Location = new System.Drawing.Point(30, 324);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(344, 158);
             this.richTextBox1.TabIndex = 2;
@@ -90,7 +95,7 @@
             this.combox_tipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.combox_tipo.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.combox_tipo.FormattingEnabled = true;
-            this.combox_tipo.Location = new System.Drawing.Point(52, 133);
+            this.combox_tipo.Location = new System.Drawing.Point(52, 121);
             this.combox_tipo.Name = "combox_tipo";
             this.combox_tipo.Size = new System.Drawing.Size(121, 23);
             this.combox_tipo.TabIndex = 3;
@@ -102,7 +107,7 @@
             this.combox_profissao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.combox_profissao.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.combox_profissao.FormattingEnabled = true;
-            this.combox_profissao.Location = new System.Drawing.Point(235, 133);
+            this.combox_profissao.Location = new System.Drawing.Point(235, 121);
             this.combox_profissao.Name = "combox_profissao";
             this.combox_profissao.Size = new System.Drawing.Size(121, 23);
             this.combox_profissao.TabIndex = 4;
@@ -114,7 +119,7 @@
             this.combox_dificuldade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.combox_dificuldade.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.combox_dificuldade.FormattingEnabled = true;
-            this.combox_dificuldade.Location = new System.Drawing.Point(52, 201);
+            this.combox_dificuldade.Location = new System.Drawing.Point(52, 179);
             this.combox_dificuldade.Name = "combox_dificuldade";
             this.combox_dificuldade.Size = new System.Drawing.Size(121, 23);
             this.combox_dificuldade.TabIndex = 5;
@@ -135,7 +140,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label2.Location = new System.Drawing.Point(52, 183);
+            this.label2.Location = new System.Drawing.Point(52, 161);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 15);
             this.label2.TabIndex = 7;
@@ -145,7 +150,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label3.Location = new System.Drawing.Point(52, 115);
+            this.label3.Location = new System.Drawing.Point(52, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 15);
             this.label3.TabIndex = 8;
@@ -155,7 +160,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label4.Location = new System.Drawing.Point(235, 115);
+            this.label4.Location = new System.Drawing.Point(235, 103);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 15);
             this.label4.TabIndex = 9;
@@ -165,7 +170,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label5.Location = new System.Drawing.Point(30, 256);
+            this.label5.Location = new System.Drawing.Point(30, 306);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 15);
             this.label5.TabIndex = 10;
@@ -186,7 +191,7 @@
             this.panel1.BackColor = System.Drawing.Color.LightGray;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(155)))), ((int)(((byte)(140)))));
-            this.panel1.Location = new System.Drawing.Point(0, 534);
+            this.panel1.Location = new System.Drawing.Point(0, 553);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 1);
             this.panel1.TabIndex = 104;
@@ -198,7 +203,7 @@
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(155)))), ((int)(((byte)(140)))));
             this.panel2.Location = new System.Drawing.Point(399, 1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 533);
+            this.panel2.Size = new System.Drawing.Size(1, 552);
             this.panel2.TabIndex = 105;
             // 
             // panel3
@@ -208,7 +213,7 @@
             this.panel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(155)))), ((int)(((byte)(140)))));
             this.panel3.Location = new System.Drawing.Point(0, 1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1, 533);
+            this.panel3.Size = new System.Drawing.Size(1, 552);
             this.panel3.TabIndex = 106;
             // 
             // button1
@@ -231,19 +236,63 @@
             // 
             this.cbx_material.AutoSize = true;
             this.cbx_material.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.cbx_material.Location = new System.Drawing.Point(30, 485);
+            this.cbx_material.Location = new System.Drawing.Point(30, 510);
             this.cbx_material.Name = "cbx_material";
             this.cbx_material.Size = new System.Drawing.Size(69, 19);
             this.cbx_material.TabIndex = 108;
             this.cbx_material.Text = "Material";
             this.cbx_material.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label6.Location = new System.Drawing.Point(150, 2);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 21);
+            this.label6.TabIndex = 109;
+            this.label6.Text = "Dano";
+            // 
+            // txt_dano
+            // 
+            this.txt_dano.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.txt_dano.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_dano.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_dano.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.txt_dano.Location = new System.Drawing.Point(0, 26);
+            this.txt_dano.Name = "txt_dano";
+            this.txt_dano.Size = new System.Drawing.Size(344, 29);
+            this.txt_dano.TabIndex = 110;
+            this.txt_dano.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label7.Location = new System.Drawing.Point(227, 58);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(117, 15);
+            this.label7.TabIndex = 111;
+            this.label7.Text = "Ex: 1d6 dano mágico";
+            // 
+            // pnl_dano
+            // 
+            this.pnl_dano.Controls.Add(this.label7);
+            this.pnl_dano.Controls.Add(this.txt_dano);
+            this.pnl_dano.Controls.Add(this.label6);
+            this.pnl_dano.Location = new System.Drawing.Point(30, 224);
+            this.pnl_dano.Name = "pnl_dano";
+            this.pnl_dano.Size = new System.Drawing.Size(344, 78);
+            this.pnl_dano.TabIndex = 112;
+            // 
             // adicionar_editar_itens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
-            this.ClientSize = new System.Drawing.Size(400, 535);
+            this.ClientSize = new System.Drawing.Size(400, 554);
             this.Controls.Add(this.cbx_material);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel3);
@@ -261,12 +310,15 @@
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.text_nome);
             this.Controls.Add(this.btn_finalizar);
+            this.Controls.Add(this.pnl_dano);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "adicionar_editar_itens";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "adicionar_editar_itens";
             this.Load += new System.EventHandler(this.adicionar_editar_itens_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.pnl_dano.ResumeLayout(false);
+            this.pnl_dano.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,5 +343,9 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox cbx_material;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txt_dano;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel pnl_dano;
     }
 }

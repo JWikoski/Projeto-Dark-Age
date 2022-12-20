@@ -21,11 +21,20 @@ namespace Dark_Age
         public static int vida_pet_max;
         public static int mana_atual;
         public static int mana_max;
+        public static int tipo_entidade;
         public static string tamanho;
         public static int meus_pets = 1;
         public Pets()
         {
             InitializeComponent();
+
+            if(tipo_entidade == 2)
+            {
+                this.BackgroundImage = global::Dark_Age.Properties.Resources.papers_co_sk61_dark_purple_blur_gradation_36_3840x2400_4k_wallpaper;
+            }else
+            {
+                this.BackgroundImage = global::Dark_Age.Properties.Resources.dark_blue_;
+            }
 
             Opacity = 0;      //first the opacity is 0
             timer1.Interval = 10;  //we'll increase the opacity every 10ms

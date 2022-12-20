@@ -163,6 +163,16 @@ namespace Dark_Age.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dark_blue_ {
+            get {
+                object obj = ResourceManager.GetObject("dark-blue-", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap direita_festival {
             get {
                 object obj = ResourceManager.GetObject("direita_festival", resourceCulture);

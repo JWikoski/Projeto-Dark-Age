@@ -279,7 +279,7 @@ namespace Dark_Age
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(10)))), ((int)(((byte)(34)))));
-            this.BackgroundImage = global::Dark_Age.Properties.Resources.papers_co_sk61_dark_purple_blur_gradation_36_3840x2400_4k_wallpaper;
+            this.BackgroundImage = global::Dark_Age.Properties.Resources.dark_blue_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 700);
             this.Controls.Add(this.checkBox1);
