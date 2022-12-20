@@ -374,7 +374,7 @@ namespace Dark_Age
         public void select_personagem()
         {
             using NpgsqlDataReader ndp = Conexao_BD.select_info_personagem(Campanha.id_personagem);
-
+            
             while (ndp.Read())
             {
                 Inventario.moedas_de_prata = (int)ndp.GetValue(0);

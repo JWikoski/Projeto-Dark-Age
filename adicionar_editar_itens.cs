@@ -22,6 +22,7 @@ namespace Dark_Age
         public string nome_item;
         public int id_profissao;
         public string dificuldade;
+        public string dano;
         public string descricao;
         public Boolean material;
         public int id_tipo_itens;
@@ -111,6 +112,7 @@ namespace Dark_Age
             id_profissao = (int)combox_profissao.SelectedValue;
             id_tipo_itens = (int)combox_tipo.SelectedValue;
             descricao = richTextBox1.Text;
+            dano = txt_dano.Text;
             if(cbx_material.Checked == true)
             {
                 material = true;
@@ -127,14 +129,15 @@ namespace Dark_Age
                 NpgsqlCommand como = new NpgsqlCommand();
                 como.Connection = conn;
                 como.CommandType = CommandType.Text;
-                como.CommandText = $@"insert into ""Dark_Age_Connection"".""Itens"" (nome_itens, dificuldade, fk_id_profissao, descricao, fk_id_tipo_itens,  material) 
-                                       values (@nome_items, (@dificuldade)::""Dark_Age_Connection"".""enum_dificuldade"", @id_profissao, @descricao, @id_tipo_itens, @material)";
+                como.CommandText = $@"insert into ""Dark_Age_Connection"".""Itens"" (nome_itens, dificuldade, fk_id_profissao, descricao, fk_id_tipo_itens, material, dano) 
+                                       values (@nome_items, (@dificuldade)::""Dark_Age_Connection"".""enum_dificuldade"", @id_profissao, @descricao, @id_tipo_itens, @material, @dano)";
                 como.Parameters.AddWithValue("@nome_items", nome_item);
                 como.Parameters.AddWithValue("@dificuldade", dificuldade);
                 como.Parameters.AddWithValue("@id_profissao", id_profissao);
                 como.Parameters.AddWithValue("@descricao", descricao);
                 como.Parameters.AddWithValue("@id_tipo_itens", id_tipo_itens);
                 como.Parameters.AddWithValue("@material", material);
+                como.Parameters.AddWithValue("@dano", dano);
 
                 como.ExecuteNonQuery();
                 como.Dispose();
@@ -153,6 +156,7 @@ namespace Dark_Age
                                            , descricao = @descricao
                                            , fk_id_tipo_itens = @id_tipo_itens
                                            , material = @material
+                                           , dano = @dano
                                        where id_itens =  @id_itens";
                 como.Parameters.AddWithValue("@nome_items", nome_item);
                 como.Parameters.AddWithValue("@dificuldade", dificuldade);
@@ -161,6 +165,7 @@ namespace Dark_Age
                 como.Parameters.AddWithValue("@id_tipo_itens", id_tipo_itens);
                 como.Parameters.AddWithValue("@id_itens", Lista_itens.id_item);
                 como.Parameters.AddWithValue("@material", material);
+                como.Parameters.AddWithValue("@dano", dano);
                 como.ExecuteNonQuery();
                 como.Dispose();
                 conn.Close();
@@ -172,7 +177,7 @@ namespace Dark_Age
         {
             this.Close();
         }
+
     }
 
 }
-

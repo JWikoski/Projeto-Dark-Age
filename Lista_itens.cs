@@ -114,11 +114,13 @@ namespace Dark_Age
                 Grid_lista_itens.Columns["nome_profissao"].HeaderText = "Profissão";
                 Grid_lista_itens.Columns["descricao"].Visible = false;
                 Grid_lista_itens.Columns["material"].HeaderText = "Material";
+                Grid_lista_itens.Columns["dano"].Visible = false;
                 if (Grid_lista_itens.Rows.Count > 0)
                 {
                     Grid_lista_itens.Rows[0].Selected = true;
                     DataGridViewRow cell1 = Grid_lista_itens.Rows[0];
                     text_descricao.Text = cell1.Cells[5].Value.ToString();
+                    text_descricao.Text += "\n\r \n\rDano: "+cell1.Cells[7].Value.ToString();
                     id_item = (int)cell1.Cells[0].Value;
                 }
                 foreach (DataGridViewRow x in Grid_lista_itens.Rows)
