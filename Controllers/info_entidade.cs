@@ -140,7 +140,8 @@ namespace Dark_Age.Controllers
                                        , p.id_personagem 
                                        , isp.fk_id_jogador
                                        , isp.tipo_personagem 
-                                       , isp.tamanho 
+                                       , isp.tamanho
+                                       , isp.mana_max
                                      from ""Dark_Age_Connection"".""Inter_status_pers"" isp 
                                      join ""Dark_Age_Connection"".""Personagens"" p on p.id_personagem = fk_id_personagem
                                     left join ""Dark_Age_Connection"".""Classes"" c on c.id_classe = p.fk_id_classe
@@ -148,7 +149,7 @@ namespace Dark_Age.Controllers
                                       and ((id_entidade = @id_entidade) or (@id_entidade = 0))
                                       and ((fk_id_jogador = @id_jogador) or (@id_jogador = 0))
                                       and ((fk_id_campanha =  @id_campanha) or (@id_campanha = 0))
-                                    group by 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+                                    group by 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21
                                     order by 2;";
             comi.Parameters.AddWithValue("@tipo", tipo);
 			comi.Parameters.AddWithValue("@id_entidade", id_entidade);
@@ -158,7 +159,7 @@ namespace Dark_Age.Controllers
 
             while (ndp.Read())
             {
-                return new string[] { ndp.GetValue(0).ToString(), ndp.GetValue(1).ToString(), ndp.GetValue(2).ToString(), ndp.GetValue(3).ToString(), ndp.GetValue(4).ToString(), ndp.GetValue(5).ToString(), ndp.GetValue(6).ToString(), ndp.GetValue(7).ToString(), ndp.GetValue(8).ToString(), ndp.GetValue(9).ToString(), ndp.GetValue(10).ToString(), ndp.GetValue(11).ToString(), ndp.GetValue(12).ToString(), ndp.GetValue(13).ToString(), ndp.GetValue(14).ToString(), ndp.GetValue(15).ToString(), ndp.GetValue(16).ToString(), ndp.GetValue(17).ToString(), ndp.GetValue(18).ToString(), ndp.GetValue(19).ToString() }; 
+                return new string[] { ndp.GetValue(0).ToString(), ndp.GetValue(1).ToString(), ndp.GetValue(2).ToString(), ndp.GetValue(3).ToString(), ndp.GetValue(4).ToString(), ndp.GetValue(5).ToString(), ndp.GetValue(6).ToString(), ndp.GetValue(7).ToString(), ndp.GetValue(8).ToString(), ndp.GetValue(9).ToString(), ndp.GetValue(10).ToString(), ndp.GetValue(11).ToString(), ndp.GetValue(12).ToString(), ndp.GetValue(13).ToString(), ndp.GetValue(14).ToString(), ndp.GetValue(15).ToString(), ndp.GetValue(16).ToString(), ndp.GetValue(17).ToString(), ndp.GetValue(18).ToString(), ndp.GetValue(19).ToString(), ndp.GetValue(20).ToString() }; 
             }
             return null;
         }
@@ -178,11 +179,12 @@ namespace Dark_Age.Controllers
 				Form1.adicional_max = Int32.Parse(valor[8]);
 				Form1.escudo = Int32.Parse(valor[9]);
                 Ficha.nivel = Int32.Parse(valor[10]);
-				Ficha.imagembyte_personagem = Encoding.ASCII.GetBytes(valor[11]);
+//				Ficha.imagembyte_personagem = Encoding.Unicode.GetBytes(valor[11]);
 				Ficha.classe_escolhida = valor[12];
 				Campanha.nome_personagem = valor[13];
 				Ficha.id_classe = Int32.Parse(valor[14]);
                 Form1.escudo = Int32.Parse(valor[15]);
+                Form1.mana_maxima = Int32.Parse(valor[20]);
 			}
 		}
 
@@ -196,7 +198,7 @@ namespace Dark_Age.Controllers
             comi.CommandType = CommandType.Text;
             comi.CommandText = $@"select id_perso
 	                                   , id_enti	
-                                    from ""Dark_Age_Connection"".cria_pers(@id_personagem, @identidade, @tipo_entidade, @nome, @classe, @nivel, @imagem, @variavel_atributo, @variavel_talento, @id_campanha, @id_jogador, @tamanho)";
+                                    from ""Dark_Age_Connection"".cria_pers(@id_personagem, @identidade, @tipo_entidade, @nome, @classe, @nivel, @imagem, @variavel_atributo, @variavel_talento, @id_campanha, @id_jogador, @tamanho, @mana_pers ,@vida_pers)";
             comi.Parameters.AddWithValue("@id_personagem", id_pers);
             comi.Parameters.AddWithValue("@identidade", id_enti);
             comi.Parameters.AddWithValue("@tipo_entidade", tipo_enti);
@@ -209,7 +211,9 @@ namespace Dark_Age.Controllers
             comi.Parameters.AddWithValue("@id_campanha", id_campanha);
             comi.Parameters.AddWithValue("@id_jogador", id_jogador);
             comi.Parameters.AddWithValue("@tamanho", tamanho);
-            using NpgsqlDataReader ndp = comi.ExecuteReader();
+			comi.Parameters.AddWithValue("@mana_pers", mana_pers);
+			comi.Parameters.AddWithValue("@vida_pers", vida_pers);
+			using NpgsqlDataReader ndp = comi.ExecuteReader();
 
             while (ndp.Read())
             {
@@ -248,6 +252,26 @@ namespace Dark_Age.Controllers
 			como.Parameters.AddWithValue("@escudo", escudo);
 			como.Parameters.AddWithValue("@id_entidade", entidade);
 			como.ExecuteNonQuery();
+		}
+
+
+        public static void imagem_fodase(int id_personagem)
+        {
+			using NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
+			conn.Open();
+			using NpgsqlCommand como = new NpgsqlCommand();
+			como.Connection = conn;
+			como.CommandType = CommandType.Text;
+			como.CommandText = $@"select imagem 
+                                    from ""Dark_Age_Connection"".""Personagens"" p 
+                                   where id_personagem = @id_personagem ";
+			como.Parameters.AddWithValue("@id_personagem", id_personagem);
+			using NpgsqlDataReader ndp = como.ExecuteReader();
+
+			while (ndp.Read())
+			{
+                Ficha.imagembyte_personagem = (byte[])ndp.GetValue(0);
+			}
 		}
 
     }

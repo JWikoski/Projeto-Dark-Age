@@ -108,7 +108,6 @@ namespace Dark_Age
             {
                 panel_mana.Visible = true;
             }
-            mana_maxima = (Ficha.magia * 2);
 
             label24.Text = escudo.ToString();
             if (escudo > 0)

@@ -505,8 +505,8 @@ namespace Dark_Age
                 info_entidade.preencher_atributos(Campanha.id_personagem, "'N'");
                 info_entidade.preencher_talento(Campanha.id_personagem, "'N'");
                 info_entidade.preencher_pers(1, 0, Campanha.id_personagem, 0);
-
-                imagem_pers = byte_image.byteArrayToImage(imagembyte_personagem);
+                info_entidade.imagem_fodase(Campanha.id_personagem);
+				imagem_pers = byte_image.byteArrayToImage(imagembyte_personagem);
                 pictureBox1.Image = imagem_pers;
             }
 
