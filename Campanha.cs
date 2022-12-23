@@ -67,52 +67,64 @@ namespace Dark_Age
                 if (id_mestre != id_jogador)
                 {
                     id_mestre_campanha = 0;
-                    data_grid_pers_camp.DataSource = Conexao_BD.select_personagem_campanha(id_jogador, id_campanha);
+                    data_grid_pers_camp.DataSource = Conexao_BD.select_personagem_campanha(id_jogador, id_campanha);                    
+                }
+                else
+                {
+                    id_mestre_campanha = id_jogador;
+                    data_grid_pers_camp.DataSource = Conexao_BD.select_personagem_campanha(0, id_campanha);
+                }
+                if (data_grid_pers_camp.DataSource != null)
+                {
                     data_grid_pers_camp.Columns["nome_personagem"].HeaderText = "Nome";
                     data_grid_pers_camp.Columns["nome_personagem"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                    data_grid_pers_camp.Columns["classe_personagem"].HeaderText = "Classe";
+                    data_grid_pers_camp.Columns["nome_classe"].HeaderText = "Classe";
                     data_grid_pers_camp.Columns["nivel"].HeaderText = "Nível";
                     data_grid_pers_camp.Columns["nivel"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                     data_grid_pers_camp.Columns["id_personagem"].Visible = false;
-
-                    if (data_grid_pers_camp.Rows.Count > 0)
+                    data_grid_pers_camp.Columns["fk_id_classe"].Visible = false;
+                    data_grid_pers_camp.Columns["id_entidade"].Visible = false;
+                    data_grid_pers_camp.Columns["imagem"].Visible = false;
+                    data_grid_pers_camp.Columns["nome_jogador"].Visible = false;
+                }
+                if (data_grid_pers_camp.Rows.Count > 0)
+                {
+                    if (id_jogador == id_mestre_campanha)
+                    {
+                        btn_entrar_mestre.Visible = true;
+                        btn_entrar.Visible = false;
+                        btn_eliminar.Visible = false;
+                        btn_criar_novo.Visible = false;
+                        btn_eliminar_campanha.Visible = true;
+                    } else
                     {
                         btn_entrar_mestre.Visible = false;
                         btn_entrar.Visible = true;
                         btn_eliminar.Visible = true;
                         btn_criar_novo.Visible = true;
                         btn_eliminar_campanha.Visible = false;
-                    }
-                    else
+                        data_grid_pers_camp.Rows[0].Selected = true;
+                        DataGridViewRow cell1 = data_grid_pers_camp.Rows[0];
+                        selecao_personagem(cell1);
+                    }                   
+                } else
+                {
+                    if (id_jogador == id_mestre_campanha)
+                    {
+                        btn_entrar_mestre.Visible = true;
+                        btn_entrar.Visible = false;
+                        btn_eliminar.Visible = false;
+                        btn_criar_novo.Visible = false;
+                        btn_eliminar_campanha.Visible = true;
+                    } else
                     {
                         btn_entrar_mestre.Visible = false;
                         btn_entrar.Visible = false;
                         btn_eliminar.Visible = false;
                         btn_criar_novo.Visible = true;
                         btn_eliminar_campanha.Visible = false;
-                    }
+                    }                                   
                 }
-                else
-                {
-                    id_mestre_campanha = id_jogador;
-                    data_grid_pers_camp.DataSource = Conexao_BD.select_personagem_campanha_mestre(id_campanha);
-                    if (data_grid_pers_camp.DataSource != null)
-                    {
-                        data_grid_pers_camp.Columns["nome_personagem"].HeaderText = "Nome";
-                        data_grid_pers_camp.Columns["nome_personagem"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                        data_grid_pers_camp.Columns["classe_personagem"].HeaderText = "Classe";
-                        data_grid_pers_camp.Columns["nivel"].HeaderText = "Nível";
-                        data_grid_pers_camp.Columns["nivel"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                        data_grid_pers_camp.Columns["id_personagem"].Visible = false;
-                    }
-                }
-                if (data_grid_pers_camp.Rows.Count > 0)
-                {
-                    data_grid_pers_camp.Rows[0].Selected = true;
-                    DataGridViewRow cell1 = data_grid_pers_camp.Rows[0];
-                    selecao_personagem(cell1);
-                }
-
             }
             catch (Exception a)
             {
@@ -194,25 +206,10 @@ namespace Dark_Age
                     return;
                 }
                 id_personagem = (int)row.Cells[0].Value;
-                nome_personagem = row.Cells[1].Value.ToString();
-                if (row.Cells[2].Value.ToString() == "Alquimista")
-                {
-                    classe_personagem = 1;
-
-                } else if (row.Cells[2].Value.ToString() == "Mestre da Forja")
-                {
-                    classe_personagem = 2;
-                } else if (row.Cells[2].Value.ToString() == "Caçador de Monstros")
-                {
-                    classe_personagem = 3;
-                } else if (row.Cells[2].Value.ToString() == "Orador")
-                {
-                    classe_personagem = 4;
-                } else if (row.Cells[2].Value.ToString() == "Templário")
-                {
-                    classe_personagem = 5;
-                }
-                Ficha.nivel = (int)row.Cells[3].Value;                                        
+                nome_personagem = row.Cells[1].Value.ToString();                
+                nivel_personagem = (int)row.Cells[3].Value;
+                classe_personagem = (int)row.Cells[4].Value;
+                id_entidade = (int)row.Cells[5].Value;
             }
             catch (Exception a)
             {
@@ -286,8 +283,9 @@ namespace Dark_Age
         {
             if (id_campanha != 0)
             {               
-                Ficha.nivel = 1;
                 Ficha.tipo_entidade = 1;
+                id_personagem = 0;
+                nome_personagem = "";
                 Ficha.pers_criado = false;
                 Ficha ficha = new Ficha();
                 ficha.Show();

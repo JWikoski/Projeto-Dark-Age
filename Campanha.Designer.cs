@@ -459,7 +459,6 @@
             // lbl_bvd
             // 
             this.lbl_bvd.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbl_bvd.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.lbl_bvd.FlatAppearance.BorderSize = 0;
             this.lbl_bvd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.lbl_bvd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;

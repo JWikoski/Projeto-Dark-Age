@@ -197,15 +197,21 @@ namespace Dark_Age.Enteties
         {
             try
             {                
-                using NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"select id_personagem
-	                                                                         , nome_personagem	
-                                                                             , classe_personagem
-                                                                             , nivel
-                                                                         from ""Dark_Age_Connection"".""Inter_camp_pers"" 
-                                                                         join ""Dark_Age_Connection"".""Jogadores"" on id_jogador = fk_id_jogador 
-                                                                         join ""Dark_Age_Connection"".""Personagens"" on id_personagem = fk_id_personagem
-                                                                        where id_jogador =" + id_jogador +  
-                                                                         "and fk_id_campanha = " + id_campanha + ";", Conexao_BD.Caminho_DB());
+                using NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"select id_personagem 
+	                                                                             , nome_personagem	
+   	                                                                             , nome_classe 
+   	                                                                             , nivel
+	                                                                             , fk_id_classe
+                                                                                 , id_entidade
+                                                                                 , imagem
+                                                                                 , nome_jogador           
+                                                                              from ""Dark_Age_Connection"".""Inter_status_pers"" isp 
+                                                                              join ""Dark_Age_Connection"".""Jogadores"" j on id_jogador = fk_id_jogador
+                                                                              join ""Dark_Age_Connection"".""Personagens"" p on id_personagem = fk_id_personagem
+                                                                              join ""Dark_Age_Connection"".""Classes"" c on c.id_classe = p.fk_id_classe
+                                                                             where tipo_personagem = 1
+                                                                               and((isp.fk_id_jogador = " + id_jogador + ") or(" + id_jogador +" = 0))" + 
+                                                                              "and isp.fk_id_campanha = " + id_campanha + ";", Conexao_BD.Caminho_DB());
                 
                 using NpgsqlCommandBuilder cBuilder = new NpgsqlCommandBuilder(dt_adapter);
                 DataTable dt_table = new DataTable();
@@ -218,27 +224,7 @@ namespace Dark_Age.Enteties
                 return null;
             }
         }
-        public static DataTable select_personagem_campanha_mestre(int id_campanha)
-        {
-            try
-            {
-                using NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"select id_personagem
-	                                                                         , nome_personagem
-                                                                             , classe_personagem
-                                                                             , nivel
-                                                                         from ""Dark_Age_Connection"".""Inter_camp_pers""                                                                          
-                                                                         join ""Dark_Age_Connection"".""Personagens"" on id_personagem = fk_id_personagem
-                                                                        where fk_id_campanha = " + id_campanha + ";", Conexao_BD.Caminho_DB());
-                using NpgsqlCommandBuilder cBuilder = new NpgsqlCommandBuilder(dt_adapter);
-                DataTable dt_table = new DataTable();
-                dt_adapter.Fill(dt_table);
-                return dt_table;
-            } catch (Exception e)
-            {
-                MessageBox.Show("ERRO nas select personagem: " + e);
-                return null;
-            }
-        }
+        
 
         public static void deletar_personagem(int id_personagem, int id_campanha)
         {

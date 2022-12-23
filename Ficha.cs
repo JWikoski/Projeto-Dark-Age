@@ -27,7 +27,6 @@ namespace Dark_Age
         public static int bd_sanidade2 = 3;
         public static string classe_escolhida = "";
         public static int id_classe;
-        public static string nomepersonagem = "";
         public static int idpersonagem = 0;
         public static int pontos_max = 10;
         public static int nivel = 1;
@@ -37,6 +36,7 @@ namespace Dark_Age
         public DataTable tb_nivel;
         public static byte[] imagembyte_personagem;
         public static int id_entidade;
+        public string tamanho = "";
 
         public Ficha()
         {
@@ -81,7 +81,6 @@ namespace Dark_Age
         private void Ficha_Load(object sender, EventArgs e)
         {
             Opacity = 0;      //first the opacity is 0
-
             timer1.Interval = 10;  // increase the opacity every 10ms
             timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
             timer1.Start();
@@ -110,8 +109,6 @@ namespace Dark_Age
 
         private void btn_forcasum_Click(object sender, EventArgs e)
         {
-
-
             if (forca < 5 && pontos > 0)
             {
                 pontos--;
@@ -122,7 +119,6 @@ namespace Dark_Age
         }
         private void btn_destrezasum_Click(object sender, EventArgs e)
         {
-
             if (destreza < 5 && pontos > 0)
             {
                 pontos--;
@@ -133,7 +129,6 @@ namespace Dark_Age
         }
         private void btn_vigorsum_Click(object sender, EventArgs e)
         {
-
             if (vigor < 5 && pontos > 0)
             {
                 pontos--;
@@ -238,31 +233,31 @@ namespace Dark_Age
         {
             classe_escolhida = "Alquimista";
             classe.Text = classe_escolhida;
-            Campanha.classe_personagem = 1;
+            id_classe = 1;
         }
         private void button3_Click(object sender, EventArgs e)
         {
             classe_escolhida = "Mestre da Forja";
             classe.Text = classe_escolhida;
-            Campanha.classe_personagem = 2;
+            id_classe = 2;
         }
         private void button2_Click(object sender, EventArgs e)
         {
             classe_escolhida = "Caçador de Monstros";
             classe.Text = classe_escolhida;
-            Campanha.classe_personagem = 3;
+            id_classe = 3;
         }
         private void button1_Click(object sender, EventArgs e)
         {
             classe_escolhida = "Orador";
             classe.Text = classe_escolhida;
-            Campanha.classe_personagem = 4;
+            id_classe = 4;
         }
         private void button5_Click(object sender, EventArgs e)
         {
             classe_escolhida = "Templário";
             classe.Text = classe_escolhida;
-            Campanha.classe_personagem = 5;
+            id_classe = 5;
         }
 
         private void tipo_criacao_SelectedIndexChanged(object sender, EventArgs e)
@@ -326,7 +321,7 @@ namespace Dark_Age
         }
 
         private void ataque_ValueChanged(object sender, EventArgs e)
-        {
+        {            
             bd_ataque2 = (int)ataque.Value;
         }
 
@@ -422,7 +417,7 @@ namespace Dark_Age
 
         private void nome_personagem_TextChanged(object sender, EventArgs e)
         {
-            nomepersonagem = nome_personagem.Text;
+            Campanha.nome_personagem = nome_personagem.Text;
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -498,25 +493,7 @@ namespace Dark_Age
 
         private void ataque_Click(object sender, EventArgs e)
         {
-            label_pontos();
-        }
-
-
-        public void UpdateImagemBanco(byte[] imagembyte_personagem)
-        {
-            NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
-            conn.Open();
-            NpgsqlCommand como = new NpgsqlCommand();
-            como.Connection = conn;
-            como.CommandType = CommandType.Text;
-            como.CommandText = $@"update ""Dark_Age_Connection"".""Personagens"" 
-                         set imagem = @imagembyte_personagem
-                       where id_personagem = @id_personagem";
-            como.Parameters.AddWithValue("@imagembyte_personagem", imagembyte_personagem);
-            como.Parameters.AddWithValue("@id_personagem", Campanha.id_personagem);
-            como.ExecuteNonQuery();
-            como.Dispose();
-            conn.Close();
+            label_pontos();        
         }
 
         public void preencher_Info_tela()
@@ -525,9 +502,9 @@ namespace Dark_Age
             {
                 label1.Text = "Edição de Ficha";
                 btn_cria_personagem.Text = "Finalizar Edição de Personagem";
-                info_entidade.select_atributos(Campanha.id_personagem, "'N'");
-                info_entidade.select_talentos(Campanha.id_personagem, "'N'");
-                info_entidade.select_personagem(Campanha.id_personagem);
+                info_entidade.preencher_atributos(Campanha.id_personagem, "'N'");
+                info_entidade.preencher_talento(Campanha.id_personagem, "'N'");
+                info_entidade.preencher_pers(1, 0, Campanha.id_personagem, 0);
 
                 imagem_pers = byte_image.byteArrayToImage(imagembyte_personagem);
                 pictureBox1.Image = imagem_pers;
@@ -541,7 +518,7 @@ namespace Dark_Age
             lbl_magia.Text = magia.ToString();
 
             classe.Text = classe_escolhida;
-            nome_personagem.Text = nomepersonagem;
+            nome_personagem.Text = Campanha.nome_personagem;
             comboBox1.SelectedValue = nivel;
 
             ataque.Value = bd_ataque;
@@ -573,7 +550,7 @@ namespace Dark_Age
             int[] talentos = new int[] {bd_ataque2, bd_esquiva2, bd_defesa2, bd_contra_atq2, bd_arematirar2, bd_lancarmagia2, bd_labia2, bd_intimidacao2, bd_seduzir2, bd_enganacao2, bd_esconder2
                         , bd_percepcao2, bd_academicos2, bd_ocultismo2, bd_sobrevivencia2, bd_investigacao2, bd_intuicao2, bd_etiqueta2, bd_sanidade2};
             imagembyte_personagem = byte_image.imageToByteArray(pictureBox1.Image);
-            info_entidade.insert_update_perso(Campanha.id_personagem, Campanha.id_entidade, tipo_entidade, nomepersonagem, id_classe, nivel, imagembyte_personagem, atributos, talentos, Campanha.id_campanha, Campanha.id_jogador);
+            info_entidade.atualiza_ids(Campanha.id_personagem, Campanha.id_entidade, tipo_entidade, Campanha.nome_personagem, id_classe, nivel, imagembyte_personagem, atributos, talentos, Campanha.id_campanha, Campanha.id_jogador, tamanho, 0, 0);
         }
     }
 }
