@@ -108,6 +108,8 @@ namespace Dark_Age
                     nda.Close();
                     comm.Dispose();
                     conn.Close();
+                    Temas temas = new Temas();
+                    temas.ShowDialog();
                     Campanha frm = new Campanha();
                  frm.Show();
 
@@ -156,8 +158,6 @@ namespace Dark_Age
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-
-      
 
     }
 }

@@ -162,7 +162,7 @@ namespace Dark_Age
         private void iconButton2_Click(object sender, EventArgs e)
         {            
             salvar_alteracoes();
-            this.Close();
+            Application.Exit();
         }
        public void salvar_alteracoes()
         {

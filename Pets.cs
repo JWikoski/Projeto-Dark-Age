@@ -75,16 +75,16 @@ namespace Dark_Age
                 Grid_lista_pets.DataSource = Conexao_BD.select_pet_jogador(Campanha.id_jogador, Campanha.id_campanha, meus_pets);
                 Grid_lista_pets.Columns["id_personagem"].HeaderText = "ID";
                 Grid_lista_pets.Columns["nome_personagem"].HeaderText = "Nome criatura";
-                Grid_lista_pets.Columns["vida_max1"].HeaderText = "Vida";
-                Grid_lista_pets.Columns["mana_atual1"].HeaderText = "Mana";
+                Grid_lista_pets.Columns["vida_max"].HeaderText = "Vida";
+                Grid_lista_pets.Columns["mana_atual"].HeaderText = "Mana";
                 Grid_lista_pets.Columns["tamanho"].HeaderText = "Tamanho";
                 Grid_lista_pets.Columns["fk_id_jogador"].Visible = false;
-                Grid_lista_pets.Columns["vida_atual1"].Visible = false;
-                Grid_lista_pets.Columns["escudo1"].Visible = false;
+                Grid_lista_pets.Columns["vida_atual"].Visible = false;
+                Grid_lista_pets.Columns["escudo"].Visible = false;
                 Grid_lista_pets.Columns["tipo_personagem"].Visible = false;
                 Grid_lista_pets.Columns["tamanho"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                Grid_lista_pets.Columns["vida_max1"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                Grid_lista_pets.Columns["mana_atual1"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                Grid_lista_pets.Columns["vida_max"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                Grid_lista_pets.Columns["mana_atual"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 Grid_lista_pets.Columns["id_personagem"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 
                 if (Grid_lista_pets.Rows.Count > 0)

@@ -38,6 +38,7 @@
             // image_pers
             // 
             this.image_pers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.image_pers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.image_pers.Image = global::Dark_Age.Properties.Resources.download;
             this.image_pers.InitialImage = global::Dark_Age.Properties.Resources.download;
             this.image_pers.Location = new System.Drawing.Point(0, 9);
@@ -46,6 +47,7 @@
             this.image_pers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.image_pers.TabIndex = 0;
             this.image_pers.TabStop = false;
+            this.image_pers.Click += new System.EventHandler(this.image_pers_Click);
             // 
             // nome_perso
             // 

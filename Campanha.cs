@@ -25,7 +25,13 @@ namespace Dark_Age
         public Campanha()
         {
             InitializeComponent();
+
+            this.BackColor = Temas.cor_principal;
+
+            Temas.mudar_cor_data_grid(data_grid_campanha);
+            Temas.mudar_cor_data_grid(data_grid_pers_camp);
         }
+
 
         private void Campanha_Load(object sender, EventArgs e)
         {
@@ -74,6 +80,8 @@ namespace Dark_Age
                     data_grid_pers_camp.Columns["nivel"].HeaderText = "Nível";
                     data_grid_pers_camp.Columns["nivel"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                     data_grid_pers_camp.Columns["id_personagem"].Visible = false;
+                    data_grid_pers_camp.Columns["gold"].Visible = false;
+                    data_grid_pers_camp.Columns["silver"].Visible = false;
 
                     if (data_grid_pers_camp.Rows.Count > 0)
                     {
@@ -104,6 +112,8 @@ namespace Dark_Age
                         data_grid_pers_camp.Columns["nivel"].HeaderText = "Nível";
                         data_grid_pers_camp.Columns["nivel"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                         data_grid_pers_camp.Columns["id_personagem"].Visible = false;
+                        data_grid_pers_camp.Columns["gold"].Visible = false;
+                        data_grid_pers_camp.Columns["silver"].Visible = false;
                     }
                 }
                 if (data_grid_pers_camp.Rows.Count > 0)
@@ -195,6 +205,9 @@ namespace Dark_Age
                 }
                 id_personagem = (int)row.Cells[0].Value;
                 nome_personagem = row.Cells[1].Value.ToString();
+                Inventario.moedas_de_ouro = (int)row.Cells[4].Value;
+                Inventario.moedas_de_prata = (int)row.Cells[5].Value;
+
                 if (row.Cells[2].Value.ToString() == "Alquimista")
                 {
                     classe_personagem = 1;

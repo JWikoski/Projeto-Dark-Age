@@ -31,7 +31,7 @@ namespace Dark_Age
         public static int escudo;
         public static byte[] imagem_personagem;
         public static Image imagem_person;
-
+        public static Color cor_fundo = Color.FromArgb(10, 16, 20);
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -334,6 +334,7 @@ namespace Dark_Age
             info_entidade.select_atributos(Campanha.id_personagem, "'S'");
             info_entidade.select_talentos(Campanha.id_personagem, "'S'");
 
+
             res_ataque.Text = Ficha.bd_ataque.ToString();
             res_esquiva.Text = Ficha.bd_esquiva.ToString();
             res_defesa.Text = Ficha.bd_defesa.ToString();
@@ -451,7 +452,15 @@ namespace Dark_Age
             Opacity = 0;      //first the opacity is 0
 
             iconButton3.IconChar = FontAwesome.Sharp.IconChar.Minimize;
-            radioButton5.Checked = true;
+
+            if(Temas.tema_claro == true)
+            {
+                radioButton4.Checked = true;
+            }
+            else
+            {
+                radioButton3.Checked = true;
+            }
             timer1.Interval = 10;  //we'll increase the opacity every 10ms
             timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
             timer1.Start();
@@ -926,11 +935,41 @@ namespace Dark_Age
         private void recaregar_MouseEnter(object sender, EventArgs e)
         {
             style.houver_botao(sender);
+            label2.Text = "Atualizar";
+            label2.Visible = true;
         }
 
         private void btn_gravar_MouseEnter(object sender, EventArgs e)
         {
             style.houver_botao(sender);
+            label2.Text = "Salvar";
+            label2.Visible = true;
         }
+
+        private void recaregar_MouseLeave(object sender, EventArgs e)
+        {
+            label2.Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ColorDialog MyDialog = new ColorDialog();
+
+
+            MyDialog.AnyColor = true;
+            MyDialog.SolidColorOnly = false;
+            MyDialog.ShowHelp = true;
+            MyDialog.FullOpen = true;
+            MyDialog.AllowFullOpen = true;
+            MyDialog.Color = cor_fundo;
+
+
+            if (MyDialog.ShowDialog() == DialogResult.OK)
+                cor_fundo = MyDialog.Color;
+            this.BackColor = MyDialog.Color;
+            Form1.ActiveForm.BackgroundImage = null;
+        }
+
+        
     }
 }

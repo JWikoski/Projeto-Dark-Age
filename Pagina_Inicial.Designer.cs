@@ -129,8 +129,10 @@ namespace Dark_Age
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.btn_gravar = new FontAwesome.Sharp.IconButton();
             this.recaregar = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
@@ -166,6 +168,8 @@ namespace Dark_Age
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.lbl_danos = new System.Windows.Forms.Label();
             this.ficha_resumida.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -193,6 +197,7 @@ namespace Dark_Age
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             this.panel12.SuspendLayout();
             this.panel10.SuspendLayout();
+            this.panel17.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_open
@@ -269,6 +274,7 @@ namespace Dark_Age
             this.ficha_resumida.Controls.Add(this.panel16);
             this.ficha_resumida.Controls.Add(this.panel6);
             this.ficha_resumida.Controls.Add(this.panel5);
+            this.ficha_resumida.Controls.Add(this.Locais);
             this.ficha_resumida.Location = new System.Drawing.Point(40, 97);
             this.ficha_resumida.Name = "ficha_resumida";
             this.ficha_resumida.Size = new System.Drawing.Size(1079, 648);
@@ -1399,12 +1405,12 @@ namespace Dark_Age
             // panel16
             // 
             this.panel16.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel16.Controls.Add(this.panel17);
             this.panel16.Controls.Add(this.iniciativa);
             this.panel16.Controls.Add(this.movimento);
             this.panel16.Controls.Add(this.prata);
             this.panel16.Controls.Add(this.ouro);
             this.panel16.Controls.Add(this.iconPictureBox2);
-            this.panel16.Controls.Add(this.Locais);
             this.panel16.Controls.Add(this.iconPictureBox1);
             this.panel16.Location = new System.Drawing.Point(590, 173);
             this.panel16.Name = "panel16";
@@ -1425,7 +1431,7 @@ namespace Dark_Age
             this.iniciativa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iniciativa.IconSize = 36;
             this.iniciativa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iniciativa.Location = new System.Drawing.Point(21, 168);
+            this.iniciativa.Location = new System.Drawing.Point(20, 182);
             this.iniciativa.Name = "iniciativa";
             this.iniciativa.Size = new System.Drawing.Size(192, 39);
             this.iniciativa.TabIndex = 146;
@@ -1447,7 +1453,7 @@ namespace Dark_Age
             this.movimento.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.movimento.IconSize = 36;
             this.movimento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.movimento.Location = new System.Drawing.Point(23, 119);
+            this.movimento.Location = new System.Drawing.Point(20, 137);
             this.movimento.Name = "movimento";
             this.movimento.Rotation = -90D;
             this.movimento.Size = new System.Drawing.Size(189, 43);
@@ -1511,9 +1517,9 @@ namespace Dark_Age
             this.Locais.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Locais.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Locais.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Locais.Location = new System.Drawing.Point(207, 1);
+            this.Locais.Location = new System.Drawing.Point(997, 173);
             this.Locais.Name = "Locais";
-            this.Locais.Size = new System.Drawing.Size(191, 112);
+            this.Locais.Size = new System.Drawing.Size(64, 112);
             this.Locais.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Locais.TabIndex = 11;
             this.Locais.TabStop = false;
@@ -1682,7 +1688,7 @@ namespace Dark_Age
             // 
             this.mudaimagem.BackColor = System.Drawing.Color.DarkSlateGray;
             this.mudaimagem.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.mudaimagem.Location = new System.Drawing.Point(592, 13);
+            this.mudaimagem.Location = new System.Drawing.Point(682, 13);
             this.mudaimagem.Name = "mudaimagem";
             this.mudaimagem.Size = new System.Drawing.Size(196, 16);
             this.mudaimagem.TabIndex = 6;
@@ -1693,7 +1699,7 @@ namespace Dark_Age
             this.radioButton1.AutoSize = true;
             this.radioButton1.BackColor = System.Drawing.Color.Transparent;
             this.radioButton1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton1.Location = new System.Drawing.Point(181, 10);
+            this.radioButton1.Location = new System.Drawing.Point(271, 10);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(65, 19);
             this.radioButton1.TabIndex = 7;
@@ -1706,7 +1712,7 @@ namespace Dark_Age
             this.radioButton2.AutoSize = true;
             this.radioButton2.BackColor = System.Drawing.Color.Transparent;
             this.radioButton2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton2.Location = new System.Drawing.Point(373, 10);
+            this.radioButton2.Location = new System.Drawing.Point(463, 10);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(67, 19);
             this.radioButton2.TabIndex = 8;
@@ -1720,7 +1726,7 @@ namespace Dark_Age
             this.radioButton3.BackColor = System.Drawing.Color.Transparent;
             this.radioButton3.Checked = true;
             this.radioButton3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton3.Location = new System.Drawing.Point(88, 10);
+            this.radioButton3.Location = new System.Drawing.Point(178, 10);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(55, 19);
             this.radioButton3.TabIndex = 10;
@@ -1734,7 +1740,7 @@ namespace Dark_Age
             this.radioButton4.AutoSize = true;
             this.radioButton4.BackColor = System.Drawing.Color.Transparent;
             this.radioButton4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton4.Location = new System.Drawing.Point(283, 10);
+            this.radioButton4.Location = new System.Drawing.Point(373, 10);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(48, 19);
             this.radioButton4.TabIndex = 9;
@@ -1746,23 +1752,41 @@ namespace Dark_Age
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BackColor = System.Drawing.Color.Transparent;
+            this.panel7.Controls.Add(this.button2);
             this.panel7.Controls.Add(this.radioButton5);
             this.panel7.Controls.Add(this.radioButton3);
             this.panel7.Controls.Add(this.radioButton4);
             this.panel7.Controls.Add(this.mudaimagem);
             this.panel7.Controls.Add(this.radioButton2);
             this.panel7.Controls.Add(this.radioButton1);
-            this.panel7.Location = new System.Drawing.Point(788, 866);
+            this.panel7.Location = new System.Drawing.Point(707, 866);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(800, 32);
+            this.panel7.Size = new System.Drawing.Size(881, 32);
             this.panel7.TabIndex = 28;
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button2.Location = new System.Drawing.Point(51, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(109, 23);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Escolher cor";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.MouseEnter += new System.EventHandler(this.btn_change_MouseEnter);
+            this.button2.MouseHover += new System.EventHandler(this.btn_change_MouseEnter);
             // 
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
             this.radioButton5.BackColor = System.Drawing.Color.Transparent;
             this.radioButton5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton5.Location = new System.Drawing.Point(464, 10);
+            this.radioButton5.Location = new System.Drawing.Point(554, 10);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(78, 19);
             this.radioButton5.TabIndex = 11;
@@ -1775,6 +1799,7 @@ namespace Dark_Age
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.Transparent;
+            this.panel8.Controls.Add(this.label2);
             this.panel8.Controls.Add(this.btn_gravar);
             this.panel8.Controls.Add(this.recaregar);
             this.panel8.Controls.Add(this.iconButton5);
@@ -1785,6 +1810,19 @@ namespace Dark_Age
             this.panel8.Size = new System.Drawing.Size(1598, 102);
             this.panel8.TabIndex = 88;
             this.panel8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label2.Location = new System.Drawing.Point(1488, 45);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(110, 15);
+            this.label2.TabIndex = 89;
+            this.label2.Text = "Salvar";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Visible = false;
             // 
             // btn_gravar
             // 
@@ -1802,7 +1840,7 @@ namespace Dark_Age
             this.btn_gravar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_gravar.IconSize = 30;
             this.btn_gravar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_gravar.Location = new System.Drawing.Point(1494, 54);
+            this.btn_gravar.Location = new System.Drawing.Point(1494, 57);
             this.btn_gravar.Name = "btn_gravar";
             this.btn_gravar.Size = new System.Drawing.Size(45, 45);
             this.btn_gravar.TabIndex = 161;
@@ -1810,6 +1848,7 @@ namespace Dark_Age
             this.btn_gravar.UseVisualStyleBackColor = false;
             this.btn_gravar.Click += new System.EventHandler(this.btn_gravar_Click);
             this.btn_gravar.MouseEnter += new System.EventHandler(this.btn_gravar_MouseEnter);
+            this.btn_gravar.MouseLeave += new System.EventHandler(this.recaregar_MouseLeave);
             this.btn_gravar.MouseHover += new System.EventHandler(this.btn_gravar_MouseEnter);
             // 
             // recaregar
@@ -1836,6 +1875,7 @@ namespace Dark_Age
             this.recaregar.UseVisualStyleBackColor = false;
             this.recaregar.Click += new System.EventHandler(this.recaregar_Click);
             this.recaregar.MouseEnter += new System.EventHandler(this.recaregar_MouseEnter);
+            this.recaregar.MouseLeave += new System.EventHandler(this.recaregar_MouseLeave);
             this.recaregar.MouseHover += new System.EventHandler(this.recaregar_MouseEnter);
             // 
             // iconButton5
@@ -1880,7 +1920,7 @@ namespace Dark_Age
             this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton4.IconSize = 30;
             this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton4.Location = new System.Drawing.Point(1545, 6);
+            this.iconButton4.Location = new System.Drawing.Point(1550, 3);
             this.iconButton4.Name = "iconButton4";
             this.iconButton4.Size = new System.Drawing.Size(45, 45);
             this.iconButton4.TabIndex = 157;
@@ -2325,6 +2365,25 @@ namespace Dark_Age
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
+            // panel17
+            // 
+            this.panel17.AutoScroll = true;
+            this.panel17.Controls.Add(this.lbl_danos);
+            this.panel17.Location = new System.Drawing.Point(20, 3);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(358, 128);
+            this.panel17.TabIndex = 147;
+            // 
+            // lbl_danos
+            // 
+            this.lbl_danos.AutoSize = true;
+            this.lbl_danos.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_danos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbl_danos.Location = new System.Drawing.Point(3, 15);
+            this.lbl_danos.Name = "lbl_danos";
+            this.lbl_danos.Size = new System.Drawing.Size(0, 25);
+            this.lbl_danos.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AllowDrop = true;
@@ -2334,9 +2393,9 @@ namespace Dark_Age
             this.BackgroundImage = global::Dark_Age.Properties.Resources.image;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ficha_resumida);
             this.Controls.Add(this.painel_jogadores);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.bemvindo);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.btn_open);
@@ -2392,6 +2451,8 @@ namespace Dark_Age
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.panel10.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
+            this.panel17.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2534,6 +2595,10 @@ namespace Dark_Age
         private System.Windows.Forms.Panel panel_mana;
         private FontAwesome.Sharp.IconButton recaregar;
         private FontAwesome.Sharp.IconButton btn_gravar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Label lbl_danos;
     }
 }
 
