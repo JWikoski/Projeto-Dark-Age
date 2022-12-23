@@ -43,8 +43,8 @@ namespace Dark_Age
             this.Lbl_senha.AutoSize = true;
             this.Lbl_senha.BackColor = System.Drawing.Color.Transparent;
             this.Lbl_senha.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Lbl_senha.ForeColor = System.Drawing.Color.Silver;
-            this.Lbl_senha.Location = new System.Drawing.Point(24, 19);
+            this.Lbl_senha.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.Lbl_senha.Location = new System.Drawing.Point(24, 206);
             this.Lbl_senha.Name = "Lbl_senha";
             this.Lbl_senha.Size = new System.Drawing.Size(106, 45);
             this.Lbl_senha.TabIndex = 2;
@@ -57,7 +57,7 @@ namespace Dark_Age
             this.TbSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TbSenha.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TbSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.TbSenha.Location = new System.Drawing.Point(30, 84);
+            this.TbSenha.Location = new System.Drawing.Point(30, 271);
             this.TbSenha.Name = "TbSenha";
             this.TbSenha.ShortcutsEnabled = false;
             this.TbSenha.Size = new System.Drawing.Size(271, 29);
@@ -67,8 +67,8 @@ namespace Dark_Age
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Location = new System.Drawing.Point(30, 67);
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Location = new System.Drawing.Point(30, 254);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(130, 3);
             this.panel3.TabIndex = 4;
@@ -78,7 +78,7 @@ namespace Dark_Age
             this.ShowPass.AutoSize = true;
             this.ShowPass.BackColor = System.Drawing.Color.Transparent;
             this.ShowPass.ForeColor = System.Drawing.Color.Silver;
-            this.ShowPass.Location = new System.Drawing.Point(29, 142);
+            this.ShowPass.Location = new System.Drawing.Point(29, 329);
             this.ShowPass.Name = "ShowPass";
             this.ShowPass.Size = new System.Drawing.Size(101, 19);
             this.ShowPass.TabIndex = 7;
@@ -108,7 +108,7 @@ namespace Dark_Age
             this.LblSenhaInvalida.AutoSize = true;
             this.LblSenhaInvalida.BackColor = System.Drawing.Color.Transparent;
             this.LblSenhaInvalida.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.LblSenhaInvalida.Location = new System.Drawing.Point(157, 142);
+            this.LblSenhaInvalida.Location = new System.Drawing.Point(157, 329);
             this.LblSenhaInvalida.Name = "LblSenhaInvalida";
             this.LblSenhaInvalida.Size = new System.Drawing.Size(182, 15);
             this.LblSenhaInvalida.TabIndex = 9;
@@ -121,7 +121,8 @@ namespace Dark_Age
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BackgroundImage = global::Dark_Age.Properties.Resources._307364_Sepik;
+            this.BackgroundImage = global::Dark_Age.Properties.Resources.arvre;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(623, 357);
             this.Controls.Add(this.LblSenhaInvalida);
             this.Controls.Add(this.LblFecharLogin);

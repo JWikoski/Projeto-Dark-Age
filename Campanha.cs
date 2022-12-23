@@ -25,7 +25,13 @@ namespace Dark_Age
         public Campanha()
         {
             InitializeComponent();
+
+            this.BackColor = Temas.cor_principal;
+
+            Temas.mudar_cor_data_grid(data_grid_campanha);
+            Temas.mudar_cor_data_grid(data_grid_pers_camp);
         }
+
 
         private void Campanha_Load(object sender, EventArgs e)
         {
