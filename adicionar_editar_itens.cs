@@ -31,6 +31,16 @@ namespace Dark_Age
         public adicionar_editar_itens()
         {
             InitializeComponent();
+
+            combox_dificuldade.BackColor = Temas.cor_principal_secundaria;
+            combox_tipo.BackColor = Temas.cor_principal_secundaria;
+            combox_profissao.BackColor = Temas.cor_principal_secundaria;
+            this.BackColor = Temas.cor_principal_secundaria;
+
+            text_nome.BackColor = Temas.cor_principal;
+            btn_finalizar.BackColor = Temas.cor_principal;
+            richTextBox1.BackColor = Temas.cor_principal;
+            txt_dano.BackColor = Temas.cor_principal;
         }
         
         [System.Runtime.InteropServices.DllImport("user32.dll")]

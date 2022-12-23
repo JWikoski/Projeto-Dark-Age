@@ -564,10 +564,10 @@
             this.btn_adicionar.BackColor = System.Drawing.Color.Transparent;
             this.btn_adicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_adicionar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_adicionar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(196)))), ((int)(((byte)(118)))));
+            this.btn_adicionar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
             this.btn_adicionar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.btn_adicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_adicionar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(196)))), ((int)(((byte)(118)))));
+            this.btn_adicionar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
             this.btn_adicionar.Location = new System.Drawing.Point(9, 10);
             this.btn_adicionar.Margin = new System.Windows.Forms.Padding(0);
             this.btn_adicionar.Name = "btn_adicionar";

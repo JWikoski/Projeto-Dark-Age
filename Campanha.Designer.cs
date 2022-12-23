@@ -172,11 +172,12 @@
             // 
             this.btn_entrar_mestre.BackColor = System.Drawing.Color.Transparent;
             this.btn_entrar_mestre.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_entrar_mestre.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
             this.btn_entrar_mestre.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.btn_entrar_mestre.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.btn_entrar_mestre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_entrar_mestre.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_entrar_mestre.ForeColor = System.Drawing.Color.MediumAquamarine;
+            this.btn_entrar_mestre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
             this.btn_entrar_mestre.Location = new System.Drawing.Point(12, 499);
             this.btn_entrar_mestre.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.btn_entrar_mestre.Name = "btn_entrar_mestre";
@@ -208,11 +209,12 @@
             // btn_entrar
             // 
             this.btn_entrar.BackColor = System.Drawing.Color.Transparent;
+            this.btn_entrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
             this.btn_entrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.btn_entrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.btn_entrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_entrar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_entrar.ForeColor = System.Drawing.Color.MediumAquamarine;
+            this.btn_entrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
             this.btn_entrar.Location = new System.Drawing.Point(12, 499);
             this.btn_entrar.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.btn_entrar.Name = "btn_entrar";

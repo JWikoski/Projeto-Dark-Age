@@ -196,16 +196,16 @@ namespace Dark_Age
 
         private void adiciona_qtd_Click(object sender, EventArgs e)
         {
-            Ficha.tipo_entidade = 2;
-            Ficha.pers_criado = false;
-            Ficha ficha_pet = new Ficha();
-            ficha_pet.ShowDialog();
+            //Ficha.tipo_entidade = 2;
+            //Ficha.pers_criado = false;
+            //Ficha ficha_pet = new Ficha();
+            //ficha_pet.ShowDialog();
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            Conexao_BD.adotar_novo_pet(Campanha.id_campanha, Campanha.id_jogador, Pets.id_pet, Pets.vida_pet, Pets.vida_pet_max, Pets.mana_atual, Pets.tamanho);
-            carregar_data_grid();
+            //Conexao_BD.adotar_novo_pet(Campanha.id_campanha, Campanha.id_jogador, Pets.id_pet, Pets.vida_pet, Pets.vida_pet_max, Pets.mana_atual, Pets.tamanho);
+            //carregar_data_grid();
         }
     }
 }
