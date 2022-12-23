@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.remove_qtd = new FontAwesome.Sharp.IconButton();
             this.adiciona_qtd = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,17 +71,31 @@
             this.Grid_lista_itens = new System.Windows.Forms.DataGridView();
             this.limpar_filtros1 = new FontAwesome.Sharp.IconButton();
             this.btn_historia = new FontAwesome.Sharp.IconButton();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.pnl_filtro.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_lista_itens)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Location = new System.Drawing.Point(0, -1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1580, 807);
+            this.panel1.TabIndex = 2;
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panel10);
+            this.panel3.Controls.Add(this.panel8);
+            this.panel3.Controls.Add(this.panel7);
+            this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.remove_qtd);
             this.panel3.Controls.Add(this.adiciona_qtd);
             this.panel3.Controls.Add(this.label2);
@@ -97,6 +118,57 @@
             this.panel3.Size = new System.Drawing.Size(1577, 804);
             this.panel3.TabIndex = 89;
             this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.LightGray;
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(155)))), ((int)(((byte)(140)))));
+            this.panel10.Location = new System.Drawing.Point(3, 800);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(1568, 4);
+            this.panel10.TabIndex = 154;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.LightGray;
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(155)))), ((int)(((byte)(140)))));
+            this.panel8.Location = new System.Drawing.Point(1571, 4);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(6, 800);
+            this.panel8.TabIndex = 153;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.LightGray;
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(155)))), ((int)(((byte)(140)))));
+            this.panel7.Location = new System.Drawing.Point(0, 4);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(3, 800);
+            this.panel7.TabIndex = 152;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.LightGray;
+            this.panel6.Controls.Add(this.panel9);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(155)))), ((int)(((byte)(140)))));
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1577, 4);
+            this.panel6.TabIndex = 151;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.LightGray;
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(155)))), ((int)(((byte)(140)))));
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(3, 4);
+            this.panel9.TabIndex = 153;
             // 
             // remove_qtd
             // 
@@ -669,15 +741,6 @@
             this.btn_historia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_historia.UseVisualStyleBackColor = true;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Location = new System.Drawing.Point(0, -1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1580, 807);
-            this.panel1.TabIndex = 2;
-            // 
             // Lista_itens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -695,14 +758,15 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista_itens";
             this.Load += new System.EventHandler(this.Lista_itens_Load);
+            this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.pnl_filtro.ResumeLayout(false);
             this.pnl_filtro.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Grid_lista_itens)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -715,11 +779,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn profissao;
         private System.Windows.Forms.DataGridViewTextBoxColumn dificuldade;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
+        private FontAwesome.Sharp.IconButton remove_qtd;
+        private FontAwesome.Sharp.IconButton adiciona_qtd;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.RichTextBox text_descricao;
+        private System.Windows.Forms.Label lbl_qtd;
         private FontAwesome.Sharp.IconButton iconButton3;
         private System.Windows.Forms.Panel panel4;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Panel pnl_filtro;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbx_materiais;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton limpar_filtros2;
         private System.Windows.Forms.CheckBox filtro_tipo;
@@ -736,18 +809,15 @@
         private System.Windows.Forms.Button btn_adicionar;
         private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.Button btn_eliminar;
-        private System.Windows.Forms.RichTextBox text_descricao;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.DataGridView Grid_lista_itens;
         private FontAwesome.Sharp.IconButton limpar_filtros1;
-        private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconButton btn_historia;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel5;
-        private FontAwesome.Sharp.IconButton adiciona_qtd;
-        private System.Windows.Forms.Label lbl_qtd;
-        private FontAwesome.Sharp.IconButton remove_qtd;
-        private System.Windows.Forms.ComboBox cbx_materiais;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Timer timer1;
     }
 }

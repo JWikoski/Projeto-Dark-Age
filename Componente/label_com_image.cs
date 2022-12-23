@@ -26,5 +26,11 @@ namespace Dark_Age.Componente
             //   image_pers.Image = nome_p.Image; PictureBox image_p,
         }
 
+        private void image_pers_Click(object sender, EventArgs e)
+        {
+            visualizar_imagem.imagem_selecionada = image_pers.Image;
+            visualizar_imagem foto_personagem = new visualizar_imagem();
+            foto_personagem.Show();
+        }
     }
 }

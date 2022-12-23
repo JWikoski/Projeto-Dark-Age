@@ -26,10 +26,30 @@ namespace Dark_Age
         public Lista_itens()
         {
             InitializeComponent();
+
+            this.BackColor = Temas.cor_principal;
+            panel3.BackColor = Temas.cor_principal;
+            panel5.BackColor = Temas.cor_principal_secundaria;
+            text_descricao.BackColor = Temas.cor_principal_secundaria;
+            combox_profissao.BackColor = Temas.cor_principal_secundaria;
+            cbx_materiais.BackColor = Temas.cor_principal_secundaria;
+            combox_dificuldade.BackColor = Temas.cor_principal_secundaria;
+            combox_tipo.BackColor = Temas.cor_principal_secundaria;
+            pnl_filtro.BackColor = Temas.cor_principal_secundaria;
+            cmp_procura.BackColor = Temas.cor_principal_secundaria;
+
+
+            Temas.mudar_cor_data_grid(Grid_lista_itens);
         }
 
         private void Lista_itens_Load(object sender, EventArgs e)
-        {          
+        {
+            Opacity = 0;      //first the opacity is 0
+
+            timer1.Interval = 5;  //we'll increase the opacity every 10ms
+            timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
+            timer1.Start();
+
             Grid_lista_itens.DataSource = Conexao_BD.select_data_gridlist();
             carregar_data_grid();
             //Carrega as profissãoao abrir a tela
@@ -46,7 +66,13 @@ namespace Dark_Age
             combox_dificuldade.DisplayMember = "nome_enum_difi";
             qtd_lbl();
         }
-
+        void fadeIn(object sender, EventArgs e)
+        {
+            if (Opacity >= 1)
+                timer1.Stop();   //this stops the timer if the form is completely displayed
+            else
+                Opacity += 0.1;
+        }
         private void Grid_lista_itens_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -57,6 +83,10 @@ namespace Dark_Age
                 }
                 DataGridViewRow row = Grid_lista_itens.Rows[e.RowIndex];                
                 text_descricao.Text = row.Cells[5].Value.ToString();
+                if (row.Cells[7].Value.ToString() != "")
+                {
+                    text_descricao.Text += "\n\r \n\rDano: " + row.Cells[7].Value.ToString();
+                }
                 id_item = (int)row.Cells[0].Value;
             } catch (Exception a)
             {
@@ -120,7 +150,10 @@ namespace Dark_Age
                     Grid_lista_itens.Rows[0].Selected = true;
                     DataGridViewRow cell1 = Grid_lista_itens.Rows[0];
                     text_descricao.Text = cell1.Cells[5].Value.ToString();
-                    text_descricao.Text += "\n\r \n\rDano: "+cell1.Cells[7].Value.ToString();
+                    if (cell1.Cells[7].Value.ToString() != "")
+                    {
+                        text_descricao.Text += "\n\r \n\rDano: " + cell1.Cells[7].Value.ToString();
+                    }
                     id_item = (int)cell1.Cells[0].Value;
                 }
                 foreach (DataGridViewRow x in Grid_lista_itens.Rows)
@@ -382,14 +415,17 @@ namespace Dark_Age
         }
         private void btn_adicionar_inv_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("O inventário automático ainda está em desenvolvimento :( Por favor, adicione o item manualmente pela tela principal > Inventário");
-            //if (id_item > 0)
-            //{
-            //    Conexao_BD.insert_item_inventario(id_item, qtd);
-            //} else
-            //{
-            //    MessageBox.Show("Selecione o item antes de inserir no inventario!");
-            //}
+            if (id_item > 0)
+            {
+                Conexao_BD.insert_item_inventario(id_item, qtd);
+                lbl_qtd.Text = "1";
+                remove_qtd.Visible = false;
+                MessageBox.Show("Item adicionado ao inventário! (ツ)👍");
+            } else
+            {
+                MessageBox.Show("Selecione o item antes de inserir no inventario!");
+            }
+            
         }
 
         private void iconButton5_Click(object sender, EventArgs e)

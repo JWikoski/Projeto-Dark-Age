@@ -113,6 +113,16 @@ namespace Dark_Age.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arvre {
+            get {
+                object obj = ResourceManager.GetObject("arvre", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bloodcastle {
             get {
                 object obj = ResourceManager.GetObject("bloodcastle", resourceCulture);
@@ -156,6 +166,16 @@ namespace Dark_Age.Properties {
         internal static System.Drawing.Bitmap castlvania {
             get {
                 object obj = ResourceManager.GetObject("castlvania", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dano {
+            get {
+                object obj = ResourceManager.GetObject("dano", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -418,6 +438,46 @@ namespace Dark_Age.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lixo_aberto {
+            get {
+                object obj = ResourceManager.GetObject("lixo_aberto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lixo_aberto1 {
+            get {
+                object obj = ResourceManager.GetObject("lixo_aberto1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lixo_fechado {
+            get {
+                object obj = ResourceManager.GetObject("lixo_fechado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lixo_fechado1 {
+            get {
+                object obj = ResourceManager.GetObject("lixo_fechado1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap maxscreen {
             get {
                 object obj = ResourceManager.GetObject("maxscreen", resourceCulture);
@@ -471,6 +531,46 @@ namespace Dark_Age.Properties {
         internal static System.Drawing.Bitmap minimizarbt {
             get {
                 object obj = ResourceManager.GetObject("minimizarbt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mochila_aberta {
+            get {
+                object obj = ResourceManager.GetObject("mochila_aberta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mochila_aberta1 {
+            get {
+                object obj = ResourceManager.GetObject("mochila_aberta1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mochila_fechada {
+            get {
+                object obj = ResourceManager.GetObject("mochila_fechada", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mochila1 {
+            get {
+                object obj = ResourceManager.GetObject("mochila1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

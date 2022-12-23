@@ -12,9 +12,12 @@ namespace Dark_Age
 {
     public partial class visualizar_imagem : Form
     {
+        public static Image imagem_selecionada;
         public visualizar_imagem()
         {
             InitializeComponent();
+
+            this.BackgroundImage = imagem_selecionada;
 
             if (Form1.texto_imagem == "dracula")
             {

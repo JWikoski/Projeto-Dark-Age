@@ -127,6 +127,7 @@
             // btn_eliminar_campanha
             // 
             this.btn_eliminar_campanha.BackColor = System.Drawing.Color.Transparent;
+            this.btn_eliminar_campanha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_eliminar_campanha.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.btn_eliminar_campanha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_eliminar_campanha.ForeColor = System.Drawing.Color.Salmon;
@@ -148,6 +149,7 @@
             // btn_eliminar
             // 
             this.btn_eliminar.BackColor = System.Drawing.Color.Transparent;
+            this.btn_eliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_eliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_eliminar.ForeColor = System.Drawing.Color.Salmon;
@@ -169,6 +171,7 @@
             // btn_entrar_mestre
             // 
             this.btn_entrar_mestre.BackColor = System.Drawing.Color.Transparent;
+            this.btn_entrar_mestre.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_entrar_mestre.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.btn_entrar_mestre.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.btn_entrar_mestre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -187,6 +190,7 @@
             // btn_nova_campanha
             // 
             this.btn_nova_campanha.BackColor = System.Drawing.Color.Transparent;
+            this.btn_nova_campanha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_nova_campanha.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.btn_nova_campanha.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.btn_nova_campanha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -222,6 +226,7 @@
             // btn_criar_novo
             // 
             this.btn_criar_novo.BackColor = System.Drawing.Color.Transparent;
+            this.btn_criar_novo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_criar_novo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.btn_criar_novo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.btn_criar_novo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -263,6 +268,7 @@
             // btn_cancelar
             // 
             this.btn_cancelar.BackColor = System.Drawing.Color.Transparent;
+            this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cancelar.FlatAppearance.BorderSize = 0;
             this.btn_cancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.btn_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
@@ -279,6 +285,7 @@
             // btn_confirmar_camp
             // 
             this.btn_confirmar_camp.BackColor = System.Drawing.Color.Transparent;
+            this.btn_confirmar_camp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_confirmar_camp.FlatAppearance.BorderSize = 0;
             this.btn_confirmar_camp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.btn_confirmar_camp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
@@ -404,7 +411,7 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.data_grid_campanha.DefaultCellStyle = dataGridViewCellStyle5;
             this.data_grid_campanha.EnableHeadersVisualStyles = false;
-            this.data_grid_campanha.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            this.data_grid_campanha.GridColor = System.Drawing.Color.Fuchsia;
             this.data_grid_campanha.Location = new System.Drawing.Point(0, 0);
             this.data_grid_campanha.MultiSelect = false;
             this.data_grid_campanha.Name = "data_grid_campanha";
@@ -440,6 +447,7 @@
             // lbl_fechar
             // 
             this.lbl_fechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.lbl_fechar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_fechar.FlatAppearance.BorderSize = 0;
             this.lbl_fechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.lbl_fechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
