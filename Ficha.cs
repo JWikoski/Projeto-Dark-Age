@@ -4,7 +4,12 @@ using Npgsql;
 using System;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
+using System.Net;
+using System.Runtime.Intrinsics.Arm;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Ink;
 
 namespace Dark_Age
 {
@@ -21,12 +26,9 @@ namespace Dark_Age
         public static int pontos_totais = 0;
         public static int bd_ataque, bd_esquiva, bd_defesa, bd_contra_atq, bd_arematirar, bd_lancarmagia, bd_labia, bd_intimidacao, bd_esconder, bd_seduzir, bd_enganacao,
             bd_percepcao, bd_academicos, bd_ocultismo, bd_sobrevivencia, bd_investigacao, bd_intuicao, bd_etiqueta;
-        public static int bd_ataque2, bd_esquiva2, bd_defesa2, bd_contra_atq2, bd_arematirar2, bd_lancarmagia2, bd_labia2, bd_intimidacao2, bd_esconder2, bd_seduzir2, bd_enganacao2,
-            bd_percepcao2, bd_academicos2, bd_ocultismo2, bd_sobrevivencia2, bd_investigacao2, bd_intuicao2, bd_etiqueta2;
         public static int bd_sanidade = 3;
-        public static int bd_sanidade2 = 3;
         public static string classe_escolhida = "";
-        public static int id_classe;
+        public static int id_classe = 0;
         public static int idpersonagem = 0;
         public static int pontos_max = 10;
         public static int nivel = 1;
@@ -35,8 +37,9 @@ namespace Dark_Age
         public static int tipo_entidade;  //     | 1 - Personagem | 2 - Pet | 3 - NPC | 4- monstro |
         public DataTable tb_nivel;
         public static byte[] imagembyte_personagem;
-        public static int id_entidade;
+        public static int id_entidade = 0;
         public string tamanho = "";
+        public int total_ponto_talento;
 
         public Ficha()
         {
@@ -298,121 +301,170 @@ namespace Dark_Age
             btn_cria_personagem.FlatAppearance.MouseOverBackColor = Color.FromArgb(30, Color.White);
             btn_cria_personagem.BackColor = Color.Transparent;
         }
-
-
         private void btn_cria_personagem_Click(object sender, EventArgs e)
         {
-            cria_ou_update_pers();
-            Form1 frm = new Form1();
-            frm.Show();
-            this.Close();
+            string retorno = verificacao_informacao();	
+            if (retorno is null)
+            {
+				cria_ou_update_pers();
+				Form1 frm = new Form1();
+				frm.Show();
+				this.Close();
+            } else
+            {
+                MessageBox.Show(retorno);
+            }
+            
+            
         }
-
         private void button1_Enter(object sender, EventArgs e)
         {
             var button = (Button)sender;
             button.FlatAppearance.BorderSize = 1;
         }
-
         private void button1_Leave(object sender, EventArgs e)
         {
             var button = (Button)sender;
             button.FlatAppearance.BorderSize = 0;
         }
-
         private void ataque_ValueChanged(object sender, EventArgs e)
-        {            
-            bd_ataque2 = (int)ataque.Value;
+        {
+            if ((pontos_totais - pontos_hab) > 0)
+            {
+                bd_ataque = (int)ataque.Value;
+            }
         }
-
         private void esquiva_ValueChanged(object sender, EventArgs e)
         {
-            bd_esquiva2 = (int)esquiva.Value;
+            if ((pontos_totais - pontos_hab) > 0)
+            {
+                bd_esquiva = (int)esquiva.Value;
+            }
         }
-
         private void defesa_ValueChanged(object sender, EventArgs e)
         {
-            bd_defesa2 = (int)defesa.Value;
+            if ((pontos_totais - pontos_hab) > 0)
+            {
+                bd_defesa = (int)defesa.Value;
+            }
         }
-
         private void contrataque_ValueChanged(object sender, EventArgs e)
         {
-            bd_contra_atq2 = (int)contrataque.Value;
+            if ((pontos_totais - pontos_hab) > 0)
+            {
+                bd_contra_atq = (int)contrataque.Value;
+            }
         }
-
         private void arematirar_ValueChanged(object sender, EventArgs e)
         {
-            bd_arematirar2 = (int)arematirar.Value;
+            if ((pontos_totais - pontos_hab) > 0)
+            {
+                bd_arematirar = (int)arematirar.Value;
+            }
         }
-
         private void lancarmagia_ValueChanged(object sender, EventArgs e)
         {
-            bd_lancarmagia2 = (int)lancarmagia.Value;
+            if ((pontos_totais - pontos_hab) > 0)
+            {
+                bd_lancarmagia = (int)lancarmagia.Value;
+            }
         }
 
         private void labia_ValueChanged(object sender, EventArgs e)
         {
-            bd_labia2 = (int)labia.Value;
+            if ((pontos_totais - pontos_hab) > 0)
+            {
+                bd_labia = (int)labia.Value;
+            }
         }
 
         private void intimidacao_ValueChanged(object sender, EventArgs e)
         {
-            bd_intimidacao2 = (int)intimidacao.Value;
+            if ((pontos_totais - pontos_hab) > 0)
+            {
+                bd_intimidacao = (int)intimidacao.Value;
+            }
         }
 
         private void seduzir_ValueChanged(object sender, EventArgs e)
         {
-            bd_seduzir2 = (int)seduzir.Value;
+            if ((pontos_totais - pontos_hab) > 0)
+            {
+                bd_seduzir = (int)seduzir.Value;
+            }
         }
 
         private void enganacao_ValueChanged(object sender, EventArgs e)
         {
-            bd_enganacao2 = (int)enganacao.Value;
+            if ((pontos_totais - pontos_hab) > 0)
+            {
+                bd_enganacao = (int)enganacao.Value;
+            }
         }
-
         private void esconder_ValueChanged(object sender, EventArgs e)
         {
-            bd_esconder2 = (int)esconder.Value;
+            if ((pontos_totais - pontos_hab) > 0)
+            {
+                bd_esconder = (int)esconder.Value;
+            }
         }
-
         private void percepcao_ValueChanged(object sender, EventArgs e)
         {
-            bd_percepcao2 = (int)percepcao.Value;
+            if ((pontos_totais - pontos_hab) > 0)
+            {
+                bd_percepcao = (int)percepcao.Value;
+            }
         }
-
         private void academicos_ValueChanged(object sender, EventArgs e)
         {
-            bd_academicos2 = (int)academicos.Value;
+            if (((pontos_totais - pontos_hab) - pontos_hab) > 0)
+            {
+                bd_academicos = (int)academicos.Value;
+            }
         }
-
         private void ocultismo_ValueChanged(object sender, EventArgs e)
         {
-            bd_ocultismo2 = (int)ocultismo.Value;
+            if (((pontos_totais - pontos_hab) - pontos_hab) > 0)
+            {
+                bd_ocultismo = (int)ocultismo.Value;
+            }
         }
-
         private void sobrevivencia_ValueChanged(object sender, EventArgs e)
         {
-            bd_sobrevivencia2 = (int)sobrevivencia.Value;
+            if ((pontos_totais - pontos_hab) > 0)
+            {
+                bd_sobrevivencia = (int)sobrevivencia.Value;
+            }
         }
 
         private void investigacao_ValueChanged(object sender, EventArgs e)
         {
-            bd_investigacao2 = (int)investigacao.Value;
+            if ((pontos_totais - pontos_hab) > 0)
+            {
+				bd_investigacao = (int)investigacao.Value;
+			}
         }
 
         private void intuicao_ValueChanged(object sender, EventArgs e)
         {
-            bd_intuicao2 = (int)intuicao.Value;
+            if ((pontos_totais - pontos_hab) > 0)
+            {
+                bd_intuicao = (int)intuicao.Value;
+            }
         }
-
         private void etiqueta_ValueChanged(object sender, EventArgs e)
         {
-            bd_etiqueta2 = (int)etiqueta.Value;
+            if ((pontos_totais - pontos_hab) > 0)
+            {
+                bd_etiqueta = (int)etiqueta.Value;
+            }
         }
-
         private void sanidade_ValueChanged(object sender, EventArgs e)
         {
-            bd_sanidade2 = (int)sanidade.Value;
+            if (total_ponto_talento > 0)
+            {
+				bd_sanidade = (int)sanidade.Value;
+			}
         }
 
         private void nome_personagem_TextChanged(object sender, EventArgs e)
@@ -483,7 +535,8 @@ namespace Dark_Age
                 + Convert.ToInt32(arematirar.Value) + Convert.ToInt32(lancarmagia.Value) + Convert.ToInt32(labia.Value) + Convert.ToInt32(intimidacao.Value) + Convert.ToInt32(seduzir.Value)
                 + Convert.ToInt32(enganacao.Value) + Convert.ToInt32(esconder.Value) + Convert.ToInt32(percepcao.Value) + Convert.ToInt32(academicos.Value) + Convert.ToInt32(ocultismo.Value)
                 + Convert.ToInt32(sobrevivencia.Value) + Convert.ToInt32(investigacao.Value) + Convert.ToInt32(intuicao.Value) + Convert.ToInt32(etiqueta.Value) + Convert.ToInt32(sanidade.Value) - 3;
-            label40.Text = "Pontos de habilidade restantes: " + (pontos_totais - pontos_hab).ToString();
+            total_ponto_talento = pontos_totais - pontos_hab;
+			label40.Text = "Pontos de habilidade restantes: " + total_ponto_talento.ToString();
         }
 
         private void panel13_Paint(object sender, PaintEventArgs e)
@@ -492,7 +545,7 @@ namespace Dark_Age
         }
 
         private void ataque_Click(object sender, EventArgs e)
-        {
+        {            
             label_pontos();        
         }
 
@@ -540,17 +593,37 @@ namespace Dark_Age
             intuicao.Value = bd_intuicao;
             etiqueta.Value = bd_etiqueta;
             sanidade.Value = bd_sanidade;
-            carregar_nivel();
+            sanidade.Minimum = 3;
+
+			carregar_nivel();
             muda_ficha();
         }
 
         public void cria_ou_update_pers()
         {
             int[] atributos = new int[] {forca, destreza, vigor, carisma, raciocinio, magia};
-            int[] talentos = new int[] {bd_ataque2, bd_esquiva2, bd_defesa2, bd_contra_atq2, bd_arematirar2, bd_lancarmagia2, bd_labia2, bd_intimidacao2, bd_seduzir2, bd_enganacao2, bd_esconder2
-                        , bd_percepcao2, bd_academicos2, bd_ocultismo2, bd_sobrevivencia2, bd_investigacao2, bd_intuicao2, bd_etiqueta2, bd_sanidade2};
+            int[] talentos = new int[] {bd_ataque, bd_esquiva, bd_defesa, bd_contra_atq, bd_arematirar, bd_lancarmagia, bd_labia, bd_intimidacao, bd_seduzir, bd_enganacao, bd_esconder
+                        , bd_percepcao, bd_academicos, bd_ocultismo, bd_sobrevivencia, bd_investigacao, bd_intuicao, bd_etiqueta, bd_sanidade};
             imagembyte_personagem = byte_image.imageToByteArray(pictureBox1.Image);
             info_entidade.atualiza_ids(Campanha.id_personagem, Campanha.id_entidade, tipo_entidade, Campanha.nome_personagem, id_classe, nivel, imagembyte_personagem, atributos, talentos, Campanha.id_campanha, Campanha.id_jogador, tamanho, 0, 0);
+        }
+
+        public string verificacao_informacao()
+        {
+            if ((id_classe <= 0))
+            {
+                return "Selecione uma classe antes de confirmar o personagem!";
+            }else if (tipo_entidade == 0)
+            {
+                return "Selecione qual é o tipo entidade!";
+            }else if (Campanha.nome_personagem == "")
+            {
+                return "Digite o nome do personagem antes de confirmar!";
+            }else if (total_ponto_talento < 0)
+            {
+                return "A quantidade de Pontos de talentos esta negativo, verifique novamente e distribua os pontos corretamente até o máximo de 0 pontos restantes!";
+			}
+            return null;
         }
     }
 }

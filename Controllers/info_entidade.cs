@@ -105,7 +105,7 @@ namespace Dark_Age.Controllers
 				Ficha.bd_esconder = valores[10];
 				Ficha.bd_percepcao = valores[11];
 				Ficha.bd_academicos = valores[12];
-				Ficha.bd_ocultismo = valores[14];
+				Ficha.bd_ocultismo = valores[13];
 				Ficha.bd_sobrevivencia = valores[14];
 				Ficha.bd_investigacao = valores[15];
 				Ficha.bd_intuicao = valores[16];
