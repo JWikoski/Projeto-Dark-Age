@@ -9,6 +9,19 @@
 
   <ItemGroup>
     <None Remove="Resources\27d73469bbc9ede8f086363867373eb0.jpg" />
+    <None Remove="Resources\d10.png" />
+    <None Remove="Resources\d101.png" />
+    <None Remove="Resources\d102.png" />
+    <None Remove="Resources\d12.png" />
+    <None Remove="Resources\d12_hover.png" />
+    <None Remove="Resources\d20.png" />
+    <None Remove="Resources\d4-hover.png" />
+    <None Remove="Resources\d4.png" />
+    <None Remove="Resources\d41.png" />
+    <None Remove="Resources\d6.png" />
+    <None Remove="Resources\d61.png" />
+    <None Remove="Resources\d62.png" />
+    <None Remove="Resources\d8.png" />
     <None Remove="Resources\dano.png" />
     <None Remove="Resources\direita_festival.jpg" />
     <None Remove="Resources\esquerda_festival.jpg" />

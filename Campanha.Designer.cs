@@ -55,6 +55,7 @@
             this.data_grid_pers_camp = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.data_grid_campanha = new System.Windows.Forms.DataGridView();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lbl_fechar = new System.Windows.Forms.Button();
             this.lbl_bvd = new FontAwesome.Sharp.IconButton();
@@ -135,11 +136,11 @@
             this.btn_eliminar_campanha.IconColor = System.Drawing.Color.Salmon;
             this.btn_eliminar_campanha.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_eliminar_campanha.IconSize = 20;
-            this.btn_eliminar_campanha.Location = new System.Drawing.Point(183, 561);
+            this.btn_eliminar_campanha.Location = new System.Drawing.Point(174, 561);
             this.btn_eliminar_campanha.Name = "btn_eliminar_campanha";
-            this.btn_eliminar_campanha.Size = new System.Drawing.Size(141, 34);
+            this.btn_eliminar_campanha.Size = new System.Drawing.Size(150, 34);
             this.btn_eliminar_campanha.TabIndex = 9;
-            this.btn_eliminar_campanha.Text = "Excluir Campanha";
+            this.btn_eliminar_campanha.Text = "Desativar Campanha";
             this.btn_eliminar_campanha.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_eliminar_campanha.UseVisualStyleBackColor = false;
             this.btn_eliminar_campanha.Click += new System.EventHandler(this.btn_eliminar_campanha_Click);
@@ -353,7 +354,7 @@
             this.data_grid_pers_camp.DefaultCellStyle = dataGridViewCellStyle2;
             this.data_grid_pers_camp.EnableHeadersVisualStyles = false;
             this.data_grid_pers_camp.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
-            this.data_grid_pers_camp.Location = new System.Drawing.Point(3, 0);
+            this.data_grid_pers_camp.Location = new System.Drawing.Point(3, 13);
             this.data_grid_pers_camp.MultiSelect = false;
             this.data_grid_pers_camp.Name = "data_grid_pers_camp";
             this.data_grid_pers_camp.ReadOnly = true;
@@ -368,7 +369,7 @@
             this.data_grid_pers_camp.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.data_grid_pers_camp.RowTemplate.Height = 10;
             this.data_grid_pers_camp.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.data_grid_pers_camp.Size = new System.Drawing.Size(430, 614);
+            this.data_grid_pers_camp.Size = new System.Drawing.Size(430, 601);
             this.data_grid_pers_camp.TabIndex = 4;
             this.data_grid_pers_camp.VirtualMode = true;
             this.data_grid_pers_camp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_grid_pers_camp_CellClick);
@@ -414,7 +415,7 @@
             this.data_grid_campanha.DefaultCellStyle = dataGridViewCellStyle5;
             this.data_grid_campanha.EnableHeadersVisualStyles = false;
             this.data_grid_campanha.GridColor = System.Drawing.Color.Fuchsia;
-            this.data_grid_campanha.Location = new System.Drawing.Point(0, 0);
+            this.data_grid_campanha.Location = new System.Drawing.Point(0, 13);
             this.data_grid_campanha.MultiSelect = false;
             this.data_grid_campanha.Name = "data_grid_campanha";
             this.data_grid_campanha.ReadOnly = true;
@@ -429,12 +430,25 @@
             this.data_grid_campanha.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.data_grid_campanha.RowTemplate.Height = 10;
             this.data_grid_campanha.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.data_grid_campanha.Size = new System.Drawing.Size(430, 611);
+            this.data_grid_campanha.Size = new System.Drawing.Size(430, 585);
             this.data_grid_campanha.TabIndex = 3;
             this.data_grid_campanha.VirtualMode = true;
             this.data_grid_campanha.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_grid_campanha_CellClick);
             this.data_grid_campanha.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_grid_campanha_CellEnter);
             this.data_grid_campanha.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.data_grid_campanha_ColumnHeaderMouseClick);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.checkBox1.Location = new System.Drawing.Point(268, 75);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(177, 19);
+            this.checkBox1.TabIndex = 155;
+            this.checkBox1.Text = "Mostrar todas as campanhas";
+            this.checkBox1.UseVisualStyleBackColor = false;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // panel5
             // 
@@ -498,6 +512,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(1275, 704);
             this.ControlBox = false;
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.lbl_bvd);
             this.Controls.Add(this.lbl_fechar);
             this.Controls.Add(this.panel5);
@@ -522,6 +537,7 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.data_grid_campanha)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -551,5 +567,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button lbl_fechar;
         private FontAwesome.Sharp.IconButton lbl_bvd;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

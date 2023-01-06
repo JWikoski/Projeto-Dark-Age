@@ -16,12 +16,13 @@ namespace Dark_Age.Componente
         {
             InitializeComponent();
         }
-        public System.Windows.Forms.Control receber_valores( string nome_p, string nome_c, string nome_u, Image image_p)
+        public System.Windows.Forms.Control receber_valores( string nome_p, string nome_c, string nome_u, Image image_p, int vida_max, int vida_atual)
         {
             nome_perso.Text = nome_p.ToString();
             nome_classe.Text = nome_c.ToString();
             nome_user.Text = nome_u.ToString();
             image_pers.Image = image_p;
+            Vida_jogador_s.Text = "Vida: "+ vida_atual.ToString()+" / "+ vida_max.ToString();
             return null;
             //   image_pers.Image = nome_p.Image; PictureBox image_p,
         }
@@ -32,5 +33,6 @@ namespace Dark_Age.Componente
             visualizar_imagem foto_personagem = new visualizar_imagem();
             foto_personagem.Show();
         }
+
     }
 }

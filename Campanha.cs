@@ -22,11 +22,15 @@ namespace Dark_Age
         public static int id_mestre_campanha;
         public static string nome_personagem;
         public static int id_entidade = 0;
+        public static Boolean ativa = true;
         public Campanha()
         {
             InitializeComponent();
 
             this.BackColor = Temas.cor_principal;
+
+            txt_nome_campanha.BackColor = Temas.cor_principal_secundaria;
+            pnl_nome_campanha.BackColor = Temas.cor_principal_secundaria;
 
             Temas.mudar_cor_data_grid(data_grid_campanha);
             Temas.mudar_cor_data_grid(data_grid_pers_camp);
@@ -45,7 +49,7 @@ namespace Dark_Age
         {
             try
             {
-                data_grid_campanha.DataSource = Conexao_BD.select_campanha();
+                data_grid_campanha.DataSource = Conexao_BD.select_campanha(ativa);
                 data_grid_campanha.Columns["nome_campanha"].HeaderText = "Campanhas";
                 data_grid_campanha.Columns["id_campanha"].Visible = false;
                 data_grid_campanha.Columns["fk_id_jogador_mestre"].Visible = false;
@@ -252,13 +256,14 @@ namespace Dark_Age
         }
         private void btn_eliminar_campanha_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Não vai deletar nada, pois vai saber oque pode acontecer!");
+            Conexao_BD.deletar_campanha(Campanha.id_campanha, Campanha.id_jogador);
+            carrega_data_grid_campanha();
         }
         private void btn_confirmar_camp_Click(object sender, EventArgs e)
         {
             Conexao_BD.criar_nova_campanha(txt_nome_campanha.Text, id_jogador);
             pnl_nome_campanha.Visible = false;
-            MessageBox.Show("Criado com sucesso campanha e vinculo do mestre");
+            MessageBox.Show("Campanha criada com sucesso! \n\r Para acessar sua tela de Mestre, clique na campanha e depois no botão 'Tela do Mestre - Entrar'");
             carrega_data_grid_campanha();
             //this.Close();
         }
@@ -350,5 +355,18 @@ namespace Dark_Age
             button.ForeColor = Color.Salmon;
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked == true)
+            {
+                ativa = false;
+                carrega_data_grid_campanha();
+            }
+            else
+            {
+                ativa = true;
+                carrega_data_grid_campanha();
+            }
+        }
     }
 }

@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Dark_Age.Componente;
+﻿using Dark_Age.Componente;
 using Dark_Age.Controllers;
 using Dark_Age.Enteties;
 using Npgsql;
+using System;
+using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Dark_Age
 {
@@ -21,15 +16,111 @@ namespace Dark_Age
         public static string regras;
         Boolean minmax = false;
         public static string sanidades;
+        public static int id_entidade;
+
 
         public Pagina_mestre()
         {
             InitializeComponent();
+
+
+            Grid_lista_iniciativas.DataSource = Conexao_BD.select_iniciativa(Campanha.id_campanha);
+            this.BackColor = Temas.cor_principal;
+            txt_regras.BackColor = Temas.cor_principal;
+            txt_sanidade.BackColor = Temas.cor_principal;
+            txt_historia.BackColor = Temas.cor_principal;
+            btn_iniciativa.BackColor = Temas.cor_principal_secundaria;
+            txt_outros.BackColor = Temas.cor_principal;
+            pnl_entidades.BackColor = Temas.cor_principal;
+            btn_outros.BackColor = Temas.cor_principal;
+            btn_regras.BackColor = Temas.cor_principal;
+            btn_sanidades.BackColor = Temas.cor_principal;
+            Temas.mudar_cor_data_grid(Grid_lista_iniciativas);
+        }
+
+        public void carregar_data_grid()
+        {
+            try
+            {
+
+                Grid_lista_iniciativas.DataSource = Conexao_BD.select_iniciativa(Campanha.id_campanha);
+                if (Grid_lista_iniciativas.Rows.Count > 0)
+                {
+                    Grid_lista_iniciativas.Columns["id_personagem"].Visible = false;
+                    Grid_lista_iniciativas.Columns["nome_personagem"].ReadOnly = true;
+                    Grid_lista_iniciativas.Columns["iniciativa"].FillWeight = 40;
+                    Grid_lista_iniciativas.Columns["iniciativa"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                }
+                foreach (DataGridViewRow x in Grid_lista_iniciativas.Rows)
+                {
+                    x.MinimumHeight = 40;
+                }
+
+            }
+            catch (Exception a)
+            {
+                MessageBox.Show("ERRO no data grid ", "Erro:" + a);
+            }
+
+        }
+
+        public void Lista_de_personagens()
+        {
+            string nome_c;
+            string nome_p;
+            string nome_u;
+            int id_e;
+            int vida_max_sel = 0;
+            int vida_atual_sel = 0;
+            Image image_p;
+            int distancia = 0;
+            try
+            {
+                DataTable ndv = Conexao_BD.select_personagem_campanha(0, Campanha.id_campanha);
+
+
+                foreach (DataRow dr in ndv.Rows)
+                {
+                    label_com_image personagens = new label_com_image();
+                    id_e = (int)dr["id_entidade"];
+                    nome_p = dr["nome_personagem"].ToString();
+                    nome_c = ("Classe: " + dr["nome_classe"].ToString());
+                    nome_u = ("Jogador: " + dr["nome_jogador"].ToString());
+                    byte[] imagem_byte = ((byte[])dr["imagem"]);
+                    image_p = byte_image.byteArrayToImage(imagem_byte);
+
+                    string[] valor = info_entidade.select_personagem(1, id_e, 0, Campanha.id_campanha);
+
+                    vida_atual_sel = Int32.Parse(valor[2]);
+                    vida_max_sel = Int32.Parse(valor[3]);
+
+                    personagens.receber_valores(nome_p, nome_c, nome_u, image_p, vida_max_sel, vida_atual_sel);
+                    personagens.Dock = DockStyle.None;
+                    personagens.Left = 20;
+
+                    Panel pnlDefault = new Panel();
+                    pnlDefault.BackColor = Color.Transparent;
+                    pnlDefault.Dock = DockStyle.None;
+                    pnlDefault.Top = (personagens.Size.Height * distancia + 10);
+                    pnlDefault.AutoSize = true;
+                    // pnlDefault.BorderStyle = BorderStyle.FixedSingle;
+
+                    pnl_entidades.Controls.Add(pnlDefault);
+                    pnlDefault.Controls.Add(personagens);
+
+                    distancia++;
+                }
+
+            }
+            catch (Exception a)
+            {
+                MessageBox.Show("ERRO no carregar as informações", "Erro:" + a);
+            }
         }
 
         private void Pagina_mestre_Load(object sender, EventArgs e)
         {
-            bemvindo.Text = "Bem-Vindo(a) a sua tela de mestre, "+Login.nome_jogador;
+            bemvindo.Text = "Bem-Vindo(a) a sua tela de mestre, " + Login.nome_jogador;
             lbl_titulo.Text = Campanha.nome_campanha;
             Conexao_BD.Select_historia_e_anotacoes(ref historia, ref anotacoes);
             txt_historia.Text = historia;
@@ -39,6 +130,7 @@ namespace Dark_Age
             timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
             timer1.Start();
 
+            carregar_data_grid();
             Conexao_BD.Select_Regras(ref regras, ref sanidades);
             txt_regras.Text = regras;
             txt_sanidade.Text = sanidades;
@@ -65,7 +157,7 @@ namespace Dark_Age
             btn_regras.BackColor = Color.Transparent;
             btn_sanidades.BackColor = Color.Transparent;
             btn_outros.BackColor = Color.Transparent;
-            btn_historia.BackColor = Color.FromArgb(50, 50, 67);
+            btn_historia.BackColor = Color.FromArgb(40, 40, 57);
         }
 
 
@@ -79,7 +171,7 @@ namespace Dark_Age
 
             lbl_titulo.Text = "Regras do Sistema";
 
-            btn_regras.BackColor = Color.FromArgb(50, 50, 67);
+            btn_regras.BackColor = Color.FromArgb(40, 40, 57);
             btn_sanidades.BackColor = Color.Transparent;
             btn_outros.BackColor = Color.Transparent;
             btn_historia.BackColor = Color.Transparent;
@@ -96,7 +188,7 @@ namespace Dark_Age
             lbl_titulo.Text = "Lista de Insanidades e Manias/Fobias";
 
             btn_regras.BackColor = Color.Transparent;
-            btn_sanidades.BackColor = Color.FromArgb(50, 50, 67);
+            btn_sanidades.BackColor = Color.FromArgb(40, 40, 57);
             btn_outros.BackColor = Color.Transparent;
             btn_historia.BackColor = Color.Transparent;
         }
@@ -113,7 +205,7 @@ namespace Dark_Age
 
             btn_regras.BackColor = Color.Transparent;
             btn_sanidades.BackColor = Color.Transparent;
-            btn_outros.BackColor = Color.FromArgb(50, 50, 67);
+            btn_outros.BackColor = Color.FromArgb(40, 40, 57);
             btn_historia.BackColor = Color.Transparent;
         }
 
@@ -134,12 +226,12 @@ namespace Dark_Age
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
+            pnl_entidades.Controls.Clear();
             lbl_npc.Text = "NPC's";
         }
 
         private void HoverEnter_MouseEnter(object sender, EventArgs e)
         {
-
             style.houver_botao(sender);
         }
 
@@ -151,20 +243,23 @@ namespace Dark_Age
 
         private void btn_monstros_Click(object sender, EventArgs e)
         {
+            pnl_entidades.Controls.Clear();
             lbl_npc.Text = "Monstros";
         }
 
         private void btn_jogadores_Click(object sender, EventArgs e)
         {
-            lbl_npc.Text = "Jogadores";
+            lbl_npc.Text = "Personagens";
+            pnl_entidades.Controls.Clear();
+            Lista_de_personagens();
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
-        {            
+        {
             salvar_alteracoes();
             Application.Exit();
         }
-       public void salvar_alteracoes()
+        public void salvar_alteracoes()
         {
             NpgsqlConnection conn = new NpgsqlConnection(Conexao_BD.Caminho_DB());
             conn.Open();
@@ -223,7 +318,7 @@ namespace Dark_Age
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
-           
+
             if (minmax == true)
             {
                 this.WindowState = FormWindowState.Normal;
@@ -251,7 +346,138 @@ namespace Dark_Age
             MessageBox.Show("Alterações salvas!");
         }
 
-        
+        private void Grid_lista_iniciativas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex == -1)
+                {
+                    return;
+                }
+                DataGridViewRow row = Grid_lista_iniciativas.Rows[e.RowIndex];
+                id_entidade = (int)row.Cells[0].Value;
+            }
+            catch (Exception a)
+            {
+                MessageBox.Show("ERRO click na grid ", "Erro:" + a);
+            }
+        }
+
+        private void Grid_lista_iniciativas_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewCell cell = Grid_lista_iniciativas.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            if((int)cell.Value == 0)
+            {
+                cell.Value = 0;
+            }
+            Conexao_BD.update_iniciativa(id_entidade, (int)cell.Value);
+            carregar_data_grid();
+        }
+
+        private void btn_desequipar_Click(object sender, EventArgs e)
+        {
+            Conexao_BD.update_iniciativa(id_entidade, -20);
+            carregar_data_grid();
+        }
+
+        private void iconButton8_Click(object sender, EventArgs e)
+        {
+            btn_iniciativa.BackColor = Color.FromArgb(40, 40, 57);
+            btn_chat.BackColor = Color.Transparent;
+            btn_chat.ForeColor = Color.Silver;
+            btn_iniciativa.ForeColor = Color.White;
+            panel13.Visible = true;
+            pnl_chat.Visible = false;
+            btn_iniciativa.Focus();
+        }
+
+        private void btn_chat_Click(object sender, EventArgs e)
+        {
+            btn_chat.BackColor = Color.FromArgb(40, 40, 57);
+            btn_iniciativa.BackColor = Color.Transparent;
+            btn_chat.ForeColor = Color.White;
+            btn_iniciativa.ForeColor = Color.Silver;
+            pnl_chat.Visible = true;
+            panel13.Visible = false;
+            btn_chat.Focus();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButton9_Click(object sender, EventArgs e)
+        {
+            if(pnl_insanidades_chat.Visible == true)
+            {
+                pnl_insanidades_chat.Visible = false;
+            }
+            else
+            {
+                pnl_insanidades_chat.Visible = true;
+            }
+        }
+
+        private void pictureBox1_MouseHover(object sender, EventArgs e)
+        {
+            d4.BackgroundImage = global::Dark_Age.Properties.Resources.d43;
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            d4.BackgroundImage = global::Dark_Age.Properties.Resources.d42;
+        }
+
+        private void pictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            d6.BackgroundImage = global::Dark_Age.Properties.Resources.d6_hover;
+        }
+
+        private void d6_MouseLeave(object sender, EventArgs e)
+        {
+            d6.BackgroundImage = global::Dark_Age.Properties.Resources.d63;
+        }
+
+        private void d8_MouseEnter(object sender, EventArgs e)
+        {
+            d8.BackgroundImage = global::Dark_Age.Properties.Resources.d8_hover;
+        }
+
+        private void d8_MouseLeave(object sender, EventArgs e)
+        {
+            d8.BackgroundImage = global::Dark_Age.Properties.Resources.d81;
+        }
+
+        private void d10_MouseEnter(object sender, EventArgs e)
+        {
+            d10.BackgroundImage = global::Dark_Age.Properties.Resources.d10_hover;
+        }
+
+        private void d10_MouseLeave(object sender, EventArgs e)
+        {
+            d10.BackgroundImage = global::Dark_Age.Properties.Resources.d103;
+        }
+
+        private void d12_MouseEnter(object sender, EventArgs e)
+        {
+            d12.BackgroundImage = global::Dark_Age.Properties.Resources.d12_hover1;
+        }
+
+        private void d12_MouseLeave(object sender, EventArgs e)
+        {
+            d12.BackgroundImage = global::Dark_Age.Properties.Resources.d121;
+        }
+
+        private void d20_MouseEnter(object sender, EventArgs e)
+        {
+            d20.BackgroundImage = global::Dark_Age.Properties.Resources.d20_hover;
+        }
+
+        private void d20_MouseLeave(object sender, EventArgs e)
+        {
+            d20.BackgroundImage = global::Dark_Age.Properties.Resources.d201;
+        }
     }
 
 }
