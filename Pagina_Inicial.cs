@@ -665,6 +665,10 @@ namespace Dark_Age
             Form1.ActiveForm.BackgroundImage = null;
         }
 
-        
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Profissoes profissoes = new Profissoes();
+            profissoes.Show();
+        }
     }
 }

@@ -29,6 +29,9 @@
     <Compile Update="Pets.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Profissoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Temas.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -121,6 +121,7 @@ namespace Dark_Age.Enteties
             {
                 using NpgsqlDataAdapter dt_adapter_profissao = new NpgsqlDataAdapter($@"select id_profissao
                                                                                        , nome_profissao
+                                                                                       , descricao_profissao
                                                                                     from ""Dark_Age_Connection"".""Profissao""
                                                                                    order by id_profissao ;", Conexao_BD.Caminho_DB());
 
@@ -131,6 +132,30 @@ namespace Dark_Age.Enteties
                 return dt_table_retorno_profissao;
 
             } catch (NpgsqlException a)
+            {
+                MessageBox.Show("ERRO nas profissoes: " + a);
+                return null;
+            }
+        }
+        public static DataTable select_maestria()
+        {
+            try
+            {
+                using NpgsqlDataAdapter dt_adapter_maestria = new NpgsqlDataAdapter($@"select id_maestria
+                                                                                       , nome
+                                                                                       , descricao
+                                                                                       , bp
+                                                                                    from ""Dark_Age_Connection"".""maestria""
+                                                                                   order by id_maestria ;", Conexao_BD.Caminho_DB());
+
+                DataTable dt_table_retorno_maestria = new DataTable();
+
+                dt_adapter_maestria.Fill(dt_table_retorno_maestria);
+
+                return dt_table_retorno_maestria;
+
+            }
+            catch (NpgsqlException a)
             {
                 MessageBox.Show("ERRO nas profissoes: " + a);
                 return null;
@@ -514,6 +539,108 @@ namespace Dark_Age.Enteties
                 return null;
             }
 
+        }
+
+        public static void adicionar_profissao(int id_personagem, int id_profissao, int id_maestria)
+        {
+            using NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
+            conn.Open();
+            using NpgsqlCommand comm = new NpgsqlCommand();
+
+            comm.Connection = conn;
+            comm.CommandType = CommandType.Text;
+            comm.CommandText = $@"INSERT INTO ""Dark_Age_Connection"".""inter_profissao_pers"" (fk_id_personagem, fk_id_profissao, fk_id_maestria) 
+                                       VALUES (@id_personagem, @id_profissao, @id_maestria)";
+            comm.Parameters.AddWithValue("@id_personagem", id_personagem);
+            comm.Parameters.AddWithValue("@id_profissao", id_profissao);
+            comm.Parameters.AddWithValue("@id_maestria", id_maestria);
+            comm.ExecuteNonQuery();
+        }
+
+        public static void remover_profissao(int id_personagem, int id_profissao)
+        {
+            using NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
+            conn.Open();
+            using NpgsqlCommand comm = new NpgsqlCommand();
+
+            comm.Connection = conn;
+            comm.CommandType = CommandType.Text;
+            comm.CommandText = $@"DELETE FROM ""Dark_Age_Connection"".""inter_profissao_pers"" 
+                                         WHERE fk_id_personagem = @id_personagem
+                                         AND fk_id_profissao = @id_profissao";
+            comm.Parameters.AddWithValue("@id_personagem", id_personagem);
+            comm.Parameters.AddWithValue("@id_profissao", id_profissao);
+            comm.ExecuteNonQuery();
+        }
+
+        public static void atualizar_maestria(int id_personagem, int id_profissao, int id_maestria)
+        {
+            using NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
+            conn.Open();
+            using NpgsqlCommand comm = new NpgsqlCommand();
+
+            comm.Connection = conn;
+            comm.CommandType = CommandType.Text;
+            comm.CommandText = $@"UPDATE ""Dark_Age_Connection"".""inter_profissao_pers""
+                                  SET fk_id_maestria = @id_maestria
+                                  WHERE fk_id_profissao = @id_profissao
+                                  AND fk_id_personagem = @id_personagem";
+            comm.Parameters.AddWithValue("@id_personagem", id_personagem);
+            comm.Parameters.AddWithValue("@id_profissao", id_profissao);
+            comm.Parameters.AddWithValue("@id_maestria", id_maestria);
+            comm.ExecuteNonQuery();
+        }
+
+        public static Boolean checar_profissao(int id_personagem, int id_profissao)
+        {
+            using NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
+            conn.Open();
+            using NpgsqlCommand comm = new NpgsqlCommand();
+
+            comm.Connection = conn;
+            comm.CommandType = CommandType.Text;
+            comm.CommandText = $@"SELECT * FROM ""Dark_Age_Connection"".""inter_profissao_pers"" 
+                                  WHERE fk_id_personagem = @id_personagem 
+                                  AND fk_id_profissao = @id_profissao";
+            comm.Parameters.AddWithValue("@id_personagem", id_personagem);
+            comm.Parameters.AddWithValue("@id_profissao", id_profissao);
+
+            using NpgsqlDataReader chk = comm.ExecuteReader();
+            if (chk.Read())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static DataTable select_profissoes_escolhidas()
+        {
+            try
+            {
+                using NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"select ipp.id_pp as id_inter_profissao
+                                                                                 , p.nome_profissao
+                                                                                 , p.descricao_profissao 
+                                                                                 , m.nome 
+                                                                                 , m.descricao 
+                                                                                 , ipp.fk_id_maestria
+                                                                              from ""Dark_Age_Connection"".inter_profissao_pers ipp 
+                                                                              join ""Dark_Age_Connection"".""Profissao"" p on p.id_profissao = ipp.fk_id_profissao
+                                                                              join ""Dark_Age_Connection"".maestria m on m.id_maestria = ipp.fk_id_maestria
+                                                                              where ipp.fk_id_personagem = " + Campanha.id_personagem, Conexao_BD.Caminho_DB());
+                using NpgsqlCommandBuilder cBuilder = new NpgsqlCommandBuilder(dt_adapter);
+                DataTable dt_table = new DataTable();
+
+                dt_adapter.Fill(dt_table);
+                return dt_table;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("ERRO ao nas profissões escolhidas: " + e);
+                return null;
+            }
         }
     }
 }
