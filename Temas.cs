@@ -102,12 +102,29 @@ namespace Dark_Age
 
         private void claro_MouseEnter(object sender, EventArgs e)
         {
+            if (tema_claro == true)
+            {
+                claro.FlatAppearance.MouseOverBackColor = cor_principal_secundaria;
+            }
+            else
+            {
+                claro.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            }
+           
             claro.ForeColor = Color.Khaki;
             claro.IconColor = Color.Khaki;
         }
 
         private void escuro_MouseEnter(object sender, EventArgs e)
         {
+            if (tema_escuro == true)
+            {
+                escuro.FlatAppearance.MouseOverBackColor = cor_principal_secundaria;
+            }
+            else
+            {
+                escuro.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            }
             escuro.ForeColor = Color.SteelBlue;
             escuro.IconColor = Color.SteelBlue;
         }

@@ -89,6 +89,8 @@ namespace Dark_Age
             this.label9 = new System.Windows.Forms.Label();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
             this.button4 = new System.Windows.Forms.Button();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.moedas_ouro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moedas_prata)).BeginInit();
             this.panel2.SuspendLayout();
@@ -348,9 +350,9 @@ namespace Dark_Age
             this.iconButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.iconButton4.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.iconButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Store;
-            this.iconButton4.IconColor = System.Drawing.Color.White;
+            this.iconButton4.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton4.IconSize = 35;
             this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -627,6 +629,7 @@ namespace Dark_Age
             this.combox_profissao.Name = "combox_profissao";
             this.combox_profissao.Size = new System.Drawing.Size(155, 23);
             this.combox_profissao.TabIndex = 95;
+            this.combox_profissao.Click += new System.EventHandler(this.combox_profissao_Click);
             // 
             // combox_tipo
             // 
@@ -640,6 +643,7 @@ namespace Dark_Age
             this.combox_tipo.Name = "combox_tipo";
             this.combox_tipo.Size = new System.Drawing.Size(155, 23);
             this.combox_tipo.TabIndex = 94;
+            this.combox_tipo.Click += new System.EventHandler(this.combox_tipo_Click);
             // 
             // combox_dificuldade
             // 
@@ -655,6 +659,7 @@ namespace Dark_Age
             this.combox_dificuldade.Name = "combox_dificuldade";
             this.combox_dificuldade.Size = new System.Drawing.Size(155, 23);
             this.combox_dificuldade.TabIndex = 93;
+            this.combox_dificuldade.Click += new System.EventHandler(this.combox_dificuldade_Click);
             // 
             // label3
             // 
@@ -889,7 +894,7 @@ namespace Dark_Age
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(345, 40);
             this.button3.TabIndex = 163;
-            this.button3.Text = "Usar/Remover da Mochila";
+            this.button3.Text = "Remover da Mochila";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             this.button3.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
@@ -1167,5 +1172,7 @@ namespace Dark_Age
         private FontAwesome.Sharp.IconButton adiciona_qtd;
         private System.Windows.Forms.Label lbl_qtd;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer3;
     }
 }

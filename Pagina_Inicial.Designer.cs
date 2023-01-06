@@ -30,12 +30,18 @@ namespace Dark_Age
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btn_open = new System.Windows.Forms.Button();
-            this.painel_jogadores = new System.Windows.Forms.Panel();
+            this.pnl_iniciativas = new System.Windows.Forms.Panel();
+            this.data_grid_iniciativa = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbl_jogar_iniciativa = new FontAwesome.Sharp.IconButton();
             this.bemvindo = new System.Windows.Forms.Label();
             this.ficha_resumida = new System.Windows.Forms.Panel();
+            this.temp_danos = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -93,7 +99,6 @@ namespace Dark_Age
             this.res_percepcao = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.res_esconder = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
             this.res_intimidacao = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
@@ -101,7 +106,6 @@ namespace Dark_Age
             this.button10 = new System.Windows.Forms.Button();
             this.label37 = new System.Windows.Forms.Label();
             this.res_conjurar = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
             this.res_atirar = new System.Windows.Forms.Label();
             this.res_esquiva = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
@@ -109,6 +113,10 @@ namespace Dark_Age
             this.label57 = new System.Windows.Forms.Label();
             this.label58 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.iconButton5 = new FontAwesome.Sharp.IconButton();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.lbl_danos = new System.Windows.Forms.Label();
+            this.iniciativa_bonus = new FontAwesome.Sharp.IconButton();
             this.panel17 = new System.Windows.Forms.Panel();
             this.lbl_danos = new System.Windows.Forms.Label();
             this.iniciativa = new FontAwesome.Sharp.IconButton();
@@ -137,9 +145,9 @@ namespace Dark_Age
             this.label2 = new System.Windows.Forms.Label();
             this.btn_gravar = new FontAwesome.Sharp.IconButton();
             this.recaregar = new FontAwesome.Sharp.IconButton();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.btn_jogadores = new FontAwesome.Sharp.IconButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -170,8 +178,30 @@ namespace Dark_Age
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.btn_iniciativa = new FontAwesome.Sharp.IconButton();
+            this.btn_chat = new FontAwesome.Sharp.IconButton();
+            this.personagens = new System.Windows.Forms.Panel();
+            this.pnl_chat = new System.Windows.Forms.Panel();
+            this.pnl_mensagens = new System.Windows.Forms.Panel();
+            this.d6 = new System.Windows.Forms.PictureBox();
+            this.iconButton9 = new FontAwesome.Sharp.IconButton();
+            this.d4 = new System.Windows.Forms.PictureBox();
+            this.iconButton6 = new FontAwesome.Sharp.IconButton();
+            this.d8 = new System.Windows.Forms.PictureBox();
+            this.cmp_procura = new System.Windows.Forms.TextBox();
+            this.d20 = new System.Windows.Forms.PictureBox();
+            this.d10 = new System.Windows.Forms.PictureBox();
+            this.pnl_insanidades_chat = new System.Windows.Forms.Panel();
+            this.iconButton8 = new FontAwesome.Sharp.IconButton();
+            this.iconButton7 = new FontAwesome.Sharp.IconButton();
+            this.d12 = new System.Windows.Forms.PictureBox();
+            this.pnl_iniciativas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.data_grid_iniciativa)).BeginInit();
             this.button3 = new System.Windows.Forms.Button();
             this.ficha_resumida.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.temp_danos)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -198,6 +228,14 @@ namespace Dark_Age
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             this.panel12.SuspendLayout();
+            this.pnl_chat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.d6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.d4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.d8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.d20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.d10)).BeginInit();
+            this.pnl_insanidades_chat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.d12)).BeginInit();
             this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -223,32 +261,118 @@ namespace Dark_Age
             this.btn_open.MouseLeave += new System.EventHandler(this.btn_open_MouseLeave);
             this.btn_open.MouseHover += new System.EventHandler(this.btn_open_MouseHover);
             // 
-            // painel_jogadores
+            // pnl_iniciativas
             // 
-            this.painel_jogadores.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.painel_jogadores.AutoScroll = true;
-            this.painel_jogadores.BackColor = System.Drawing.Color.DimGray;
-            this.painel_jogadores.Location = new System.Drawing.Point(1145, 106);
-            this.painel_jogadores.Name = "painel_jogadores";
-            this.painel_jogadores.Padding = new System.Windows.Forms.Padding(5);
-            this.painel_jogadores.Size = new System.Drawing.Size(438, 639);
-            this.painel_jogadores.TabIndex = 1;
+            this.pnl_iniciativas.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pnl_iniciativas.AutoScroll = true;
+            this.pnl_iniciativas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            this.pnl_iniciativas.Controls.Add(this.data_grid_iniciativa);
+            this.pnl_iniciativas.Controls.Add(this.label1);
+            this.pnl_iniciativas.Controls.Add(this.lbl_jogar_iniciativa);
+            this.pnl_iniciativas.Location = new System.Drawing.Point(1105, 106);
+            this.pnl_iniciativas.Name = "pnl_iniciativas";
+            this.pnl_iniciativas.Padding = new System.Windows.Forms.Padding(5);
+            this.pnl_iniciativas.Size = new System.Drawing.Size(444, 639);
+            this.pnl_iniciativas.TabIndex = 1;
+            this.pnl_iniciativas.Visible = false;
+            // 
+            // data_grid_iniciativa
+            // 
+            this.data_grid_iniciativa.AllowUserToAddRows = false;
+            this.data_grid_iniciativa.AllowUserToDeleteRows = false;
+            this.data_grid_iniciativa.AllowUserToOrderColumns = true;
+            this.data_grid_iniciativa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.data_grid_iniciativa.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.data_grid_iniciativa.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            this.data_grid_iniciativa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.data_grid_iniciativa.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.data_grid_iniciativa.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(16)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data_grid_iniciativa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.data_grid_iniciativa.ColumnHeadersHeight = 30;
+            this.data_grid_iniciativa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.data_grid_iniciativa.ColumnHeadersVisible = false;
+            this.data_grid_iniciativa.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.data_grid_iniciativa.DefaultCellStyle = dataGridViewCellStyle2;
+            this.data_grid_iniciativa.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            this.data_grid_iniciativa.Location = new System.Drawing.Point(0, 30);
+            this.data_grid_iniciativa.MultiSelect = false;
+            this.data_grid_iniciativa.Name = "data_grid_iniciativa";
+            this.data_grid_iniciativa.ReadOnly = true;
+            this.data_grid_iniciativa.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data_grid_iniciativa.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.data_grid_iniciativa.RowHeadersVisible = false;
+            this.data_grid_iniciativa.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.data_grid_iniciativa.RowTemplate.Height = 10;
+            this.data_grid_iniciativa.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.data_grid_iniciativa.Size = new System.Drawing.Size(444, 558);
+            this.data_grid_iniciativa.TabIndex = 8;
+            this.data_grid_iniciativa.VirtualMode = true;
+            this.data_grid_iniciativa.Visible = false;
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.DimGray;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(1250, 61);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.label1.Size = new System.Drawing.Size(234, 52);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Personagens";
+            this.label1.Size = new System.Drawing.Size(444, 72);
+            this.label1.TabIndex = 156;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_jogar_iniciativa
+            // 
+            this.lbl_jogar_iniciativa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_jogar_iniciativa.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_jogar_iniciativa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_jogar_iniciativa.FlatAppearance.BorderSize = 0;
+            this.lbl_jogar_iniciativa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.lbl_jogar_iniciativa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.lbl_jogar_iniciativa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_jogar_iniciativa.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_jogar_iniciativa.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.lbl_jogar_iniciativa.IconChar = FontAwesome.Sharp.IconChar.SignIn;
+            this.lbl_jogar_iniciativa.IconColor = System.Drawing.SystemColors.ScrollBar;
+            this.lbl_jogar_iniciativa.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.lbl_jogar_iniciativa.IconSize = 30;
+            this.lbl_jogar_iniciativa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_jogar_iniciativa.Location = new System.Drawing.Point(0, 587);
+            this.lbl_jogar_iniciativa.Name = "lbl_jogar_iniciativa";
+            this.lbl_jogar_iniciativa.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
+            this.lbl_jogar_iniciativa.Size = new System.Drawing.Size(444, 52);
+            this.lbl_jogar_iniciativa.TabIndex = 155;
+            this.lbl_jogar_iniciativa.Text = "Jogar Iniciativa";
+            this.lbl_jogar_iniciativa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.lbl_jogar_iniciativa.UseVisualStyleBackColor = false;
+            this.lbl_jogar_iniciativa.Click += new System.EventHandler(this.lbl_bvd_Click);
+            this.lbl_jogar_iniciativa.MouseEnter += new System.EventHandler(this.lbl_jogar_iniciativa_MouseEnter);
+            this.lbl_jogar_iniciativa.MouseLeave += new System.EventHandler(this.iconButton4_MouseLeave);
+            this.lbl_jogar_iniciativa.MouseHover += new System.EventHandler(this.lbl_jogar_iniciativa_MouseEnter);
             // 
             // bemvindo
             // 
@@ -271,15 +395,30 @@ namespace Dark_Age
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ficha_resumida.BackColor = System.Drawing.Color.Transparent;
+            this.ficha_resumida.Controls.Add(this.temp_danos);
             this.ficha_resumida.Controls.Add(this.panel3);
             this.ficha_resumida.Controls.Add(this.panel16);
             this.ficha_resumida.Controls.Add(this.panel6);
             this.ficha_resumida.Controls.Add(this.panel5);
             this.ficha_resumida.Controls.Add(this.Locais);
-            this.ficha_resumida.Location = new System.Drawing.Point(40, 97);
+            this.ficha_resumida.Location = new System.Drawing.Point(51, 106);
             this.ficha_resumida.Name = "ficha_resumida";
-            this.ficha_resumida.Size = new System.Drawing.Size(1079, 648);
+            this.ficha_resumida.Size = new System.Drawing.Size(1052, 639);
             this.ficha_resumida.TabIndex = 5;
+            // 
+            // temp_danos
+            // 
+            this.temp_danos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(40)))), ((int)(((byte)(52)))));
+            this.temp_danos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.temp_danos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.temp_danos.Enabled = false;
+            this.temp_danos.Location = new System.Drawing.Point(523, 156);
+            this.temp_danos.Name = "temp_danos";
+            this.temp_danos.ReadOnly = true;
+            this.temp_danos.RowTemplate.Height = 25;
+            this.temp_danos.Size = new System.Drawing.Size(33, 40);
+            this.temp_danos.TabIndex = 143;
+            this.temp_danos.Visible = false;
             // 
             // panel3
             // 
@@ -293,9 +432,9 @@ namespace Dark_Age
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.label46);
             this.panel3.Controls.Add(this.panel1);
-            this.panel3.Location = new System.Drawing.Point(23, 11);
+            this.panel3.Location = new System.Drawing.Point(13, -9);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(484, 624);
+            this.panel3.Size = new System.Drawing.Size(484, 645);
             this.panel3.TabIndex = 88;
             // 
             // label8
@@ -306,7 +445,7 @@ namespace Dark_Age
             this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label8.Location = new System.Drawing.Point(304, 251);
+            this.label8.Location = new System.Drawing.Point(305, 244);
             this.label8.Name = "label8";
             this.label8.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label8.Size = new System.Drawing.Size(133, 26);
@@ -321,7 +460,7 @@ namespace Dark_Age
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(176, 251);
+            this.label6.Location = new System.Drawing.Point(177, 244);
             this.label6.Name = "label6";
             this.label6.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label6.Size = new System.Drawing.Size(72, 26);
@@ -336,7 +475,7 @@ namespace Dark_Age
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(22, 251);
+            this.label4.Location = new System.Drawing.Point(23, 244);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label4.Size = new System.Drawing.Size(84, 26);
@@ -351,7 +490,7 @@ namespace Dark_Age
             this.label90.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label90.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label90.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label90.Location = new System.Drawing.Point(325, 214);
+            this.label90.Location = new System.Drawing.Point(326, 207);
             this.label90.Name = "label90";
             this.label90.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label90.Size = new System.Drawing.Size(82, 20);
@@ -362,7 +501,7 @@ namespace Dark_Age
             // modificador
             // 
             this.modificador.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.modificador.Location = new System.Drawing.Point(325, 217);
+            this.modificador.Location = new System.Drawing.Point(326, 200);
             this.modificador.Name = "modificador";
             this.modificador.Size = new System.Drawing.Size(82, 23);
             this.modificador.TabIndex = 88;
@@ -388,7 +527,7 @@ namespace Dark_Age
             this.panel2.Controls.Add(this.label23);
             this.panel2.Controls.Add(this.label25);
             this.panel2.Controls.Add(this.label22);
-            this.panel2.Location = new System.Drawing.Point(3, 20);
+            this.panel2.Location = new System.Drawing.Point(14, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(478, 175);
             this.panel2.TabIndex = 87;
@@ -625,7 +764,7 @@ namespace Dark_Age
             this.label46.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label46.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label46.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label46.Location = new System.Drawing.Point(156, 195);
+            this.label46.Location = new System.Drawing.Point(157, 188);
             this.label46.Name = "label46";
             this.label46.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label46.Size = new System.Drawing.Size(101, 33);
@@ -668,7 +807,6 @@ namespace Dark_Age
             this.panel1.Controls.Add(this.res_percepcao);
             this.panel1.Controls.Add(this.label42);
             this.panel1.Controls.Add(this.res_esconder);
-            this.panel1.Controls.Add(this.label41);
             this.panel1.Controls.Add(this.res_intimidacao);
             this.panel1.Controls.Add(this.label50);
             this.panel1.Controls.Add(this.label51);
@@ -676,16 +814,15 @@ namespace Dark_Age
             this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.label37);
             this.panel1.Controls.Add(this.res_conjurar);
-            this.panel1.Controls.Add(this.label35);
             this.panel1.Controls.Add(this.res_atirar);
             this.panel1.Controls.Add(this.res_esquiva);
             this.panel1.Controls.Add(this.button9);
             this.panel1.Controls.Add(this.label56);
             this.panel1.Controls.Add(this.label57);
             this.panel1.Controls.Add(this.label58);
-            this.panel1.Location = new System.Drawing.Point(3, 280);
+            this.panel1.Location = new System.Drawing.Point(4, 273);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(481, 341);
+            this.panel1.Size = new System.Drawing.Size(481, 369);
             this.panel1.TabIndex = 67;
             // 
             // panel15
@@ -704,7 +841,7 @@ namespace Dark_Age
             this.res_acad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.res_acad.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.res_acad.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.res_acad.Location = new System.Drawing.Point(405, 35);
+            this.res_acad.Location = new System.Drawing.Point(405, 21);
             this.res_acad.Name = "res_acad";
             this.res_acad.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.res_acad.Size = new System.Drawing.Size(22, 26);
@@ -719,7 +856,7 @@ namespace Dark_Age
             this.res_investigacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.res_investigacao.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.res_investigacao.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.res_investigacao.Location = new System.Drawing.Point(405, 198);
+            this.res_investigacao.Location = new System.Drawing.Point(405, 184);
             this.res_investigacao.Name = "res_investigacao";
             this.res_investigacao.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.res_investigacao.Size = new System.Drawing.Size(22, 26);
@@ -734,7 +871,7 @@ namespace Dark_Age
             this.label75.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label75.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label75.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label75.Location = new System.Drawing.Point(305, 198);
+            this.label75.Location = new System.Drawing.Point(305, 184);
             this.label75.Name = "label75";
             this.label75.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label75.Size = new System.Drawing.Size(99, 22);
@@ -749,7 +886,7 @@ namespace Dark_Age
             this.label76.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label76.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label76.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label76.Location = new System.Drawing.Point(304, 148);
+            this.label76.Location = new System.Drawing.Point(304, 134);
             this.label76.Name = "label76";
             this.label76.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label76.Size = new System.Drawing.Size(95, 20);
@@ -764,7 +901,7 @@ namespace Dark_Age
             this.res_sobrevivencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.res_sobrevivencia.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.res_sobrevivencia.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.res_sobrevivencia.Location = new System.Drawing.Point(405, 145);
+            this.res_sobrevivencia.Location = new System.Drawing.Point(405, 131);
             this.res_sobrevivencia.Name = "res_sobrevivencia";
             this.res_sobrevivencia.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.res_sobrevivencia.Size = new System.Drawing.Size(22, 26);
@@ -779,7 +916,7 @@ namespace Dark_Age
             this.label80.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label80.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label80.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label80.Location = new System.Drawing.Point(20, 145);
+            this.label80.Location = new System.Drawing.Point(20, 131);
             this.label80.Name = "label80";
             this.label80.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label80.Size = new System.Drawing.Size(60, 22);
@@ -794,7 +931,7 @@ namespace Dark_Age
             this.res_labia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.res_labia.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.res_labia.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.res_labia.Location = new System.Drawing.Point(243, 36);
+            this.res_labia.Location = new System.Drawing.Point(243, 22);
             this.res_labia.Name = "res_labia";
             this.res_labia.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.res_labia.Size = new System.Drawing.Size(22, 26);
@@ -809,7 +946,7 @@ namespace Dark_Age
             this.res_enganacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.res_enganacao.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.res_enganacao.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.res_enganacao.Location = new System.Drawing.Point(242, 199);
+            this.res_enganacao.Location = new System.Drawing.Point(242, 185);
             this.res_enganacao.Name = "res_enganacao";
             this.res_enganacao.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.res_enganacao.Size = new System.Drawing.Size(22, 26);
@@ -824,7 +961,7 @@ namespace Dark_Age
             this.res_defesa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.res_defesa.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.res_defesa.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.res_defesa.Location = new System.Drawing.Point(84, 142);
+            this.res_defesa.Location = new System.Drawing.Point(84, 128);
             this.res_defesa.Name = "res_defesa";
             this.res_defesa.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.res_defesa.Size = new System.Drawing.Size(22, 26);
@@ -839,7 +976,7 @@ namespace Dark_Age
             this.label85.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label85.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label85.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label85.Location = new System.Drawing.Point(175, 201);
+            this.label85.Location = new System.Drawing.Point(175, 187);
             this.label85.Name = "label85";
             this.label85.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label85.Size = new System.Drawing.Size(59, 22);
@@ -854,7 +991,7 @@ namespace Dark_Age
             this.label86.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label86.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label86.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label86.Location = new System.Drawing.Point(153, 142);
+            this.label86.Location = new System.Drawing.Point(153, 128);
             this.label86.Name = "label86";
             this.label86.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label86.Size = new System.Drawing.Size(88, 43);
@@ -869,7 +1006,7 @@ namespace Dark_Age
             this.res_seducao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.res_seducao.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.res_seducao.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.res_seducao.Location = new System.Drawing.Point(242, 146);
+            this.res_seducao.Location = new System.Drawing.Point(242, 132);
             this.res_seducao.Name = "res_seducao";
             this.res_seducao.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.res_seducao.Size = new System.Drawing.Size(22, 26);
@@ -884,7 +1021,7 @@ namespace Dark_Age
             this.res_contrataque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.res_contrataque.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.res_contrataque.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.res_contrataque.Location = new System.Drawing.Point(84, 195);
+            this.res_contrataque.Location = new System.Drawing.Point(84, 181);
             this.res_contrataque.Name = "res_contrataque";
             this.res_contrataque.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.res_contrataque.Size = new System.Drawing.Size(22, 26);
@@ -899,7 +1036,7 @@ namespace Dark_Age
             this.res_ataque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.res_ataque.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.res_ataque.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.res_ataque.Location = new System.Drawing.Point(84, 34);
+            this.res_ataque.Location = new System.Drawing.Point(84, 20);
             this.res_ataque.Name = "res_ataque";
             this.res_ataque.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.res_ataque.Size = new System.Drawing.Size(22, 26);
@@ -913,7 +1050,7 @@ namespace Dark_Age
             this.label89.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label89.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label89.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label89.Location = new System.Drawing.Point(11, 182);
+            this.label89.Location = new System.Drawing.Point(11, 168);
             this.label89.Name = "label89";
             this.label89.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label89.Size = new System.Drawing.Size(80, 43);
@@ -929,7 +1066,7 @@ namespace Dark_Age
             this.label73.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label73.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label73.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label73.Location = new System.Drawing.Point(276, -125);
+            this.label73.Location = new System.Drawing.Point(276, -111);
             this.label73.Name = "label73";
             this.label73.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label73.Size = new System.Drawing.Size(143, 26);
@@ -944,7 +1081,7 @@ namespace Dark_Age
             this.label72.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label72.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label72.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label72.Location = new System.Drawing.Point(165, -125);
+            this.label72.Location = new System.Drawing.Point(165, -111);
             this.label72.Name = "label72";
             this.label72.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label72.Size = new System.Drawing.Size(76, 26);
@@ -959,7 +1096,7 @@ namespace Dark_Age
             this.label71.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label71.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label71.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label71.Location = new System.Drawing.Point(37, -125);
+            this.label71.Location = new System.Drawing.Point(37, -111);
             this.label71.Name = "label71";
             this.label71.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label71.Size = new System.Drawing.Size(88, 26);
@@ -974,7 +1111,7 @@ namespace Dark_Age
             this.res_etiqueta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.res_etiqueta.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.res_etiqueta.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.res_etiqueta.Location = new System.Drawing.Point(405, 300);
+            this.res_etiqueta.Location = new System.Drawing.Point(405, 286);
             this.res_etiqueta.Name = "res_etiqueta";
             this.res_etiqueta.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.res_etiqueta.Size = new System.Drawing.Size(22, 26);
@@ -989,7 +1126,7 @@ namespace Dark_Age
             this.res_intuicao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.res_intuicao.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.res_intuicao.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.res_intuicao.Location = new System.Drawing.Point(406, 249);
+            this.res_intuicao.Location = new System.Drawing.Point(406, 235);
             this.res_intuicao.Name = "res_intuicao";
             this.res_intuicao.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.res_intuicao.Size = new System.Drawing.Size(22, 26);
@@ -1004,7 +1141,7 @@ namespace Dark_Age
             this.res_ocultismo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.res_ocultismo.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.res_ocultismo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.res_ocultismo.Location = new System.Drawing.Point(405, 91);
+            this.res_ocultismo.Location = new System.Drawing.Point(405, 77);
             this.res_ocultismo.Name = "res_ocultismo";
             this.res_ocultismo.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.res_ocultismo.Size = new System.Drawing.Size(22, 26);
@@ -1019,7 +1156,7 @@ namespace Dark_Age
             this.label63.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label63.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label63.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label63.Location = new System.Drawing.Point(335, 300);
+            this.label63.Location = new System.Drawing.Point(335, 286);
             this.label63.Name = "label63";
             this.label63.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label63.Size = new System.Drawing.Size(69, 22);
@@ -1034,7 +1171,7 @@ namespace Dark_Age
             this.label64.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label64.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label64.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label64.Location = new System.Drawing.Point(336, 250);
+            this.label64.Location = new System.Drawing.Point(336, 236);
             this.label64.Name = "label64";
             this.label64.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label64.Size = new System.Drawing.Size(68, 22);
@@ -1049,7 +1186,7 @@ namespace Dark_Age
             this.label65.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label65.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label65.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label65.Location = new System.Drawing.Point(319, 91);
+            this.label65.Location = new System.Drawing.Point(319, 77);
             this.label65.Name = "label65";
             this.label65.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label65.Size = new System.Drawing.Size(84, 22);
@@ -1064,12 +1201,12 @@ namespace Dark_Age
             this.label67.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label67.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label67.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label67.Location = new System.Drawing.Point(308, 35);
+            this.label67.Location = new System.Drawing.Point(308, 12);
             this.label67.Name = "label67";
             this.label67.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.label67.Size = new System.Drawing.Size(96, 22);
+            this.label67.Size = new System.Drawing.Size(99, 43);
             this.label67.TabIndex = 69;
-            this.label67.Text = "Acadêmicos:";
+            this.label67.Text = "Acadêmicos/\r\nMedicina:";
             // 
             // label68
             // 
@@ -1079,7 +1216,7 @@ namespace Dark_Age
             this.label68.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label68.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label68.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label68.Location = new System.Drawing.Point(364, -70);
+            this.label68.Location = new System.Drawing.Point(364, -56);
             this.label68.Name = "label68";
             this.label68.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label68.Size = new System.Drawing.Size(22, 26);
@@ -1094,7 +1231,7 @@ namespace Dark_Age
             this.button22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button22.FlatAppearance.BorderSize = 0;
             this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button22.Location = new System.Drawing.Point(389, -67);
+            this.button22.Location = new System.Drawing.Point(389, -53);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(15, 16);
             this.button22.TabIndex = 73;
@@ -1108,7 +1245,7 @@ namespace Dark_Age
             this.label45.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label45.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label45.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label45.Location = new System.Drawing.Point(30, -70);
+            this.label45.Location = new System.Drawing.Point(30, -56);
             this.label45.Name = "label45";
             this.label45.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label45.Size = new System.Drawing.Size(51, 22);
@@ -1123,7 +1260,7 @@ namespace Dark_Age
             this.label43.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label43.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label43.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label43.Location = new System.Drawing.Point(20, 35);
+            this.label43.Location = new System.Drawing.Point(20, 21);
             this.label43.Name = "label43";
             this.label43.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label43.Size = new System.Drawing.Size(62, 22);
@@ -1138,7 +1275,7 @@ namespace Dark_Age
             this.res_percepcao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.res_percepcao.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.res_percepcao.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.res_percepcao.Location = new System.Drawing.Point(242, 301);
+            this.res_percepcao.Location = new System.Drawing.Point(242, 287);
             this.res_percepcao.Name = "res_percepcao";
             this.res_percepcao.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.res_percepcao.Size = new System.Drawing.Size(22, 26);
@@ -1153,7 +1290,7 @@ namespace Dark_Age
             this.label42.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label42.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label42.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label42.Location = new System.Drawing.Point(77, -73);
+            this.label42.Location = new System.Drawing.Point(77, -59);
             this.label42.Name = "label42";
             this.label42.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label42.Size = new System.Drawing.Size(22, 26);
@@ -1168,27 +1305,12 @@ namespace Dark_Age
             this.res_esconder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.res_esconder.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.res_esconder.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.res_esconder.Location = new System.Drawing.Point(243, 250);
+            this.res_esconder.Location = new System.Drawing.Point(243, 236);
             this.res_esconder.Name = "res_esconder";
             this.res_esconder.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.res_esconder.Size = new System.Drawing.Size(22, 26);
             this.res_esconder.TabIndex = 62;
             this.res_esconder.Text = "0";
-            // 
-            // label41
-            // 
-            this.label41.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label41.AutoSize = true;
-            this.label41.BackColor = System.Drawing.Color.Transparent;
-            this.label41.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label41.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label41.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label41.Location = new System.Drawing.Point(76, -25);
-            this.label41.Name = "label41";
-            this.label41.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.label41.Size = new System.Drawing.Size(22, 26);
-            this.label41.TabIndex = 35;
-            this.label41.Text = "0";
             // 
             // res_intimidacao
             // 
@@ -1198,7 +1320,7 @@ namespace Dark_Age
             this.res_intimidacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.res_intimidacao.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.res_intimidacao.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.res_intimidacao.Location = new System.Drawing.Point(242, 92);
+            this.res_intimidacao.Location = new System.Drawing.Point(242, 78);
             this.res_intimidacao.Name = "res_intimidacao";
             this.res_intimidacao.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.res_intimidacao.Size = new System.Drawing.Size(22, 26);
@@ -1212,7 +1334,7 @@ namespace Dark_Age
             this.label50.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label50.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label50.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label50.Location = new System.Drawing.Point(164, 288);
+            this.label50.Location = new System.Drawing.Point(164, 274);
             this.label50.Name = "label50";
             this.label50.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label50.Size = new System.Drawing.Size(77, 50);
@@ -1227,7 +1349,7 @@ namespace Dark_Age
             this.label51.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label51.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label51.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label51.Location = new System.Drawing.Point(164, 252);
+            this.label51.Location = new System.Drawing.Point(164, 238);
             this.label51.Name = "label51";
             this.label51.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label51.Size = new System.Drawing.Size(76, 22);
@@ -1242,7 +1364,7 @@ namespace Dark_Age
             this.label52.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label52.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label52.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label52.Location = new System.Drawing.Point(147, 94);
+            this.label52.Location = new System.Drawing.Point(147, 80);
             this.label52.Name = "label52";
             this.label52.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label52.Size = new System.Drawing.Size(94, 22);
@@ -1257,7 +1379,7 @@ namespace Dark_Age
             this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button10.FlatAppearance.BorderSize = 0;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Location = new System.Drawing.Point(119, 39);
+            this.button10.Location = new System.Drawing.Point(119, 25);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(15, 16);
             this.button10.TabIndex = 39;
@@ -1276,7 +1398,7 @@ namespace Dark_Age
             this.label37.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label37.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label37.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label37.Location = new System.Drawing.Point(190, 38);
+            this.label37.Location = new System.Drawing.Point(190, 24);
             this.label37.Name = "label37";
             this.label37.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label37.Size = new System.Drawing.Size(50, 22);
@@ -1292,27 +1414,12 @@ namespace Dark_Age
             this.res_conjurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.res_conjurar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.res_conjurar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.res_conjurar.Location = new System.Drawing.Point(84, 298);
+            this.res_conjurar.Location = new System.Drawing.Point(84, 284);
             this.res_conjurar.Name = "res_conjurar";
             this.res_conjurar.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.res_conjurar.Size = new System.Drawing.Size(22, 26);
             this.res_conjurar.TabIndex = 54;
             this.res_conjurar.Text = "0";
-            // 
-            // label35
-            // 
-            this.label35.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label35.AutoSize = true;
-            this.label35.BackColor = System.Drawing.Color.Transparent;
-            this.label35.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label35.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label35.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label35.Location = new System.Drawing.Point(217, -21);
-            this.label35.Name = "label35";
-            this.label35.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.label35.Size = new System.Drawing.Size(22, 26);
-            this.label35.TabIndex = 44;
-            this.label35.Text = "0";
             // 
             // res_atirar
             // 
@@ -1322,7 +1429,7 @@ namespace Dark_Age
             this.res_atirar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.res_atirar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.res_atirar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.res_atirar.Location = new System.Drawing.Point(85, 246);
+            this.res_atirar.Location = new System.Drawing.Point(85, 232);
             this.res_atirar.Name = "res_atirar";
             this.res_atirar.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.res_atirar.Size = new System.Drawing.Size(22, 26);
@@ -1337,7 +1444,7 @@ namespace Dark_Age
             this.res_esquiva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.res_esquiva.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.res_esquiva.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.res_esquiva.Location = new System.Drawing.Point(84, 88);
+            this.res_esquiva.Location = new System.Drawing.Point(84, 74);
             this.res_esquiva.Name = "res_esquiva";
             this.res_esquiva.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.res_esquiva.Size = new System.Drawing.Size(22, 26);
@@ -1352,7 +1459,7 @@ namespace Dark_Age
             this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Location = new System.Drawing.Point(243, -66);
+            this.button9.Location = new System.Drawing.Point(243, -52);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(15, 16);
             this.button9.TabIndex = 46;
@@ -1365,7 +1472,7 @@ namespace Dark_Age
             this.label56.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label56.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label56.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label56.Location = new System.Drawing.Point(13, 288);
+            this.label56.Location = new System.Drawing.Point(13, 274);
             this.label56.Name = "label56";
             this.label56.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label56.Size = new System.Drawing.Size(76, 46);
@@ -1381,7 +1488,7 @@ namespace Dark_Age
             this.label57.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label57.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label57.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label57.Location = new System.Drawing.Point(24, 249);
+            this.label57.Location = new System.Drawing.Point(24, 235);
             this.label57.Name = "label57";
             this.label57.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label57.Size = new System.Drawing.Size(52, 22);
@@ -1396,7 +1503,7 @@ namespace Dark_Age
             this.label58.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label58.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label58.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label58.Location = new System.Drawing.Point(16, 91);
+            this.label58.Location = new System.Drawing.Point(16, 77);
             this.label58.Name = "label58";
             this.label58.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label58.Size = new System.Drawing.Size(66, 22);
@@ -1406,18 +1513,21 @@ namespace Dark_Age
             // panel16
             // 
             this.panel16.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel16.AutoSize = true;
+            this.panel16.Controls.Add(this.iconButton5);
             this.panel16.Controls.Add(this.panel17);
-            this.panel16.Controls.Add(this.iniciativa);
+            this.panel16.Controls.Add(this.iniciativa_bonus);
             this.panel16.Controls.Add(this.movimento);
             this.panel16.Controls.Add(this.prata);
             this.panel16.Controls.Add(this.ouro);
             this.panel16.Controls.Add(this.iconPictureBox2);
             this.panel16.Controls.Add(this.iconPictureBox1);
-            this.panel16.Location = new System.Drawing.Point(590, 173);
+            this.panel16.Location = new System.Drawing.Point(567, 153);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(400, 224);
+            this.panel16.Size = new System.Drawing.Size(455, 227);
             this.panel16.TabIndex = 142;
             // 
+            // iconButton5
             // panel17
             // 
             this.panel17.AutoScroll = true;
@@ -1439,26 +1549,69 @@ namespace Dark_Age
             // 
             // iniciativa
             // 
-            this.iniciativa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.iniciativa.FlatAppearance.BorderSize = 0;
-            this.iniciativa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.iniciativa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.iniciativa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iniciativa.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.iniciativa.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.iniciativa.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
-            this.iniciativa.IconColor = System.Drawing.Color.SlateGray;
-            this.iniciativa.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iniciativa.IconSize = 36;
-            this.iniciativa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iniciativa.Location = new System.Drawing.Point(20, 182);
-            this.iniciativa.Name = "iniciativa";
-            this.iniciativa.Size = new System.Drawing.Size(192, 39);
-            this.iniciativa.TabIndex = 146;
-            this.iniciativa.Text = "Iniciativa: 0";
-            this.iniciativa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iniciativa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iniciativa.UseVisualStyleBackColor = true;
+            this.iconButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.iconButton5.FlatAppearance.BorderSize = 0;
+            this.iconButton5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.iconButton5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconButton5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.HandSparkles;
+            this.iconButton5.IconColor = System.Drawing.Color.OrangeRed;
+            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton5.IconSize = 30;
+            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton5.Location = new System.Drawing.Point(20, 0);
+            this.iconButton5.Name = "iconButton5";
+            this.iconButton5.Size = new System.Drawing.Size(177, 33);
+            this.iconButton5.TabIndex = 146;
+            this.iconButton5.Text = "Danos e Defesas:";
+            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton5.UseVisualStyleBackColor = true;
+            // 
+            // panel17
+            // 
+            this.panel17.AutoScroll = true;
+            this.panel17.Controls.Add(this.lbl_danos);
+            this.panel17.Location = new System.Drawing.Point(20, 26);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(405, 109);
+            this.panel17.TabIndex = 147;
+            // 
+            // lbl_danos
+            // 
+            this.lbl_danos.AutoSize = true;
+            this.lbl_danos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_danos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbl_danos.Location = new System.Drawing.Point(12, 15);
+            this.lbl_danos.MaximumSize = new System.Drawing.Size(330, 0);
+            this.lbl_danos.Name = "lbl_danos";
+            this.lbl_danos.Size = new System.Drawing.Size(0, 21);
+            this.lbl_danos.TabIndex = 0;
+            // 
+            // iniciativa_bonus
+            // 
+            this.iniciativa_bonus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.iniciativa_bonus.FlatAppearance.BorderSize = 0;
+            this.iniciativa_bonus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.iniciativa_bonus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.iniciativa_bonus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iniciativa_bonus.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iniciativa_bonus.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iniciativa_bonus.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
+            this.iniciativa_bonus.IconColor = System.Drawing.Color.SlateGray;
+            this.iniciativa_bonus.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iniciativa_bonus.IconSize = 36;
+            this.iniciativa_bonus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iniciativa_bonus.Location = new System.Drawing.Point(33, 186);
+            this.iniciativa_bonus.Name = "iniciativa_bonus";
+            this.iniciativa_bonus.Size = new System.Drawing.Size(179, 38);
+            this.iniciativa_bonus.TabIndex = 146;
+            this.iniciativa_bonus.Text = "Iniciativa: 0";
+            this.iniciativa_bonus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iniciativa_bonus.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iniciativa_bonus.UseVisualStyleBackColor = true;
             // 
             // movimento
             // 
@@ -1473,10 +1626,10 @@ namespace Dark_Age
             this.movimento.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.movimento.IconSize = 36;
             this.movimento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.movimento.Location = new System.Drawing.Point(20, 137);
+            this.movimento.Location = new System.Drawing.Point(33, 141);
             this.movimento.Name = "movimento";
             this.movimento.Rotation = -90D;
-            this.movimento.Size = new System.Drawing.Size(189, 43);
+            this.movimento.Size = new System.Drawing.Size(180, 43);
             this.movimento.TabIndex = 145;
             this.movimento.Text = "Movimento: 0";
             this.movimento.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1494,7 +1647,7 @@ namespace Dark_Age
             this.prata.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.prata.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.prata.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.prata.Location = new System.Drawing.Point(333, 186);
+            this.prata.Location = new System.Drawing.Point(380, 183);
             this.prata.Name = "prata";
             this.prata.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.prata.Size = new System.Drawing.Size(45, 21);
@@ -1511,7 +1664,7 @@ namespace Dark_Age
             this.ouro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ouro.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ouro.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.ouro.Location = new System.Drawing.Point(333, 148);
+            this.ouro.Location = new System.Drawing.Point(380, 145);
             this.ouro.Name = "ouro";
             this.ouro.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.ouro.Size = new System.Drawing.Size(45, 21);
@@ -1526,7 +1679,7 @@ namespace Dark_Age
             this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Coins;
             this.iconPictureBox2.IconColor = System.Drawing.Color.Silver;
             this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.Location = new System.Drawing.Point(297, 180);
+            this.iconPictureBox2.Location = new System.Drawing.Point(344, 176);
             this.iconPictureBox2.Name = "iconPictureBox2";
             this.iconPictureBox2.Size = new System.Drawing.Size(32, 32);
             this.iconPictureBox2.TabIndex = 143;
@@ -1539,7 +1692,7 @@ namespace Dark_Age
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Coins;
             this.iconPictureBox1.IconColor = System.Drawing.Color.Gold;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.Location = new System.Drawing.Point(297, 144);
+            this.iconPictureBox1.Location = new System.Drawing.Point(344, 140);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(32, 32);
             this.iconPictureBox1.TabIndex = 142;
@@ -1548,16 +1701,20 @@ namespace Dark_Age
             // panel6
             // 
             this.panel6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel6.AutoSize = true;
             this.panel6.Controls.Add(this.botao_itens);
             this.panel6.Controls.Add(this.btn_inventario);
             this.panel6.Controls.Add(this.btn_pet);
-            this.panel6.Location = new System.Drawing.Point(589, 403);
+            this.panel6.Location = new System.Drawing.Point(566, 383);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(401, 232);
+            this.panel6.Size = new System.Drawing.Size(456, 232);
             this.panel6.TabIndex = 141;
             // 
             // botao_itens
             // 
+            this.botao_itens.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.botao_itens.AutoSize = true;
             this.botao_itens.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.botao_itens.Cursor = System.Windows.Forms.Cursors.Hand;
             this.botao_itens.FlatAppearance.BorderSize = 0;
@@ -1569,9 +1726,9 @@ namespace Dark_Age
             this.botao_itens.IconColor = System.Drawing.Color.MediumSeaGreen;
             this.botao_itens.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.botao_itens.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.botao_itens.Location = new System.Drawing.Point(1, 97);
+            this.botao_itens.Location = new System.Drawing.Point(21, 69);
             this.botao_itens.Name = "botao_itens";
-            this.botao_itens.Size = new System.Drawing.Size(399, 50);
+            this.botao_itens.Size = new System.Drawing.Size(410, 55);
             this.botao_itens.TabIndex = 146;
             this.botao_itens.Text = "Loja";
             this.botao_itens.UseVisualStyleBackColor = true;
@@ -1582,6 +1739,9 @@ namespace Dark_Age
             // 
             // btn_inventario
             // 
+            this.btn_inventario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_inventario.AutoSize = true;
             this.btn_inventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_inventario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_inventario.FlatAppearance.BorderSize = 0;
@@ -1593,9 +1753,9 @@ namespace Dark_Age
             this.btn_inventario.IconColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_inventario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_inventario.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_inventario.Location = new System.Drawing.Point(3, 168);
+            this.btn_inventario.Location = new System.Drawing.Point(21, 137);
             this.btn_inventario.Name = "btn_inventario";
-            this.btn_inventario.Size = new System.Drawing.Size(397, 50);
+            this.btn_inventario.Size = new System.Drawing.Size(410, 55);
             this.btn_inventario.TabIndex = 141;
             this.btn_inventario.Text = "Inventário";
             this.btn_inventario.UseVisualStyleBackColor = true;
@@ -1607,6 +1767,9 @@ namespace Dark_Age
             // 
             // btn_pet
             // 
+            this.btn_pet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_pet.AutoSize = true;
             this.btn_pet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_pet.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_pet.FlatAppearance.BorderSize = 0;
@@ -1619,9 +1782,9 @@ namespace Dark_Age
             this.btn_pet.IconColor = System.Drawing.Color.MediumSlateBlue;
             this.btn_pet.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_pet.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_pet.Location = new System.Drawing.Point(2, 28);
+            this.btn_pet.Location = new System.Drawing.Point(21, 6);
             this.btn_pet.Name = "btn_pet";
-            this.btn_pet.Size = new System.Drawing.Size(396, 50);
+            this.btn_pet.Size = new System.Drawing.Size(410, 55);
             this.btn_pet.TabIndex = 147;
             this.btn_pet.Text = "Pet\'s e Invocações";
             this.btn_pet.UseVisualStyleBackColor = true;
@@ -1632,15 +1795,19 @@ namespace Dark_Age
             // panel5
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel5.AutoSize = true;
             this.panel5.Controls.Add(this.btn_anotacoes);
             this.panel5.Controls.Add(this.btn_cria_personagem);
-            this.panel5.Location = new System.Drawing.Point(589, 20);
+            this.panel5.Location = new System.Drawing.Point(566, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(401, 147);
+            this.panel5.Size = new System.Drawing.Size(456, 153);
             this.panel5.TabIndex = 140;
             // 
             // btn_anotacoes
             // 
+            this.btn_anotacoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_anotacoes.AutoSize = true;
             this.btn_anotacoes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_anotacoes.FlatAppearance.BorderSize = 0;
             this.btn_anotacoes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -1652,10 +1819,10 @@ namespace Dark_Age
             this.btn_anotacoes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_anotacoes.IconSize = 40;
             this.btn_anotacoes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_anotacoes.Location = new System.Drawing.Point(0, 75);
+            this.btn_anotacoes.Location = new System.Drawing.Point(21, 104);
             this.btn_anotacoes.Name = "btn_anotacoes";
             this.btn_anotacoes.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
-            this.btn_anotacoes.Size = new System.Drawing.Size(401, 52);
+            this.btn_anotacoes.Size = new System.Drawing.Size(410, 46);
             this.btn_anotacoes.TabIndex = 143;
             this.btn_anotacoes.Text = "Anotações";
             this.btn_anotacoes.UseVisualStyleBackColor = true;
@@ -1666,6 +1833,9 @@ namespace Dark_Age
             // 
             // btn_cria_personagem
             // 
+            this.btn_cria_personagem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_cria_personagem.AutoSize = true;
             this.btn_cria_personagem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cria_personagem.FlatAppearance.BorderSize = 0;
             this.btn_cria_personagem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -1675,11 +1845,12 @@ namespace Dark_Age
             this.btn_cria_personagem.IconChar = FontAwesome.Sharp.IconChar.FreeCodeCamp;
             this.btn_cria_personagem.IconColor = System.Drawing.Color.Salmon;
             this.btn_cria_personagem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_cria_personagem.IconSize = 40;
             this.btn_cria_personagem.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btn_cria_personagem.Location = new System.Drawing.Point(0, 9);
+            this.btn_cria_personagem.Location = new System.Drawing.Point(21, 52);
             this.btn_cria_personagem.Name = "btn_cria_personagem";
-            this.btn_cria_personagem.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.btn_cria_personagem.Size = new System.Drawing.Size(401, 52);
+            this.btn_cria_personagem.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.btn_cria_personagem.Size = new System.Drawing.Size(410, 46);
             this.btn_cria_personagem.TabIndex = 142;
             this.btn_cria_personagem.Text = "Habilidades";
             this.btn_cria_personagem.UseVisualStyleBackColor = true;
@@ -1688,6 +1859,21 @@ namespace Dark_Age
             this.btn_cria_personagem.MouseEnter += new System.EventHandler(this.btn_change_MouseEnter);
             this.btn_cria_personagem.MouseLeave += new System.EventHandler(this.btn_change_MouseLeave);
             this.btn_cria_personagem.MouseHover += new System.EventHandler(this.btn_change_MouseHover);
+            // 
+            // Locais
+            // 
+            this.Locais.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Locais.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Locais.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Locais.Location = new System.Drawing.Point(981, 35);
+            this.Locais.Name = "Locais";
+            this.Locais.Size = new System.Drawing.Size(64, 112);
+            this.Locais.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Locais.TabIndex = 11;
+            this.Locais.TabStop = false;
+            this.Locais.Visible = false;
+            this.Locais.WaitOnLoad = true;
+            this.Locais.Click += new System.EventHandler(this.Locais_Click);
             // 
             // Locais
             // 
@@ -1744,13 +1930,11 @@ namespace Dark_Age
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton3.Checked = true;
             this.radioButton3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.radioButton3.Location = new System.Drawing.Point(178, 10);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(55, 19);
             this.radioButton3.TabIndex = 10;
-            this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Night";
             this.radioButton3.UseVisualStyleBackColor = false;
             this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
@@ -1805,11 +1989,13 @@ namespace Dark_Age
             // 
             this.radioButton5.AutoSize = true;
             this.radioButton5.BackColor = System.Drawing.Color.Transparent;
+            this.radioButton5.Checked = true;
             this.radioButton5.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.radioButton5.Location = new System.Drawing.Point(554, 10);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(78, 19);
             this.radioButton5.TabIndex = 11;
+            this.radioButton5.TabStop = true;
             this.radioButton5.Text = "Sem tema";
             this.radioButton5.UseVisualStyleBackColor = false;
             this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
@@ -1823,7 +2009,6 @@ namespace Dark_Age
             this.panel8.Controls.Add(this.label2);
             this.panel8.Controls.Add(this.btn_gravar);
             this.panel8.Controls.Add(this.recaregar);
-            this.panel8.Controls.Add(this.iconButton5);
             this.panel8.Controls.Add(this.iconButton4);
             this.panel8.Controls.Add(this.iconButton3);
             this.panel8.Location = new System.Drawing.Point(2, -2);
@@ -1837,7 +2022,7 @@ namespace Dark_Age
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label2.Location = new System.Drawing.Point(1488, 45);
+            this.label2.Location = new System.Drawing.Point(1271, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 15);
             this.label2.TabIndex = 89;
@@ -1861,7 +2046,7 @@ namespace Dark_Age
             this.btn_gravar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_gravar.IconSize = 30;
             this.btn_gravar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_gravar.Location = new System.Drawing.Point(1494, 57);
+            this.btn_gravar.Location = new System.Drawing.Point(1284, 10);
             this.btn_gravar.Name = "btn_gravar";
             this.btn_gravar.Size = new System.Drawing.Size(45, 45);
             this.btn_gravar.TabIndex = 161;
@@ -1888,7 +2073,7 @@ namespace Dark_Age
             this.recaregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.recaregar.IconSize = 30;
             this.recaregar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.recaregar.Location = new System.Drawing.Point(1545, 57);
+            this.recaregar.Location = new System.Drawing.Point(1335, 10);
             this.recaregar.Name = "recaregar";
             this.recaregar.Size = new System.Drawing.Size(45, 45);
             this.recaregar.TabIndex = 160;
@@ -1898,32 +2083,6 @@ namespace Dark_Age
             this.recaregar.MouseEnter += new System.EventHandler(this.recaregar_MouseEnter);
             this.recaregar.MouseLeave += new System.EventHandler(this.recaregar_MouseLeave);
             this.recaregar.MouseHover += new System.EventHandler(this.recaregar_MouseEnter);
-            // 
-            // iconButton5
-            // 
-            this.iconButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton5.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton5.FlatAppearance.BorderSize = 0;
-            this.iconButton5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.iconButton5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.iconButton5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Minus;
-            this.iconButton5.IconColor = System.Drawing.SystemColors.ControlLightLight;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 30;
-            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton5.Location = new System.Drawing.Point(1443, 3);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(45, 45);
-            this.iconButton5.TabIndex = 159;
-            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.iconButton5.UseVisualStyleBackColor = false;
-            this.iconButton5.Click += new System.EventHandler(this.label29_Click);
-            this.iconButton5.MouseEnter += new System.EventHandler(this.iconButton4_MouseEnter);
-            this.iconButton5.MouseHover += new System.EventHandler(this.iconButton4_MouseEnter);
             // 
             // iconButton4
             // 
@@ -1977,6 +2136,30 @@ namespace Dark_Age
             this.iconButton3.MouseEnter += new System.EventHandler(this.iconButton4_MouseEnter);
             this.iconButton3.MouseHover += new System.EventHandler(this.iconButton4_MouseEnter);
             // 
+            // btn_jogadores
+            // 
+            this.btn_jogadores.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_jogadores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_jogadores.FlatAppearance.BorderSize = 0;
+            this.btn_jogadores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
+            this.btn_jogadores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_jogadores.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_jogadores.ForeColor = System.Drawing.Color.White;
+            this.btn_jogadores.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.btn_jogadores.IconColor = System.Drawing.Color.White;
+            this.btn_jogadores.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_jogadores.IconSize = 20;
+            this.btn_jogadores.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_jogadores.Location = new System.Drawing.Point(1105, 55);
+            this.btn_jogadores.Name = "btn_jogadores";
+            this.btn_jogadores.Size = new System.Drawing.Size(144, 52);
+            this.btn_jogadores.TabIndex = 147;
+            this.btn_jogadores.Text = "Personagens";
+            this.btn_jogadores.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_jogadores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_jogadores.UseVisualStyleBackColor = true;
+            this.btn_jogadores.Click += new System.EventHandler(this.btn_jogadores_Click);
+            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -1986,7 +2169,7 @@ namespace Dark_Age
             this.label3.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Location = new System.Drawing.Point(392, 59);
+            this.label3.Location = new System.Drawing.Point(621, 59);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label3.Size = new System.Drawing.Size(90, 46);
@@ -2002,12 +2185,12 @@ namespace Dark_Age
             this.label12.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label12.Location = new System.Drawing.Point(731, 59);
+            this.label12.Location = new System.Drawing.Point(904, 59);
             this.label12.Name = "label12";
             this.label12.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.label12.Size = new System.Drawing.Size(278, 46);
+            this.label12.Size = new System.Drawing.Size(157, 46);
             this.label12.TabIndex = 8;
-            this.label12.Text = "Sanidade Máxima:";
+            this.label12.Text = "Sanidade:";
             // 
             // panel9
             // 
@@ -2015,9 +2198,9 @@ namespace Dark_Age
             this.panel9.Controls.Add(this.lbl_vida);
             this.panel9.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel9.ForeColor = System.Drawing.Color.White;
-            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Location = new System.Drawing.Point(717, 67);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(220, 32);
+            this.panel9.Size = new System.Drawing.Size(159, 32);
             this.panel9.TabIndex = 9;
             // 
             // lbl_vida
@@ -2036,7 +2219,7 @@ namespace Dark_Age
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.numericUpDown1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.numericUpDown1.Location = new System.Drawing.Point(700, 67);
+            this.numericUpDown1.Location = new System.Drawing.Point(876, 67);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(17, 32);
             this.numericUpDown1.TabIndex = 10;
@@ -2053,9 +2236,9 @@ namespace Dark_Age
             this.lbl_barra2.Controls.Add(this.lbl_sanidade);
             this.lbl_barra2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_barra2.ForeColor = System.Drawing.Color.White;
-            this.lbl_barra2.Location = new System.Drawing.Point(1006, 67);
+            this.lbl_barra2.Location = new System.Drawing.Point(1067, 67);
             this.lbl_barra2.Name = "lbl_barra2";
-            this.lbl_barra2.Size = new System.Drawing.Size(220, 32);
+            this.lbl_barra2.Size = new System.Drawing.Size(159, 32);
             this.lbl_barra2.TabIndex = 11;
             // 
             // lbl_sanidade
@@ -2088,6 +2271,8 @@ namespace Dark_Age
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.Controls.Add(this.numericUpDown1);
+            this.panel4.Controls.Add(this.panel9);
             this.panel4.Controls.Add(this.panel_mana);
             this.panel4.Controls.Add(this.pn_adicional);
             this.panel4.Controls.Add(this.iconButton2);
@@ -2095,7 +2280,6 @@ namespace Dark_Age
             this.panel4.Controls.Add(this.panel12);
             this.panel4.Controls.Add(this.lbl_barra2);
             this.panel4.Controls.Add(this.numericUpDown2);
-            this.panel4.Controls.Add(this.numericUpDown1);
             this.panel4.Controls.Add(this.label12);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.panel11);
@@ -2110,7 +2294,7 @@ namespace Dark_Age
             this.panel_mana.Controls.Add(this.panel14);
             this.panel_mana.Controls.Add(this.label30);
             this.panel_mana.Controls.Add(this.numericUpDown3);
-            this.panel_mana.Location = new System.Drawing.Point(26, 46);
+            this.panel_mana.Location = new System.Drawing.Point(255, 51);
             this.panel_mana.Name = "panel_mana";
             this.panel_mana.Size = new System.Drawing.Size(360, 59);
             this.panel_mana.TabIndex = 159;
@@ -2121,9 +2305,9 @@ namespace Dark_Age
             this.panel14.Controls.Add(this.lbl_barra_mana3);
             this.panel14.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel14.ForeColor = System.Drawing.Color.White;
-            this.panel14.Location = new System.Drawing.Point(114, 20);
+            this.panel14.Location = new System.Drawing.Point(175, 20);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(220, 32);
+            this.panel14.Size = new System.Drawing.Size(159, 32);
             this.panel14.TabIndex = 150;
             // 
             // lbl_barra_mana3
@@ -2158,7 +2342,7 @@ namespace Dark_Age
             this.label30.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label30.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label30.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label30.Location = new System.Drawing.Point(15, 8);
+            this.label30.Location = new System.Drawing.Point(63, 8);
             this.label30.Name = "label30";
             this.label30.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.label30.Size = new System.Drawing.Size(106, 46);
@@ -2185,7 +2369,7 @@ namespace Dark_Age
             this.pn_adicional.Controls.Add(this.panel13);
             this.pn_adicional.Controls.Add(this.numericUpDown6);
             this.pn_adicional.Controls.Add(this.numericUpDown5);
-            this.pn_adicional.Location = new System.Drawing.Point(775, 13);
+            this.pn_adicional.Location = new System.Drawing.Point(592, 14);
             this.pn_adicional.Name = "pn_adicional";
             this.pn_adicional.Size = new System.Drawing.Size(167, 36);
             this.pn_adicional.TabIndex = 158;
@@ -2257,7 +2441,7 @@ namespace Dark_Age
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.IconSize = 25;
             this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.iconButton2.Location = new System.Drawing.Point(731, 14);
+            this.iconButton2.Location = new System.Drawing.Point(548, 15);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(33, 32);
             this.iconButton2.TabIndex = 155;
@@ -2360,20 +2544,19 @@ namespace Dark_Age
             this.panel11.BackColor = System.Drawing.Color.Lavender;
             this.panel11.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel11.ForeColor = System.Drawing.Color.White;
-            this.panel11.Location = new System.Drawing.Point(1006, 67);
+            this.panel11.Location = new System.Drawing.Point(1067, 67);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(220, 32);
+            this.panel11.Size = new System.Drawing.Size(159, 32);
             this.panel11.TabIndex = 13;
             // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.PaleGreen;
-            this.panel10.Controls.Add(this.panel9);
             this.panel10.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel10.ForeColor = System.Drawing.Color.White;
-            this.panel10.Location = new System.Drawing.Point(481, 67);
+            this.panel10.Location = new System.Drawing.Point(717, 67);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(220, 32);
+            this.panel10.Size = new System.Drawing.Size(159, 32);
             this.panel10.TabIndex = 10;
             // 
             // button1
@@ -2386,8 +2569,319 @@ namespace Dark_Age
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
+            // btn_iniciativa
+            // 
+            this.btn_iniciativa.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_iniciativa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_iniciativa.FlatAppearance.BorderSize = 0;
+            this.btn_iniciativa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
+            this.btn_iniciativa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_iniciativa.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_iniciativa.ForeColor = System.Drawing.Color.Silver;
+            this.btn_iniciativa.IconChar = FontAwesome.Sharp.IconChar.UsersBetweenLines;
+            this.btn_iniciativa.IconColor = System.Drawing.Color.Silver;
+            this.btn_iniciativa.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_iniciativa.IconSize = 25;
+            this.btn_iniciativa.Location = new System.Drawing.Point(1258, 55);
+            this.btn_iniciativa.Name = "btn_iniciativa";
+            this.btn_iniciativa.Size = new System.Drawing.Size(142, 52);
+            this.btn_iniciativa.TabIndex = 148;
+            this.btn_iniciativa.Text = "Iniciativa";
+            this.btn_iniciativa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_iniciativa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_iniciativa.UseVisualStyleBackColor = true;
+            this.btn_iniciativa.Click += new System.EventHandler(this.btn_iniciativa_Click);
+            // 
+            // btn_chat
+            // 
+            this.btn_chat.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_chat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_chat.FlatAppearance.BorderSize = 0;
+            this.btn_chat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
+            this.btn_chat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_chat.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_chat.ForeColor = System.Drawing.Color.Silver;
+            this.btn_chat.IconChar = FontAwesome.Sharp.IconChar.Message;
+            this.btn_chat.IconColor = System.Drawing.Color.Silver;
+            this.btn_chat.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_chat.IconSize = 25;
+            this.btn_chat.Location = new System.Drawing.Point(1409, 55);
+            this.btn_chat.Name = "btn_chat";
+            this.btn_chat.Size = new System.Drawing.Size(140, 52);
+            this.btn_chat.TabIndex = 149;
+            this.btn_chat.Text = "Chat";
+            this.btn_chat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_chat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_chat.UseVisualStyleBackColor = true;
+            this.btn_chat.Click += new System.EventHandler(this.btn_chat_Click);
+            // 
+            // personagens
+            // 
+            this.personagens.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.personagens.AutoScroll = true;
+            this.personagens.AutoSize = true;
+            this.personagens.BackColor = System.Drawing.Color.DimGray;
+            this.personagens.Location = new System.Drawing.Point(1105, 106);
+            this.personagens.Name = "personagens";
+            this.personagens.Padding = new System.Windows.Forms.Padding(5);
+            this.personagens.Size = new System.Drawing.Size(444, 639);
+            this.personagens.TabIndex = 150;
+            // 
+            // pnl_chat
+            // 
+            this.pnl_chat.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pnl_chat.AutoScroll = true;
+            this.pnl_chat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            this.pnl_chat.Controls.Add(this.pnl_mensagens);
+            this.pnl_chat.Controls.Add(this.d6);
+            this.pnl_chat.Controls.Add(this.iconButton9);
+            this.pnl_chat.Controls.Add(this.d4);
+            this.pnl_chat.Controls.Add(this.iconButton6);
+            this.pnl_chat.Controls.Add(this.d8);
+            this.pnl_chat.Controls.Add(this.cmp_procura);
+            this.pnl_chat.Controls.Add(this.d20);
+            this.pnl_chat.Controls.Add(this.d10);
+            this.pnl_chat.Controls.Add(this.pnl_insanidades_chat);
+            this.pnl_chat.Controls.Add(this.d12);
+            this.pnl_chat.Location = new System.Drawing.Point(1105, 106);
+            this.pnl_chat.Name = "pnl_chat";
+            this.pnl_chat.Padding = new System.Windows.Forms.Padding(5);
+            this.pnl_chat.Size = new System.Drawing.Size(444, 639);
+            this.pnl_chat.TabIndex = 151;
+            this.pnl_chat.Visible = false;
+            // 
+            // pnl_mensagens
+            // 
+            this.pnl_mensagens.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_mensagens.Location = new System.Drawing.Point(0, 0);
+            this.pnl_mensagens.Name = "pnl_mensagens";
+            this.pnl_mensagens.Size = new System.Drawing.Size(444, 470);
+            this.pnl_mensagens.TabIndex = 161;
+            // 
+            // d6
+            // 
+            this.d6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.d6.BackgroundImage = global::Dark_Age.Properties.Resources.d63;
+            this.d6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.d6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.d6.Location = new System.Drawing.Point(88, 577);
+            this.d6.Name = "d6";
+            this.d6.Size = new System.Drawing.Size(50, 50);
+            this.d6.TabIndex = 161;
+            this.d6.TabStop = false;
+            this.d6.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
+            this.d6.MouseLeave += new System.EventHandler(this.d6_MouseLeave);
+            this.d6.MouseHover += new System.EventHandler(this.pictureBox2_MouseEnter);
+            // 
+            // iconButton9
+            // 
+            this.iconButton9.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.iconButton9.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton9.FlatAppearance.BorderSize = 0;
+            this.iconButton9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.iconButton9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.iconButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconButton9.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.BookDead;
+            this.iconButton9.IconColor = System.Drawing.SystemColors.ScrollBar;
+            this.iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton9.IconSize = 20;
+            this.iconButton9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton9.Location = new System.Drawing.Point(22, 535);
+            this.iconButton9.Name = "iconButton9";
+            this.iconButton9.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
+            this.iconButton9.Size = new System.Drawing.Size(28, 23);
+            this.iconButton9.TabIndex = 169;
+            this.iconButton9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton9.UseVisualStyleBackColor = false;
+            this.iconButton9.Click += new System.EventHandler(this.iconButton9_Click);
+            this.iconButton9.MouseEnter += new System.EventHandler(this.btn_change_MouseEnter);
+            this.iconButton9.MouseHover += new System.EventHandler(this.btn_change_MouseEnter);
+            // 
+            // d4
+            // 
+            this.d4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.d4.BackgroundImage = global::Dark_Age.Properties.Resources.d42;
+            this.d4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.d4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.d4.Location = new System.Drawing.Point(22, 577);
+            this.d4.Name = "d4";
+            this.d4.Size = new System.Drawing.Size(50, 50);
+            this.d4.TabIndex = 160;
+            this.d4.TabStop = false;
+            this.d4.MouseEnter += new System.EventHandler(this.pictureBox1_MouseHover);
+            this.d4.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.d4.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
+            // 
+            // iconButton6
+            // 
+            this.iconButton6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.iconButton6.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton6.FlatAppearance.BorderSize = 0;
+            this.iconButton6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.iconButton6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton6.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconButton6.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.PaperPlane;
+            this.iconButton6.IconColor = System.Drawing.SystemColors.ScrollBar;
+            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton6.IconSize = 25;
+            this.iconButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton6.Location = new System.Drawing.Point(390, 490);
+            this.iconButton6.Name = "iconButton6";
+            this.iconButton6.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
+            this.iconButton6.Rotation = 50D;
+            this.iconButton6.Size = new System.Drawing.Size(46, 23);
+            this.iconButton6.TabIndex = 168;
+            this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton6.UseVisualStyleBackColor = false;
+            this.iconButton6.MouseEnter += new System.EventHandler(this.btn_change_MouseEnter);
+            this.iconButton6.MouseHover += new System.EventHandler(this.btn_change_MouseEnter);
+            // 
+            // d8
+            // 
+            this.d8.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.d8.BackgroundImage = global::Dark_Age.Properties.Resources.d81;
+            this.d8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.d8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.d8.Location = new System.Drawing.Point(154, 577);
+            this.d8.Name = "d8";
+            this.d8.Size = new System.Drawing.Size(50, 50);
+            this.d8.TabIndex = 162;
+            this.d8.TabStop = false;
+            this.d8.MouseEnter += new System.EventHandler(this.d8_MouseEnter);
+            this.d8.MouseLeave += new System.EventHandler(this.d8_MouseLeave);
+            this.d8.MouseHover += new System.EventHandler(this.d8_MouseEnter);
+            // 
+            // cmp_procura
+            // 
+            this.cmp_procura.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cmp_procura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            this.cmp_procura.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cmp_procura.ForeColor = System.Drawing.SystemColors.Menu;
+            this.cmp_procura.Location = new System.Drawing.Point(8, 490);
+            this.cmp_procura.Name = "cmp_procura";
+            this.cmp_procura.Size = new System.Drawing.Size(381, 23);
+            this.cmp_procura.TabIndex = 166;
+            // 
+            // d20
+            // 
+            this.d20.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.d20.BackgroundImage = global::Dark_Age.Properties.Resources.d201;
+            this.d20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.d20.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.d20.Location = new System.Drawing.Point(357, 557);
+            this.d20.Name = "d20";
+            this.d20.Size = new System.Drawing.Size(70, 70);
+            this.d20.TabIndex = 165;
+            this.d20.TabStop = false;
+            this.d20.MouseEnter += new System.EventHandler(this.d20_MouseEnter);
+            this.d20.MouseLeave += new System.EventHandler(this.d20_MouseLeave);
+            this.d20.MouseHover += new System.EventHandler(this.d20_MouseEnter);
+            // 
+            // d10
+            // 
+            this.d10.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.d10.BackgroundImage = global::Dark_Age.Properties.Resources.d103;
+            this.d10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.d10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.d10.Location = new System.Drawing.Point(220, 577);
+            this.d10.Name = "d10";
+            this.d10.Size = new System.Drawing.Size(50, 50);
+            this.d10.TabIndex = 163;
+            this.d10.TabStop = false;
+            this.d10.MouseEnter += new System.EventHandler(this.d10_MouseEnter);
+            this.d10.MouseLeave += new System.EventHandler(this.d10_MouseLeave);
+            this.d10.MouseHover += new System.EventHandler(this.d10_MouseEnter);
+            // 
+            // pnl_insanidades_chat
+            // 
+            this.pnl_insanidades_chat.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pnl_insanidades_chat.Controls.Add(this.iconButton8);
+            this.pnl_insanidades_chat.Controls.Add(this.iconButton7);
+            this.pnl_insanidades_chat.Location = new System.Drawing.Point(53, 521);
+            this.pnl_insanidades_chat.Name = "pnl_insanidades_chat";
+            this.pnl_insanidades_chat.Size = new System.Drawing.Size(200, 50);
+            this.pnl_insanidades_chat.TabIndex = 167;
+            this.pnl_insanidades_chat.Visible = false;
+            // 
+            // iconButton8
+            // 
+            this.iconButton8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconButton8.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton8.FlatAppearance.BorderSize = 0;
+            this.iconButton8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.iconButton8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconButton8.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.BookDead;
+            this.iconButton8.IconColor = System.Drawing.SystemColors.ScrollBar;
+            this.iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton8.IconSize = 20;
+            this.iconButton8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton8.Location = new System.Drawing.Point(3, 27);
+            this.iconButton8.Name = "iconButton8";
+            this.iconButton8.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
+            this.iconButton8.Size = new System.Drawing.Size(190, 23);
+            this.iconButton8.TabIndex = 158;
+            this.iconButton8.Text = "Insanidade longa duração";
+            this.iconButton8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton8.UseVisualStyleBackColor = false;
+            this.iconButton8.MouseEnter += new System.EventHandler(this.btn_change_MouseEnter);
+            this.iconButton8.MouseHover += new System.EventHandler(this.btn_change_MouseEnter);
+            // 
+            // iconButton7
             // button3
             // 
+            this.iconButton7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconButton7.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton7.FlatAppearance.BorderSize = 0;
+            this.iconButton7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.iconButton7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconButton7.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.HourglassStart;
+            this.iconButton7.IconColor = System.Drawing.SystemColors.ScrollBar;
+            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton7.IconSize = 20;
+            this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton7.Location = new System.Drawing.Point(3, 0);
+            this.iconButton7.Name = "iconButton7";
+            this.iconButton7.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
+            this.iconButton7.Size = new System.Drawing.Size(190, 23);
+            this.iconButton7.TabIndex = 157;
+            this.iconButton7.Text = "Insanidade curta duração";
+            this.iconButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton7.UseVisualStyleBackColor = false;
+            this.iconButton7.MouseEnter += new System.EventHandler(this.btn_change_MouseEnter);
+            this.iconButton7.MouseHover += new System.EventHandler(this.btn_change_MouseEnter);
+            // 
+            // d12
+            // 
+            this.d12.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.d12.BackgroundImage = global::Dark_Age.Properties.Resources.d121;
+            this.d12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.d12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.d12.Location = new System.Drawing.Point(286, 577);
+            this.d12.Name = "d12";
+            this.d12.Size = new System.Drawing.Size(50, 50);
+            this.d12.TabIndex = 164;
+            this.d12.TabStop = false;
+            this.d12.MouseEnter += new System.EventHandler(this.d12_MouseEnter);
+            this.d12.MouseLeave += new System.EventHandler(this.d12_MouseLeave);
+            this.d12.MouseHover += new System.EventHandler(this.d12_MouseEnter);
             this.button3.Location = new System.Drawing.Point(756, 41);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
@@ -2401,18 +2895,21 @@ namespace Dark_Age
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
-            this.BackgroundImage = global::Dark_Age.Properties.Resources.image;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(40)))), ((int)(((byte)(52)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1600, 900);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.ficha_resumida);
-            this.Controls.Add(this.painel_jogadores);
+            this.Controls.Add(this.pnl_chat);
+            this.Controls.Add(this.pnl_iniciativas);
+            this.Controls.Add(this.btn_chat);
+            this.Controls.Add(this.btn_jogadores);
+            this.Controls.Add(this.btn_iniciativa);
             this.Controls.Add(this.bemvindo);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.btn_open);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel7);
+            this.Controls.Add(this.personagens);
+            this.Controls.Add(this.ficha_resumida);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -2420,11 +2917,16 @@ namespace Dark_Age
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Opacity = 0.8D;
+            this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "A Era das Trevas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.pnl_iniciativas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.data_grid_iniciativa)).EndInit();
             this.ficha_resumida.ResumeLayout(false);
+            this.ficha_resumida.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.temp_danos)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -2438,7 +2940,10 @@ namespace Dark_Age
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Locais)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Locais)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
@@ -2464,6 +2969,15 @@ namespace Dark_Age
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            this.pnl_chat.ResumeLayout(false);
+            this.pnl_chat.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.d6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.d4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.d8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.d20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.d10)).EndInit();
+            this.pnl_insanidades_chat.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.d12)).EndInit();
             this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -2473,8 +2987,7 @@ namespace Dark_Age
         #endregion
 
         public System.Windows.Forms.Button btn_open;
-        private System.Windows.Forms.Panel painel_jogadores;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnl_iniciativas;
         private System.Windows.Forms.Label bemvindo;
         private System.Windows.Forms.Panel ficha_resumida;
         private System.Windows.Forms.Label res_vigor;
@@ -2503,10 +3016,8 @@ namespace Dark_Age
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label45;
@@ -2595,10 +3106,9 @@ namespace Dark_Age
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox modificador;
-        private FontAwesome.Sharp.IconButton iniciativa;
+        private FontAwesome.Sharp.IconButton iniciativa_bonus;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton4;
-        private FontAwesome.Sharp.IconButton iconButton5;
         public System.Windows.Forms.NumericUpDown numericUpDown1;
         public System.Windows.Forms.NumericUpDown numericUpDown2;
         public System.Windows.Forms.NumericUpDown numericUpDown3;
@@ -2611,6 +3121,31 @@ namespace Dark_Age
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Label lbl_danos;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer3;
+        private FontAwesome.Sharp.IconButton btn_jogadores;
+        private FontAwesome.Sharp.IconButton btn_iniciativa;
+        private FontAwesome.Sharp.IconButton iconButton5;
+        private System.Windows.Forms.DataGridView temp_danos;
+        private FontAwesome.Sharp.IconButton btn_chat;
+        public System.Windows.Forms.DataGridView data_grid_iniciativa;
+        private FontAwesome.Sharp.IconButton lbl_jogar_iniciativa;
+        private System.Windows.Forms.Panel personagens;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnl_chat;
+        private System.Windows.Forms.PictureBox d6;
+        private FontAwesome.Sharp.IconButton iconButton9;
+        private System.Windows.Forms.PictureBox d4;
+        private FontAwesome.Sharp.IconButton iconButton6;
+        private System.Windows.Forms.PictureBox d8;
+        private System.Windows.Forms.TextBox cmp_procura;
+        private System.Windows.Forms.PictureBox d20;
+        private System.Windows.Forms.PictureBox d10;
+        private System.Windows.Forms.Panel pnl_insanidades_chat;
+        private FontAwesome.Sharp.IconButton iconButton8;
+        private FontAwesome.Sharp.IconButton iconButton7;
+        private System.Windows.Forms.PictureBox d12;
+        private System.Windows.Forms.Panel pnl_mensagens;
         private System.Windows.Forms.Button button3;
     }
 }

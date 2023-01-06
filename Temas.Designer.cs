@@ -29,6 +29,7 @@ namespace Dark_Age
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Temas));
             this.claro = new FontAwesome.Sharp.IconButton();
             this.escuro = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,6 +60,7 @@ namespace Dark_Age
             this.claro.Click += new System.EventHandler(this.iconButton1_Click);
             this.claro.MouseEnter += new System.EventHandler(this.claro_MouseEnter);
             this.claro.MouseLeave += new System.EventHandler(this.escuro_MouseLeave);
+            this.claro.MouseHover += new System.EventHandler(this.claro_MouseEnter);
             // 
             // escuro
             // 
@@ -84,6 +86,7 @@ namespace Dark_Age
             this.escuro.Click += new System.EventHandler(this.iconButton2_Click);
             this.escuro.MouseEnter += new System.EventHandler(this.escuro_MouseEnter);
             this.escuro.MouseLeave += new System.EventHandler(this.escuro_MouseLeave);
+            this.escuro.MouseHover += new System.EventHandler(this.escuro_MouseEnter);
             // 
             // label1
             // 
@@ -122,13 +125,14 @@ namespace Dark_Age
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(14)))), ((int)(((byte)(34)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(34)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(494, 251);
             this.Controls.Add(this.btn_continuar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.escuro);
             this.Controls.Add(this.claro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Temas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Temas";

@@ -1,16 +1,16 @@
 ﻿using Dark_Age.Componente;
 using Dark_Age.Controllers;
 using Dark_Age.Enteties;
-using Npgsql;
 using System;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Printing;
-using System.Net;
-using System.Runtime.Intrinsics.Arm;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Ink;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Text;
+
+using System.Runtime.InteropServices;
 
 namespace Dark_Age
 {
@@ -32,25 +32,31 @@ namespace Dark_Age
         public static byte[] imagem_personagem;
         public static Image imagem_person;
         public static Color cor_fundo = Color.FromArgb(10, 16, 20);
+        public static int iniciativa_atual;
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
-
-        public Form1()
+    public Form1()
         {
             InitializeComponent();
+
+            this.DoubleBuffered = true;
             Opacity = 0;      //first the opacity is 0
-            label1.BackColor = Color.FromArgb(150, Color.Black);
-            painel_jogadores.BackColor = Color.FromArgb(150, Color.Black);
+            btn_jogadores.BackColor = Color.FromArgb(150, Color.Black);
+            btn_iniciativa.BackColor = Color.FromArgb(90, Color.Black);
+            lbl_jogar_iniciativa.BackColor = Temas.cor_escura_secundaria;
+            btn_chat.BackColor = Color.FromArgb(90, Color.Black);
+            personagens.BackColor = Color.FromArgb(150, Color.Black);
+            pnl_iniciativas.BackColor = Color.FromArgb(150, Color.Black);
             ficha_resumida.BackColor = Color.FromArgb(0, Color.Black);
+
             panel1.BackColor = Color.Transparent;
             panel2.BackColor = Color.Transparent;
             panel5.BackColor = Color.Transparent;
             panel6.BackColor = Color.Transparent;
             this.BackColor = Color.FromArgb(14, 40, 52);
             btn_open.BackColor = Color.FromArgb(14, 40, 52);
-
 
 
             btn_cria_personagem.Controls.Add(new Label()
@@ -62,8 +68,10 @@ namespace Dark_Age
             botao_itens.Controls.Add(new Label()
             { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
             btn_pet.Controls.Add(new Label()
-            { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });          
+            { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
+
         }
+
         public void preencher_info_tela()
         {
             info_entidade.preencher_pers(1, Campanha.id_entidade, 0, Campanha.id_campanha);
@@ -116,7 +124,7 @@ namespace Dark_Age
             }
 
             movimento.Text = "Movimento: " + (6 + Ficha.destreza);
-            iniciativa.Text = "Iniciativa: + " + Ficha.destreza;
+            iniciativa_bonus.Text = "Iniciativa: + " + Ficha.destreza;
 
             numericUpDown1.Maximum = vida_maxima;
             numericUpDown1.Value = vida_atual;
@@ -143,6 +151,7 @@ namespace Dark_Age
             }
 
             Lista_de_personagens();
+            carregar_danos();
         }
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
@@ -152,9 +161,7 @@ namespace Dark_Age
 
         private void Form1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
         {
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.Square;
-            minmax = false;
-            if (e.Button == MouseButtons.Left)
+            if (minmax == false && e.Button == MouseButtons.Left)
             {
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
@@ -164,21 +171,21 @@ namespace Dark_Age
         {
             if (vida_maxima > 0)
             {
-                panel9.Width = 220;
+                panel9.Width = 159;
                 decimal porcentagem3 = (decimal)vida_atual / (decimal)vida_maxima;
-                porcentagem3 = porcentagem3 * 220;
+                porcentagem3 = porcentagem3 * 159;
                 panel9.Width = Convert.ToInt32(porcentagem3);
             }
             if (sanidade_max > 0)
             {
                 decimal porcentagem4 = (decimal)sanidade_atual / (decimal)sanidade_max;
-                porcentagem4 = porcentagem4 * 220;
+                porcentagem4 = porcentagem4 * 159;
                 lbl_barra2.Width = Convert.ToInt32(porcentagem4);
             }
             if (mana_atual > 0)
             {
                 decimal porcentagem5 = (decimal)mana_atual / (decimal)mana_maxima;
-                porcentagem5 = porcentagem5 * 220;
+                porcentagem5 = porcentagem5 * 159;
                 lbl_barra_mana3.Width = Convert.ToInt32(porcentagem5);
             }
         }
@@ -187,8 +194,8 @@ namespace Dark_Age
             Opacity = 0;      //first the opacity is 0
 
             iconButton3.IconChar = FontAwesome.Sharp.IconChar.Minimize;
-
-            if(Temas.tema_claro == true)
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+            if (Temas.tema_claro == true)
             {
                 radioButton4.Checked = true;
             }
@@ -198,6 +205,10 @@ namespace Dark_Age
             }
             timer1.Interval = 10;  //we'll increase the opacity every 10ms
             timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
+            timer2.Interval = 10; 
+            timer2.Tick += new EventHandler(fadeOut); 
+            timer3.Interval = 10;  
+            timer3.Tick += new EventHandler(fadeIn2); 
             timer1.Start();
             bemvindo.Text = "Bem-Vindo(a), "+Campanha.nome_personagem+"!";
 
@@ -207,9 +218,52 @@ namespace Dark_Age
         void fadeIn(object sender, EventArgs e)
         {
             if (Opacity >= 1)
-                timer1.Stop();   //this stops the timer if the form is completely displayed
-            else
+            {
+                timer1.Stop();
+                timer3.Stop();
+            }else
+            {
                 Opacity += 0.05;
+            }
+                
+        }
+        void fadeIn2(object sender, EventArgs e)
+        {
+            if (Opacity >= 1)
+            {
+                timer1.Stop();
+                timer3.Stop();
+            }
+            else
+            {
+                Opacity += 0.10;
+            }
+
+        }
+        void fadeOut(object sender, EventArgs e)
+        {
+            if (Opacity <= 0)
+            {
+                if (minmax == true)
+                {
+                    this.WindowState = FormWindowState.Normal;
+                    iconButton3.IconChar = FontAwesome.Sharp.IconChar.Square;
+                    this.CenterToScreen();
+                    minmax = false;
+                }
+                else
+                {
+                    this.WindowState = FormWindowState.Maximized;
+                    iconButton3.IconChar = FontAwesome.Sharp.IconChar.Minimize;
+                    minmax = true;
+                }
+                timer2.Stop();
+                timer3.Start();
+            }
+            else
+            {
+                Opacity -= 1;
+            }
         }
 
         private void btn_open_Click(object sender, EventArgs e)
@@ -355,14 +409,9 @@ namespace Dark_Age
         {
             Inventario vinv = new Inventario();
             vinv.ShowDialog();
+            carregar_danos();
             ouro.Text = Inventario.moedas_de_ouro.ToString();
             prata.Text = Inventario.moedas_de_prata.ToString();
-        }
-
-
-        private void label29_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
         }
 
         private void LblFecharPassivas_Click(object sender, EventArgs e)
@@ -398,7 +447,7 @@ namespace Dark_Age
             {
                 lbl_vida.Text = numericUpDown1.Value + "/" + vida_maxima;
                 decimal porcentagem = (((decimal)vida_atual - (decimal)Convert.ToInt32(numericUpDown1.Value)) * 100) / (decimal)vida_maxima;
-                porcentagem = ((decimal)porcentagem * 220) / 100;
+                porcentagem = ((decimal)porcentagem * 159) / 100;
                 panel9.Width -= Convert.ToInt32(porcentagem);
                 vida_atual = Convert.ToInt32(numericUpDown1.Value);
                 if (numericUpDown1.Value < 6)
@@ -418,7 +467,7 @@ namespace Dark_Age
             {
                 lbl_sanidade.Text = numericUpDown2.Value + "/" + sanidade_max;
                 decimal porcentagem2 = (((decimal)sanidade_atual - (decimal)Convert.ToInt32(numericUpDown2.Value)) * 100) / (decimal)sanidade_max;
-                porcentagem2 = ((decimal)porcentagem2 * 220) / 100;
+                porcentagem2 = ((decimal)porcentagem2 * 159) / 100;
                 lbl_barra2.Width -= Convert.ToInt32(porcentagem2);
 
                 sanidade_atual = Convert.ToInt32(numericUpDown2.Value);
@@ -477,7 +526,7 @@ namespace Dark_Age
 
                 lbl_mana.Text = numericUpDown3.Value + "/" + mana_maxima;
                 decimal porcentagem5 = (((decimal)mana_atual - (decimal)Convert.ToInt32(numericUpDown3.Value)) * 100) / (decimal)mana_maxima;
-                porcentagem5 = ((decimal)porcentagem5 * 220) / 100;
+                porcentagem5 = ((decimal)porcentagem5 * 159) / 100;
                 lbl_barra_mana3.Width -= Convert.ToInt32(porcentagem5);
 
                 mana_atual = Convert.ToInt32(numericUpDown3.Value);
@@ -533,21 +582,32 @@ namespace Dark_Age
             string nome_c;
             string nome_p;
             string nome_u;
+            int id_e;
+            int vida_max_sel = 0;
+            int vida_atual_sel = 0;
             Image image_p;
             int distancia = 0;
             try
             {
                 DataTable ndv = Conexao_BD.select_personagem_campanha(0, Campanha.id_campanha);
+               
+
                 foreach (DataRow dr in ndv.Rows)
                 {
                     label_com_image personagens = new label_com_image();
+                    id_e = (int)dr["id_entidade"];
                     nome_p = dr["nome_personagem"].ToString();
                     nome_c = ("Classe: " + dr["nome_classe"].ToString());  
-                    nome_u = ("Usuario: " + dr["nome_jogador"].ToString());
+                    nome_u = ("Jogador: " + dr["nome_jogador"].ToString());
                     byte[] imagem_byte = ((byte[])dr["imagem"]);
                     image_p = byte_image.byteArrayToImage(imagem_byte);
 
-                    personagens.receber_valores(nome_p, nome_c, nome_u, image_p);
+                    string[] valor = info_entidade.select_personagem(1, id_e, 0, Campanha.id_campanha);
+
+                        vida_atual_sel = Int32.Parse(valor[3]);
+                        vida_max_sel = Int32.Parse(valor[3]);
+
+                    personagens.receber_valores(nome_p, nome_c, nome_u, image_p, vida_max_sel, vida_atual_sel);
                     personagens.Dock = DockStyle.None;
                     personagens.Left = 20;
 
@@ -558,7 +618,7 @@ namespace Dark_Age
                     pnlDefault.AutoSize = true;
                     // pnlDefault.BorderStyle = BorderStyle.FixedSingle;
 
-                    painel_jogadores.Controls.Add(pnlDefault);
+                    this.personagens.Controls.Add(pnlDefault);
                     pnlDefault.Controls.Add(personagens);
 
                     distancia++;
@@ -590,19 +650,7 @@ namespace Dark_Age
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
-             if (minmax == true)
-            {
-                this.WindowState = FormWindowState.Normal;
-                iconButton3.IconChar = FontAwesome.Sharp.IconChar.Square;
-                this.CenterToScreen();
-                minmax = false;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Maximized;
-                iconButton3.IconChar = FontAwesome.Sharp.IconChar.Minimize;
-                minmax = true;
-            }
+            timer2.Start();
         }
 
         private void btn_pet_Click(object sender, EventArgs e)
@@ -665,10 +713,6 @@ namespace Dark_Age
             Form1.ActiveForm.BackgroundImage = null;
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Profissoes profissoes = new Profissoes();
-            profissoes.Show();
-        }
+        
     }
 }

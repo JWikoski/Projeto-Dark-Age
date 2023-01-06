@@ -21,6 +21,7 @@ namespace Dark_Age
         public int id_item;
         public int id_item_equipado;
         public Boolean status;
+        public int item_especifico = 0;
 
         public int temp = 0;
 
@@ -58,10 +59,8 @@ namespace Dark_Age
 
         private void Form1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (minmax == false && e.Button == MouseButtons.Left)
             {
-                iconButton6.IconChar = FontAwesome.Sharp.IconChar.Square;
-                minmax = false;
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
@@ -70,14 +69,22 @@ namespace Dark_Age
         {
             Opacity = 0;      //first the opacity is 0
 
+            this.SetStyle(
+           ControlStyles.AllPaintingInWmPaint |
+           ControlStyles.UserPaint |
+           ControlStyles.DoubleBuffer,
+           true);
+
+            timer2.Interval = 10;
+            timer2.Tick += new EventHandler(fadeOut);
+            timer3.Interval = 10;
+            timer3.Tick += new EventHandler(fadeIn2);
             timer1.Interval = 5;  //we'll increase the opacity every 10ms
             timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
             timer1.Start();
 
-
-            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário();
+            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
             carregar_data_grid();
-
             data_grid_equipados.DataSource = Conexao_BD.select_itens_equipados();
             carregar_data_grid_equipados();
 
@@ -101,6 +108,45 @@ namespace Dark_Age
                 timer1.Stop();   //this stops the timer if the form is completely displayed
             else
                 Opacity += 0.1;
+        }
+
+        void fadeIn2(object sender, EventArgs e)
+        {
+            if (Opacity >= 1)
+            {
+                timer1.Stop();
+                timer3.Stop();
+            }
+            else
+            {
+                Opacity += 0.10;
+            }
+
+        }
+        void fadeOut(object sender, EventArgs e)
+        {
+            if (Opacity <= 0)
+            {
+                if (minmax == true)
+                {
+                    this.WindowState = FormWindowState.Normal;
+                    iconButton6.IconChar = FontAwesome.Sharp.IconChar.Square;
+                    this.CenterToScreen();
+                    minmax = false;
+                }
+                else
+                {
+                    this.WindowState = FormWindowState.Maximized;
+                    iconButton6.IconChar = FontAwesome.Sharp.IconChar.Minimize;
+                    minmax = true;
+                }
+                timer2.Stop();
+                timer3.Start();
+            }
+            else
+            {
+                Opacity -= 1;
+            }
         }
         private void Grid_lista_itens_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -132,7 +178,7 @@ namespace Dark_Age
             Grid_lista_inventario.Columns.Clear();
             if (cmp_procura.Text == "")
             {
-                Grid_lista_inventario.DataSource = Conexao_BD.select_inventário();
+                Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
                 carregar_data_grid();
             }
             else
@@ -147,7 +193,6 @@ namespace Dark_Age
         {
             try
             {
-
                 Grid_lista_inventario.Columns["id_itens"].HeaderText = "ID";
                 Grid_lista_inventario.Columns["nome_itens"].HeaderText = "Nome";
                 Grid_lista_inventario.Columns["dificuldade"].HeaderText = "Dificuldade";
@@ -198,7 +243,7 @@ namespace Dark_Age
             {
                 data_grid_equipados.DataSource = Conexao_BD.select_itens_equipados();
 
-                data_grid_equipados.Columns["id_itens"].HeaderText = "ID";
+                data_grid_equipados.Columns["id_itens"].Visible = false;
                 data_grid_equipados.Columns["nome_itens"].HeaderText = "Nome";
                 data_grid_equipados.Columns["dano"].HeaderText = "Dano";
                 data_grid_equipados.Columns["equipado"].Visible = false;
@@ -300,7 +345,7 @@ namespace Dark_Age
 
             if (filtro_dificuldade.Checked == false && filtro_profissoes.Checked == false && filtro_tipo.Checked == false)
             {
-                Grid_lista_inventario.DataSource = Conexao_BD.select_inventário();
+                Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
                 carregar_data_grid();
                 limpar_filtros1.Visible = false;
             }
@@ -311,6 +356,10 @@ namespace Dark_Age
             }
         }
         private void limpar_filtros2_Click(object sender, EventArgs e)
+        {
+            limpar_filtros();
+        }
+        private void limpar_filtros()
         {
             filtro_tipo.Checked = false;
             filtro_profissoes.Checked = false;
@@ -374,7 +423,7 @@ namespace Dark_Age
         {
             Lista_itens lista = new Lista_itens();
             lista.ShowDialog();
-            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário();
+            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
             carregar_data_grid();
             carregar_data_grid_equipados();
             limpar_filtros1.Visible = false;
@@ -385,7 +434,7 @@ namespace Dark_Age
             filtro_tipo.Checked = false;
             filtro_profissoes.Checked = false;
             filtro_dificuldade.Checked = false;
-            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário();
+            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
             carregar_data_grid();
             limpar_filtros1.Visible = false;
             limpar_filtros2.Visible = false;
@@ -396,7 +445,7 @@ namespace Dark_Age
             pnl_filtro.Visible = false;
             if (filtro_dificuldade.Checked == false && filtro_profissoes.Checked == false && filtro_tipo.Checked == false)
             {
-                Grid_lista_inventario.DataSource = Conexao_BD.select_inventário();
+                Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
                 carregar_data_grid();
             }
         }
@@ -417,14 +466,28 @@ namespace Dark_Age
         {
             status = true;
             Conexao_BD.equipar_item(id_item, status);
-            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário();
+            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
             carregar_data_grid();
             carregar_data_grid_equipados();
+            limpar_filtros();
         }
 
         private void cmp_procura_TextChanged(object sender, EventArgs e)
         {
             BindGrid();
+        }
+
+        private void combox_dificuldade_Click(object sender, EventArgs e)
+        {
+            filtro_dificuldade.Checked = true;
+        }
+        private void combox_profissao_Click(object sender, EventArgs e)
+        {
+            filtro_profissoes.Checked = true;
+        }
+        private void combox_tipo_Click(object sender, EventArgs e)
+        {
+            filtro_tipo.Checked = true;
         }
 
         private void Grid_lista_inventario_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -459,8 +522,9 @@ namespace Dark_Age
         {
             status = false;
             Conexao_BD.equipar_item(id_item_equipado, status);
-            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário();
+            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
             carregar_data_grid();
+            limpar_filtros();
             carregar_data_grid_equipados();
         }
 
@@ -513,9 +577,10 @@ namespace Dark_Age
             if(qtd <= 1)
             {
                 Conexao_BD.delete_item_inventario(id_item);
-                Grid_lista_inventario.DataSource = Conexao_BD.select_inventário();
+                Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
                 carregar_data_grid();
                 carregar_data_grid_equipados();
+                limpar_filtros();
             }
             else
             {
@@ -570,20 +635,20 @@ namespace Dark_Age
             if (qtd == 0)
             {
                 Conexao_BD.delete_item_inventario(id_item);
-                Grid_lista_inventario.DataSource = Conexao_BD.select_inventário();
+                Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
                 carregar_data_grid();
                 carregar_data_grid_equipados();
             }
             else
             {
                 Conexao_BD.update_qtd_inventario(id_item, qtd);
-            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário();
+            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
                 carregar_data_grid();
                 carregar_data_grid_equipados();
             }
             pnl_remover_item.SendToBack();
             pnl_remover_item.Visible = false;
-
+            limpar_filtros();
         }
 
         private void iconButton5_MouseEnter(object sender, EventArgs e)
@@ -601,19 +666,7 @@ namespace Dark_Age
 
         private void iconButton6_Click(object sender, EventArgs e)
         {
-            if (minmax == true)
-            {
-                this.WindowState = FormWindowState.Normal;
-                iconButton6.IconChar = FontAwesome.Sharp.IconChar.Square;
-                this.CenterToScreen();
-                minmax = false;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Maximized;
-                iconButton6.IconChar = FontAwesome.Sharp.IconChar.Minimize;
-                minmax = true;
-            }
+            timer2.Start();
         }
     }
 }

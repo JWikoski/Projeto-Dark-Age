@@ -100,7 +100,7 @@ namespace Dark_Age
             bordas = Color.FromArgb(45, 196, 118);
             adicionar_editar_itens adicionar = new adicionar_editar_itens();
             adicionar.ShowDialog();
-
+            cmp_procura.Text = "";
             Grid_lista_itens.DataSource = Conexao_BD.select_data_gridlist();
             carregar_data_grid();
         }
@@ -111,7 +111,7 @@ namespace Dark_Age
             bordas = Color.FromArgb(112, 38, 192);
             adicionar_editar_itens adicionar = new adicionar_editar_itens();
             adicionar.ShowDialog();
-
+            cmp_procura.Text = "";
             Grid_lista_itens.DataSource = Conexao_BD.select_data_gridlist();
             carregar_data_grid();
         }
@@ -188,6 +188,7 @@ namespace Dark_Age
                 conn.Close();
                 Grid_lista_itens.DataSource = Conexao_BD.select_data_gridlist();
                 carregar_data_grid();
+                cmp_procura.Text = "";
             }
 
         }
@@ -346,6 +347,7 @@ namespace Dark_Age
             filtro_dificuldade.Checked = false;
             limpar_filtros1.Visible = false;
             limpar_filtros2.Visible = false;
+            cmp_procura.Text = "";
         }
 
         private void limpar_filtros2_MouseEnter(object sender, EventArgs e)
@@ -353,6 +355,7 @@ namespace Dark_Age
             var button = (Button)sender;
             button.FlatAppearance.MouseOverBackColor = Color.FromArgb(20, Color.Salmon);
             button.ForeColor = Color.Salmon;
+            cmp_procura.Text = "";
         }
 
         private void limpar_filtros2_MouseLeave(object sender, EventArgs e)
