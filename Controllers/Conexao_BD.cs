@@ -553,8 +553,8 @@ namespace Dark_Age.Enteties
 
             comm.Connection = conn;
             comm.CommandType = CommandType.Text;
-            comm.CommandText = $@"INSERT INTO ""Dark_Age_Connection"".""inter_profissao_pers"" (fk_id_personagem, fk_id_profissao, fk_id_maestria) 
-                                       VALUES (@id_personagem, @id_profissao, @id_maestria)";
+            comm.CommandText = $@"INSERT INTO ""Dark_Age_Connection"".""inter_profissao_pers"" (fk_id_personagem, fk_id_profissao, fk_id_maestria, xp_profissao) 
+                                       VALUES (@id_personagem, @id_profissao, @id_maestria, 0)";
             comm.Parameters.AddWithValue("@id_personagem", id_personagem);
             comm.Parameters.AddWithValue("@id_profissao", id_profissao);
             comm.Parameters.AddWithValue("@id_maestria", id_maestria);
@@ -577,7 +577,7 @@ namespace Dark_Age.Enteties
             comm.ExecuteNonQuery();
         }
 
-        public static void atualizar_maestria(int id_personagem, int id_profissao, int id_maestria)
+        public static void update_maestria(int id_personagem, int id_profissao, int id_maestria)
         {
             using NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
             conn.Open();
@@ -630,10 +630,12 @@ namespace Dark_Age.Enteties
                                                                                  , m.nome 
                                                                                  , m.descricao 
                                                                                  , ipp.fk_id_maestria
+                                                                                 , ipp.fk_id_profissao
+                                                                                 , ipp.xp_profissao
                                                                               from ""Dark_Age_Connection"".inter_profissao_pers ipp 
                                                                               join ""Dark_Age_Connection"".""Profissao"" p on p.id_profissao = ipp.fk_id_profissao
                                                                               join ""Dark_Age_Connection"".maestria m on m.id_maestria = ipp.fk_id_maestria
-                                                                              where ipp.fk_id_personagem = " + Campanha.id_personagem, Conexao_BD.Caminho_DB());
+                                                                              where ipp.fk_id_personagem = " + Campanha.id_personagem + " ORDER BY ipp.id_pp", Conexao_BD.Caminho_DB());
                 using NpgsqlCommandBuilder cBuilder = new NpgsqlCommandBuilder(dt_adapter);
                 DataTable dt_table = new DataTable();
 
@@ -684,6 +686,23 @@ namespace Dark_Age.Enteties
                                                                                 "WHERE id_personagem = " + id_personagem + "";
 
                 comn.ExecuteNonQuery();
+        }
+
+        public static void update_xp_profissao(int xp_profissao, int id_personagem, int id_profissao)
+        {
+            using NpgsqlConnection conn = new NpgsqlConnection(Caminho_DB());
+            conn.Open();
+            using NpgsqlCommand comm = new NpgsqlCommand();
+            comm.Connection = conn;
+            comm.CommandType = CommandType.Text;
+            comm.CommandText = $@"UPDATE ""Dark_Age_Connection"".""inter_profissao_pers""
+                                  SET xp_profissao = @xp_profissao
+                                  WHERE fk_id_profissao = @id_profissao
+                                  AND fk_id_personagem = @id_personagem";
+            comm.Parameters.AddWithValue("@id_personagem", id_personagem);
+            comm.Parameters.AddWithValue("@id_profissao", id_profissao);
+            comm.Parameters.AddWithValue("@xp_profissao", xp_profissao);
+            comm.ExecuteNonQuery();
         }
     }
 }

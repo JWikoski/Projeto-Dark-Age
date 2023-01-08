@@ -37,7 +37,7 @@ namespace Dark_Age
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
-    public Form1()
+        public Form1()
         {
             InitializeComponent();
 
@@ -112,7 +112,8 @@ namespace Dark_Age
             {
                 panel_mana.Visible = false;
 
-            } else
+            }
+            else
             {
                 panel_mana.Visible = true;
             }
@@ -205,12 +206,12 @@ namespace Dark_Age
             }
             timer1.Interval = 10;  //we'll increase the opacity every 10ms
             timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
-            timer2.Interval = 10; 
-            timer2.Tick += new EventHandler(fadeOut); 
-            timer3.Interval = 10;  
-            timer3.Tick += new EventHandler(fadeIn2); 
+            timer2.Interval = 10;
+            timer2.Tick += new EventHandler(fadeOut);
+            timer3.Interval = 10;
+            timer3.Tick += new EventHandler(fadeIn2);
             timer1.Start();
-            bemvindo.Text = "Bem-Vindo(a), "+Campanha.nome_personagem+"!";
+            bemvindo.Text = "Bem-Vindo(a), " + Campanha.nome_personagem + "!";
 
             Lista_de_personagens();
             preencher_info_tela();
@@ -221,11 +222,12 @@ namespace Dark_Age
             {
                 timer1.Stop();
                 timer3.Stop();
-            }else
+            }
+            else
             {
                 Opacity += 0.05;
             }
-                
+
         }
         void fadeIn2(object sender, EventArgs e)
         {
@@ -272,7 +274,7 @@ namespace Dark_Age
             this.Hide();
             Ficha.tipo_entidade = 1;
             Ficha.pers_criado = true;
-            Ficha frm = new Ficha();            
+            Ficha frm = new Ficha();
             frm.Show();
         }
 
@@ -453,11 +455,12 @@ namespace Dark_Age
                 if (numericUpDown1.Value < 6)
                 {
                     panel9.BackColor = Color.Salmon;
-                } else
+                }
+                else
                 {
                     panel9.BackColor = Color.LimeGreen;
                 }
-            }           
+            }
         }
 
 
@@ -474,7 +477,8 @@ namespace Dark_Age
                 if (numericUpDown2.Value < 3)
                 {
                     lbl_barra2.BackColor = Color.DarkSlateGray;
-                } else
+                }
+                else
                 {
                     lbl_barra2.BackColor = Color.CadetBlue;
                 }
@@ -499,7 +503,8 @@ namespace Dark_Age
             if (panel12.Visible == true)
             {
                 panel12.Visible = false;
-            } else
+            }
+            else
             {
                 panel12.Visible = true;
             }
@@ -534,11 +539,13 @@ namespace Dark_Age
                 {
                     lbl_barra_mana3.BackColor = Color.DeepSkyBlue;
 
-                } else
+                }
+                else
                 {
                     lbl_barra_mana3.BackColor = Color.DodgerBlue;
                 }
-            } else
+            }
+            else
             {
                 lbl_mana.Text = "0/0";
             }
@@ -549,7 +556,8 @@ namespace Dark_Age
             if (pn_adicional.Visible == true)
             {
                 pn_adicional.Visible = false;
-            } else
+            }
+            else
             {
                 pn_adicional.Visible = true;
             }
@@ -590,22 +598,22 @@ namespace Dark_Age
             try
             {
                 DataTable ndv = Conexao_BD.select_personagem_campanha(0, Campanha.id_campanha);
-               
+
 
                 foreach (DataRow dr in ndv.Rows)
                 {
                     label_com_image personagens = new label_com_image();
                     id_e = (int)dr["id_entidade"];
                     nome_p = dr["nome_personagem"].ToString();
-                    nome_c = ("Classe: " + dr["nome_classe"].ToString());  
+                    nome_c = ("Classe: " + dr["nome_classe"].ToString());
                     nome_u = ("Jogador: " + dr["nome_jogador"].ToString());
                     byte[] imagem_byte = ((byte[])dr["imagem"]);
                     image_p = byte_image.byteArrayToImage(imagem_byte);
 
                     string[] valor = info_entidade.select_personagem(1, id_e, 0, Campanha.id_campanha);
 
-                        vida_atual_sel = Int32.Parse(valor[3]);
-                        vida_max_sel = Int32.Parse(valor[3]);
+                    vida_atual_sel = Int32.Parse(valor[3]);
+                    vida_max_sel = Int32.Parse(valor[3]);
 
                     personagens.receber_valores(nome_p, nome_c, nome_u, image_p, vida_max_sel, vida_atual_sel);
                     personagens.Dock = DockStyle.None;
@@ -622,9 +630,10 @@ namespace Dark_Age
                     pnlDefault.Controls.Add(personagens);
 
                     distancia++;
-                }                
+                }
 
-            } catch (Exception a)
+            }
+            catch (Exception a)
             {
                 MessageBox.Show("ERRO no carregar as informações", "Erro:" + a);
             }
@@ -713,6 +722,191 @@ namespace Dark_Age
             Form1.ActiveForm.BackgroundImage = null;
         }
 
-        
+        private void carregar_danos()
+        {
+            temp_danos.DataSource = Conexao_BD.select_itens_equipados();
+            temp_danos.EndEdit();
+            int q = temp_danos.Rows.Count;
+            int i = 0;
+            lbl_danos.Text = "";
+
+            while (i < q - 1)
+            {
+                DataGridViewRow row_temp = temp_danos.Rows[i];
+                lbl_danos.Text += row_temp.Cells[1].Value.ToString() + ": " + row_temp.Cells[2].Value.ToString() + "\n\r";
+                i++;
+            }
+
+        }
+        private void carregar_iniciativa()
+        {
+            try
+            {
+                data_grid_iniciativa.DataSource = Conexao_BD.select_iniciativa(Campanha.id_campanha);
+                if (data_grid_iniciativa.Rows.Count > 0)
+                {
+                    data_grid_iniciativa.Columns["id_personagem"].Visible = false;
+                    data_grid_iniciativa.Columns["nome_personagem"].ReadOnly = true;
+                    data_grid_iniciativa.Columns["iniciativa"].FillWeight = 40;
+                    data_grid_iniciativa.Columns["nome_personagem"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    data_grid_iniciativa.Columns["iniciativa"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                }
+                foreach (DataGridViewRow x in data_grid_iniciativa.Rows)
+                {
+                    x.MinimumHeight = 50;
+                }
+
+            }
+            catch (Exception a)
+            {
+                MessageBox.Show("ERRO no data grid ", "Erro:" + a);
+            }
+        }
+
+        private void btn_iniciativa_Click(object sender, EventArgs e)
+        {
+            btn_jogadores.BackColor = Color.FromArgb(90, Color.Black);
+            btn_jogadores.ForeColor = Color.Silver;
+            btn_iniciativa.BackColor = Color.FromArgb(150, Color.Black);
+            btn_iniciativa.ForeColor = Color.White;
+            btn_chat.BackColor = Color.FromArgb(90, Color.Black);
+            btn_chat.ForeColor = Color.Silver;
+
+            pnl_chat.Visible = false;
+            personagens.Visible = false;
+            pnl_iniciativas.Visible = true;
+            data_grid_iniciativa.Visible = true;
+            carregar_iniciativa();
+        }
+
+        private void btn_jogadores_Click(object sender, EventArgs e)
+        {
+            btn_jogadores.BackColor = Color.FromArgb(150, Color.Black);
+            btn_jogadores.ForeColor = Color.White;
+            btn_iniciativa.BackColor = Color.FromArgb(90, Color.Black);
+            btn_iniciativa.ForeColor = Color.Silver;
+            btn_chat.BackColor = Color.FromArgb(90, Color.Black);
+            btn_chat.ForeColor = Color.Silver;
+
+            pnl_chat.Visible = false;
+            pnl_iniciativas.Visible = false;
+            personagens.Visible = true;
+            Lista_de_personagens();
+        }
+
+        private void btn_chat_Click(object sender, EventArgs e)
+        {
+            btn_jogadores.BackColor = Color.FromArgb(90, Color.Black);
+            btn_jogadores.ForeColor = Color.Silver;
+            btn_iniciativa.BackColor = Color.FromArgb(90, Color.Black);
+            btn_iniciativa.ForeColor = Color.Silver;
+            btn_chat.BackColor = Color.FromArgb(150, Color.Black);
+            btn_chat.ForeColor = Color.White;
+
+            pnl_iniciativas.Visible = false;
+            personagens.Visible = false;
+            pnl_chat.Visible = true;
+        }
+
+        private void lbl_bvd_Click(object sender, EventArgs e)
+        {
+            Random random = new Random();
+            int roll = random.Next(1, 21);
+            iniciativa_atual = roll + Ficha.destreza;
+
+            Conexao_BD.update_iniciativa(Campanha.id_personagem, iniciativa_atual);
+            carregar_iniciativa();
+        }
+
+        private void lbl_jogar_iniciativa_MouseEnter(object sender, EventArgs e)
+        {
+            lbl_jogar_iniciativa.FlatAppearance.MouseOverBackColor = Temas.cor_escura_secundaria;
+            lbl_jogar_iniciativa.ForeColor = Color.White;
+            lbl_jogar_iniciativa.IconColor = Color.White;
+        }
+
+        private void iconButton4_MouseLeave(object sender, EventArgs e)
+        {
+            lbl_jogar_iniciativa.ForeColor = Color.FromArgb(200, 200, 200);
+            lbl_jogar_iniciativa.IconColor = Color.FromArgb(200, 200, 200);
+        }
+
+        private void pictureBox1_MouseHover(object sender, EventArgs e)
+        {
+            d4.BackgroundImage = global::Dark_Age.Properties.Resources.d43;
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            d4.BackgroundImage = global::Dark_Age.Properties.Resources.d42;
+        }
+
+        private void pictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            d6.BackgroundImage = global::Dark_Age.Properties.Resources.d6_hover;
+        }
+
+        private void d6_MouseLeave(object sender, EventArgs e)
+        {
+            d6.BackgroundImage = global::Dark_Age.Properties.Resources.d63;
+        }
+
+        private void d8_MouseEnter(object sender, EventArgs e)
+        {
+            d8.BackgroundImage = global::Dark_Age.Properties.Resources.d8_hover;
+        }
+
+        private void d8_MouseLeave(object sender, EventArgs e)
+        {
+            d8.BackgroundImage = global::Dark_Age.Properties.Resources.d81;
+        }
+
+        private void d10_MouseEnter(object sender, EventArgs e)
+        {
+            d10.BackgroundImage = global::Dark_Age.Properties.Resources.d10_hover;
+        }
+
+        private void d10_MouseLeave(object sender, EventArgs e)
+        {
+            d10.BackgroundImage = global::Dark_Age.Properties.Resources.d103;
+        }
+
+        private void d12_MouseEnter(object sender, EventArgs e)
+        {
+            d12.BackgroundImage = global::Dark_Age.Properties.Resources.d12_hover1;
+        }
+
+        private void d12_MouseLeave(object sender, EventArgs e)
+        {
+            d12.BackgroundImage = global::Dark_Age.Properties.Resources.d121;
+        }
+
+        private void d20_MouseEnter(object sender, EventArgs e)
+        {
+            d20.BackgroundImage = global::Dark_Age.Properties.Resources.d20_hover;
+        }
+
+        private void d20_MouseLeave(object sender, EventArgs e)
+        {
+            d20.BackgroundImage = global::Dark_Age.Properties.Resources.d201;
+        }
+
+        private void iconButton9_Click(object sender, EventArgs e)
+        {
+            if (pnl_insanidades_chat.Visible == true)
+            {
+                pnl_insanidades_chat.Visible = false;
+            }
+            else
+            {
+                pnl_insanidades_chat.Visible = true;
+            }
+        }
+
+        private void btnProfissões_Click(object sender, EventArgs e)
+        {
+            Profissoes profissoes = new Profissoes();
+            profissoes.Show();
+        }
     }
 }

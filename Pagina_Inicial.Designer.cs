@@ -117,9 +117,6 @@ namespace Dark_Age
             this.panel17 = new System.Windows.Forms.Panel();
             this.lbl_danos = new System.Windows.Forms.Label();
             this.iniciativa_bonus = new FontAwesome.Sharp.IconButton();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.lbl_danos = new System.Windows.Forms.Label();
-            this.iniciativa = new FontAwesome.Sharp.IconButton();
             this.movimento = new FontAwesome.Sharp.IconButton();
             this.prata = new System.Windows.Forms.Label();
             this.ouro = new System.Windows.Forms.Label();
@@ -197,9 +194,9 @@ namespace Dark_Age
             this.iconButton8 = new FontAwesome.Sharp.IconButton();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.d12 = new System.Windows.Forms.PictureBox();
+            this.btnProfissões = new FontAwesome.Sharp.IconButton();
             this.pnl_iniciativas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_grid_iniciativa)).BeginInit();
-            this.button3 = new System.Windows.Forms.Button();
             this.ficha_resumida.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.temp_danos)).BeginInit();
             this.panel3.SuspendLayout();
@@ -236,7 +233,6 @@ namespace Dark_Age
             ((System.ComponentModel.ISupportInitialize)(this.d10)).BeginInit();
             this.pnl_insanidades_chat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.d12)).BeginInit();
-            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_open
@@ -1528,26 +1524,6 @@ namespace Dark_Age
             this.panel16.TabIndex = 142;
             // 
             // iconButton5
-            // panel17
-            // 
-            this.panel17.AutoScroll = true;
-            this.panel17.Controls.Add(this.lbl_danos);
-            this.panel17.Location = new System.Drawing.Point(20, 3);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(358, 128);
-            this.panel17.TabIndex = 147;
-            // 
-            // lbl_danos
-            // 
-            this.lbl_danos.AutoSize = true;
-            this.lbl_danos.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_danos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbl_danos.Location = new System.Drawing.Point(3, 15);
-            this.lbl_danos.Name = "lbl_danos";
-            this.lbl_danos.Size = new System.Drawing.Size(0, 25);
-            this.lbl_danos.TabIndex = 0;
-            // 
-            // iniciativa
             // 
             this.iconButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.iconButton5.FlatAppearance.BorderSize = 0;
@@ -1796,6 +1772,7 @@ namespace Dark_Age
             // 
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel5.AutoSize = true;
+            this.panel5.Controls.Add(this.btnProfissões);
             this.panel5.Controls.Add(this.btn_anotacoes);
             this.panel5.Controls.Add(this.btn_cria_personagem);
             this.panel5.Location = new System.Drawing.Point(566, 0);
@@ -1866,21 +1843,6 @@ namespace Dark_Age
             this.Locais.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Locais.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Locais.Location = new System.Drawing.Point(981, 35);
-            this.Locais.Name = "Locais";
-            this.Locais.Size = new System.Drawing.Size(64, 112);
-            this.Locais.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Locais.TabIndex = 11;
-            this.Locais.TabStop = false;
-            this.Locais.Visible = false;
-            this.Locais.WaitOnLoad = true;
-            this.Locais.Click += new System.EventHandler(this.Locais_Click);
-            // 
-            // Locais
-            // 
-            this.Locais.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Locais.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Locais.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Locais.Location = new System.Drawing.Point(997, 173);
             this.Locais.Name = "Locais";
             this.Locais.Size = new System.Drawing.Size(64, 112);
             this.Locais.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2005,7 +1967,6 @@ namespace Dark_Age
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.Transparent;
-            this.panel8.Controls.Add(this.button3);
             this.panel8.Controls.Add(this.label2);
             this.panel8.Controls.Add(this.btn_gravar);
             this.panel8.Controls.Add(this.recaregar);
@@ -2841,7 +2802,6 @@ namespace Dark_Age
             this.iconButton8.MouseHover += new System.EventHandler(this.btn_change_MouseEnter);
             // 
             // iconButton7
-            // button3
             // 
             this.iconButton7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.iconButton7.BackColor = System.Drawing.Color.Transparent;
@@ -2882,13 +2842,31 @@ namespace Dark_Age
             this.d12.MouseEnter += new System.EventHandler(this.d12_MouseEnter);
             this.d12.MouseLeave += new System.EventHandler(this.d12_MouseLeave);
             this.d12.MouseHover += new System.EventHandler(this.d12_MouseEnter);
-            this.button3.Location = new System.Drawing.Point(756, 41);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 143;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnProfissões
+            // 
+            this.btnProfissões.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnProfissões.AutoSize = true;
+            this.btnProfissões.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProfissões.FlatAppearance.BorderSize = 0;
+            this.btnProfissões.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnProfissões.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfissões.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnProfissões.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnProfissões.IconChar = FontAwesome.Sharp.IconChar.Flask;
+            this.btnProfissões.IconColor = System.Drawing.Color.BurlyWood;
+            this.btnProfissões.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnProfissões.IconSize = 40;
+            this.btnProfissões.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnProfissões.Location = new System.Drawing.Point(21, 3);
+            this.btnProfissões.Name = "btnProfissões";
+            this.btnProfissões.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.btnProfissões.Size = new System.Drawing.Size(410, 46);
+            this.btnProfissões.TabIndex = 144;
+            this.btnProfissões.Text = "Profissões";
+            this.btnProfissões.UseVisualStyleBackColor = true;
+            this.btnProfissões.Click += new System.EventHandler(this.btnProfissões_Click);
             // 
             // Form1
             // 
@@ -2944,7 +2922,6 @@ namespace Dark_Age
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Locais)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Locais)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -2978,7 +2955,6 @@ namespace Dark_Age
             ((System.ComponentModel.ISupportInitialize)(this.d10)).EndInit();
             this.pnl_insanidades_chat.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.d12)).EndInit();
-            this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3146,7 +3122,6 @@ namespace Dark_Age
         private FontAwesome.Sharp.IconButton iconButton7;
         private System.Windows.Forms.PictureBox d12;
         private System.Windows.Forms.Panel pnl_mensagens;
-        private System.Windows.Forms.Button button3;
+        private FontAwesome.Sharp.IconButton btnProfissões;
     }
 }
-
