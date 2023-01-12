@@ -1,7 +1,7 @@
 ﻿
 namespace Dark_Age
 {
-    partial class Pets
+    partial class NPCs
     {
         /// <summary>
         /// Required designer variable.
@@ -226,7 +226,7 @@ namespace Dark_Age
             this.btn_adotar.TabIndex = 160;
             this.btn_adotar.Text = "Adotar/Invocar";
             this.btn_adotar.UseVisualStyleBackColor = false;
-            this.btn_adotar.Click += new System.EventHandler(this.iconButton1_Click);
+            this.btn_adotar.Click += new System.EventHandler(this.btn_adotar_Click);
             this.btn_adotar.MouseEnter += new System.EventHandler(this.iconButton1_MouseEnter);
             this.btn_adotar.MouseLeave += new System.EventHandler(this.iconButton1_MouseLeave);
             this.btn_adotar.MouseHover += new System.EventHandler(this.iconButton1_MouseEnter);
@@ -274,12 +274,12 @@ namespace Dark_Age
             this.checkBox1.UseVisualStyleBackColor = false;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // Pets
+            // NPCs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(10)))), ((int)(((byte)(34)))));
-            this.BackgroundImage = global::Dark_Age.Properties.Resources.dark_blue_;
+            this.BackgroundImage = global::Dark_Age.Properties.Resources.papers_co_sk61_dark_purple_blur_gradation_36_3840x2400_4k_wallpaper;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1370, 700);
             this.Controls.Add(this.checkBox1);
@@ -294,7 +294,7 @@ namespace Dark_Age
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.btn_pet);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Pets";
+            this.Name = "NPCs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pets";
             this.Load += new System.EventHandler(this.Pets_Load);

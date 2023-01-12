@@ -85,7 +85,7 @@ namespace Dark_Age
             this.panel1.Location = new System.Drawing.Point(0, 168);
             this.panel1.MaximumSize = new System.Drawing.Size(610, 2400);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(610, 754);
+            this.panel1.Size = new System.Drawing.Size(610, 588);
             this.panel1.TabIndex = 13;
             // 
             // label3
@@ -453,7 +453,7 @@ namespace Dark_Age
             this.panel2.Location = new System.Drawing.Point(618, 168);
             this.panel2.MaximumSize = new System.Drawing.Size(608, 2400);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(608, 754);
+            this.panel2.Size = new System.Drawing.Size(608, 588);
             this.panel2.TabIndex = 19;
             // 
             // panel6
@@ -462,7 +462,7 @@ namespace Dark_Age
             this.panel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(155)))), ((int)(((byte)(140)))));
             this.panel6.Location = new System.Drawing.Point(614, 165);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1, 750);
+            this.panel6.Size = new System.Drawing.Size(1, 590);
             this.panel6.TabIndex = 23;
             // 
             // panel7
@@ -485,7 +485,7 @@ namespace Dark_Age
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(28)))), ((int)(((byte)(33)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1225, 930);
+            this.ClientSize = new System.Drawing.Size(1225, 768);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel3);

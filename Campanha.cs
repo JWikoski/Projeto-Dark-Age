@@ -77,12 +77,12 @@ namespace Dark_Age
                 if (id_mestre != id_jogador)
                 {
                     id_mestre_campanha = 0;
-                    data_grid_pers_camp.DataSource = Conexao_BD.select_personagem_campanha(id_jogador, id_campanha);                    
+                    data_grid_pers_camp.DataSource = Conexao_BD.select_personagem_campanha(id_jogador, id_campanha, 1);                    
                 }
                 else
                 {
                     id_mestre_campanha = id_jogador;
-                    data_grid_pers_camp.DataSource = Conexao_BD.select_personagem_campanha(0, id_campanha);
+                    data_grid_pers_camp.DataSource = Conexao_BD.select_personagem_campanha(0, id_campanha, 1);
                 }
                 if (data_grid_pers_camp.DataSource != null)
                 {

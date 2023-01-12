@@ -14,7 +14,7 @@ namespace Dark_Age
 
         public static int moedas_de_ouro;
         public static int moedas_de_prata;
-        
+
         public int qtd = 1;
         public int qtd_remover = 1;
         public Boolean filtros = true;
@@ -24,6 +24,9 @@ namespace Dark_Age
         public int item_especifico = 0;
 
         public int temp = 0;
+
+        public static int dr_new;
+        public static int dr_old;
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -165,7 +168,7 @@ namespace Dark_Age
                 id_item = (int)row.Cells[0].Value;
                 qtd = (int)row.Cells[8].Value;
 
-                label9.Text = ("Você tem " + qtd + " " + row.Cells[1].Value.ToString()+"!");
+                label9.Text = ("Você tem " + qtd + " " + row.Cells[1].Value.ToString() + "!");
             }
             catch (Exception a)
             {
@@ -223,7 +226,7 @@ namespace Dark_Age
                     id_item = (int)cell1.Cells[0].Value;
                     qtd = (int)cell1.Cells[8].Value;
 
-                    label9.Text = ("Você tem "+ qtd + " "+cell1.Cells[1].Value.ToString());
+                    label9.Text = ("Você tem " + qtd + " " + cell1.Cells[1].Value.ToString());
                 }
                 foreach (DataGridViewRow x in Grid_lista_inventario.Rows)
                 {
@@ -249,7 +252,7 @@ namespace Dark_Age
                 data_grid_equipados.Columns["equipado"].Visible = false;
                 data_grid_equipados.Columns["id_itens"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 
-                
+
                 if (data_grid_equipados.Rows.Count > 0)
                 {
                     data_grid_equipados.Rows[0].Selected = true;
@@ -271,7 +274,7 @@ namespace Dark_Age
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            if(pnl_filtro.Visible == false)
+            if (pnl_filtro.Visible == false)
             {
                 pnl_filtro.Visible = true;
             }
@@ -574,7 +577,7 @@ namespace Dark_Age
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if(qtd <= 1)
+            if (qtd <= 1)
             {
                 Conexao_BD.delete_item_inventario(id_item);
                 Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
@@ -605,12 +608,12 @@ namespace Dark_Age
         }
         private void adiciona_qtd_Click(object sender, EventArgs e)
         {
-            if(qtd_remover < qtd)
+            if (qtd_remover < qtd)
             {
                 qtd_remover++;
                 lbl_qtd.Text = qtd_remover.ToString();
             }
-            
+
             if (qtd_remover > 1)
             {
                 remove_qtd.Visible = true;
@@ -642,7 +645,7 @@ namespace Dark_Age
             else
             {
                 Conexao_BD.update_qtd_inventario(id_item, qtd);
-            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
+                Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
                 carregar_data_grid();
                 carregar_data_grid_equipados();
             }
@@ -667,6 +670,20 @@ namespace Dark_Age
         private void iconButton6_Click(object sender, EventArgs e)
         {
             timer2.Start();
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+
+            DataGridView temp_datagrid = new DataGridView();
+            temp_datagrid.DataSource = Conexao_BD.select_inventário(item_especifico);
+
+            dr_new = temp_datagrid.Rows.Count;
+            if (dr_new > dr_old)
+            {
+                carregar_data_grid();
+                dr_old = dr_new;
+            }
         }
     }
 }

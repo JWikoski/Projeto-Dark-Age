@@ -1,4 +1,6 @@
-﻿using Dark_Age.Enteties;
+﻿using Dark_Age.Componente;
+using Dark_Age.Controllers;
+using Dark_Age.Enteties;
 using Npgsql;
 using System;
 using System.Collections.Generic;
@@ -20,61 +22,52 @@ namespace Dark_Age.Componente
         public int mana_max;
         public int mana_atual;
         public int id_personagem;
+        public int id_entidade;
 
         private void Painel_NPC_Load(object sender, EventArgs e)
         {
-            
+            Painel_entidade.preenche_atributos(id_personagem);
+            lbl_dado_ataque.Text = "Ataque: 1d20 + " + Painel_entidade.forca;
         }        
 
-        public Painel_NPC()
+        public Painel_NPC(int entidade)
         {
             InitializeComponent();
+            id_entidade = entidade;
         }
 
 
-        public void preencher_campos(int id_pers)
+        public void preencher_campos(Image image)
         {
-            id_personagem = id_pers;
             NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
             conn.Open();
             NpgsqlCommand comi = new NpgsqlCommand();
             comi.Connection = conn;
             comi.CommandType = CommandType.Text;
-            comi.CommandText = @"select forca
-	                                  , destreza
-	                                  , vigor
-	                                  , carisma
-	                                  , raciocinio
-	                                  , magia
-	                                  , nome_personagem
-	                                  , vida_max 
-	                                  , vida_atual 
-	                                  , mana_atual
-                                   from ""Dark_Age_Connection"".""Personagens"" 
-                                  where id_personagem = @id_personagem";
-            comi.Parameters.AddWithValue("@id_personagem", id_pers);
+            comi.CommandText = @"select pers.nome_personagem
+	                                  , ent.vida_max 
+	                                  , ent.vida_atual
+	                                  , ent.mana_atual
+	                                  , ent.mana_max
+                                      , pers.id_personagem
+                                   from ""Dark_Age_Connection"".""Inter_status_pers"" ent
+                                   join ""Dark_Age_Connection"".""Personagens"" pers on pers.id_personagem = ent.fk_id_personagem
+                                  where ent.id_entidade = @id_entidade";
+            comi.Parameters.AddWithValue("@id_entidade", id_entidade);
             NpgsqlDataReader nda = comi.ExecuteReader();
+
+            
 
             if (nda.Read())
             {
-                lbl_forca.Text = "Força: " + Convert.ToString((int)nda.GetValue(0));
-                lbl_dest.Text = "Destreza: " + Convert.ToString((int)nda.GetValue(1));
-                lbl_vigor.Text = "Vigor: " + Convert.ToString((int)nda.GetValue(2));
-                lbl_caris.Text = "Carisma: " + Convert.ToString((int)nda.GetValue(3));
-                lbl_raci.Text = "Raciocinio: " + Convert.ToString((int)nda.GetValue(4));
-                lbl_magia.Text = "Magia: " + Convert.ToString((int)nda.GetValue(5));
-                lbl_nome_perso.Text = (string)nda.GetValue(6);
-                vida_max = (int)nda.GetValue(7);
-                vida_atual = (int)nda.GetValue(8);
-                mana_atual = (int)nda.GetValue(9); 
-                mana_max = (2 * (int)nda.GetValue(5));
-                if((int)nda.GetValue(0) > (int)nda.GetValue(1))
-                {
-                    lbl_dado_ataque.Text = "Ataque: 1d20 + " + Convert.ToString((int)nda.GetValue(0));
-                } else
-                {
-                    lbl_dado_ataque.Text = "Ataque: 1d20 + " + Convert.ToString((int)nda.GetValue(1));
-                }                
+                lbl_nome_perso.Text = (string)nda.GetValue(0);
+                vida_max = (int)nda.GetValue(1);
+                vida_atual = (int)nda.GetValue(2);
+                mana_atual = (int)nda.GetValue(3); 
+                mana_max = (int)nda.GetValue(4);
+                id_personagem = (int)nda.GetValue(5);
+                image_pers.Image = image;
+
                 comi.Dispose();
                 conn.Close();
             }           
@@ -124,10 +117,19 @@ namespace Dark_Age.Componente
         }
         public void altera_vida()
         {
+
+            if (vida_atual > vida_max)
+            {
+                vida_atual = vida_max;
+            }
             txt_vida.Text = vida_atual + "/" + vida_max;
         }
         public void altera_mana()
         {
+            if(mana_atual > mana_max)
+            {
+                mana_atual = mana_max;
+            }
             txt_mana.Text = mana_atual + "/" + mana_max;
         }
 
@@ -138,20 +140,136 @@ namespace Dark_Age.Componente
             NpgsqlCommand comi = new NpgsqlCommand();
             comi.Connection = conn;
             comi.CommandType = CommandType.Text;
-            comi.CommandText = @"update ""Dark_Age_Connection"".""Personagens""
+            comi.CommandText = @"update ""Dark_Age_Connection"".""Inter_status_pers""
                                     set vida_atual = @vida_atual
                                       , mana_atual = @mana_atual
-                                  where id_personagem = @id_personagem";
+                                  where id_entidade = @id_entidade";
             comi.Parameters.AddWithValue("@vida_atual", vida_atual);
             comi.Parameters.AddWithValue("@mana_atual", mana_atual);
-            comi.Parameters.AddWithValue("@id_personagem", id_personagem);
+            comi.Parameters.AddWithValue("@id_entidade", id_entidade);
             NpgsqlDataReader nda = comi.ExecuteReader();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            adicionar_editar_itens l = new adicionar_editar_itens();
-            l.ShowDialog();
+            Painel_entidade l = new Painel_entidade(id_personagem);
+            l.Show();
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            Random random = new Random();
+            int roll = random.Next(1, 21);
+            int iniciativa_d20 = roll + Ficha.destreza;
+            Conexao_BD.update_iniciativa(id_personagem, iniciativa_d20);
+        }
+
+        private void lbl_dado_ataque_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void iniciativa_npc_MouseHover(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+            button.ForeColor = Color.White;
+        }
+
+        private void iniciativa_npc_MouseLeave(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+            button.ForeColor = Color.Silver;
+        }
+        private void btn_detalhes_MouseEnter(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+            button.FlatAppearance.MouseOverBackColor = Color.FromArgb(15, Color.White);
+        }
+
+        private void txt_vida_Click(object sender, EventArgs e)
+        {
+            txt_vida.Text = vida_atual.ToString();
+        }
+
+        private void txt_vida_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txt_vida.Text.All(char.IsDigit))
+                {
+                    vida_atual = Convert.ToInt32(txt_vida.Text);
+                    altera_vida();
+                    update_vida_mana();
+                }
+                else
+                {
+
+                }
+            }
+        }
+
+        private void txt_vida_Leave(object sender, EventArgs e)
+        {
+            if (txt_vida.Text.All(char.IsDigit))
+            {
+                vida_atual = Convert.ToInt32(txt_vida.Text);
+                altera_vida();
+                update_vida_mana();
+            }
+            else
+            {
+            }
+        }
+
+        private void txt_mana_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txt_mana.Text.All(char.IsDigit))
+                {
+                    mana_atual = Convert.ToInt32(txt_mana.Text);
+                    altera_mana();
+                    update_vida_mana();
+                }
+                else
+                {
+                }
+            }
+        }
+
+        private void txt_mana_Click(object sender, EventArgs e)
+        {
+            txt_mana.Text = mana_atual.ToString();
+        }
+
+        private void txt_mana_Leave(object sender, EventArgs e)
+        {
+           
+            if (txt_mana.Text.All(char.IsDigit))
+            {
+                mana_atual = Convert.ToInt32(txt_mana.Text);
+                altera_mana();
+                update_vida_mana();
+            }
+            else
+            {
+
+            }
+        }
+
+        private void image_pers_Click(object sender, EventArgs e)
+        {
+            visualizar_imagem.imagem_selecionada = image_pers.Image;
+            visualizar_imagem foto_personagem = new visualizar_imagem();
+            foto_personagem.Show();
+        }
+
+        private void iconButton2_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Tem certeza que deseja Exluir esse Monstro?", "Excluir monstro", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Conexao_BD.excluir_entidade(id_entidade);
+            }
         }
     }
 }

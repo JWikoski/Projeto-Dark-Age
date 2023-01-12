@@ -20,6 +20,16 @@ namespace Dark_Age.Controllers
             var button = (Button)sender;
             Color cor = button.ForeColor;
             button.FlatAppearance.MouseOverBackColor = Color.FromArgb(25, cor);
+        } public static void muda_cor_fundo_botao(object sender)
+        {
+            var button = (Button)sender;
+            Color cor = button.ForeColor;
+            button.BackColor = Color.FromArgb(25, cor);
+        }
+        public static void cor_texto_branco(object sender)
+        {
+            var button = (Button)sender;
+            button.ForeColor = Color.White;
         }
 
     }

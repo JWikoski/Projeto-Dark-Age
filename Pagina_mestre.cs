@@ -17,6 +17,8 @@ namespace Dark_Age
         Boolean minmax = false;
         public static string sanidades;
         public static int id_entidade;
+        public static int id_personagem;
+        public static int tipo;
 
 
         public Pagina_mestre()
@@ -36,6 +38,7 @@ namespace Dark_Age
             btn_regras.BackColor = Temas.cor_principal;
             btn_sanidades.BackColor = Temas.cor_principal;
             Temas.mudar_cor_data_grid(Grid_lista_iniciativas);
+            style.muda_cor_fundo_botao(btn_monstros);
         }
 
         public void carregar_data_grid()
@@ -76,8 +79,9 @@ namespace Dark_Age
             int distancia = 0;
             try
             {
-                DataTable ndv = Conexao_BD.select_personagem_campanha(0, Campanha.id_campanha);
+                DataTable ndv = Conexao_BD.select_personagem_campanha(0, Campanha.id_campanha, 1);
 
+                pnl_entidades.Controls.Clear();
 
                 foreach (DataRow dr in ndv.Rows)
                 {
@@ -130,6 +134,7 @@ namespace Dark_Age
             timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
             timer1.Start();
 
+            carregar_monstros();
             carregar_data_grid();
             Conexao_BD.Select_Regras(ref regras, ref sanidades);
             txt_regras.Text = regras;
@@ -226,8 +231,14 @@ namespace Dark_Age
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
-            pnl_entidades.Controls.Clear();
-            lbl_npc.Text = "NPC's";
+            ///pnl_entidades.Controls.Clear();
+            style.muda_cor_fundo_botao(btn_npcs);
+            btn_jogadores.BackColor = Color.Transparent;
+            btn_monstros.BackColor = Color.Transparent;
+
+            btn_npcs.Focus();
+            tipo = 2;
+            carregar_entidade_NPC(tipo);
         }
 
         private void HoverEnter_MouseEnter(object sender, EventArgs e)
@@ -243,14 +254,32 @@ namespace Dark_Age
 
         private void btn_monstros_Click(object sender, EventArgs e)
         {
+            carregar_monstros();
+        }
+        
+        private void carregar_monstros()
+        {
             pnl_entidades.Controls.Clear();
-            lbl_npc.Text = "Monstros";
+
+            ///pnl_entidades.Controls.Clear();
+            style.muda_cor_fundo_botao(btn_monstros);
+            btn_jogadores.BackColor = Color.Transparent;
+            btn_npcs.BackColor = Color.Transparent;
+
+            btn_monstros.Focus();
+            tipo = 3;
+            carregar_entidade_NPC(tipo);
         }
 
         private void btn_jogadores_Click(object sender, EventArgs e)
         {
-            lbl_npc.Text = "Personagens";
-            pnl_entidades.Controls.Clear();
+            ///pnl_entidades.Controls.Clear();
+            style.muda_cor_fundo_botao(btn_jogadores);
+            btn_monstros.BackColor = Color.Transparent;
+            style.muda_cor_fundo_botao(btn_jogadores);
+            btn_npcs.BackColor = Color.Transparent;
+
+            btn_jogadores.Focus();
             Lista_de_personagens();
         }
 
@@ -366,7 +395,7 @@ namespace Dark_Age
         private void Grid_lista_iniciativas_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewCell cell = Grid_lista_iniciativas.Rows[e.RowIndex].Cells[e.ColumnIndex];
-            if((int)cell.Value == 0)
+            if ((int)cell.Value == 0)
             {
                 cell.Value = 0;
             }
@@ -409,7 +438,7 @@ namespace Dark_Age
 
         private void iconButton9_Click(object sender, EventArgs e)
         {
-            if(pnl_insanidades_chat.Visible == true)
+            if (pnl_insanidades_chat.Visible == true)
             {
                 pnl_insanidades_chat.Visible = false;
             }
@@ -478,6 +507,60 @@ namespace Dark_Age
         {
             d20.BackgroundImage = global::Dark_Age.Properties.Resources.d201;
         }
-    }
 
+        public void carregar_entidade_NPC(int tipo)
+        {
+            int id_entidade;
+            string nome_entidade;
+            int distancia = 0;
+            Image image_p;
+            try
+            {
+                DataTable nde = Conexao_BD.select_personagem_campanha(0, Campanha.id_campanha, tipo);
+
+
+                foreach (DataRow de in nde.Rows)
+                {
+                    id_entidade = (int)de["id_entidade"];
+                    id_personagem = (int)de["id_personagem"];
+                    nome_entidade = de["nome_personagem"].ToString();
+                    byte[] imagem_byte = ((byte[])de["imagem"]);
+                    image_p = byte_image.byteArrayToImage(imagem_byte);
+
+                    string[] valor = info_entidade.select_personagem(tipo, id_entidade, 0, Campanha.id_campanha);
+
+
+                    Painel_NPC entidades = new Painel_NPC(id_entidade);
+                    entidades.preencher_campos(image_p);
+                    entidades.Dock = DockStyle.None;
+                    entidades.Left = 10;
+
+                    Panel pnl_entidade = new Panel();
+                    pnl_entidade.BackColor = Color.Transparent;
+                    pnl_entidade.Dock = DockStyle.None;
+                    pnl_entidade.Top = (distancia + 10);
+                    pnl_entidade.AutoSize = true;
+                    // pnlDefault.BorderStyle = BorderStyle.FixedSingle;
+                    pnl_entidade.Controls.Add(entidades);
+                    pnl_entidades.Controls.Add(pnl_entidade);
+
+                    distancia += 148;
+                }
+
+            }
+            catch (Exception a)
+            {
+                MessageBox.Show("ERRO no carregar as informações"+a, "Erro:" + a);
+            }
+        }
+
+        private void iconButton6_Click(object sender, EventArgs e)
+        {
+
+            NPCs.tipo_entidade = 3;
+            NPCs pets = new NPCs();
+            pets.ShowDialog();
+            carregar_monstros();
+        }
+    }
 }

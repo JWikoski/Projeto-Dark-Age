@@ -1,22 +1,24 @@
 ﻿using Dark_Age.Enteties;
 using Npgsql;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using Dark_Age.Controllers;
 
 namespace Dark_Age
 {
-    public partial class Pets : Form
+    public partial class NPCs : Form
     {
-        public static int id_pet;
-        public static int id_dono;
+        public static int id_personagem;
+        public static int id_entidade;
+        public static int id_jogador;
         public static int vida_pet;
         public static int vida_pet_max;
         public static int mana_atual;
@@ -24,17 +26,9 @@ namespace Dark_Age
         public static int tipo_entidade;
         public static string tamanho;
         public static int meus_pets = 1;
-        public Pets()
+        public NPCs()
         {
             InitializeComponent();
-
-            if(tipo_entidade == 2)
-            {
-                this.BackgroundImage = global::Dark_Age.Properties.Resources.papers_co_sk61_dark_purple_blur_gradation_36_3840x2400_4k_wallpaper;
-            }else
-            {
-                this.BackgroundImage = global::Dark_Age.Properties.Resources.dark_blue_;
-            }
 
             Opacity = 0;      //first the opacity is 0
             timer1.Interval = 10;  //we'll increase the opacity every 10ms
@@ -65,6 +59,15 @@ namespace Dark_Age
 
         private void Pets_Load(object sender, EventArgs e)
         {
+            if (tipo_entidade == 2)
+            {
+                this.BackgroundImage = global::Dark_Age.Properties.Resources.papers_co_sk61_dark_purple_blur_gradation_36_3840x2400_4k_wallpaper;
+            }
+            else
+            {
+                this.BackgroundImage = global::Dark_Age.Properties.Resources.dark_blue_;
+            }
+
             carregar_data_grid();
         }
         public void carregar_data_grid()
@@ -72,7 +75,7 @@ namespace Dark_Age
             try
             {
 
-                Grid_lista_pets.DataSource = Conexao_BD.select_pet_jogador(Campanha.id_jogador, Campanha.id_campanha, meus_pets);
+                Grid_lista_pets.DataSource = Conexao_BD.select_pet_jogador(Campanha.id_jogador, Campanha.id_campanha, meus_pets, tipo_entidade);
                 Grid_lista_pets.Columns["id_personagem"].HeaderText = "ID";
                 Grid_lista_pets.Columns["nome_personagem"].HeaderText = "Nome criatura";
                 Grid_lista_pets.Columns["vida_max"].HeaderText = "Vida";
@@ -82,6 +85,7 @@ namespace Dark_Age
                 Grid_lista_pets.Columns["vida_atual"].Visible = false;
                 Grid_lista_pets.Columns["escudo"].Visible = false;
                 Grid_lista_pets.Columns["tipo_personagem"].Visible = false;
+                Grid_lista_pets.Columns["id_entidade"].Visible = false;
                 Grid_lista_pets.Columns["tamanho"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 Grid_lista_pets.Columns["vida_max"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 Grid_lista_pets.Columns["mana_atual"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -92,18 +96,19 @@ namespace Dark_Age
                     Grid_lista_pets.Rows[0].Selected = true;
                     Status_pet.Text = "";
                     DataGridViewRow row = Grid_lista_pets.Rows[0];
-                    id_dono = (int)row.Cells[0].Value;
-                    id_pet = (int)row.Cells[1].Value;
+                    id_jogador = (int)row.Cells[0].Value;
+                    id_personagem = (int)row.Cells[1].Value;
+                    id_entidade = (int)row.Cells[9].Value;
 
-                    if (id_dono == Campanha.id_jogador)
+                    if (id_jogador == Campanha.id_jogador)
                     {
                         Status_pet.Text += "Vida: " + row.Cells[4].Value.ToString() + " / " + row.Cells[3].Value.ToString() + "\n\r";
-                        Status_pet.Text += "Mana: " + row.Cells[5].Value.ToString() + " / " + row.Cells[5].Value.ToString() + "\n\r";
+                        Status_pet.Text += "Mana: " + row.Cells[5].Value.ToString() + "\n\r";
                     }
                     else
                     {
-                        Status_pet.Text += "Vida: " + row.Cells[2].Value.ToString() + "\n\r";
-                        Status_pet.Text += "Mana: " + row.Cells[3].Value.ToString() + "\n\r";
+                        Status_pet.Text += "Vida: " + row.Cells[4].Value.ToString() + "\n\r";
+                        Status_pet.Text += "Mana: " + row.Cells[5].Value.ToString() + "\n\r";
                     }
                 }
                 foreach (DataGridViewRow x in Grid_lista_pets.Rows)
@@ -133,18 +138,19 @@ namespace Dark_Age
                 }
                 Status_pet.Text = "";
                 DataGridViewRow row = Grid_lista_pets.Rows[e.RowIndex];
-                id_dono = (int)row.Cells[0].Value;
-                id_pet = (int)row.Cells[1].Value;
+                id_jogador = (int)row.Cells[0].Value;
+                id_personagem = (int)row.Cells[1].Value;
+                id_entidade = (int)row.Cells[9].Value;
 
-                if (id_dono == Campanha.id_jogador)
+                if (id_jogador == Campanha.id_jogador)
                 {
                     Status_pet.Text += "Vida: " + row.Cells[4].Value.ToString()+" / "+ row.Cells[3].Value.ToString() + "\n\r";
                     Status_pet.Text += "Mana: " + row.Cells[5].Value.ToString() + " / " + row.Cells[5].Value.ToString() + "\n\r";
                 }
                 else
                 {
-                    Status_pet.Text += "Vida: " + row.Cells[2].Value.ToString() + "\n\r";
-                    Status_pet.Text += "Mana: " + row.Cells[3].Value.ToString() + "\n\r";
+                    Status_pet.Text += "Vida: " + row.Cells[4].Value.ToString() + "\n\r";
+                    Status_pet.Text += "Mana: " + row.Cells[5].Value.ToString() + "\n\r";
                 }
                 
             }
@@ -183,13 +189,13 @@ namespace Dark_Age
             if(checkBox1.Checked == true)
             {
                 meus_pets = 1;
-                Grid_lista_pets.DataSource = Conexao_BD.select_pet_jogador(Campanha.id_jogador, Campanha.id_campanha, meus_pets);
+                Grid_lista_pets.DataSource = Conexao_BD.select_pet_jogador(Campanha.id_jogador, Campanha.id_campanha, meus_pets, tipo_entidade);
                 carregar_data_grid();
             }
             else
             {
                 meus_pets = 0;
-                Grid_lista_pets.DataSource = Conexao_BD.select_pet_jogador(Campanha.id_jogador, Campanha.id_campanha, meus_pets);
+                Grid_lista_pets.DataSource = Conexao_BD.select_pet_jogador(Campanha.id_jogador, Campanha.id_campanha, meus_pets, tipo_entidade);
                 carregar_data_grid();
             }
         }
@@ -202,10 +208,11 @@ namespace Dark_Age
             //ficha_pet.ShowDialog();
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+
+        private void btn_adotar_Click(object sender, EventArgs e)
         {
-            //Conexao_BD.adotar_novo_pet(Campanha.id_campanha, Campanha.id_jogador, Pets.id_pet, Pets.vida_pet, Pets.vida_pet_max, Pets.mana_atual, Pets.tamanho);
-            //carregar_data_grid();
+            Conexao_BD.duplicar_entidade(id_entidade);
+            carregar_data_grid();
         }
     }
 }

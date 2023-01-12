@@ -255,7 +255,7 @@ namespace Dark_Age.Controllers
 		}
 
 
-        public static void imagem_fodase(int id_personagem)
+        public static void imagem(int id_personagem)
         {
 			using NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
 			conn.Open();

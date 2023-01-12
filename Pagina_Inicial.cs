@@ -34,6 +34,8 @@ namespace Dark_Age
         public static Color cor_fundo = Color.FromArgb(10, 16, 20);
         public static int iniciativa_atual;
 
+        public static int vida_total_old = 0;
+
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
@@ -48,7 +50,6 @@ namespace Dark_Age
             lbl_jogar_iniciativa.BackColor = Temas.cor_escura_secundaria;
             btn_chat.BackColor = Color.FromArgb(90, Color.Black);
             personagens.BackColor = Color.FromArgb(150, Color.Black);
-            pnl_iniciativas.BackColor = Color.FromArgb(150, Color.Black);
             ficha_resumida.BackColor = Color.FromArgb(0, Color.Black);
 
             panel1.BackColor = Color.Transparent;
@@ -57,11 +58,7 @@ namespace Dark_Age
             panel6.BackColor = Color.Transparent;
             this.BackColor = Color.FromArgb(14, 40, 52);
             btn_open.BackColor = Color.FromArgb(14, 40, 52);
-
-
             btn_cria_personagem.Controls.Add(new Label()
-            { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
-            btn_anotacoes.Controls.Add(new Label()
             { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
             btn_inventario.Controls.Add(new Label()
             { Height = 1, Dock = DockStyle.Bottom, BackColor = Color.White });
@@ -74,10 +71,10 @@ namespace Dark_Age
 
         public void preencher_info_tela()
         {
+
             info_entidade.preencher_pers(1, Campanha.id_entidade, 0, Campanha.id_campanha);
             info_entidade.preencher_atributos(Campanha.id_personagem, "'S'");
             info_entidade.preencher_talento(Campanha.id_personagem, "'S'");
-
 
             res_ataque.Text = Ficha.bd_ataque.ToString();
             res_esquiva.Text = Ficha.bd_esquiva.ToString();
@@ -215,6 +212,8 @@ namespace Dark_Age
 
             Lista_de_personagens();
             preencher_info_tela();
+            
+            timer_atualizar_informações.Start();
         }
         void fadeIn(object sender, EventArgs e)
         {
@@ -314,6 +313,10 @@ namespace Dark_Age
             var button = (Button)sender;
             button.FlatAppearance.MouseOverBackColor = Color.FromArgb(20, Color.White);
             button.FlatAppearance.BorderColor = Color.FromArgb(200, Color.White);
+            if(button.Name == "btn_anotacoes")
+            {
+                lbl_anotacoes.Visible = true;
+            }
         }
 
         private void btn_change_MouseLeave(object sender, EventArgs e)
@@ -321,7 +324,10 @@ namespace Dark_Age
             var button = (Button)sender;
             button.BackColor = Color.Transparent;
             button.FlatAppearance.BorderColor = Color.FromArgb(150, Color.White);
-
+            if (button.Name == "btn_anotacoes")
+            {
+                lbl_anotacoes.Visible = false;
+            }
             button.Controls.Remove(new Label());
         }
 
@@ -593,43 +599,58 @@ namespace Dark_Age
             int id_e;
             int vida_max_sel = 0;
             int vida_atual_sel = 0;
+
+            int vida_total = 0;
             Image image_p;
             int distancia = 0;
             try
             {
-                DataTable ndv = Conexao_BD.select_personagem_campanha(0, Campanha.id_campanha);
+                DataTable ndv = Conexao_BD.select_personagem_campanha(0, Campanha.id_campanha, 1);
 
 
                 foreach (DataRow dr in ndv.Rows)
                 {
-                    label_com_image personagens = new label_com_image();
                     id_e = (int)dr["id_entidade"];
-                    nome_p = dr["nome_personagem"].ToString();
-                    nome_c = ("Classe: " + dr["nome_classe"].ToString());
-                    nome_u = ("Jogador: " + dr["nome_jogador"].ToString());
-                    byte[] imagem_byte = ((byte[])dr["imagem"]);
-                    image_p = byte_image.byteArrayToImage(imagem_byte);
-
                     string[] valor = info_entidade.select_personagem(1, id_e, 0, Campanha.id_campanha);
 
-                    vida_atual_sel = Int32.Parse(valor[3]);
-                    vida_max_sel = Int32.Parse(valor[3]);
+                    vida_total += Int32.Parse(valor[2]);
+                }
+                if(vida_total != vida_total_old)
+                {
+                    personagens.Controls.Clear();
+                    foreach (DataRow dr in ndv.Rows)
+                    {
+                        label_com_image personagens = new label_com_image();
+                        id_e = (int)dr["id_entidade"];
+                        nome_p = dr["nome_personagem"].ToString();
+                        nome_c = ("Classe: " + dr["nome_classe"].ToString());
+                        nome_u = ("Jogador: " + dr["nome_jogador"].ToString());
+                        byte[] imagem_byte = ((byte[])dr["imagem"]);
+                        image_p = byte_image.byteArrayToImage(imagem_byte);
 
-                    personagens.receber_valores(nome_p, nome_c, nome_u, image_p, vida_max_sel, vida_atual_sel);
-                    personagens.Dock = DockStyle.None;
-                    personagens.Left = 20;
+                        string[] valor = info_entidade.select_personagem(1, id_e, 0, Campanha.id_campanha);
 
-                    Panel pnlDefault = new Panel();
-                    pnlDefault.BackColor = Color.Transparent;
-                    pnlDefault.Dock = DockStyle.None;
-                    pnlDefault.Top = (personagens.Size.Height * distancia + 10);
-                    pnlDefault.AutoSize = true;
-                    // pnlDefault.BorderStyle = BorderStyle.FixedSingle;
+                        vida_atual_sel = Int32.Parse(valor[2]);
+                        vida_max_sel = Int32.Parse(valor[3]);
 
-                    this.personagens.Controls.Add(pnlDefault);
-                    pnlDefault.Controls.Add(personagens);
+                        personagens.receber_valores(nome_p, nome_c, nome_u, image_p, vida_max_sel, vida_atual_sel);
+                        personagens.Dock = DockStyle.None;
+                        personagens.Left = 20;
 
-                    distancia++;
+                        Panel pnlDefault = new Panel();
+                        pnlDefault.BackColor = Color.Transparent;
+                        pnlDefault.Dock = DockStyle.None;
+                        pnlDefault.Top = (personagens.Size.Height * distancia + 10);
+                        pnlDefault.AutoSize = true;
+                        // pnlDefault.BorderStyle = BorderStyle.FixedSingle;
+
+                        this.personagens.Controls.Add(pnlDefault);
+                        pnlDefault.Controls.Add(personagens);
+
+                        distancia++;
+                        vida_total_old = vida_total;
+                    }
+
                 }
 
             }
@@ -664,9 +685,9 @@ namespace Dark_Age
 
         private void btn_pet_Click(object sender, EventArgs e)
         {
-            Pets pets = new Pets();
+            NPCs.tipo_entidade = 2;
+            NPCs pets = new NPCs();
             pets.Show();
-
         }
 
         private void recaregar_Click(object sender, EventArgs e)
@@ -767,10 +788,13 @@ namespace Dark_Age
         {
             btn_jogadores.BackColor = Color.FromArgb(90, Color.Black);
             btn_jogadores.ForeColor = Color.Silver;
+            btn_jogadores.IconColor = Color.Silver;
             btn_iniciativa.BackColor = Color.FromArgb(150, Color.Black);
             btn_iniciativa.ForeColor = Color.White;
+            btn_iniciativa.IconColor = Color.White;
             btn_chat.BackColor = Color.FromArgb(90, Color.Black);
             btn_chat.ForeColor = Color.Silver;
+            btn_chat.IconColor = Color.Silver;
 
             pnl_chat.Visible = false;
             personagens.Visible = false;
@@ -783,10 +807,13 @@ namespace Dark_Age
         {
             btn_jogadores.BackColor = Color.FromArgb(150, Color.Black);
             btn_jogadores.ForeColor = Color.White;
+            btn_jogadores.IconColor = Color.White;
             btn_iniciativa.BackColor = Color.FromArgb(90, Color.Black);
             btn_iniciativa.ForeColor = Color.Silver;
+            btn_iniciativa.IconColor = Color.Silver;
             btn_chat.BackColor = Color.FromArgb(90, Color.Black);
             btn_chat.ForeColor = Color.Silver;
+            btn_chat.IconColor = Color.Silver;
 
             pnl_chat.Visible = false;
             pnl_iniciativas.Visible = false;
@@ -798,10 +825,13 @@ namespace Dark_Age
         {
             btn_jogadores.BackColor = Color.FromArgb(90, Color.Black);
             btn_jogadores.ForeColor = Color.Silver;
+            btn_jogadores.IconColor = Color.Silver;
             btn_iniciativa.BackColor = Color.FromArgb(90, Color.Black);
             btn_iniciativa.ForeColor = Color.Silver;
+            btn_iniciativa.IconColor = Color.Silver;
             btn_chat.BackColor = Color.FromArgb(150, Color.Black);
             btn_chat.ForeColor = Color.White;
+            btn_jogadores.IconColor = Color.White;
 
             pnl_iniciativas.Visible = false;
             personagens.Visible = false;
@@ -907,6 +937,12 @@ namespace Dark_Age
         {
             Profissoes profissoes = new Profissoes();
             profissoes.Show();
+        }
+
+        private void timer_atualizar_informações_Tick(object sender, EventArgs e)
+        {
+            salvar_info_pers();
+            carregar_iniciativa();
         }
     }
 }

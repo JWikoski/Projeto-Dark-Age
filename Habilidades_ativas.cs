@@ -15,6 +15,9 @@ namespace Dark_Age
     public partial class Habilidades_ativas : Form
     {
         public string anotacoes = "";
+        public int navegacao = 1;
+        public static string regras;
+        public static string sanidades;
         public Habilidades_ativas()
         {
             InitializeComponent();
@@ -30,14 +33,16 @@ namespace Dark_Age
             comm.Parameters.AddWithValue("@id_personagem", Campanha.id_personagem);
             string nda = (string)comm.ExecuteScalar();
 
+            Conexao_BD.Select_Regras(ref regras, ref sanidades);
+            lbl_anotacoes.Text = regras;
+
             anotacoes = nda;
-            label2.Text = nda;
+            lbl_anotacoes.Text = nda;
             txt_ativas.Text = nda;
 
 
             comm.Dispose();
             conn.Close();
-
         }
 
         private void Habilidades_Load(object sender, EventArgs e)
@@ -48,6 +53,7 @@ namespace Dark_Age
             timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
             timer1.Start();
         }
+
         void fadeIn(object sender, EventArgs e)
         {
             if (Opacity >= 1)
@@ -77,7 +83,7 @@ namespace Dark_Age
         private void txt_ativas_TextChanged(object sender, EventArgs e)
         {
             anotacoes = txt_ativas.Text;
-            label2.Text = anotacoes;
+            lbl_anotacoes.Text = anotacoes;
             txt_ativas.Text = anotacoes;
         }
 
@@ -114,7 +120,7 @@ namespace Dark_Age
             {
                 txt_ativas.Visible = true;
                 txt_ativas.Enabled = true;
-                txt_ativas.Height = 700;
+                txt_ativas.Height = 556;
             }
             else
             {
@@ -123,6 +129,26 @@ namespace Dark_Age
                 txt_ativas.Height = 23;
             }
 
+        }
+
+        private void iconButton5_Click(object sender, EventArgs e)
+        {
+            seta_esquerda.Visible = true;
+            seta_direita.Visible = false;
+            pagina.Text = "Regras";
+            Editar.Visible = false;
+            lbl_regras.Visible = true;
+            lbl_anotacoes.Visible = false;
+        }
+
+        private void seta_esquerda_Click(object sender, EventArgs e)
+        {
+            seta_esquerda.Visible = false;
+            seta_direita.Visible = true;
+            pagina.Text = "Anotações";
+            Editar.Visible = true;
+            lbl_regras.Visible = false;
+            lbl_anotacoes.Visible = true;
         }
     }
 }

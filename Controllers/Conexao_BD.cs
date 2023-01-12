@@ -317,7 +317,7 @@ namespace Dark_Age.Enteties
                 return null;
             }
         }
-        public static DataTable select_personagem_campanha(int id_jogador, int id_campanha)
+        public static DataTable select_personagem_campanha(int id_jogador, int id_campanha, int tipo)
         {
             try
             {                
@@ -333,8 +333,8 @@ namespace Dark_Age.Enteties
                                                                               join ""Dark_Age_Connection"".""Jogadores"" j on id_jogador = fk_id_jogador
                                                                               join ""Dark_Age_Connection"".""Personagens"" p on id_personagem = fk_id_personagem
                                                                               join ""Dark_Age_Connection"".""Classes"" c on c.id_classe = p.fk_id_classe
-                                                                             where tipo_personagem = 1
-                                                                               and((isp.fk_id_jogador = " + id_jogador + ") or(" + id_jogador +" = 0))" + 
+                                                                             where tipo_personagem = "+tipo+
+                                                                               " and((isp.fk_id_jogador = " + id_jogador + ") or(" + id_jogador +" = 0))" + 
                                                                               "and isp.fk_id_campanha = " + id_campanha + ";", Conexao_BD.Caminho_DB());
                 
                 using NpgsqlCommandBuilder cBuilder = new NpgsqlCommandBuilder(dt_adapter);
@@ -469,7 +469,7 @@ namespace Dark_Age.Enteties
             cone.ExecuteNonQuery();
         }
 
-        public static DataTable select_pet_jogador(int id_jogador, int id_campanha, int pessoal)
+        public static DataTable select_pet_jogador(int id_jogador, int id_campanha, int pessoal, int tipo)
         {
             try
             {
@@ -482,12 +482,12 @@ namespace Dark_Age.Enteties
                                                                                  , i.escudo
                                                                                  , tipo_personagem
                                                                                  , tamanho
+                                                                                 , i.id_entidade
                                                                              from ""Dark_Age_Connection"".""Inter_status_pers"" i
                                                                              join ""Dark_Age_Connection"".""Personagens"" on id_personagem = fk_id_personagem
-                                                                            where tipo_personagem = 4 
-                                                                            and ((fk_id_jogador = " +id_jogador+") or ("+ pessoal+ " = 0))" +
-                                                                            "and ((fk_id_campanha = " +id_campanha +") or ("+ pessoal+ " = 0)) " +
-                                                                            " group by 1,2,3,4,5,6,7,8,9" +
+                                                                            where tipo_personagem = "+tipo+
+                                                                            " and ((fk_id_campanha = " +id_campanha +") or ("+ pessoal+ " = 0)) " +
+                                                                            " group by 1,2,3,4,5,6,7,8,9, 10" +
                                                                             " order by 2; ", Conexao_BD.Caminho_DB());
                 using NpgsqlCommandBuilder cBuilder = new NpgsqlCommandBuilder(dt_adapter);
                 DataTable dt_table = new DataTable();
@@ -500,25 +500,6 @@ namespace Dark_Age.Enteties
                 MessageBox.Show("ERRO nas select personagem: " + e);
                 return null;
             }
-        }
-        public static void adotar_novo_pet(int id_campanha, int id_jogador, int id_personagem, int vida, int vida_max, int mana_atual, string tamanho)
-        {
-            using NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
-            conn.Open();
-            using NpgsqlCommand como = new NpgsqlCommand();
-            como.Connection = conn;
-            como.CommandType = CommandType.Text;
-            como.CommandText = $@"INSERT INTO ""Dark_Age_Connection"".""Inter_status_pers"" (fk_id_personagem, fk_id_jogador, fk_id_campanha, vida_atual1, vida_max1, mana_atual1, tamanho)
-                                       VALUES (@fk_id_personagem, @fk_id_jogador, @fk_id_campanha, @vida_atual1, @vida_max1, @mana_atual1, @tamanho)
-                                       returning id_campanha;";
-            como.Parameters.AddWithValue("@fk_id_personagem", id_personagem);
-            como.Parameters.AddWithValue("@fk_id_jogador", id_jogador);
-            como.Parameters.AddWithValue("@fk_id_campanha", id_campanha);
-            como.Parameters.AddWithValue("@vida_atual1", vida);
-            como.Parameters.AddWithValue("@vida_max1", vida_max);
-            como.Parameters.AddWithValue("@mana_atual1", mana_atual);
-            como.Parameters.AddWithValue("@tamanho", tamanho);
-            como.ExecuteScalar();
         }
 
         public static DataTable select_nivel(int nivel)
@@ -703,6 +684,29 @@ namespace Dark_Age.Enteties
             comm.Parameters.AddWithValue("@id_profissao", id_profissao);
             comm.Parameters.AddWithValue("@xp_profissao", xp_profissao);
             comm.ExecuteNonQuery();
+        }
+        public static void excluir_entidade(int id_entidade)
+        {
+            using NpgsqlConnection conn = new NpgsqlConnection(Caminho_DB());
+            conn.Open();
+            using NpgsqlCommand comt = new NpgsqlCommand();
+            comt.Connection = conn;
+            comt.CommandType = CommandType.Text;
+            comt.CommandText = $@"delete from ""Dark_Age_Connection"".""Inter_status_pers"" " +
+                " where id_entidade = " + id_entidade + " ";
+
+            comt.ExecuteNonQuery();
+        }
+        public static void duplicar_entidade(int id_entidade)
+        {
+            using NpgsqlConnection conn = new NpgsqlConnection(Caminho_DB());
+            conn.Open();
+            using NpgsqlCommand comt = new NpgsqlCommand();
+            comt.Connection = conn;
+            comt.CommandType = CommandType.Text;
+            comt.CommandText = $@"call ""Dark_Age_Connection"".""duplicar_entidade"" (" + id_entidade + ") ";
+
+            comt.ExecuteNonQuery();
         }
     }
 }

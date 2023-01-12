@@ -8,6 +8,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="NovaPasta\**" />
+    <EmbeddedResource Remove="NovaPasta\**" />
+    <None Remove="NovaPasta\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Componente\TextBox_Transparente.cs" />
+    <Compile Remove="Componente\TextBox_Transparente.Designer.cs" />
+    <Compile Remove="Componente\Text_box_transparente.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Componente\TextBox_Transparente.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Resources\27d73469bbc9ede8f086363867373eb0.jpg" />
     <None Remove="Resources\d10.png" />
     <None Remove="Resources\d101.png" />
@@ -40,6 +56,8 @@
     <None Remove="Resources\png-sparkle-clean-effect-white-icon-11640489625soujl6hden.png" />
     <None Remove="Resources\png-sparkle-clean-effect-white-icon-11640489625soujl6hden1.png" />
     <None Remove="Resources\pngegg.png" />
+    <None Remove="Resources\proxima_pag.png" />
+    <None Remove="Resources\proxima_pag1.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -87,10 +105,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="NovaPasta\" />
   </ItemGroup>
 
 </Project>

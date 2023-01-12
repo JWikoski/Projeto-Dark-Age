@@ -48,15 +48,11 @@
             this.lbl_titulo = new System.Windows.Forms.Label();
             this.txt_historia = new System.Windows.Forms.RichTextBox();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.lbl_npc = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.iconButton6 = new FontAwesome.Sharp.IconButton();
-            this.btn_classes = new FontAwesome.Sharp.IconButton();
-            this.pnl_entidades = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnl_chat = new System.Windows.Forms.Panel();
+            this.pnl_mensagens = new System.Windows.Forms.Panel();
             this.d6 = new System.Windows.Forms.PictureBox();
             this.iconButton9 = new FontAwesome.Sharp.IconButton();
             this.d4 = new System.Windows.Forms.PictureBox();
@@ -69,26 +65,29 @@
             this.iconButton8 = new FontAwesome.Sharp.IconButton();
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.d12 = new System.Windows.Forms.PictureBox();
+            this.panel13 = new System.Windows.Forms.Panel();
             this.btn_desequipar = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Grid_lista_iniciativas = new System.Windows.Forms.DataGridView();
             this.panel8 = new System.Windows.Forms.Panel();
             this.btn_chat = new FontAwesome.Sharp.IconButton();
             this.btn_iniciativa = new FontAwesome.Sharp.IconButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Grid_lista_iniciativas = new System.Windows.Forms.DataGridView();
+            this.pnl_todas_entidades = new System.Windows.Forms.Panel();
+            this.pnl_entidades = new System.Windows.Forms.Panel();
+            this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btn_jogadores = new FontAwesome.Sharp.IconButton();
             this.btn_npcs = new FontAwesome.Sharp.IconButton();
             this.btn_monstros = new FontAwesome.Sharp.IconButton();
+            this.iconButton6 = new FontAwesome.Sharp.IconButton();
+            this.btn_classes = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.bemvindo = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.pnl_mensagens = new System.Windows.Forms.Panel();
-            this.pnl_todas_entidades = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -101,10 +100,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.d10)).BeginInit();
             this.pnl_insanidades_chat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.d12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_lista_iniciativas)).BeginInit();
-            this.panel5.SuspendLayout();
             this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_lista_iniciativas)).BeginInit();
             this.pnl_todas_entidades.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -367,22 +366,6 @@
             this.panel9.Size = new System.Drawing.Size(1, 790);
             this.panel9.TabIndex = 150;
             // 
-            // lbl_npc
-            // 
-            this.lbl_npc.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbl_npc.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_npc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbl_npc.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_npc.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbl_npc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_npc.Location = new System.Drawing.Point(3, 63);
-            this.lbl_npc.Name = "lbl_npc";
-            this.lbl_npc.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-            this.lbl_npc.Size = new System.Drawing.Size(434, 33);
-            this.lbl_npc.TabIndex = 6;
-            this.lbl_npc.Text = "NPC\'s";
-            this.lbl_npc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panel4
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -405,92 +388,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1, 790);
             this.panel6.TabIndex = 155;
-            // 
-            // iconButton4
-            // 
-            this.iconButton4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.iconButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton4.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
-            this.iconButton4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
-            this.iconButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.iconButton4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Store;
-            this.iconButton4.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 35;
-            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton4.Location = new System.Drawing.Point(3, 764);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
-            this.iconButton4.Size = new System.Drawing.Size(434, 52);
-            this.iconButton4.TabIndex = 154;
-            this.iconButton4.Text = "Loja de Itens";
-            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton4.UseVisualStyleBackColor = true;
-            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click_1);
-            // 
-            // iconButton6
-            // 
-            this.iconButton6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.iconButton6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton6.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
-            this.iconButton6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
-            this.iconButton6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
-            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.iconButton6.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.Paw;
-            this.iconButton6.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.IconSize = 35;
-            this.iconButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton6.Location = new System.Drawing.Point(3, 648);
-            this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
-            this.iconButton6.Size = new System.Drawing.Size(434, 52);
-            this.iconButton6.TabIndex = 153;
-            this.iconButton6.Text = "Lista de Monstros/NPC\'s\r\n";
-            this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton6.UseVisualStyleBackColor = true;
-            // 
-            // btn_classes
-            // 
-            this.btn_classes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_classes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_classes.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
-            this.btn_classes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
-            this.btn_classes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
-            this.btn_classes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_classes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_classes.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_classes.IconChar = FontAwesome.Sharp.IconChar.FreeCodeCamp;
-            this.btn_classes.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.btn_classes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_classes.IconSize = 40;
-            this.btn_classes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_classes.Location = new System.Drawing.Point(3, 706);
-            this.btn_classes.Name = "btn_classes";
-            this.btn_classes.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
-            this.btn_classes.Size = new System.Drawing.Size(434, 52);
-            this.btn_classes.TabIndex = 148;
-            this.btn_classes.Text = "Classes e habilidades";
-            this.btn_classes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_classes.UseVisualStyleBackColor = true;
-            this.btn_classes.Click += new System.EventHandler(this.iconButton1_Click_1);
-            this.btn_classes.MouseEnter += new System.EventHandler(this.btn_historia_MouseEnter);
-            this.btn_classes.MouseHover += new System.EventHandler(this.btn_historia_MouseEnter);
-            // 
-            // pnl_entidades
-            // 
-            this.pnl_entidades.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.pnl_entidades.AutoScroll = true;
-            this.pnl_entidades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
-            this.pnl_entidades.Location = new System.Drawing.Point(3, 109);
-            this.pnl_entidades.Name = "pnl_entidades";
-            this.pnl_entidades.Size = new System.Drawing.Size(434, 531);
-            this.pnl_entidades.TabIndex = 152;
             // 
             // panel3
             // 
@@ -527,6 +424,16 @@
             this.pnl_chat.Size = new System.Drawing.Size(444, 740);
             this.pnl_chat.TabIndex = 151;
             this.pnl_chat.Visible = false;
+            // 
+            // pnl_mensagens
+            // 
+            this.pnl_mensagens.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_mensagens.Location = new System.Drawing.Point(0, 0);
+            this.pnl_mensagens.Name = "pnl_mensagens";
+            this.pnl_mensagens.Size = new System.Drawing.Size(444, 555);
+            this.pnl_mensagens.TabIndex = 160;
             // 
             // d6
             // 
@@ -750,6 +657,18 @@
             this.d12.MouseLeave += new System.EventHandler(this.d12_MouseLeave);
             this.d12.MouseHover += new System.EventHandler(this.d12_MouseEnter);
             // 
+            // panel13
+            // 
+            this.panel13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel13.Controls.Add(this.btn_desequipar);
+            this.panel13.Controls.Add(this.label1);
+            this.panel13.Controls.Add(this.Grid_lista_iniciativas);
+            this.panel13.Location = new System.Drawing.Point(0, 58);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(444, 740);
+            this.panel13.TabIndex = 158;
+            // 
             // btn_desequipar
             // 
             this.btn_desequipar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -774,68 +693,6 @@
             this.btn_desequipar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_desequipar.UseVisualStyleBackColor = false;
             this.btn_desequipar.Click += new System.EventHandler(this.btn_desequipar_Click);
-            // 
-            // panel8
-            // 
-            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
-            this.panel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
-            this.panel8.Location = new System.Drawing.Point(214, 4);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1, 45);
-            this.panel8.TabIndex = 157;
-            // 
-            // btn_chat
-            // 
-            this.btn_chat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_chat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
-            this.btn_chat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_chat.FlatAppearance.BorderSize = 0;
-            this.btn_chat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
-            this.btn_chat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(35)))));
-            this.btn_chat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_chat.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_chat.ForeColor = System.Drawing.Color.Silver;
-            this.btn_chat.IconChar = FontAwesome.Sharp.IconChar.Message;
-            this.btn_chat.IconColor = System.Drawing.Color.Silver;
-            this.btn_chat.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_chat.IconSize = 30;
-            this.btn_chat.Location = new System.Drawing.Point(230, 0);
-            this.btn_chat.Name = "btn_chat";
-            this.btn_chat.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
-            this.btn_chat.Size = new System.Drawing.Size(214, 57);
-            this.btn_chat.TabIndex = 156;
-            this.btn_chat.Text = "Chat";
-            this.btn_chat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_chat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_chat.UseVisualStyleBackColor = false;
-            this.btn_chat.Click += new System.EventHandler(this.btn_chat_Click);
-            // 
-            // btn_iniciativa
-            // 
-            this.btn_iniciativa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_iniciativa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
-            this.btn_iniciativa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_iniciativa.FlatAppearance.BorderSize = 0;
-            this.btn_iniciativa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
-            this.btn_iniciativa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(35)))));
-            this.btn_iniciativa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_iniciativa.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_iniciativa.ForeColor = System.Drawing.Color.White;
-            this.btn_iniciativa.IconChar = FontAwesome.Sharp.IconChar.PeopleLine;
-            this.btn_iniciativa.IconColor = System.Drawing.Color.White;
-            this.btn_iniciativa.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_iniciativa.IconSize = 30;
-            this.btn_iniciativa.Location = new System.Drawing.Point(0, 0);
-            this.btn_iniciativa.Name = "btn_iniciativa";
-            this.btn_iniciativa.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
-            this.btn_iniciativa.Size = new System.Drawing.Size(202, 57);
-            this.btn_iniciativa.TabIndex = 155;
-            this.btn_iniciativa.Text = "Iniciativa";
-            this.btn_iniciativa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_iniciativa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_iniciativa.UseVisualStyleBackColor = false;
-            this.btn_iniciativa.Click += new System.EventHandler(this.iconButton8_Click);
             // 
             // label1
             // 
@@ -907,6 +764,118 @@
             this.Grid_lista_iniciativas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_lista_iniciativas_CellClick);
             this.Grid_lista_iniciativas.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_lista_iniciativas_CellValueChanged);
             // 
+            // panel8
+            // 
+            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
+            this.panel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
+            this.panel8.Location = new System.Drawing.Point(214, 4);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1, 45);
+            this.panel8.TabIndex = 157;
+            // 
+            // btn_chat
+            // 
+            this.btn_chat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_chat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
+            this.btn_chat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_chat.FlatAppearance.BorderSize = 0;
+            this.btn_chat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
+            this.btn_chat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(35)))));
+            this.btn_chat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_chat.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_chat.ForeColor = System.Drawing.Color.Silver;
+            this.btn_chat.IconChar = FontAwesome.Sharp.IconChar.Message;
+            this.btn_chat.IconColor = System.Drawing.Color.Silver;
+            this.btn_chat.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_chat.IconSize = 30;
+            this.btn_chat.Location = new System.Drawing.Point(230, 0);
+            this.btn_chat.Name = "btn_chat";
+            this.btn_chat.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
+            this.btn_chat.Size = new System.Drawing.Size(214, 57);
+            this.btn_chat.TabIndex = 156;
+            this.btn_chat.Text = "Chat";
+            this.btn_chat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_chat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_chat.UseVisualStyleBackColor = false;
+            this.btn_chat.Click += new System.EventHandler(this.btn_chat_Click);
+            // 
+            // btn_iniciativa
+            // 
+            this.btn_iniciativa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_iniciativa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(57)))));
+            this.btn_iniciativa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_iniciativa.FlatAppearance.BorderSize = 0;
+            this.btn_iniciativa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
+            this.btn_iniciativa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(35)))));
+            this.btn_iniciativa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_iniciativa.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_iniciativa.ForeColor = System.Drawing.Color.White;
+            this.btn_iniciativa.IconChar = FontAwesome.Sharp.IconChar.PeopleLine;
+            this.btn_iniciativa.IconColor = System.Drawing.Color.White;
+            this.btn_iniciativa.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_iniciativa.IconSize = 30;
+            this.btn_iniciativa.Location = new System.Drawing.Point(0, 0);
+            this.btn_iniciativa.Name = "btn_iniciativa";
+            this.btn_iniciativa.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
+            this.btn_iniciativa.Size = new System.Drawing.Size(202, 57);
+            this.btn_iniciativa.TabIndex = 155;
+            this.btn_iniciativa.Text = "Iniciativa";
+            this.btn_iniciativa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_iniciativa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_iniciativa.UseVisualStyleBackColor = false;
+            this.btn_iniciativa.Click += new System.EventHandler(this.iconButton8_Click);
+            // 
+            // pnl_todas_entidades
+            // 
+            this.pnl_todas_entidades.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_todas_entidades.Controls.Add(this.pnl_entidades);
+            this.pnl_todas_entidades.Controls.Add(this.iconButton4);
+            this.pnl_todas_entidades.Controls.Add(this.panel5);
+            this.pnl_todas_entidades.Controls.Add(this.iconButton6);
+            this.pnl_todas_entidades.Controls.Add(this.btn_classes);
+            this.pnl_todas_entidades.Location = new System.Drawing.Point(0, 0);
+            this.pnl_todas_entidades.Name = "pnl_todas_entidades";
+            this.pnl_todas_entidades.Size = new System.Drawing.Size(440, 817);
+            this.pnl_todas_entidades.TabIndex = 156;
+            // 
+            // pnl_entidades
+            // 
+            this.pnl_entidades.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.pnl_entidades.AutoScroll = true;
+            this.pnl_entidades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(23)))));
+            this.pnl_entidades.Location = new System.Drawing.Point(3, 62);
+            this.pnl_entidades.Name = "pnl_entidades";
+            this.pnl_entidades.Size = new System.Drawing.Size(434, 578);
+            this.pnl_entidades.TabIndex = 152;
+            // 
+            // iconButton4
+            // 
+            this.iconButton4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.iconButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton4.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
+            this.iconButton4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
+            this.iconButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
+            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconButton4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Store;
+            this.iconButton4.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton4.IconSize = 35;
+            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton4.Location = new System.Drawing.Point(3, 764);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
+            this.iconButton4.Size = new System.Drawing.Size(434, 52);
+            this.iconButton4.TabIndex = 154;
+            this.iconButton4.Text = "Loja de Itens";
+            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton4.UseVisualStyleBackColor = true;
+            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click_1);
+            // 
             // panel5
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -962,9 +931,9 @@
             this.btn_jogadores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
             this.btn_jogadores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_jogadores.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_jogadores.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btn_jogadores.ForeColor = System.Drawing.Color.SkyBlue;
             this.btn_jogadores.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.btn_jogadores.IconColor = System.Drawing.Color.SteelBlue;
+            this.btn_jogadores.IconColor = System.Drawing.Color.SkyBlue;
             this.btn_jogadores.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_jogadores.IconSize = 20;
             this.btn_jogadores.Location = new System.Drawing.Point(302, 5);
@@ -1031,6 +1000,58 @@
             this.btn_monstros.Click += new System.EventHandler(this.btn_monstros_Click);
             this.btn_monstros.MouseEnter += new System.EventHandler(this.HoverEnter_MouseEnter);
             this.btn_monstros.MouseHover += new System.EventHandler(this.HoverEnter_MouseEnter);
+            // 
+            // iconButton6
+            // 
+            this.iconButton6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.iconButton6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton6.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
+            this.iconButton6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
+            this.iconButton6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
+            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconButton6.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.Paw;
+            this.iconButton6.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton6.IconSize = 35;
+            this.iconButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton6.Location = new System.Drawing.Point(3, 648);
+            this.iconButton6.Name = "iconButton6";
+            this.iconButton6.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
+            this.iconButton6.Size = new System.Drawing.Size(434, 52);
+            this.iconButton6.TabIndex = 153;
+            this.iconButton6.Text = "Lista de Monstros/NPC\'s\r\n";
+            this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton6.UseVisualStyleBackColor = true;
+            this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
+            // 
+            // btn_classes
+            // 
+            this.btn_classes.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_classes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_classes.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
+            this.btn_classes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
+            this.btn_classes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
+            this.btn_classes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_classes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_classes.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_classes.IconChar = FontAwesome.Sharp.IconChar.FreeCodeCamp;
+            this.btn_classes.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.btn_classes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_classes.IconSize = 40;
+            this.btn_classes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_classes.Location = new System.Drawing.Point(3, 706);
+            this.btn_classes.Name = "btn_classes";
+            this.btn_classes.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
+            this.btn_classes.Size = new System.Drawing.Size(434, 52);
+            this.btn_classes.TabIndex = 148;
+            this.btn_classes.Text = "Classes e habilidades";
+            this.btn_classes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_classes.UseVisualStyleBackColor = true;
+            this.btn_classes.Click += new System.EventHandler(this.iconButton1_Click_1);
+            this.btn_classes.MouseEnter += new System.EventHandler(this.btn_historia_MouseEnter);
+            this.btn_classes.MouseHover += new System.EventHandler(this.btn_historia_MouseEnter);
             // 
             // iconButton2
             // 
@@ -1135,44 +1156,6 @@
             this.iconButton5.MouseEnter += new System.EventHandler(this.HoverEnter_MouseEnter);
             this.iconButton5.MouseHover += new System.EventHandler(this.HoverEnter_MouseEnter);
             // 
-            // panel13
-            // 
-            this.panel13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel13.Controls.Add(this.btn_desequipar);
-            this.panel13.Controls.Add(this.label1);
-            this.panel13.Controls.Add(this.Grid_lista_iniciativas);
-            this.panel13.Location = new System.Drawing.Point(0, 58);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(444, 740);
-            this.panel13.TabIndex = 158;
-            // 
-            // pnl_mensagens
-            // 
-            this.pnl_mensagens.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnl_mensagens.Location = new System.Drawing.Point(0, 0);
-            this.pnl_mensagens.Name = "pnl_mensagens";
-            this.pnl_mensagens.Size = new System.Drawing.Size(444, 555);
-            this.pnl_mensagens.TabIndex = 160;
-            // 
-            // pnl_todas_entidades
-            // 
-            this.pnl_todas_entidades.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnl_todas_entidades.Controls.Add(this.pnl_entidades);
-            this.pnl_todas_entidades.Controls.Add(this.iconButton4);
-            this.pnl_todas_entidades.Controls.Add(this.panel5);
-            this.pnl_todas_entidades.Controls.Add(this.lbl_npc);
-            this.pnl_todas_entidades.Controls.Add(this.iconButton6);
-            this.pnl_todas_entidades.Controls.Add(this.btn_classes);
-            this.pnl_todas_entidades.Location = new System.Drawing.Point(0, 0);
-            this.pnl_todas_entidades.Name = "pnl_todas_entidades";
-            this.pnl_todas_entidades.Size = new System.Drawing.Size(440, 817);
-            this.pnl_todas_entidades.TabIndex = 156;
-            // 
             // Pagina_mestre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1207,10 +1190,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.d10)).EndInit();
             this.pnl_insanidades_chat.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.d12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_lista_iniciativas)).EndInit();
-            this.panel5.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_lista_iniciativas)).EndInit();
             this.pnl_todas_entidades.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1229,7 +1212,6 @@
         private FontAwesome.Sharp.IconButton btn_regras;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label lbl_npc;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel7;
