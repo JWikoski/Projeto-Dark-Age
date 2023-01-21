@@ -431,7 +431,8 @@ namespace Dark_Age
             panel13.Visible = false;
             btn_chat.Focus();
             timer_chat.Start();
-        }
+			pnl_mensagens.VerticalScroll.Value = pnl_mensagens.VerticalScroll.Maximum;
+		}
 
         private void button2_Click(object sender, EventArgs e)
         {
