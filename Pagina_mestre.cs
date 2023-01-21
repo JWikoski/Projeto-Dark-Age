@@ -19,9 +19,9 @@ namespace Dark_Age
         public static int id_entidade;
         public static int id_personagem;
         public static int tipo;
+		public int count_novo, count_antigo, distancia;
 
-
-        public Pagina_mestre()
+		public Pagina_mestre()
         {
             InitializeComponent();
 
@@ -139,6 +139,7 @@ namespace Dark_Age
             Conexao_BD.Select_Regras(ref regras, ref sanidades);
             txt_regras.Text = regras;
             txt_sanidade.Text = sanidades;
+            checaguem_criacao_msg();
         }
 
         void fadeIn(object sender, EventArgs e)
@@ -429,6 +430,7 @@ namespace Dark_Age
             pnl_chat.Visible = true;
             panel13.Visible = false;
             btn_chat.Focus();
+            timer_chat.Start();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -562,5 +564,85 @@ namespace Dark_Age
             pets.ShowDialog();
             carregar_monstros();
         }
-    }
+
+		private void d20_Click(object sender, EventArgs e)
+		{
+			jogar_dados(1, 20, 0, "1d20");
+		}
+		private void d12_Click(object sender, EventArgs e)
+		{
+			jogar_dados(1, 12, 0, "1d12");
+		}
+
+		private void d10_Click(object sender, EventArgs e)
+		{
+			jogar_dados(1, 10, 0, "1d10");
+		}
+
+		private void d8_Click(object sender, EventArgs e)
+		{
+			jogar_dados(1, 8, 0, "1d8");
+		}
+
+		private void d6_Click(object sender, EventArgs e)
+		{
+			jogar_dados(1, 6, 0, "1d6");
+		}
+
+		private void d4_Click(object sender, EventArgs e)
+		{
+			jogar_dados(1, 4, 0, "1d4");
+		}
+		public void jogar_dados(int qtd_dados, int valor_dado, int valor_atribuido, string tipo_dado)
+		{
+			int roll = roll_dados.rolagem_dados(qtd_dados, valor_dado, valor_atribuido);
+			Conexao_BD.envia_mensagem_chat(DateTime.Now, roll.ToString(), Campanha.id_entidade, tipo_dado);
+		}
+
+		private void timer_chat_Tick(object sender, EventArgs e)
+        {
+            checaguem_criacao_msg();
+        }
+
+        private void btn_enviar_mensagem_Click(object sender, EventArgs e)
+        {
+			Conexao_BD.envia_mensagem_chat(DateTime.Now, txt_mensagem.Text, Campanha.id_entidade, "");
+			txt_mensagem.Clear();
+		}
+
+        public void checaguem_criacao_msg()
+		{
+			DataTable ndv = Conexao_BD.select_mensagens_chat(0, Campanha.id_campanha, 0);
+			count_novo = ndv.Rows.Count;
+			if (count_novo > count_antigo)
+			{
+				pnl_mensagens.VerticalScroll.Value = pnl_mensagens.VerticalScroll.Maximum;
+				for (int i = count_antigo; i < count_novo; i++)
+				{
+					DataRow registros = ndv.Rows[i];
+					carregar_msg_pnl(registros);
+				}
+				if (distancia > 470)
+				{
+					distancia = pnl_mensagens.Height;
+				}
+				pnl_mensagens.VerticalScroll.Value = pnl_mensagens.VerticalScroll.Maximum;
+				count_antigo = count_novo;
+			}
+		}
+
+		public void carregar_msg_pnl(DataRow ndv)
+		{
+			mensagem_chat m_chat = new mensagem_chat();
+			m_chat.Nome_personagem = ndv["nome_pers"].ToString();
+			m_chat.Mensagem = ndv["mensagem_c"].ToString();
+			m_chat.Hora = Convert.ToDateTime(ndv["data_hora_c"]).ToString("HH:mm:ss");
+			m_chat.Tipo_dado = ndv["dado_tipo"].ToString();
+			m_chat.preencher_info();            //m_chat.preencher_info(mensagem, data_time.ToString("HH:mm:ss"), nome_p);
+			m_chat.Dock = DockStyle.None;
+			m_chat.Top = distancia;
+			pnl_mensagens.Controls.Add(m_chat);
+			distancia += m_chat.Height;
+		}
+	}
 }

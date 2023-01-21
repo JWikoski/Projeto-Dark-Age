@@ -309,7 +309,7 @@ namespace Dark_Age
         }
         private void btn_entrar_mestre_Click(object sender, EventArgs e)
         {
-
+            Campanha.id_entidade = 47; // depois temos que ver pra ele pegar o automatico, fixei por causa da campanha que vamos jogar e nao da tempo de finalizar
             Pagina_mestre mestre = new Pagina_mestre();
             this.Close();
             mestre.ShowDialog();

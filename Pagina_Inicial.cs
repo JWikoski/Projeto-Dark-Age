@@ -33,8 +33,8 @@ namespace Dark_Age
         public static Image imagem_person;
         public static Color cor_fundo = Color.FromArgb(10, 16, 20);
         public static int iniciativa_atual;
-
-        public static int vida_total_old = 0;
+		public int count_novo, count_antigo, distancia;
+		public static int vida_total_old = 0;
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -212,8 +212,9 @@ namespace Dark_Age
 
             Lista_de_personagens();
             preencher_info_tela();
-            
-            timer_atualizar_informações.Start();
+            checaguem_criacao_msg();
+
+			timer_atualizar_informações.Start();
         }
         void fadeIn(object sender, EventArgs e)
         {
@@ -836,15 +837,16 @@ namespace Dark_Age
             pnl_iniciativas.Visible = false;
             personagens.Visible = false;
             pnl_chat.Visible = true;
-        }
+
+            timer_chat.Start();
+			pnl_mensagens.VerticalScroll.Value = pnl_mensagens.VerticalScroll.Maximum;
+		}
 
         private void lbl_bvd_Click(object sender, EventArgs e)
         {
-            Random random = new Random();
-            int roll = random.Next(1, 21);
-            iniciativa_atual = roll + Ficha.destreza;
-
-            Conexao_BD.update_iniciativa(Campanha.id_personagem, iniciativa_atual);
+            iniciativa_atual = roll_dados.rolagem_dados(1, 20, Ficha.destreza);
+			Conexao_BD.envia_mensagem_chat(DateTime.Now, iniciativa_atual.ToString(), Campanha.id_entidade, "Iniciativa");
+			Conexao_BD.update_iniciativa(Campanha.id_personagem, iniciativa_atual);
             carregar_iniciativa();
         }
 
@@ -944,5 +946,203 @@ namespace Dark_Age
             salvar_info_pers();
             carregar_iniciativa();
         }
-    }
+		private void d20_Click(object sender, EventArgs e)
+		{
+			jogar_dados(1, 20, 0, "1d20");
+		}
+		private void d12_Click(object sender, EventArgs e)
+		{
+			jogar_dados(1, 12, 0, "1d12");
+		}
+
+		private void d10_Click(object sender, EventArgs e)
+		{
+			jogar_dados(1, 10, 0, "1d10");
+		}
+
+		private void d8_Click(object sender, EventArgs e)
+		{
+			jogar_dados(1, 8, 0, "1d8");
+		}
+
+		private void d6_Click(object sender, EventArgs e)
+		{
+			jogar_dados(1, 6, 0, "1d6");
+		}
+
+		private void d4_Click(object sender, EventArgs e)
+		{
+			jogar_dados(1, 4, 0, "1d4");
+		}
+
+		private void iconButton6_Click(object sender, EventArgs e)
+        {
+			Conexao_BD.envia_mensagem_chat(DateTime.Now, txt_mensagem.Text, Campanha.id_entidade, "");
+			txt_mensagem.Clear();
+		}
+		public void jogar_dados(int qtd_dados, int valor_dado, int valor_atribuido, string tipo_dado)
+		{
+			int roll = roll_dados.rolagem_dados(qtd_dados, valor_dado, valor_atribuido);
+			Conexao_BD.envia_mensagem_chat(DateTime.Now, roll.ToString(), Campanha.id_entidade, tipo_dado);
+		}
+		private void timer_chat_Tick(object sender, EventArgs e)
+        {
+            checaguem_criacao_msg();
+        }
+
+        private void res_etiqueta_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.bd_etiqueta, "Etiqueta");
+		}
+
+        private void res_intuicao_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.bd_intuicao, "Intuição");
+		}
+
+        private void res_investigacao_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.bd_investigacao, "Investigação");
+		}
+
+        private void res_sobrevivencia_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.bd_sobrevivencia, "Sobrevivência");
+		}
+
+        private void res_ocultismo_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.bd_ocultismo, "Ocultismo");
+		}
+
+        private void res_acad_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.bd_academicos, "Acadêmicos/Medicina");
+		}
+
+        private void res_percepcao_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.bd_percepcao, "Escutar/Observar");
+		}
+
+        private void res_esconder_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.bd_esconder, "Esconder");
+		}
+
+        private void res_enganacao_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.bd_enganacao, "Roubo");
+		}
+
+        private void res_seducao_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.bd_seduzir, "Sedução/Enganação");
+		}
+
+        private void res_intimidacao_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.bd_intimidacao, "Intimidação");
+		}
+
+        private void res_labia_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.bd_labia, "Lábia");
+		}
+
+        private void res_conjurar_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.bd_lancarmagia, "conjurar Magia");
+		}
+
+        private void res_atirar_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.bd_arematirar, "Atirar");
+		}
+
+        private void res_contrataque_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.bd_contra_atq, "Contra Ataue");
+		}
+
+        private void res_defesa_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.bd_defesa, "Defesa");
+		}
+
+        private void res_esquiva_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.bd_esquiva, "Esquiva");
+		}
+
+        private void res_ataque_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.bd_ataque, "Ataque");
+		}
+
+        private void res_magia_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.magia, "Magia");
+		}
+
+        private void res_raciocinio_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.raciocinio, "Raciocinio");
+		}
+
+        private void res_carisma_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.carisma, "Carisma");
+		}
+
+        private void res_vigor_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.vigor, "Vigor");
+		}
+
+        private void res_destreza_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.destreza, "Destreza");
+		}
+
+        private void res_forca_Click(object sender, EventArgs e)
+        {
+			jogar_dados(1, 20, Ficha.forca, "Força");
+		}
+
+        public void checaguem_criacao_msg()
+		{
+			DataTable ndv = Conexao_BD.select_mensagens_chat(0, Campanha.id_campanha, 0);
+			count_novo = ndv.Rows.Count;
+			if (count_novo > count_antigo)
+			{
+				pnl_mensagens.VerticalScroll.Value = pnl_mensagens.VerticalScroll.Maximum;
+				for (int i = count_antigo; i < count_novo; i++)
+				{
+					DataRow registros = ndv.Rows[i];
+					carregar_msg_pnl(registros);
+				}
+				if (distancia > 470)
+				{
+					distancia = pnl_mensagens.Height;
+				}
+				pnl_mensagens.VerticalScroll.Value = pnl_mensagens.VerticalScroll.Maximum;
+				count_antigo = count_novo;
+			}
+		}
+
+		public void carregar_msg_pnl(DataRow ndv)
+		{
+			mensagem_chat m_chat = new mensagem_chat();
+			m_chat.Nome_personagem = ndv["nome_pers"].ToString();
+			m_chat.Mensagem = ndv["mensagem_c"].ToString();
+			m_chat.Hora = Convert.ToDateTime(ndv["data_hora_c"]).ToString("HH:mm:ss");
+			m_chat.Tipo_dado = ndv["dado_tipo"].ToString();
+			m_chat.preencher_info();            //m_chat.preencher_info(mensagem, data_time.ToString("HH:mm:ss"), nome_p);
+			m_chat.Dock = DockStyle.None;
+			m_chat.Top = distancia;
+			pnl_mensagens.Controls.Add(m_chat);
+			distancia += m_chat.Height;
+		}
+	}
 }

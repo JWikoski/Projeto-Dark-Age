@@ -708,5 +708,40 @@ namespace Dark_Age.Enteties
 
             comt.ExecuteNonQuery();
         }
-    }
+		public static DataTable select_mensagens_chat(int id_entidade, int id_campanha, int id_entidade_privada)
+		{
+			try
+			{
+				using NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"select * from ""Dark_Age_Connection"".sp_mensagem_chat(" + id_entidade + "," + id_campanha + "," + id_entidade_privada + ")", Conexao_BD.Caminho_DB());
+
+				DataTable dt_table = new DataTable();
+
+				dt_adapter.Fill(dt_table);
+
+				return dt_table;
+
+			} catch (NpgsqlException a)
+			{
+				MessageBox.Show("Erro ao carregar as informações do Chat: " + a);
+				return null;
+			}
+		}
+
+		public static void envia_mensagem_chat(DateTime data_atual, string mensagem, int id_entidade_envio, string? tipo_dado)
+		{
+			using NpgsqlConnection conn = new NpgsqlConnection(Caminho_DB());
+			conn.Open();
+			using NpgsqlCommand comn = new NpgsqlCommand();
+			comn.Connection = conn;
+			comn.CommandType = CommandType.Text;
+			comn.CommandText = $@" INSERT INTO ""Dark_Age_Connection"".chat
+                                    (data_hora, mensagem, fk_id_entidade, tipo_dado)
+                                    VALUES(@data_atual, @mensagem, @id_entidade, @tipo_dado);";
+			comn.Parameters.AddWithValue("@data_atual", data_atual);
+			comn.Parameters.AddWithValue("@mensagem", mensagem);
+			comn.Parameters.AddWithValue("@id_entidade", id_entidade_envio);
+			comn.Parameters.AddWithValue("@tipo_dado", tipo_dado);
+			comn.ExecuteNonQuery();
+		}
+	}
 }
