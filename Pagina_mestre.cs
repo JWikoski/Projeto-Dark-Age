@@ -93,7 +93,7 @@ namespace Dark_Age
                     byte[] imagem_byte = ((byte[])dr["imagem"]);
                     image_p = byte_image.byteArrayToImage(imagem_byte);
 
-                    string[] valor = info_entidade.select_personagem(1, id_e, 0, Campanha.id_campanha);
+                    string[] valor = info_entidade.select_personagem(1, id_e, 0, Campanha.id_campanha, 0);
 
                     vida_atual_sel = Int32.Parse(valor[2]);
                     vida_max_sel = Int32.Parse(valor[3]);
@@ -530,7 +530,7 @@ namespace Dark_Age
                     byte[] imagem_byte = ((byte[])de["imagem"]);
                     image_p = byte_image.byteArrayToImage(imagem_byte);
 
-                    string[] valor = info_entidade.select_personagem(tipo, id_entidade, 0, Campanha.id_campanha);
+                    string[] valor = info_entidade.select_personagem(tipo, id_entidade, 0, Campanha.id_campanha, 0);
 
 
                     Painel_NPC entidades = new Painel_NPC(id_entidade);
@@ -611,6 +611,12 @@ namespace Dark_Age
 			txt_mensagem.Clear();
 		}
 
+        private void iconButton10_Click(object sender, EventArgs e)
+        {
+            btn_fechar mapa = new btn_fechar();
+            mapa.Show();
+        }
+
         public void checaguem_criacao_msg()
 		{
 			DataTable ndv = Conexao_BD.select_mensagens_chat(0, Campanha.id_campanha, 0);
@@ -623,7 +629,7 @@ namespace Dark_Age
 					DataRow registros = ndv.Rows[i];
 					carregar_msg_pnl(registros);
 				}
-				if (distancia > 470)
+				if (distancia > pnl_mensagens.Height)
 				{
 					distancia = pnl_mensagens.Height;
 				}

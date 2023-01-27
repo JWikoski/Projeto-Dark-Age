@@ -26,11 +26,33 @@ namespace Dark_Age
         public Profissoes()
         {
             InitializeComponent();
+            panel1.BackColor = Temas.cor_principal;
+            panel2.BackColor = Temas.cor_principal;
+            selecionar_profissao.BackColor = Temas.cor_principal;
+            richTextBox2.BackColor = Temas.cor_principal;
+            richTextBox1.BackColor = Temas.cor_principal;
+            richTextBox1.BackColor = Temas.cor_principal;
+            textBox1.BackColor = Temas.cor_principal;
+            panel3.BackColor = Temas.cor_principal;
+            tabPage1.BackColor = Temas.cor_principal;
+            tabPage2.BackColor = Temas.cor_principal;
+            comboBox1.BackColor = Temas.cor_principal;
+            comboBox2.BackColor = Temas.cor_principal;
+
+            Temas.mudar_cor_data_grid(data_grid_profissoes);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            selecionar_profissao.Visible = true;
+            if(selecionar_profissao.Visible == true)
+            {
+                selecionar_profissao.Visible = false;
+            }
+            else
+            {
+                selecionar_profissao.Visible = true;
+            }
+            
         }
 
         public void carregar_data_grid_profissoes()
@@ -719,6 +741,11 @@ namespace Dark_Age
         private void iconButton3_Click(object sender, EventArgs e)
         {
             panel5.Visible = false;
+        }
+
+        private void iconButton6_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

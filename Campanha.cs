@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Npgsql;
+using System.Drawing.Drawing2D;
 
 namespace Dark_Age
 {
@@ -23,6 +25,8 @@ namespace Dark_Age
         public static string nome_personagem;
         public static int id_entidade = 0;
         public static Boolean ativa = true;
+        public static byte[] imagembyte_campanha;
+        public static byte[] imagembyte_campanha_nova;
         public Campanha()
         {
             InitializeComponent();
@@ -34,6 +38,7 @@ namespace Dark_Age
 
             Temas.mudar_cor_data_grid(data_grid_campanha);
             Temas.mudar_cor_data_grid(data_grid_pers_camp);
+
         }
 
 
@@ -53,6 +58,7 @@ namespace Dark_Age
                 data_grid_campanha.Columns["nome_campanha"].HeaderText = "Campanhas";
                 data_grid_campanha.Columns["id_campanha"].Visible = false;
                 data_grid_campanha.Columns["fk_id_jogador_mestre"].Visible = false;
+                data_grid_campanha.Columns["imagem_campanha"].Visible = false;
                 if (data_grid_campanha.Rows.Count > 0)
                 {
                     data_grid_campanha.Rows[0].Selected = true;
@@ -220,6 +226,7 @@ namespace Dark_Age
                 nivel_personagem = (int)row.Cells[3].Value;
                 classe_personagem = (int)row.Cells[4].Value;
                 id_entidade = (int)row.Cells[5].Value;
+                byte[] imagem_byte = (byte[])row.Cells[6].Value;
             }
             catch (Exception a)
             {
@@ -239,11 +246,15 @@ namespace Dark_Age
                 id_campanha = (int)row.Cells[0].Value;
                 nome_campanha = row.Cells[1].Value.ToString();
                 int id_mestre = (int)row.Cells[2].Value;
+                byte[] imagem_byte = (byte[])row.Cells[3].Value;
+                pictureBox1.Image = byte_image.byteArrayToImage(imagem_byte);
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
                 esconder_btn(id_mestre);
+
                 carrega_data_grid_pers_camp(id_jogador, id_campanha, id_mestre);
             } catch (Exception a)
             {
-                MessageBox.Show("ERRO click na grid da campanha ", "Erro:" + a);
+                MessageBox.Show("ERRO click na grid da campanha " + a, "Erro:" + a);
             }
         }
         private void data_grid_campanha_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -261,7 +272,8 @@ namespace Dark_Age
         }
         private void btn_confirmar_camp_Click(object sender, EventArgs e)
         {
-            Conexao_BD.criar_nova_campanha(txt_nome_campanha.Text, id_jogador);
+            imagembyte_campanha_nova = byte_image.imageToByteArray(pictureBox2.Image);
+            Conexao_BD.criar_nova_campanha(txt_nome_campanha.Text, id_jogador, imagembyte_campanha_nova);
             pnl_nome_campanha.Visible = false;
             MessageBox.Show("Campanha criada com sucesso! \n\r Para acessar sua tela de Mestre, clique na campanha e depois no botão 'Tela do Mestre - Entrar'");
             carrega_data_grid_campanha();
@@ -367,6 +379,71 @@ namespace Dark_Age
                 ativa = true;
                 carrega_data_grid_campanha();
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if(id_jogador == id_mestre_campanha)
+            {
+                OpenFileDialog dialogo = new OpenFileDialog();
+
+                dialogo.Title = "Procurar arquivos no computador";
+
+                dialogo.InitialDirectory = @"C:\";
+
+                dialogo.Filter = "Todos os arquivos (*.*)|*.*";
+                
+
+
+            DialogResult resposta = dialogo.ShowDialog();
+
+                if (resposta == DialogResult.OK)
+
+                {
+                    string caminhoCompleto = dialogo.FileName;
+
+                    pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+
+                    Image imagem_campanha = Image.FromFile(caminhoCompleto);
+
+                    pictureBox1.Image = imagem_campanha;
+                    imagembyte_campanha = byte_image.imageToByteArray(pictureBox1.Image);
+                    Conexao_BD.insert_imagem_campanha(id_campanha, imagembyte_campanha);
+                }
+            }
+            else{
+                Image mostrar_imagem = pictureBox1.Image;
+                visualizar_imagem.imagem_selecionada = mostrar_imagem;
+                visualizar_imagem visualizar_Imagem = new visualizar_imagem();
+                visualizar_Imagem.Show();
+            }
+            
+        }
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog dialogo = new OpenFileDialog();
+
+            dialogo.Title = "Procurar arquivos no computador";
+
+            dialogo.InitialDirectory = @"C:\";
+
+            dialogo.Filter = "Todos os arquivos (*.*)|*.*";
+
+
+            DialogResult resposta = dialogo.ShowDialog();
+
+            if (resposta == DialogResult.OK)
+
+            {
+                string caminhoCompleto = dialogo.FileName;
+
+                pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+
+                Image imagem_personagem = Image.FromFile(caminhoCompleto);
+
+                pictureBox2.Image = imagem_personagem;
+            }
+
         }
     }
 }

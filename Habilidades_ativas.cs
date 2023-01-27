@@ -20,7 +20,7 @@ namespace Dark_Age
         public static string sanidades;
         public Habilidades_ativas()
         {
-            InitializeComponent();
+            InitializeComponent(); 
             this.BackColor = Color.Black;
             this.TransparencyKey = Color.FromArgb(10, Color.Black);
 
@@ -34,7 +34,7 @@ namespace Dark_Age
             string nda = (string)comm.ExecuteScalar();
 
             Conexao_BD.Select_Regras(ref regras, ref sanidades);
-            lbl_anotacoes.Text = regras;
+            lbl_regras.Text = regras;
 
             anotacoes = nda;
             lbl_anotacoes.Text = nda;
