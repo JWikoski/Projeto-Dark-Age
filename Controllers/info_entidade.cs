@@ -114,7 +114,7 @@ namespace Dark_Age.Controllers
 			}
         }
 
-        public static string[] select_personagem(int tipo, int id_entidade, int id_jogador, int id_campanha)
+        public static string[] select_personagem(int tipo, int id_entidade, int id_jogador, int id_campanha, int id_personagem)
         {
             using NpgsqlConnection conn3 = new(Conexao_BD.Caminho_DB());
             conn3.Open();
@@ -146,16 +146,18 @@ namespace Dark_Age.Controllers
                                      join ""Dark_Age_Connection"".""Personagens"" p on p.id_personagem = fk_id_personagem
                                     left join ""Dark_Age_Connection"".""Classes"" c on c.id_classe = p.fk_id_classe
                                     where tipo_personagem = @tipo
-                                      and ((id_entidade = @id_entidade) or (@id_entidade = 0))
+                                    and ((id_entidade = @id_entidade) or (@id_entidade = 0))
                                       and ((fk_id_jogador = @id_jogador) or (@id_jogador = 0))
                                       and ((fk_id_campanha =  @id_campanha) or (@id_campanha = 0))
+                                      and ((p.id_personagem =  @id_personagem) or (@id_personagem = 0))
                                     group by 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21
                                     order by 2;";
             comi.Parameters.AddWithValue("@tipo", tipo);
 			comi.Parameters.AddWithValue("@id_entidade", id_entidade);
 			comi.Parameters.AddWithValue("@id_jogador", id_jogador);
 			comi.Parameters.AddWithValue("@id_campanha", id_campanha);
-			using NpgsqlDataReader ndp = comi.ExecuteReader();
+            comi.Parameters.AddWithValue("@id_personagem", id_personagem);
+            using NpgsqlDataReader ndp = comi.ExecuteReader();
 
             while (ndp.Read())
             {
@@ -163,9 +165,9 @@ namespace Dark_Age.Controllers
             }
             return null;
         }
-        public static void preencher_pers(int tipo, int id_entidade, int id_jogador, int id_campanha)
+        public static void preencher_pers(int tipo, int id_entidade, int id_jogador, int id_campanha, int id_personagem)
         {
-            string[] valor = select_personagem(tipo, id_entidade, id_jogador, id_campanha);
+            string[] valor = select_personagem(tipo, id_entidade, id_jogador, id_campanha, id_personagem);
             if (valor != null)
             {
 				Inventario.moedas_de_prata = Int32.Parse(valor[0]);
