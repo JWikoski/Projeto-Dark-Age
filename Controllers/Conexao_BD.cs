@@ -302,7 +302,8 @@ namespace Dark_Age.Enteties
             {
                 using NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"select id_campanha 
 	                                                                         , nome_campanha
-                                                                             , fk_id_jogador_mestre       
+                                                                             , fk_id_jogador_mestre    
+                                                                             , imagem_campanha
                                                                           from ""Dark_Age_Connection"".""Campanha""
                                                                           where (ativa = True and "+ativa+" = true)" +
                                                                           "or ("+ativa+" = false) ;", Conexao_BD.Caminho_DB());
@@ -356,7 +357,8 @@ namespace Dark_Age.Enteties
                                                                                  , isp.fk_id_campanha   
                                                                                  , iniciativa
                                                                                  , id_personagem
-                                                                                 , local_token
+                                                                                 , isp.local_token
+                                                                                 , isp.tamanho_token
                                                                                  , isp.id_entidade
                                                                               from ""Dark_Age_Connection"".""Inter_status_pers"" isp 
                                                                               join ""Dark_Age_Connection"".""Personagens"" p on id_personagem = fk_id_personagem
@@ -375,7 +377,31 @@ namespace Dark_Age.Enteties
                 return null;
             }
         }
-        
+        public static DataTable atualizar_localizacao_tokens(int id_campanha)
+        {
+            try
+            {
+                using NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"select isp.local_token
+                                                                                 , isp.id_entidade
+                                                                                 , isp.tamanho_token
+                                                                              from ""Dark_Age_Connection"".""Inter_status_pers"" isp 
+                                                                              join ""Dark_Age_Connection"".""Personagens"" p on id_personagem = fk_id_personagem
+                                                                             where isp.fk_id_campanha = " + id_campanha + "" +
+                                                                             " and iniciativa > 0" +
+                                                                             " and id_personagem > 0;", Conexao_BD.Caminho_DB());
+
+                using NpgsqlCommandBuilder cBuilder = new NpgsqlCommandBuilder(dt_adapter);
+                DataTable dt_table = new DataTable();
+
+                dt_adapter.Fill(dt_table);
+                return dt_table;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("ERRO nas select personagem: " + e);
+                return null;
+            }
+        }
 
         public static void deletar_personagem(int id_personagem, int id_campanha)
         {
@@ -390,18 +416,19 @@ namespace Dark_Age.Enteties
             como.ExecuteNonQuery();
         }
 
-        public static void criar_nova_campanha(string nome_campanha, int id_jogador)
+        public static void criar_nova_campanha(string nome_campanha, int id_jogador, byte[] imagem)
         {
             using NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
             conn.Open();
             using NpgsqlCommand como = new NpgsqlCommand();
             como.Connection = conn;
             como.CommandType = CommandType.Text;
-            como.CommandText = $@"INSERT INTO ""Dark_Age_Connection"".""Campanha"" (nome_campanha, fk_id_jogador_mestre, ativa)
-                                       VALUES (@nome_campanha, @fk_id_jogador_mestre, true)
+            como.CommandText = $@"INSERT INTO ""Dark_Age_Connection"".""Campanha"" (nome_campanha, fk_id_jogador_mestre, ativa, imagem_campanha)
+                                       VALUES (@nome_campanha, @fk_id_jogador_mestre, true, @imagem)
                                        returning id_campanha;";
             como.Parameters.AddWithValue("@nome_campanha", nome_campanha);
             como.Parameters.AddWithValue("@fk_id_jogador_mestre", id_jogador);
+            como.Parameters.AddWithValue("@imagem", imagem);
             object id_camp =  como.ExecuteScalar();
 
             Campanha.id_campanha = Convert.ToInt32(id_camp);
@@ -421,6 +448,23 @@ namespace Dark_Age.Enteties
             como.Parameters.AddWithValue("@id_campanha", id_campanha);
             como.Parameters.AddWithValue("@id_jogador", id_jogador);
             como.ExecuteNonQuery();
+        } 
+        public static void update_tamanho_token(int id_campanha, int id_entidade, int tamanho)
+        {
+            using NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
+            conn.Open();
+            using NpgsqlCommand como = new NpgsqlCommand();
+            como.Connection = conn;
+            como.CommandType = CommandType.Text;
+            como.CommandText = $@"update ""Dark_Age_Connection"".""Inter_status_pers""
+                                        set tamanho_token = @tamanho
+                                        WHERE fk_id_campanha = @id_campanha
+                                          and (id_entidade = @id_entidade
+                                          or @id_entidade = 0);";
+            como.Parameters.AddWithValue("@tamanho", tamanho);
+            como.Parameters.AddWithValue("@id_campanha", id_campanha);
+            como.Parameters.AddWithValue("@id_entidade", id_entidade);
+            como.ExecuteNonQuery();
         }
 
         public static void insert_inter_camp_pers(int id_pers, int id_camp, int id_jog)
@@ -436,6 +480,20 @@ namespace Dark_Age.Enteties
             cone.Parameters.AddWithValue("@id_campanha", id_camp);
             cone.Parameters.AddWithValue("@id_jogador", id_jog);
             cone.Parameters.AddWithValue("@id_personagem", id_pers);            
+            cone.ExecuteNonQuery();
+        }
+        public static void insert_imagem_campanha(int id_campanha, byte[] imagem)
+        {            
+            using NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
+            conn.Open();
+            using NpgsqlCommand cone = new NpgsqlCommand();
+            cone.Connection = conn;
+
+            cone.CommandText = $@"update ""Dark_Age_Connection"".""Campanha""
+                                               set imagem_campanha = @imagem
+                                                where id_campanha = @id_camp;";
+            cone.Parameters.AddWithValue("@id_camp", id_campanha);      
+            cone.Parameters.AddWithValue("@imagem", imagem);      
             cone.ExecuteNonQuery();
         }
 
@@ -763,7 +821,7 @@ namespace Dark_Age.Enteties
 			comn.CommandType = CommandType.Text;
 			comn.CommandText = $@" INSERT INTO ""Dark_Age_Connection"".chat
                                     (data_hora, mensagem, fk_id_entidade, tipo_dado)
-                                    VALUES(@data_atual, @mensagem, @id_entidade, @tipo_dado);";
+                                    VALUES(NOW(), @mensagem, @id_entidade, @tipo_dado);";
 			comn.Parameters.AddWithValue("@data_atual", data_atual);
 			comn.Parameters.AddWithValue("@mensagem", mensagem);
 			comn.Parameters.AddWithValue("@id_entidade", id_entidade_envio);

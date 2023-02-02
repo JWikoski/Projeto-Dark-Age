@@ -1998,6 +1998,8 @@ namespace Dark_Age
             this.iconButton10.Text = "Combate";
             this.iconButton10.UseVisualStyleBackColor = true;
             this.iconButton10.Click += new System.EventHandler(this.iconButton10_Click);
+            this.iconButton10.MouseEnter += new System.EventHandler(this.btn_change_MouseEnter);
+            this.iconButton10.MouseHover += new System.EventHandler(this.btn_change_MouseEnter);
             // 
             // btn_cria_personagem
             // 

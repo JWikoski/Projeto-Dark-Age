@@ -38,7 +38,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_eliminar_campanha = new FontAwesome.Sharp.IconButton();
             this.btn_eliminar = new FontAwesome.Sharp.IconButton();
@@ -59,15 +58,17 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.lbl_fechar = new System.Windows.Forms.Button();
             this.lbl_bvd = new FontAwesome.Sharp.IconButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.pnl_nome_campanha.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_grid_pers_camp)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_grid_campanha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -93,7 +94,6 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.btn_eliminar_campanha);
             this.panel4.Controls.Add(this.btn_eliminar);
@@ -107,23 +107,17 @@
             this.panel4.TabIndex = 2;
             this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Campanha_MouseDown);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(29, 327);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(278, 150);
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(29, 148);
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 160);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(278, 150);
+            this.pictureBox1.Size = new System.Drawing.Size(312, 293);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btn_eliminar_campanha
             // 
@@ -257,6 +251,8 @@
             // pnl_nome_campanha
             // 
             this.pnl_nome_campanha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(37)))));
+            this.pnl_nome_campanha.Controls.Add(this.label2);
+            this.pnl_nome_campanha.Controls.Add(this.pictureBox2);
             this.pnl_nome_campanha.Controls.Add(this.btn_cancelar);
             this.pnl_nome_campanha.Controls.Add(this.btn_confirmar_camp);
             this.pnl_nome_campanha.Controls.Add(this.label1);
@@ -264,7 +260,7 @@
             this.pnl_nome_campanha.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.pnl_nome_campanha.Location = new System.Drawing.Point(35, 184);
             this.pnl_nome_campanha.Name = "pnl_nome_campanha";
-            this.pnl_nome_campanha.Size = new System.Drawing.Size(329, 117);
+            this.pnl_nome_campanha.Size = new System.Drawing.Size(329, 253);
             this.pnl_nome_campanha.TabIndex = 7;
             this.pnl_nome_campanha.Visible = false;
             // 
@@ -277,7 +273,7 @@
             this.btn_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cancelar.ForeColor = System.Drawing.Color.Salmon;
-            this.btn_cancelar.Location = new System.Drawing.Point(19, 82);
+            this.btn_cancelar.Location = new System.Drawing.Point(233, 212);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
             this.btn_cancelar.TabIndex = 3;
@@ -294,7 +290,7 @@
             this.btn_confirmar_camp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.btn_confirmar_camp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_confirmar_camp.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btn_confirmar_camp.Location = new System.Drawing.Point(233, 82);
+            this.btn_confirmar_camp.Location = new System.Drawing.Point(19, 212);
             this.btn_confirmar_camp.Name = "btn_confirmar_camp";
             this.btn_confirmar_camp.Size = new System.Drawing.Size(75, 23);
             this.btn_confirmar_camp.TabIndex = 2;
@@ -489,7 +485,7 @@
             this.lbl_bvd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbl_bvd.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_bvd.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbl_bvd.IconChar = FontAwesome.Sharp.IconChar.SignIn;
+            this.lbl_bvd.IconChar = FontAwesome.Sharp.IconChar.ArrowRightToBracket;
             this.lbl_bvd.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.lbl_bvd.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.lbl_bvd.IconSize = 35;
@@ -504,6 +500,29 @@
             this.lbl_bvd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.lbl_bvd.UseVisualStyleBackColor = true;
             this.lbl_bvd.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Campanha_MouseDown);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::Dark_Age.Properties.Resources.Sem_imagem;
+            this.pictureBox2.Location = new System.Drawing.Point(118, 90);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(165, 90);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click_1);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label2.Location = new System.Drawing.Point(19, 120);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 15);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Imagem:";
             // 
             // Campanha
             // 
@@ -528,7 +547,6 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Campanha_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.pnl_nome_campanha.ResumeLayout(false);
@@ -536,6 +554,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.data_grid_pers_camp)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.data_grid_campanha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -561,12 +580,13 @@
         private FontAwesome.Sharp.IconButton btn_eliminar;
         private FontAwesome.Sharp.IconButton btn_eliminar_campanha;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button lbl_fechar;
         private FontAwesome.Sharp.IconButton lbl_bvd;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

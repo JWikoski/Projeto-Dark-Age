@@ -1112,7 +1112,7 @@ namespace Dark_Age
 
         private void iconButton10_Click(object sender, EventArgs e)
         {
-            Mapa_combate mapa = new Mapa_combate();
+            btn_fechar mapa = new btn_fechar();
             mapa.Show();
         }
 

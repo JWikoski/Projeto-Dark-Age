@@ -36,13 +36,23 @@ namespace Dark_Age
             panel3.BackColor = Temas.cor_principal;
             tabPage1.BackColor = Temas.cor_principal;
             tabPage2.BackColor = Temas.cor_principal;
+            comboBox1.BackColor = Temas.cor_principal;
+            comboBox2.BackColor = Temas.cor_principal;
 
             Temas.mudar_cor_data_grid(data_grid_profissoes);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            selecionar_profissao.Visible = true;
+            if(selecionar_profissao.Visible == true)
+            {
+                selecionar_profissao.Visible = false;
+            }
+            else
+            {
+                selecionar_profissao.Visible = true;
+            }
+            
         }
 
         public void carregar_data_grid_profissoes()

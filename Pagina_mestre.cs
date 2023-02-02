@@ -611,6 +611,12 @@ namespace Dark_Age
 			txt_mensagem.Clear();
 		}
 
+        private void iconButton10_Click(object sender, EventArgs e)
+        {
+            btn_fechar mapa = new btn_fechar();
+            mapa.Show();
+        }
+
         public void checaguem_criacao_msg()
 		{
 			DataTable ndv = Conexao_BD.select_mensagens_chat(0, Campanha.id_campanha, 0);
