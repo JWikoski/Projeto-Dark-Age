@@ -151,6 +151,9 @@
   <data name="festival2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\festival2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FIxWH2tXEAIHnb8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FIxWH2tXEAIHnb8.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="alchemist" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\alchemist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -186,6 +189,9 @@
   </data>
   <data name="minimizar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minimizar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="registro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\registro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="k7wvl1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\k7wvl1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,6 +247,9 @@
   <data name="image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="papers.co-sk61-dark-purple-blur-gradation-36-3840x2400-4k-wallpaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\papers.co-sk61-dark-purple-blur-gradation-36-3840x2400-4k-wallpaper.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="mochila_fechada" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mochila_fechada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -270,9 +279,6 @@
   </data>
   <data name="d4-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\d4-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="proxima_pag1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\proxima_pag1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="old-opened-book-empty-pages-260nw-72791266" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\old-opened-book-empty-pages-260nw-72791266.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -322,8 +328,8 @@
   <data name="d42" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\d42.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="papers.co-sk61-dark-purple-blur-gradation-36-3840x2400-4k-wallpaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\papers.co-sk61-dark-purple-blur-gradation-36-3840x2400-4k-wallpaper.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="proxima_pag1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\proxima_pag1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="maxscreen1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\maxscreen1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -403,7 +409,7 @@
   <data name="png-sparkle-clean-effect-white-icon-11640489625soujl6hden1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\png-sparkle-clean-effect-white-icon-11640489625soujl6hden1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="registro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\registro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="santuario2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\santuario2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

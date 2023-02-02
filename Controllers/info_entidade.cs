@@ -146,7 +146,7 @@ namespace Dark_Age.Controllers
                                      join ""Dark_Age_Connection"".""Personagens"" p on p.id_personagem = fk_id_personagem
                                     left join ""Dark_Age_Connection"".""Classes"" c on c.id_classe = p.fk_id_classe
                                     where tipo_personagem = @tipo
-                                      and ((id_entidade = @id_entidade) or (@id_entidade = 0))
+                                    and ((id_entidade = @id_entidade) or (@id_entidade = 0))
                                       and ((fk_id_jogador = @id_jogador) or (@id_jogador = 0))
                                       and ((fk_id_campanha =  @id_campanha) or (@id_campanha = 0))
                                       and ((p.id_personagem =  @id_personagem) or (@id_personagem = 0))
@@ -156,8 +156,8 @@ namespace Dark_Age.Controllers
 			comi.Parameters.AddWithValue("@id_entidade", id_entidade);
 			comi.Parameters.AddWithValue("@id_jogador", id_jogador);
 			comi.Parameters.AddWithValue("@id_campanha", id_campanha);
-			comi.Parameters.AddWithValue("@id_personagem", id_personagem);
-			using NpgsqlDataReader ndp = comi.ExecuteReader();
+            comi.Parameters.AddWithValue("@id_personagem", id_personagem);
+            using NpgsqlDataReader ndp = comi.ExecuteReader();
 
             while (ndp.Read())
             {

@@ -348,6 +348,33 @@ namespace Dark_Age.Enteties
                 return null;
             }
         }
+        public static DataTable select_tokens(int id_campanha)
+        {
+            try
+            {                
+                using NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"select imagem
+                                                                                 , isp.fk_id_campanha   
+                                                                                 , iniciativa
+                                                                                 , id_personagem
+                                                                                 , local_token
+                                                                                 , isp.id_entidade
+                                                                              from ""Dark_Age_Connection"".""Inter_status_pers"" isp 
+                                                                              join ""Dark_Age_Connection"".""Personagens"" p on id_personagem = fk_id_personagem
+                                                                             where isp.fk_id_campanha = " + id_campanha + "" +
+                                                                             " and iniciativa > 0" +
+                                                                             " and id_personagem > 0;", Conexao_BD.Caminho_DB());
+                
+                using NpgsqlCommandBuilder cBuilder = new NpgsqlCommandBuilder(dt_adapter);
+                DataTable dt_table = new DataTable();
+
+                dt_adapter.Fill(dt_table);
+                return dt_table;
+            } catch(Exception e)
+            {
+                MessageBox.Show("ERRO nas select personagem: " + e);
+                return null;
+            }
+        }
         
 
         public static void deletar_personagem(int id_personagem, int id_campanha)

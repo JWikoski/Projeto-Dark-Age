@@ -533,6 +533,16 @@ namespace Dark_Age.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FIxWH2tXEAIHnb8 {
+            get {
+                object obj = ResourceManager.GetObject("FIxWH2tXEAIHnb8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap forgemaster {
             get {
                 object obj = ResourceManager.GetObject("forgemaster", resourceCulture);
@@ -961,6 +971,16 @@ namespace Dark_Age.Properties {
         internal static System.Drawing.Bitmap registro {
             get {
                 object obj = ResourceManager.GetObject("registro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap santuario2 {
+            get {
+                object obj = ResourceManager.GetObject("santuario2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
