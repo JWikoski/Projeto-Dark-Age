@@ -557,7 +557,7 @@ namespace Dark_Age
                 btn_cria_personagem.Text = "Finalizar Edição de Personagem";
                 info_entidade.preencher_atributos(Campanha.id_personagem, "'N'");
                 info_entidade.preencher_talento(Campanha.id_personagem, "'N'");
-                info_entidade.preencher_pers(1, 0, Campanha.id_personagem, 0);
+                info_entidade.preencher_pers(1, Campanha.id_entidade, 0, 0, Campanha.id_personagem);
                 info_entidade.imagem(Campanha.id_personagem);
 				imagem_pers = byte_image.byteArrayToImage(imagembyte_personagem);
                 pictureBox1.Image = imagem_pers;
