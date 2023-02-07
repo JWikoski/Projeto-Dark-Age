@@ -41,6 +41,7 @@ namespace Dark_Age
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.seta_direita = new FontAwesome.Sharp.IconButton();
             this.seta_esquerda = new FontAwesome.Sharp.IconButton();
+            this.lbl_descansos = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,6 +96,7 @@ namespace Dark_Age
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.lbl_descansos);
             this.panel1.Controls.Add(this.lbl_regras);
             this.panel1.Controls.Add(this.lbl_anotacoes);
             this.panel1.Font = new System.Drawing.Font("Segoe Script", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -199,6 +201,21 @@ namespace Dark_Age
             this.seta_esquerda.Visible = false;
             this.seta_esquerda.Click += new System.EventHandler(this.seta_esquerda_Click);
             // 
+            // lbl_descansos
+            // 
+            this.lbl_descansos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_descansos.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_descansos.Font = new System.Drawing.Font("Segoe Script", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_descansos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
+            this.lbl_descansos.Location = new System.Drawing.Point(3, 0);
+            this.lbl_descansos.MaximumSize = new System.Drawing.Size(450, 0);
+            this.lbl_descansos.Name = "lbl_descansos";
+            this.lbl_descansos.Size = new System.Drawing.Size(0, 30);
+            this.lbl_descansos.TabIndex = 13;
+            this.lbl_descansos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Habilidades_ativas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -240,5 +257,6 @@ namespace Dark_Age
         private FontAwesome.Sharp.IconButton seta_direita;
         private FontAwesome.Sharp.IconButton seta_esquerda;
         private System.Windows.Forms.Label lbl_regras;
+        private System.Windows.Forms.Label lbl_descansos;
     }
 }

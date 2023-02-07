@@ -375,1326 +375,1326 @@ namespace Dark_Age
 			this.ficha_resumida.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.ficha_resumida.BackColor = System.Drawing.Color.Transparent;
-			this.ficha_resumida.Controls.Add(this.temp_danos);
-			this.ficha_resumida.Controls.Add(this.panel3);
-			this.ficha_resumida.Controls.Add(this.panel16);
-			this.ficha_resumida.Controls.Add(this.panel6);
-			this.ficha_resumida.Controls.Add(this.panel5);
-			this.ficha_resumida.Controls.Add(this.Locais);
-			this.ficha_resumida.Location = new System.Drawing.Point(51, 106);
-			this.ficha_resumida.Name = "ficha_resumida";
-			this.ficha_resumida.Size = new System.Drawing.Size(1052, 639);
-			this.ficha_resumida.TabIndex = 5;
-			// 
-			// temp_danos
-			// 
-			this.temp_danos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(40)))), ((int)(((byte)(52)))));
-			this.temp_danos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.temp_danos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.temp_danos.Enabled = false;
-			this.temp_danos.Location = new System.Drawing.Point(523, 156);
-			this.temp_danos.Name = "temp_danos";
-			this.temp_danos.ReadOnly = true;
-			this.temp_danos.RowTemplate.Height = 25;
-			this.temp_danos.Size = new System.Drawing.Size(33, 40);
-			this.temp_danos.TabIndex = 143;
-			this.temp_danos.Visible = false;
-			// 
-			// panel3
-			// 
-			this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.panel3.BackColor = System.Drawing.Color.Transparent;
-			this.panel3.Controls.Add(this.label8);
-			this.panel3.Controls.Add(this.label6);
-			this.panel3.Controls.Add(this.label4);
-			this.panel3.Controls.Add(this.label90);
-			this.panel3.Controls.Add(this.modificador);
-			this.panel3.Controls.Add(this.panel2);
-			this.panel3.Controls.Add(this.label46);
-			this.panel3.Controls.Add(this.panel1);
-			this.panel3.Location = new System.Drawing.Point(13, -9);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(484, 645);
-			this.panel3.TabIndex = 88;
-			// 
-			// label8
-			// 
-			this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label8.AutoSize = true;
-			this.label8.BackColor = System.Drawing.Color.Transparent;
-			this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label8.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-			this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label8.Location = new System.Drawing.Point(311, 244);
-			this.label8.Name = "label8";
-			this.label8.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label8.Size = new System.Drawing.Size(133, 26);
-			this.label8.TabIndex = 92;
-			this.label8.Text = "Conhecimentos";
-			// 
-			// label6
-			// 
-			this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label6.AutoSize = true;
-			this.label6.BackColor = System.Drawing.Color.Transparent;
-			this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label6.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-			this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label6.Location = new System.Drawing.Point(183, 244);
-			this.label6.Name = "label6";
-			this.label6.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label6.Size = new System.Drawing.Size(72, 26);
-			this.label6.TabIndex = 91;
-			this.label6.Text = "Perícias";
-			// 
-			// label4
-			// 
-			this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label4.AutoSize = true;
-			this.label4.BackColor = System.Drawing.Color.Transparent;
-			this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label4.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-			this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label4.Location = new System.Drawing.Point(29, 244);
-			this.label4.Name = "label4";
-			this.label4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label4.Size = new System.Drawing.Size(84, 26);
-			this.label4.TabIndex = 90;
-			this.label4.Text = "Combate";
-			// 
-			// label90
-			// 
-			this.label90.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label90.AutoSize = true;
-			this.label90.BackColor = System.Drawing.Color.Transparent;
-			this.label90.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label90.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label90.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label90.Location = new System.Drawing.Point(332, 207);
-			this.label90.Name = "label90";
-			this.label90.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label90.Size = new System.Drawing.Size(82, 20);
-			this.label90.TabIndex = 89;
-			this.label90.Text = "Modificador";
-			this.label90.Visible = false;
-			// 
-			// modificador
-			// 
-			this.modificador.BackColor = System.Drawing.SystemColors.InactiveCaption;
-			this.modificador.Location = new System.Drawing.Point(332, 200);
-			this.modificador.Name = "modificador";
-			this.modificador.Size = new System.Drawing.Size(82, 23);
-			this.modificador.TabIndex = 88;
-			this.modificador.Text = "0";
-			this.modificador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.modificador.Visible = false;
-			// 
-			// panel2
-			// 
-			this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.panel2.Controls.Add(this.res_magia);
-			this.panel2.Controls.Add(this.res_raciocinio);
-			this.panel2.Controls.Add(this.res_carisma);
-			this.panel2.Controls.Add(this.label31);
-			this.panel2.Controls.Add(this.label32);
-			this.panel2.Controls.Add(this.label33);
-			this.panel2.Controls.Add(this.res_vigor);
-			this.panel2.Controls.Add(this.res_destreza);
-			this.panel2.Controls.Add(this.res_forca);
-			this.panel2.Controls.Add(this.label27);
-			this.panel2.Controls.Add(this.label23);
-			this.panel2.Controls.Add(this.label25);
-			this.panel2.Controls.Add(this.label22);
-			this.panel2.Location = new System.Drawing.Point(24, 12);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(478, 175);
-			this.panel2.TabIndex = 87;
-			// 
-			// res_magia
-			// 
-			this.res_magia.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_magia.AutoSize = true;
-			this.res_magia.BackColor = System.Drawing.Color.Transparent;
-			this.res_magia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_magia.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_magia.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_magia.Location = new System.Drawing.Point(330, 129);
-			this.res_magia.Name = "res_magia";
-			this.res_magia.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_magia.Size = new System.Drawing.Size(22, 26);
-			this.res_magia.TabIndex = 26;
-			this.res_magia.Text = "0";
-			this.res_magia.Click += new System.EventHandler(this.res_magia_Click);
-			// 
-			// res_raciocinio
-			// 
-			this.res_raciocinio.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_raciocinio.AutoSize = true;
-			this.res_raciocinio.BackColor = System.Drawing.Color.Transparent;
-			this.res_raciocinio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_raciocinio.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_raciocinio.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_raciocinio.Location = new System.Drawing.Point(330, 94);
-			this.res_raciocinio.Name = "res_raciocinio";
-			this.res_raciocinio.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_raciocinio.Size = new System.Drawing.Size(22, 26);
-			this.res_raciocinio.TabIndex = 25;
-			this.res_raciocinio.Text = "0";
-			this.res_raciocinio.Click += new System.EventHandler(this.res_raciocinio_Click);
-			// 
-			// res_carisma
-			// 
-			this.res_carisma.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_carisma.AutoSize = true;
-			this.res_carisma.BackColor = System.Drawing.Color.Transparent;
-			this.res_carisma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_carisma.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_carisma.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_carisma.Location = new System.Drawing.Point(330, 58);
-			this.res_carisma.Name = "res_carisma";
-			this.res_carisma.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_carisma.Size = new System.Drawing.Size(22, 26);
-			this.res_carisma.TabIndex = 24;
-			this.res_carisma.Text = "0";
-			this.res_carisma.Click += new System.EventHandler(this.res_carisma_Click);
-			// 
-			// label31
-			// 
-			this.label31.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label31.AutoSize = true;
-			this.label31.BackColor = System.Drawing.Color.Transparent;
-			this.label31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label31.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label31.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label31.Location = new System.Drawing.Point(278, 131);
-			this.label31.Name = "label31";
-			this.label31.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label31.Size = new System.Drawing.Size(56, 22);
-			this.label31.TabIndex = 23;
-			this.label31.Text = "Magia:";
-			this.label31.Click += new System.EventHandler(this.res_magia_Click);
-			// 
-			// label32
-			// 
-			this.label32.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label32.AutoSize = true;
-			this.label32.BackColor = System.Drawing.Color.Transparent;
-			this.label32.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label32.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label32.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label32.Location = new System.Drawing.Point(251, 96);
-			this.label32.Name = "label32";
-			this.label32.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label32.Size = new System.Drawing.Size(84, 22);
-			this.label32.TabIndex = 22;
-			this.label32.Text = "Raciocínio:";
-			this.label32.Click += new System.EventHandler(this.res_raciocinio_Click);
-			// 
-			// label33
-			// 
-			this.label33.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label33.AutoSize = true;
-			this.label33.BackColor = System.Drawing.Color.Transparent;
-			this.label33.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label33.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label33.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label33.Location = new System.Drawing.Point(264, 60);
-			this.label33.Name = "label33";
-			this.label33.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label33.Size = new System.Drawing.Size(70, 22);
-			this.label33.TabIndex = 21;
-			this.label33.Text = "Carisma:";
-			this.label33.Click += new System.EventHandler(this.res_carisma_Click);
-			// 
-			// res_vigor
-			// 
-			this.res_vigor.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_vigor.AutoSize = true;
-			this.res_vigor.BackColor = System.Drawing.Color.Transparent;
-			this.res_vigor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_vigor.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_vigor.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_vigor.Location = new System.Drawing.Point(132, 129);
-			this.res_vigor.Name = "res_vigor";
-			this.res_vigor.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_vigor.Size = new System.Drawing.Size(22, 26);
-			this.res_vigor.TabIndex = 17;
-			this.res_vigor.Text = "0";
-			this.res_vigor.Click += new System.EventHandler(this.res_vigor_Click);
-			// 
-			// res_destreza
-			// 
-			this.res_destreza.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_destreza.AutoSize = true;
-			this.res_destreza.BackColor = System.Drawing.Color.Transparent;
-			this.res_destreza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_destreza.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_destreza.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_destreza.Location = new System.Drawing.Point(132, 94);
-			this.res_destreza.Name = "res_destreza";
-			this.res_destreza.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_destreza.Size = new System.Drawing.Size(22, 26);
-			this.res_destreza.TabIndex = 16;
-			this.res_destreza.Text = "0";
-			this.res_destreza.Click += new System.EventHandler(this.res_destreza_Click);
-			// 
-			// res_forca
-			// 
-			this.res_forca.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_forca.AutoSize = true;
-			this.res_forca.BackColor = System.Drawing.Color.Transparent;
-			this.res_forca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_forca.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_forca.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_forca.Location = new System.Drawing.Point(132, 58);
-			this.res_forca.Name = "res_forca";
-			this.res_forca.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_forca.Size = new System.Drawing.Size(22, 26);
-			this.res_forca.TabIndex = 15;
-			this.res_forca.Text = "0";
-			this.res_forca.Click += new System.EventHandler(this.res_forca_Click);
-			// 
-			// label27
-			// 
-			this.label27.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label27.AutoSize = true;
-			this.label27.BackColor = System.Drawing.Color.Transparent;
-			this.label27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label27.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label27.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label27.Location = new System.Drawing.Point(79, 132);
-			this.label27.Name = "label27";
-			this.label27.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label27.Size = new System.Drawing.Size(51, 22);
-			this.label27.TabIndex = 14;
-			this.label27.Text = "Vigor:";
-			this.label27.Click += new System.EventHandler(this.res_vigor_Click);
-			// 
-			// label23
-			// 
-			this.label23.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label23.AutoSize = true;
-			this.label23.BackColor = System.Drawing.Color.Transparent;
-			this.label23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label23.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label23.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label23.Location = new System.Drawing.Point(85, 61);
-			this.label23.Name = "label23";
-			this.label23.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label23.Size = new System.Drawing.Size(51, 22);
-			this.label23.TabIndex = 10;
-			this.label23.Text = "Força:";
-			this.label23.Click += new System.EventHandler(this.res_forca_Click);
-			// 
-			// label25
-			// 
-			this.label25.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label25.AutoSize = true;
-			this.label25.BackColor = System.Drawing.Color.Transparent;
-			this.label25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label25.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label25.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label25.Location = new System.Drawing.Point(60, 97);
-			this.label25.Name = "label25";
-			this.label25.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label25.Size = new System.Drawing.Size(73, 22);
-			this.label25.TabIndex = 12;
-			this.label25.Text = "Destreza:";
-			this.label25.Click += new System.EventHandler(this.res_destreza_Click);
-			// 
-			// label22
-			// 
-			this.label22.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label22.AutoSize = true;
-			this.label22.BackColor = System.Drawing.Color.Transparent;
-			this.label22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label22.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label22.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label22.Location = new System.Drawing.Point(151, 6);
-			this.label22.Name = "label22";
-			this.label22.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label22.Size = new System.Drawing.Size(111, 33);
-			this.label22.TabIndex = 4;
-			this.label22.Text = "Atributos";
-			// 
-			// label46
-			// 
-			this.label46.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label46.AutoSize = true;
-			this.label46.BackColor = System.Drawing.Color.Transparent;
-			this.label46.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label46.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label46.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label46.Location = new System.Drawing.Point(163, 188);
-			this.label46.Name = "label46";
-			this.label46.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label46.Size = new System.Drawing.Size(101, 33);
-			this.label46.TabIndex = 30;
-			this.label46.Text = "Talentos";
-			// 
-			// panel1
-			// 
-			this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.panel1.Controls.Add(this.panel15);
-			this.panel1.Controls.Add(this.res_acad);
-			this.panel1.Controls.Add(this.res_investigacao);
-			this.panel1.Controls.Add(this.label75);
-			this.panel1.Controls.Add(this.label76);
-			this.panel1.Controls.Add(this.res_sobrevivencia);
-			this.panel1.Controls.Add(this.label80);
-			this.panel1.Controls.Add(this.res_labia);
-			this.panel1.Controls.Add(this.res_enganacao);
-			this.panel1.Controls.Add(this.res_defesa);
-			this.panel1.Controls.Add(this.label85);
-			this.panel1.Controls.Add(this.label86);
-			this.panel1.Controls.Add(this.res_seducao);
-			this.panel1.Controls.Add(this.res_contrataque);
-			this.panel1.Controls.Add(this.res_ataque);
-			this.panel1.Controls.Add(this.label89);
-			this.panel1.Controls.Add(this.label73);
-			this.panel1.Controls.Add(this.label72);
-			this.panel1.Controls.Add(this.label71);
-			this.panel1.Controls.Add(this.res_etiqueta);
-			this.panel1.Controls.Add(this.res_intuicao);
-			this.panel1.Controls.Add(this.res_ocultismo);
-			this.panel1.Controls.Add(this.label63);
-			this.panel1.Controls.Add(this.label64);
-			this.panel1.Controls.Add(this.label65);
-			this.panel1.Controls.Add(this.label67);
-			this.panel1.Controls.Add(this.label68);
-			this.panel1.Controls.Add(this.button22);
-			this.panel1.Controls.Add(this.label45);
-			this.panel1.Controls.Add(this.label43);
-			this.panel1.Controls.Add(this.res_percepcao);
-			this.panel1.Controls.Add(this.label42);
-			this.panel1.Controls.Add(this.res_esconder);
-			this.panel1.Controls.Add(this.res_intimidacao);
-			this.panel1.Controls.Add(this.label50);
-			this.panel1.Controls.Add(this.label51);
-			this.panel1.Controls.Add(this.label52);
-			this.panel1.Controls.Add(this.label37);
-			this.panel1.Controls.Add(this.res_conjurar);
-			this.panel1.Controls.Add(this.res_atirar);
-			this.panel1.Controls.Add(this.res_esquiva);
-			this.panel1.Controls.Add(this.button9);
-			this.panel1.Controls.Add(this.label56);
-			this.panel1.Controls.Add(this.label57);
-			this.panel1.Controls.Add(this.label58);
-			this.panel1.Location = new System.Drawing.Point(14, 273);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(481, 369);
-			this.panel1.TabIndex = 67;
-			this.panel1.Click += new System.EventHandler(this.res_atirar_Click);
-			// 
-			// panel15
-			// 
-			this.panel15.BackColor = System.Drawing.Color.White;
-			this.panel15.Location = new System.Drawing.Point(16, 3);
-			this.panel15.Name = "panel15";
-			this.panel15.Size = new System.Drawing.Size(420, 1);
-			this.panel15.TabIndex = 106;
-			// 
-			// res_acad
-			// 
-			this.res_acad.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_acad.AutoSize = true;
-			this.res_acad.BackColor = System.Drawing.Color.Transparent;
-			this.res_acad.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.res_acad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_acad.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_acad.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_acad.Location = new System.Drawing.Point(405, 21);
-			this.res_acad.Name = "res_acad";
-			this.res_acad.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_acad.Size = new System.Drawing.Size(22, 26);
-			this.res_acad.TabIndex = 105;
-			this.res_acad.Text = "0";
-			this.res_acad.Click += new System.EventHandler(this.res_acad_Click);
-			this.res_acad.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.res_acad.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.res_acad.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// res_investigacao
-			// 
-			this.res_investigacao.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_investigacao.AutoSize = true;
-			this.res_investigacao.BackColor = System.Drawing.Color.Transparent;
-			this.res_investigacao.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.res_investigacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_investigacao.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_investigacao.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_investigacao.Location = new System.Drawing.Point(405, 184);
-			this.res_investigacao.Name = "res_investigacao";
-			this.res_investigacao.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_investigacao.Size = new System.Drawing.Size(22, 26);
-			this.res_investigacao.TabIndex = 103;
-			this.res_investigacao.Text = "0";
-			this.res_investigacao.Click += new System.EventHandler(this.res_investigacao_Click);
-			this.res_investigacao.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.res_investigacao.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.res_investigacao.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// label75
-			// 
-			this.label75.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label75.AutoSize = true;
-			this.label75.BackColor = System.Drawing.Color.Transparent;
-			this.label75.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.label75.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label75.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label75.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label75.Location = new System.Drawing.Point(305, 184);
-			this.label75.Name = "label75";
-			this.label75.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label75.Size = new System.Drawing.Size(99, 22);
-			this.label75.TabIndex = 102;
-			this.label75.Text = "Investigação:";
-			this.label75.Click += new System.EventHandler(this.res_investigacao_Click);
-			this.label75.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.label75.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.label75.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// label76
-			// 
-			this.label76.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label76.AutoSize = true;
-			this.label76.BackColor = System.Drawing.Color.Transparent;
-			this.label76.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.label76.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label76.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label76.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label76.Location = new System.Drawing.Point(304, 134);
-			this.label76.Name = "label76";
-			this.label76.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label76.Size = new System.Drawing.Size(95, 20);
-			this.label76.TabIndex = 99;
-			this.label76.Text = "Sobrevivência:";
-			this.label76.Click += new System.EventHandler(this.res_sobrevivencia_Click);
-			this.label76.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.label76.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.label76.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// res_sobrevivencia
-			// 
-			this.res_sobrevivencia.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_sobrevivencia.AutoSize = true;
-			this.res_sobrevivencia.BackColor = System.Drawing.Color.Transparent;
-			this.res_sobrevivencia.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.res_sobrevivencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_sobrevivencia.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_sobrevivencia.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_sobrevivencia.Location = new System.Drawing.Point(405, 131);
-			this.res_sobrevivencia.Name = "res_sobrevivencia";
-			this.res_sobrevivencia.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_sobrevivencia.Size = new System.Drawing.Size(22, 26);
-			this.res_sobrevivencia.TabIndex = 100;
-			this.res_sobrevivencia.Text = "0";
-			this.res_sobrevivencia.Click += new System.EventHandler(this.res_sobrevivencia_Click);
-			this.res_sobrevivencia.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.res_sobrevivencia.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.res_sobrevivencia.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// label80
-			// 
-			this.label80.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label80.AutoSize = true;
-			this.label80.BackColor = System.Drawing.Color.Transparent;
-			this.label80.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.label80.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label80.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label80.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label80.Location = new System.Drawing.Point(20, 131);
-			this.label80.Name = "label80";
-			this.label80.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label80.Size = new System.Drawing.Size(60, 22);
-			this.label80.TabIndex = 87;
-			this.label80.Text = "Defesa:";
-			this.label80.Click += new System.EventHandler(this.res_defesa_Click);
-			this.label80.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.label80.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.label80.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// res_labia
-			// 
-			this.res_labia.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_labia.AutoSize = true;
-			this.res_labia.BackColor = System.Drawing.Color.Transparent;
-			this.res_labia.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.res_labia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_labia.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_labia.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_labia.Location = new System.Drawing.Point(243, 22);
-			this.res_labia.Name = "res_labia";
-			this.res_labia.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_labia.Size = new System.Drawing.Size(22, 26);
-			this.res_labia.TabIndex = 62;
-			this.res_labia.Text = "0";
-			this.res_labia.Click += new System.EventHandler(this.res_labia_Click);
-			this.res_labia.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.res_labia.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.res_labia.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// res_enganacao
-			// 
-			this.res_enganacao.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_enganacao.AutoSize = true;
-			this.res_enganacao.BackColor = System.Drawing.Color.Transparent;
-			this.res_enganacao.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.res_enganacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_enganacao.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_enganacao.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_enganacao.Location = new System.Drawing.Point(242, 185);
-			this.res_enganacao.Name = "res_enganacao";
-			this.res_enganacao.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_enganacao.Size = new System.Drawing.Size(22, 26);
-			this.res_enganacao.TabIndex = 97;
-			this.res_enganacao.Text = "0";
-			this.res_enganacao.Click += new System.EventHandler(this.res_enganacao_Click);
-			this.res_enganacao.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.res_enganacao.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.res_enganacao.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// res_defesa
-			// 
-			this.res_defesa.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_defesa.AutoSize = true;
-			this.res_defesa.BackColor = System.Drawing.Color.Transparent;
-			this.res_defesa.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.res_defesa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_defesa.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_defesa.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_defesa.Location = new System.Drawing.Point(84, 128);
-			this.res_defesa.Name = "res_defesa";
-			this.res_defesa.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_defesa.Size = new System.Drawing.Size(22, 26);
-			this.res_defesa.TabIndex = 88;
-			this.res_defesa.Text = "0";
-			this.res_defesa.Click += new System.EventHandler(this.res_defesa_Click);
-			this.res_defesa.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.res_defesa.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.res_defesa.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// label85
-			// 
-			this.label85.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label85.AutoSize = true;
-			this.label85.BackColor = System.Drawing.Color.Transparent;
-			this.label85.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.label85.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label85.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label85.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label85.Location = new System.Drawing.Point(175, 187);
-			this.label85.Name = "label85";
-			this.label85.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label85.Size = new System.Drawing.Size(59, 22);
-			this.label85.TabIndex = 96;
-			this.label85.Text = "Roubo:";
-			this.label85.Click += new System.EventHandler(this.res_enganacao_Click);
-			this.label85.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.label85.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.label85.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// label86
-			// 
-			this.label86.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label86.AutoSize = true;
-			this.label86.BackColor = System.Drawing.Color.Transparent;
-			this.label86.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.label86.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label86.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label86.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label86.Location = new System.Drawing.Point(153, 128);
-			this.label86.Name = "label86";
-			this.label86.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label86.Size = new System.Drawing.Size(88, 43);
-			this.label86.TabIndex = 90;
-			this.label86.Text = "Sedução/\r\nEnganação:";
-			this.label86.Click += new System.EventHandler(this.res_seducao_Click);
-			this.label86.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.label86.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.label86.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// res_seducao
-			// 
-			this.res_seducao.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_seducao.AutoSize = true;
-			this.res_seducao.BackColor = System.Drawing.Color.Transparent;
-			this.res_seducao.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.res_seducao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_seducao.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_seducao.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_seducao.Location = new System.Drawing.Point(242, 132);
-			this.res_seducao.Name = "res_seducao";
-			this.res_seducao.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_seducao.Size = new System.Drawing.Size(22, 26);
-			this.res_seducao.TabIndex = 91;
-			this.res_seducao.Text = "0";
-			this.res_seducao.Click += new System.EventHandler(this.res_seducao_Click);
-			this.res_seducao.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.res_seducao.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.res_seducao.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// res_contrataque
-			// 
-			this.res_contrataque.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_contrataque.AutoSize = true;
-			this.res_contrataque.BackColor = System.Drawing.Color.Transparent;
-			this.res_contrataque.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.res_contrataque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_contrataque.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_contrataque.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_contrataque.Location = new System.Drawing.Point(84, 181);
-			this.res_contrataque.Name = "res_contrataque";
-			this.res_contrataque.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_contrataque.Size = new System.Drawing.Size(22, 26);
-			this.res_contrataque.TabIndex = 94;
-			this.res_contrataque.Text = "0";
-			this.res_contrataque.Click += new System.EventHandler(this.res_contrataque_Click);
-			this.res_contrataque.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.res_contrataque.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.res_contrataque.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// res_ataque
-			// 
-			this.res_ataque.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_ataque.AutoSize = true;
-			this.res_ataque.BackColor = System.Drawing.Color.Transparent;
-			this.res_ataque.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.res_ataque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_ataque.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_ataque.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_ataque.Location = new System.Drawing.Point(84, 20);
-			this.res_ataque.Name = "res_ataque";
-			this.res_ataque.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_ataque.Size = new System.Drawing.Size(22, 26);
-			this.res_ataque.TabIndex = 53;
-			this.res_ataque.Text = "0";
-			this.res_ataque.Click += new System.EventHandler(this.res_ataque_Click);
-			this.res_ataque.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.res_ataque.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.res_ataque.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// label89
-			// 
-			this.label89.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label89.BackColor = System.Drawing.Color.Transparent;
-			this.label89.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.label89.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label89.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label89.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label89.Location = new System.Drawing.Point(11, 168);
-			this.label89.Name = "label89";
-			this.label89.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label89.Size = new System.Drawing.Size(80, 43);
-			this.label89.TabIndex = 93;
-			this.label89.Text = "Contra Ataque:";
-			this.label89.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.label89.Click += new System.EventHandler(this.res_contrataque_Click);
-			this.label89.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.label89.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.label89.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// label73
-			// 
-			this.label73.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label73.AutoSize = true;
-			this.label73.BackColor = System.Drawing.Color.Transparent;
-			this.label73.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label73.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label73.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label73.Location = new System.Drawing.Point(276, -111);
-			this.label73.Name = "label73";
-			this.label73.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label73.Size = new System.Drawing.Size(143, 26);
-			this.label73.TabIndex = 86;
-			this.label73.Text = "Conhecimentos";
-			// 
-			// label72
-			// 
-			this.label72.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label72.AutoSize = true;
-			this.label72.BackColor = System.Drawing.Color.Transparent;
-			this.label72.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label72.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label72.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label72.Location = new System.Drawing.Point(165, -111);
-			this.label72.Name = "label72";
-			this.label72.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label72.Size = new System.Drawing.Size(76, 26);
-			this.label72.TabIndex = 85;
-			this.label72.Text = "Perícias";
-			// 
-			// label71
-			// 
-			this.label71.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label71.AutoSize = true;
-			this.label71.BackColor = System.Drawing.Color.Transparent;
-			this.label71.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label71.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label71.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label71.Location = new System.Drawing.Point(37, -111);
-			this.label71.Name = "label71";
-			this.label71.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label71.Size = new System.Drawing.Size(88, 26);
-			this.label71.TabIndex = 68;
-			this.label71.Text = "Combate";
-			// 
-			// res_etiqueta
-			// 
-			this.res_etiqueta.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_etiqueta.AutoSize = true;
-			this.res_etiqueta.BackColor = System.Drawing.Color.Transparent;
-			this.res_etiqueta.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.res_etiqueta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_etiqueta.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_etiqueta.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_etiqueta.Location = new System.Drawing.Point(405, 286);
-			this.res_etiqueta.Name = "res_etiqueta";
-			this.res_etiqueta.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_etiqueta.Size = new System.Drawing.Size(22, 26);
-			this.res_etiqueta.TabIndex = 81;
-			this.res_etiqueta.Text = "0";
-			this.res_etiqueta.Click += new System.EventHandler(this.res_etiqueta_Click);
-			this.res_etiqueta.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.res_etiqueta.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.res_etiqueta.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// res_intuicao
-			// 
-			this.res_intuicao.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_intuicao.AutoSize = true;
-			this.res_intuicao.BackColor = System.Drawing.Color.Transparent;
-			this.res_intuicao.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.res_intuicao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_intuicao.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_intuicao.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_intuicao.Location = new System.Drawing.Point(406, 235);
-			this.res_intuicao.Name = "res_intuicao";
-			this.res_intuicao.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_intuicao.Size = new System.Drawing.Size(22, 26);
-			this.res_intuicao.TabIndex = 80;
-			this.res_intuicao.Text = "0";
-			this.res_intuicao.Click += new System.EventHandler(this.res_intuicao_Click);
-			this.res_intuicao.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.res_intuicao.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.res_intuicao.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// res_ocultismo
-			// 
-			this.res_ocultismo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_ocultismo.AutoSize = true;
-			this.res_ocultismo.BackColor = System.Drawing.Color.Transparent;
-			this.res_ocultismo.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.res_ocultismo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_ocultismo.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_ocultismo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_ocultismo.Location = new System.Drawing.Point(405, 77);
-			this.res_ocultismo.Name = "res_ocultismo";
-			this.res_ocultismo.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_ocultismo.Size = new System.Drawing.Size(22, 26);
-			this.res_ocultismo.TabIndex = 79;
-			this.res_ocultismo.Text = "0";
-			this.res_ocultismo.Click += new System.EventHandler(this.res_ocultismo_Click);
-			this.res_ocultismo.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.res_ocultismo.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.res_ocultismo.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// label63
-			// 
-			this.label63.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label63.AutoSize = true;
-			this.label63.BackColor = System.Drawing.Color.Transparent;
-			this.label63.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.label63.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label63.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label63.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label63.Location = new System.Drawing.Point(335, 286);
-			this.label63.Name = "label63";
-			this.label63.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label63.Size = new System.Drawing.Size(69, 22);
-			this.label63.TabIndex = 78;
-			this.label63.Text = "Etiqueta:";
-			this.label63.Click += new System.EventHandler(this.res_etiqueta_Click);
-			this.label63.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.label63.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.label63.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// label64
-			// 
-			this.label64.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label64.AutoSize = true;
-			this.label64.BackColor = System.Drawing.Color.Transparent;
-			this.label64.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.label64.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label64.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label64.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label64.Location = new System.Drawing.Point(336, 236);
-			this.label64.Name = "label64";
-			this.label64.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label64.Size = new System.Drawing.Size(68, 22);
-			this.label64.TabIndex = 77;
-			this.label64.Text = "Intuição:";
-			this.label64.Click += new System.EventHandler(this.res_intuicao_Click);
-			this.label64.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.label64.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.label64.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// label65
-			// 
-			this.label65.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label65.AutoSize = true;
-			this.label65.BackColor = System.Drawing.Color.Transparent;
-			this.label65.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.label65.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label65.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label65.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label65.Location = new System.Drawing.Point(319, 77);
-			this.label65.Name = "label65";
-			this.label65.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label65.Size = new System.Drawing.Size(84, 22);
-			this.label65.TabIndex = 76;
-			this.label65.Text = "Ocultismo:";
-			this.label65.Click += new System.EventHandler(this.res_ocultismo_Click);
-			this.label65.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.label65.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.label65.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// label67
-			// 
-			this.label67.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label67.AutoSize = true;
-			this.label67.BackColor = System.Drawing.Color.Transparent;
-			this.label67.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.label67.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label67.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label67.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label67.Location = new System.Drawing.Point(308, 12);
-			this.label67.Name = "label67";
-			this.label67.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label67.Size = new System.Drawing.Size(99, 43);
-			this.label67.TabIndex = 69;
-			this.label67.Text = "Acadêmicos/\r\nMedicina:";
-			this.label67.Click += new System.EventHandler(this.res_acad_Click);
-			this.label67.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.label67.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.label67.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// label68
-			// 
-			this.label68.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label68.AutoSize = true;
-			this.label68.BackColor = System.Drawing.Color.Transparent;
-			this.label68.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label68.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label68.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label68.Location = new System.Drawing.Point(364, -56);
-			this.label68.Name = "label68";
-			this.label68.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label68.Size = new System.Drawing.Size(22, 26);
-			this.label68.TabIndex = 70;
-			this.label68.Text = "0";
-			// 
-			// button22
-			// 
-			this.button22.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.button22.AutoSize = true;
-			this.button22.BackgroundImage = global::Dark_Age.Properties.Resources.kisspng_computer_icons_icon_design_cut_copy_and_paste_cl_taobao_clothing_promotional_copy_5b08bad091a807;
-			this.button22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.button22.FlatAppearance.BorderSize = 0;
-			this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button22.Location = new System.Drawing.Point(389, -53);
-			this.button22.Name = "button22";
-			this.button22.Size = new System.Drawing.Size(15, 16);
-			this.button22.TabIndex = 73;
-			this.button22.UseVisualStyleBackColor = true;
-			// 
-			// label45
-			// 
-			this.label45.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label45.AutoSize = true;
-			this.label45.BackColor = System.Drawing.Color.Transparent;
-			this.label45.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label45.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label45.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label45.Location = new System.Drawing.Point(30, -56);
-			this.label45.Name = "label45";
-			this.label45.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label45.Size = new System.Drawing.Size(51, 22);
-			this.label45.TabIndex = 31;
-			this.label45.Text = "Força:";
-			// 
-			// label43
-			// 
-			this.label43.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label43.AutoSize = true;
-			this.label43.BackColor = System.Drawing.Color.Transparent;
-			this.label43.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.label43.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label43.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label43.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label43.Location = new System.Drawing.Point(20, 21);
-			this.label43.Name = "label43";
-			this.label43.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label43.Size = new System.Drawing.Size(62, 22);
-			this.label43.TabIndex = 33;
-			this.label43.Text = "Ataque:";
-			this.label43.Click += new System.EventHandler(this.res_ataque_Click);
-			this.label43.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.label43.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.label43.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// res_percepcao
-			// 
-			this.res_percepcao.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_percepcao.AutoSize = true;
-			this.res_percepcao.BackColor = System.Drawing.Color.Transparent;
-			this.res_percepcao.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.res_percepcao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_percepcao.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_percepcao.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_percepcao.Location = new System.Drawing.Point(242, 287);
-			this.res_percepcao.Name = "res_percepcao";
-			this.res_percepcao.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_percepcao.Size = new System.Drawing.Size(22, 26);
-			this.res_percepcao.TabIndex = 63;
-			this.res_percepcao.Text = "0";
-			this.res_percepcao.Click += new System.EventHandler(this.res_percepcao_Click);
-			this.res_percepcao.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.res_percepcao.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.res_percepcao.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// label42
-			// 
-			this.label42.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label42.AutoSize = true;
-			this.label42.BackColor = System.Drawing.Color.Transparent;
-			this.label42.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label42.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label42.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label42.Location = new System.Drawing.Point(77, -59);
-			this.label42.Name = "label42";
-			this.label42.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label42.Size = new System.Drawing.Size(22, 26);
-			this.label42.TabIndex = 34;
-			this.label42.Text = "0";
-			// 
-			// res_esconder
-			// 
-			this.res_esconder.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_esconder.AutoSize = true;
-			this.res_esconder.BackColor = System.Drawing.Color.Transparent;
-			this.res_esconder.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.res_esconder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_esconder.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_esconder.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_esconder.Location = new System.Drawing.Point(243, 236);
-			this.res_esconder.Name = "res_esconder";
-			this.res_esconder.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_esconder.Size = new System.Drawing.Size(22, 26);
-			this.res_esconder.TabIndex = 62;
-			this.res_esconder.Text = "0";
-			this.res_esconder.Click += new System.EventHandler(this.res_esconder_Click);
-			this.res_esconder.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.res_esconder.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.res_esconder.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// res_intimidacao
-			// 
-			this.res_intimidacao.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_intimidacao.AutoSize = true;
-			this.res_intimidacao.BackColor = System.Drawing.Color.Transparent;
-			this.res_intimidacao.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.res_intimidacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_intimidacao.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_intimidacao.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_intimidacao.Location = new System.Drawing.Point(242, 78);
-			this.res_intimidacao.Name = "res_intimidacao";
-			this.res_intimidacao.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_intimidacao.Size = new System.Drawing.Size(22, 26);
-			this.res_intimidacao.TabIndex = 61;
-			this.res_intimidacao.Text = "0";
-			this.res_intimidacao.Click += new System.EventHandler(this.res_intimidacao_Click);
-			this.res_intimidacao.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.res_intimidacao.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.res_intimidacao.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// label50
-			// 
-			this.label50.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label50.BackColor = System.Drawing.Color.Transparent;
-			this.label50.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.label50.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label50.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label50.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label50.Location = new System.Drawing.Point(164, 274);
-			this.label50.Name = "label50";
-			this.label50.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label50.Size = new System.Drawing.Size(77, 50);
-			this.label50.TabIndex = 60;
-			this.label50.Text = "Escutar/Observar:";
-			this.label50.Click += new System.EventHandler(this.res_percepcao_Click);
-			this.label50.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.label50.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.label50.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// label51
-			// 
-			this.label51.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label51.AutoSize = true;
-			this.label51.BackColor = System.Drawing.Color.Transparent;
-			this.label51.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.label51.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label51.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label51.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label51.Location = new System.Drawing.Point(164, 238);
-			this.label51.Name = "label51";
-			this.label51.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label51.Size = new System.Drawing.Size(76, 22);
-			this.label51.TabIndex = 59;
-			this.label51.Text = "Esconder:";
-			this.label51.Click += new System.EventHandler(this.res_esconder_Click);
-			this.label51.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.label51.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.label51.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// label52
-			// 
-			this.label52.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label52.AutoSize = true;
-			this.label52.BackColor = System.Drawing.Color.Transparent;
-			this.label52.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.label52.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label52.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label52.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label52.Location = new System.Drawing.Point(147, 80);
-			this.label52.Name = "label52";
-			this.label52.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label52.Size = new System.Drawing.Size(94, 22);
-			this.label52.TabIndex = 58;
-			this.label52.Text = "Intimidação:";
-			this.label52.Click += new System.EventHandler(this.res_intimidacao_Click);
-			this.label52.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.label52.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.label52.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// label37
-			// 
-			this.label37.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label37.AutoSize = true;
-			this.label37.BackColor = System.Drawing.Color.Transparent;
-			this.label37.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.label37.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label37.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label37.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label37.Location = new System.Drawing.Point(190, 24);
-			this.label37.Name = "label37";
-			this.label37.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label37.Size = new System.Drawing.Size(50, 22);
-			this.label37.TabIndex = 42;
-			this.label37.Text = "Lábia:";
-			this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.label37.Click += new System.EventHandler(this.res_labia_Click);
-			this.label37.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.label37.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.label37.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// res_conjurar
-			// 
-			this.res_conjurar.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_conjurar.AutoSize = true;
-			this.res_conjurar.BackColor = System.Drawing.Color.Transparent;
-			this.res_conjurar.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.res_conjurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_conjurar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_conjurar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_conjurar.Location = new System.Drawing.Point(84, 284);
-			this.res_conjurar.Name = "res_conjurar";
-			this.res_conjurar.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_conjurar.Size = new System.Drawing.Size(22, 26);
-			this.res_conjurar.TabIndex = 54;
-			this.res_conjurar.Text = "0";
-			this.res_conjurar.Click += new System.EventHandler(this.res_conjurar_Click);
-			this.res_conjurar.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.res_conjurar.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.res_conjurar.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// res_atirar
-			// 
-			this.res_atirar.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_atirar.AutoSize = true;
-			this.res_atirar.BackColor = System.Drawing.Color.Transparent;
-			this.res_atirar.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.res_atirar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_atirar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_atirar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_atirar.Location = new System.Drawing.Point(85, 232);
-			this.res_atirar.Name = "res_atirar";
-			this.res_atirar.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_atirar.Size = new System.Drawing.Size(22, 26);
-			this.res_atirar.TabIndex = 53;
-			this.res_atirar.Text = "0";
-			this.res_atirar.Click += new System.EventHandler(this.res_atirar_Click);
-			this.res_atirar.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.res_atirar.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.res_atirar.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// res_esquiva
-			// 
-			this.res_esquiva.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.res_esquiva.AutoSize = true;
-			this.res_esquiva.BackColor = System.Drawing.Color.Transparent;
-			this.res_esquiva.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.res_esquiva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.res_esquiva.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.res_esquiva.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.res_esquiva.Location = new System.Drawing.Point(84, 74);
-			this.res_esquiva.Name = "res_esquiva";
-			this.res_esquiva.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.res_esquiva.Size = new System.Drawing.Size(22, 26);
-			this.res_esquiva.TabIndex = 52;
-			this.res_esquiva.Text = "0";
-			this.res_esquiva.Click += new System.EventHandler(this.res_esquiva_Click);
-			this.res_esquiva.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.res_esquiva.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.res_esquiva.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// button9
-			// 
-			this.button9.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.button9.AutoSize = true;
-			this.button9.BackgroundImage = global::Dark_Age.Properties.Resources.kisspng_computer_icons_icon_design_cut_copy_and_paste_cl_taobao_clothing_promotional_copy_5b08bad091a807;
-			this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.button9.FlatAppearance.BorderSize = 0;
-			this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button9.Location = new System.Drawing.Point(243, -52);
-			this.button9.Name = "button9";
-			this.button9.Size = new System.Drawing.Size(15, 16);
-			this.button9.TabIndex = 46;
-			this.button9.UseVisualStyleBackColor = true;
-			// 
-			// label56
-			// 
-			this.label56.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label56.BackColor = System.Drawing.Color.Transparent;
-			this.label56.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.label56.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label56.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label56.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label56.Location = new System.Drawing.Point(13, 274);
-			this.label56.Name = "label56";
-			this.label56.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label56.Size = new System.Drawing.Size(76, 46);
-			this.label56.TabIndex = 51;
-			this.label56.Text = "Conjurar Magia:";
-			this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.label56.Click += new System.EventHandler(this.res_conjurar_Click);
-			this.label56.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.label56.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.label56.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// label57
-			// 
-			this.label57.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label57.AutoSize = true;
-			this.label57.BackColor = System.Drawing.Color.Transparent;
-			this.label57.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.label57.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label57.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label57.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label57.Location = new System.Drawing.Point(24, 235);
-			this.label57.Name = "label57";
-			this.label57.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label57.Size = new System.Drawing.Size(52, 22);
-			this.label57.TabIndex = 50;
-			this.label57.Text = "Atirar:";
-			this.label57.Click += new System.EventHandler(this.res_atirar_Click);
-			this.label57.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.label57.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.label57.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// label58
-			// 
-			this.label58.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.label58.AutoSize = true;
-			this.label58.BackColor = System.Drawing.Color.Transparent;
-			this.label58.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.label58.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.label58.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label58.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.label58.Location = new System.Drawing.Point(16, 77);
-			this.label58.Name = "label58";
-			this.label58.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
-			this.label58.Size = new System.Drawing.Size(66, 22);
-			this.label58.TabIndex = 49;
-			this.label58.Text = "Esquiva:";
-			this.label58.Click += new System.EventHandler(this.res_esquiva_Click);
-			this.label58.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
-			this.label58.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
-			this.label58.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
-			// 
-			// panel16
-			// 
-			this.panel16.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.panel16.AutoSize = true;
-			this.panel16.Controls.Add(this.lbl_anotacoes);
-			this.panel16.Controls.Add(this.btn_anotacoes);
-			this.panel16.Controls.Add(this.btnProfissões);
-			this.panel16.Controls.Add(this.iconButton5);
-			this.panel16.Controls.Add(this.panel17);
-			this.panel16.Controls.Add(this.iniciativa_bonus);
-			this.panel16.Controls.Add(this.movimento);
-			this.panel16.Controls.Add(this.prata);
-			this.panel16.Controls.Add(this.ouro);
-			this.panel16.Controls.Add(this.iconPictureBox2);
-			this.panel16.Controls.Add(this.iconPictureBox1);
-			this.panel16.Location = new System.Drawing.Point(518, 153);
-			this.panel16.Name = "panel16";
-			this.panel16.Size = new System.Drawing.Size(458, 227);
-			this.panel16.TabIndex = 142;
-			// 
-			// lbl_anotacoes
-			// 
-			this.lbl_anotacoes.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.lbl_anotacoes.BackColor = System.Drawing.Color.Transparent;
-			this.lbl_anotacoes.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.lbl_anotacoes.Location = new System.Drawing.Point(312, 128);
-			this.lbl_anotacoes.Name = "lbl_anotacoes";
-			this.lbl_anotacoes.Size = new System.Drawing.Size(110, 31);
-			this.lbl_anotacoes.TabIndex = 162;
-			this.lbl_anotacoes.Text = "Regras e\r\nAnotações";
-			this.lbl_anotacoes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.lbl_anotacoes.Visible = false;
-			// 
-			// btn_anotacoes
-			// 
-			this.btn_anotacoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.ficha_resumida.BackColor = System.Drawing.Color.Transparent;
+            this.ficha_resumida.Controls.Add(this.temp_danos);
+            this.ficha_resumida.Controls.Add(this.panel3);
+            this.ficha_resumida.Controls.Add(this.panel16);
+            this.ficha_resumida.Controls.Add(this.panel6);
+            this.ficha_resumida.Controls.Add(this.panel5);
+            this.ficha_resumida.Controls.Add(this.Locais);
+            this.ficha_resumida.Location = new System.Drawing.Point(51, 106);
+            this.ficha_resumida.Name = "ficha_resumida";
+            this.ficha_resumida.Size = new System.Drawing.Size(1052, 639);
+            this.ficha_resumida.TabIndex = 5;
+            // 
+            // temp_danos
+            // 
+            this.temp_danos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(40)))), ((int)(((byte)(52)))));
+            this.temp_danos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.temp_danos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.temp_danos.Enabled = false;
+            this.temp_danos.Location = new System.Drawing.Point(523, 156);
+            this.temp_danos.Name = "temp_danos";
+            this.temp_danos.ReadOnly = true;
+            this.temp_danos.RowTemplate.Height = 25;
+            this.temp_danos.Size = new System.Drawing.Size(33, 40);
+            this.temp_danos.TabIndex = 143;
+            this.temp_danos.Visible = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label90);
+            this.panel3.Controls.Add(this.modificador);
+            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Controls.Add(this.label46);
+            this.panel3.Controls.Add(this.panel1);
+            this.panel3.Location = new System.Drawing.Point(13, -9);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(484, 645);
+            this.panel3.TabIndex = 88;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label8.Location = new System.Drawing.Point(311, 244);
+            this.label8.Name = "label8";
+            this.label8.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label8.Size = new System.Drawing.Size(133, 26);
+            this.label8.TabIndex = 92;
+            this.label8.Text = "Conhecimentos";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.Location = new System.Drawing.Point(183, 244);
+            this.label6.Name = "label6";
+            this.label6.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label6.Size = new System.Drawing.Size(72, 26);
+            this.label6.TabIndex = 91;
+            this.label6.Text = "Perícias";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label4.Location = new System.Drawing.Point(29, 244);
+            this.label4.Name = "label4";
+            this.label4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label4.Size = new System.Drawing.Size(84, 26);
+            this.label4.TabIndex = 90;
+            this.label4.Text = "Combate";
+            // 
+            // label90
+            // 
+            this.label90.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label90.AutoSize = true;
+            this.label90.BackColor = System.Drawing.Color.Transparent;
+            this.label90.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label90.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label90.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label90.Location = new System.Drawing.Point(332, 207);
+            this.label90.Name = "label90";
+            this.label90.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label90.Size = new System.Drawing.Size(82, 20);
+            this.label90.TabIndex = 89;
+            this.label90.Text = "Modificador";
+            this.label90.Visible = false;
+            // 
+            // modificador
+            // 
+            this.modificador.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.modificador.Location = new System.Drawing.Point(332, 200);
+            this.modificador.Name = "modificador";
+            this.modificador.Size = new System.Drawing.Size(82, 23);
+            this.modificador.TabIndex = 88;
+            this.modificador.Text = "0";
+            this.modificador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.modificador.Visible = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel2.Controls.Add(this.res_magia);
+            this.panel2.Controls.Add(this.res_raciocinio);
+            this.panel2.Controls.Add(this.res_carisma);
+            this.panel2.Controls.Add(this.label31);
+            this.panel2.Controls.Add(this.label32);
+            this.panel2.Controls.Add(this.label33);
+            this.panel2.Controls.Add(this.res_vigor);
+            this.panel2.Controls.Add(this.res_destreza);
+            this.panel2.Controls.Add(this.res_forca);
+            this.panel2.Controls.Add(this.label27);
+            this.panel2.Controls.Add(this.label23);
+            this.panel2.Controls.Add(this.label25);
+            this.panel2.Controls.Add(this.label22);
+            this.panel2.Location = new System.Drawing.Point(24, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(478, 175);
+            this.panel2.TabIndex = 87;
+            // 
+            // res_magia
+            // 
+            this.res_magia.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_magia.AutoSize = true;
+            this.res_magia.BackColor = System.Drawing.Color.Transparent;
+            this.res_magia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_magia.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_magia.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_magia.Location = new System.Drawing.Point(330, 129);
+            this.res_magia.Name = "res_magia";
+            this.res_magia.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_magia.Size = new System.Drawing.Size(22, 26);
+            this.res_magia.TabIndex = 26;
+            this.res_magia.Text = "0";
+            this.res_magia.Click += new System.EventHandler(this.res_magia_Click);
+            // 
+            // res_raciocinio
+            // 
+            this.res_raciocinio.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_raciocinio.AutoSize = true;
+            this.res_raciocinio.BackColor = System.Drawing.Color.Transparent;
+            this.res_raciocinio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_raciocinio.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_raciocinio.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_raciocinio.Location = new System.Drawing.Point(330, 94);
+            this.res_raciocinio.Name = "res_raciocinio";
+            this.res_raciocinio.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_raciocinio.Size = new System.Drawing.Size(22, 26);
+            this.res_raciocinio.TabIndex = 25;
+            this.res_raciocinio.Text = "0";
+            this.res_raciocinio.Click += new System.EventHandler(this.res_raciocinio_Click);
+            // 
+            // res_carisma
+            // 
+            this.res_carisma.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_carisma.AutoSize = true;
+            this.res_carisma.BackColor = System.Drawing.Color.Transparent;
+            this.res_carisma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_carisma.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_carisma.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_carisma.Location = new System.Drawing.Point(330, 58);
+            this.res_carisma.Name = "res_carisma";
+            this.res_carisma.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_carisma.Size = new System.Drawing.Size(22, 26);
+            this.res_carisma.TabIndex = 24;
+            this.res_carisma.Text = "0";
+            this.res_carisma.Click += new System.EventHandler(this.res_carisma_Click);
+            // 
+            // label31
+            // 
+            this.label31.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.Color.Transparent;
+            this.label31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label31.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label31.Location = new System.Drawing.Point(278, 131);
+            this.label31.Name = "label31";
+            this.label31.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label31.Size = new System.Drawing.Size(56, 22);
+            this.label31.TabIndex = 23;
+            this.label31.Text = "Magia:";
+            this.label31.Click += new System.EventHandler(this.res_magia_Click);
+            // 
+            // label32
+            // 
+            this.label32.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label32.AutoSize = true;
+            this.label32.BackColor = System.Drawing.Color.Transparent;
+            this.label32.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label32.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label32.Location = new System.Drawing.Point(251, 96);
+            this.label32.Name = "label32";
+            this.label32.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label32.Size = new System.Drawing.Size(84, 22);
+            this.label32.TabIndex = 22;
+            this.label32.Text = "Raciocínio:";
+            this.label32.Click += new System.EventHandler(this.res_raciocinio_Click);
+            // 
+            // label33
+            // 
+            this.label33.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.Transparent;
+            this.label33.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label33.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label33.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label33.Location = new System.Drawing.Point(264, 60);
+            this.label33.Name = "label33";
+            this.label33.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label33.Size = new System.Drawing.Size(70, 22);
+            this.label33.TabIndex = 21;
+            this.label33.Text = "Carisma:";
+            this.label33.Click += new System.EventHandler(this.res_carisma_Click);
+            // 
+            // res_vigor
+            // 
+            this.res_vigor.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_vigor.AutoSize = true;
+            this.res_vigor.BackColor = System.Drawing.Color.Transparent;
+            this.res_vigor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_vigor.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_vigor.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_vigor.Location = new System.Drawing.Point(132, 129);
+            this.res_vigor.Name = "res_vigor";
+            this.res_vigor.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_vigor.Size = new System.Drawing.Size(22, 26);
+            this.res_vigor.TabIndex = 17;
+            this.res_vigor.Text = "0";
+            this.res_vigor.Click += new System.EventHandler(this.res_vigor_Click);
+            // 
+            // res_destreza
+            // 
+            this.res_destreza.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_destreza.AutoSize = true;
+            this.res_destreza.BackColor = System.Drawing.Color.Transparent;
+            this.res_destreza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_destreza.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_destreza.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_destreza.Location = new System.Drawing.Point(132, 94);
+            this.res_destreza.Name = "res_destreza";
+            this.res_destreza.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_destreza.Size = new System.Drawing.Size(22, 26);
+            this.res_destreza.TabIndex = 16;
+            this.res_destreza.Text = "0";
+            this.res_destreza.Click += new System.EventHandler(this.res_destreza_Click);
+            // 
+            // res_forca
+            // 
+            this.res_forca.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_forca.AutoSize = true;
+            this.res_forca.BackColor = System.Drawing.Color.Transparent;
+            this.res_forca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_forca.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_forca.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_forca.Location = new System.Drawing.Point(132, 58);
+            this.res_forca.Name = "res_forca";
+            this.res_forca.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_forca.Size = new System.Drawing.Size(22, 26);
+            this.res_forca.TabIndex = 15;
+            this.res_forca.Text = "0";
+            this.res_forca.Click += new System.EventHandler(this.res_forca_Click);
+            // 
+            // label27
+            // 
+            this.label27.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.Transparent;
+            this.label27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label27.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label27.Location = new System.Drawing.Point(79, 132);
+            this.label27.Name = "label27";
+            this.label27.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label27.Size = new System.Drawing.Size(51, 22);
+            this.label27.TabIndex = 14;
+            this.label27.Text = "Vigor:";
+            this.label27.Click += new System.EventHandler(this.res_vigor_Click);
+            // 
+            // label23
+            // 
+            this.label23.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.Transparent;
+            this.label23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label23.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label23.Location = new System.Drawing.Point(85, 61);
+            this.label23.Name = "label23";
+            this.label23.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label23.Size = new System.Drawing.Size(51, 22);
+            this.label23.TabIndex = 10;
+            this.label23.Text = "Força:";
+            this.label23.Click += new System.EventHandler(this.res_forca_Click);
+            // 
+            // label25
+            // 
+            this.label25.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label25.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label25.Location = new System.Drawing.Point(60, 97);
+            this.label25.Name = "label25";
+            this.label25.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label25.Size = new System.Drawing.Size(73, 22);
+            this.label25.TabIndex = 12;
+            this.label25.Text = "Destreza:";
+            this.label25.Click += new System.EventHandler(this.res_destreza_Click);
+            // 
+            // label22
+            // 
+            this.label22.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label22.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label22.Location = new System.Drawing.Point(151, 6);
+            this.label22.Name = "label22";
+            this.label22.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label22.Size = new System.Drawing.Size(111, 33);
+            this.label22.TabIndex = 4;
+            this.label22.Text = "Atributos";
+            // 
+            // label46
+            // 
+            this.label46.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label46.AutoSize = true;
+            this.label46.BackColor = System.Drawing.Color.Transparent;
+            this.label46.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label46.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label46.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label46.Location = new System.Drawing.Point(163, 188);
+            this.label46.Name = "label46";
+            this.label46.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label46.Size = new System.Drawing.Size(101, 33);
+            this.label46.TabIndex = 30;
+            this.label46.Text = "Talentos";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel1.Controls.Add(this.panel15);
+            this.panel1.Controls.Add(this.res_acad);
+            this.panel1.Controls.Add(this.res_investigacao);
+            this.panel1.Controls.Add(this.label75);
+            this.panel1.Controls.Add(this.label76);
+            this.panel1.Controls.Add(this.res_sobrevivencia);
+            this.panel1.Controls.Add(this.label80);
+            this.panel1.Controls.Add(this.res_labia);
+            this.panel1.Controls.Add(this.res_enganacao);
+            this.panel1.Controls.Add(this.res_defesa);
+            this.panel1.Controls.Add(this.label85);
+            this.panel1.Controls.Add(this.label86);
+            this.panel1.Controls.Add(this.res_seducao);
+            this.panel1.Controls.Add(this.res_contrataque);
+            this.panel1.Controls.Add(this.res_ataque);
+            this.panel1.Controls.Add(this.label89);
+            this.panel1.Controls.Add(this.label73);
+            this.panel1.Controls.Add(this.label72);
+            this.panel1.Controls.Add(this.label71);
+            this.panel1.Controls.Add(this.res_etiqueta);
+            this.panel1.Controls.Add(this.res_intuicao);
+            this.panel1.Controls.Add(this.res_ocultismo);
+            this.panel1.Controls.Add(this.label63);
+            this.panel1.Controls.Add(this.label64);
+            this.panel1.Controls.Add(this.label65);
+            this.panel1.Controls.Add(this.label67);
+            this.panel1.Controls.Add(this.label68);
+            this.panel1.Controls.Add(this.button22);
+            this.panel1.Controls.Add(this.label45);
+            this.panel1.Controls.Add(this.label43);
+            this.panel1.Controls.Add(this.res_percepcao);
+            this.panel1.Controls.Add(this.label42);
+            this.panel1.Controls.Add(this.res_esconder);
+            this.panel1.Controls.Add(this.res_intimidacao);
+            this.panel1.Controls.Add(this.label50);
+            this.panel1.Controls.Add(this.label51);
+            this.panel1.Controls.Add(this.label52);
+            this.panel1.Controls.Add(this.label37);
+            this.panel1.Controls.Add(this.res_conjurar);
+            this.panel1.Controls.Add(this.res_atirar);
+            this.panel1.Controls.Add(this.res_esquiva);
+            this.panel1.Controls.Add(this.button9);
+            this.panel1.Controls.Add(this.label56);
+            this.panel1.Controls.Add(this.label57);
+            this.panel1.Controls.Add(this.label58);
+            this.panel1.Location = new System.Drawing.Point(14, 273);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(481, 369);
+            this.panel1.TabIndex = 67;
+            this.panel1.Click += new System.EventHandler(this.res_atirar_Click);
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.White;
+            this.panel15.Location = new System.Drawing.Point(16, 3);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(420, 1);
+            this.panel15.TabIndex = 106;
+            // 
+            // res_acad
+            // 
+            this.res_acad.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_acad.AutoSize = true;
+            this.res_acad.BackColor = System.Drawing.Color.Transparent;
+            this.res_acad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.res_acad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_acad.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_acad.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_acad.Location = new System.Drawing.Point(405, 21);
+            this.res_acad.Name = "res_acad";
+            this.res_acad.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_acad.Size = new System.Drawing.Size(22, 26);
+            this.res_acad.TabIndex = 105;
+            this.res_acad.Text = "0";
+            this.res_acad.Click += new System.EventHandler(this.res_acad_Click);
+            this.res_acad.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.res_acad.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.res_acad.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // res_investigacao
+            // 
+            this.res_investigacao.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_investigacao.AutoSize = true;
+            this.res_investigacao.BackColor = System.Drawing.Color.Transparent;
+            this.res_investigacao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.res_investigacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_investigacao.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_investigacao.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_investigacao.Location = new System.Drawing.Point(405, 184);
+            this.res_investigacao.Name = "res_investigacao";
+            this.res_investigacao.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_investigacao.Size = new System.Drawing.Size(22, 26);
+            this.res_investigacao.TabIndex = 103;
+            this.res_investigacao.Text = "0";
+            this.res_investigacao.Click += new System.EventHandler(this.res_investigacao_Click);
+            this.res_investigacao.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.res_investigacao.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.res_investigacao.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // label75
+            // 
+            this.label75.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label75.AutoSize = true;
+            this.label75.BackColor = System.Drawing.Color.Transparent;
+            this.label75.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label75.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label75.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label75.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label75.Location = new System.Drawing.Point(305, 184);
+            this.label75.Name = "label75";
+            this.label75.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label75.Size = new System.Drawing.Size(99, 22);
+            this.label75.TabIndex = 102;
+            this.label75.Text = "Investigação:";
+            this.label75.Click += new System.EventHandler(this.res_investigacao_Click);
+            this.label75.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.label75.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.label75.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // label76
+            // 
+            this.label76.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label76.AutoSize = true;
+            this.label76.BackColor = System.Drawing.Color.Transparent;
+            this.label76.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label76.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label76.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label76.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label76.Location = new System.Drawing.Point(304, 134);
+            this.label76.Name = "label76";
+            this.label76.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label76.Size = new System.Drawing.Size(95, 20);
+            this.label76.TabIndex = 99;
+            this.label76.Text = "Sobrevivência:";
+            this.label76.Click += new System.EventHandler(this.res_sobrevivencia_Click);
+            this.label76.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.label76.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.label76.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // res_sobrevivencia
+            // 
+            this.res_sobrevivencia.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_sobrevivencia.AutoSize = true;
+            this.res_sobrevivencia.BackColor = System.Drawing.Color.Transparent;
+            this.res_sobrevivencia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.res_sobrevivencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_sobrevivencia.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_sobrevivencia.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_sobrevivencia.Location = new System.Drawing.Point(405, 131);
+            this.res_sobrevivencia.Name = "res_sobrevivencia";
+            this.res_sobrevivencia.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_sobrevivencia.Size = new System.Drawing.Size(22, 26);
+            this.res_sobrevivencia.TabIndex = 100;
+            this.res_sobrevivencia.Text = "0";
+            this.res_sobrevivencia.Click += new System.EventHandler(this.res_sobrevivencia_Click);
+            this.res_sobrevivencia.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.res_sobrevivencia.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.res_sobrevivencia.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // label80
+            // 
+            this.label80.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label80.AutoSize = true;
+            this.label80.BackColor = System.Drawing.Color.Transparent;
+            this.label80.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label80.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label80.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label80.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label80.Location = new System.Drawing.Point(20, 131);
+            this.label80.Name = "label80";
+            this.label80.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label80.Size = new System.Drawing.Size(60, 22);
+            this.label80.TabIndex = 87;
+            this.label80.Text = "Defesa:";
+            this.label80.Click += new System.EventHandler(this.res_defesa_Click);
+            this.label80.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.label80.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.label80.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // res_labia
+            // 
+            this.res_labia.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_labia.AutoSize = true;
+            this.res_labia.BackColor = System.Drawing.Color.Transparent;
+            this.res_labia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.res_labia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_labia.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_labia.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_labia.Location = new System.Drawing.Point(243, 22);
+            this.res_labia.Name = "res_labia";
+            this.res_labia.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_labia.Size = new System.Drawing.Size(22, 26);
+            this.res_labia.TabIndex = 62;
+            this.res_labia.Text = "0";
+            this.res_labia.Click += new System.EventHandler(this.res_labia_Click);
+            this.res_labia.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.res_labia.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.res_labia.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // res_enganacao
+            // 
+            this.res_enganacao.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_enganacao.AutoSize = true;
+            this.res_enganacao.BackColor = System.Drawing.Color.Transparent;
+            this.res_enganacao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.res_enganacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_enganacao.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_enganacao.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_enganacao.Location = new System.Drawing.Point(242, 185);
+            this.res_enganacao.Name = "res_enganacao";
+            this.res_enganacao.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_enganacao.Size = new System.Drawing.Size(22, 26);
+            this.res_enganacao.TabIndex = 97;
+            this.res_enganacao.Text = "0";
+            this.res_enganacao.Click += new System.EventHandler(this.res_enganacao_Click);
+            this.res_enganacao.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.res_enganacao.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.res_enganacao.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // res_defesa
+            // 
+            this.res_defesa.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_defesa.AutoSize = true;
+            this.res_defesa.BackColor = System.Drawing.Color.Transparent;
+            this.res_defesa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.res_defesa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_defesa.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_defesa.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_defesa.Location = new System.Drawing.Point(84, 128);
+            this.res_defesa.Name = "res_defesa";
+            this.res_defesa.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_defesa.Size = new System.Drawing.Size(22, 26);
+            this.res_defesa.TabIndex = 88;
+            this.res_defesa.Text = "0";
+            this.res_defesa.Click += new System.EventHandler(this.res_defesa_Click);
+            this.res_defesa.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.res_defesa.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.res_defesa.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // label85
+            // 
+            this.label85.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label85.AutoSize = true;
+            this.label85.BackColor = System.Drawing.Color.Transparent;
+            this.label85.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label85.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label85.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label85.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label85.Location = new System.Drawing.Point(175, 187);
+            this.label85.Name = "label85";
+            this.label85.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label85.Size = new System.Drawing.Size(59, 22);
+            this.label85.TabIndex = 96;
+            this.label85.Text = "Roubo:";
+            this.label85.Click += new System.EventHandler(this.res_enganacao_Click);
+            this.label85.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.label85.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.label85.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // label86
+            // 
+            this.label86.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label86.AutoSize = true;
+            this.label86.BackColor = System.Drawing.Color.Transparent;
+            this.label86.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label86.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label86.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label86.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label86.Location = new System.Drawing.Point(153, 128);
+            this.label86.Name = "label86";
+            this.label86.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label86.Size = new System.Drawing.Size(88, 43);
+            this.label86.TabIndex = 90;
+            this.label86.Text = "Sedução/\r\nEnganação:";
+            this.label86.Click += new System.EventHandler(this.res_seducao_Click);
+            this.label86.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.label86.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.label86.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // res_seducao
+            // 
+            this.res_seducao.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_seducao.AutoSize = true;
+            this.res_seducao.BackColor = System.Drawing.Color.Transparent;
+            this.res_seducao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.res_seducao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_seducao.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_seducao.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_seducao.Location = new System.Drawing.Point(242, 132);
+            this.res_seducao.Name = "res_seducao";
+            this.res_seducao.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_seducao.Size = new System.Drawing.Size(22, 26);
+            this.res_seducao.TabIndex = 91;
+            this.res_seducao.Text = "0";
+            this.res_seducao.Click += new System.EventHandler(this.res_seducao_Click);
+            this.res_seducao.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.res_seducao.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.res_seducao.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // res_contrataque
+            // 
+            this.res_contrataque.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_contrataque.AutoSize = true;
+            this.res_contrataque.BackColor = System.Drawing.Color.Transparent;
+            this.res_contrataque.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.res_contrataque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_contrataque.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_contrataque.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_contrataque.Location = new System.Drawing.Point(84, 181);
+            this.res_contrataque.Name = "res_contrataque";
+            this.res_contrataque.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_contrataque.Size = new System.Drawing.Size(22, 26);
+            this.res_contrataque.TabIndex = 94;
+            this.res_contrataque.Text = "0";
+            this.res_contrataque.Click += new System.EventHandler(this.res_contrataque_Click);
+            this.res_contrataque.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.res_contrataque.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.res_contrataque.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // res_ataque
+            // 
+            this.res_ataque.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_ataque.AutoSize = true;
+            this.res_ataque.BackColor = System.Drawing.Color.Transparent;
+            this.res_ataque.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.res_ataque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_ataque.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_ataque.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_ataque.Location = new System.Drawing.Point(84, 20);
+            this.res_ataque.Name = "res_ataque";
+            this.res_ataque.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_ataque.Size = new System.Drawing.Size(22, 26);
+            this.res_ataque.TabIndex = 53;
+            this.res_ataque.Text = "0";
+            this.res_ataque.Click += new System.EventHandler(this.res_ataque_Click);
+            this.res_ataque.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.res_ataque.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.res_ataque.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // label89
+            // 
+            this.label89.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label89.BackColor = System.Drawing.Color.Transparent;
+            this.label89.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label89.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label89.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label89.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label89.Location = new System.Drawing.Point(11, 168);
+            this.label89.Name = "label89";
+            this.label89.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label89.Size = new System.Drawing.Size(80, 43);
+            this.label89.TabIndex = 93;
+            this.label89.Text = "Contra Ataque:";
+            this.label89.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label89.Click += new System.EventHandler(this.res_contrataque_Click);
+            this.label89.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.label89.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.label89.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // label73
+            // 
+            this.label73.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label73.AutoSize = true;
+            this.label73.BackColor = System.Drawing.Color.Transparent;
+            this.label73.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label73.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label73.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label73.Location = new System.Drawing.Point(276, -111);
+            this.label73.Name = "label73";
+            this.label73.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label73.Size = new System.Drawing.Size(143, 26);
+            this.label73.TabIndex = 86;
+            this.label73.Text = "Conhecimentos";
+            // 
+            // label72
+            // 
+            this.label72.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label72.AutoSize = true;
+            this.label72.BackColor = System.Drawing.Color.Transparent;
+            this.label72.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label72.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label72.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label72.Location = new System.Drawing.Point(165, -111);
+            this.label72.Name = "label72";
+            this.label72.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label72.Size = new System.Drawing.Size(76, 26);
+            this.label72.TabIndex = 85;
+            this.label72.Text = "Perícias";
+            // 
+            // label71
+            // 
+            this.label71.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label71.AutoSize = true;
+            this.label71.BackColor = System.Drawing.Color.Transparent;
+            this.label71.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label71.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label71.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label71.Location = new System.Drawing.Point(37, -111);
+            this.label71.Name = "label71";
+            this.label71.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label71.Size = new System.Drawing.Size(88, 26);
+            this.label71.TabIndex = 68;
+            this.label71.Text = "Combate";
+            // 
+            // res_etiqueta
+            // 
+            this.res_etiqueta.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_etiqueta.AutoSize = true;
+            this.res_etiqueta.BackColor = System.Drawing.Color.Transparent;
+            this.res_etiqueta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.res_etiqueta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_etiqueta.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_etiqueta.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_etiqueta.Location = new System.Drawing.Point(405, 286);
+            this.res_etiqueta.Name = "res_etiqueta";
+            this.res_etiqueta.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_etiqueta.Size = new System.Drawing.Size(22, 26);
+            this.res_etiqueta.TabIndex = 81;
+            this.res_etiqueta.Text = "0";
+            this.res_etiqueta.Click += new System.EventHandler(this.res_etiqueta_Click);
+            this.res_etiqueta.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.res_etiqueta.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.res_etiqueta.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // res_intuicao
+            // 
+            this.res_intuicao.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_intuicao.AutoSize = true;
+            this.res_intuicao.BackColor = System.Drawing.Color.Transparent;
+            this.res_intuicao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.res_intuicao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_intuicao.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_intuicao.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_intuicao.Location = new System.Drawing.Point(406, 235);
+            this.res_intuicao.Name = "res_intuicao";
+            this.res_intuicao.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_intuicao.Size = new System.Drawing.Size(22, 26);
+            this.res_intuicao.TabIndex = 80;
+            this.res_intuicao.Text = "0";
+            this.res_intuicao.Click += new System.EventHandler(this.res_intuicao_Click);
+            this.res_intuicao.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.res_intuicao.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.res_intuicao.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // res_ocultismo
+            // 
+            this.res_ocultismo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_ocultismo.AutoSize = true;
+            this.res_ocultismo.BackColor = System.Drawing.Color.Transparent;
+            this.res_ocultismo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.res_ocultismo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_ocultismo.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_ocultismo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_ocultismo.Location = new System.Drawing.Point(405, 77);
+            this.res_ocultismo.Name = "res_ocultismo";
+            this.res_ocultismo.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_ocultismo.Size = new System.Drawing.Size(22, 26);
+            this.res_ocultismo.TabIndex = 79;
+            this.res_ocultismo.Text = "0";
+            this.res_ocultismo.Click += new System.EventHandler(this.res_ocultismo_Click);
+            this.res_ocultismo.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.res_ocultismo.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.res_ocultismo.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // label63
+            // 
+            this.label63.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label63.AutoSize = true;
+            this.label63.BackColor = System.Drawing.Color.Transparent;
+            this.label63.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label63.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label63.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label63.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label63.Location = new System.Drawing.Point(335, 286);
+            this.label63.Name = "label63";
+            this.label63.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label63.Size = new System.Drawing.Size(69, 22);
+            this.label63.TabIndex = 78;
+            this.label63.Text = "Etiqueta:";
+            this.label63.Click += new System.EventHandler(this.res_etiqueta_Click);
+            this.label63.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.label63.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.label63.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // label64
+            // 
+            this.label64.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label64.AutoSize = true;
+            this.label64.BackColor = System.Drawing.Color.Transparent;
+            this.label64.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label64.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label64.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label64.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label64.Location = new System.Drawing.Point(336, 236);
+            this.label64.Name = "label64";
+            this.label64.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label64.Size = new System.Drawing.Size(68, 22);
+            this.label64.TabIndex = 77;
+            this.label64.Text = "Intuição:";
+            this.label64.Click += new System.EventHandler(this.res_intuicao_Click);
+            this.label64.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.label64.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.label64.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // label65
+            // 
+            this.label65.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label65.AutoSize = true;
+            this.label65.BackColor = System.Drawing.Color.Transparent;
+            this.label65.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label65.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label65.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label65.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label65.Location = new System.Drawing.Point(319, 77);
+            this.label65.Name = "label65";
+            this.label65.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label65.Size = new System.Drawing.Size(84, 22);
+            this.label65.TabIndex = 76;
+            this.label65.Text = "Ocultismo:";
+            this.label65.Click += new System.EventHandler(this.res_ocultismo_Click);
+            this.label65.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.label65.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.label65.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // label67
+            // 
+            this.label67.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label67.AutoSize = true;
+            this.label67.BackColor = System.Drawing.Color.Transparent;
+            this.label67.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label67.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label67.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label67.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label67.Location = new System.Drawing.Point(308, 12);
+            this.label67.Name = "label67";
+            this.label67.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label67.Size = new System.Drawing.Size(99, 43);
+            this.label67.TabIndex = 69;
+            this.label67.Text = "Acadêmicos/\r\nMedicina:";
+            this.label67.Click += new System.EventHandler(this.res_acad_Click);
+            this.label67.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.label67.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.label67.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // label68
+            // 
+            this.label68.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label68.AutoSize = true;
+            this.label68.BackColor = System.Drawing.Color.Transparent;
+            this.label68.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label68.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label68.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label68.Location = new System.Drawing.Point(364, -56);
+            this.label68.Name = "label68";
+            this.label68.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label68.Size = new System.Drawing.Size(22, 26);
+            this.label68.TabIndex = 70;
+            this.label68.Text = "0";
+            // 
+            // button22
+            // 
+            this.button22.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.button22.AutoSize = true;
+            this.button22.BackgroundImage = global::Dark_Age.Properties.Resources.kisspng_computer_icons_icon_design_cut_copy_and_paste_cl_taobao_clothing_promotional_copy_5b08bad091a807;
+            this.button22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button22.FlatAppearance.BorderSize = 0;
+            this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button22.Location = new System.Drawing.Point(389, -53);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(15, 16);
+            this.button22.TabIndex = 73;
+            this.button22.UseVisualStyleBackColor = true;
+            // 
+            // label45
+            // 
+            this.label45.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label45.AutoSize = true;
+            this.label45.BackColor = System.Drawing.Color.Transparent;
+            this.label45.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label45.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label45.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label45.Location = new System.Drawing.Point(30, -56);
+            this.label45.Name = "label45";
+            this.label45.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label45.Size = new System.Drawing.Size(51, 22);
+            this.label45.TabIndex = 31;
+            this.label45.Text = "Força:";
+            // 
+            // label43
+            // 
+            this.label43.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label43.AutoSize = true;
+            this.label43.BackColor = System.Drawing.Color.Transparent;
+            this.label43.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label43.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label43.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label43.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label43.Location = new System.Drawing.Point(20, 21);
+            this.label43.Name = "label43";
+            this.label43.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label43.Size = new System.Drawing.Size(62, 22);
+            this.label43.TabIndex = 33;
+            this.label43.Text = "Ataque:";
+            this.label43.Click += new System.EventHandler(this.res_ataque_Click);
+            this.label43.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.label43.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.label43.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // res_percepcao
+            // 
+            this.res_percepcao.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_percepcao.AutoSize = true;
+            this.res_percepcao.BackColor = System.Drawing.Color.Transparent;
+            this.res_percepcao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.res_percepcao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_percepcao.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_percepcao.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_percepcao.Location = new System.Drawing.Point(242, 287);
+            this.res_percepcao.Name = "res_percepcao";
+            this.res_percepcao.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_percepcao.Size = new System.Drawing.Size(22, 26);
+            this.res_percepcao.TabIndex = 63;
+            this.res_percepcao.Text = "0";
+            this.res_percepcao.Click += new System.EventHandler(this.res_percepcao_Click);
+            this.res_percepcao.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.res_percepcao.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.res_percepcao.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // label42
+            // 
+            this.label42.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label42.AutoSize = true;
+            this.label42.BackColor = System.Drawing.Color.Transparent;
+            this.label42.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label42.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label42.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label42.Location = new System.Drawing.Point(77, -59);
+            this.label42.Name = "label42";
+            this.label42.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label42.Size = new System.Drawing.Size(22, 26);
+            this.label42.TabIndex = 34;
+            this.label42.Text = "0";
+            // 
+            // res_esconder
+            // 
+            this.res_esconder.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_esconder.AutoSize = true;
+            this.res_esconder.BackColor = System.Drawing.Color.Transparent;
+            this.res_esconder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.res_esconder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_esconder.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_esconder.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_esconder.Location = new System.Drawing.Point(243, 236);
+            this.res_esconder.Name = "res_esconder";
+            this.res_esconder.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_esconder.Size = new System.Drawing.Size(22, 26);
+            this.res_esconder.TabIndex = 62;
+            this.res_esconder.Text = "0";
+            this.res_esconder.Click += new System.EventHandler(this.res_esconder_Click);
+            this.res_esconder.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.res_esconder.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.res_esconder.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // res_intimidacao
+            // 
+            this.res_intimidacao.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_intimidacao.AutoSize = true;
+            this.res_intimidacao.BackColor = System.Drawing.Color.Transparent;
+            this.res_intimidacao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.res_intimidacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_intimidacao.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_intimidacao.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_intimidacao.Location = new System.Drawing.Point(242, 78);
+            this.res_intimidacao.Name = "res_intimidacao";
+            this.res_intimidacao.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_intimidacao.Size = new System.Drawing.Size(22, 26);
+            this.res_intimidacao.TabIndex = 61;
+            this.res_intimidacao.Text = "0";
+            this.res_intimidacao.Click += new System.EventHandler(this.res_intimidacao_Click);
+            this.res_intimidacao.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.res_intimidacao.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.res_intimidacao.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // label50
+            // 
+            this.label50.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label50.BackColor = System.Drawing.Color.Transparent;
+            this.label50.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label50.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label50.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label50.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label50.Location = new System.Drawing.Point(164, 274);
+            this.label50.Name = "label50";
+            this.label50.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label50.Size = new System.Drawing.Size(77, 50);
+            this.label50.TabIndex = 60;
+            this.label50.Text = "Escutar/Observar:";
+            this.label50.Click += new System.EventHandler(this.res_percepcao_Click);
+            this.label50.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.label50.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.label50.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // label51
+            // 
+            this.label51.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label51.AutoSize = true;
+            this.label51.BackColor = System.Drawing.Color.Transparent;
+            this.label51.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label51.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label51.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label51.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label51.Location = new System.Drawing.Point(164, 238);
+            this.label51.Name = "label51";
+            this.label51.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label51.Size = new System.Drawing.Size(76, 22);
+            this.label51.TabIndex = 59;
+            this.label51.Text = "Esconder:";
+            this.label51.Click += new System.EventHandler(this.res_esconder_Click);
+            this.label51.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.label51.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.label51.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // label52
+            // 
+            this.label52.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label52.AutoSize = true;
+            this.label52.BackColor = System.Drawing.Color.Transparent;
+            this.label52.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label52.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label52.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label52.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label52.Location = new System.Drawing.Point(147, 80);
+            this.label52.Name = "label52";
+            this.label52.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label52.Size = new System.Drawing.Size(94, 22);
+            this.label52.TabIndex = 58;
+            this.label52.Text = "Intimidação:";
+            this.label52.Click += new System.EventHandler(this.res_intimidacao_Click);
+            this.label52.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.label52.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.label52.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // label37
+            // 
+            this.label37.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label37.AutoSize = true;
+            this.label37.BackColor = System.Drawing.Color.Transparent;
+            this.label37.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label37.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label37.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label37.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label37.Location = new System.Drawing.Point(190, 24);
+            this.label37.Name = "label37";
+            this.label37.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label37.Size = new System.Drawing.Size(50, 22);
+            this.label37.TabIndex = 42;
+            this.label37.Text = "Lábia:";
+            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label37.Click += new System.EventHandler(this.res_labia_Click);
+            this.label37.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.label37.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.label37.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // res_conjurar
+            // 
+            this.res_conjurar.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_conjurar.AutoSize = true;
+            this.res_conjurar.BackColor = System.Drawing.Color.Transparent;
+            this.res_conjurar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.res_conjurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_conjurar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_conjurar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_conjurar.Location = new System.Drawing.Point(84, 284);
+            this.res_conjurar.Name = "res_conjurar";
+            this.res_conjurar.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_conjurar.Size = new System.Drawing.Size(22, 26);
+            this.res_conjurar.TabIndex = 54;
+            this.res_conjurar.Text = "0";
+            this.res_conjurar.Click += new System.EventHandler(this.res_conjurar_Click);
+            this.res_conjurar.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.res_conjurar.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.res_conjurar.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // res_atirar
+            // 
+            this.res_atirar.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_atirar.AutoSize = true;
+            this.res_atirar.BackColor = System.Drawing.Color.Transparent;
+            this.res_atirar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.res_atirar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_atirar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_atirar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_atirar.Location = new System.Drawing.Point(85, 232);
+            this.res_atirar.Name = "res_atirar";
+            this.res_atirar.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_atirar.Size = new System.Drawing.Size(22, 26);
+            this.res_atirar.TabIndex = 53;
+            this.res_atirar.Text = "0";
+            this.res_atirar.Click += new System.EventHandler(this.res_atirar_Click);
+            this.res_atirar.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.res_atirar.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.res_atirar.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // res_esquiva
+            // 
+            this.res_esquiva.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.res_esquiva.AutoSize = true;
+            this.res_esquiva.BackColor = System.Drawing.Color.Transparent;
+            this.res_esquiva.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.res_esquiva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.res_esquiva.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.res_esquiva.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.res_esquiva.Location = new System.Drawing.Point(84, 74);
+            this.res_esquiva.Name = "res_esquiva";
+            this.res_esquiva.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.res_esquiva.Size = new System.Drawing.Size(22, 26);
+            this.res_esquiva.TabIndex = 52;
+            this.res_esquiva.Text = "0";
+            this.res_esquiva.Click += new System.EventHandler(this.res_esquiva_Click);
+            this.res_esquiva.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.res_esquiva.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.res_esquiva.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // button9
+            // 
+            this.button9.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.button9.AutoSize = true;
+            this.button9.BackgroundImage = global::Dark_Age.Properties.Resources.kisspng_computer_icons_icon_design_cut_copy_and_paste_cl_taobao_clothing_promotional_copy_5b08bad091a807;
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Location = new System.Drawing.Point(243, -52);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(15, 16);
+            this.button9.TabIndex = 46;
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // label56
+            // 
+            this.label56.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label56.BackColor = System.Drawing.Color.Transparent;
+            this.label56.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label56.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label56.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label56.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label56.Location = new System.Drawing.Point(13, 274);
+            this.label56.Name = "label56";
+            this.label56.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label56.Size = new System.Drawing.Size(76, 46);
+            this.label56.TabIndex = 51;
+            this.label56.Text = "Conjurar Magia:";
+            this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label56.Click += new System.EventHandler(this.res_conjurar_Click);
+            this.label56.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.label56.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.label56.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // label57
+            // 
+            this.label57.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label57.AutoSize = true;
+            this.label57.BackColor = System.Drawing.Color.Transparent;
+            this.label57.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label57.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label57.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label57.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label57.Location = new System.Drawing.Point(24, 235);
+            this.label57.Name = "label57";
+            this.label57.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label57.Size = new System.Drawing.Size(52, 22);
+            this.label57.TabIndex = 50;
+            this.label57.Text = "Atirar:";
+            this.label57.Click += new System.EventHandler(this.res_atirar_Click);
+            this.label57.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.label57.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.label57.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // label58
+            // 
+            this.label58.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label58.AutoSize = true;
+            this.label58.BackColor = System.Drawing.Color.Transparent;
+            this.label58.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label58.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label58.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label58.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label58.Location = new System.Drawing.Point(16, 77);
+            this.label58.Name = "label58";
+            this.label58.Padding = new System.Windows.Forms.Padding(0, 0, 0, 1);
+            this.label58.Size = new System.Drawing.Size(66, 22);
+            this.label58.TabIndex = 49;
+            this.label58.Text = "Esquiva:";
+            this.label58.Click += new System.EventHandler(this.res_esquiva_Click);
+            this.label58.MouseEnter += new System.EventHandler(this.res_ataque_MouseEnter);
+            this.label58.MouseLeave += new System.EventHandler(this.res_ataque_MouseLeave);
+            this.label58.MouseHover += new System.EventHandler(this.res_ataque_MouseEnter);
+            // 
+            // panel16
+            // 
+            this.panel16.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel16.AutoSize = true;
+            this.panel16.Controls.Add(this.lbl_anotacoes);
+            this.panel16.Controls.Add(this.btn_anotacoes);
+            this.panel16.Controls.Add(this.btnProfissões);
+            this.panel16.Controls.Add(this.iconButton5);
+            this.panel16.Controls.Add(this.panel17);
+            this.panel16.Controls.Add(this.iniciativa_bonus);
+            this.panel16.Controls.Add(this.movimento);
+            this.panel16.Controls.Add(this.prata);
+            this.panel16.Controls.Add(this.ouro);
+            this.panel16.Controls.Add(this.iconPictureBox2);
+            this.panel16.Controls.Add(this.iconPictureBox1);
+            this.panel16.Location = new System.Drawing.Point(518, 153);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(458, 227);
+            this.panel16.TabIndex = 142;
+            // 
+            // lbl_anotacoes
+            // 
+            this.lbl_anotacoes.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lbl_anotacoes.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_anotacoes.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lbl_anotacoes.Location = new System.Drawing.Point(316, 128);
+            this.lbl_anotacoes.Name = "lbl_anotacoes";
+            this.lbl_anotacoes.Size = new System.Drawing.Size(124, 38);
+            this.lbl_anotacoes.TabIndex = 162;
+            this.lbl_anotacoes.Text = "Regras, Anotações\r\n e descansos";
+            this.lbl_anotacoes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_anotacoes.Visible = false;
+            // 
+            // btn_anotacoes
+            // 
+            this.btn_anotacoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.btn_anotacoes.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btn_anotacoes.FlatAppearance.BorderSize = 0;
-			this.btn_anotacoes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-			this.btn_anotacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btn_anotacoes.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.btn_anotacoes.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.btn_anotacoes.IconChar = FontAwesome.Sharp.IconChar.Book;
-			this.btn_anotacoes.IconColor = System.Drawing.Color.PeachPuff;
-			this.btn_anotacoes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.btn_anotacoes.IconSize = 40;
-			this.btn_anotacoes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btn_anotacoes.Location = new System.Drawing.Point(331, 82);
-			this.btn_anotacoes.Name = "btn_anotacoes";
-			this.btn_anotacoes.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
-			this.btn_anotacoes.Size = new System.Drawing.Size(68, 46);
-			this.btn_anotacoes.TabIndex = 143;
-			this.btn_anotacoes.UseVisualStyleBackColor = true;
-			this.btn_anotacoes.Click += new System.EventHandler(this.button8_Click);
-			this.btn_anotacoes.MouseEnter += new System.EventHandler(this.btn_change_MouseEnter);
-			this.btn_anotacoes.MouseLeave += new System.EventHandler(this.btn_change_MouseLeave);
-			this.btn_anotacoes.MouseHover += new System.EventHandler(this.btn_change_MouseHover);
-			// 
-			// btnProfissões
-			// 
-			this.btnProfissões.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btn_anotacoes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_anotacoes.FlatAppearance.BorderSize = 0;
+            this.btn_anotacoes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_anotacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_anotacoes.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_anotacoes.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_anotacoes.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.btn_anotacoes.IconColor = System.Drawing.Color.PeachPuff;
+            this.btn_anotacoes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_anotacoes.IconSize = 40;
+            this.btn_anotacoes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_anotacoes.Location = new System.Drawing.Point(343, 82);
+            this.btn_anotacoes.Name = "btn_anotacoes";
+            this.btn_anotacoes.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
+            this.btn_anotacoes.Size = new System.Drawing.Size(68, 46);
+            this.btn_anotacoes.TabIndex = 143;
+            this.btn_anotacoes.UseVisualStyleBackColor = true;
+            this.btn_anotacoes.Click += new System.EventHandler(this.button8_Click);
+            this.btn_anotacoes.MouseEnter += new System.EventHandler(this.btn_change_MouseEnter);
+            this.btn_anotacoes.MouseLeave += new System.EventHandler(this.btn_change_MouseLeave);
+            this.btn_anotacoes.MouseHover += new System.EventHandler(this.btn_change_MouseHover);
+            // 
+            // btnProfissões
+            // 
+            this.btnProfissões.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnProfissões.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnProfissões.FlatAppearance.BorderSize = 0;
