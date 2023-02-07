@@ -18,6 +18,7 @@ namespace Dark_Age
         public int navegacao = 1;
         public static string regras;
         public static string sanidades;
+        public static int page = 1;
         public Habilidades_ativas()
         {
             InitializeComponent(); 
@@ -133,12 +134,19 @@ namespace Dark_Age
 
         private void iconButton5_Click(object sender, EventArgs e)
         {
+            page += 1;
             seta_esquerda.Visible = true;
-            seta_direita.Visible = false;
-            pagina.Text = "Regras";
             Editar.Visible = false;
-            lbl_regras.Visible = true;
-            lbl_anotacoes.Visible = false;
+            if (page == 3)
+            {
+                seta_direita.Visible = false;
+                pagina.Text = "Descansos";
+            }else if (page == 2)
+            {
+                lbl_regras.Visible = true;
+                lbl_anotacoes.Visible = false;
+            }
+            
         }
 
         private void seta_esquerda_Click(object sender, EventArgs e)

@@ -1658,11 +1658,11 @@ namespace Dark_Age
             this.lbl_anotacoes.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_anotacoes.BackColor = System.Drawing.Color.Transparent;
             this.lbl_anotacoes.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lbl_anotacoes.Location = new System.Drawing.Point(312, 128);
+            this.lbl_anotacoes.Location = new System.Drawing.Point(316, 128);
             this.lbl_anotacoes.Name = "lbl_anotacoes";
-            this.lbl_anotacoes.Size = new System.Drawing.Size(110, 31);
+            this.lbl_anotacoes.Size = new System.Drawing.Size(124, 38);
             this.lbl_anotacoes.TabIndex = 162;
-            this.lbl_anotacoes.Text = "Regras e\r\nAnotações";
+            this.lbl_anotacoes.Text = "Regras, Anotações\r\n e descansos";
             this.lbl_anotacoes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_anotacoes.Visible = false;
             // 
@@ -1681,7 +1681,7 @@ namespace Dark_Age
             this.btn_anotacoes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_anotacoes.IconSize = 40;
             this.btn_anotacoes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_anotacoes.Location = new System.Drawing.Point(331, 82);
+            this.btn_anotacoes.Location = new System.Drawing.Point(343, 82);
             this.btn_anotacoes.Name = "btn_anotacoes";
             this.btn_anotacoes.Padding = new System.Windows.Forms.Padding(0, 0, 8, 0);
             this.btn_anotacoes.Size = new System.Drawing.Size(68, 46);
