@@ -10,6 +10,9 @@
     <Compile Update="Campanha.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Componente\botao_talento_atributo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Componente\label_com_image.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -44,6 +47,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Temas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="teste.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

@@ -839,6 +839,7 @@ namespace Dark_Age
             pnl_chat.Visible = true;
 
             timer_chat.Start();
+            btn_chat.Focus();
 			pnl_mensagens.VerticalScroll.Value = pnl_mensagens.VerticalScroll.Maximum;
 		}
 
@@ -1128,6 +1129,11 @@ namespace Dark_Age
             var label = (Label)sender;
 
             label.BackColor = Color.Transparent;
+        }
+
+        private void btn_chat_Leave(object sender, EventArgs e)
+        {
+            timer_chat.Stop();
         }
 
         public void checaguem_criacao_msg()
