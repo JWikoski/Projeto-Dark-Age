@@ -82,7 +82,7 @@ namespace Dark_Age.Componente
             {
                 vida_atual++;
                 altera_vida();
-                update_vida_mana();
+                update_vida();
             }        
         }
 
@@ -92,7 +92,7 @@ namespace Dark_Age.Componente
             {
                 vida_atual--;
                 altera_vida();
-                update_vida_mana();
+                update_vida();
             }
         }
 
@@ -102,7 +102,7 @@ namespace Dark_Age.Componente
             {
                 mana_atual++;
                 altera_mana();
-                update_vida_mana();
+                update_mana();
             }            
         }
 
@@ -112,7 +112,7 @@ namespace Dark_Age.Componente
             {
                 mana_atual--;
                 altera_mana();
-                update_vida_mana();
+                update_mana();
             }            
         }
         public void altera_vida()
@@ -133,21 +133,33 @@ namespace Dark_Age.Componente
             txt_mana.Text = mana_atual + "/" + mana_max;
         }
 
-        public void update_vida_mana()
+        public void update_vida()
         {
-            NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
+            using NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
             conn.Open();
-            NpgsqlCommand comi = new NpgsqlCommand();
+            using NpgsqlCommand comi = new NpgsqlCommand();
             comi.Connection = conn;
             comi.CommandType = CommandType.Text;
             comi.CommandText = @"update ""Dark_Age_Connection"".""Inter_status_pers""
                                     set vida_atual = @vida_atual
-                                      , mana_atual = @mana_atual
                                   where id_entidade = @id_entidade";
             comi.Parameters.AddWithValue("@vida_atual", vida_atual);
+            comi.Parameters.AddWithValue("@id_entidade", id_entidade);
+            using NpgsqlDataReader nda = comi.ExecuteReader();
+        }
+        public void update_mana()
+        {
+            using NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
+            conn.Open();
+            using NpgsqlCommand comi = new NpgsqlCommand();
+            comi.Connection = conn;
+            comi.CommandType = CommandType.Text;
+            comi.CommandText = @"update ""Dark_Age_Connection"".""Inter_status_pers""
+                                    set mana_atual = @mana_atual
+                                  where id_entidade = @id_entidade";
             comi.Parameters.AddWithValue("@mana_atual", mana_atual);
             comi.Parameters.AddWithValue("@id_entidade", id_entidade);
-            NpgsqlDataReader nda = comi.ExecuteReader();
+            using NpgsqlDataReader nda = comi.ExecuteReader();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -199,7 +211,7 @@ namespace Dark_Age.Componente
                 {
                     vida_atual = Convert.ToInt32(txt_vida.Text);
                     altera_vida();
-                    update_vida_mana();
+                    update_vida();
                 }
                 else
                 {
@@ -214,7 +226,7 @@ namespace Dark_Age.Componente
             {
                 vida_atual = Convert.ToInt32(txt_vida.Text);
                 altera_vida();
-                update_vida_mana();
+                update_vida();
             }
             else
             {
@@ -229,7 +241,7 @@ namespace Dark_Age.Componente
                 {
                     mana_atual = Convert.ToInt32(txt_mana.Text);
                     altera_mana();
-                    update_vida_mana();
+                    update_mana();
                 }
                 else
                 {
@@ -249,7 +261,7 @@ namespace Dark_Age.Componente
             {
                 mana_atual = Convert.ToInt32(txt_mana.Text);
                 altera_mana();
-                update_vida_mana();
+                update_mana();
             }
             else
             {

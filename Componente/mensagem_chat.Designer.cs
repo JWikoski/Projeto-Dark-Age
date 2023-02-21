@@ -90,7 +90,7 @@
 			this.lbl_mensagem.Size = new System.Drawing.Size(274, 30);
 			this.lbl_mensagem.TabIndex = 5;
 			this.lbl_mensagem.Text = "A mensagem vai aparecer aqui uma texto \r\nA mensagem vai aparecer aqui uma texto \r" +
-    "\n";
+	"\n";
 			this.lbl_mensagem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// panel2

@@ -35,6 +35,7 @@ namespace Dark_Age
             textBox1.BackColor = Temas.cor_principal;
             panel3.BackColor = Temas.cor_principal;
             tabPage1.BackColor = Temas.cor_principal;
+            Tempo_de_Pesca.BackColor = Temas.cor_principal;
             tabPage2.BackColor = Temas.cor_principal;
             comboBox1.BackColor = Temas.cor_principal;
             comboBox2.BackColor = Temas.cor_principal;
@@ -678,7 +679,7 @@ namespace Dark_Age
                 {
                     if (qnt[j] > 0)
                     {
-                        Conexao_BD.insert_item_inventario(rio[j], qnt[j]);
+                        Conexao_BD.insert_item_inventario(rio[j], qnt[j], Campanha.id_personagem);
                     }
                     
                 }
@@ -689,7 +690,7 @@ namespace Dark_Age
                 {
                     if (qnt[j] > 0)
                     {
-                        Conexao_BD.insert_item_inventario(lago[j], qnt[j]);
+                        Conexao_BD.insert_item_inventario(lago[j], qnt[j], Campanha.id_personagem);
                     }
                         
                 }
@@ -699,7 +700,7 @@ namespace Dark_Age
                 for (int j = 0; j < mar.Count; j++)
                     if (qnt[j] > 0)
                     {
-                        Conexao_BD.insert_item_inventario(mar[j], qnt[j]);
+                        Conexao_BD.insert_item_inventario(mar[j], qnt[j], Campanha.id_personagem);
                     }
             }
         }

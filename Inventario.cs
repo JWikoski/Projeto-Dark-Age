@@ -12,16 +12,21 @@ namespace Dark_Age
         public string inventario_texto;
         public Boolean minmax = true;
 
+        public Boolean material;
+
         public static int moedas_de_ouro;
         public static int moedas_de_prata;
 
         public int qtd = 1;
         public int qtd_remover = 1;
+        public int qtd_enviar = 1;
         public Boolean filtros = true;
         public int id_item;
         public int id_item_equipado;
         public Boolean status;
         public int item_especifico = 0;
+
+        public int id_personagem = 0;
 
         public int temp = 0;
 
@@ -34,6 +39,8 @@ namespace Dark_Age
         public Inventario()
         {
             InitializeComponent();
+
+            grid_ingredientes.DataBindingComplete += new DataGridViewBindingCompleteEventHandler(dataGridView1_DataBindingComplete);
             Screen screen = Screen.FromPoint(Cursor.Position);
             this.Location = screen.Bounds.Location;
 
@@ -47,12 +54,125 @@ namespace Dark_Age
             combox_tipo.BackColor = Temas.cor_principal_secundaria;
             pnl_filtro.BackColor = Temas.cor_principal_secundaria;
             pnl_remover_item.BackColor = Temas.cor_principal_secundaria;
+            pnl_enviar.BackColor = Temas.cor_principal;
 
             this.BackColor = Temas.cor_principal;
             Temas.mudar_cor_data_grid(data_grid_equipados);
             Temas.mudar_cor_data_grid(Grid_lista_inventario);
+            Temas.mudar_cor_data_grid(Grid_lista_personagens);
+            Temas.mudar_cor_data_grid(grid_ingredientes);
+
+            pnl_enviar.Location = new Point(1241, 500);
+            pnl_remover_item.Location = new Point(1241, 591);
+
+            carregar_personagens();
 
             iconButton6.IconChar = FontAwesome.Sharp.IconChar.Minimize;
+        }
+        private void carregar_personagens()
+        {
+
+            Grid_lista_personagens.DataSource = Conexao_BD.select_personagem_campanha(0, Campanha.id_campanha, 1);
+
+            if (Grid_lista_personagens.Rows.Count > 0)
+            {
+                Grid_lista_personagens.Rows[0].Selected = true;
+                DataGridViewRow row_personagem = Grid_lista_personagens.Rows[0];
+                id_personagem = (int)row_personagem.Cells[0].Value;
+            }
+                try
+            {
+                Grid_lista_personagens.Columns["id_personagem"].Visible = false;
+                Grid_lista_personagens.Columns["nome_classe"].Visible = false;
+                Grid_lista_personagens.Columns["nivel"].Visible = false;
+                Grid_lista_personagens.Columns["fk_id_classe"].Visible = false;
+                Grid_lista_personagens.Columns["id_entidade"].Visible = false;
+                Grid_lista_personagens.Columns["imagem"].Visible = false;
+                Grid_lista_personagens.Columns["nome_jogador"].Visible = false;
+                Grid_lista_personagens.Columns["nome_personagem"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                Grid_lista_personagens.Columns["nome_personagem"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            catch (Exception a)
+            {
+                MessageBox.Show("ERRO no carregar as informações", "Erro:" + a);
+            }
+            foreach (DataGridViewRow x in Grid_lista_personagens.Rows)
+            {
+                x.MinimumHeight = 15;
+            }
+        }
+        private void carregar_ingredientes()
+        {
+            label11.Text = "Ingredientes para fabricação deste item";
+            label12.Visible = false;
+            grid_ingredientes.DataSource = Conexao_BD.select_materiais_criacao(id_item);
+
+            try
+            {
+                if (grid_ingredientes.Rows.Count > 0)
+                {
+                    grid_ingredientes.Rows[0].Selected = true;
+                }
+                grid_ingredientes.Columns["nome_itens"].HeaderText = "Ingrediente";
+                grid_ingredientes.Columns["quantidade"].HeaderText = "Possui";
+                grid_ingredientes.Columns["qnt_material"].HeaderText = "Requisito";
+                grid_ingredientes.Columns["ingrediente"].Visible = false;
+                grid_ingredientes.Columns["qnt_criacao"].Visible = false;
+                grid_ingredientes.Columns["quantidade"].DefaultCellStyle.NullValue = "0";
+                grid_ingredientes.Columns["qnt_material"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                grid_ingredientes.Columns["quantidade"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+
+                grid_ingredientes.Columns["qnt_material"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                grid_ingredientes.Columns["quantidade"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                grid_ingredientes.Columns["quantidade"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                grid_ingredientes.Columns["qnt_material"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            }
+            catch (Exception a)
+            {
+                MessageBox.Show("Erro:" + a, "ERRO no carregar as informações");
+            }
+            foreach (DataGridViewRow x in grid_ingredientes.Rows)
+            {
+                x.MinimumHeight = 30;
+            }
+        }
+
+        private void carregar_itens_de_criacao()
+        {
+            label11.Text = "Itens produzidos com este ingrediente";
+            label12.Visible = true;
+
+            grid_ingredientes.DataSource = Conexao_BD.select_itens_criacao(id_item);
+
+            try
+            {
+
+                if (grid_ingredientes.Rows.Count > 0)
+                {
+                    grid_ingredientes.Rows[0].Selected = true;
+                }
+                grid_ingredientes.Columns["nome_itens"].HeaderText = "Item";
+                grid_ingredientes.Columns["qnt_material"].HeaderText = "Usa";
+                grid_ingredientes.Columns["quantidade"].HeaderText = "Possui";
+                grid_ingredientes.Columns["quantidade"].DefaultCellStyle.NullValue = "0";
+                grid_ingredientes.Columns["quantidade"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                grid_ingredientes.Columns["qnt_material"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                grid_ingredientes.Columns["quantidade"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                grid_ingredientes.Columns["qnt_material"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                grid_ingredientes.Columns["quantidade"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                grid_ingredientes.Columns["qnt_material"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            catch (Exception a)
+            {
+                MessageBox.Show("Erro:" + a, "ERRO no carregar as informações");
+            }
+            foreach (DataGridViewRow x in grid_ingredientes.Rows)
+            {
+                x.MinimumHeight = 30;
+            }
         }
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
@@ -86,7 +206,7 @@ namespace Dark_Age
             timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
             timer1.Start();
 
-            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
+            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico, Campanha.id_personagem);
             carregar_data_grid();
             data_grid_equipados.DataSource = Conexao_BD.select_itens_equipados();
             carregar_data_grid_equipados();
@@ -167,8 +287,19 @@ namespace Dark_Age
                 }
                 id_item = (int)row.Cells[0].Value;
                 qtd = (int)row.Cells[8].Value;
+                material = (bool)row.Cells[6].Value;
 
                 label9.Text = ("Você tem " + qtd + " " + row.Cells[1].Value.ToString() + "!");
+                label13.Text = ("Você tem " + qtd + " " + row.Cells[1].Value.ToString() + "!");
+
+                if (material == false)
+                {
+                    carregar_ingredientes();
+                }
+                else
+                {
+                    carregar_itens_de_criacao();
+                }
             }
             catch (Exception a)
             {
@@ -181,7 +312,7 @@ namespace Dark_Age
             Grid_lista_inventario.Columns.Clear();
             if (cmp_procura.Text == "")
             {
-                Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
+                Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico, Campanha.id_personagem);
                 carregar_data_grid();
             }
             else
@@ -225,8 +356,19 @@ namespace Dark_Age
                     }
                     id_item = (int)cell1.Cells[0].Value;
                     qtd = (int)cell1.Cells[8].Value;
+                    material = (bool)cell1.Cells[6].Value;
 
                     label9.Text = ("Você tem " + qtd + " " + cell1.Cells[1].Value.ToString());
+
+
+                    if (material == false)
+                    {
+                        carregar_ingredientes();
+                    }
+                    else
+                    {
+                        carregar_itens_de_criacao();
+                    }
                 }
                 foreach (DataGridViewRow x in Grid_lista_inventario.Rows)
                 {
@@ -348,7 +490,7 @@ namespace Dark_Age
 
             if (filtro_dificuldade.Checked == false && filtro_profissoes.Checked == false && filtro_tipo.Checked == false)
             {
-                Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
+                Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico, Campanha.id_personagem);
                 carregar_data_grid();
                 limpar_filtros1.Visible = false;
             }
@@ -426,7 +568,7 @@ namespace Dark_Age
         {
             Lista_itens lista = new Lista_itens();
             lista.ShowDialog();
-            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
+            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico, Campanha.id_personagem);
             carregar_data_grid();
             carregar_data_grid_equipados();
             limpar_filtros1.Visible = false;
@@ -437,7 +579,7 @@ namespace Dark_Age
             filtro_tipo.Checked = false;
             filtro_profissoes.Checked = false;
             filtro_dificuldade.Checked = false;
-            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
+            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico, Campanha.id_personagem);
             carregar_data_grid();
             limpar_filtros1.Visible = false;
             limpar_filtros2.Visible = false;
@@ -448,7 +590,7 @@ namespace Dark_Age
             pnl_filtro.Visible = false;
             if (filtro_dificuldade.Checked == false && filtro_profissoes.Checked == false && filtro_tipo.Checked == false)
             {
-                Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
+                Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico, Campanha.id_personagem);
                 carregar_data_grid();
             }
         }
@@ -469,7 +611,7 @@ namespace Dark_Age
         {
             status = true;
             Conexao_BD.equipar_item(id_item, status);
-            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
+            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico, Campanha.id_personagem);
             carregar_data_grid();
             carregar_data_grid_equipados();
             limpar_filtros();
@@ -525,7 +667,7 @@ namespace Dark_Age
         {
             status = false;
             Conexao_BD.equipar_item(id_item_equipado, status);
-            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
+            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico, Campanha.id_personagem);
             carregar_data_grid();
             limpar_filtros();
             carregar_data_grid_equipados();
@@ -579,8 +721,8 @@ namespace Dark_Age
         {
             if (qtd <= 1)
             {
-                Conexao_BD.delete_item_inventario(id_item);
-                Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
+                Conexao_BD.delete_item_inventario(id_item, Campanha.id_personagem);
+                Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico, Campanha.id_personagem);
                 carregar_data_grid();
                 carregar_data_grid_equipados();
                 limpar_filtros();
@@ -637,15 +779,15 @@ namespace Dark_Age
 
             if (qtd == 0)
             {
-                Conexao_BD.delete_item_inventario(id_item);
-                Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
+                Conexao_BD.delete_item_inventario(id_item, Campanha.id_personagem);
+                Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico, Campanha.id_personagem);
                 carregar_data_grid();
                 carregar_data_grid_equipados();
             }
             else
             {
-                Conexao_BD.update_qtd_inventario(id_item, qtd);
-                Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico);
+                Conexao_BD.update_qtd_inventario(id_item, qtd, Campanha.id_personagem);
+                Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico, Campanha.id_personagem);
                 carregar_data_grid();
                 carregar_data_grid_equipados();
             }
@@ -676,13 +818,192 @@ namespace Dark_Age
         {
 
             DataGridView temp_datagrid = new DataGridView();
-            temp_datagrid.DataSource = Conexao_BD.select_inventário(item_especifico);
+            temp_datagrid.DataSource = Conexao_BD.select_inventário(item_especifico, Campanha.id_personagem);
 
             dr_new = temp_datagrid.Rows.Count;
             if (dr_new > dr_old)
             {
                 carregar_data_grid();
                 dr_old = dr_new;
+            }
+        }
+
+        private void button6_MouseEnter(object sender, EventArgs e)
+        {
+            button6.ForeColor = Color.GreenYellow;
+            iconButton7.IconColor = Color.GreenYellow;
+        }
+
+        private void button6_MouseLeave(object sender, EventArgs e)
+        {
+            button6.ForeColor = Color.LightGreen;
+            iconButton7.IconColor = Color.LightGreen;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if(pnl_enviar.Visible == true)
+            {
+                pnl_enviar.Visible = false;
+            }
+            else
+            {
+                pnl_enviar.Visible = true;
+            }
+        }
+
+        private void iconButton10_Click(object sender, EventArgs e)
+        {
+            pnl_enviar.Visible = false;
+        }
+
+        private void iconButton9_Click(object sender, EventArgs e)
+        {
+            if (qtd_enviar < qtd)
+            {
+                qtd_enviar++;
+                lbl_qtd_enviar.Text = qtd_enviar.ToString();
+            }
+
+            if (qtd_enviar > 1)
+            {
+                iconButton8.Visible = true;
+            }
+        }
+
+        private void iconButton8_Click(object sender, EventArgs e)
+        {
+
+            qtd_enviar--;
+            lbl_qtd_enviar.Text = qtd_enviar.ToString();
+
+            if (qtd_enviar == 1)
+            {
+                iconButton8.Visible = false;
+            }
+        }
+
+        private void Grid_lista_personagens_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = Grid_lista_personagens.Rows[e.RowIndex];
+            id_personagem = (int)row.Cells[0].Value;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Conexao_BD.insert_item_inventario(id_item, qtd_enviar, id_personagem);
+
+            if (qtd == qtd_enviar)
+            {
+                Conexao_BD.delete_item_inventario(id_item, Campanha.id_personagem);
+            }
+            else
+            {
+                Conexao_BD.update_qtd_inventario(id_item, qtd - qtd_enviar, Campanha.id_personagem);
+            }
+
+            qtd_enviar = 1;
+            lbl_qtd_enviar.Text = "1";
+            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico, Campanha.id_personagem);
+            carregar_data_grid();
+            carregar_data_grid_equipados();
+            limpar_filtros();
+            pnl_enviar.Visible = false;
+            iconButton8.Visible = false;
+        }
+
+        private void Atualizar_inventário_timer_Tick(object sender, EventArgs e)
+        {
+        }
+
+        private void recaregar_Click(object sender, EventArgs e)
+        {
+            carregar_data_grid();
+            carregar_data_grid_equipados();
+            limpar_filtros();
+        }
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+
+            if (material == false)
+            {
+                foreach (DataGridViewRow row in grid_ingredientes.Rows)
+                {
+                    // Obtém o valor da célula na coluna desejada
+                    object valorObj = row.Cells["quantidade"].Value;
+
+                    if (!Convert.IsDBNull(valorObj)) // Verifica se o valor não é DBNull
+                    {
+                        // Converte o valor para o tipo desejado
+                        int valor_inv = Convert.ToInt32(valorObj);
+                        int valor_cri = (int)row.Cells["qnt_material"].Value;
+
+                        // Verifica o valor e define a cor de fundo da linha
+                        if (valor_inv >= valor_cri)
+                        {
+                            if (Temas.tema_escuro == true)
+                            {
+                                row.DefaultCellStyle.BackColor = Color.FromArgb(10, 100, 10);
+                            }
+                            else
+                            {
+                                row.DefaultCellStyle.BackColor = Color.FromArgb(110, 220, 110);
+                            }
+                        }
+                        else
+                        {
+                            if (Temas.tema_escuro == true)
+                            {
+                                row.DefaultCellStyle.BackColor = Color.FromArgb(100, 10, 10);
+                            }
+                            else
+                            {
+                                row.DefaultCellStyle.BackColor = Color.FromArgb(220, 110, 110);
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        if (Temas.tema_escuro == true)
+                        {
+                            row.DefaultCellStyle.BackColor = Color.FromArgb(100, 10, 10);
+                        }
+                        else
+                        {
+                            row.DefaultCellStyle.BackColor = Color.FromArgb(220, 110, 110);
+                        }
+                    }
+                    row.DefaultCellStyle.SelectionBackColor = row.DefaultCellStyle.BackColor;
+                }
+            }
+            else
+            {
+                foreach (DataGridViewRow row in grid_ingredientes.Rows)
+                {
+                    row.DefaultCellStyle.SelectionBackColor = Temas.cor_principal_secundaria;
+                }
+            }
+        }
+
+        private void grid_ingredientes_ColumnHeaderMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            foreach (DataGridViewRow x in grid_ingredientes.Rows)
+            {
+                x.MinimumHeight = 30;
+            }
+        }
+
+        private void grid_ingredientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (material == true)
+            {
+                DataGridViewRow row_ingrediente = grid_ingredientes.Rows[e.RowIndex];
+                Lista_itens.procura_item = true;
+                Lista_itens.nome_procura_item = row_ingrediente.Cells["nome_itens"].Value.ToString();
+                Lista_itens loja_person = new Lista_itens();
+                loja_person.ShowDialog();
+
             }
         }
     }
