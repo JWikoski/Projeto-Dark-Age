@@ -49,12 +49,12 @@ namespace Dark_Age.Componente
             // lbl_nome_perso
             // 
             this.lbl_nome_perso.AutoSize = true;
-            this.lbl_nome_perso.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_nome_perso.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_nome_perso.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbl_nome_perso.Location = new System.Drawing.Point(10, 8);
+            this.lbl_nome_perso.Location = new System.Drawing.Point(10, 6);
             this.lbl_nome_perso.MaximumSize = new System.Drawing.Size(190, 0);
             this.lbl_nome_perso.Name = "lbl_nome_perso";
-            this.lbl_nome_perso.Size = new System.Drawing.Size(66, 25);
+            this.lbl_nome_perso.Size = new System.Drawing.Size(57, 21);
             this.lbl_nome_perso.TabIndex = 4;
             this.lbl_nome_perso.Text = "Nome";
             // 
@@ -81,6 +81,7 @@ namespace Dark_Age.Componente
             // 
             // btn_aumenta_vida
             // 
+            this.btn_aumenta_vida.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_aumenta_vida.FlatAppearance.BorderSize = 0;
             this.btn_aumenta_vida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_aumenta_vida.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -118,11 +119,12 @@ namespace Dark_Age.Componente
             // 
             // btn_diminui_vida
             // 
+            this.btn_diminui_vida.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_diminui_vida.FlatAppearance.BorderSize = 0;
             this.btn_diminui_vida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_diminui_vida.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_diminui_vida.ForeColor = System.Drawing.Color.MediumSpringGreen;
-            this.btn_diminui_vida.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.btn_diminui_vida.IconChar = FontAwesome.Sharp.IconChar.Subtract;
             this.btn_diminui_vida.IconColor = System.Drawing.Color.MediumSpringGreen;
             this.btn_diminui_vida.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_diminui_vida.IconSize = 15;
@@ -138,11 +140,12 @@ namespace Dark_Age.Componente
             // 
             // btn_diminui_mana
             // 
+            this.btn_diminui_mana.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_diminui_mana.FlatAppearance.BorderSize = 0;
             this.btn_diminui_mana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_diminui_mana.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_diminui_mana.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.btn_diminui_mana.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.btn_diminui_mana.IconChar = FontAwesome.Sharp.IconChar.Subtract;
             this.btn_diminui_mana.IconColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_diminui_mana.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_diminui_mana.IconSize = 15;
@@ -175,6 +178,7 @@ namespace Dark_Age.Componente
             // 
             // btn_aumenta_mana
             // 
+            this.btn_aumenta_mana.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_aumenta_mana.FlatAppearance.BorderSize = 0;
             this.btn_aumenta_mana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_aumenta_mana.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);

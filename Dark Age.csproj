@@ -73,7 +73,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Habilidades_ativas.cs">
+    <Compile Update="Anotacoes_regras_gerais.cs">
 		  <SubType>Form</SubType>
 	  </Compile>
 	<Compile Update="Habilidades_passivas.cs">

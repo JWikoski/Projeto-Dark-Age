@@ -130,9 +130,9 @@ namespace Dark_Age
             txt_historia.Text = historia;
             txt_outros.Text = anotacoes;
 
-            timer1.Interval = 10;  //we'll increase the opacity every 10ms
-            timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
-            timer1.Start();
+            timer_opacidade.Interval = 10;  //we'll increase the opacity every 10ms
+            timer_opacidade.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
+            timer_opacidade.Start();
 
             carregar_monstros();
             carregar_data_grid();
@@ -145,7 +145,7 @@ namespace Dark_Age
         void fadeIn(object sender, EventArgs e)
         {
             if (Opacity >= 1)
-                timer1.Stop();   //this stops the timer if the form is completely displayed
+                timer_opacidade.Stop();   //this stops the timer if the form is completely displayed
             else
                 Opacity += 0.05;
         }
@@ -419,6 +419,7 @@ namespace Dark_Age
             panel13.Visible = true;
             pnl_chat.Visible = false;
             btn_iniciativa.Focus();
+            carregar_data_grid();
         }
 
         private void btn_chat_Click(object sender, EventArgs e)
@@ -620,6 +621,14 @@ namespace Dark_Age
         private void btn_chat_Leave(object sender, EventArgs e)
         {
             timer_chat.Stop();
+        }
+
+        private void timer_iniciativa_Tick(object sender, EventArgs e)
+        {
+            if(Grid_lista_iniciativas.Focused == false)
+            {
+                    carregar_data_grid();
+            }
         }
 
         public void checaguem_criacao_msg()
