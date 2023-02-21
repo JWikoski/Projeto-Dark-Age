@@ -15,9 +15,9 @@ namespace Dark_Age.Controllers
 			{
 				Random random = new Random();
 				int roll = random.Next(1, lados + 1);
-				valor_dados += roll + (valor_atribuido ?? 0);
+				valor_dados += roll;
 			}
-			return valor_dados;
+			return valor_dados + (valor_atribuido ?? 0);
 		}
 	}
 }

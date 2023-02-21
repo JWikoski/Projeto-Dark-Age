@@ -821,7 +821,7 @@ namespace Dark_Age.Enteties
 			comn.CommandType = CommandType.Text;
 			comn.CommandText = $@" INSERT INTO ""Dark_Age_Connection"".chat
                                     (data_hora, mensagem, fk_id_entidade, tipo_dado)
-                                    VALUES(NOW(), @mensagem, @id_entidade, @tipo_dado);";
+                                    VALUES(current_timestamp - INTERVAL '3 hours', @mensagem, @id_entidade, @tipo_dado);";
 			comn.Parameters.AddWithValue("@data_atual", data_atual);
 			comn.Parameters.AddWithValue("@mensagem", mensagem);
 			comn.Parameters.AddWithValue("@id_entidade", id_entidade_envio);

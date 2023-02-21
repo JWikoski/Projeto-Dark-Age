@@ -839,7 +839,6 @@ namespace Dark_Age
             pnl_chat.Visible = true;
 
             timer_chat.Start();
-            btn_chat.Focus();
 			pnl_mensagens.VerticalScroll.Value = pnl_mensagens.VerticalScroll.Maximum;
 		}
 
@@ -944,8 +943,11 @@ namespace Dark_Age
 
         private void timer_atualizar_informações_Tick(object sender, EventArgs e)
         {
-            salvar_info_pers();
-            carregar_iniciativa();
+            if (pnl_iniciativas.Visible == true)
+            {
+				salvar_info_pers();
+				carregar_iniciativa();
+			}
         }
 		private void d20_Click(object sender, EventArgs e)
 		{
@@ -988,7 +990,10 @@ namespace Dark_Age
 		}
 		private void timer_chat_Tick(object sender, EventArgs e)
         {
-            checaguem_criacao_msg();
+            if (pnl_chat.Visible == true)
+            {
+				checaguem_criacao_msg();
+			}
         }
 
         private void res_etiqueta_Click(object sender, EventArgs e)
@@ -1053,7 +1058,7 @@ namespace Dark_Age
 
         private void res_conjurar_Click(object sender, EventArgs e)
         {
-			jogar_dados(1, 20, Ficha.bd_lancarmagia, "conjurar Magia");
+			jogar_dados(1, 20, Ficha.bd_lancarmagia, "Conjurar Magia");
 		}
 
         private void res_atirar_Click(object sender, EventArgs e)
@@ -1063,7 +1068,7 @@ namespace Dark_Age
 
         private void res_contrataque_Click(object sender, EventArgs e)
         {
-			jogar_dados(1, 20, Ficha.bd_contra_atq, "Contra Ataue");
+			jogar_dados(1, 20, Ficha.bd_contra_atq, "Contra Ataque");
 		}
 
         private void res_defesa_Click(object sender, EventArgs e)
@@ -1131,10 +1136,10 @@ namespace Dark_Age
             label.BackColor = Color.Transparent;
         }
 
-        private void btn_chat_Leave(object sender, EventArgs e)
+        private void botao_talento_atributo1_Click(object sender, EventArgs e)
         {
-            timer_chat.Stop();
-        }
+            MessageBox.Show("Teste");
+		}
 
         public void checaguem_criacao_msg()
 		{
