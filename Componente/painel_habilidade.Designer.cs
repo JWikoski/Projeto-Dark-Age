@@ -45,7 +45,7 @@ namespace Dark_Age.Componente
             this.titulo_hab.BackColor = System.Drawing.Color.Transparent;
             this.titulo_hab.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.titulo_hab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(167)))), ((int)(((byte)(110)))));
-            this.titulo_hab.Location = new System.Drawing.Point(0, 0);
+            this.titulo_hab.Location = new System.Drawing.Point(10, 2);
             this.titulo_hab.Name = "titulo_hab";
             this.titulo_hab.Size = new System.Drawing.Size(0, 31);
             this.titulo_hab.TabIndex = 0;
@@ -60,12 +60,12 @@ namespace Dark_Age.Componente
             this.custo_tipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.custo_tipo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.custo_tipo.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.custo_tipo.IconChar = FontAwesome.Sharp.IconChar.Tint;
+            this.custo_tipo.IconChar = FontAwesome.Sharp.IconChar.Droplet;
             this.custo_tipo.IconColor = System.Drawing.Color.DeepSkyBlue;
             this.custo_tipo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.custo_tipo.IconSize = 20;
             this.custo_tipo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.custo_tipo.Location = new System.Drawing.Point(325, -2);
+            this.custo_tipo.Location = new System.Drawing.Point(327, 0);
             this.custo_tipo.Name = "custo_tipo";
             this.custo_tipo.Size = new System.Drawing.Size(163, 28);
             this.custo_tipo.TabIndex = 6;
@@ -80,7 +80,7 @@ namespace Dark_Age.Componente
             this.custo_extra.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.custo_extra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(167)))), ((int)(((byte)(110)))));
             this.custo_extra.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.custo_extra.Location = new System.Drawing.Point(325, 24);
+            this.custo_extra.Location = new System.Drawing.Point(327, 26);
             this.custo_extra.Name = "custo_extra";
             this.custo_extra.Size = new System.Drawing.Size(163, 14);
             this.custo_extra.TabIndex = 8;
@@ -110,11 +110,13 @@ namespace Dark_Age.Componente
             // 
             // pnl_hab
             // 
+            this.pnl_hab.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pnl_hab.AutoScroll = true;
             this.pnl_hab.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.pnl_hab.Location = new System.Drawing.Point(0, 45);
+            this.pnl_hab.Location = new System.Drawing.Point(0, 43);
+            this.pnl_hab.MaximumSize = new System.Drawing.Size(582, 1170);
             this.pnl_hab.Name = "pnl_hab";
-            this.pnl_hab.Size = new System.Drawing.Size(582, 115);
+            this.pnl_hab.Size = new System.Drawing.Size(582, 117);
             this.pnl_hab.TabIndex = 10;
             // 
             // armazena_tipo
@@ -139,7 +141,8 @@ namespace Dark_Age.Componente
             // 
             // painel_habilidade
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.armazena_custo);
             this.Controls.Add(this.armazena_tipo);
@@ -148,9 +151,10 @@ namespace Dark_Age.Componente
             this.Controls.Add(this.custo_extra);
             this.Controls.Add(this.custo_tipo);
             this.Controls.Add(this.titulo_hab);
-            this.MaximumSize = new System.Drawing.Size(570, 160);
+            this.MaximumSize = new System.Drawing.Size(570, 1600);
             this.Name = "painel_habilidade";
             this.Size = new System.Drawing.Size(570, 160);
+            this.Load += new System.EventHandler(this.painel_habilidade_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

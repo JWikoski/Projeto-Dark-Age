@@ -33,5 +33,9 @@ namespace Dark_Age.Componente
 		{
 		}
 
-	}
+        private void lbl_valor_Click(object sender, EventArgs e)
+        {
+			MessageBox.Show("balita");
+        }
+    }
 }

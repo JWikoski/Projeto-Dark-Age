@@ -358,7 +358,7 @@ namespace Dark_Age
 
         private void button8_Click(object sender, EventArgs e)
         {
-            Habilidades_ativas frn = new Habilidades_ativas();
+            Anotacoes_regras_gerais frn = new Anotacoes_regras_gerais();
             frn.Show();
         }
 
@@ -1134,6 +1134,15 @@ namespace Dark_Age
         private void btn_chat_Leave(object sender, EventArgs e)
         {
             timer_chat.Stop();
+        }
+
+        private void txt_mensagem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Conexao_BD.envia_mensagem_chat(DateTime.Now, txt_mensagem.Text, Campanha.id_entidade, "");
+                txt_mensagem.Clear();
+            }
         }
 
         public void checaguem_criacao_msg()

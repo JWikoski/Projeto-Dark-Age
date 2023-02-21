@@ -386,7 +386,6 @@
 			this.botao_talento_atributo1.Size = new System.Drawing.Size(128, 46);
 			this.botao_talento_atributo1.TabIndex = 70;
 			this.botao_talento_atributo1.Valor = null;
-			this.botao_talento_atributo1.Click_M += new System.EventHandler(this.botao_talento_atributo1_Click_M);
 			// 
 			// botao_talento_atributo2
 			// 

@@ -30,13 +30,11 @@ namespace Dark_Age.Componente
 		{
 			InitializeComponent();
 			pnl_color.BackColor = Temas.cor_principal_secundaria;
-			pnl_color.BorderStyle = BorderStyle.FixedSingle;
 			pnl_color.ForeColor = System.Drawing.Color.White;
+			pnl_color.BorderStyle = BorderStyle.FixedSingle;
 			//lbl_hora.ForeColor = Color.Bott;
 			//lbl_nome_pers.ForeColor = cor_escrita;
 			//lbl_mensagem.ForeColor = cor_fundo;
-
-
 		}
 
 		public void preencher_info()
@@ -45,6 +43,14 @@ namespace Dark_Age.Componente
 			lbl_hora.Text = Hora;
 			lbl_nome_pers.Text = Nome_personagem;
 			lbl_tipo.Text = Tipo_dado ?? "";
+			if(Tipo_dado != "")
+            {
+				lbl_mensagem.Font = new Font("Segoe UI", 15);
+            }
+            else
+            {
+				lbl_mensagem.Font = new Font("Segoe UI", 11);
+			}
 		}
 
 		public void alterar_cor(Color cor_fundo, Color cor_escrita)
@@ -58,8 +64,9 @@ namespace Dark_Age.Componente
 		private void panel1_Paint(object sender, PaintEventArgs e)
 		{
 			panel1.BorderStyle = BorderStyle.None;
-			Pen pen = new Pen(Color.White, 3);
+			Pen pen = new Pen(Color.White, 1);
 			e.Graphics.DrawLine(pen, new Point(0, 0), new Point(0, panel1.Height));
+
 		}
 
 		private void pnl_color_Paint(object sender, PaintEventArgs e)

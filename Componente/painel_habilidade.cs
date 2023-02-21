@@ -44,7 +44,6 @@ namespace Dark_Age.Componente
                 custo_extra.Text = extra;
                 custo_tipo.Visible = true;
                 custo_extra.Visible = true;
-                
             }
             else
             {
@@ -193,5 +192,9 @@ namespace Dark_Age.Componente
             }
         }
 
+        private void painel_habilidade_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
