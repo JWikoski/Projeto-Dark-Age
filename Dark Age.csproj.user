@@ -55,8 +55,5 @@
     <Compile Update="Temas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="teste.cs">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
 </Project>

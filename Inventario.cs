@@ -915,6 +915,7 @@ namespace Dark_Age
 
         private void Atualizar_inventário_timer_Tick(object sender, EventArgs e)
         {
+
         }
 
         private void recaregar_Click(object sender, EventArgs e)
@@ -1012,101 +1013,5 @@ namespace Dark_Age
         {
             Grid_lista_itens_CellClick(sender, e);
         }
-
-        private void button6_MouseEnter(object sender, EventArgs e)
-        {
-            button6.ForeColor = Color.GreenYellow;
-            iconButton7.IconColor = Color.GreenYellow;
-        }
-
-        private void button6_MouseLeave(object sender, EventArgs e)
-        {
-            button6.ForeColor = Color.LightGreen;
-            iconButton7.IconColor = Color.LightGreen;
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            if(pnl_enviar.Visible == true)
-            {
-                pnl_enviar.Visible = false;
-            }
-            else
-            {
-                pnl_enviar.Visible = true;
-            }
-        }
-
-        private void iconButton10_Click(object sender, EventArgs e)
-        {
-            pnl_enviar.Visible = false;
-        }
-
-        private void iconButton9_Click(object sender, EventArgs e)
-        {
-            if (qtd_enviar < qtd)
-            {
-                qtd_enviar++;
-                lbl_qtd_enviar.Text = qtd_enviar.ToString();
-            }
-
-            if (qtd_enviar > 1)
-            {
-                iconButton8.Visible = true;
-            }
-        }
-
-        private void iconButton8_Click(object sender, EventArgs e)
-        {
-
-            qtd_enviar--;
-            lbl_qtd_enviar.Text = qtd_enviar.ToString();
-
-            if (qtd_enviar == 1)
-            {
-                iconButton8.Visible = false;
-            }
-        }
-
-        private void Grid_lista_personagens_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow row = Grid_lista_personagens.Rows[e.RowIndex];
-            id_personagem = (int)row.Cells[0].Value;
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            Conexao_BD.insert_item_inventario(id_item, qtd_enviar, id_personagem);
-
-            if (qtd == qtd_enviar)
-            {
-                Conexao_BD.delete_item_inventario(id_item, Campanha.id_personagem);
-            }
-            else
-            {
-                Conexao_BD.update_qtd_inventario(id_item, qtd - qtd_enviar, Campanha.id_personagem);
-            }
-
-            qtd_enviar = 1;
-            lbl_qtd_enviar.Text = "1";
-            Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico, Campanha.id_personagem);
-            carregar_data_grid();
-            carregar_data_grid_equipados();
-            limpar_filtros();
-            pnl_enviar.Visible = false;
-            iconButton8.Visible = false;
-        }
-
-        private void Atualizar_inventário_timer_Tick(object sender, EventArgs e)
-        {
-        }
-
-        private void recaregar_Click(object sender, EventArgs e)
-        {
-            carregar_data_grid();
-            carregar_data_grid_equipados();
-            limpar_filtros();
-        }
-
     }
 }

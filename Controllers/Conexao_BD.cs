@@ -933,7 +933,7 @@ namespace Dark_Age.Enteties
 
             comm.Connection = conn;
             comm.CommandType = CommandType.Text;
-            comm.CommandText = $@"UPDATE ""Dark_Age_Connection"".""Inter_status_personagem""
+            comm.CommandText = $@"UPDATE ""Dark_Age_Connection"".""Inter_status_pers""
                                   SET sanidade_mod = @sanidade_mod
                                   WHERE fk_id_personagem = @id_personagem";
             comm.Parameters.AddWithValue("@id_personagem", id_personagem);

@@ -202,7 +202,7 @@ namespace Dark_Age
 
             iconButton3.IconChar = FontAwesome.Sharp.IconChar.Minimize;
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
-           
+
             timer1.Interval = 10;  //we'll increase the opacity every 10ms
             timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
             timer2.Interval = 10;
@@ -216,7 +216,7 @@ namespace Dark_Age
             preencher_info_tela();
             checaguem_criacao_msg();
 
-           
+
             timer_atualizar_informações.Start();
         }
         void fadeIn(object sender, EventArgs e)
@@ -259,7 +259,7 @@ namespace Dark_Age
         }
         void fadeOut(object sender, EventArgs e)
         {
-            if(Form1.ActiveForm.BackgroundImage != null)
+            if (Form1.ActiveForm.BackgroundImage != null)
             {
                 tmp_bkgd = Form1.ActiveForm.BackgroundImage;
             }
@@ -544,7 +544,7 @@ namespace Dark_Age
                     }
 
                 }
-                else 
+                else
                 {
                     lbl_sanidade.Text = numericUpDown2.Value + "/" + (sanidade_max);
                     decimal porcentagem2 = (((decimal)sanidade_atual - (decimal)Convert.ToInt32(numericUpDown2.Value)) * 100) / ((decimal)sanidade_max);
@@ -913,8 +913,8 @@ namespace Dark_Age
             pnl_chat.Visible = true;
 
             timer_chat.Start();
-			pnl_mensagens.VerticalScroll.Value = pnl_mensagens.VerticalScroll.Maximum;
-		}
+            pnl_mensagens.VerticalScroll.Value = pnl_mensagens.VerticalScroll.Maximum;
+        }
 
         private void lbl_bvd_Click(object sender, EventArgs e)
         {
@@ -1064,7 +1064,7 @@ namespace Dark_Age
         }
         private void timer_chat_Tick(object sender, EventArgs e)
         {
-            if(pnl_chat.Visible == true)
+            if (pnl_chat.Visible == true)
             {
                 checaguem_criacao_msg();
             }
@@ -1226,7 +1226,7 @@ namespace Dark_Age
 
         private void iconButton11_Click(object sender, EventArgs e)
         {
-            if(morte1.IconColor == Color.Salmon)
+            if (morte1.IconColor == Color.Salmon)
             {
                 morte1.IconColor = Color.Silver;
             }
@@ -1240,9 +1240,9 @@ namespace Dark_Age
 
         private void iconButton12_Click(object sender, EventArgs e)
         {
-             morte1.IconColor = Color.Salmon;
-             morte2.IconColor = Color.Salmon;
-             morte3.IconColor = Color.Silver;
+            morte1.IconColor = Color.Salmon;
+            morte2.IconColor = Color.Salmon;
+            morte3.IconColor = Color.Silver;
         }
 
         private void morte3_Click(object sender, EventArgs e)
