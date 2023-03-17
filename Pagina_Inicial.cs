@@ -20,6 +20,7 @@ namespace Dark_Age
         public int expand = 1;
         public static string texto_imagem;
         public Boolean minmax = true;
+        public static Boolean imagem_tema;
         public static int vida_maxima;
         public static int vida_atual;
         public static int sanidade_max;
@@ -29,6 +30,11 @@ namespace Dark_Age
         public static int adicional_atual;
         public static int adicional_max;
         public static int escudo;
+        public static Image tmp_bkgd;
+
+        public static int cont_morte = 0;
+        public static int cont_sucesso = 0;
+
         public static byte[] imagem_personagem;
         public static Image imagem_person;
         public static Color cor_fundo = Color.FromArgb(10, 16, 20);
@@ -196,14 +202,7 @@ namespace Dark_Age
 
             iconButton3.IconChar = FontAwesome.Sharp.IconChar.Minimize;
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
-            if (Temas.tema_claro == true)
-            {
-                radioButton4.Checked = true;
-            }
-            else
-            {
-                radioButton3.Checked = true;
-            }
+           
             timer1.Interval = 10;  //we'll increase the opacity every 10ms
             timer1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
             timer2.Interval = 10;
@@ -217,10 +216,19 @@ namespace Dark_Age
             preencher_info_tela();
             checaguem_criacao_msg();
 
+           
             timer_atualizar_informações.Start();
         }
         void fadeIn(object sender, EventArgs e)
         {
+            if (Temas.tema_claro == true)
+            {
+                radioButton4.Checked = true;
+            }
+            else
+            {
+                radioButton3.Checked = true;
+            }
             if (Opacity >= 1)
             {
                 timer1.Stop();
@@ -234,6 +242,10 @@ namespace Dark_Age
         }
         void fadeIn2(object sender, EventArgs e)
         {
+            if (imagem_tema == true)
+            {
+                Form1.ActiveForm.BackgroundImage = tmp_bkgd;
+            }
             if (Opacity >= 1)
             {
                 timer1.Stop();
@@ -247,6 +259,11 @@ namespace Dark_Age
         }
         void fadeOut(object sender, EventArgs e)
         {
+            if(Form1.ActiveForm.BackgroundImage != null)
+            {
+                tmp_bkgd = Form1.ActiveForm.BackgroundImage;
+            }
+            Form1.ActiveForm.BackgroundImage = null;
             if (Opacity <= 0)
             {
                 if (minmax == true)
@@ -350,7 +367,7 @@ namespace Dark_Age
 
         private void btn_cria_personagem_Click(object sender, EventArgs e)
         {
-            Habilidades_passivas frm = new Habilidades_passivas();
+            Habilidades frm = new Habilidades();
             frm.ShowDialog();
             numericUpDown1.Value = vida_atual;
             numericUpDown2.Value = sanidade_atual;
@@ -388,26 +405,31 @@ namespace Dark_Age
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             Form1.ActiveForm.BackgroundImage = global::Dark_Age.Properties.Resources.image;
+            imagem_tema = true;
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
             Form1.ActiveForm.BackgroundImage = global::Dark_Age.Properties.Resources.castle2;
+            imagem_tema = true;
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             Form1.ActiveForm.BackgroundImage = global::Dark_Age.Properties.Resources.festival2;
+            imagem_tema = true;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             Form1.ActiveForm.BackgroundImage = global::Dark_Age.Properties.Resources.k7wvl1;
+            imagem_tema = true;
         }
         private void radioButton5_CheckedChanged(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(10, 16, 20);
             Form1.ActiveForm.BackgroundImage = null;
+            imagem_tema = false;
         }
 
 
@@ -793,6 +815,7 @@ namespace Dark_Age
                 cor_fundo = MyDialog.Color;
             this.BackColor = MyDialog.Color;
             Form1.ActiveForm.BackgroundImage = null;
+            imagem_tema = false;
         }
 
         private void carregar_danos()
@@ -890,8 +913,8 @@ namespace Dark_Age
             pnl_chat.Visible = true;
 
             timer_chat.Start();
-            pnl_mensagens.VerticalScroll.Value = pnl_mensagens.VerticalScroll.Maximum;
-        }
+			pnl_mensagens.VerticalScroll.Value = pnl_mensagens.VerticalScroll.Maximum;
+		}
 
         private void lbl_bvd_Click(object sender, EventArgs e)
         {
@@ -1041,9 +1064,13 @@ namespace Dark_Age
         }
         private void timer_chat_Tick(object sender, EventArgs e)
         {
-            if (pnl_chat.Visible == true)
+            if(pnl_chat.Visible == true)
             {
                 checaguem_criacao_msg();
+            }
+            else
+            {
+                timer_chat.Stop();
             }
         }
 
@@ -1187,10 +1214,6 @@ namespace Dark_Age
             label.BackColor = Color.Transparent;
         }
 
-        private void botao_talento_atributo1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Teste");
-        }
 
         private void txt_mensagem_KeyDown(object sender, KeyEventArgs e)
         {
@@ -1199,6 +1222,62 @@ namespace Dark_Age
                 Conexao_BD.envia_mensagem_chat(DateTime.Now, txt_mensagem.Text, Campanha.id_entidade, "");
                 txt_mensagem.Clear();
             }
+        }
+
+        private void iconButton11_Click(object sender, EventArgs e)
+        {
+            if(morte1.IconColor == Color.Salmon)
+            {
+                morte1.IconColor = Color.Silver;
+            }
+            else
+            {
+                morte1.IconColor = Color.Salmon;
+            }
+            morte2.IconColor = Color.Silver;
+            morte3.IconColor = Color.Silver;
+        }
+
+        private void iconButton12_Click(object sender, EventArgs e)
+        {
+             morte1.IconColor = Color.Salmon;
+             morte2.IconColor = Color.Salmon;
+             morte3.IconColor = Color.Silver;
+        }
+
+        private void morte3_Click(object sender, EventArgs e)
+        {
+            morte1.IconColor = Color.Salmon;
+            morte2.IconColor = Color.Salmon;
+            morte3.IconColor = Color.Salmon;
+        }
+
+        private void sucesso1_Click(object sender, EventArgs e)
+        {
+            if (sucesso1.IconColor == Color.LimeGreen)
+            {
+                sucesso1.IconColor = Color.Silver;
+            }
+            else
+            {
+                sucesso1.IconColor = Color.LimeGreen;
+            }
+            sucesso2.IconColor = Color.Silver;
+            sucesso3.IconColor = Color.Silver;
+        }
+
+        private void sucesso2_Click(object sender, EventArgs e)
+        {
+            sucesso1.IconColor = Color.LimeGreen;
+            sucesso2.IconColor = Color.LimeGreen;
+            sucesso3.IconColor = Color.Silver;
+        }
+
+        private void sucesso3_Click(object sender, EventArgs e)
+        {
+            sucesso1.IconColor = Color.LimeGreen;
+            sucesso2.IconColor = Color.LimeGreen;
+            sucesso3.IconColor = Color.LimeGreen;
         }
 
         public void checaguem_criacao_msg()

@@ -71,7 +71,7 @@ namespace Dark_Age
             this.lbl_vigor.BackColor = System.Drawing.Color.Transparent;
             this.lbl_vigor.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_vigor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
-            this.lbl_vigor.Location = new System.Drawing.Point(288, 280);
+            this.lbl_vigor.Location = new System.Drawing.Point(279, 280);
             this.lbl_vigor.Name = "lbl_vigor";
             this.lbl_vigor.Size = new System.Drawing.Size(63, 23);
             this.lbl_vigor.TabIndex = 106;
@@ -83,7 +83,7 @@ namespace Dark_Age
             this.lbl_magia.BackColor = System.Drawing.Color.Transparent;
             this.lbl_magia.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_magia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
-            this.lbl_magia.Location = new System.Drawing.Point(282, 247);
+            this.lbl_magia.Location = new System.Drawing.Point(273, 247);
             this.lbl_magia.Name = "lbl_magia";
             this.lbl_magia.Size = new System.Drawing.Size(69, 23);
             this.lbl_magia.TabIndex = 105;
@@ -95,7 +95,7 @@ namespace Dark_Age
             this.lbl_raci.BackColor = System.Drawing.Color.Transparent;
             this.lbl_raci.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_raci.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
-            this.lbl_raci.Location = new System.Drawing.Point(185, 280);
+            this.lbl_raci.Location = new System.Drawing.Point(176, 280);
             this.lbl_raci.Name = "lbl_raci";
             this.lbl_raci.Size = new System.Drawing.Size(95, 23);
             this.lbl_raci.TabIndex = 104;
@@ -107,7 +107,7 @@ namespace Dark_Age
             this.lbl_caris.BackColor = System.Drawing.Color.Transparent;
             this.lbl_caris.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_caris.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
-            this.lbl_caris.Location = new System.Drawing.Point(96, 280);
+            this.lbl_caris.Location = new System.Drawing.Point(87, 280);
             this.lbl_caris.Name = "lbl_caris";
             this.lbl_caris.Size = new System.Drawing.Size(84, 23);
             this.lbl_caris.TabIndex = 103;
@@ -119,7 +119,7 @@ namespace Dark_Age
             this.lbl_dest.BackColor = System.Drawing.Color.Transparent;
             this.lbl_dest.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_dest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
-            this.lbl_dest.Location = new System.Drawing.Point(186, 247);
+            this.lbl_dest.Location = new System.Drawing.Point(177, 247);
             this.lbl_dest.Name = "lbl_dest";
             this.lbl_dest.Size = new System.Drawing.Size(87, 23);
             this.lbl_dest.TabIndex = 102;
@@ -131,7 +131,7 @@ namespace Dark_Age
             this.lbl_forca.BackColor = System.Drawing.Color.Transparent;
             this.lbl_forca.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_forca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
-            this.lbl_forca.Location = new System.Drawing.Point(101, 247);
+            this.lbl_forca.Location = new System.Drawing.Point(92, 247);
             this.lbl_forca.Name = "lbl_forca";
             this.lbl_forca.Size = new System.Drawing.Size(66, 23);
             this.lbl_forca.TabIndex = 101;

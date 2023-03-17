@@ -26,7 +26,7 @@ namespace Dark_Age.Componente
             desc_habilidade.Left = 10;
             desc_habilidade.AutoSize = true;
             desc_habilidade.MinimumSize = new Size(0, 20);
-            desc_habilidade.MaximumSize = new Size(550, 2000);
+            desc_habilidade.MaximumSize = new Size(540, 0);
             desc_habilidade.Text = "";
 
             pnl_hab.Controls.Add(desc_habilidade);
@@ -34,9 +34,7 @@ namespace Dark_Age.Componente
             titulo_hab.Text = titulo;
             desc_habilidade.Text = text;
 
-            
-
-            if (tipo_habilidade != "Sem Custo" || Habilidades_passivas.tipo_hab == true)
+            if (tipo_habilidade != "Sem Custo" || Habilidades.tipo_hab == true)
             {
                 armazena_custo.Text = valor_hab.ToString();
                 armazena_tipo.Text = tipo_habilidade;

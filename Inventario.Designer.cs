@@ -106,6 +106,9 @@ namespace Dark_Age
             this.iconButton10 = new FontAwesome.Sharp.IconButton();
             this.button8 = new System.Windows.Forms.Button();
             this.recaregar = new FontAwesome.Sharp.IconButton();
+            this.grid_ingredientes = new System.Windows.Forms.DataGridView();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.moedas_ouro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moedas_prata)).BeginInit();
             this.panel2.SuspendLayout();
@@ -121,6 +124,7 @@ namespace Dark_Age
             this.pnl_remover_item.SuspendLayout();
             this.pnl_enviar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_lista_personagens)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_ingredientes)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -219,7 +223,7 @@ namespace Dark_Age
             this.panel2.Controls.Add(this.moedas_prata);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.moedas_ouro);
-            this.panel2.Location = new System.Drawing.Point(12, 24);
+            this.panel2.Location = new System.Drawing.Point(12, 28);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(321, 776);
             this.panel2.TabIndex = 85;
@@ -393,7 +397,7 @@ namespace Dark_Age
             this.panel8.BackColor = System.Drawing.Color.Transparent;
             this.panel8.Controls.Add(this.iconButton3);
             this.panel8.Controls.Add(this.iconButton6);
-            this.panel8.Location = new System.Drawing.Point(2, -1);
+            this.panel8.Location = new System.Drawing.Point(2, 3);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1660, 62);
             this.panel8.TabIndex = 89;
@@ -758,6 +762,7 @@ namespace Dark_Age
             this.Grid_lista_inventario.VirtualMode = true;
             this.Grid_lista_inventario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_lista_itens_CellClick);
             this.Grid_lista_inventario.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_lista_inventario_ColumnHeaderMouseClick);
+            this.Grid_lista_inventario.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_lista_inventario_RowEnter);
             this.Grid_lista_inventario.Click += new System.EventHandler(this.Inventario_Click);
             // 
             // limpar_filtros1
@@ -791,22 +796,24 @@ namespace Dark_Age
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.Controls.Add(this.text_descricao);
-            this.panel5.Location = new System.Drawing.Point(1241, 166);
+            this.panel5.Location = new System.Drawing.Point(1239, 357);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(383, 319);
+            this.panel5.Size = new System.Drawing.Size(383, 163);
             this.panel5.TabIndex = 148;
             this.panel5.Click += new System.EventHandler(this.Inventario_Click);
             // 
             // text_descricao
             // 
+            this.text_descricao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.text_descricao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(146)))), ((int)(((byte)(182)))));
             this.text_descricao.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.text_descricao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.text_descricao.ForeColor = System.Drawing.Color.White;
-            this.text_descricao.Location = new System.Drawing.Point(17, 13);
+            this.text_descricao.Location = new System.Drawing.Point(17, 8);
             this.text_descricao.Name = "text_descricao";
             this.text_descricao.ReadOnly = true;
-            this.text_descricao.Size = new System.Drawing.Size(354, 303);
+            this.text_descricao.Size = new System.Drawing.Size(354, 152);
             this.text_descricao.TabIndex = 1;
             this.text_descricao.Text = "";
             this.text_descricao.Click += new System.EventHandler(this.Inventario_Click);
@@ -823,7 +830,7 @@ namespace Dark_Age
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1.Location = new System.Drawing.Point(1292, 509);
+            this.button1.Location = new System.Drawing.Point(1290, 545);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(332, 54);
             this.button1.TabIndex = 149;
@@ -840,7 +847,7 @@ namespace Dark_Age
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Dark_Age.Properties.Resources.mochila_fechada;
-            this.pictureBox1.Location = new System.Drawing.Point(1241, 509);
+            this.pictureBox1.Location = new System.Drawing.Point(1239, 545);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(54, 54);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -858,7 +865,7 @@ namespace Dark_Age
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(1356, 126);
+            this.label6.Location = new System.Drawing.Point(1354, 318);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(163, 25);
             this.label6.TabIndex = 151;
@@ -884,7 +891,7 @@ namespace Dark_Age
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::Dark_Age.Properties.Resources.lixo_fechado1;
-            this.pictureBox2.Location = new System.Drawing.Point(1255, 706);
+            this.pictureBox2.Location = new System.Drawing.Point(1255, 722);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(40, 40);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -907,7 +914,7 @@ namespace Dark_Age
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.LightSalmon;
-            this.button3.Location = new System.Drawing.Point(1299, 706);
+            this.button3.Location = new System.Drawing.Point(1299, 722);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(325, 40);
             this.button3.TabIndex = 163;
@@ -931,7 +938,7 @@ namespace Dark_Age
             this.pnl_remover_item.Controls.Add(this.label9);
             this.pnl_remover_item.Controls.Add(this.iconButton5);
             this.pnl_remover_item.Controls.Add(this.button4);
-            this.pnl_remover_item.Location = new System.Drawing.Point(1229, 591);
+            this.pnl_remover_item.Location = new System.Drawing.Point(674, 569);
             this.pnl_remover_item.Name = "pnl_remover_item";
             this.pnl_remover_item.Size = new System.Drawing.Size(383, 165);
             this.pnl_remover_item.TabIndex = 165;
@@ -953,7 +960,7 @@ namespace Dark_Age
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(120, 23);
             this.button5.TabIndex = 166;
-            this.button5.Text = "Adicionar tudo";
+            this.button5.Text = "Remover/usar tudo";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             this.button5.MouseEnter += new System.EventHandler(this.iconButton5_MouseEnter);
@@ -1107,7 +1114,7 @@ namespace Dark_Age
             this.iconButton7.IconColor = System.Drawing.Color.LightGreen;
             this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton7.IconSize = 30;
-            this.iconButton7.Location = new System.Drawing.Point(1299, 584);
+            this.iconButton7.Location = new System.Drawing.Point(1299, 610);
             this.iconButton7.Name = "iconButton7";
             this.iconButton7.Size = new System.Drawing.Size(41, 42);
             this.iconButton7.TabIndex = 166;
@@ -1130,7 +1137,7 @@ namespace Dark_Age
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button6.ForeColor = System.Drawing.Color.LightGreen;
-            this.button6.Location = new System.Drawing.Point(1342, 584);
+            this.button6.Location = new System.Drawing.Point(1340, 609);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(282, 42);
             this.button6.TabIndex = 167;
@@ -1153,7 +1160,7 @@ namespace Dark_Age
             this.pnl_enviar.Controls.Add(this.label13);
             this.pnl_enviar.Controls.Add(this.iconButton10);
             this.pnl_enviar.Controls.Add(this.button8);
-            this.pnl_enviar.Location = new System.Drawing.Point(1229, 500);
+            this.pnl_enviar.Location = new System.Drawing.Point(674, 398);
             this.pnl_enviar.Name = "pnl_enviar";
             this.pnl_enviar.Size = new System.Drawing.Size(383, 165);
             this.pnl_enviar.TabIndex = 168;
@@ -1340,6 +1347,86 @@ namespace Dark_Age
             this.recaregar.UseVisualStyleBackColor = false;
             this.recaregar.Click += new System.EventHandler(this.recaregar_Click);
             // 
+            // grid_ingredientes
+            // 
+            this.grid_ingredientes.AllowUserToAddRows = false;
+            this.grid_ingredientes.AllowUserToDeleteRows = false;
+            this.grid_ingredientes.AllowUserToOrderColumns = true;
+            this.grid_ingredientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.grid_ingredientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grid_ingredientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.grid_ingredientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(176)))), ((int)(((byte)(200)))));
+            this.grid_ingredientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.grid_ingredientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.grid_ingredientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(37)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_ingredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.grid_ingredientes.ColumnHeadersHeight = 30;
+            this.grid_ingredientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid_ingredientes.DefaultCellStyle = dataGridViewCellStyle11;
+            this.grid_ingredientes.EnableHeadersVisualStyles = false;
+            this.grid_ingredientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            this.grid_ingredientes.Location = new System.Drawing.Point(1241, 127);
+            this.grid_ingredientes.MultiSelect = false;
+            this.grid_ingredientes.Name = "grid_ingredientes";
+            this.grid_ingredientes.ReadOnly = true;
+            this.grid_ingredientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(57)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_ingredientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.grid_ingredientes.RowHeadersVisible = false;
+            this.grid_ingredientes.RowTemplate.Height = 10;
+            this.grid_ingredientes.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_ingredientes.Size = new System.Drawing.Size(383, 151);
+            this.grid_ingredientes.TabIndex = 175;
+            this.grid_ingredientes.VirtualMode = true;
+            this.grid_ingredientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_ingredientes_CellClick);
+            this.grid_ingredientes.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grid_ingredientes_ColumnHeaderMouseClick_1);
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(1241, 85);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(383, 25);
+            this.label11.TabIndex = 174;
+            this.label11.Text = "Ingredientes para fabricação";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label12.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label12.Location = new System.Drawing.Point(1241, 110);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(383, 18);
+            this.label12.TabIndex = 176;
+            this.label12.Text = "(Clique no item abaixo para abrir na loja)";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label12.Visible = false;
+            // 
             // Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1348,6 +1435,9 @@ namespace Dark_Age
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(146)))), ((int)(((byte)(182)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1660, 800);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.grid_ingredientes);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.recaregar);
             this.Controls.Add(this.pnl_enviar);
             this.Controls.Add(this.pnl_remover_item);
@@ -1396,6 +1486,7 @@ namespace Dark_Age
             this.pnl_enviar.ResumeLayout(false);
             this.pnl_enviar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_lista_personagens)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_ingredientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1468,5 +1559,8 @@ namespace Dark_Age
         private System.Windows.Forms.Button button8;
         public System.Windows.Forms.DataGridView Grid_lista_personagens;
         private FontAwesome.Sharp.IconButton recaregar;
+        public System.Windows.Forms.DataGridView grid_ingredientes;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
     }
 }
