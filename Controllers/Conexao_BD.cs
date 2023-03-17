@@ -875,5 +875,21 @@ namespace Dark_Age.Enteties
 			comn.Parameters.AddWithValue("@tipo_dado", tipo_dado);
 			comn.ExecuteNonQuery();
 		}
+
+        public static void update_sanidade_mod(int sanidade_mod, int id_personagem)
+        {
+            using NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
+            conn.Open();
+            using NpgsqlCommand comm = new NpgsqlCommand();
+
+            comm.Connection = conn;
+            comm.CommandType = CommandType.Text;
+            comm.CommandText = $@"UPDATE ""Dark_Age_Connection"".""Inter_status_pers""
+                                  SET sanidade_mod = @sanidade_mod
+                                  WHERE fk_id_personagem = @id_personagem";
+            comm.Parameters.AddWithValue("@id_personagem", id_personagem);
+            comm.Parameters.AddWithValue("@sanidade_mod", sanidade_mod);
+            comm.ExecuteNonQuery();
+        }
 	}
 }

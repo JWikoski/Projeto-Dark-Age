@@ -13,6 +13,9 @@
     <Compile Update="Chat.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Componente\botao_talento_atributo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Componente\label_com_image.cs">
       <SubType>UserControl</SubType>
     </Compile>

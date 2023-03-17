@@ -29,1906 +29,1877 @@ namespace Dark_Age
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ficha));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.lbl_fechar_personagem = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lbl_destreza = new System.Windows.Forms.Label();
-            this.lbl_vigor = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.lbl_raciocinio = new System.Windows.Forms.Label();
-            this.lbl_carisma = new System.Windows.Forms.Label();
-            this.lbl_forca = new System.Windows.Forms.Label();
-            this.lbl_magia = new System.Windows.Forms.Label();
-            this.btn_forcasum = new System.Windows.Forms.Button();
-            this.btn_forcasub = new System.Windows.Forms.Button();
-            this.btn_destrezasub = new System.Windows.Forms.Button();
-            this.btn_destrezasum = new System.Windows.Forms.Button();
-            this.btn_vigorsub = new System.Windows.Forms.Button();
-            this.btn_vigorsum = new System.Windows.Forms.Button();
-            this.btn_carismasub = new System.Windows.Forms.Button();
-            this.btn_carismasum = new System.Windows.Forms.Button();
-            this.btn_raciosub = new System.Windows.Forms.Button();
-            this.btn_raciosum = new System.Windows.Forms.Button();
-            this.btn_magiasub = new System.Windows.Forms.Button();
-            this.btn_magiasum = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.ataque = new System.Windows.Forms.NumericUpDown();
-            this.lbl_briga = new System.Windows.Forms.Label();
-            this.label_esquiva = new System.Windows.Forms.Label();
-            this.esquiva = new System.Windows.Forms.NumericUpDown();
-            this.label20 = new System.Windows.Forms.Label();
-            this.defesa = new System.Windows.Forms.NumericUpDown();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.lbl_pontos = new System.Windows.Forms.Label();
-            this.lancarmagia = new System.Windows.Forms.NumericUpDown();
-            this.arematirar = new System.Windows.Forms.NumericUpDown();
-            this.contrataque = new System.Windows.Forms.NumericUpDown();
-            this.seduzir = new System.Windows.Forms.NumericUpDown();
-            this.intimidacao = new System.Windows.Forms.NumericUpDown();
-            this.labia = new System.Windows.Forms.NumericUpDown();
-            this.percepcao = new System.Windows.Forms.NumericUpDown();
-            this.esconder = new System.Windows.Forms.NumericUpDown();
-            this.enganacao = new System.Windows.Forms.NumericUpDown();
-            this.etiqueta = new System.Windows.Forms.NumericUpDown();
-            this.intuicao = new System.Windows.Forms.NumericUpDown();
-            this.investigacao = new System.Windows.Forms.NumericUpDown();
-            this.sobrevivencia = new System.Windows.Forms.NumericUpDown();
-            this.ocultismo = new System.Windows.Forms.NumericUpDown();
-            this.academicos = new System.Windows.Forms.NumericUpDown();
-            this.nome_personagem = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.btn_cria_personagem = new System.Windows.Forms.Button();
-            this.label36 = new System.Windows.Forms.Label();
-            this.classe = new System.Windows.Forms.Label();
-            this.sanidade = new System.Windows.Forms.NumericUpDown();
-            this.label37 = new System.Windows.Forms.Label();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.pnl_talentos = new System.Windows.Forms.Panel();
-            this.label40 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.pnl_classes = new System.Windows.Forms.Panel();
-            this.tipo_criacao = new System.Windows.Forms.ComboBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.pnl_status = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.mana_entidade = new System.Windows.Forms.TextBox();
-            this.vida_entidade = new System.Windows.Forms.TextBox();
-            this.iconButton6 = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)(this.ataque)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.esquiva)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.defesa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lancarmagia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arematirar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contrataque)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seduzir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.intimidacao)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.labia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.percepcao)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.esconder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enganacao)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.etiqueta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.intuicao)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.investigacao)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sobrevivencia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocultismo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.academicos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sanidade)).BeginInit();
-            this.panel13.SuspendLayout();
-            this.pnl_talentos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnl_classes.SuspendLayout();
-            this.pnl_status.SuspendLayout();
-            this.SuspendLayout();
+            button1 = new System.Windows.Forms.Button();
+            button2 = new System.Windows.Forms.Button();
+            button3 = new System.Windows.Forms.Button();
+            button4 = new System.Windows.Forms.Button();
+            button5 = new System.Windows.Forms.Button();
+            lbl_fechar_personagem = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
+            panel1 = new System.Windows.Forms.Panel();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            label7 = new System.Windows.Forms.Label();
+            label8 = new System.Windows.Forms.Label();
+            lbl_destreza = new System.Windows.Forms.Label();
+            lbl_vigor = new System.Windows.Forms.Label();
+            panel2 = new System.Windows.Forms.Panel();
+            panel3 = new System.Windows.Forms.Panel();
+            panel4 = new System.Windows.Forms.Panel();
+            panel5 = new System.Windows.Forms.Panel();
+            panel6 = new System.Windows.Forms.Panel();
+            panel7 = new System.Windows.Forms.Panel();
+            lbl_raciocinio = new System.Windows.Forms.Label();
+            lbl_carisma = new System.Windows.Forms.Label();
+            lbl_forca = new System.Windows.Forms.Label();
+            lbl_magia = new System.Windows.Forms.Label();
+            btn_forcasum = new System.Windows.Forms.Button();
+            btn_forcasub = new System.Windows.Forms.Button();
+            btn_destrezasub = new System.Windows.Forms.Button();
+            btn_destrezasum = new System.Windows.Forms.Button();
+            btn_vigorsub = new System.Windows.Forms.Button();
+            btn_vigorsum = new System.Windows.Forms.Button();
+            btn_carismasub = new System.Windows.Forms.Button();
+            btn_carismasum = new System.Windows.Forms.Button();
+            btn_raciosub = new System.Windows.Forms.Button();
+            btn_raciosum = new System.Windows.Forms.Button();
+            btn_magiasub = new System.Windows.Forms.Button();
+            btn_magiasum = new System.Windows.Forms.Button();
+            label14 = new System.Windows.Forms.Label();
+            label15 = new System.Windows.Forms.Label();
+            label17 = new System.Windows.Forms.Label();
+            label18 = new System.Windows.Forms.Label();
+            label19 = new System.Windows.Forms.Label();
+            label6 = new System.Windows.Forms.Label();
+            panel8 = new System.Windows.Forms.Panel();
+            panel9 = new System.Windows.Forms.Panel();
+            label9 = new System.Windows.Forms.Label();
+            label10 = new System.Windows.Forms.Label();
+            label11 = new System.Windows.Forms.Label();
+            label12 = new System.Windows.Forms.Label();
+            panel10 = new System.Windows.Forms.Panel();
+            panel11 = new System.Windows.Forms.Panel();
+            panel12 = new System.Windows.Forms.Panel();
+            ataque = new System.Windows.Forms.NumericUpDown();
+            lbl_briga = new System.Windows.Forms.Label();
+            label_esquiva = new System.Windows.Forms.Label();
+            esquiva = new System.Windows.Forms.NumericUpDown();
+            label20 = new System.Windows.Forms.Label();
+            defesa = new System.Windows.Forms.NumericUpDown();
+            label21 = new System.Windows.Forms.Label();
+            label22 = new System.Windows.Forms.Label();
+            label13 = new System.Windows.Forms.Label();
+            label23 = new System.Windows.Forms.Label();
+            label24 = new System.Windows.Forms.Label();
+            label25 = new System.Windows.Forms.Label();
+            label26 = new System.Windows.Forms.Label();
+            label27 = new System.Windows.Forms.Label();
+            label28 = new System.Windows.Forms.Label();
+            label30 = new System.Windows.Forms.Label();
+            label31 = new System.Windows.Forms.Label();
+            label32 = new System.Windows.Forms.Label();
+            label33 = new System.Windows.Forms.Label();
+            label34 = new System.Windows.Forms.Label();
+            label35 = new System.Windows.Forms.Label();
+            lbl_pontos = new System.Windows.Forms.Label();
+            lancarmagia = new System.Windows.Forms.NumericUpDown();
+            arematirar = new System.Windows.Forms.NumericUpDown();
+            contrataque = new System.Windows.Forms.NumericUpDown();
+            seduzir = new System.Windows.Forms.NumericUpDown();
+            intimidacao = new System.Windows.Forms.NumericUpDown();
+            labia = new System.Windows.Forms.NumericUpDown();
+            percepcao = new System.Windows.Forms.NumericUpDown();
+            esconder = new System.Windows.Forms.NumericUpDown();
+            enganacao = new System.Windows.Forms.NumericUpDown();
+            etiqueta = new System.Windows.Forms.NumericUpDown();
+            intuicao = new System.Windows.Forms.NumericUpDown();
+            investigacao = new System.Windows.Forms.NumericUpDown();
+            sobrevivencia = new System.Windows.Forms.NumericUpDown();
+            ocultismo = new System.Windows.Forms.NumericUpDown();
+            academicos = new System.Windows.Forms.NumericUpDown();
+            nome_personagem = new System.Windows.Forms.TextBox();
+            label29 = new System.Windows.Forms.Label();
+            btn_cria_personagem = new System.Windows.Forms.Button();
+            label36 = new System.Windows.Forms.Label();
+            classe = new System.Windows.Forms.Label();
+            sanidade = new System.Windows.Forms.NumericUpDown();
+            label37 = new System.Windows.Forms.Label();
+            panel13 = new System.Windows.Forms.Panel();
+            pnl_talentos = new System.Windows.Forms.Panel();
+            label40 = new System.Windows.Forms.Label();
+            comboBox1 = new System.Windows.Forms.ComboBox();
+            label38 = new System.Windows.Forms.Label();
+            timer1 = new System.Windows.Forms.Timer(components);
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            label39 = new System.Windows.Forms.Label();
+            pnl_classes = new System.Windows.Forms.Panel();
+            tipo_criacao = new System.Windows.Forms.ComboBox();
+            label41 = new System.Windows.Forms.Label();
+            pnl_status = new System.Windows.Forms.Panel();
+            comboBox2 = new System.Windows.Forms.ComboBox();
+            label16 = new System.Windows.Forms.Label();
+            mana_entidade = new System.Windows.Forms.TextBox();
+            vida_entidade = new System.Windows.Forms.TextBox();
+            iconButton6 = new FontAwesome.Sharp.IconButton();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
+            ((System.ComponentModel.ISupportInitialize)ataque).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)esquiva).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)defesa).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)lancarmagia).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)arematirar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)contrataque).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)seduzir).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)intimidacao).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)labia).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)percepcao).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)esconder).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)enganacao).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)etiqueta).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)intuicao).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)investigacao).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)sobrevivencia).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ocultismo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)academicos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)sanidade).BeginInit();
+            panel13.SuspendLayout();
+            pnl_talentos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pnl_classes.SuspendLayout();
+            pnl_status.SuspendLayout();
+            SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.button1.Image = global::Dark_Age.Properties.Resources.Castlevania;
-            this.button1.Location = new System.Drawing.Point(4, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 453);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.Enter += new System.EventHandler(this.button1_Enter);
-            this.button1.Leave += new System.EventHandler(this.button1_Leave);
+            button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DeepSkyBlue;
+            button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button1.ForeColor = System.Drawing.Color.LightSkyBlue;
+            button1.Image = Properties.Resources.Castlevania;
+            button1.Location = new System.Drawing.Point(4, 15);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(154, 453);
+            button1.TabIndex = 2;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            button1.Enter += button1_Enter;
+            button1.Leave += button1_Leave;
             // 
             // button2
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.button2.Image = global::Dark_Age.Properties.Resources.caçadordemonstros;
-            this.button2.Location = new System.Drawing.Point(164, 56);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(154, 453);
-            this.button2.TabIndex = 3;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            this.button2.Enter += new System.EventHandler(this.button1_Enter);
-            this.button2.Leave += new System.EventHandler(this.button1_Leave);
+            button2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            button2.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
+            button2.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button2.ForeColor = System.Drawing.Color.LightSkyBlue;
+            button2.Image = Properties.Resources.caçadordemonstros;
+            button2.Location = new System.Drawing.Point(164, 56);
+            button2.Name = "button2";
+            button2.Size = new System.Drawing.Size(154, 453);
+            button2.TabIndex = 3;
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            button2.Enter += button1_Enter;
+            button2.Leave += button1_Leave;
             // 
             // button3
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.button3.Image = global::Dark_Age.Properties.Resources.forgemaster;
-            this.button3.Location = new System.Drawing.Point(484, 56);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(154, 453);
-            this.button3.TabIndex = 5;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            this.button3.Enter += new System.EventHandler(this.button1_Enter);
-            this.button3.Leave += new System.EventHandler(this.button1_Leave);
+            button3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            button3.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.MenuHighlight;
+            button3.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button3.ForeColor = System.Drawing.Color.LightSkyBlue;
+            button3.Image = Properties.Resources.forgemaster;
+            button3.Location = new System.Drawing.Point(484, 56);
+            button3.Name = "button3";
+            button3.Size = new System.Drawing.Size(154, 453);
+            button3.TabIndex = 5;
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            button3.Enter += button1_Enter;
+            button3.Leave += button1_Leave;
             // 
             // button4
             // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gold;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = global::Dark_Age.Properties.Resources.alchemist;
-            this.button4.Location = new System.Drawing.Point(324, 15);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(154, 453);
-            this.button4.TabIndex = 4;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            this.button4.Enter += new System.EventHandler(this.button1_Enter);
-            this.button4.Leave += new System.EventHandler(this.button1_Leave);
+            button4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            button4.FlatAppearance.BorderColor = System.Drawing.Color.Gold;
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gold;
+            button4.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button4.ForeColor = System.Drawing.Color.White;
+            button4.Image = Properties.Resources.alchemist;
+            button4.Location = new System.Drawing.Point(324, 15);
+            button4.Name = "button4";
+            button4.Size = new System.Drawing.Size(154, 453);
+            button4.TabIndex = 4;
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            button4.Enter += button1_Enter;
+            button4.Leave += button1_Leave;
             // 
             // button5
             // 
-            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Crimson;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Image = global::Dark_Age.Properties.Resources.TEMPLARIO;
-            this.button5.Location = new System.Drawing.Point(644, 15);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(154, 453);
-            this.button5.TabIndex = 6;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            this.button5.Enter += new System.EventHandler(this.button1_Enter);
-            this.button5.Leave += new System.EventHandler(this.button1_Leave);
+            button5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            button5.FlatAppearance.BorderColor = System.Drawing.Color.Crimson;
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Crimson;
+            button5.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button5.ForeColor = System.Drawing.Color.White;
+            button5.Image = Properties.Resources.TEMPLARIO;
+            button5.Location = new System.Drawing.Point(644, 15);
+            button5.Name = "button5";
+            button5.Size = new System.Drawing.Size(154, 453);
+            button5.TabIndex = 6;
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            button5.Enter += button1_Enter;
+            button5.Leave += button1_Leave;
             // 
             // lbl_fechar_personagem
             // 
-            this.lbl_fechar_personagem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_fechar_personagem.AutoSize = true;
-            this.lbl_fechar_personagem.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_fechar_personagem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_fechar_personagem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_fechar_personagem.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbl_fechar_personagem.Location = new System.Drawing.Point(1639, 9);
-            this.lbl_fechar_personagem.Name = "lbl_fechar_personagem";
-            this.lbl_fechar_personagem.Size = new System.Drawing.Size(69, 21);
-            this.lbl_fechar_personagem.TabIndex = 7;
-            this.lbl_fechar_personagem.Text = "Fechar X";
-            this.lbl_fechar_personagem.Click += new System.EventHandler(this.label1_Click);
+            lbl_fechar_personagem.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            lbl_fechar_personagem.AutoSize = true;
+            lbl_fechar_personagem.BackColor = System.Drawing.Color.Transparent;
+            lbl_fechar_personagem.Cursor = System.Windows.Forms.Cursors.Hand;
+            lbl_fechar_personagem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lbl_fechar_personagem.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            lbl_fechar_personagem.Location = new System.Drawing.Point(1639, 9);
+            lbl_fechar_personagem.Name = "lbl_fechar_personagem";
+            lbl_fechar_personagem.Size = new System.Drawing.Size(69, 21);
+            lbl_fechar_personagem.TabIndex = 7;
+            lbl_fechar_personagem.Text = "Fechar X";
+            lbl_fechar_personagem.Click += label1_Click;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(48, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(357, 45);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Criação de personagem";
+            label1.AutoSize = true;
+            label1.BackColor = System.Drawing.Color.Transparent;
+            label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.ForeColor = System.Drawing.SystemColors.Control;
+            label1.Location = new System.Drawing.Point(48, 22);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(357, 45);
+            label1.TabIndex = 8;
+            label1.Text = "Criação de personagem";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Location = new System.Drawing.Point(27, 22);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(5, 50);
-            this.panel1.TabIndex = 9;
+            panel1.BackColor = System.Drawing.SystemColors.Control;
+            panel1.Location = new System.Drawing.Point(27, 22);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(5, 50);
+            panel1.TabIndex = 9;
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(49, 134);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 15);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Força";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label2.AutoSize = true;
+            label2.BackColor = System.Drawing.Color.Transparent;
+            label2.ForeColor = System.Drawing.SystemColors.Control;
+            label2.Location = new System.Drawing.Point(49, 134);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(36, 15);
+            label2.TabIndex = 18;
+            label2.Text = "Força";
+            label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(41, 223);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 15);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Destreza";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label3.AutoSize = true;
+            label3.BackColor = System.Drawing.Color.Transparent;
+            label3.ForeColor = System.Drawing.SystemColors.Control;
+            label3.Location = new System.Drawing.Point(41, 223);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(51, 15);
+            label3.TabIndex = 19;
+            label3.Text = "Destreza";
+            label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(49, 313);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 15);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Vigor";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label4.AutoSize = true;
+            label4.BackColor = System.Drawing.Color.Transparent;
+            label4.ForeColor = System.Drawing.SystemColors.Control;
+            label4.Location = new System.Drawing.Point(49, 313);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(35, 15);
+            label4.TabIndex = 20;
+            label4.Text = "Vigor";
+            label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(41, 397);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 15);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Carisma";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label5.AutoSize = true;
+            label5.BackColor = System.Drawing.Color.Transparent;
+            label5.ForeColor = System.Drawing.SystemColors.Control;
+            label5.Location = new System.Drawing.Point(41, 397);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(50, 15);
+            label5.TabIndex = 21;
+            label5.Text = "Carisma";
+            label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label7
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(46, 577);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 15);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Magia";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label7.AutoSize = true;
+            label7.BackColor = System.Drawing.Color.Transparent;
+            label7.ForeColor = System.Drawing.SystemColors.Control;
+            label7.Location = new System.Drawing.Point(46, 577);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(40, 15);
+            label7.TabIndex = 24;
+            label7.Text = "Magia";
+            label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label8
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(36, 487);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(62, 15);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Raciocínio";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label8.AutoSize = true;
+            label8.BackColor = System.Drawing.Color.Transparent;
+            label8.ForeColor = System.Drawing.SystemColors.Control;
+            label8.Location = new System.Drawing.Point(36, 487);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(62, 15);
+            label8.TabIndex = 23;
+            label8.Text = "Raciocínio";
+            label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_destreza
             // 
-            this.lbl_destreza.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_destreza.AutoSize = true;
-            this.lbl_destreza.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_destreza.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_destreza.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbl_destreza.Location = new System.Drawing.Point(49, 178);
-            this.lbl_destreza.Name = "lbl_destreza";
-            this.lbl_destreza.Size = new System.Drawing.Size(37, 45);
-            this.lbl_destreza.TabIndex = 25;
-            this.lbl_destreza.Text = "0";
-            this.lbl_destreza.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lbl_destreza.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            lbl_destreza.AutoSize = true;
+            lbl_destreza.BackColor = System.Drawing.Color.Transparent;
+            lbl_destreza.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lbl_destreza.ForeColor = System.Drawing.SystemColors.Control;
+            lbl_destreza.Location = new System.Drawing.Point(49, 178);
+            lbl_destreza.Name = "lbl_destreza";
+            lbl_destreza.Size = new System.Drawing.Size(37, 45);
+            lbl_destreza.TabIndex = 25;
+            lbl_destreza.Text = "0";
+            lbl_destreza.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_vigor
             // 
-            this.lbl_vigor.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_vigor.AutoSize = true;
-            this.lbl_vigor.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_vigor.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_vigor.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbl_vigor.Location = new System.Drawing.Point(49, 268);
-            this.lbl_vigor.Name = "lbl_vigor";
-            this.lbl_vigor.Size = new System.Drawing.Size(37, 45);
-            this.lbl_vigor.TabIndex = 26;
-            this.lbl_vigor.Text = "0";
-            this.lbl_vigor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lbl_vigor.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            lbl_vigor.AutoSize = true;
+            lbl_vigor.BackColor = System.Drawing.Color.Transparent;
+            lbl_vigor.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lbl_vigor.ForeColor = System.Drawing.SystemColors.Control;
+            lbl_vigor.Location = new System.Drawing.Point(49, 268);
+            lbl_vigor.Name = "lbl_vigor";
+            lbl_vigor.Size = new System.Drawing.Size(37, 45);
+            lbl_vigor.TabIndex = 26;
+            lbl_vigor.Text = "0";
+            lbl_vigor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel2.Location = new System.Drawing.Point(18, 152);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(97, 1);
-            this.panel2.TabIndex = 31;
+            panel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            panel2.Location = new System.Drawing.Point(18, 152);
+            panel2.Name = "panel2";
+            panel2.Size = new System.Drawing.Size(97, 1);
+            panel2.TabIndex = 31;
             // 
             // panel3
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel3.Location = new System.Drawing.Point(18, 242);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(97, 1);
-            this.panel3.TabIndex = 32;
+            panel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            panel3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            panel3.Location = new System.Drawing.Point(18, 242);
+            panel3.Name = "panel3";
+            panel3.Size = new System.Drawing.Size(97, 1);
+            panel3.TabIndex = 32;
             // 
             // panel4
             // 
-            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel4.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel4.Location = new System.Drawing.Point(18, 415);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(97, 1);
-            this.panel4.TabIndex = 34;
+            panel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            panel4.BackColor = System.Drawing.SystemColors.ButtonFace;
+            panel4.Location = new System.Drawing.Point(18, 415);
+            panel4.Name = "panel4";
+            panel4.Size = new System.Drawing.Size(97, 1);
+            panel4.TabIndex = 34;
             // 
             // panel5
             // 
-            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel5.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel5.Location = new System.Drawing.Point(18, 329);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(97, 1);
-            this.panel5.TabIndex = 33;
+            panel5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            panel5.BackColor = System.Drawing.SystemColors.ButtonFace;
+            panel5.Location = new System.Drawing.Point(18, 329);
+            panel5.Name = "panel5";
+            panel5.Size = new System.Drawing.Size(97, 1);
+            panel5.TabIndex = 33;
             // 
             // panel6
             // 
-            this.panel6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel6.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel6.Location = new System.Drawing.Point(18, 595);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(97, 1);
-            this.panel6.TabIndex = 36;
+            panel6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            panel6.BackColor = System.Drawing.SystemColors.ButtonFace;
+            panel6.Location = new System.Drawing.Point(18, 595);
+            panel6.Name = "panel6";
+            panel6.Size = new System.Drawing.Size(97, 1);
+            panel6.TabIndex = 36;
             // 
             // panel7
             // 
-            this.panel7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel7.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel7.Location = new System.Drawing.Point(18, 505);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(97, 1);
-            this.panel7.TabIndex = 35;
+            panel7.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            panel7.BackColor = System.Drawing.SystemColors.ButtonFace;
+            panel7.Location = new System.Drawing.Point(18, 505);
+            panel7.Name = "panel7";
+            panel7.Size = new System.Drawing.Size(97, 1);
+            panel7.TabIndex = 35;
             // 
             // lbl_raciocinio
             // 
-            this.lbl_raciocinio.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_raciocinio.AutoSize = true;
-            this.lbl_raciocinio.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_raciocinio.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_raciocinio.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbl_raciocinio.Location = new System.Drawing.Point(49, 442);
-            this.lbl_raciocinio.Name = "lbl_raciocinio";
-            this.lbl_raciocinio.Size = new System.Drawing.Size(37, 45);
-            this.lbl_raciocinio.TabIndex = 38;
-            this.lbl_raciocinio.Text = "0";
-            this.lbl_raciocinio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lbl_raciocinio.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            lbl_raciocinio.AutoSize = true;
+            lbl_raciocinio.BackColor = System.Drawing.Color.Transparent;
+            lbl_raciocinio.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lbl_raciocinio.ForeColor = System.Drawing.SystemColors.Control;
+            lbl_raciocinio.Location = new System.Drawing.Point(49, 442);
+            lbl_raciocinio.Name = "lbl_raciocinio";
+            lbl_raciocinio.Size = new System.Drawing.Size(37, 45);
+            lbl_raciocinio.TabIndex = 38;
+            lbl_raciocinio.Text = "0";
+            lbl_raciocinio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_carisma
             // 
-            this.lbl_carisma.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_carisma.AutoSize = true;
-            this.lbl_carisma.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_carisma.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_carisma.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbl_carisma.Location = new System.Drawing.Point(49, 352);
-            this.lbl_carisma.Name = "lbl_carisma";
-            this.lbl_carisma.Size = new System.Drawing.Size(37, 45);
-            this.lbl_carisma.TabIndex = 37;
-            this.lbl_carisma.Text = "0";
-            this.lbl_carisma.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lbl_carisma.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            lbl_carisma.AutoSize = true;
+            lbl_carisma.BackColor = System.Drawing.Color.Transparent;
+            lbl_carisma.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lbl_carisma.ForeColor = System.Drawing.SystemColors.Control;
+            lbl_carisma.Location = new System.Drawing.Point(49, 352);
+            lbl_carisma.Name = "lbl_carisma";
+            lbl_carisma.Size = new System.Drawing.Size(37, 45);
+            lbl_carisma.TabIndex = 37;
+            lbl_carisma.Text = "0";
+            lbl_carisma.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_forca
             // 
-            this.lbl_forca.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_forca.AutoSize = true;
-            this.lbl_forca.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_forca.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_forca.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbl_forca.Location = new System.Drawing.Point(49, 89);
-            this.lbl_forca.Name = "lbl_forca";
-            this.lbl_forca.Size = new System.Drawing.Size(37, 45);
-            this.lbl_forca.TabIndex = 40;
-            this.lbl_forca.Text = "0";
-            this.lbl_forca.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lbl_forca.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            lbl_forca.AutoSize = true;
+            lbl_forca.BackColor = System.Drawing.Color.Transparent;
+            lbl_forca.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lbl_forca.ForeColor = System.Drawing.SystemColors.Control;
+            lbl_forca.Location = new System.Drawing.Point(49, 89);
+            lbl_forca.Name = "lbl_forca";
+            lbl_forca.Size = new System.Drawing.Size(37, 45);
+            lbl_forca.TabIndex = 40;
+            lbl_forca.Text = "0";
+            lbl_forca.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_magia
             // 
-            this.lbl_magia.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_magia.AutoSize = true;
-            this.lbl_magia.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_magia.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_magia.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbl_magia.Location = new System.Drawing.Point(49, 532);
-            this.lbl_magia.Name = "lbl_magia";
-            this.lbl_magia.Size = new System.Drawing.Size(37, 45);
-            this.lbl_magia.TabIndex = 39;
-            this.lbl_magia.Text = "0";
-            this.lbl_magia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lbl_magia.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            lbl_magia.AutoSize = true;
+            lbl_magia.BackColor = System.Drawing.Color.Transparent;
+            lbl_magia.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lbl_magia.ForeColor = System.Drawing.SystemColors.Control;
+            lbl_magia.Location = new System.Drawing.Point(49, 532);
+            lbl_magia.Name = "lbl_magia";
+            lbl_magia.Size = new System.Drawing.Size(37, 45);
+            lbl_magia.TabIndex = 39;
+            lbl_magia.Text = "0";
+            lbl_magia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_forcasum
             // 
-            this.btn_forcasum.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_forcasum.BackColor = System.Drawing.Color.Transparent;
-            this.btn_forcasum.FlatAppearance.BorderSize = 0;
-            this.btn_forcasum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_forcasum.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_forcasum.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_forcasum.Location = new System.Drawing.Point(124, 99);
-            this.btn_forcasum.Name = "btn_forcasum";
-            this.btn_forcasum.Size = new System.Drawing.Size(25, 25);
-            this.btn_forcasum.TabIndex = 52;
-            this.btn_forcasum.Text = "+";
-            this.btn_forcasum.UseVisualStyleBackColor = false;
-            this.btn_forcasum.Click += new System.EventHandler(this.btn_forcasum_Click);
-            this.btn_forcasum.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
-            this.btn_forcasum.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
-            this.btn_forcasum.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
+            btn_forcasum.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            btn_forcasum.BackColor = System.Drawing.Color.Transparent;
+            btn_forcasum.FlatAppearance.BorderSize = 0;
+            btn_forcasum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_forcasum.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_forcasum.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            btn_forcasum.Location = new System.Drawing.Point(124, 99);
+            btn_forcasum.Name = "btn_forcasum";
+            btn_forcasum.Size = new System.Drawing.Size(25, 25);
+            btn_forcasum.TabIndex = 52;
+            btn_forcasum.Text = "+";
+            btn_forcasum.UseVisualStyleBackColor = false;
+            btn_forcasum.Click += btn_forcasum_Click;
+            btn_forcasum.MouseEnter += btn_cria_personagem_MouseEnter;
+            btn_forcasum.MouseLeave += btn_cria_personagem_MouseLeave;
+            btn_forcasum.MouseHover += btn_cria_personagem_MouseHover;
             // 
             // btn_forcasub
             // 
-            this.btn_forcasub.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_forcasub.BackColor = System.Drawing.Color.Transparent;
-            this.btn_forcasub.FlatAppearance.BorderSize = 0;
-            this.btn_forcasub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_forcasub.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_forcasub.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_forcasub.Location = new System.Drawing.Point(124, 130);
-            this.btn_forcasub.Name = "btn_forcasub";
-            this.btn_forcasub.Size = new System.Drawing.Size(25, 25);
-            this.btn_forcasub.TabIndex = 53;
-            this.btn_forcasub.Text = "-";
-            this.btn_forcasub.UseVisualStyleBackColor = false;
-            this.btn_forcasub.Click += new System.EventHandler(this.btn_forcasub_Click);
-            this.btn_forcasub.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
-            this.btn_forcasub.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
-            this.btn_forcasub.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
+            btn_forcasub.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            btn_forcasub.BackColor = System.Drawing.Color.Transparent;
+            btn_forcasub.FlatAppearance.BorderSize = 0;
+            btn_forcasub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_forcasub.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_forcasub.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            btn_forcasub.Location = new System.Drawing.Point(124, 130);
+            btn_forcasub.Name = "btn_forcasub";
+            btn_forcasub.Size = new System.Drawing.Size(25, 25);
+            btn_forcasub.TabIndex = 53;
+            btn_forcasub.Text = "-";
+            btn_forcasub.UseVisualStyleBackColor = false;
+            btn_forcasub.Click += btn_forcasub_Click;
+            btn_forcasub.MouseEnter += btn_cria_personagem_MouseEnter;
+            btn_forcasub.MouseLeave += btn_cria_personagem_MouseLeave;
+            btn_forcasub.MouseHover += btn_cria_personagem_MouseHover;
             // 
             // btn_destrezasub
             // 
-            this.btn_destrezasub.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_destrezasub.BackColor = System.Drawing.Color.Transparent;
-            this.btn_destrezasub.FlatAppearance.BorderSize = 0;
-            this.btn_destrezasub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_destrezasub.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_destrezasub.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_destrezasub.Location = new System.Drawing.Point(124, 218);
-            this.btn_destrezasub.Name = "btn_destrezasub";
-            this.btn_destrezasub.Size = new System.Drawing.Size(25, 25);
-            this.btn_destrezasub.TabIndex = 55;
-            this.btn_destrezasub.Text = "-";
-            this.btn_destrezasub.UseVisualStyleBackColor = false;
-            this.btn_destrezasub.Click += new System.EventHandler(this.btn_destrezasub_Click);
-            this.btn_destrezasub.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
-            this.btn_destrezasub.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
-            this.btn_destrezasub.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
+            btn_destrezasub.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            btn_destrezasub.BackColor = System.Drawing.Color.Transparent;
+            btn_destrezasub.FlatAppearance.BorderSize = 0;
+            btn_destrezasub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_destrezasub.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_destrezasub.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            btn_destrezasub.Location = new System.Drawing.Point(124, 218);
+            btn_destrezasub.Name = "btn_destrezasub";
+            btn_destrezasub.Size = new System.Drawing.Size(25, 25);
+            btn_destrezasub.TabIndex = 55;
+            btn_destrezasub.Text = "-";
+            btn_destrezasub.UseVisualStyleBackColor = false;
+            btn_destrezasub.Click += btn_destrezasub_Click;
+            btn_destrezasub.MouseEnter += btn_cria_personagem_MouseEnter;
+            btn_destrezasub.MouseLeave += btn_cria_personagem_MouseLeave;
+            btn_destrezasub.MouseHover += btn_cria_personagem_MouseHover;
             // 
             // btn_destrezasum
             // 
-            this.btn_destrezasum.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_destrezasum.BackColor = System.Drawing.Color.Transparent;
-            this.btn_destrezasum.FlatAppearance.BorderSize = 0;
-            this.btn_destrezasum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_destrezasum.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_destrezasum.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_destrezasum.Location = new System.Drawing.Point(124, 187);
-            this.btn_destrezasum.Name = "btn_destrezasum";
-            this.btn_destrezasum.Size = new System.Drawing.Size(25, 25);
-            this.btn_destrezasum.TabIndex = 54;
-            this.btn_destrezasum.Text = "+";
-            this.btn_destrezasum.UseVisualStyleBackColor = false;
-            this.btn_destrezasum.Click += new System.EventHandler(this.btn_destrezasum_Click);
-            this.btn_destrezasum.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
-            this.btn_destrezasum.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
-            this.btn_destrezasum.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
+            btn_destrezasum.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            btn_destrezasum.BackColor = System.Drawing.Color.Transparent;
+            btn_destrezasum.FlatAppearance.BorderSize = 0;
+            btn_destrezasum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_destrezasum.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_destrezasum.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            btn_destrezasum.Location = new System.Drawing.Point(124, 187);
+            btn_destrezasum.Name = "btn_destrezasum";
+            btn_destrezasum.Size = new System.Drawing.Size(25, 25);
+            btn_destrezasum.TabIndex = 54;
+            btn_destrezasum.Text = "+";
+            btn_destrezasum.UseVisualStyleBackColor = false;
+            btn_destrezasum.Click += btn_destrezasum_Click;
+            btn_destrezasum.MouseEnter += btn_cria_personagem_MouseEnter;
+            btn_destrezasum.MouseLeave += btn_cria_personagem_MouseLeave;
+            btn_destrezasum.MouseHover += btn_cria_personagem_MouseHover;
             // 
             // btn_vigorsub
             // 
-            this.btn_vigorsub.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_vigorsub.BackColor = System.Drawing.Color.Transparent;
-            this.btn_vigorsub.FlatAppearance.BorderSize = 0;
-            this.btn_vigorsub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_vigorsub.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_vigorsub.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_vigorsub.Location = new System.Drawing.Point(124, 308);
-            this.btn_vigorsub.Name = "btn_vigorsub";
-            this.btn_vigorsub.Size = new System.Drawing.Size(25, 25);
-            this.btn_vigorsub.TabIndex = 57;
-            this.btn_vigorsub.Text = "-";
-            this.btn_vigorsub.UseVisualStyleBackColor = false;
-            this.btn_vigorsub.Click += new System.EventHandler(this.btn_vigorsub_Click);
-            this.btn_vigorsub.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
-            this.btn_vigorsub.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
-            this.btn_vigorsub.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
+            btn_vigorsub.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            btn_vigorsub.BackColor = System.Drawing.Color.Transparent;
+            btn_vigorsub.FlatAppearance.BorderSize = 0;
+            btn_vigorsub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_vigorsub.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_vigorsub.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            btn_vigorsub.Location = new System.Drawing.Point(124, 308);
+            btn_vigorsub.Name = "btn_vigorsub";
+            btn_vigorsub.Size = new System.Drawing.Size(25, 25);
+            btn_vigorsub.TabIndex = 57;
+            btn_vigorsub.Text = "-";
+            btn_vigorsub.UseVisualStyleBackColor = false;
+            btn_vigorsub.Click += btn_vigorsub_Click;
+            btn_vigorsub.MouseEnter += btn_cria_personagem_MouseEnter;
+            btn_vigorsub.MouseLeave += btn_cria_personagem_MouseLeave;
+            btn_vigorsub.MouseHover += btn_cria_personagem_MouseHover;
             // 
             // btn_vigorsum
             // 
-            this.btn_vigorsum.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_vigorsum.BackColor = System.Drawing.Color.Transparent;
-            this.btn_vigorsum.FlatAppearance.BorderSize = 0;
-            this.btn_vigorsum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_vigorsum.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_vigorsum.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_vigorsum.Location = new System.Drawing.Point(124, 277);
-            this.btn_vigorsum.Name = "btn_vigorsum";
-            this.btn_vigorsum.Size = new System.Drawing.Size(25, 25);
-            this.btn_vigorsum.TabIndex = 56;
-            this.btn_vigorsum.Text = "+";
-            this.btn_vigorsum.UseVisualStyleBackColor = false;
-            this.btn_vigorsum.Click += new System.EventHandler(this.btn_vigorsum_Click);
-            this.btn_vigorsum.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
-            this.btn_vigorsum.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
-            this.btn_vigorsum.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
+            btn_vigorsum.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            btn_vigorsum.BackColor = System.Drawing.Color.Transparent;
+            btn_vigorsum.FlatAppearance.BorderSize = 0;
+            btn_vigorsum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_vigorsum.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_vigorsum.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            btn_vigorsum.Location = new System.Drawing.Point(124, 277);
+            btn_vigorsum.Name = "btn_vigorsum";
+            btn_vigorsum.Size = new System.Drawing.Size(25, 25);
+            btn_vigorsum.TabIndex = 56;
+            btn_vigorsum.Text = "+";
+            btn_vigorsum.UseVisualStyleBackColor = false;
+            btn_vigorsum.Click += btn_vigorsum_Click;
+            btn_vigorsum.MouseEnter += btn_cria_personagem_MouseEnter;
+            btn_vigorsum.MouseLeave += btn_cria_personagem_MouseLeave;
+            btn_vigorsum.MouseHover += btn_cria_personagem_MouseHover;
             // 
             // btn_carismasub
             // 
-            this.btn_carismasub.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_carismasub.BackColor = System.Drawing.Color.Transparent;
-            this.btn_carismasub.FlatAppearance.BorderSize = 0;
-            this.btn_carismasub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_carismasub.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_carismasub.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_carismasub.Location = new System.Drawing.Point(124, 393);
-            this.btn_carismasub.Name = "btn_carismasub";
-            this.btn_carismasub.Size = new System.Drawing.Size(25, 25);
-            this.btn_carismasub.TabIndex = 59;
-            this.btn_carismasub.Text = "-";
-            this.btn_carismasub.UseVisualStyleBackColor = false;
-            this.btn_carismasub.Click += new System.EventHandler(this.btn_carismasub_Click);
-            this.btn_carismasub.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
-            this.btn_carismasub.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
-            this.btn_carismasub.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
+            btn_carismasub.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            btn_carismasub.BackColor = System.Drawing.Color.Transparent;
+            btn_carismasub.FlatAppearance.BorderSize = 0;
+            btn_carismasub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_carismasub.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_carismasub.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            btn_carismasub.Location = new System.Drawing.Point(124, 393);
+            btn_carismasub.Name = "btn_carismasub";
+            btn_carismasub.Size = new System.Drawing.Size(25, 25);
+            btn_carismasub.TabIndex = 59;
+            btn_carismasub.Text = "-";
+            btn_carismasub.UseVisualStyleBackColor = false;
+            btn_carismasub.Click += btn_carismasub_Click;
+            btn_carismasub.MouseEnter += btn_cria_personagem_MouseEnter;
+            btn_carismasub.MouseLeave += btn_cria_personagem_MouseLeave;
+            btn_carismasub.MouseHover += btn_cria_personagem_MouseHover;
             // 
             // btn_carismasum
             // 
-            this.btn_carismasum.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_carismasum.BackColor = System.Drawing.Color.Transparent;
-            this.btn_carismasum.FlatAppearance.BorderSize = 0;
-            this.btn_carismasum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_carismasum.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_carismasum.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_carismasum.Location = new System.Drawing.Point(124, 362);
-            this.btn_carismasum.Name = "btn_carismasum";
-            this.btn_carismasum.Size = new System.Drawing.Size(25, 25);
-            this.btn_carismasum.TabIndex = 58;
-            this.btn_carismasum.Text = "+";
-            this.btn_carismasum.UseVisualStyleBackColor = false;
-            this.btn_carismasum.Click += new System.EventHandler(this.btn_carismasum_Click);
-            this.btn_carismasum.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
-            this.btn_carismasum.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
-            this.btn_carismasum.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
+            btn_carismasum.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            btn_carismasum.BackColor = System.Drawing.Color.Transparent;
+            btn_carismasum.FlatAppearance.BorderSize = 0;
+            btn_carismasum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_carismasum.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_carismasum.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            btn_carismasum.Location = new System.Drawing.Point(124, 362);
+            btn_carismasum.Name = "btn_carismasum";
+            btn_carismasum.Size = new System.Drawing.Size(25, 25);
+            btn_carismasum.TabIndex = 58;
+            btn_carismasum.Text = "+";
+            btn_carismasum.UseVisualStyleBackColor = false;
+            btn_carismasum.Click += btn_carismasum_Click;
+            btn_carismasum.MouseEnter += btn_cria_personagem_MouseEnter;
+            btn_carismasum.MouseLeave += btn_cria_personagem_MouseLeave;
+            btn_carismasum.MouseHover += btn_cria_personagem_MouseHover;
             // 
             // btn_raciosub
             // 
-            this.btn_raciosub.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_raciosub.BackColor = System.Drawing.Color.Transparent;
-            this.btn_raciosub.FlatAppearance.BorderSize = 0;
-            this.btn_raciosub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_raciosub.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_raciosub.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_raciosub.Location = new System.Drawing.Point(124, 482);
-            this.btn_raciosub.Name = "btn_raciosub";
-            this.btn_raciosub.Size = new System.Drawing.Size(25, 25);
-            this.btn_raciosub.TabIndex = 61;
-            this.btn_raciosub.Text = "-";
-            this.btn_raciosub.UseVisualStyleBackColor = false;
-            this.btn_raciosub.Click += new System.EventHandler(this.btn_raciosub_Click);
-            this.btn_raciosub.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
-            this.btn_raciosub.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
-            this.btn_raciosub.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
+            btn_raciosub.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            btn_raciosub.BackColor = System.Drawing.Color.Transparent;
+            btn_raciosub.FlatAppearance.BorderSize = 0;
+            btn_raciosub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_raciosub.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_raciosub.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            btn_raciosub.Location = new System.Drawing.Point(124, 482);
+            btn_raciosub.Name = "btn_raciosub";
+            btn_raciosub.Size = new System.Drawing.Size(25, 25);
+            btn_raciosub.TabIndex = 61;
+            btn_raciosub.Text = "-";
+            btn_raciosub.UseVisualStyleBackColor = false;
+            btn_raciosub.Click += btn_raciosub_Click;
+            btn_raciosub.MouseEnter += btn_cria_personagem_MouseEnter;
+            btn_raciosub.MouseLeave += btn_cria_personagem_MouseLeave;
+            btn_raciosub.MouseHover += btn_cria_personagem_MouseHover;
             // 
             // btn_raciosum
             // 
-            this.btn_raciosum.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_raciosum.BackColor = System.Drawing.Color.Transparent;
-            this.btn_raciosum.FlatAppearance.BorderSize = 0;
-            this.btn_raciosum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_raciosum.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_raciosum.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_raciosum.Location = new System.Drawing.Point(124, 451);
-            this.btn_raciosum.Name = "btn_raciosum";
-            this.btn_raciosum.Size = new System.Drawing.Size(25, 25);
-            this.btn_raciosum.TabIndex = 60;
-            this.btn_raciosum.Text = "+";
-            this.btn_raciosum.UseVisualStyleBackColor = false;
-            this.btn_raciosum.Click += new System.EventHandler(this.btn_raciosum_Click);
-            this.btn_raciosum.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
-            this.btn_raciosum.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
-            this.btn_raciosum.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
+            btn_raciosum.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            btn_raciosum.BackColor = System.Drawing.Color.Transparent;
+            btn_raciosum.FlatAppearance.BorderSize = 0;
+            btn_raciosum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_raciosum.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_raciosum.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            btn_raciosum.Location = new System.Drawing.Point(124, 451);
+            btn_raciosum.Name = "btn_raciosum";
+            btn_raciosum.Size = new System.Drawing.Size(25, 25);
+            btn_raciosum.TabIndex = 60;
+            btn_raciosum.Text = "+";
+            btn_raciosum.UseVisualStyleBackColor = false;
+            btn_raciosum.Click += btn_raciosum_Click;
+            btn_raciosum.MouseEnter += btn_cria_personagem_MouseEnter;
+            btn_raciosum.MouseLeave += btn_cria_personagem_MouseLeave;
+            btn_raciosum.MouseHover += btn_cria_personagem_MouseHover;
             // 
             // btn_magiasub
             // 
-            this.btn_magiasub.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_magiasub.BackColor = System.Drawing.Color.Transparent;
-            this.btn_magiasub.FlatAppearance.BorderSize = 0;
-            this.btn_magiasub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_magiasub.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_magiasub.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_magiasub.Location = new System.Drawing.Point(124, 572);
-            this.btn_magiasub.Name = "btn_magiasub";
-            this.btn_magiasub.Size = new System.Drawing.Size(25, 25);
-            this.btn_magiasub.TabIndex = 63;
-            this.btn_magiasub.Text = "-";
-            this.btn_magiasub.UseVisualStyleBackColor = false;
-            this.btn_magiasub.Click += new System.EventHandler(this.btn_magiasub_Click);
-            this.btn_magiasub.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
-            this.btn_magiasub.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
-            this.btn_magiasub.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
+            btn_magiasub.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            btn_magiasub.BackColor = System.Drawing.Color.Transparent;
+            btn_magiasub.FlatAppearance.BorderSize = 0;
+            btn_magiasub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_magiasub.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_magiasub.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            btn_magiasub.Location = new System.Drawing.Point(124, 572);
+            btn_magiasub.Name = "btn_magiasub";
+            btn_magiasub.Size = new System.Drawing.Size(25, 25);
+            btn_magiasub.TabIndex = 63;
+            btn_magiasub.Text = "-";
+            btn_magiasub.UseVisualStyleBackColor = false;
+            btn_magiasub.Click += btn_magiasub_Click;
+            btn_magiasub.MouseEnter += btn_cria_personagem_MouseEnter;
+            btn_magiasub.MouseLeave += btn_cria_personagem_MouseLeave;
+            btn_magiasub.MouseHover += btn_cria_personagem_MouseHover;
             // 
             // btn_magiasum
             // 
-            this.btn_magiasum.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_magiasum.BackColor = System.Drawing.Color.Transparent;
-            this.btn_magiasum.FlatAppearance.BorderSize = 0;
-            this.btn_magiasum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_magiasum.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_magiasum.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_magiasum.Location = new System.Drawing.Point(124, 541);
-            this.btn_magiasum.Name = "btn_magiasum";
-            this.btn_magiasum.Size = new System.Drawing.Size(25, 25);
-            this.btn_magiasum.TabIndex = 62;
-            this.btn_magiasum.Text = "+";
-            this.btn_magiasum.UseVisualStyleBackColor = false;
-            this.btn_magiasum.Click += new System.EventHandler(this.btn_magiasum_Click);
-            this.btn_magiasum.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
-            this.btn_magiasum.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
-            this.btn_magiasum.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
+            btn_magiasum.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            btn_magiasum.BackColor = System.Drawing.Color.Transparent;
+            btn_magiasum.FlatAppearance.BorderSize = 0;
+            btn_magiasum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_magiasum.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_magiasum.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            btn_magiasum.Location = new System.Drawing.Point(124, 541);
+            btn_magiasum.Name = "btn_magiasum";
+            btn_magiasum.Size = new System.Drawing.Size(25, 25);
+            btn_magiasum.TabIndex = 62;
+            btn_magiasum.Text = "+";
+            btn_magiasum.UseVisualStyleBackColor = false;
+            btn_magiasum.Click += btn_magiasum_Click;
+            btn_magiasum.MouseEnter += btn_cria_personagem_MouseEnter;
+            btn_magiasum.MouseLeave += btn_cria_personagem_MouseLeave;
+            btn_magiasum.MouseHover += btn_cria_personagem_MouseHover;
             // 
             // label14
             // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.ForeColor = System.Drawing.SystemColors.Control;
-            this.label14.Location = new System.Drawing.Point(59, 481);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(46, 15);
-            this.label14.TabIndex = 64;
-            this.label14.Text = "Orador";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label14.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label14.AutoSize = true;
+            label14.BackColor = System.Drawing.Color.Transparent;
+            label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label14.ForeColor = System.Drawing.SystemColors.Control;
+            label14.Location = new System.Drawing.Point(59, 481);
+            label14.Name = "label14";
+            label14.Size = new System.Drawing.Size(46, 15);
+            label14.TabIndex = 64;
+            label14.Text = "Orador";
+            label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15
             // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.ForeColor = System.Drawing.SystemColors.Control;
-            this.label15.Location = new System.Drawing.Point(184, 30);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(123, 15);
-            this.label15.TabIndex = 65;
-            this.label15.Text = "Caçador de Monstros";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label15.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label15.AutoSize = true;
+            label15.BackColor = System.Drawing.Color.Transparent;
+            label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label15.ForeColor = System.Drawing.SystemColors.Control;
+            label15.Location = new System.Drawing.Point(184, 30);
+            label15.Name = "label15";
+            label15.Size = new System.Drawing.Size(123, 15);
+            label15.TabIndex = 65;
+            label15.Text = "Caçador de Monstros";
+            label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label17
             // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label17.ForeColor = System.Drawing.SystemColors.Control;
-            this.label17.Location = new System.Drawing.Point(368, 481);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(65, 15);
-            this.label17.TabIndex = 66;
-            this.label17.Text = "Alquimista";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label17.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label17.AutoSize = true;
+            label17.BackColor = System.Drawing.Color.Transparent;
+            label17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label17.ForeColor = System.Drawing.SystemColors.Control;
+            label17.Location = new System.Drawing.Point(368, 481);
+            label17.Name = "label17";
+            label17.Size = new System.Drawing.Size(65, 15);
+            label17.TabIndex = 66;
+            label17.Text = "Alquimista";
+            label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label18
             // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label18.ForeColor = System.Drawing.SystemColors.Control;
-            this.label18.Location = new System.Drawing.Point(519, 30);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(93, 15);
-            this.label18.TabIndex = 67;
-            this.label18.Text = "Mestre da Forja";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label18.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label18.AutoSize = true;
+            label18.BackColor = System.Drawing.Color.Transparent;
+            label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label18.ForeColor = System.Drawing.SystemColors.Control;
+            label18.Location = new System.Drawing.Point(519, 30);
+            label18.Name = "label18";
+            label18.Size = new System.Drawing.Size(93, 15);
+            label18.TabIndex = 67;
+            label18.Text = "Mestre da Forja";
+            label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label19
             // 
-            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label19.ForeColor = System.Drawing.SystemColors.Control;
-            this.label19.Location = new System.Drawing.Point(693, 481);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(62, 15);
-            this.label19.TabIndex = 68;
-            this.label19.Text = "Templário";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label19.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            label19.AutoSize = true;
+            label19.BackColor = System.Drawing.Color.Transparent;
+            label19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label19.ForeColor = System.Drawing.SystemColors.Control;
+            label19.Location = new System.Drawing.Point(693, 481);
+            label19.Name = "label19";
+            label19.Size = new System.Drawing.Size(62, 15);
+            label19.TabIndex = 68;
+            label19.Text = "Templário";
+            label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(36, 52);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 25);
-            this.label6.TabIndex = 69;
-            this.label6.Text = "Atributos";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label6.AutoSize = true;
+            label6.BackColor = System.Drawing.Color.Transparent;
+            label6.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label6.ForeColor = System.Drawing.SystemColors.Control;
+            label6.Location = new System.Drawing.Point(36, 52);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(89, 25);
+            label6.TabIndex = 69;
+            label6.Text = "Atributos";
+            label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel8
             // 
-            this.panel8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel8.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel8.Location = new System.Drawing.Point(18, 80);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(125, 1);
-            this.panel8.TabIndex = 32;
+            panel8.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            panel8.BackColor = System.Drawing.SystemColors.ButtonFace;
+            panel8.Location = new System.Drawing.Point(18, 80);
+            panel8.Name = "panel8";
+            panel8.Size = new System.Drawing.Size(125, 1);
+            panel8.TabIndex = 32;
             // 
             // panel9
             // 
-            this.panel9.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel9.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel9.Location = new System.Drawing.Point(8, 35);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(550, 1);
-            this.panel9.TabIndex = 70;
+            panel9.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            panel9.BackColor = System.Drawing.SystemColors.ButtonFace;
+            panel9.Location = new System.Drawing.Point(8, 35);
+            panel9.Name = "panel9";
+            panel9.Size = new System.Drawing.Size(550, 1);
+            panel9.TabIndex = 70;
             // 
             // label9
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(242, 7);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(81, 25);
-            this.label9.TabIndex = 71;
-            this.label9.Text = "Talentos";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label9.AutoSize = true;
+            label9.BackColor = System.Drawing.Color.Transparent;
+            label9.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label9.ForeColor = System.Drawing.SystemColors.Control;
+            label9.Location = new System.Drawing.Point(242, 7);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(81, 25);
+            label9.TabIndex = 71;
+            label9.Text = "Talentos";
+            label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label10
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.ForeColor = System.Drawing.SystemColors.Control;
-            this.label10.Location = new System.Drawing.Point(51, 65);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 21);
-            this.label10.TabIndex = 72;
-            this.label10.Text = "Combate";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label10.AutoSize = true;
+            label10.BackColor = System.Drawing.Color.Transparent;
+            label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label10.ForeColor = System.Drawing.SystemColors.Control;
+            label10.Location = new System.Drawing.Point(51, 65);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(73, 21);
+            label10.TabIndex = 72;
+            label10.Text = "Combate";
+            label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label11
             // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.ForeColor = System.Drawing.SystemColors.Control;
-            this.label11.Location = new System.Drawing.Point(252, 65);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 21);
-            this.label11.TabIndex = 73;
-            this.label11.Text = "Perícias";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label11.AutoSize = true;
+            label11.BackColor = System.Drawing.Color.Transparent;
+            label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label11.ForeColor = System.Drawing.SystemColors.Control;
+            label11.Location = new System.Drawing.Point(252, 65);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(62, 21);
+            label11.TabIndex = 73;
+            label11.Text = "Perícias";
+            label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label12
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.ForeColor = System.Drawing.SystemColors.Control;
-            this.label12.Location = new System.Drawing.Point(423, 65);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(118, 21);
-            this.label12.TabIndex = 74;
-            this.label12.Text = "Conhecimentos";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label12.AutoSize = true;
+            label12.BackColor = System.Drawing.Color.Transparent;
+            label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label12.ForeColor = System.Drawing.SystemColors.Control;
+            label12.Location = new System.Drawing.Point(423, 65);
+            label12.Name = "label12";
+            label12.Size = new System.Drawing.Size(118, 21);
+            label12.TabIndex = 74;
+            label12.Text = "Conhecimentos";
+            label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel10
             // 
-            this.panel10.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel10.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel10.Location = new System.Drawing.Point(6, 86);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(150, 1);
-            this.panel10.TabIndex = 71;
+            panel10.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            panel10.BackColor = System.Drawing.SystemColors.ButtonFace;
+            panel10.Location = new System.Drawing.Point(6, 86);
+            panel10.Name = "panel10";
+            panel10.Size = new System.Drawing.Size(150, 1);
+            panel10.TabIndex = 71;
             // 
             // panel11
             // 
-            this.panel11.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel11.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel11.Location = new System.Drawing.Point(207, 86);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(150, 1);
-            this.panel11.TabIndex = 72;
+            panel11.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            panel11.BackColor = System.Drawing.SystemColors.ButtonFace;
+            panel11.Location = new System.Drawing.Point(207, 86);
+            panel11.Name = "panel11";
+            panel11.Size = new System.Drawing.Size(150, 1);
+            panel11.TabIndex = 72;
             // 
             // panel12
             // 
-            this.panel12.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel12.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel12.Location = new System.Drawing.Point(408, 86);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(150, 1);
-            this.panel12.TabIndex = 75;
+            panel12.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            panel12.BackColor = System.Drawing.SystemColors.ButtonFace;
+            panel12.Location = new System.Drawing.Point(408, 86);
+            panel12.Name = "panel12";
+            panel12.Size = new System.Drawing.Size(150, 1);
+            panel12.TabIndex = 75;
             // 
             // ataque
             // 
-            this.ataque.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ataque.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ataque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ataque.ForeColor = System.Drawing.Color.Black;
-            this.ataque.Location = new System.Drawing.Point(116, 123);
-            this.ataque.Name = "ataque";
-            this.ataque.Size = new System.Drawing.Size(40, 23);
-            this.ataque.TabIndex = 79;
-            this.ataque.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ataque.ValueChanged += new System.EventHandler(this.ataque_ValueChanged);
-            this.ataque.Click += new System.EventHandler(this.ataque_Click);
+            ataque.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            ataque.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            ataque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            ataque.ForeColor = System.Drawing.Color.Black;
+            ataque.Location = new System.Drawing.Point(116, 123);
+            ataque.Name = "ataque";
+            ataque.Size = new System.Drawing.Size(40, 23);
+            ataque.TabIndex = 79;
+            ataque.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            ataque.ValueChanged += ataque_ValueChanged;
+            ataque.Click += ataque_Click;
             // 
             // lbl_briga
             // 
-            this.lbl_briga.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_briga.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_briga.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_briga.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbl_briga.Location = new System.Drawing.Point(6, 112);
-            this.lbl_briga.Name = "lbl_briga";
-            this.lbl_briga.Size = new System.Drawing.Size(111, 45);
-            this.lbl_briga.TabIndex = 80;
-            this.lbl_briga.Text = "Ataque corpo a corpo";
-            this.lbl_briga.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lbl_briga.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            lbl_briga.BackColor = System.Drawing.Color.Transparent;
+            lbl_briga.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lbl_briga.ForeColor = System.Drawing.SystemColors.Control;
+            lbl_briga.Location = new System.Drawing.Point(6, 112);
+            lbl_briga.Name = "lbl_briga";
+            lbl_briga.Size = new System.Drawing.Size(111, 45);
+            lbl_briga.TabIndex = 80;
+            lbl_briga.Text = "Ataque corpo a corpo";
+            lbl_briga.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label_esquiva
             // 
-            this.label_esquiva.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label_esquiva.BackColor = System.Drawing.Color.Transparent;
-            this.label_esquiva.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label_esquiva.ForeColor = System.Drawing.SystemColors.Control;
-            this.label_esquiva.Location = new System.Drawing.Point(6, 178);
-            this.label_esquiva.Name = "label_esquiva";
-            this.label_esquiva.Size = new System.Drawing.Size(111, 24);
-            this.label_esquiva.TabIndex = 82;
-            this.label_esquiva.Text = "Esquiva";
-            this.label_esquiva.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label_esquiva.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label_esquiva.BackColor = System.Drawing.Color.Transparent;
+            label_esquiva.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label_esquiva.ForeColor = System.Drawing.SystemColors.Control;
+            label_esquiva.Location = new System.Drawing.Point(6, 178);
+            label_esquiva.Name = "label_esquiva";
+            label_esquiva.Size = new System.Drawing.Size(111, 24);
+            label_esquiva.TabIndex = 82;
+            label_esquiva.Text = "Esquiva";
+            label_esquiva.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // esquiva
             // 
-            this.esquiva.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.esquiva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.esquiva.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.esquiva.Location = new System.Drawing.Point(116, 179);
-            this.esquiva.Name = "esquiva";
-            this.esquiva.Size = new System.Drawing.Size(40, 23);
-            this.esquiva.TabIndex = 81;
-            this.esquiva.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.esquiva.ValueChanged += new System.EventHandler(this.esquiva_ValueChanged);
-            this.esquiva.Click += new System.EventHandler(this.ataque_Click);
+            esquiva.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            esquiva.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            esquiva.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            esquiva.Location = new System.Drawing.Point(116, 179);
+            esquiva.Name = "esquiva";
+            esquiva.Size = new System.Drawing.Size(40, 23);
+            esquiva.TabIndex = 81;
+            esquiva.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            esquiva.ValueChanged += esquiva_ValueChanged;
+            esquiva.Click += ataque_Click;
             // 
             // label20
             // 
-            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label20.ForeColor = System.Drawing.SystemColors.Control;
-            this.label20.Location = new System.Drawing.Point(6, 244);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(111, 24);
-            this.label20.TabIndex = 84;
-            this.label20.Text = "Defesa";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label20.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label20.BackColor = System.Drawing.Color.Transparent;
+            label20.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label20.ForeColor = System.Drawing.SystemColors.Control;
+            label20.Location = new System.Drawing.Point(6, 244);
+            label20.Name = "label20";
+            label20.Size = new System.Drawing.Size(111, 24);
+            label20.TabIndex = 84;
+            label20.Text = "Defesa";
+            label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // defesa
             // 
-            this.defesa.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.defesa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.defesa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.defesa.Location = new System.Drawing.Point(116, 245);
-            this.defesa.Name = "defesa";
-            this.defesa.Size = new System.Drawing.Size(40, 23);
-            this.defesa.TabIndex = 83;
-            this.defesa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.defesa.ValueChanged += new System.EventHandler(this.defesa_ValueChanged);
-            this.defesa.Click += new System.EventHandler(this.ataque_Click);
+            defesa.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            defesa.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            defesa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            defesa.Location = new System.Drawing.Point(116, 245);
+            defesa.Name = "defesa";
+            defesa.Size = new System.Drawing.Size(40, 23);
+            defesa.TabIndex = 83;
+            defesa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            defesa.ValueChanged += defesa_ValueChanged;
+            defesa.Click += ataque_Click;
             // 
             // label21
             // 
-            this.label21.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label21.ForeColor = System.Drawing.SystemColors.Control;
-            this.label21.Location = new System.Drawing.Point(8, 307);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(111, 24);
-            this.label21.TabIndex = 86;
-            this.label21.Text = "Contra-Ataque";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label21.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label21.BackColor = System.Drawing.Color.Transparent;
+            label21.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label21.ForeColor = System.Drawing.SystemColors.Control;
+            label21.Location = new System.Drawing.Point(8, 307);
+            label21.Name = "label21";
+            label21.Size = new System.Drawing.Size(111, 24);
+            label21.TabIndex = 86;
+            label21.Text = "Contra-Ataque";
+            label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label22
             // 
-            this.label22.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label22.ForeColor = System.Drawing.SystemColors.Control;
-            this.label22.Location = new System.Drawing.Point(1, 374);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(118, 24);
-            this.label22.TabIndex = 88;
-            this.label22.Text = "Arremesso/Atirar";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label22.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label22.BackColor = System.Drawing.Color.Transparent;
+            label22.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label22.ForeColor = System.Drawing.SystemColors.Control;
+            label22.Location = new System.Drawing.Point(1, 374);
+            label22.Name = "label22";
+            label22.Size = new System.Drawing.Size(118, 24);
+            label22.TabIndex = 88;
+            label22.Text = "Arremesso/Atirar";
+            label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label13
             // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label13.ForeColor = System.Drawing.SystemColors.Control;
-            this.label13.Location = new System.Drawing.Point(6, 437);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(111, 24);
-            this.label13.TabIndex = 90;
-            this.label13.Text = "Conjurar Magia";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label13.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label13.BackColor = System.Drawing.Color.Transparent;
+            label13.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label13.ForeColor = System.Drawing.SystemColors.Control;
+            label13.Location = new System.Drawing.Point(6, 437);
+            label13.Name = "label13";
+            label13.Size = new System.Drawing.Size(111, 24);
+            label13.TabIndex = 90;
+            label13.Text = "Conjurar Magia";
+            label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label23
             // 
-            this.label23.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label23.ForeColor = System.Drawing.SystemColors.Control;
-            this.label23.Location = new System.Drawing.Point(207, 109);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(111, 47);
-            this.label23.TabIndex = 92;
-            this.label23.Text = "Mentir/Detectar Mentiras";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label23.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label23.BackColor = System.Drawing.Color.Transparent;
+            label23.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label23.ForeColor = System.Drawing.SystemColors.Control;
+            label23.Location = new System.Drawing.Point(207, 109);
+            label23.Name = "label23";
+            label23.Size = new System.Drawing.Size(111, 47);
+            label23.TabIndex = 92;
+            label23.Text = "Mentir/Detectar Mentiras";
+            label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label24
             // 
-            this.label24.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label24.ForeColor = System.Drawing.SystemColors.Control;
-            this.label24.Location = new System.Drawing.Point(207, 162);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(111, 51);
-            this.label24.TabIndex = 94;
-            this.label24.Text = "Intimidação";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label24.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label24.BackColor = System.Drawing.Color.Transparent;
+            label24.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label24.ForeColor = System.Drawing.SystemColors.Control;
+            label24.Location = new System.Drawing.Point(207, 162);
+            label24.Name = "label24";
+            label24.Size = new System.Drawing.Size(111, 51);
+            label24.TabIndex = 94;
+            label24.Text = "Intimidação";
+            label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label25
             // 
-            this.label25.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label25.ForeColor = System.Drawing.SystemColors.Control;
-            this.label25.Location = new System.Drawing.Point(182, 245);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(132, 24);
-            this.label25.TabIndex = 96;
-            this.label25.Text = "Sedução/Enganação";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label25.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label25.BackColor = System.Drawing.Color.Transparent;
+            label25.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label25.ForeColor = System.Drawing.SystemColors.Control;
+            label25.Location = new System.Drawing.Point(182, 245);
+            label25.Name = "label25";
+            label25.Size = new System.Drawing.Size(132, 24);
+            label25.TabIndex = 96;
+            label25.Text = "Sedução/Enganação";
+            label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label26
             // 
-            this.label26.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label26.BackColor = System.Drawing.Color.Transparent;
-            this.label26.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label26.ForeColor = System.Drawing.SystemColors.Control;
-            this.label26.Location = new System.Drawing.Point(202, 294);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(111, 45);
-            this.label26.TabIndex = 98;
-            this.label26.Text = "Roubo/\r\nArrombamento";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label26.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label26.BackColor = System.Drawing.Color.Transparent;
+            label26.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label26.ForeColor = System.Drawing.SystemColors.Control;
+            label26.Location = new System.Drawing.Point(202, 294);
+            label26.Name = "label26";
+            label26.Size = new System.Drawing.Size(111, 45);
+            label26.TabIndex = 98;
+            label26.Text = "Roubo/\r\nArrombamento";
+            label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label27
             // 
-            this.label27.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label27.BackColor = System.Drawing.Color.Transparent;
-            this.label27.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label27.ForeColor = System.Drawing.SystemColors.Control;
-            this.label27.Location = new System.Drawing.Point(209, 367);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(111, 24);
-            this.label27.TabIndex = 100;
-            this.label27.Text = "Esconder";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label27.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label27.BackColor = System.Drawing.Color.Transparent;
+            label27.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label27.ForeColor = System.Drawing.SystemColors.Control;
+            label27.Location = new System.Drawing.Point(209, 367);
+            label27.Name = "label27";
+            label27.Size = new System.Drawing.Size(111, 24);
+            label27.TabIndex = 100;
+            label27.Text = "Esconder";
+            label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label28
             // 
-            this.label28.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label28.BackColor = System.Drawing.Color.Transparent;
-            this.label28.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label28.ForeColor = System.Drawing.SystemColors.Control;
-            this.label28.Location = new System.Drawing.Point(204, 439);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(114, 24);
-            this.label28.TabIndex = 102;
-            this.label28.Text = "Escutar/Observar";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label28.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label28.BackColor = System.Drawing.Color.Transparent;
+            label28.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label28.ForeColor = System.Drawing.SystemColors.Control;
+            label28.Location = new System.Drawing.Point(204, 439);
+            label28.Name = "label28";
+            label28.Size = new System.Drawing.Size(114, 24);
+            label28.TabIndex = 102;
+            label28.Text = "Escutar/Observar";
+            label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label30
             // 
-            this.label30.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label30.BackColor = System.Drawing.Color.Transparent;
-            this.label30.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label30.ForeColor = System.Drawing.SystemColors.Control;
-            this.label30.Location = new System.Drawing.Point(408, 122);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(111, 24);
-            this.label30.TabIndex = 106;
-            this.label30.Text = "Acadêmicos";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label30.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label30.BackColor = System.Drawing.Color.Transparent;
+            label30.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label30.ForeColor = System.Drawing.SystemColors.Control;
+            label30.Location = new System.Drawing.Point(408, 122);
+            label30.Name = "label30";
+            label30.Size = new System.Drawing.Size(111, 24);
+            label30.TabIndex = 106;
+            label30.Text = "Acadêmicos";
+            label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label31
             // 
-            this.label31.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label31.BackColor = System.Drawing.Color.Transparent;
-            this.label31.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label31.ForeColor = System.Drawing.SystemColors.Control;
-            this.label31.Location = new System.Drawing.Point(408, 178);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(111, 24);
-            this.label31.TabIndex = 108;
-            this.label31.Text = "Ocultismo";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label31.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label31.BackColor = System.Drawing.Color.Transparent;
+            label31.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label31.ForeColor = System.Drawing.SystemColors.Control;
+            label31.Location = new System.Drawing.Point(408, 178);
+            label31.Name = "label31";
+            label31.Size = new System.Drawing.Size(111, 24);
+            label31.TabIndex = 108;
+            label31.Text = "Ocultismo";
+            label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label32
             // 
-            this.label32.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label32.BackColor = System.Drawing.Color.Transparent;
-            this.label32.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label32.ForeColor = System.Drawing.SystemColors.Control;
-            this.label32.Location = new System.Drawing.Point(410, 241);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(111, 24);
-            this.label32.TabIndex = 110;
-            this.label32.Text = "Sobrevivência";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label32.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label32.BackColor = System.Drawing.Color.Transparent;
+            label32.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label32.ForeColor = System.Drawing.SystemColors.Control;
+            label32.Location = new System.Drawing.Point(410, 241);
+            label32.Name = "label32";
+            label32.Size = new System.Drawing.Size(111, 24);
+            label32.TabIndex = 110;
+            label32.Text = "Sobrevivência";
+            label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label33
             // 
-            this.label33.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label33.BackColor = System.Drawing.Color.Transparent;
-            this.label33.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label33.ForeColor = System.Drawing.SystemColors.Control;
-            this.label33.Location = new System.Drawing.Point(410, 308);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(111, 24);
-            this.label33.TabIndex = 112;
-            this.label33.Text = "Investigação";
-            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label33.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label33.BackColor = System.Drawing.Color.Transparent;
+            label33.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label33.ForeColor = System.Drawing.SystemColors.Control;
+            label33.Location = new System.Drawing.Point(410, 308);
+            label33.Name = "label33";
+            label33.Size = new System.Drawing.Size(111, 24);
+            label33.TabIndex = 112;
+            label33.Text = "Investigação";
+            label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label34
             // 
-            this.label34.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label34.BackColor = System.Drawing.Color.Transparent;
-            this.label34.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label34.ForeColor = System.Drawing.SystemColors.Control;
-            this.label34.Location = new System.Drawing.Point(410, 368);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(111, 24);
-            this.label34.TabIndex = 114;
-            this.label34.Text = " Intuição";
-            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label34.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label34.BackColor = System.Drawing.Color.Transparent;
+            label34.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label34.ForeColor = System.Drawing.SystemColors.Control;
+            label34.Location = new System.Drawing.Point(410, 368);
+            label34.Name = "label34";
+            label34.Size = new System.Drawing.Size(111, 24);
+            label34.TabIndex = 114;
+            label34.Text = " Intuição";
+            label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label35
             // 
-            this.label35.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label35.BackColor = System.Drawing.Color.Transparent;
-            this.label35.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label35.ForeColor = System.Drawing.SystemColors.Control;
-            this.label35.Location = new System.Drawing.Point(408, 442);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(111, 24);
-            this.label35.TabIndex = 116;
-            this.label35.Text = "Etiqueta";
-            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label35.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label35.BackColor = System.Drawing.Color.Transparent;
+            label35.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label35.ForeColor = System.Drawing.SystemColors.Control;
+            label35.Location = new System.Drawing.Point(408, 442);
+            label35.Name = "label35";
+            label35.Size = new System.Drawing.Size(111, 24);
+            label35.TabIndex = 116;
+            label35.Text = "Etiqueta";
+            label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_pontos
             // 
-            this.lbl_pontos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_pontos.AutoSize = true;
-            this.lbl_pontos.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_pontos.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbl_pontos.Location = new System.Drawing.Point(15, 622);
-            this.lbl_pontos.Name = "lbl_pontos";
-            this.lbl_pontos.Size = new System.Drawing.Size(0, 15);
-            this.lbl_pontos.TabIndex = 118;
-            this.lbl_pontos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lbl_pontos.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lbl_pontos.AutoSize = true;
+            lbl_pontos.BackColor = System.Drawing.Color.Transparent;
+            lbl_pontos.ForeColor = System.Drawing.SystemColors.Control;
+            lbl_pontos.Location = new System.Drawing.Point(15, 622);
+            lbl_pontos.Name = "lbl_pontos";
+            lbl_pontos.Size = new System.Drawing.Size(0, 15);
+            lbl_pontos.TabIndex = 118;
+            lbl_pontos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lancarmagia
             // 
-            this.lancarmagia.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lancarmagia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lancarmagia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lancarmagia.Location = new System.Drawing.Point(116, 441);
-            this.lancarmagia.Name = "lancarmagia";
-            this.lancarmagia.Size = new System.Drawing.Size(40, 23);
-            this.lancarmagia.TabIndex = 121;
-            this.lancarmagia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.lancarmagia.ValueChanged += new System.EventHandler(this.lancarmagia_ValueChanged);
-            this.lancarmagia.Click += new System.EventHandler(this.ataque_Click);
+            lancarmagia.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            lancarmagia.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            lancarmagia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            lancarmagia.Location = new System.Drawing.Point(116, 441);
+            lancarmagia.Name = "lancarmagia";
+            lancarmagia.Size = new System.Drawing.Size(40, 23);
+            lancarmagia.TabIndex = 121;
+            lancarmagia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            lancarmagia.ValueChanged += lancarmagia_ValueChanged;
+            lancarmagia.Click += ataque_Click;
             // 
             // arematirar
             // 
-            this.arematirar.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.arematirar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.arematirar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.arematirar.Location = new System.Drawing.Point(118, 374);
-            this.arematirar.Name = "arematirar";
-            this.arematirar.Size = new System.Drawing.Size(40, 23);
-            this.arematirar.TabIndex = 120;
-            this.arematirar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.arematirar.ValueChanged += new System.EventHandler(this.arematirar_ValueChanged);
-            this.arematirar.Click += new System.EventHandler(this.ataque_Click);
+            arematirar.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            arematirar.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            arematirar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            arematirar.Location = new System.Drawing.Point(118, 374);
+            arematirar.Name = "arematirar";
+            arematirar.Size = new System.Drawing.Size(40, 23);
+            arematirar.TabIndex = 120;
+            arematirar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            arematirar.ValueChanged += arematirar_ValueChanged;
+            arematirar.Click += ataque_Click;
             // 
             // contrataque
             // 
-            this.contrataque.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.contrataque.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.contrataque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.contrataque.ForeColor = System.Drawing.Color.Black;
-            this.contrataque.Location = new System.Drawing.Point(118, 309);
-            this.contrataque.Name = "contrataque";
-            this.contrataque.Size = new System.Drawing.Size(40, 23);
-            this.contrataque.TabIndex = 119;
-            this.contrataque.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.contrataque.ValueChanged += new System.EventHandler(this.contrataque_ValueChanged);
-            this.contrataque.Click += new System.EventHandler(this.ataque_Click);
+            contrataque.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            contrataque.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            contrataque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            contrataque.ForeColor = System.Drawing.Color.Black;
+            contrataque.Location = new System.Drawing.Point(118, 309);
+            contrataque.Name = "contrataque";
+            contrataque.Size = new System.Drawing.Size(40, 23);
+            contrataque.TabIndex = 119;
+            contrataque.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            contrataque.ValueChanged += contrataque_ValueChanged;
+            contrataque.Click += ataque_Click;
             // 
             // seduzir
             // 
-            this.seduzir.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.seduzir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.seduzir.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.seduzir.Location = new System.Drawing.Point(317, 245);
-            this.seduzir.Name = "seduzir";
-            this.seduzir.Size = new System.Drawing.Size(40, 23);
-            this.seduzir.TabIndex = 124;
-            this.seduzir.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.seduzir.ValueChanged += new System.EventHandler(this.seduzir_ValueChanged);
-            this.seduzir.Click += new System.EventHandler(this.ataque_Click);
+            seduzir.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            seduzir.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            seduzir.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            seduzir.Location = new System.Drawing.Point(317, 245);
+            seduzir.Name = "seduzir";
+            seduzir.Size = new System.Drawing.Size(40, 23);
+            seduzir.TabIndex = 124;
+            seduzir.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            seduzir.ValueChanged += seduzir_ValueChanged;
+            seduzir.Click += ataque_Click;
             // 
             // intimidacao
             // 
-            this.intimidacao.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.intimidacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.intimidacao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.intimidacao.Location = new System.Drawing.Point(317, 179);
-            this.intimidacao.Name = "intimidacao";
-            this.intimidacao.Size = new System.Drawing.Size(40, 23);
-            this.intimidacao.TabIndex = 123;
-            this.intimidacao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.intimidacao.ValueChanged += new System.EventHandler(this.intimidacao_ValueChanged);
-            this.intimidacao.Click += new System.EventHandler(this.ataque_Click);
+            intimidacao.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            intimidacao.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            intimidacao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            intimidacao.Location = new System.Drawing.Point(317, 179);
+            intimidacao.Name = "intimidacao";
+            intimidacao.Size = new System.Drawing.Size(40, 23);
+            intimidacao.TabIndex = 123;
+            intimidacao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            intimidacao.ValueChanged += intimidacao_ValueChanged;
+            intimidacao.Click += ataque_Click;
             // 
             // labia
             // 
-            this.labia.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.labia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labia.ForeColor = System.Drawing.Color.Black;
-            this.labia.Location = new System.Drawing.Point(317, 123);
-            this.labia.Name = "labia";
-            this.labia.Size = new System.Drawing.Size(40, 23);
-            this.labia.TabIndex = 122;
-            this.labia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.labia.ValueChanged += new System.EventHandler(this.labia_ValueChanged);
-            this.labia.Click += new System.EventHandler(this.ataque_Click);
+            labia.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            labia.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            labia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            labia.ForeColor = System.Drawing.Color.Black;
+            labia.Location = new System.Drawing.Point(317, 123);
+            labia.Name = "labia";
+            labia.Size = new System.Drawing.Size(40, 23);
+            labia.TabIndex = 122;
+            labia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            labia.ValueChanged += labia_ValueChanged;
+            labia.Click += ataque_Click;
             // 
             // percepcao
             // 
-            this.percepcao.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.percepcao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.percepcao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.percepcao.Location = new System.Drawing.Point(317, 440);
-            this.percepcao.Name = "percepcao";
-            this.percepcao.Size = new System.Drawing.Size(40, 23);
-            this.percepcao.TabIndex = 127;
-            this.percepcao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.percepcao.ValueChanged += new System.EventHandler(this.percepcao_ValueChanged);
-            this.percepcao.Click += new System.EventHandler(this.ataque_Click);
+            percepcao.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            percepcao.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            percepcao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            percepcao.Location = new System.Drawing.Point(317, 440);
+            percepcao.Name = "percepcao";
+            percepcao.Size = new System.Drawing.Size(40, 23);
+            percepcao.TabIndex = 127;
+            percepcao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            percepcao.ValueChanged += percepcao_ValueChanged;
+            percepcao.Click += ataque_Click;
             // 
             // esconder
             // 
-            this.esconder.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.esconder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.esconder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.esconder.Location = new System.Drawing.Point(319, 373);
-            this.esconder.Name = "esconder";
-            this.esconder.Size = new System.Drawing.Size(40, 23);
-            this.esconder.TabIndex = 126;
-            this.esconder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.esconder.ValueChanged += new System.EventHandler(this.esconder_ValueChanged);
-            this.esconder.Click += new System.EventHandler(this.ataque_Click);
+            esconder.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            esconder.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            esconder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            esconder.Location = new System.Drawing.Point(319, 373);
+            esconder.Name = "esconder";
+            esconder.Size = new System.Drawing.Size(40, 23);
+            esconder.TabIndex = 126;
+            esconder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            esconder.ValueChanged += esconder_ValueChanged;
+            esconder.Click += ataque_Click;
             // 
             // enganacao
             // 
-            this.enganacao.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.enganacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.enganacao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.enganacao.ForeColor = System.Drawing.Color.Black;
-            this.enganacao.Location = new System.Drawing.Point(319, 308);
-            this.enganacao.Name = "enganacao";
-            this.enganacao.Size = new System.Drawing.Size(40, 23);
-            this.enganacao.TabIndex = 125;
-            this.enganacao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.enganacao.ValueChanged += new System.EventHandler(this.enganacao_ValueChanged);
-            this.enganacao.Click += new System.EventHandler(this.ataque_Click);
+            enganacao.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            enganacao.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            enganacao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            enganacao.ForeColor = System.Drawing.Color.Black;
+            enganacao.Location = new System.Drawing.Point(319, 308);
+            enganacao.Name = "enganacao";
+            enganacao.Size = new System.Drawing.Size(40, 23);
+            enganacao.TabIndex = 125;
+            enganacao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            enganacao.ValueChanged += enganacao_ValueChanged;
+            enganacao.Click += ataque_Click;
             // 
             // etiqueta
             // 
-            this.etiqueta.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.etiqueta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.etiqueta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.etiqueta.Location = new System.Drawing.Point(518, 443);
-            this.etiqueta.Name = "etiqueta";
-            this.etiqueta.Size = new System.Drawing.Size(40, 23);
-            this.etiqueta.TabIndex = 130;
-            this.etiqueta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.etiqueta.ValueChanged += new System.EventHandler(this.etiqueta_ValueChanged);
-            this.etiqueta.Click += new System.EventHandler(this.ataque_Click);
+            etiqueta.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            etiqueta.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            etiqueta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            etiqueta.Location = new System.Drawing.Point(518, 443);
+            etiqueta.Name = "etiqueta";
+            etiqueta.Size = new System.Drawing.Size(40, 23);
+            etiqueta.TabIndex = 130;
+            etiqueta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            etiqueta.ValueChanged += etiqueta_ValueChanged;
+            etiqueta.Click += ataque_Click;
             // 
             // intuicao
             // 
-            this.intuicao.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.intuicao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.intuicao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.intuicao.Location = new System.Drawing.Point(520, 370);
-            this.intuicao.Name = "intuicao";
-            this.intuicao.Size = new System.Drawing.Size(40, 23);
-            this.intuicao.TabIndex = 129;
-            this.intuicao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.intuicao.ValueChanged += new System.EventHandler(this.intuicao_ValueChanged);
-            this.intuicao.Click += new System.EventHandler(this.ataque_Click);
+            intuicao.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            intuicao.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            intuicao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            intuicao.Location = new System.Drawing.Point(520, 370);
+            intuicao.Name = "intuicao";
+            intuicao.Size = new System.Drawing.Size(40, 23);
+            intuicao.TabIndex = 129;
+            intuicao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            intuicao.ValueChanged += intuicao_ValueChanged;
+            intuicao.Click += ataque_Click;
             // 
             // investigacao
             // 
-            this.investigacao.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.investigacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.investigacao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.investigacao.ForeColor = System.Drawing.Color.Black;
-            this.investigacao.Location = new System.Drawing.Point(520, 305);
-            this.investigacao.Name = "investigacao";
-            this.investigacao.Size = new System.Drawing.Size(40, 23);
-            this.investigacao.TabIndex = 128;
-            this.investigacao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.investigacao.ValueChanged += new System.EventHandler(this.investigacao_ValueChanged);
-            this.investigacao.Click += new System.EventHandler(this.ataque_Click);
+            investigacao.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            investigacao.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            investigacao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            investigacao.ForeColor = System.Drawing.Color.Black;
+            investigacao.Location = new System.Drawing.Point(520, 305);
+            investigacao.Name = "investigacao";
+            investigacao.Size = new System.Drawing.Size(40, 23);
+            investigacao.TabIndex = 128;
+            investigacao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            investigacao.ValueChanged += investigacao_ValueChanged;
+            investigacao.Click += ataque_Click;
             // 
             // sobrevivencia
             // 
-            this.sobrevivencia.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.sobrevivencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.sobrevivencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sobrevivencia.Location = new System.Drawing.Point(520, 244);
-            this.sobrevivencia.Name = "sobrevivencia";
-            this.sobrevivencia.Size = new System.Drawing.Size(40, 23);
-            this.sobrevivencia.TabIndex = 133;
-            this.sobrevivencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.sobrevivencia.ValueChanged += new System.EventHandler(this.sobrevivencia_ValueChanged);
-            this.sobrevivencia.Click += new System.EventHandler(this.ataque_Click);
+            sobrevivencia.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            sobrevivencia.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            sobrevivencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            sobrevivencia.Location = new System.Drawing.Point(520, 244);
+            sobrevivencia.Name = "sobrevivencia";
+            sobrevivencia.Size = new System.Drawing.Size(40, 23);
+            sobrevivencia.TabIndex = 133;
+            sobrevivencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            sobrevivencia.ValueChanged += sobrevivencia_ValueChanged;
+            sobrevivencia.Click += ataque_Click;
             // 
             // ocultismo
             // 
-            this.ocultismo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ocultismo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ocultismo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ocultismo.Location = new System.Drawing.Point(518, 179);
-            this.ocultismo.Name = "ocultismo";
-            this.ocultismo.Size = new System.Drawing.Size(40, 23);
-            this.ocultismo.TabIndex = 132;
-            this.ocultismo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ocultismo.ValueChanged += new System.EventHandler(this.ocultismo_ValueChanged);
-            this.ocultismo.Click += new System.EventHandler(this.ataque_Click);
+            ocultismo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            ocultismo.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            ocultismo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            ocultismo.Location = new System.Drawing.Point(518, 179);
+            ocultismo.Name = "ocultismo";
+            ocultismo.Size = new System.Drawing.Size(40, 23);
+            ocultismo.TabIndex = 132;
+            ocultismo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            ocultismo.ValueChanged += ocultismo_ValueChanged;
+            ocultismo.Click += ataque_Click;
             // 
             // academicos
             // 
-            this.academicos.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.academicos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.academicos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.academicos.ForeColor = System.Drawing.Color.Black;
-            this.academicos.Location = new System.Drawing.Point(518, 123);
-            this.academicos.Name = "academicos";
-            this.academicos.Size = new System.Drawing.Size(40, 23);
-            this.academicos.TabIndex = 131;
-            this.academicos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.academicos.ValueChanged += new System.EventHandler(this.academicos_ValueChanged);
-            this.academicos.Click += new System.EventHandler(this.ataque_Click);
+            academicos.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            academicos.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            academicos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            academicos.ForeColor = System.Drawing.Color.Black;
+            academicos.Location = new System.Drawing.Point(518, 123);
+            academicos.Name = "academicos";
+            academicos.Size = new System.Drawing.Size(40, 23);
+            academicos.TabIndex = 131;
+            academicos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            academicos.ValueChanged += academicos_ValueChanged;
+            academicos.Click += ataque_Click;
             // 
             // nome_personagem
             // 
-            this.nome_personagem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.nome_personagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.nome_personagem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nome_personagem.Location = new System.Drawing.Point(156, 784);
-            this.nome_personagem.Name = "nome_personagem";
-            this.nome_personagem.Size = new System.Drawing.Size(356, 39);
-            this.nome_personagem.TabIndex = 135;
-            this.nome_personagem.TextChanged += new System.EventHandler(this.nome_personagem_TextChanged);
+            nome_personagem.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            nome_personagem.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            nome_personagem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            nome_personagem.Location = new System.Drawing.Point(156, 784);
+            nome_personagem.Name = "nome_personagem";
+            nome_personagem.Size = new System.Drawing.Size(356, 39);
+            nome_personagem.TabIndex = 135;
+            nome_personagem.TextChanged += nome_personagem_TextChanged;
             // 
             // label29
             // 
-            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.Transparent;
-            this.label29.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label29.ForeColor = System.Drawing.SystemColors.Control;
-            this.label29.Location = new System.Drawing.Point(30, 777);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(115, 45);
-            this.label29.TabIndex = 136;
-            this.label29.Text = "Nome:";
+            label29.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            label29.AutoSize = true;
+            label29.BackColor = System.Drawing.Color.Transparent;
+            label29.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label29.ForeColor = System.Drawing.SystemColors.Control;
+            label29.Location = new System.Drawing.Point(30, 777);
+            label29.Name = "label29";
+            label29.Size = new System.Drawing.Size(115, 45);
+            label29.TabIndex = 136;
+            label29.Text = "Nome:";
             // 
             // btn_cria_personagem
             // 
-            this.btn_cria_personagem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_cria_personagem.BackColor = System.Drawing.Color.Transparent;
-            this.btn_cria_personagem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_cria_personagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cria_personagem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_cria_personagem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_cria_personagem.Location = new System.Drawing.Point(1216, 765);
-            this.btn_cria_personagem.Name = "btn_cria_personagem";
-            this.btn_cria_personagem.Size = new System.Drawing.Size(474, 58);
-            this.btn_cria_personagem.TabIndex = 137;
-            this.btn_cria_personagem.Text = "Finalizar criação do personagem";
-            this.btn_cria_personagem.UseVisualStyleBackColor = true;
-            this.btn_cria_personagem.Click += new System.EventHandler(this.btn_cria_personagem_Click);
-            this.btn_cria_personagem.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_cria_personagem_MouseDown);
-            this.btn_cria_personagem.MouseEnter += new System.EventHandler(this.btn_cria_personagem_MouseEnter);
-            this.btn_cria_personagem.MouseLeave += new System.EventHandler(this.btn_cria_personagem_MouseLeave);
-            this.btn_cria_personagem.MouseHover += new System.EventHandler(this.btn_cria_personagem_MouseHover);
+            btn_cria_personagem.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            btn_cria_personagem.BackColor = System.Drawing.Color.Transparent;
+            btn_cria_personagem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            btn_cria_personagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_cria_personagem.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_cria_personagem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            btn_cria_personagem.Location = new System.Drawing.Point(1216, 765);
+            btn_cria_personagem.Name = "btn_cria_personagem";
+            btn_cria_personagem.Size = new System.Drawing.Size(474, 58);
+            btn_cria_personagem.TabIndex = 137;
+            btn_cria_personagem.Text = "Finalizar criação do personagem";
+            btn_cria_personagem.UseVisualStyleBackColor = true;
+            btn_cria_personagem.Click += btn_cria_personagem_Click;
+            btn_cria_personagem.MouseDown += btn_cria_personagem_MouseDown;
+            btn_cria_personagem.MouseEnter += btn_cria_personagem_MouseEnter;
+            btn_cria_personagem.MouseLeave += btn_cria_personagem_MouseLeave;
+            btn_cria_personagem.MouseHover += btn_cria_personagem_MouseHover;
             // 
             // label36
             // 
-            this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label36.AutoSize = true;
-            this.label36.BackColor = System.Drawing.Color.Transparent;
-            this.label36.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label36.ForeColor = System.Drawing.SystemColors.Control;
-            this.label36.Location = new System.Drawing.Point(518, 777);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(116, 45);
-            this.label36.TabIndex = 138;
-            this.label36.Text = "Classe:";
+            label36.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            label36.AutoSize = true;
+            label36.BackColor = System.Drawing.Color.Transparent;
+            label36.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label36.ForeColor = System.Drawing.SystemColors.Control;
+            label36.Location = new System.Drawing.Point(518, 777);
+            label36.Name = "label36";
+            label36.Size = new System.Drawing.Size(116, 45);
+            label36.TabIndex = 138;
+            label36.Text = "Classe:";
             // 
             // classe
             // 
-            this.classe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.classe.AutoSize = true;
-            this.classe.BackColor = System.Drawing.Color.Transparent;
-            this.classe.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.classe.ForeColor = System.Drawing.SystemColors.Control;
-            this.classe.Location = new System.Drawing.Point(630, 783);
-            this.classe.Name = "classe";
-            this.classe.Size = new System.Drawing.Size(144, 37);
-            this.classe.TabIndex = 139;
-            this.classe.Text = "Sem classe";
+            classe.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            classe.AutoSize = true;
+            classe.BackColor = System.Drawing.Color.Transparent;
+            classe.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            classe.ForeColor = System.Drawing.SystemColors.Control;
+            classe.Location = new System.Drawing.Point(630, 783);
+            classe.Name = "classe";
+            classe.Size = new System.Drawing.Size(144, 37);
+            classe.TabIndex = 139;
+            classe.Text = "Sem classe";
             // 
             // sanidade
             // 
-            this.sanidade.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.sanidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.sanidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sanidade.Location = new System.Drawing.Point(520, 546);
-            this.sanidade.Minimum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.sanidade.Name = "sanidade";
-            this.sanidade.Size = new System.Drawing.Size(40, 23);
-            this.sanidade.TabIndex = 141;
-            this.sanidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.sanidade.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.sanidade.ValueChanged += new System.EventHandler(this.sanidade_ValueChanged);
-            this.sanidade.Click += new System.EventHandler(this.ataque_Click);
+            sanidade.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            sanidade.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            sanidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            sanidade.Location = new System.Drawing.Point(520, 546);
+            sanidade.Minimum = new decimal(new int[] { 3, 0, 0, 0 });
+            sanidade.Name = "sanidade";
+            sanidade.Size = new System.Drawing.Size(40, 23);
+            sanidade.TabIndex = 141;
+            sanidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            sanidade.Value = new decimal(new int[] { 3, 0, 0, 0 });
+            sanidade.ValueChanged += sanidade_ValueChanged;
+            sanidade.Click += ataque_Click;
             // 
             // label37
             // 
-            this.label37.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label37.BackColor = System.Drawing.Color.Transparent;
-            this.label37.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label37.ForeColor = System.Drawing.SystemColors.Control;
-            this.label37.Location = new System.Drawing.Point(410, 545);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(111, 24);
-            this.label37.TabIndex = 140;
-            this.label37.Text = "Sanidade";
-            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label37.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label37.BackColor = System.Drawing.Color.Transparent;
+            label37.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label37.ForeColor = System.Drawing.SystemColors.Control;
+            label37.Location = new System.Drawing.Point(410, 545);
+            label37.Name = "label37";
+            label37.Size = new System.Drawing.Size(111, 24);
+            label37.TabIndex = 140;
+            label37.Text = "Sanidade";
+            label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel13
             // 
-            this.panel13.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel13.BackColor = System.Drawing.Color.Transparent;
-            this.panel13.Controls.Add(this.label6);
-            this.panel13.Controls.Add(this.label2);
-            this.panel13.Controls.Add(this.label3);
-            this.panel13.Controls.Add(this.label4);
-            this.panel13.Controls.Add(this.label5);
-            this.panel13.Controls.Add(this.label8);
-            this.panel13.Controls.Add(this.label7);
-            this.panel13.Controls.Add(this.lbl_destreza);
-            this.panel13.Controls.Add(this.lbl_vigor);
-            this.panel13.Controls.Add(this.panel2);
-            this.panel13.Controls.Add(this.panel3);
-            this.panel13.Controls.Add(this.panel5);
-            this.panel13.Controls.Add(this.panel4);
-            this.panel13.Controls.Add(this.panel7);
-            this.panel13.Controls.Add(this.panel6);
-            this.panel13.Controls.Add(this.lbl_carisma);
-            this.panel13.Controls.Add(this.lbl_raciocinio);
-            this.panel13.Controls.Add(this.lbl_magia);
-            this.panel13.Controls.Add(this.lbl_forca);
-            this.panel13.Controls.Add(this.btn_forcasum);
-            this.panel13.Controls.Add(this.btn_forcasub);
-            this.panel13.Controls.Add(this.btn_destrezasum);
-            this.panel13.Controls.Add(this.lbl_pontos);
-            this.panel13.Controls.Add(this.btn_destrezasub);
-            this.panel13.Controls.Add(this.btn_vigorsum);
-            this.panel13.Controls.Add(this.btn_vigorsub);
-            this.panel13.Controls.Add(this.btn_carismasum);
-            this.panel13.Controls.Add(this.btn_carismasub);
-            this.panel13.Controls.Add(this.btn_raciosum);
-            this.panel13.Controls.Add(this.btn_raciosub);
-            this.panel13.Controls.Add(this.btn_magiasum);
-            this.panel13.Controls.Add(this.btn_magiasub);
-            this.panel13.Controls.Add(this.panel8);
-            this.panel13.Controls.Add(this.pnl_talentos);
-            this.panel13.Location = new System.Drawing.Point(12, 78);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(878, 654);
-            this.panel13.TabIndex = 142;
-            this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel13_Paint);
+            panel13.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            panel13.BackColor = System.Drawing.Color.Transparent;
+            panel13.Controls.Add(label6);
+            panel13.Controls.Add(label2);
+            panel13.Controls.Add(label3);
+            panel13.Controls.Add(label4);
+            panel13.Controls.Add(label5);
+            panel13.Controls.Add(label8);
+            panel13.Controls.Add(label7);
+            panel13.Controls.Add(lbl_destreza);
+            panel13.Controls.Add(lbl_vigor);
+            panel13.Controls.Add(panel2);
+            panel13.Controls.Add(panel3);
+            panel13.Controls.Add(panel5);
+            panel13.Controls.Add(panel4);
+            panel13.Controls.Add(panel7);
+            panel13.Controls.Add(panel6);
+            panel13.Controls.Add(lbl_carisma);
+            panel13.Controls.Add(lbl_raciocinio);
+            panel13.Controls.Add(lbl_magia);
+            panel13.Controls.Add(lbl_forca);
+            panel13.Controls.Add(btn_forcasum);
+            panel13.Controls.Add(btn_forcasub);
+            panel13.Controls.Add(btn_destrezasum);
+            panel13.Controls.Add(lbl_pontos);
+            panel13.Controls.Add(btn_destrezasub);
+            panel13.Controls.Add(btn_vigorsum);
+            panel13.Controls.Add(btn_vigorsub);
+            panel13.Controls.Add(btn_carismasum);
+            panel13.Controls.Add(btn_carismasub);
+            panel13.Controls.Add(btn_raciosum);
+            panel13.Controls.Add(btn_raciosub);
+            panel13.Controls.Add(btn_magiasum);
+            panel13.Controls.Add(btn_magiasub);
+            panel13.Controls.Add(panel8);
+            panel13.Controls.Add(pnl_talentos);
+            panel13.Location = new System.Drawing.Point(12, 78);
+            panel13.Name = "panel13";
+            panel13.Size = new System.Drawing.Size(878, 654);
+            panel13.TabIndex = 142;
+            panel13.Paint += panel13_Paint;
             // 
             // pnl_talentos
             // 
-            this.pnl_talentos.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pnl_talentos.Controls.Add(this.label40);
-            this.pnl_talentos.Controls.Add(this.label9);
-            this.pnl_talentos.Controls.Add(this.sanidade);
-            this.pnl_talentos.Controls.Add(this.lbl_briga);
-            this.pnl_talentos.Controls.Add(this.esquiva);
-            this.pnl_talentos.Controls.Add(this.label37);
-            this.pnl_talentos.Controls.Add(this.ataque);
-            this.pnl_talentos.Controls.Add(this.label_esquiva);
-            this.pnl_talentos.Controls.Add(this.panel12);
-            this.pnl_talentos.Controls.Add(this.defesa);
-            this.pnl_talentos.Controls.Add(this.panel11);
-            this.pnl_talentos.Controls.Add(this.label20);
-            this.pnl_talentos.Controls.Add(this.panel10);
-            this.pnl_talentos.Controls.Add(this.sobrevivencia);
-            this.pnl_talentos.Controls.Add(this.label21);
-            this.pnl_talentos.Controls.Add(this.label12);
-            this.pnl_talentos.Controls.Add(this.ocultismo);
-            this.pnl_talentos.Controls.Add(this.label22);
-            this.pnl_talentos.Controls.Add(this.label11);
-            this.pnl_talentos.Controls.Add(this.academicos);
-            this.pnl_talentos.Controls.Add(this.label13);
-            this.pnl_talentos.Controls.Add(this.label10);
-            this.pnl_talentos.Controls.Add(this.etiqueta);
-            this.pnl_talentos.Controls.Add(this.label23);
-            this.pnl_talentos.Controls.Add(this.panel9);
-            this.pnl_talentos.Controls.Add(this.intuicao);
-            this.pnl_talentos.Controls.Add(this.label24);
-            this.pnl_talentos.Controls.Add(this.label25);
-            this.pnl_talentos.Controls.Add(this.investigacao);
-            this.pnl_talentos.Controls.Add(this.label26);
-            this.pnl_talentos.Controls.Add(this.label27);
-            this.pnl_talentos.Controls.Add(this.percepcao);
-            this.pnl_talentos.Controls.Add(this.label28);
-            this.pnl_talentos.Controls.Add(this.label30);
-            this.pnl_talentos.Controls.Add(this.esconder);
-            this.pnl_talentos.Controls.Add(this.label31);
-            this.pnl_talentos.Controls.Add(this.label32);
-            this.pnl_talentos.Controls.Add(this.enganacao);
-            this.pnl_talentos.Controls.Add(this.label33);
-            this.pnl_talentos.Controls.Add(this.label34);
-            this.pnl_talentos.Controls.Add(this.seduzir);
-            this.pnl_talentos.Controls.Add(this.label35);
-            this.pnl_talentos.Controls.Add(this.contrataque);
-            this.pnl_talentos.Controls.Add(this.intimidacao);
-            this.pnl_talentos.Controls.Add(this.arematirar);
-            this.pnl_talentos.Controls.Add(this.lancarmagia);
-            this.pnl_talentos.Controls.Add(this.labia);
-            this.pnl_talentos.Location = new System.Drawing.Point(238, 49);
-            this.pnl_talentos.Name = "pnl_talentos";
-            this.pnl_talentos.Size = new System.Drawing.Size(621, 588);
-            this.pnl_talentos.TabIndex = 144;
+            pnl_talentos.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            pnl_talentos.Controls.Add(label40);
+            pnl_talentos.Controls.Add(label9);
+            pnl_talentos.Controls.Add(sanidade);
+            pnl_talentos.Controls.Add(lbl_briga);
+            pnl_talentos.Controls.Add(esquiva);
+            pnl_talentos.Controls.Add(label37);
+            pnl_talentos.Controls.Add(ataque);
+            pnl_talentos.Controls.Add(label_esquiva);
+            pnl_talentos.Controls.Add(panel12);
+            pnl_talentos.Controls.Add(defesa);
+            pnl_talentos.Controls.Add(panel11);
+            pnl_talentos.Controls.Add(label20);
+            pnl_talentos.Controls.Add(panel10);
+            pnl_talentos.Controls.Add(sobrevivencia);
+            pnl_talentos.Controls.Add(label21);
+            pnl_talentos.Controls.Add(label12);
+            pnl_talentos.Controls.Add(ocultismo);
+            pnl_talentos.Controls.Add(label22);
+            pnl_talentos.Controls.Add(label11);
+            pnl_talentos.Controls.Add(academicos);
+            pnl_talentos.Controls.Add(label13);
+            pnl_talentos.Controls.Add(label10);
+            pnl_talentos.Controls.Add(etiqueta);
+            pnl_talentos.Controls.Add(label23);
+            pnl_talentos.Controls.Add(panel9);
+            pnl_talentos.Controls.Add(intuicao);
+            pnl_talentos.Controls.Add(label24);
+            pnl_talentos.Controls.Add(label25);
+            pnl_talentos.Controls.Add(investigacao);
+            pnl_talentos.Controls.Add(label26);
+            pnl_talentos.Controls.Add(label27);
+            pnl_talentos.Controls.Add(percepcao);
+            pnl_talentos.Controls.Add(label28);
+            pnl_talentos.Controls.Add(label30);
+            pnl_talentos.Controls.Add(esconder);
+            pnl_talentos.Controls.Add(label31);
+            pnl_talentos.Controls.Add(label32);
+            pnl_talentos.Controls.Add(enganacao);
+            pnl_talentos.Controls.Add(label33);
+            pnl_talentos.Controls.Add(label34);
+            pnl_talentos.Controls.Add(seduzir);
+            pnl_talentos.Controls.Add(label35);
+            pnl_talentos.Controls.Add(contrataque);
+            pnl_talentos.Controls.Add(intimidacao);
+            pnl_talentos.Controls.Add(arematirar);
+            pnl_talentos.Controls.Add(lancarmagia);
+            pnl_talentos.Controls.Add(labia);
+            pnl_talentos.Location = new System.Drawing.Point(238, 49);
+            pnl_talentos.Name = "pnl_talentos";
+            pnl_talentos.Size = new System.Drawing.Size(621, 588);
+            pnl_talentos.TabIndex = 144;
             // 
             // label40
             // 
-            this.label40.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label40.BackColor = System.Drawing.Color.Transparent;
-            this.label40.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label40.ForeColor = System.Drawing.SystemColors.Control;
-            this.label40.Location = new System.Drawing.Point(139, 505);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(275, 24);
-            this.label40.TabIndex = 143;
-            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label40.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            label40.BackColor = System.Drawing.Color.Transparent;
+            label40.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label40.ForeColor = System.Drawing.SystemColors.Control;
+            label40.Location = new System.Drawing.Point(139, 505);
+            label40.Name = "label40";
+            label40.Size = new System.Drawing.Size(275, 24);
+            label40.TabIndex = 143;
+            label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // comboBox1
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.BackColor = System.Drawing.Color.White;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1154, 780);
-            this.comboBox1.MaxDropDownItems = 5;
-            this.comboBox1.MaxLength = 1;
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(45, 28);
-            this.comboBox1.TabIndex = 142;
-            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_TextChanged);
+            comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            comboBox1.BackColor = System.Drawing.Color.White;
+            comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            comboBox1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            comboBox1.ForeColor = System.Drawing.SystemColors.Desktop;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new System.Drawing.Point(1154, 780);
+            comboBox1.MaxDropDownItems = 5;
+            comboBox1.MaxLength = 1;
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new System.Drawing.Size(45, 28);
+            comboBox1.TabIndex = 142;
+            comboBox1.SelectionChangeCommitted += comboBox1_TextChanged;
             // 
             // label38
             // 
-            this.label38.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label38.AutoSize = true;
-            this.label38.BackColor = System.Drawing.Color.Transparent;
-            this.label38.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label38.ForeColor = System.Drawing.SystemColors.Control;
-            this.label38.Location = new System.Drawing.Point(1099, 783);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(49, 21);
-            this.label38.TabIndex = 143;
-            this.label38.Text = "Nível:";
-            this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label38.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            label38.AutoSize = true;
+            label38.BackColor = System.Drawing.Color.Transparent;
+            label38.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label38.ForeColor = System.Drawing.SystemColors.Control;
+            label38.Location = new System.Drawing.Point(1099, 783);
+            label38.Name = "label38";
+            label38.Size = new System.Drawing.Size(49, 21);
+            label38.TabIndex = 143;
+            label38.Text = "Nível:";
+            label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::Dark_Age.Properties.Resources.Sem_imagem;
-            this.pictureBox1.Location = new System.Drawing.Point(1411, 583);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(236, 146);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 144;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBox1.Image = Properties.Resources.Sem_imagem;
+            pictureBox1.Location = new System.Drawing.Point(1411, 583);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(236, 146);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 144;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // label39
             // 
-            this.label39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label39.AutoSize = true;
-            this.label39.BackColor = System.Drawing.Color.Transparent;
-            this.label39.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label39.ForeColor = System.Drawing.SystemColors.Control;
-            this.label39.Location = new System.Drawing.Point(1276, 644);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(125, 15);
-            this.label39.TabIndex = 145;
-            this.label39.Text = "Imagem Personagem";
-            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label39.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            label39.AutoSize = true;
+            label39.BackColor = System.Drawing.Color.Transparent;
+            label39.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label39.ForeColor = System.Drawing.SystemColors.Control;
+            label39.Location = new System.Drawing.Point(1276, 644);
+            label39.Name = "label39";
+            label39.Size = new System.Drawing.Size(125, 15);
+            label39.TabIndex = 145;
+            label39.Text = "Imagem Personagem";
+            label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnl_classes
             // 
-            this.pnl_classes.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pnl_classes.BackColor = System.Drawing.Color.Transparent;
-            this.pnl_classes.Controls.Add(this.label19);
-            this.pnl_classes.Controls.Add(this.button1);
-            this.pnl_classes.Controls.Add(this.button2);
-            this.pnl_classes.Controls.Add(this.button4);
-            this.pnl_classes.Controls.Add(this.button3);
-            this.pnl_classes.Controls.Add(this.button5);
-            this.pnl_classes.Controls.Add(this.label14);
-            this.pnl_classes.Controls.Add(this.label15);
-            this.pnl_classes.Controls.Add(this.label17);
-            this.pnl_classes.Controls.Add(this.label18);
-            this.pnl_classes.Location = new System.Drawing.Point(892, 22);
-            this.pnl_classes.Name = "pnl_classes";
-            this.pnl_classes.Size = new System.Drawing.Size(816, 532);
-            this.pnl_classes.TabIndex = 146;
+            pnl_classes.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            pnl_classes.BackColor = System.Drawing.Color.Transparent;
+            pnl_classes.Controls.Add(label19);
+            pnl_classes.Controls.Add(button1);
+            pnl_classes.Controls.Add(button2);
+            pnl_classes.Controls.Add(button4);
+            pnl_classes.Controls.Add(button3);
+            pnl_classes.Controls.Add(button5);
+            pnl_classes.Controls.Add(label14);
+            pnl_classes.Controls.Add(label15);
+            pnl_classes.Controls.Add(label17);
+            pnl_classes.Controls.Add(label18);
+            pnl_classes.Location = new System.Drawing.Point(892, 22);
+            pnl_classes.Name = "pnl_classes";
+            pnl_classes.Size = new System.Drawing.Size(816, 532);
+            pnl_classes.TabIndex = 146;
             // 
             // tipo_criacao
             // 
-            this.tipo_criacao.AutoCompleteCustomSource.AddRange(new string[] {
-            "Personagem",
-            "Pet",
-            "NPC",
-            "Monstro"});
-            this.tipo_criacao.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.tipo_criacao.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.tipo_criacao.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tipo_criacao.FormattingEnabled = true;
-            this.tipo_criacao.Items.AddRange(new object[] {
-            "Personagem",
-            "Pet",
-            "NPC",
-            "Monstro"});
-            this.tipo_criacao.Location = new System.Drawing.Point(96, 17);
-            this.tipo_criacao.Name = "tipo_criacao";
-            this.tipo_criacao.Size = new System.Drawing.Size(121, 28);
-            this.tipo_criacao.TabIndex = 147;
-            this.tipo_criacao.Visible = false;
-            this.tipo_criacao.SelectedIndexChanged += new System.EventHandler(this.tipo_criacao_SelectedIndexChanged);
+            tipo_criacao.AutoCompleteCustomSource.AddRange(new string[] { "Personagem", "Pet", "NPC", "Monstro" });
+            tipo_criacao.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            tipo_criacao.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            tipo_criacao.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tipo_criacao.FormattingEnabled = true;
+            tipo_criacao.Items.AddRange(new object[] { "Pet", "Monstro", "NPC" });
+            tipo_criacao.Location = new System.Drawing.Point(96, 17);
+            tipo_criacao.Name = "tipo_criacao";
+            tipo_criacao.Size = new System.Drawing.Size(121, 28);
+            tipo_criacao.TabIndex = 147;
+            tipo_criacao.SelectedIndexChanged += tipo_criacao_SelectedIndexChanged;
             // 
             // label41
             // 
-            this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label41.AutoSize = true;
-            this.label41.BackColor = System.Drawing.Color.Transparent;
-            this.label41.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label41.ForeColor = System.Drawing.SystemColors.Control;
-            this.label41.Location = new System.Drawing.Point(43, 20);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(43, 21);
-            this.label41.TabIndex = 148;
-            this.label41.Text = "Tipo:";
-            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label41.Visible = false;
+            label41.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            label41.AutoSize = true;
+            label41.BackColor = System.Drawing.Color.Transparent;
+            label41.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label41.ForeColor = System.Drawing.SystemColors.Control;
+            label41.Location = new System.Drawing.Point(43, 20);
+            label41.Name = "label41";
+            label41.Size = new System.Drawing.Size(43, 21);
+            label41.TabIndex = 148;
+            label41.Text = "Tipo:";
+            label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnl_status
             // 
-            this.pnl_status.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.pnl_status.BackColor = System.Drawing.Color.Transparent;
-            this.pnl_status.Controls.Add(this.tipo_criacao);
-            this.pnl_status.Controls.Add(this.label41);
-            this.pnl_status.Controls.Add(this.comboBox2);
-            this.pnl_status.Controls.Add(this.label16);
-            this.pnl_status.Controls.Add(this.mana_entidade);
-            this.pnl_status.Controls.Add(this.vida_entidade);
-            this.pnl_status.Controls.Add(this.iconButton6);
-            this.pnl_status.Controls.Add(this.iconButton1);
-            this.pnl_status.Location = new System.Drawing.Point(902, 610);
-            this.pnl_status.Name = "pnl_status";
-            this.pnl_status.Size = new System.Drawing.Size(368, 108);
-            this.pnl_status.TabIndex = 149;
-            this.pnl_status.Visible = false;
+            pnl_status.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            pnl_status.BackColor = System.Drawing.Color.Transparent;
+            pnl_status.Controls.Add(tipo_criacao);
+            pnl_status.Controls.Add(label41);
+            pnl_status.Controls.Add(comboBox2);
+            pnl_status.Controls.Add(label16);
+            pnl_status.Controls.Add(mana_entidade);
+            pnl_status.Controls.Add(vida_entidade);
+            pnl_status.Controls.Add(iconButton6);
+            pnl_status.Controls.Add(iconButton1);
+            pnl_status.Location = new System.Drawing.Point(902, 610);
+            pnl_status.Name = "pnl_status";
+            pnl_status.Size = new System.Drawing.Size(368, 108);
+            pnl_status.TabIndex = 149;
+            pnl_status.Visible = false;
             // 
             // comboBox2
             // 
-            this.comboBox2.AutoCompleteCustomSource.AddRange(new string[] {
-            "Personagem",
-            "Pet",
-            "NPC",
-            "Monstro"});
-            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Pequeno",
-            "Médio",
-            "Grande",
-            "Gigante"});
-            this.comboBox2.Location = new System.Drawing.Point(97, 69);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 28);
-            this.comboBox2.TabIndex = 152;
-            this.comboBox2.Visible = false;
+            comboBox2.AutoCompleteCustomSource.AddRange(new string[] { "Personagem", "Pet", "NPC", "Monstro" });
+            comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            comboBox2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Pequeno", "Médio", "Grande", "Gigante" });
+            comboBox2.Location = new System.Drawing.Point(97, 69);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new System.Drawing.Size(121, 28);
+            comboBox2.TabIndex = 152;
+            comboBox2.Visible = false;
             // 
             // label16
             // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label16.ForeColor = System.Drawing.SystemColors.Control;
-            this.label16.Location = new System.Drawing.Point(12, 71);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(76, 21);
-            this.label16.TabIndex = 151;
-            this.label16.Text = "Tamanho:";
+            label16.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            label16.AutoSize = true;
+            label16.BackColor = System.Drawing.Color.Transparent;
+            label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label16.ForeColor = System.Drawing.SystemColors.Control;
+            label16.Location = new System.Drawing.Point(12, 71);
+            label16.Name = "label16";
+            label16.Size = new System.Drawing.Size(76, 21);
+            label16.TabIndex = 151;
+            label16.Text = "Tamanho:";
             // 
             // mana_entidade
             // 
-            this.mana_entidade.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mana_entidade.Location = new System.Drawing.Point(308, 72);
-            this.mana_entidade.Name = "mana_entidade";
-            this.mana_entidade.Size = new System.Drawing.Size(57, 27);
-            this.mana_entidade.TabIndex = 153;
-            this.mana_entidade.Text = "0";
-            this.mana_entidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            mana_entidade.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            mana_entidade.Location = new System.Drawing.Point(308, 72);
+            mana_entidade.Name = "mana_entidade";
+            mana_entidade.Size = new System.Drawing.Size(57, 27);
+            mana_entidade.TabIndex = 153;
+            mana_entidade.Text = "0";
+            mana_entidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // vida_entidade
             // 
-            this.vida_entidade.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.vida_entidade.Location = new System.Drawing.Point(308, 21);
-            this.vida_entidade.Name = "vida_entidade";
-            this.vida_entidade.Size = new System.Drawing.Size(57, 27);
-            this.vida_entidade.TabIndex = 152;
-            this.vida_entidade.Text = "0";
-            this.vida_entidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            vida_entidade.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            vida_entidade.Location = new System.Drawing.Point(308, 21);
+            vida_entidade.Name = "vida_entidade";
+            vida_entidade.Size = new System.Drawing.Size(57, 27);
+            vida_entidade.TabIndex = 152;
+            vida_entidade.Text = "0";
+            vida_entidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // iconButton6
             // 
-            this.iconButton6.CausesValidation = false;
-            this.iconButton6.FlatAppearance.BorderSize = 0;
-            this.iconButton6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.iconButton6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.iconButton6.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
-            this.iconButton6.IconColor = System.Drawing.Color.DeepSkyBlue;
-            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.IconSize = 30;
-            this.iconButton6.Location = new System.Drawing.Point(224, 67);
-            this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Size = new System.Drawing.Size(88, 30);
-            this.iconButton6.TabIndex = 151;
-            this.iconButton6.Text = "Mana:";
-            this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton6.UseVisualStyleBackColor = true;
+            iconButton6.CausesValidation = false;
+            iconButton6.FlatAppearance.BorderSize = 0;
+            iconButton6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            iconButton6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            iconButton6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            iconButton6.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            iconButton6.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
+            iconButton6.IconColor = System.Drawing.Color.DeepSkyBlue;
+            iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton6.IconSize = 30;
+            iconButton6.Location = new System.Drawing.Point(224, 67);
+            iconButton6.Name = "iconButton6";
+            iconButton6.Size = new System.Drawing.Size(88, 30);
+            iconButton6.TabIndex = 151;
+            iconButton6.Text = "Mana:";
+            iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            iconButton6.UseVisualStyleBackColor = true;
             // 
             // iconButton1
             // 
-            this.iconButton1.CausesValidation = false;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.iconButton1.ForeColor = System.Drawing.Color.MediumSpringGreen;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.iconButton1.IconColor = System.Drawing.Color.MediumSpringGreen;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(223, 18);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(84, 30);
-            this.iconButton1.TabIndex = 150;
-            this.iconButton1.Text = "Vida:";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.CausesValidation = false;
+            iconButton1.FlatAppearance.BorderSize = 0;
+            iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            iconButton1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            iconButton1.ForeColor = System.Drawing.Color.MediumSpringGreen;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            iconButton1.IconColor = System.Drawing.Color.MediumSpringGreen;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconSize = 30;
+            iconButton1.Location = new System.Drawing.Point(223, 18);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new System.Drawing.Size(84, 30);
+            iconButton1.TabIndex = 150;
+            iconButton1.Text = "Vida:";
+            iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            iconButton1.UseVisualStyleBackColor = true;
             // 
             // Ficha
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.BackgroundImage = global::Dark_Age.Properties.Resources.image__2_;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1720, 850);
-            this.Controls.Add(this.label39);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.classe);
-            this.Controls.Add(this.label38);
-            this.Controls.Add(this.label36);
-            this.Controls.Add(this.btn_cria_personagem);
-            this.Controls.Add(this.label29);
-            this.Controls.Add(this.nome_personagem);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbl_fechar_personagem);
-            this.Controls.Add(this.panel13);
-            this.Controls.Add(this.pnl_classes);
-            this.Controls.Add(this.pnl_status);
-            this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Ficha";
-            this.Opacity = 0D;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ficha";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Ficha_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ataque)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.esquiva)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.defesa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lancarmagia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.arematirar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contrataque)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seduzir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.intimidacao)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.labia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.percepcao)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.esconder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enganacao)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.etiqueta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.intuicao)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.investigacao)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sobrevivencia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ocultismo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.academicos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sanidade)).EndInit();
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
-            this.pnl_talentos.ResumeLayout(false);
-            this.pnl_talentos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnl_classes.ResumeLayout(false);
-            this.pnl_classes.PerformLayout();
-            this.pnl_status.ResumeLayout(false);
-            this.pnl_status.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            BackgroundImage = Properties.Resources.image__2_;
+            BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ClientSize = new System.Drawing.Size(1720, 850);
+            Controls.Add(label39);
+            Controls.Add(pictureBox1);
+            Controls.Add(comboBox1);
+            Controls.Add(classe);
+            Controls.Add(label38);
+            Controls.Add(label36);
+            Controls.Add(btn_cria_personagem);
+            Controls.Add(label29);
+            Controls.Add(nome_personagem);
+            Controls.Add(panel1);
+            Controls.Add(label1);
+            Controls.Add(lbl_fechar_personagem);
+            Controls.Add(panel13);
+            Controls.Add(pnl_classes);
+            Controls.Add(pnl_status);
+            DoubleBuffered = true;
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            Name = "Ficha";
+            Opacity = 0D;
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Ficha";
+            WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            Load += Ficha_Load;
+            ((System.ComponentModel.ISupportInitialize)ataque).EndInit();
+            ((System.ComponentModel.ISupportInitialize)esquiva).EndInit();
+            ((System.ComponentModel.ISupportInitialize)defesa).EndInit();
+            ((System.ComponentModel.ISupportInitialize)lancarmagia).EndInit();
+            ((System.ComponentModel.ISupportInitialize)arematirar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)contrataque).EndInit();
+            ((System.ComponentModel.ISupportInitialize)seduzir).EndInit();
+            ((System.ComponentModel.ISupportInitialize)intimidacao).EndInit();
+            ((System.ComponentModel.ISupportInitialize)labia).EndInit();
+            ((System.ComponentModel.ISupportInitialize)percepcao).EndInit();
+            ((System.ComponentModel.ISupportInitialize)esconder).EndInit();
+            ((System.ComponentModel.ISupportInitialize)enganacao).EndInit();
+            ((System.ComponentModel.ISupportInitialize)etiqueta).EndInit();
+            ((System.ComponentModel.ISupportInitialize)intuicao).EndInit();
+            ((System.ComponentModel.ISupportInitialize)investigacao).EndInit();
+            ((System.ComponentModel.ISupportInitialize)sobrevivencia).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ocultismo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)academicos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)sanidade).EndInit();
+            panel13.ResumeLayout(false);
+            panel13.PerformLayout();
+            pnl_talentos.ResumeLayout(false);
+            pnl_talentos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            pnl_classes.ResumeLayout(false);
+            pnl_classes.PerformLayout();
+            pnl_status.ResumeLayout(false);
+            pnl_status.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

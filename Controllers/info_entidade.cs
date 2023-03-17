@@ -142,6 +142,7 @@ namespace Dark_Age.Controllers
                                        , isp.tipo_personagem 
                                        , isp.tamanho
                                        , isp.mana_max
+                                       , isp.sanidade_mod
                                      from ""Dark_Age_Connection"".""Inter_status_pers"" isp 
                                      join ""Dark_Age_Connection"".""Personagens"" p on p.id_personagem = fk_id_personagem
                                     left join ""Dark_Age_Connection"".""Classes"" c on c.id_classe = p.fk_id_classe
@@ -150,7 +151,7 @@ namespace Dark_Age.Controllers
                                       and ((fk_id_jogador = @id_jogador) or (@id_jogador = 0))
                                       and ((fk_id_campanha =  @id_campanha) or (@id_campanha = 0))
                                       and ((p.id_personagem =  @id_personagem) or (@id_personagem = 0))
-                                    group by 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21
+                                    group by 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22
                                     order by 2;";
             comi.Parameters.AddWithValue("@tipo", tipo);
 			comi.Parameters.AddWithValue("@id_entidade", id_entidade);
@@ -161,7 +162,7 @@ namespace Dark_Age.Controllers
 
             while (ndp.Read())
             {
-                return new string[] { ndp.GetValue(0).ToString(), ndp.GetValue(1).ToString(), ndp.GetValue(2).ToString(), ndp.GetValue(3).ToString(), ndp.GetValue(4).ToString(), ndp.GetValue(5).ToString(), ndp.GetValue(6).ToString(), ndp.GetValue(7).ToString(), ndp.GetValue(8).ToString(), ndp.GetValue(9).ToString(), ndp.GetValue(10).ToString(), ndp.GetValue(11).ToString(), ndp.GetValue(12).ToString(), ndp.GetValue(13).ToString(), ndp.GetValue(14).ToString(), ndp.GetValue(15).ToString(), ndp.GetValue(16).ToString(), ndp.GetValue(17).ToString(), ndp.GetValue(18).ToString(), ndp.GetValue(19).ToString(), ndp.GetValue(20).ToString() }; 
+                return new string[] { ndp.GetValue(0).ToString(), ndp.GetValue(1).ToString(), ndp.GetValue(2).ToString(), ndp.GetValue(3).ToString(), ndp.GetValue(4).ToString(), ndp.GetValue(5).ToString(), ndp.GetValue(6).ToString(), ndp.GetValue(7).ToString(), ndp.GetValue(8).ToString(), ndp.GetValue(9).ToString(), ndp.GetValue(10).ToString(), ndp.GetValue(11).ToString(), ndp.GetValue(12).ToString(), ndp.GetValue(13).ToString(), ndp.GetValue(14).ToString(), ndp.GetValue(15).ToString(), ndp.GetValue(16).ToString(), ndp.GetValue(17).ToString(), ndp.GetValue(18).ToString(), ndp.GetValue(19).ToString(), ndp.GetValue(20).ToString(), ndp.GetValue(21).ToString() }; 
             }
             return null;
         }
@@ -187,6 +188,7 @@ namespace Dark_Age.Controllers
 				Ficha.id_classe = Int32.Parse(valor[14]);
                 Form1.escudo = Int32.Parse(valor[15]);
                 Form1.mana_maxima = Int32.Parse(valor[20]);
+                Form1.sanidade_mod = Int32.Parse(valor[21]);
 			}
 		}
 
@@ -227,8 +229,12 @@ namespace Dark_Age.Controllers
         public static void atualiza_ids(int id_pers, int id_enti, int tipo_enti, string nome, int classe, int nivel, byte[] imagem, int[] variavel_atributo, int[] variavel_talento, int id_campanha, int id_jogador, string tamanho, int mana_pers, int vida_pers)
         {
             int[] valor = insert_update_perso(id_pers, id_enti, tipo_enti, nome, classe, nivel, imagem, variavel_atributo, variavel_talento, id_campanha, id_jogador, tamanho, mana_pers, vida_pers);
-			Campanha.id_personagem = valor[0];
-			Campanha.id_entidade = valor[1];
+			
+            if (Campanha.id_jogador != Campanha.id_mestre_campanha)
+            {
+                Campanha.id_personagem = valor[0];
+                Campanha.id_entidade = valor[1];
+            }
 		}
 
         public static void update_status_entidade(int vida_atual, int sanidade_atual, int mana_atual, int adicional_atual, int adicional_max, int escudo, int entidade)

@@ -45,7 +45,7 @@ namespace Dark_Age
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(selecionar_profissao.Visible == true)
+            if (selecionar_profissao.Visible == true)
             {
                 selecionar_profissao.Visible = false;
             }
@@ -53,7 +53,7 @@ namespace Dark_Age
             {
                 selecionar_profissao.Visible = true;
             }
-            
+
         }
 
         public void carregar_data_grid_profissoes()
@@ -81,7 +81,7 @@ namespace Dark_Age
                     data_grid_profissoes.Rows[0].Selected = true;
                     DataGridViewRow row = data_grid_profissoes.Rows[0];
                     Carregar_tabs(row);
-                }                
+                }
                 foreach (DataGridViewRow x in data_grid_profissoes.Rows)
                 {
                     x.MinimumHeight = 30;
@@ -270,9 +270,9 @@ namespace Dark_Age
 
 
 
-        private void carregar_xp_maestria() 
-        { 
-            if(fk_id_maestria == 1)
+        private void carregar_xp_maestria()
+        {
+            if (fk_id_maestria == 1)
             {
                 progressBar1.Maximum = 10;
                 label8.Text = "10";
@@ -341,13 +341,13 @@ namespace Dark_Age
 
         private void pescaria()
         {
-            List<int> rio = new() { 145,        146,    147,     148,              149,          150 };
+            List<int> rio = new() { 145, 146, 147, 148, 149, 150 };
             //                      Perca-Sol   Caboz   Salmão   Truta Arco-Íris   Truta Tigre   Bagre
 
-            List<int> lago = new() { 151,    152,     153,     154,         155,    156 };
+            List<int> lago = new() { 151, 152, 153, 154, 155, 156 };
             //                       Carpa   Robalo   Achigã   Peixe-Gato   Lúcio   Esturjão
 
-            List<int> mar = new() { 157,       158,      159,      160,       161,     162 };
+            List<int> mar = new() { 157, 158, 159, 160, 161, 162 };
             //                      Sardinha   Anchova   Tilápia   Linguado   Baiacu   Atum
 
 
@@ -681,7 +681,7 @@ namespace Dark_Age
                     {
                         Conexao_BD.insert_item_inventario(rio[j], qnt[j], Campanha.id_personagem);
                     }
-                    
+
                 }
             }
             else if (Local_de_Pesca.SelectedIndex == 1)
@@ -692,7 +692,7 @@ namespace Dark_Age
                     {
                         Conexao_BD.insert_item_inventario(lago[j], qnt[j], Campanha.id_personagem);
                     }
-                        
+
                 }
             }
             else if (Local_de_Pesca.SelectedIndex == 2)

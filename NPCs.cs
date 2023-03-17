@@ -202,10 +202,10 @@ namespace Dark_Age
 
         private void adiciona_qtd_Click(object sender, EventArgs e)
         {
-            //Ficha.tipo_entidade = 2;
-            //Ficha.pers_criado = false;
-            //Ficha ficha_pet = new Ficha();
-            //ficha_pet.ShowDialog();
+            Ficha.tipo_entidade = 3;
+            Ficha.pers_criado = false;
+            Ficha ficha_pet = new Ficha();
+            ficha_pet.ShowDialog();
         }
 
 
