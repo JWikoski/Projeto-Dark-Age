@@ -917,7 +917,6 @@
             this.btn_chat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_chat.UseVisualStyleBackColor = false;
             this.btn_chat.Click += new System.EventHandler(this.btn_chat_Click);
-            this.btn_chat.Leave += new System.EventHandler(this.btn_chat_Leave);
             // 
             // btn_iniciativa
             // 
@@ -1219,6 +1218,7 @@
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1600, 900);

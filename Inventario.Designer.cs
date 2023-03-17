@@ -765,6 +765,7 @@ namespace Dark_Age
             this.Grid_lista_inventario.VirtualMode = true;
             this.Grid_lista_inventario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_lista_itens_CellClick);
             this.Grid_lista_inventario.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_lista_inventario_ColumnHeaderMouseClick);
+            this.Grid_lista_inventario.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_lista_inventario_RowEnter);
             this.Grid_lista_inventario.Click += new System.EventHandler(this.Inventario_Click);
             // 
             // limpar_filtros1
@@ -806,6 +807,8 @@ namespace Dark_Age
             // 
             // text_descricao
             // 
+            this.text_descricao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.text_descricao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(146)))), ((int)(((byte)(182)))));
             this.text_descricao.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.text_descricao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);

@@ -75,7 +75,7 @@
     <Compile Update="Anotacoes_regras_gerais.cs">
 		  <SubType>Form</SubType>
 	  </Compile>
-	<Compile Update="Habilidades_passivas.cs">
+	<Compile Update="Habilidades.cs">
 		  <SubType>Form</SubType>
 	  </Compile>
 	<Compile Update="Ficha.cs" />

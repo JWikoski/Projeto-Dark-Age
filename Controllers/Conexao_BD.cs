@@ -100,7 +100,7 @@ namespace Dark_Age.Enteties
                 using NpgsqlDataAdapter dt_adapter_tipo = new NpgsqlDataAdapter($@"select id_tipo_itens 
                                                                                    , nome_tipo_itens 
                                                                                 from ""Dark_Age_Connection"".""Tipo_itens""
-                                                                               order by id_tipo_itens ;", Conexao_BD.Caminho_DB());
+                                                                               order by nome_tipo_itens ;", Conexao_BD.Caminho_DB());
 
                 DataTable dt_table_retorno_tipo = new DataTable();
 
@@ -123,7 +123,7 @@ namespace Dark_Age.Enteties
                                                                                        , nome_profissao
                                                                                        , descricao_profissao
                                                                                     from ""Dark_Age_Connection"".""Profissao""
-                                                                                   order by id_profissao ;", Conexao_BD.Caminho_DB());
+                                                                                   order by nome_profissao ;", Conexao_BD.Caminho_DB());
 
                 DataTable dt_table_retorno_profissao = new DataTable();
 
@@ -146,7 +146,7 @@ namespace Dark_Age.Enteties
                                                                                        , descricao
                                                                                        , bp
                                                                                     from ""Dark_Age_Connection"".""maestria""
-                                                                                   order by id_maestria ;", Conexao_BD.Caminho_DB());
+                                                                                   order by nome ;", Conexao_BD.Caminho_DB());
 
                 DataTable dt_table_retorno_maestria = new DataTable();
 
@@ -178,7 +178,8 @@ namespace Dark_Age.Enteties
                                                                           join ""Dark_Age_Connection"".""Profissao"" on id_profissao = fk_id_profissao 
                                                                           join ""Dark_Age_Connection"".""Tipo_itens"" on id_tipo_itens = fk_id_tipo_itens 
                                                                           left join ""Dark_Age_Connection"".""Inventario"" on fk_id_itens = id_itens
-                                                                          and fk_id_personagem = "+Campanha.id_personagem+";", Conexao_BD.Caminho_DB());
+                                                                          and fk_id_personagem = "+Campanha.id_personagem+"" +
+                                                                          " order by nome_itens;", Conexao_BD.Caminho_DB());
                 using NpgsqlCommandBuilder cBuilder = new NpgsqlCommandBuilder(dt_adapter);
                 DataTable dt_table = new DataTable();
 
@@ -210,7 +211,8 @@ namespace Dark_Age.Enteties
                                                                           join ""Dark_Age_Connection"".""Tipo_itens"" on id_tipo_itens = fk_id_tipo_itens
                                                                           where fk_id_personagem = " + id_personagem + " " +
                                                                           "and equipado = 'false' " +
-                                                                          "and ((id_itens = "+item+ ") or (" + item +" = 0)) ;", Conexao_BD.Caminho_DB());
+                                                                          "and ((id_itens = "+item+ ") or (" + item +" = 0)) " +
+                                                                          " order by nome_itens;", Conexao_BD.Caminho_DB());
                 using NpgsqlCommandBuilder cBuilder = new NpgsqlCommandBuilder(dt_adapter);
                 DataTable dt_table = new DataTable();
 
@@ -266,7 +268,8 @@ namespace Dark_Age.Enteties
                                                                           and fk_id_personagem = " + Campanha.id_personagem + 
                                                           " where nome_itens ILIKE '%" + nome + "%' or " +
                                                       "nome_tipo_itens ILIKE '%" + nome + "%' " +
-                                                      "or nome_profissao ILIKE '%" + nome + "%';", Conexao_BD.Caminho_DB());
+                                                      "or nome_profissao ILIKE '%" + nome + "%'" +
+                                                      " order by nome_itens;", Conexao_BD.Caminho_DB());
             using NpgsqlCommandBuilder cBuilder = new NpgsqlCommandBuilder(dt_adapter);
             DataTable dt_table = new DataTable();
 
@@ -277,7 +280,8 @@ namespace Dark_Age.Enteties
         public static DataTable select_materiais_criacao(int id_item)
         {
 
-            using NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"select ingrediente 
+            using NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"select id_itens
+                                                             , ingrediente 
                                                              , nome_itens 
                                                              , quantidade
                                                              , qnt_material 
@@ -286,7 +290,8 @@ namespace Dark_Age.Enteties
                                                            join ""Dark_Age_Connection"".""Itens"" on id_itens = ingrediente 
                                                            left join ""Dark_Age_Connection"".""Inventario"" inv on inv.fk_id_itens = ingrediente 
 	                                                      and inv.fk_id_personagem = "+Campanha.id_personagem +
-                                                          " where cri.fk_id_itens = " + id_item +";", Conexao_BD.Caminho_DB());
+                                                          " where cri.fk_id_itens = " + id_item +"" +
+                                                          " order by nome_itens;", Conexao_BD.Caminho_DB());
 
             using NpgsqlCommandBuilder cBuilder = new NpgsqlCommandBuilder(dt_adapter);
             DataTable dt_table = new DataTable();
@@ -297,7 +302,6 @@ namespace Dark_Age.Enteties
         
         public static DataTable select_itens_criacao(int id_item)
         {
-
             using NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"select nome_itens 
                                                              , quantidade
                                                              , qnt_material 
@@ -313,6 +317,38 @@ namespace Dark_Age.Enteties
             dt_adapter.Fill(dt_table);
             return dt_table;
         }
+        
+        public static DataTable select_itens_produziveis(int id_personagem)
+        {
+            using NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"SELECT i.id_itens, i.nome_itens, i.dificuldade , t.nome_tipo_itens
+	                                                                                 , p.nome_profissao , i.descricao, i.material, i.dano
+	                                                                                 , COALESCE(MIN(inv.quantidade/c.qnt_material), 0) AS quantidade
+
+                                                                        FROM ""Dark_Age_Connection"".""Itens"" i
+                                                                        JOIN ""Dark_Age_Connection"".""criacao"" c ON c.fk_id_itens = i.id_itens
+                                                                        JOIN(
+                                                                            SELECT fk_id_itens, quantidade
+                                                                            FROM ""Dark_Age_Connection"".""Inventario""
+                                                                            WHERE fk_id_personagem = " + Campanha.id_personagem+
+                                                                            " GROUP BY fk_id_itens, quantidade" +
+                                                                     " ) inv ON c.Ingrediente = inv.fk_id_itens AND c.qnt_material <= inv.quantidade " +
+                                                                       " join \"Dark_Age_Connection\".\"Profissao\" p on p.id_profissao = I.fk_id_profissao "+
+                                                                        " join \"Dark_Age_Connection\".\"Tipo_itens\" t on t.id_tipo_itens = I.fk_id_tipo_itens "+
+                                                                        " GROUP BY i.id_itens, i.nome_itens, i.dificuldade, t.nome_tipo_itens "+
+                                                                            " , p.nome_profissao, i.descricao, i.material, i.dano" +
+                                                                         " HAVING COUNT(*) = (" +
+                                                                           " SELECT COUNT(*)" +
+                                                                           " FROM \"Dark_Age_Connection\".\"criacao\" " +
+                                                                            " WHERE fk_id_itens = i.id_itens);", Conexao_BD.Caminho_DB());
+
+
+            using NpgsqlCommandBuilder cBuilder = new NpgsqlCommandBuilder(dt_adapter);
+            DataTable dt_table = new DataTable();
+
+            dt_adapter.Fill(dt_table);
+            return dt_table;
+        }
+
         public static DataTable filtro_inventario(string nome)
         {
 
@@ -867,12 +903,26 @@ namespace Dark_Age.Enteties
 			comn.CommandType = CommandType.Text;
 			comn.CommandText = $@" INSERT INTO ""Dark_Age_Connection"".chat
                                     (data_hora, mensagem, fk_id_entidade, tipo_dado)
-                                    VALUES(NOW(), @mensagem, @id_entidade, @tipo_dado);";
+                                    VALUES(current_timestamp - INTERVAL '3 hours', @mensagem, @id_entidade, @tipo_dado);";
 			comn.Parameters.AddWithValue("@data_atual", data_atual);
 			comn.Parameters.AddWithValue("@mensagem", mensagem);
 			comn.Parameters.AddWithValue("@id_entidade", id_entidade_envio);
 			comn.Parameters.AddWithValue("@tipo_dado", tipo_dado);
 			comn.ExecuteNonQuery();
 		}
-	}
+        public static void update_tema(Boolean tema)
+        {
+            using NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
+            conn.Open();
+            using NpgsqlCommand como = new NpgsqlCommand();
+            como.Connection = conn;
+            como.CommandType = CommandType.Text;
+            como.CommandText = $@"update ""Dark_Age_Connection"".""Jogadores""
+                                        set tema_atual = @tema
+                                        WHERE id_jogador = @id_jogador;";
+            como.Parameters.AddWithValue("@tema", tema);
+            como.Parameters.AddWithValue("@id_jogador", Login.jogador);
+            como.ExecuteNonQuery();
+        }
+    }
 }

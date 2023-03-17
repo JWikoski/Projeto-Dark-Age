@@ -118,6 +118,7 @@ namespace Dark_Age
                 grid_ingredientes.Columns["qnt_material"].HeaderText = "Requisito";
                 grid_ingredientes.Columns["ingrediente"].Visible = false;
                 grid_ingredientes.Columns["qnt_criacao"].Visible = false;
+                grid_ingredientes.Columns["id_itens"].Visible = false;
                 grid_ingredientes.Columns["quantidade"].DefaultCellStyle.NullValue = "0";
                 grid_ingredientes.Columns["qnt_material"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 grid_ingredientes.Columns["quantidade"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -1005,6 +1006,11 @@ namespace Dark_Age
                 loja_person.ShowDialog();
 
             }
+        }
+
+        private void Grid_lista_inventario_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            Grid_lista_itens_CellClick(sender, e);
         }
     }
 }

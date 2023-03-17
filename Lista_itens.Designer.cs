@@ -40,6 +40,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pnl_producao = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
             this.pnl_enviar = new System.Windows.Forms.Panel();
             this.Grid_lista_personagens = new System.Windows.Forms.DataGridView();
             this.iconButton10 = new FontAwesome.Sharp.IconButton();
@@ -84,9 +91,9 @@
             this.limpar_filtros1 = new FontAwesome.Sharp.IconButton();
             this.btn_historia = new FontAwesome.Sharp.IconButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.pnl_producao.SuspendLayout();
             this.pnl_enviar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_lista_personagens)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_ingredientes)).BeginInit();
@@ -108,6 +115,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.pnl_producao);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.pnl_enviar);
             this.panel3.Controls.Add(this.grid_ingredientes);
@@ -139,6 +147,114 @@
             this.panel3.TabIndex = 89;
             this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
+            // pnl_producao
+            // 
+            this.pnl_producao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_producao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
+            this.pnl_producao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_producao.Controls.Add(this.panel11);
+            this.pnl_producao.Controls.Add(this.button4);
+            this.pnl_producao.Controls.Add(this.iconButton4);
+            this.pnl_producao.Controls.Add(this.label5);
+            this.pnl_producao.Controls.Add(this.button3);
+            this.pnl_producao.Location = new System.Drawing.Point(645, 372);
+            this.pnl_producao.Name = "pnl_producao";
+            this.pnl_producao.Size = new System.Drawing.Size(401, 165);
+            this.pnl_producao.TabIndex = 170;
+            this.pnl_producao.Visible = false;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.LightGray;
+            this.panel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(155)))), ((int)(((byte)(140)))));
+            this.panel11.Location = new System.Drawing.Point(198, 53);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(1, 100);
+            this.panel11.TabIndex = 174;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button4.ForeColor = System.Drawing.Color.Khaki;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button4.Location = new System.Drawing.Point(208, 56);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(178, 88);
+            this.button4.TabIndex = 173;
+            this.button4.Text = "Produzir item usando os ingredientes";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // iconButton4
+            // 
+            this.iconButton4.BackColor = System.Drawing.Color.Transparent;
+            this.iconButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton4.FlatAppearance.BorderSize = 0;
+            this.iconButton4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
+            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconButton4.ForeColor = System.Drawing.Color.LightSalmon;
+            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.iconButton4.IconColor = System.Drawing.Color.Salmon;
+            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton4.IconSize = 20;
+            this.iconButton4.Location = new System.Drawing.Point(358, 12);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Size = new System.Drawing.Size(28, 28);
+            this.iconButton4.TabIndex = 101;
+            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.iconButton4.UseVisualStyleBackColor = false;
+            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click_1);
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(55, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(297, 25);
+            this.label5.TabIndex = 172;
+            this.label5.Text = "Selecione uma opção abaixo";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(67)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.Color.MediumSpringGreen;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button3.Location = new System.Drawing.Point(12, 56);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(178, 88);
+            this.button3.TabIndex = 96;
+            this.button3.Text = "Adicionar item ao inventário";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label12.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label12.Location = new System.Drawing.Point(1131, 488);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(383, 18);
+            this.label12.TabIndex = 177;
+            this.label12.Text = "(Clique no item abaixo para ver todos os ingredientes)";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label12.Visible = false;
+            // 
             // pnl_enviar
             // 
             this.pnl_enviar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -149,7 +265,7 @@
             this.pnl_enviar.Controls.Add(this.button8);
             this.pnl_enviar.Location = new System.Drawing.Point(645, 543);
             this.pnl_enviar.Name = "pnl_enviar";
-            this.pnl_enviar.Size = new System.Drawing.Size(383, 165);
+            this.pnl_enviar.Size = new System.Drawing.Size(401, 165);
             this.pnl_enviar.TabIndex = 169;
             this.pnl_enviar.Visible = false;
             // 
@@ -220,7 +336,7 @@
             this.iconButton10.IconColor = System.Drawing.Color.Salmon;
             this.iconButton10.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton10.IconSize = 20;
-            this.iconButton10.Location = new System.Drawing.Point(343, 12);
+            this.iconButton10.Location = new System.Drawing.Point(359, 12);
             this.iconButton10.Name = "iconButton10";
             this.iconButton10.Size = new System.Drawing.Size(28, 28);
             this.iconButton10.TabIndex = 101;
@@ -239,7 +355,7 @@
             this.button8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button8.ForeColor = System.Drawing.Color.MediumSpringGreen;
             this.button8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button8.Location = new System.Drawing.Point(287, 128);
+            this.button8.Location = new System.Drawing.Point(303, 128);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(84, 28);
             this.button8.TabIndex = 96;
@@ -522,9 +638,9 @@
             this.pnl_filtro.Controls.Add(this.combox_profissao);
             this.pnl_filtro.Controls.Add(this.combox_tipo);
             this.pnl_filtro.Controls.Add(this.combox_dificuldade);
-            this.pnl_filtro.Location = new System.Drawing.Point(150, 98);
+            this.pnl_filtro.Location = new System.Drawing.Point(101, 298);
             this.pnl_filtro.Name = "pnl_filtro";
-            this.pnl_filtro.Size = new System.Drawing.Size(509, 229);
+            this.pnl_filtro.Size = new System.Drawing.Size(509, 251);
             this.pnl_filtro.TabIndex = 93;
             this.pnl_filtro.Visible = false;
             this.pnl_filtro.Leave += new System.EventHandler(this.label4_Click);
@@ -535,23 +651,23 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(258, 113);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 15);
+            this.label4.Size = new System.Drawing.Size(51, 15);
             this.label4.TabIndex = 104;
-            this.label4.Text = "Materiais";
+            this.label4.Text = "Mostrar:";
             // 
             // cbx_materiais
             // 
             this.cbx_materiais.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(27)))));
             this.cbx_materiais.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbx_materiais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_materiais.Enabled = false;
             this.cbx_materiais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbx_materiais.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.cbx_materiais.FormattingEnabled = true;
+            this.cbx_materiais.ItemHeight = 15;
             this.cbx_materiais.Items.AddRange(new object[] {
-            "Mostrar tudo",
-            "Mostrar apenas Materiais",
-            "Não mostrar"});
+            "Todos os itens",
+            "Apenas materiais",
+            "Apenas itens produzíveis"});
             this.cbx_materiais.Location = new System.Drawing.Point(258, 137);
             this.cbx_materiais.Name = "cbx_materiais";
             this.cbx_materiais.Size = new System.Drawing.Size(155, 23);
@@ -595,7 +711,7 @@
             this.limpar_filtros2.IconColor = System.Drawing.Color.Salmon;
             this.limpar_filtros2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.limpar_filtros2.IconSize = 20;
-            this.limpar_filtros2.Location = new System.Drawing.Point(375, 186);
+            this.limpar_filtros2.Location = new System.Drawing.Point(375, 213);
             this.limpar_filtros2.Name = "limpar_filtros2";
             this.limpar_filtros2.Size = new System.Drawing.Size(28, 28);
             this.limpar_filtros2.TabIndex = 100;
@@ -658,7 +774,7 @@
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(420, 183);
+            this.button2.Location = new System.Drawing.Point(420, 210);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 28);
             this.button2.TabIndex = 96;
@@ -887,7 +1003,7 @@
             this.Grid_lista_itens.TabIndex = 0;
             this.Grid_lista_itens.VirtualMode = true;
             this.Grid_lista_itens.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_lista_itens_CellClick);
-            this.Grid_lista_itens.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Grid_lista_itens_ColumnHeaderMouseClick);
+            this.Grid_lista_itens.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grid_ingredientes_ColumnHeaderMouseClick);
             // 
             // limpar_filtros1
             // 
@@ -939,19 +1055,6 @@
             this.btn_historia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_historia.UseVisualStyleBackColor = true;
             // 
-            // label12
-            // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label12.Location = new System.Drawing.Point(1131, 488);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(383, 18);
-            this.label12.TabIndex = 177;
-            this.label12.Text = "(Clique no item abaixo para ver todos os ingredientes)";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label12.Visible = false;
-            // 
             // Lista_itens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -972,6 +1075,7 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.pnl_producao.ResumeLayout(false);
             this.pnl_enviar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Grid_lista_personagens)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_ingredientes)).EndInit();
@@ -1040,5 +1144,11 @@
         private System.Windows.Forms.Button button8;
         public System.Windows.Forms.DataGridView grid_ingredientes;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel pnl_producao;
+        private System.Windows.Forms.Button button4;
+        private FontAwesome.Sharp.IconButton iconButton4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel11;
     }
 }

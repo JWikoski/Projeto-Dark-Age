@@ -25,7 +25,6 @@ namespace Dark_Age
         {
             InitializeComponent();
 
-
             Grid_lista_iniciativas.DataSource = Conexao_BD.select_iniciativa(Campanha.id_campanha);
             this.BackColor = Temas.cor_principal;
             txt_regras.BackColor = Temas.cor_principal;
@@ -226,7 +225,7 @@ namespace Dark_Age
         {
             Campanha.classe_personagem = 1;
             Ficha.nivel = 5;
-            Habilidades_passivas lista = new Habilidades_passivas();
+            Habilidades lista = new Habilidades();
             lista.Show();
         }
 
@@ -430,7 +429,6 @@ namespace Dark_Age
             btn_iniciativa.ForeColor = Color.Silver;
             pnl_chat.Visible = true;
             panel13.Visible = false;
-            btn_chat.Focus();
             timer_chat.Start();
 			pnl_mensagens.VerticalScroll.Value = pnl_mensagens.VerticalScroll.Maximum;
 		}
@@ -603,7 +601,14 @@ namespace Dark_Age
 
 		private void timer_chat_Tick(object sender, EventArgs e)
         {
-            checaguem_criacao_msg();
+            if (pnl_chat.Visible == true)
+            {
+                checaguem_criacao_msg();
+            }
+            else
+            {
+                timer_chat.Stop();
+            }
         }
 
         private void btn_enviar_mensagem_Click(object sender, EventArgs e)

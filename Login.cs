@@ -86,14 +86,14 @@ namespace Dark_Age
                 senha = TbSenha.Text;
 
 
-                NpgsqlConnection conn = new NpgsqlConnection(Conexao_BD.Caminho_DB());
+                using NpgsqlConnection conn = new NpgsqlConnection(Conexao_BD.Caminho_DB());
                 conn.Open();
-                NpgsqlCommand comm = new NpgsqlCommand();
+                using NpgsqlCommand comm = new NpgsqlCommand();
                 comm.Connection = conn;
                 comm.CommandType = CommandType.Text;
-                comm.CommandText = "select senha_jogador, id_jogador, nome_jogador from \"Dark_Age_Connection\".\"Jogadores\" where senha_jogador = @senha";
+                comm.CommandText = "select senha_jogador, id_jogador, nome_jogador, tema_atual from \"Dark_Age_Connection\".\"Jogadores\" where senha_jogador = @senha";
                 comm.Parameters.AddWithValue("@senha", senha);
-                NpgsqlDataReader nda = comm.ExecuteReader();
+                using NpgsqlDataReader nda = comm.ExecuteReader();
                 if (nda.Read())
                 {
                     jogador = (int)nda.GetValue(1);
@@ -105,14 +105,26 @@ namespace Dark_Age
                 if (nda.HasRows)
                 {
                     this.Hide();
-                    nda.Close();
-                    comm.Dispose();
-                    conn.Close();
-                    Temas temas = new Temas();
-                    temas.ShowDialog();
+                    object valorObjeto = nda.GetValue(3);
+                    if (valorObjeto == DBNull.Value)
+                    {
+                        Temas temas = new Temas();
+                        temas.ShowDialog();
+                    }
+                    else
+                    {
+                       if((bool)nda.GetValue(3) == true)
+                        {
+                            Temas.tema_escuro_escolhido();
+                        }
+                        else
+                        {
+                            Temas.tema_claro_escolhido();
+                        }
+                    }
+                    
                     Campanha frm = new Campanha();
                  frm.Show();
-
                 }
                 else
                 {
@@ -122,8 +134,6 @@ namespace Dark_Age
                     e.SuppressKeyPress = true;
                     
                 }
-                comm.Dispose();
-                conn.Close();
             }
 
 

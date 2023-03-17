@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dark_Age.Componente;
+using Dark_Age.Controllers;
+using Dark_Age.Enteties;
 
 namespace Dark_Age
 {
@@ -48,21 +51,32 @@ namespace Dark_Age
         private void iconButton1_Click(object sender, EventArgs e)
         {
             this.BackColor = cor_clara;
+            escuro.BackColor = Color.Transparent;
+            tema_claro_escolhido();
+        }
+
+        public static void tema_escuro_escolhido()
+        {
+            cor_principal = cor_escura;
+            cor_principal_secundaria = cor_escura_secundaria;
+            tema_claro = false;
+            tema_escuro = true;
+        }
+
+        public static void tema_claro_escolhido()
+        {
+           
             cor_principal = cor_clara;
             cor_principal_secundaria = cor_clara_secundaria;
             tema_claro = true;
             tema_escuro = false;
-            escuro.BackColor = Color.Transparent;
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
             this.BackColor = cor_escura;
-            cor_principal = cor_escura;
-            cor_principal_secundaria = cor_escura_secundaria;
-            tema_claro = false;
-            tema_escuro = true;
             claro.BackColor = Color.Transparent;
+            tema_escuro_escolhido();
         }
 
         private void escuro_MouseLeave(object sender, EventArgs e)
@@ -135,8 +149,30 @@ namespace Dark_Age
             {
                 MessageBox.Show("Escolha um tema antes de prosseguir!");
             }
-            else
-            {
+            else { 
+            //{
+            //    if(tema_claro == true)
+            //    {
+            //        if (MessageBox.Show("Gostaria de deixar o Tema Escuro como padrão?", "Tema Escuro", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            //        {
+            //            Conexao_BD.update_tema(true);
+            //        }
+            //        else
+            //        {
+            //            this.Close();
+            //        }
+            //    }
+            //    else
+            //    {
+            //        if (MessageBox.Show("Gostaria de deixar o Tema Claro como padrão?", "Tema Claro", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            //        {
+            //            Conexao_BD.update_tema(false);
+            //        }
+            //        else
+            //        {
+            //            this.Close();
+            //        }
+            //    }
                 this.Close();
             }
             

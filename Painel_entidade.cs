@@ -16,6 +16,7 @@ namespace Dark_Age
 {
     public partial class Painel_entidade : Form
     {
+
         public static int forca;
         public static int destreza;
         public static int vigor;
@@ -46,7 +47,32 @@ namespace Dark_Age
                 raciocinio = valores[4];
                 magia = valores[5];
             }
-
+        }
+        public static void preencher_talento(int id, string situacao)
+        {
+            int[] valores = info_entidade.select_talentos(id, situacao);
+            if (valores != null)
+            {
+                Ficha.bd_ataque = valores[0];
+                Ficha.bd_esquiva = valores[1];
+                Ficha.bd_defesa = valores[2];
+                Ficha.bd_contra_atq = valores[3];
+                Ficha.bd_arematirar = valores[4];
+                Ficha.bd_lancarmagia = valores[5];
+                Ficha.bd_labia = valores[6];
+                Ficha.bd_intimidacao = valores[7];
+                Ficha.bd_seduzir = valores[8];
+                Ficha.bd_enganacao = valores[9];
+                Ficha.bd_esconder = valores[10];
+                Ficha.bd_percepcao = valores[11];
+                Ficha.bd_academicos = valores[12];
+                Ficha.bd_ocultismo = valores[13];
+                Ficha.bd_sobrevivencia = valores[14];
+                Ficha.bd_investigacao = valores[15];
+                Ficha.bd_intuicao = valores[16];
+                Ficha.bd_etiqueta = valores[17];
+                Ficha.bd_sanidade = valores[18];
+            }
         }
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]

@@ -21,6 +21,8 @@ namespace Dark_Age
         public static int id_item = 0;
         public static int qtd_item_inventario = 0;
         public static int id_personagem;
+        public static Boolean produzir = true;
+        public static Boolean itens_produziveis = false;
 
         public static Boolean procura_item;
         public static string nome_procura_item;
@@ -45,8 +47,11 @@ namespace Dark_Age
             combox_tipo.BackColor = Temas.cor_principal_secundaria;
             pnl_filtro.BackColor = Temas.cor_principal_secundaria;
             cmp_procura.BackColor = Temas.cor_principal_secundaria;
+            cbx_materiais.SelectedIndex = 0;
+            pnl_filtro.Location = new Point(150, 98);
 
-            pnl_enviar.Location = new Point(1132, 602);
+            pnl_producao.Location = new Point(1130, 602);
+            pnl_enviar.Location = new Point(1130, 602);
             
             Temas.mudar_cor_data_grid(Grid_lista_itens);
             Temas.mudar_cor_data_grid(Grid_lista_personagens);
@@ -102,6 +107,18 @@ namespace Dark_Age
             else
                 Opacity += 0.1;
         }
+        public void remove_filtros()
+        {
+
+            filtro_tipo.Checked = false;
+            filtro_profissoes.Checked = false;
+            filtro_dificuldade.Checked = false;
+            Grid_lista_itens.DataSource = Conexao_BD.select_data_gridlist();
+            carregar_data_grid();
+            limpar_filtros1.Visible = false;
+            limpar_filtros2.Visible = false;
+            cmp_procura.Text = "";
+        }
 
         private void carregar_personagens()
         {
@@ -152,6 +169,7 @@ namespace Dark_Age
                 grid_ingredientes.Columns["quantidade"].HeaderText = "Possui";
                 grid_ingredientes.Columns["qnt_material"].HeaderText = "Requisito";
                 grid_ingredientes.Columns["ingrediente"].Visible = false;
+                grid_ingredientes.Columns["id_itens"].Visible = false;
                 grid_ingredientes.Columns["qnt_criacao"].Visible = false;
                 grid_ingredientes.Columns["quantidade"].DefaultCellStyle.NullValue = "0";
                 grid_ingredientes.Columns["qnt_material"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -295,7 +313,6 @@ namespace Dark_Age
 
                 if (Grid_lista_itens.Rows.Count > 0)
                 {
-                    Grid_lista_itens.Rows[0].Selected = true;
                     DataGridViewRow cell1 = Grid_lista_itens.Rows[0];
                     material = (bool)cell1.Cells[6].Value;
                 }
@@ -306,6 +323,7 @@ namespace Dark_Age
                 Grid_lista_itens.Columns["nome_tipo_itens"].HeaderText = "Tipo do Item";
                 Grid_lista_itens.Columns["nome_profissao"].HeaderText = "Profissão";
                 Grid_lista_itens.Columns["quantidade"].HeaderText = "No inventário";
+                Grid_lista_itens.Columns["nome_itens"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 Grid_lista_itens.Columns["quantidade"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 Grid_lista_itens.Columns["descricao"].Visible = false;
                 Grid_lista_itens.Columns["material"].HeaderText = "Material";
@@ -421,36 +439,37 @@ namespace Dark_Age
             {
 
                 bs.Filter = "dificuldade LIKE '" + combox_dificuldade.Text + "'";
-
+                Grid_lista_itens.DataSource = bs;
             }
             else if (filtro_dificuldade.Checked == false && filtro_profissoes.Checked == true && filtro_tipo.Checked == false)
             {
 
                 bs.Filter = "nome_profissao LIKE '" + combox_profissao.Text + "'";
-
+                Grid_lista_itens.DataSource = bs;
             }
             else if (filtro_dificuldade.Checked == false && filtro_profissoes.Checked == false && filtro_tipo.Checked == true)
             {
 
                 bs.Filter = "nome_tipo_itens LIKE '" + combox_tipo.Text + "'";
-
+                Grid_lista_itens.DataSource = bs;
             }
             else if (filtro_dificuldade.Checked == true && filtro_profissoes.Checked == true && filtro_tipo.Checked == false)
             {
 
                 bs.Filter = "dificuldade LIKE '" + combox_dificuldade.Text + "' and nome_profissao LIKE '" + combox_profissao.Text + "'";
-
+                Grid_lista_itens.DataSource = bs;
             }
             else if (filtro_dificuldade.Checked == true && filtro_profissoes.Checked == false && filtro_tipo.Checked == true)
             {
 
                 bs.Filter = "dificuldade LIKE '" + combox_dificuldade.Text + "' and nome_tipo_itens LIKE '" + combox_tipo.Text + "'";
-
+                Grid_lista_itens.DataSource = bs;
             }
             else if (filtro_dificuldade.Checked == false && filtro_profissoes.Checked == true && filtro_tipo.Checked == true)
             {
 
                 bs.Filter = "nome_profissao LIKE '" + combox_profissao.Text + "' and nome_tipo_itens LIKE '" + combox_tipo.Text + "'";
+                Grid_lista_itens.DataSource = bs;
 
             }
             else if (filtro_dificuldade.Checked == true && filtro_profissoes.Checked == true && filtro_tipo.Checked == true)
@@ -458,28 +477,46 @@ namespace Dark_Age
 
                 bs.Filter = "dificuldade LIKE '" + combox_dificuldade.Text + "' and nome_tipo_itens LIKE '" + combox_tipo.Text + "' and nome_profissao LIKE '" + combox_profissao.Text + "'";
 
+                Grid_lista_itens.DataSource = bs;
             }
             else
             {
                 filtros = false;
             }
 
-            if(filtros == false && cbx_materiais.Text == "Mostrar tudo")
+            if(filtros == false && cbx_materiais.Text == "Apenas materiais")
             {
+                bs.Filter = "material like true";
 
-                bs.Filter = Grid_lista_itens.Rows+" like true";
-
+                Grid_lista_itens.DataSource = bs;
+            }
+            else if(filtros == true && cbx_materiais.Text == "Apenas materiais")
+            {
+                bs.Filter += " and material like true";
+                Grid_lista_itens.DataSource = bs;
             }
 
-            Grid_lista_itens.DataSource = bs;
-            pnl_filtro.Visible = false;
+            if (filtros == false && cbx_materiais.Text == "Apenas itens produzíveis")
+            {
+                Grid_lista_itens.DataSource = Conexao_BD.select_itens_produziveis(Campanha.id_personagem);
 
-            if (filtro_dificuldade.Checked == false && filtro_profissoes.Checked == false && filtro_tipo.Checked == false)
+                carregar_data_grid();
+                Grid_lista_itens.Columns["quantidade"].HeaderText = "Pode criar";
+                Grid_lista_itens.Columns["material"].Visible = false;
+            }
+            else if (filtros == true && cbx_materiais.Text == "Apenas itens produzíveis")
+            {
+                
+            }
+
+
+            if (filtros == false && cbx_materiais.Text == "Todos os itens")
             {
                     Grid_lista_itens.DataSource = Conexao_BD.select_data_gridlist();
-                    carregar_data_grid();
                     limpar_filtros1.Visible = false;
+                pnl_filtro.Visible = false;
             }
+            carregar_data_grid();
 
             foreach (DataGridViewRow x in Grid_lista_itens.Rows)
             {
@@ -524,6 +561,7 @@ namespace Dark_Age
             limpar_filtros1.Visible = false;
             limpar_filtros2.Visible = false;
             cmp_procura.Text = "";
+            cbx_materiais.SelectedIndex = 0;
         }
 
         private void limpar_filtros2_MouseEnter(object sender, EventArgs e)
@@ -559,6 +597,7 @@ namespace Dark_Age
             limpar_filtros1.Visible = false;
             limpar_filtros2.Visible = false;
             cmp_procura.Text = "";
+            cbx_materiais.SelectedIndex = 0;
         }
 
         private void filtro_dificuldade_CheckedChanged(object sender, EventArgs e)
@@ -584,37 +623,18 @@ namespace Dark_Age
             }
         }
 
-
-        private void Grid_lista_itens_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            foreach (DataGridViewRow x in Grid_lista_itens.Rows)
-            {
-                x.MinimumHeight = 30;
-            }
-        }
         private void btn_adicionar_inv_Click(object sender, EventArgs e)
         {
-            if(Campanha.id_jogador == Campanha.id_mestre_campanha)
+            if (Campanha.id_jogador == Campanha.id_mestre_campanha)
             {
                 pnl_enviar.Visible = true;
                 pnl_enviar.BringToFront();
             }
             else
             {
-                if (id_item > 0)
-                {
-                    Conexao_BD.insert_item_inventario(id_item, qtd, Campanha.id_personagem);
-                    lbl_qtd.Text = "1";
-                    qtd = 1;
-                    remove_qtd.Visible = false;
-                    MessageBox.Show("Item adicionado ao inventário! (ツ)👍");
-                }
-                else
-                {
-                    MessageBox.Show("Selecione o item antes de inserir no inventario!");
-                }
+                pnl_producao.Visible = true;
+                pnl_producao.BringToFront();
             }
-            
         }
 
         private void iconButton5_Click(object sender, EventArgs e)
@@ -779,6 +799,100 @@ namespace Dark_Age
             {
                 x.MinimumHeight = 30;
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+        foreach (DataGridViewRow row in grid_ingredientes.Rows)
+        {
+            // Obtém o valor da célula na coluna desejada
+            object obj_qtdinv = row.Cells["quantidade"].Value;
+            object obj_requisito = row.Cells["qnt_material"].Value;
+
+
+            if (!Convert.IsDBNull(obj_qtdinv)) // Verifica se o valor não é DBNull
+            {
+                int qtdinv = (int)obj_qtdinv;
+                int requisito = (int)obj_requisito;
+                if (qtdinv < requisito)
+                {
+                    produzir = false;
+                    MessageBox.Show("Você não tem os ingredientes suficientes para produzir este item!","Sem ingredientes");
+                    break;
+                }
+            }
+            else
+            {
+                produzir = false;
+                MessageBox.Show("Você não tem os ingredientes suficientes para produzir este item!", "Sem ingredientes");
+                break;
+            }
+        }
+        if(produzir == true)
+        {
+            foreach (DataGridViewRow row in grid_ingredientes.Rows)
+            {
+                int qtdinv = (int)row.Cells["quantidade"].Value;
+                int requisito = (int)row.Cells["qnt_material"].Value;
+                int id_item = (int)row.Cells["id_itens"].Value;
+
+                    requisito = qtd * requisito;
+
+                if (qtdinv == requisito)
+                {
+                    Conexao_BD.delete_item_inventario(id_item, Campanha.id_personagem);
+                }
+                else
+                {
+                    Conexao_BD.update_qtd_inventario(id_item, qtdinv - requisito, Campanha.id_personagem);
+                }
+            }
+                Conexao_BD.insert_item_inventario(id_item, qtd, Campanha.id_personagem);
+                lbl_qtd.Text = "1";
+                qtd = 1;
+                remove_qtd.Visible = false;
+                MessageBox.Show("Item produzido com sucesso!");
+        }
+
+            produzir = true;
+            remove_filtros();
+            pnl_producao.Visible = false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (Campanha.id_jogador == Campanha.id_mestre_campanha)
+            {
+                pnl_enviar.Visible = true;
+                pnl_enviar.BringToFront();
+            }
+            else
+            {
+                if (id_item > 0)
+                {
+                    Conexao_BD.insert_item_inventario(id_item, qtd, Campanha.id_personagem);
+                    lbl_qtd.Text = "1";
+                    qtd = 1;
+                    remove_qtd.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Selecione o item antes de inserir no inventario!");
+                }
+                pnl_producao.Visible = false;
+            }
+            remove_filtros();
+        }
+
+        private void iconButton4_Click_1(object sender, EventArgs e)
+        {
+            pnl_producao.Visible = false;
+        }
+
+        private void Grid_lista_itens_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            Grid_lista_itens_CellClick(sender, e);
         }
 
     }
