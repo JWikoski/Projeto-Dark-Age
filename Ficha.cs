@@ -118,15 +118,22 @@ namespace Dark_Age
 
         private void label1_Click(object sender, EventArgs e)
         {
-            if (pers_criado == true)
+            if (Campanha.id_jogador == Campanha.id_mestre_campanha)
             {
-                Form1 frm = new Form1();
-                frm.Show();
                 this.Close();
             }
             else
             {
-                Application.Exit();
+                if (pers_criado == true)
+                {
+                    Form1 frm = new Form1();
+                    frm.Show();
+                    this.Close();
+                }
+                else
+                {
+                    Application.Exit();
+                }
             }
         }
 
@@ -299,6 +306,7 @@ namespace Dark_Age
                 if (Campanha.id_jogador == Campanha.id_mestre_campanha)
                 {
                     this.Close();
+                    MessageBox.Show("Criatura Criada!");
                 }
                 else
                 {
