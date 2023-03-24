@@ -442,7 +442,7 @@ namespace Dark_Age
         private void button23_Click(object sender, EventArgs e)
         {
             Inventario vinv = new Inventario();
-            vinv.ShowDialog();
+            vinv.Show();
             carregar_danos();
             ouro.Text = Inventario.moedas_de_ouro.ToString();
             prata.Text = Inventario.moedas_de_prata.ToString();

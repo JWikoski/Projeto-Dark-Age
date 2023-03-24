@@ -17,7 +17,7 @@ namespace Dark_Age
     {
         public static Boolean editar_adicionar;
         public static Boolean material;
-        public static Color bordas; 
+        public static Color bordas;
         public static int id_item = 0;
         public static int qtd_item_inventario = 0;
         public static int id_personagem;
@@ -52,7 +52,7 @@ namespace Dark_Age
 
             pnl_producao.Location = new Point(1130, 602);
             pnl_enviar.Location = new Point(1130, 602);
-            
+
             Temas.mudar_cor_data_grid(Grid_lista_itens);
             Temas.mudar_cor_data_grid(Grid_lista_personagens);
 
@@ -93,7 +93,7 @@ namespace Dark_Age
             qtd_lbl();
             carregar_personagens();
 
-            if(procura_item == true)
+            if (procura_item == true)
             {
                 cmp_procura.Text = nome_procura_item;
                 procura_item = false;
@@ -128,8 +128,8 @@ namespace Dark_Age
             if (Grid_lista_personagens.Rows.Count > 0)
             {
                 Grid_lista_personagens.Rows[0].Selected = true;
-                    DataGridViewRow row_personagem = Grid_lista_personagens.Rows[0];
-                    id_personagem = (int)row_personagem.Cells[0].Value;
+                DataGridViewRow row_personagem = Grid_lista_personagens.Rows[0];
+                id_personagem = (int)row_personagem.Cells[0].Value;
             }
             try
             {
@@ -191,7 +191,7 @@ namespace Dark_Age
                 x.MinimumHeight = 30;
             }
         }
-        
+
         private void carregar_itens_de_criacao()
         {
             label2.Text = "Itens produzidos com este ingrediente";
@@ -200,11 +200,11 @@ namespace Dark_Age
 
             try
             {
-                
-            if (grid_ingredientes.Rows.Count > 0)
-            {
+
+                if (grid_ingredientes.Rows.Count > 0)
+                {
                     grid_ingredientes.Rows[0].Selected = true;
-            }
+                }
                 grid_ingredientes.Columns["nome_itens"].HeaderText = "Item";
                 grid_ingredientes.Columns["qnt_material"].HeaderText = "Usa";
                 grid_ingredientes.Columns["quantidade"].HeaderText = "Possui";
@@ -261,10 +261,11 @@ namespace Dark_Age
                     carregar_itens_de_criacao();
                 }
 
-            } catch (Exception a)
+            }
+            catch (Exception a)
             {
                 MessageBox.Show("ERRO click na grid ", "Erro:" + a);
-            }            
+            }
         }
 
         private void btn_adicionar_Click_1(object sender, EventArgs e)
@@ -300,9 +301,9 @@ namespace Dark_Age
             }
             else
             {
-                    string procura_nome = cmp_procura.Text;
-                    Grid_lista_itens.DataSource = Conexao_BD.filtro_data_gridlist(procura_nome);
-                    carregar_data_grid();                            
+                string procura_nome = cmp_procura.Text;
+                Grid_lista_itens.DataSource = Conexao_BD.filtro_data_gridlist(procura_nome);
+                carregar_data_grid();
             }
         }
 
@@ -355,7 +356,8 @@ namespace Dark_Age
                 }
 
 
-            } catch (Exception a)
+            }
+            catch (Exception a)
             {
                 MessageBox.Show("Erro:" + a, "ERRO no carregar as informações");
             }
@@ -389,7 +391,7 @@ namespace Dark_Age
 
         private void label2_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void LblFecharPassivas_Click(object sender, EventArgs e)
@@ -427,7 +429,7 @@ namespace Dark_Age
                 pnl_filtro.Visible = true;
                 pnl_filtro.Focus();
             }
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -484,13 +486,13 @@ namespace Dark_Age
                 filtros = false;
             }
 
-            if(filtros == false && cbx_materiais.Text == "Apenas materiais")
+            if (filtros == false && cbx_materiais.Text == "Apenas materiais")
             {
                 bs.Filter = "material like true";
 
                 Grid_lista_itens.DataSource = bs;
             }
-            else if(filtros == true && cbx_materiais.Text == "Apenas materiais")
+            else if (filtros == true && cbx_materiais.Text == "Apenas materiais")
             {
                 bs.Filter += " and material like true";
                 Grid_lista_itens.DataSource = bs;
@@ -506,14 +508,14 @@ namespace Dark_Age
             }
             else if (filtros == true && cbx_materiais.Text == "Apenas itens produzíveis")
             {
-                
+
             }
 
 
             if (filtros == false && cbx_materiais.Text == "Todos os itens")
             {
-                    Grid_lista_itens.DataSource = Conexao_BD.select_data_gridlist();
-                    limpar_filtros1.Visible = false;
+                Grid_lista_itens.DataSource = Conexao_BD.select_data_gridlist();
+                limpar_filtros1.Visible = false;
                 pnl_filtro.Visible = false;
             }
             carregar_data_grid();
@@ -602,7 +604,7 @@ namespace Dark_Age
 
         private void filtro_dificuldade_CheckedChanged(object sender, EventArgs e)
         {
-            if(filtro_dificuldade.Checked == true)
+            if (filtro_dificuldade.Checked == true)
             {
                 limpar_filtros2.Visible = true;
             }
@@ -630,15 +632,31 @@ namespace Dark_Age
                 pnl_enviar.Visible = true;
                 pnl_enviar.BringToFront();
             }
-            else
+            else if (material == false)
             {
                 pnl_producao.Visible = true;
                 pnl_producao.BringToFront();
             }
+            else
+            {
+                if (id_item > 0)
+                {
+                    Conexao_BD.insert_item_inventario(id_item, qtd, Campanha.id_personagem);
+                    lbl_qtd.Text = "1";
+                    qtd = 1;
+                    remove_qtd.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Selecione o item antes de inserir no inventario!");
+                }
+                pnl_producao.Visible = false;
+            }
+            remove_filtros();
         }
 
         private void iconButton5_Click(object sender, EventArgs e)
-        {            
+        {
             qtd++;
             qtd_lbl();
             remove_qtd.Visible = true;
@@ -650,8 +668,8 @@ namespace Dark_Age
             {
                 qtd--;
                 qtd_lbl();
-            }   
-            if(qtd == 1)
+            }
+            if (qtd == 1)
             {
                 remove_qtd.Visible = false;
             }
@@ -710,7 +728,7 @@ namespace Dark_Age
 
         private void grid_ingredientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(material == true)
+            if (material == true)
             {
                 try
                 {
@@ -803,57 +821,57 @@ namespace Dark_Age
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
-        foreach (DataGridViewRow row in grid_ingredientes.Rows)
-        {
-            // Obtém o valor da célula na coluna desejada
-            object obj_qtdinv = row.Cells["quantidade"].Value;
-            object obj_requisito = row.Cells["qnt_material"].Value;
 
-
-            if (!Convert.IsDBNull(obj_qtdinv)) // Verifica se o valor não é DBNull
-            {
-                int qtdinv = (int)obj_qtdinv;
-                int requisito = (int)obj_requisito;
-                if (qtdinv < requisito)
-                {
-                    produzir = false;
-                    MessageBox.Show("Você não tem os ingredientes suficientes para produzir este item!","Sem ingredientes");
-                    break;
-                }
-            }
-            else
-            {
-                produzir = false;
-                MessageBox.Show("Você não tem os ingredientes suficientes para produzir este item!", "Sem ingredientes");
-                break;
-            }
-        }
-        if(produzir == true)
-        {
             foreach (DataGridViewRow row in grid_ingredientes.Rows)
             {
-                int qtdinv = (int)row.Cells["quantidade"].Value;
-                int requisito = (int)row.Cells["qnt_material"].Value;
-                int id_item = (int)row.Cells["id_itens"].Value;
+                // Obtém o valor da célula na coluna desejada
+                object obj_qtdinv = row.Cells["quantidade"].Value;
+                object obj_requisito = row.Cells["qnt_material"].Value;
 
-                    requisito = qtd * requisito;
 
-                if (qtdinv == requisito)
+                if (!Convert.IsDBNull(obj_qtdinv)) // Verifica se o valor não é DBNull
                 {
-                    Conexao_BD.delete_item_inventario(id_item, Campanha.id_personagem);
+                    int qtdinv = (int)obj_qtdinv;
+                    int requisito = (int)obj_requisito;
+                    if (qtdinv < requisito)
+                    {
+                        produzir = false;
+                        MessageBox.Show("Você não tem os ingredientes suficientes para produzir este item!", "Sem ingredientes");
+                        break;
+                    }
                 }
                 else
                 {
-                    Conexao_BD.update_qtd_inventario(id_item, qtdinv - requisito, Campanha.id_personagem);
+                    produzir = false;
+                    MessageBox.Show("Você não tem os ingredientes suficientes para produzir este item!", "Sem ingredientes");
+                    break;
                 }
             }
+            if (produzir == true)
+            {
+                foreach (DataGridViewRow row in grid_ingredientes.Rows)
+                {
+                    int qtdinv = (int)row.Cells["quantidade"].Value;
+                    int requisito = (int)row.Cells["qnt_material"].Value;
+                    int id_item = (int)row.Cells["id_itens"].Value;
+
+                    requisito = qtd * requisito;
+
+                    if (qtdinv == requisito)
+                    {
+                        Conexao_BD.delete_item_inventario(id_item, Campanha.id_personagem);
+                    }
+                    else
+                    {
+                        Conexao_BD.update_qtd_inventario(id_item, qtdinv - requisito, Campanha.id_personagem);
+                    }
+                }
                 Conexao_BD.insert_item_inventario(id_item, qtd, Campanha.id_personagem);
                 lbl_qtd.Text = "1";
                 qtd = 1;
                 remove_qtd.Visible = false;
                 MessageBox.Show("Item produzido com sucesso!");
-        }
+            }
 
             produzir = true;
             remove_filtros();
