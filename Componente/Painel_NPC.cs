@@ -23,6 +23,7 @@ namespace Dark_Age.Componente
         public int mana_atual;
         public int id_personagem;
         public int id_entidade;
+        public string nome_perso;
 
         private void Painel_NPC_Load(object sender, EventArgs e)
         {
@@ -164,7 +165,8 @@ namespace Dark_Age.Componente
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Painel_entidade l = new Painel_entidade(id_personagem);
+            nome_perso = lbl_nome_perso.Text;
+            Painel_entidade l = new Painel_entidade(id_personagem, nome_perso);
             l.Show();
         }
 

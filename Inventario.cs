@@ -36,6 +36,9 @@ namespace Dark_Age
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
+        public decimal peso_total;
+        public decimal carga_total;
+
         public Inventario()
         {
             InitializeComponent();
@@ -80,7 +83,7 @@ namespace Dark_Age
                 DataGridViewRow row_personagem = Grid_lista_personagens.Rows[0];
                 id_personagem = (int)row_personagem.Cells[0].Value;
             }
-                try
+            try
             {
                 Grid_lista_personagens.Columns["id_personagem"].Visible = false;
                 Grid_lista_personagens.Columns["nome_classe"].Visible = false;
@@ -224,6 +227,8 @@ namespace Dark_Age
             combox_dificuldade.DataSource = Conexao_BD.select_enums();
             combox_dificuldade.ValueMember = "nome_enum_difi";
             combox_dificuldade.DisplayMember = "nome_enum_difi";
+
+            Carregar_lbl_pesoCarga();
         }
 
         void fadeIn(object sender, EventArgs e)
@@ -301,6 +306,8 @@ namespace Dark_Age
                 {
                     carregar_itens_de_criacao();
                 }
+
+                Grid_lista_inventario.CurrentRow.Selected = true;
             }
             catch (Exception a)
             {
@@ -394,6 +401,7 @@ namespace Dark_Age
                 data_grid_equipados.Columns["dano"].HeaderText = "Dano";
                 data_grid_equipados.Columns["equipado"].Visible = false;
                 data_grid_equipados.Columns["id_itens"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                data_grid_equipados.Columns["descricao"].Visible = false;
 
 
                 if (data_grid_equipados.Rows.Count > 0)
@@ -615,6 +623,7 @@ namespace Dark_Age
             Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico, Campanha.id_personagem);
             carregar_data_grid();
             carregar_data_grid_equipados();
+            Carregar_lbl_pesoCarga();
             limpar_filtros();
         }
 
@@ -672,6 +681,7 @@ namespace Dark_Age
             carregar_data_grid();
             limpar_filtros();
             carregar_data_grid_equipados();
+            Carregar_lbl_pesoCarga();
         }
 
         private void iconButton3_MouseEnter(object sender, EventArgs e)
@@ -700,6 +710,9 @@ namespace Dark_Age
                 }
                 DataGridViewRow row = data_grid_equipados.Rows[e.RowIndex];
                 id_item_equipado = (int)row.Cells[0].Value;
+                text_descricao.Text = row.Cells[4].Value.ToString();
+
+                data_grid_equipados.CurrentRow.Selected = true;
             }
             catch (Exception a)
             {
@@ -727,6 +740,7 @@ namespace Dark_Age
                 carregar_data_grid();
                 carregar_data_grid_equipados();
                 limpar_filtros();
+                Carregar_lbl_pesoCarga();
             }
             else
             {
@@ -795,6 +809,7 @@ namespace Dark_Age
             pnl_remover_item.SendToBack();
             pnl_remover_item.Visible = false;
             limpar_filtros();
+            Carregar_lbl_pesoCarga();
         }
 
         private void iconButton5_MouseEnter(object sender, EventArgs e)
@@ -843,7 +858,7 @@ namespace Dark_Age
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if(pnl_enviar.Visible == true)
+            if (pnl_enviar.Visible == true)
             {
                 pnl_enviar.Visible = false;
             }
@@ -1009,9 +1024,14 @@ namespace Dark_Age
             }
         }
 
-        private void Grid_lista_inventario_RowEnter(object sender, DataGridViewCellEventArgs e)
+        private void Carregar_lbl_pesoCarga()
         {
-            Grid_lista_itens_CellClick(sender, e);
+            decimal[] dtg = Conexao_BD.select_peso_carga_total(Campanha.id_personagem);
+
+            peso_total = dtg[0];
+            carga_total = dtg[1];
+
+            lbl_pesoCarga.Text = "Carga: " + peso_total + " / " + carga_total;
         }
     }
 }

@@ -42,6 +42,7 @@ namespace Dark_Age
             ficha_resumida = new System.Windows.Forms.Panel();
             temp_danos = new System.Windows.Forms.DataGridView();
             panel3 = new System.Windows.Forms.Panel();
+            iconButton_Bonus = new FontAwesome.Sharp.IconButton();
             label8 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
@@ -410,6 +411,7 @@ namespace Dark_Age
             // 
             panel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             panel3.BackColor = System.Drawing.Color.Transparent;
+            panel3.Controls.Add(iconButton_Bonus);
             panel3.Controls.Add(label8);
             panel3.Controls.Add(label6);
             panel3.Controls.Add(label4);
@@ -422,6 +424,33 @@ namespace Dark_Age
             panel3.Name = "panel3";
             panel3.Size = new System.Drawing.Size(484, 645);
             panel3.TabIndex = 88;
+            // 
+            // iconButton_Bonus
+            // 
+            iconButton_Bonus.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            iconButton_Bonus.AutoSize = true;
+            iconButton_Bonus.Cursor = System.Windows.Forms.Cursors.Hand;
+            iconButton_Bonus.FlatAppearance.BorderSize = 0;
+            iconButton_Bonus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            iconButton_Bonus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            iconButton_Bonus.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            iconButton_Bonus.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            iconButton_Bonus.IconChar = FontAwesome.Sharp.IconChar.ArrowUp;
+            iconButton_Bonus.IconColor = System.Drawing.Color.Salmon;
+            iconButton_Bonus.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton_Bonus.IconSize = 40;
+            iconButton_Bonus.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            iconButton_Bonus.Location = new System.Drawing.Point(30, 194);
+            iconButton_Bonus.Name = "iconButton_Bonus";
+            iconButton_Bonus.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            iconButton_Bonus.Size = new System.Drawing.Size(110, 46);
+            iconButton_Bonus.TabIndex = 144;
+            iconButton_Bonus.Text = "Bônus";
+            iconButton_Bonus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            iconButton_Bonus.UseVisualStyleBackColor = true;
+            iconButton_Bonus.Click += iconButton_Bonus_Click;
+            iconButton_Bonus.MouseEnter += btn_change_MouseEnter;
+            iconButton_Bonus.MouseLeave += btn_change_MouseLeave;
             // 
             // label8
             // 
@@ -2142,13 +2171,11 @@ namespace Dark_Age
             // 
             radioButton5.AutoSize = true;
             radioButton5.BackColor = System.Drawing.Color.Transparent;
-            radioButton5.Checked = true;
             radioButton5.ForeColor = System.Drawing.SystemColors.ButtonFace;
             radioButton5.Location = new System.Drawing.Point(554, 10);
             radioButton5.Name = "radioButton5";
             radioButton5.Size = new System.Drawing.Size(78, 19);
             radioButton5.TabIndex = 11;
-            radioButton5.TabStop = true;
             radioButton5.Text = "Sem tema";
             radioButton5.UseVisualStyleBackColor = false;
             radioButton5.CheckedChanged += radioButton5_CheckedChanged;
@@ -2404,7 +2431,6 @@ namespace Dark_Age
             numericUpDown2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             numericUpDown2.ForeColor = System.Drawing.SystemColors.WindowText;
             numericUpDown2.Location = new System.Drawing.Point(1226, 67);
-            numericUpDown2.Minimum = new decimal(new int[] { 1, 0, 0, int.MinValue });
             numericUpDown2.Name = "numericUpDown2";
             numericUpDown2.Size = new System.Drawing.Size(17, 32);
             numericUpDown2.TabIndex = 12;
@@ -3476,5 +3502,6 @@ namespace Dark_Age
         private FontAwesome.Sharp.IconButton morte3;
         private FontAwesome.Sharp.IconButton morte2;
         private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconButton iconButton_Bonus;
     }
 }

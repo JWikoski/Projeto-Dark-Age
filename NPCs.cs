@@ -204,6 +204,13 @@ namespace Dark_Age
         {
             Ficha.tipo_entidade = 3;
             Ficha.pers_criado = false;
+            Ficha.forca = 0;
+            Ficha.destreza = 0;
+            Ficha.vigor = 0;
+            Ficha.carisma = 0;
+            Ficha.raciocinio = 0;
+            Ficha.magia = 0;
+
             Ficha ficha_pet = new Ficha();
             ficha_pet.ShowDialog();
         }
