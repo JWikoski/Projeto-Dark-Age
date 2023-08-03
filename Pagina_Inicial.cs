@@ -1314,5 +1314,6 @@ namespace Dark_Age
             pnl_mensagens.Controls.Add(m_chat);
             distancia += m_chat.Height;
         }
+
     }
 }

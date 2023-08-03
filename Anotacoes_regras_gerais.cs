@@ -23,7 +23,7 @@ namespace Dark_Age
         public static int page = 1;
         public Anotacoes_regras_gerais()
         {
-            InitializeComponent(); 
+            InitializeComponent();
             this.BackColor = Color.Black;
             this.TransparencyKey = Color.FromArgb(10, Color.Black);
 
@@ -37,7 +37,7 @@ namespace Dark_Age
             string nda = (string)comm.ExecuteScalar();
 
             Conexao_BD.Select_Regras(ref regras, ref sanidades);
-                lbl_regras.Text = regras;
+            lbl_regras.Text = regras;
 
             anotacoes = nda;
             lbl_anotacoes.Text = nda;
@@ -116,7 +116,7 @@ namespace Dark_Age
 
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
-            
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -143,7 +143,7 @@ namespace Dark_Age
 
         private void iconButton5_Click(object sender, EventArgs e)
         {
-            if(page < 3)
+            if (page < 3)
             {
                 page += 1;
             }
@@ -155,7 +155,8 @@ namespace Dark_Age
                 pagina.Text = "Descansos";
                 lbl_regras.Visible = false;
                 lbl_descansos.Visible = true;
-            }else if (page == 2)
+            }
+            else if (page == 2)
             {
                 pagina.Text = "Regras";
                 lbl_anotacoes.Visible = false;
@@ -176,7 +177,7 @@ namespace Dark_Age
                 lbl_anotacoes.Visible = true;
             }
             seta_direita.Visible = true;
-            if(page == 2)
+            if (page == 2)
             {
                 pagina.Text = "Regras";
                 lbl_descansos.Visible = false;

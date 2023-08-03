@@ -80,7 +80,7 @@ namespace Dark_Age
                 DataGridViewRow row_personagem = Grid_lista_personagens.Rows[0];
                 id_personagem = (int)row_personagem.Cells[0].Value;
             }
-                try
+            try
             {
                 Grid_lista_personagens.Columns["id_personagem"].Visible = false;
                 Grid_lista_personagens.Columns["nome_classe"].Visible = false;
@@ -843,7 +843,7 @@ namespace Dark_Age
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if(pnl_enviar.Visible == true)
+            if (pnl_enviar.Visible == true)
             {
                 pnl_enviar.Visible = false;
             }

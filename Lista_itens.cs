@@ -434,6 +434,15 @@ namespace Dark_Age
 
         private void button2_Click(object sender, EventArgs e)
         {
+
+            if (cbx_materiais.Text == "Apenas itens produzíveis")
+            {
+                Grid_lista_itens.DataSource = Conexao_BD.select_itens_produziveis(Campanha.id_personagem);
+
+                carregar_data_grid();
+                Grid_lista_itens.Columns["quantidade"].HeaderText = "Pode criar";
+                Grid_lista_itens.Columns["material"].Visible = false;
+            }
             BindingSource bs = new BindingSource();
             bs.DataSource = Grid_lista_itens.DataSource;
             limpar_filtros1.Visible = true;
@@ -488,28 +497,16 @@ namespace Dark_Age
 
             if (filtros == false && cbx_materiais.Text == "Apenas materiais")
             {
-                bs.Filter = "material like true";
+                bs.Filter = "material = true";
 
                 Grid_lista_itens.DataSource = bs;
             }
             else if (filtros == true && cbx_materiais.Text == "Apenas materiais")
             {
-                bs.Filter += " and material like true";
+                bs.Filter += " and material = true";
                 Grid_lista_itens.DataSource = bs;
             }
 
-            if (filtros == false && cbx_materiais.Text == "Apenas itens produzíveis")
-            {
-                Grid_lista_itens.DataSource = Conexao_BD.select_itens_produziveis(Campanha.id_personagem);
-
-                carregar_data_grid();
-                Grid_lista_itens.Columns["quantidade"].HeaderText = "Pode criar";
-                Grid_lista_itens.Columns["material"].Visible = false;
-            }
-            else if (filtros == true && cbx_materiais.Text == "Apenas itens produzíveis")
-            {
-
-            }
 
 
             if (filtros == false && cbx_materiais.Text == "Todos os itens")
@@ -518,6 +515,10 @@ namespace Dark_Age
                 limpar_filtros1.Visible = false;
                 pnl_filtro.Visible = false;
             }
+
+
+            pnl_filtro.Visible = false;
+
             carregar_data_grid();
 
             foreach (DataGridViewRow x in Grid_lista_itens.Rows)

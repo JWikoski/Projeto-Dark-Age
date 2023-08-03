@@ -29,222 +29,216 @@ namespace Dark_Age
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Anotacoes_regras_gerais));
-            this.pagina = new System.Windows.Forms.Label();
-            this.LblFecharPassivas = new System.Windows.Forms.Label();
-            this.lbl_anotacoes = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl_regras = new System.Windows.Forms.Label();
-            this.lbl_descansos = new System.Windows.Forms.Label();
-            this.txt_ativas = new System.Windows.Forms.TextBox();
-            this.Editar = new System.Windows.Forms.CheckBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.seta_direita = new FontAwesome.Sharp.IconButton();
-            this.seta_esquerda = new FontAwesome.Sharp.IconButton();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            pagina = new System.Windows.Forms.Label();
+            LblFecharPassivas = new System.Windows.Forms.Label();
+            lbl_anotacoes = new System.Windows.Forms.Label();
+            panel1 = new System.Windows.Forms.Panel();
+            lbl_regras = new System.Windows.Forms.Label();
+            lbl_descansos = new System.Windows.Forms.Label();
+            txt_ativas = new System.Windows.Forms.TextBox();
+            Editar = new System.Windows.Forms.CheckBox();
+            timer1 = new System.Windows.Forms.Timer(components);
+            seta_direita = new FontAwesome.Sharp.IconButton();
+            seta_esquerda = new FontAwesome.Sharp.IconButton();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // pagina
             // 
-            this.pagina.AutoSize = true;
-            this.pagina.BackColor = System.Drawing.Color.Transparent;
-            this.pagina.Font = new System.Drawing.Font("Segoe Script", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.pagina.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
-            this.pagina.Location = new System.Drawing.Point(289, 31);
-            this.pagina.Name = "pagina";
-            this.pagina.Size = new System.Drawing.Size(178, 50);
-            this.pagina.TabIndex = 9;
-            this.pagina.Text = "Anotações";
-            this.pagina.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.pagina.Click += new System.EventHandler(this.label1_Click);
+            pagina.AutoSize = true;
+            pagina.BackColor = System.Drawing.Color.Transparent;
+            pagina.Font = new System.Drawing.Font("Segoe Script", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            pagina.ForeColor = System.Drawing.Color.FromArgb(1, 1, 1);
+            pagina.Location = new System.Drawing.Point(289, 31);
+            pagina.Name = "pagina";
+            pagina.Size = new System.Drawing.Size(178, 50);
+            pagina.TabIndex = 9;
+            pagina.Text = "Anotações";
+            pagina.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            pagina.Click += label1_Click;
             // 
             // LblFecharPassivas
             // 
-            this.LblFecharPassivas.BackColor = System.Drawing.Color.Transparent;
-            this.LblFecharPassivas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LblFecharPassivas.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblFecharPassivas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(40)))));
-            this.LblFecharPassivas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.LblFecharPassivas.Location = new System.Drawing.Point(639, 22);
-            this.LblFecharPassivas.Name = "LblFecharPassivas";
-            this.LblFecharPassivas.Size = new System.Drawing.Size(42, 40);
-            this.LblFecharPassivas.TabIndex = 12;
-            this.LblFecharPassivas.Text = "X";
-            this.LblFecharPassivas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.LblFecharPassivas.Click += new System.EventHandler(this.LblFecharLogin_Click);
-            this.LblFecharPassivas.MouseLeave += new System.EventHandler(this.LblFecharPassivas_MouseLeave);
-            this.LblFecharPassivas.MouseHover += new System.EventHandler(this.LblFecharPassivas_MouseHover);
+            LblFecharPassivas.BackColor = System.Drawing.Color.Transparent;
+            LblFecharPassivas.Cursor = System.Windows.Forms.Cursors.Hand;
+            LblFecharPassivas.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            LblFecharPassivas.ForeColor = System.Drawing.Color.FromArgb(0, 0, 0, 40);
+            LblFecharPassivas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            LblFecharPassivas.Location = new System.Drawing.Point(639, 22);
+            LblFecharPassivas.Name = "LblFecharPassivas";
+            LblFecharPassivas.Size = new System.Drawing.Size(42, 40);
+            LblFecharPassivas.TabIndex = 12;
+            LblFecharPassivas.Text = "X";
+            LblFecharPassivas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            LblFecharPassivas.Click += LblFecharLogin_Click;
+            LblFecharPassivas.MouseLeave += LblFecharPassivas_MouseLeave;
+            LblFecharPassivas.MouseHover += LblFecharPassivas_MouseHover;
             // 
             // lbl_anotacoes
             // 
-            this.lbl_anotacoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_anotacoes.AutoSize = true;
-            this.lbl_anotacoes.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_anotacoes.Font = new System.Drawing.Font("Segoe Script", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_anotacoes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
-            this.lbl_anotacoes.Location = new System.Drawing.Point(5, 2);
-            this.lbl_anotacoes.MaximumSize = new System.Drawing.Size(450, 0);
-            this.lbl_anotacoes.Name = "lbl_anotacoes";
-            this.lbl_anotacoes.Size = new System.Drawing.Size(0, 30);
-            this.lbl_anotacoes.TabIndex = 11;
-            this.lbl_anotacoes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_anotacoes.Visible = false;
+            lbl_anotacoes.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lbl_anotacoes.AutoSize = true;
+            lbl_anotacoes.BackColor = System.Drawing.Color.Transparent;
+            lbl_anotacoes.Font = new System.Drawing.Font("Segoe Script", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lbl_anotacoes.ForeColor = System.Drawing.Color.FromArgb(1, 1, 1);
+            lbl_anotacoes.Location = new System.Drawing.Point(10, 10);
+            lbl_anotacoes.MaximumSize = new System.Drawing.Size(450, 0);
+            lbl_anotacoes.Name = "lbl_anotacoes";
+            lbl_anotacoes.Size = new System.Drawing.Size(0, 30);
+            lbl_anotacoes.TabIndex = 11;
+            lbl_anotacoes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            lbl_anotacoes.Visible = false;
             // 
             // panel1
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.lbl_regras);
-            this.panel1.Controls.Add(this.lbl_anotacoes);
-            this.panel1.Controls.Add(this.lbl_descansos);
-            this.panel1.Font = new System.Drawing.Font("Segoe Script", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
-            this.panel1.Location = new System.Drawing.Point(99, 126);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(582, 556);
-            this.panel1.TabIndex = 13;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            panel1.AutoScroll = true;
+            panel1.BackColor = System.Drawing.Color.Transparent;
+            panel1.Controls.Add(lbl_regras);
+            panel1.Controls.Add(lbl_anotacoes);
+            panel1.Controls.Add(lbl_descansos);
+            panel1.Font = new System.Drawing.Font("Segoe Script", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            panel1.ForeColor = System.Drawing.Color.FromArgb(1, 1, 1);
+            panel1.Location = new System.Drawing.Point(99, 126);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(582, 556);
+            panel1.TabIndex = 13;
+            panel1.Paint += panel1_Paint;
             // 
             // lbl_regras
             // 
-            this.lbl_regras.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_regras.AutoSize = true;
-            this.lbl_regras.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_regras.Font = new System.Drawing.Font("Segoe Script", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_regras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
-            this.lbl_regras.Location = new System.Drawing.Point(5, 2);
-            this.lbl_regras.MaximumSize = new System.Drawing.Size(450, 0);
-            this.lbl_regras.Name = "lbl_regras";
-            this.lbl_regras.Size = new System.Drawing.Size(0, 25);
-            this.lbl_regras.TabIndex = 12;
-            this.lbl_regras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_regras.Visible = false;
+            lbl_regras.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lbl_regras.AutoSize = true;
+            lbl_regras.BackColor = System.Drawing.Color.Transparent;
+            lbl_regras.Font = new System.Drawing.Font("Segoe Script", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lbl_regras.ForeColor = System.Drawing.Color.FromArgb(1, 1, 1);
+            lbl_regras.Location = new System.Drawing.Point(10, 10);
+            lbl_regras.MaximumSize = new System.Drawing.Size(450, 0);
+            lbl_regras.Name = "lbl_regras";
+            lbl_regras.Size = new System.Drawing.Size(0, 25);
+            lbl_regras.TabIndex = 12;
+            lbl_regras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            lbl_regras.Visible = false;
             // 
             // lbl_descansos
             // 
-            this.lbl_descansos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_descansos.AutoSize = true;
-            this.lbl_descansos.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_descansos.Font = new System.Drawing.Font("Segoe Script", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_descansos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
-            this.lbl_descansos.Location = new System.Drawing.Point(5, 2);
-            this.lbl_descansos.MaximumSize = new System.Drawing.Size(450, 0);
-            this.lbl_descansos.Name = "lbl_descansos";
-            this.lbl_descansos.Size = new System.Drawing.Size(0, 30);
-            this.lbl_descansos.TabIndex = 13;
-            this.lbl_descansos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            lbl_descansos.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lbl_descansos.AutoSize = true;
+            lbl_descansos.BackColor = System.Drawing.Color.Transparent;
+            lbl_descansos.Font = new System.Drawing.Font("Segoe Script", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lbl_descansos.ForeColor = System.Drawing.Color.FromArgb(1, 1, 1);
+            lbl_descansos.Location = new System.Drawing.Point(10, 10);
+            lbl_descansos.MaximumSize = new System.Drawing.Size(450, 0);
+            lbl_descansos.Name = "lbl_descansos";
+            lbl_descansos.Size = new System.Drawing.Size(0, 30);
+            lbl_descansos.TabIndex = 13;
+            lbl_descansos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            lbl_descansos.Visible = false;
             // 
             // txt_ativas
             // 
-            this.txt_ativas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(229)))), ((int)(((byte)(171)))));
-            this.txt_ativas.Enabled = false;
-            this.txt_ativas.Font = new System.Drawing.Font("Segoe Script", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txt_ativas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
-            this.txt_ativas.Location = new System.Drawing.Point(99, 126);
-            this.txt_ativas.Multiline = true;
-            this.txt_ativas.Name = "txt_ativas";
-            this.txt_ativas.Size = new System.Drawing.Size(582, 23);
-            this.txt_ativas.TabIndex = 14;
-            this.txt_ativas.Visible = false;
-            this.txt_ativas.TextChanged += new System.EventHandler(this.txt_ativas_TextChanged);
+            txt_ativas.BackColor = System.Drawing.Color.FromArgb(243, 229, 171);
+            txt_ativas.Enabled = false;
+            txt_ativas.Font = new System.Drawing.Font("Segoe Script", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            txt_ativas.ForeColor = System.Drawing.Color.FromArgb(1, 1, 1);
+            txt_ativas.Location = new System.Drawing.Point(99, 126);
+            txt_ativas.Multiline = true;
+            txt_ativas.Name = "txt_ativas";
+            txt_ativas.Size = new System.Drawing.Size(582, 23);
+            txt_ativas.TabIndex = 14;
+            txt_ativas.Visible = false;
+            txt_ativas.TextChanged += txt_ativas_TextChanged;
             // 
             // Editar
             // 
-            this.Editar.AutoSize = true;
-            this.Editar.BackColor = System.Drawing.Color.Transparent;
-            this.Editar.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Editar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
-            this.Editar.Location = new System.Drawing.Point(102, 83);
-            this.Editar.Name = "Editar";
-            this.Editar.Size = new System.Drawing.Size(115, 37);
-            this.Editar.TabIndex = 12;
-            this.Editar.Text = "Escrever";
-            this.Editar.UseVisualStyleBackColor = false;
-            this.Editar.CheckedChanged += new System.EventHandler(this.Editar_CheckedChanged);
+            Editar.AutoSize = true;
+            Editar.BackColor = System.Drawing.Color.Transparent;
+            Editar.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            Editar.ForeColor = System.Drawing.Color.FromArgb(1, 1, 1);
+            Editar.Location = new System.Drawing.Point(102, 83);
+            Editar.Name = "Editar";
+            Editar.Size = new System.Drawing.Size(115, 37);
+            Editar.TabIndex = 12;
+            Editar.Text = "Escrever";
+            Editar.UseVisualStyleBackColor = false;
+            Editar.CheckedChanged += Editar_CheckedChanged;
             // 
             // seta_direita
             // 
-            this.seta_direita.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.seta_direita.BackColor = System.Drawing.Color.Transparent;
-            this.seta_direita.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.seta_direita.FlatAppearance.BorderSize = 0;
-            this.seta_direita.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.seta_direita.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.seta_direita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.seta_direita.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.seta_direita.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
-            this.seta_direita.IconChar = FontAwesome.Sharp.IconChar.ChevronRight;
-            this.seta_direita.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
-            this.seta_direita.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.seta_direita.IconSize = 30;
-            this.seta_direita.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.seta_direita.Location = new System.Drawing.Point(473, 31);
-            this.seta_direita.Name = "seta_direita";
-            this.seta_direita.Size = new System.Drawing.Size(45, 45);
-            this.seta_direita.TabIndex = 158;
-            this.seta_direita.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.seta_direita.UseVisualStyleBackColor = false;
-            this.seta_direita.Click += new System.EventHandler(this.iconButton5_Click);
+            seta_direita.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            seta_direita.BackColor = System.Drawing.Color.Transparent;
+            seta_direita.Cursor = System.Windows.Forms.Cursors.Hand;
+            seta_direita.FlatAppearance.BorderSize = 0;
+            seta_direita.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            seta_direita.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            seta_direita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            seta_direita.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            seta_direita.ForeColor = System.Drawing.Color.FromArgb(1, 1, 1);
+            seta_direita.IconChar = FontAwesome.Sharp.IconChar.ChevronRight;
+            seta_direita.IconColor = System.Drawing.Color.FromArgb(1, 1, 1);
+            seta_direita.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            seta_direita.IconSize = 30;
+            seta_direita.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            seta_direita.Location = new System.Drawing.Point(473, 31);
+            seta_direita.Name = "seta_direita";
+            seta_direita.Size = new System.Drawing.Size(45, 45);
+            seta_direita.TabIndex = 158;
+            seta_direita.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            seta_direita.UseVisualStyleBackColor = false;
+            seta_direita.Click += iconButton5_Click;
             // 
             // seta_esquerda
             // 
-            this.seta_esquerda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.seta_esquerda.BackColor = System.Drawing.Color.Transparent;
-            this.seta_esquerda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.seta_esquerda.FlatAppearance.BorderSize = 0;
-            this.seta_esquerda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.seta_esquerda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.seta_esquerda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.seta_esquerda.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.seta_esquerda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
-            this.seta_esquerda.IconChar = FontAwesome.Sharp.IconChar.ChevronLeft;
-            this.seta_esquerda.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
-            this.seta_esquerda.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.seta_esquerda.IconSize = 30;
-            this.seta_esquerda.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.seta_esquerda.Location = new System.Drawing.Point(238, 31);
-            this.seta_esquerda.Name = "seta_esquerda";
-            this.seta_esquerda.Size = new System.Drawing.Size(45, 45);
-            this.seta_esquerda.TabIndex = 159;
-            this.seta_esquerda.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.seta_esquerda.UseVisualStyleBackColor = false;
-            this.seta_esquerda.Visible = false;
-            this.seta_esquerda.Click += new System.EventHandler(this.seta_esquerda_Click);
+            seta_esquerda.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            seta_esquerda.BackColor = System.Drawing.Color.Transparent;
+            seta_esquerda.Cursor = System.Windows.Forms.Cursors.Hand;
+            seta_esquerda.FlatAppearance.BorderSize = 0;
+            seta_esquerda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            seta_esquerda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            seta_esquerda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            seta_esquerda.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            seta_esquerda.ForeColor = System.Drawing.Color.FromArgb(1, 1, 1);
+            seta_esquerda.IconChar = FontAwesome.Sharp.IconChar.ChevronLeft;
+            seta_esquerda.IconColor = System.Drawing.Color.FromArgb(1, 1, 1);
+            seta_esquerda.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            seta_esquerda.IconSize = 30;
+            seta_esquerda.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            seta_esquerda.Location = new System.Drawing.Point(238, 31);
+            seta_esquerda.Name = "seta_esquerda";
+            seta_esquerda.Size = new System.Drawing.Size(45, 45);
+            seta_esquerda.TabIndex = 159;
+            seta_esquerda.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            seta_esquerda.UseVisualStyleBackColor = false;
+            seta_esquerda.Visible = false;
+            seta_esquerda.Click += seta_esquerda_Click;
             // 
-            // Habilidades_ativas
+            // Anotacoes_regras_gerais
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(40)))), ((int)(((byte)(52)))));
-            this.BackgroundImage = global::Dark_Age.Properties.Resources.Tz04p___Imgur;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 800);
-            this.Controls.Add(this.seta_esquerda);
-            this.Controls.Add(this.seta_direita);
-            this.Controls.Add(this.Editar);
-            this.Controls.Add(this.txt_ativas);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.LblFecharPassivas);
-            this.Controls.Add(this.pagina);
-            this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Habilidades_ativas";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Habilidades";
-            this.Load += new System.EventHandler(this.Habilidades_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(14, 40, 52);
+            BackgroundImage = Properties.Resources.Tz04p___Imgur;
+            BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ClientSize = new System.Drawing.Size(800, 800);
+            Controls.Add(seta_esquerda);
+            Controls.Add(seta_direita);
+            Controls.Add(Editar);
+            Controls.Add(txt_ativas);
+            Controls.Add(panel1);
+            Controls.Add(LblFecharPassivas);
+            Controls.Add(pagina);
+            DoubleBuffered = true;
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            Name = "Anotacoes_regras_gerais";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Habilidades";
+            Load += Habilidades_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
