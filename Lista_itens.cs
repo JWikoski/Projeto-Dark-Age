@@ -261,8 +261,9 @@ namespace Dark_Age
                     carregar_itens_de_criacao();
                 }
 
-            }
-            catch (Exception a)
+                Grid_lista_itens.CurrentRow.Selected = true;
+
+            } catch (Exception a)
             {
                 MessageBox.Show("ERRO click na grid ", "Erro:" + a);
             }
@@ -318,7 +319,7 @@ namespace Dark_Age
                     material = (bool)cell1.Cells[6].Value;
                 }
 
-                Grid_lista_itens.Columns["id_itens"].HeaderText = "ID";
+                Grid_lista_itens.Columns["id_itens"].Visible = false;
                 Grid_lista_itens.Columns["nome_itens"].HeaderText = "Nome";
                 Grid_lista_itens.Columns["dificuldade"].HeaderText = "Dificuldade";
                 Grid_lista_itens.Columns["nome_tipo_itens"].HeaderText = "Tipo do Item";
@@ -329,6 +330,14 @@ namespace Dark_Age
                 Grid_lista_itens.Columns["descricao"].Visible = false;
                 Grid_lista_itens.Columns["material"].HeaderText = "Material";
                 Grid_lista_itens.Columns["dano"].Visible = false;
+                Grid_lista_itens.Columns["peso"].HeaderText = "Peso";
+                Grid_lista_itens.Columns["peso"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                Grid_lista_itens.Columns["peso"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                Grid_lista_itens.Columns["carga"].HeaderText = "Carga";
+                Grid_lista_itens.Columns["carga"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                Grid_lista_itens.Columns["carga"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+
                 if (Grid_lista_itens.Rows.Count > 0)
                 {
                     Grid_lista_itens.Rows[0].Selected = true;
@@ -583,10 +592,10 @@ namespace Dark_Age
         private void label4_Click(object sender, EventArgs e)
         {
             pnl_filtro.Visible = false;
-            if (filtro_dificuldade.Checked == false && filtro_profissoes.Checked == false && filtro_tipo.Checked == false)
+            if (filtro_dificuldade.Checked == false && filtro_profissoes.Checked == false && filtro_tipo.Checked == false && cbx_materiais.Text == "Todos os itens")
             {
-                Grid_lista_itens.DataSource = Conexao_BD.select_data_gridlist();
-                carregar_data_grid();
+               Grid_lista_itens.DataSource = Conexao_BD.select_data_gridlist();
+               carregar_data_grid();
             }
         }
 
@@ -913,6 +922,5 @@ namespace Dark_Age
         {
             Grid_lista_itens_CellClick(sender, e);
         }
-
     }
 }

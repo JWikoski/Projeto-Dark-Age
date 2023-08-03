@@ -50,6 +50,7 @@ namespace Dark_Age
             moedas_ouro = new System.Windows.Forms.NumericUpDown();
             moedas_prata = new System.Windows.Forms.NumericUpDown();
             panel2 = new System.Windows.Forms.Panel();
+            lbl_pesoCarga = new System.Windows.Forms.Label();
             btn_desequipar = new FontAwesome.Sharp.IconButton();
             data_grid_equipados = new System.Windows.Forms.DataGridView();
             label8 = new System.Windows.Forms.Label();
@@ -204,6 +205,7 @@ namespace Dark_Age
             // 
             panel2.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
             panel2.BackColor = System.Drawing.Color.Transparent;
+            panel2.Controls.Add(lbl_pesoCarga);
             panel2.Controls.Add(btn_desequipar);
             panel2.Controls.Add(data_grid_equipados);
             panel2.Controls.Add(label8);
@@ -221,6 +223,17 @@ namespace Dark_Age
             panel2.Name = "panel2";
             panel2.Size = new System.Drawing.Size(321, 776);
             panel2.TabIndex = 85;
+            // 
+            // lbl_pesoCarga
+            // 
+            lbl_pesoCarga.AutoSize = true;
+            lbl_pesoCarga.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lbl_pesoCarga.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            lbl_pesoCarga.Location = new System.Drawing.Point(53, 99);
+            lbl_pesoCarga.Name = "lbl_pesoCarga";
+            lbl_pesoCarga.Size = new System.Drawing.Size(99, 21);
+            lbl_pesoCarga.TabIndex = 161;
+            lbl_pesoCarga.Text = "Carga: 0 / 10";
             // 
             // btn_desequipar
             // 
@@ -747,7 +760,6 @@ namespace Dark_Age
             Grid_lista_inventario.VirtualMode = true;
             Grid_lista_inventario.CellClick += Grid_lista_itens_CellClick;
             Grid_lista_inventario.ColumnHeaderMouseClick += Grid_lista_inventario_ColumnHeaderMouseClick;
-            Grid_lista_inventario.RowEnter += Grid_lista_inventario_RowEnter;
             Grid_lista_inventario.Click += Inventario_Click;
             // 
             // limpar_filtros1
@@ -1543,5 +1555,6 @@ namespace Dark_Age
         public System.Windows.Forms.DataGridView grid_ingredientes;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lbl_pesoCarga;
     }
 }

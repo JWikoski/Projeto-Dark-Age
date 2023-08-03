@@ -42,6 +42,7 @@ namespace Dark_Age
             this.ficha_resumida = (new global::System.Windows.Forms.Panel());
             this.temp_danos = (new global::System.Windows.Forms.DataGridView());
             this.panel3 = (new global::System.Windows.Forms.Panel());
+            this.iconButton_Bonus = (new global::FontAwesome.Sharp.IconButton());
             this.label8 = (new global::System.Windows.Forms.Label());
             this.label6 = (new global::System.Windows.Forms.Label());
             this.label4 = (new global::System.Windows.Forms.Label());
@@ -410,6 +411,7 @@ namespace Dark_Age
             // 
             this.panel3.Anchor = (global::System.Windows.Forms.AnchorStyles.Left);
             this.panel3.BackColor = (global::System.Drawing.Color.Transparent);
+            this.panel3.Controls.Add(this.iconButton_Bonus);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label4);
@@ -422,6 +424,33 @@ namespace Dark_Age
             this.panel3.Name = ("panel3");
             this.panel3.Size = (new global::System.Drawing.Size(484, 645));
             this.panel3.TabIndex = (88);
+            // 
+            // iconButton_Bonus
+            // 
+            iconButton_Bonus.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            iconButton_Bonus.AutoSize = true;
+            iconButton_Bonus.Cursor = System.Windows.Forms.Cursors.Hand;
+            iconButton_Bonus.FlatAppearance.BorderSize = 0;
+            iconButton_Bonus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            iconButton_Bonus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            iconButton_Bonus.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            iconButton_Bonus.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            iconButton_Bonus.IconChar = FontAwesome.Sharp.IconChar.ArrowUp;
+            iconButton_Bonus.IconColor = System.Drawing.Color.Salmon;
+            iconButton_Bonus.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton_Bonus.IconSize = 40;
+            iconButton_Bonus.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            iconButton_Bonus.Location = new System.Drawing.Point(30, 194);
+            iconButton_Bonus.Name = "iconButton_Bonus";
+            iconButton_Bonus.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            iconButton_Bonus.Size = new System.Drawing.Size(110, 46);
+            iconButton_Bonus.TabIndex = 144;
+            iconButton_Bonus.Text = "Bônus";
+            iconButton_Bonus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            iconButton_Bonus.UseVisualStyleBackColor = true;
+            iconButton_Bonus.Click += iconButton_Bonus_Click;
+            iconButton_Bonus.MouseEnter += btn_change_MouseEnter;
+            iconButton_Bonus.MouseLeave += btn_change_MouseLeave;
             // 
             // label8
             // 
@@ -3476,5 +3505,6 @@ namespace Dark_Age
         private FontAwesome.Sharp.IconButton morte3;
         private FontAwesome.Sharp.IconButton morte2;
         private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconButton iconButton_Bonus;
     }
 }

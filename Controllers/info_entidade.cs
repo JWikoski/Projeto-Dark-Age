@@ -282,5 +282,25 @@ namespace Dark_Age.Controllers
 			}
 		}
 
+        public static void imagem_NPC(int id_personagem)
+        {
+            using NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
+            conn.Open();
+            using NpgsqlCommand como = new NpgsqlCommand();
+            como.Connection = conn;
+            como.CommandType = CommandType.Text;
+            como.CommandText = $@"select imagem 
+                                       , anotacoes
+                                    from ""Dark_Age_Connection"".""Personagens"" p 
+                                   where id_personagem = @id_personagem ";
+            como.Parameters.AddWithValue("@id_personagem", id_personagem);
+            using NpgsqlDataReader ndp = como.ExecuteReader();
+
+            while (ndp.Read())
+            {
+                Painel_entidade.img_NPC = (byte[])ndp.GetValue(0);
+                Painel_entidade.caracteristicas = (string)ndp.GetValue(1);
+            }
+        }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
+using System.Windows.Media;
 using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace Dark_Age.Enteties
@@ -174,6 +175,8 @@ namespace Dark_Age.Enteties
                                                                              , material
                                                                              , dano
                                                                              , quantidade
+                                                                             , peso
+                                                                             , carga
                                                                           from ""Dark_Age_Connection"".""Itens""
                                                                           join ""Dark_Age_Connection"".""Profissao"" on id_profissao = fk_id_profissao 
                                                                           join ""Dark_Age_Connection"".""Tipo_itens"" on id_tipo_itens = fk_id_tipo_itens 
@@ -233,6 +236,7 @@ namespace Dark_Age.Enteties
                                                                              , nome_itens
                                                                              , dano
                                                                              , equipado
+                                                                             , descricao
                                                                           from ""Dark_Age_Connection"".""Itens""
                                                                           join ""Dark_Age_Connection"".""Inventario"" on fk_id_itens = id_itens 
                                                                           where fk_id_personagem = " + Campanha.id_personagem+
@@ -261,6 +265,8 @@ namespace Dark_Age.Enteties
                                                              , material
                                                              , dano
                                                              , quantidade
+                                                             , peso
+                                                             , carga
                                                           from ""Dark_Age_Connection"".""Itens""
                                                           join ""Dark_Age_Connection"".""Profissao"" on id_profissao = fk_id_profissao 
                                                           join ""Dark_Age_Connection"".""Tipo_itens"" on id_tipo_itens = fk_id_tipo_itens 
@@ -939,6 +945,184 @@ namespace Dark_Age.Enteties
             comm.Parameters.AddWithValue("@id_personagem", id_personagem);
             comm.Parameters.AddWithValue("@sanidade_mod", sanidade_mod);
             comm.ExecuteNonQuery();
+        }
+
+        public static DataTable select_bonus_ativos(int id_personagem)
+        {
+            try
+            {
+                using NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"select i2.id_itens
+		                                                                            , i2.nome_itens
+		                                                                            , i.equipado
+		                                                                            , coalesce(b.valor_bonus, 0) as valor_bonus
+		                                                                            , b.id_tipo
+		                                                                            , b.tipo
+		                                                                            , case b.tipo 
+			                                                                            when true then a.desc_atributo 
+			                                                                            when false then t.desc_talento 
+		                                                                            end as nome_tipo
+                                                                            from ""Dark_Age_Connection"".""Inventario"" i
+                                                                            join  ""Dark_Age_Connection"".""Itens"" i2 on i2.id_itens = i.fk_id_itens and i.equipado = true
+                                                                            left join ""Dark_Age_Connection"".""inter_item_bonus"" iib on iib.fk_id_item = i2.id_itens 
+                                                                            left join ""Dark_Age_Connection"".""bonus"" b on b.id_bonus = iib.fk_id_bonus 
+                                                                            left join ""Dark_Age_Connection"".""Atributos"" a on a.id_atributo = b.id_tipo
+                                                                            left join ""Dark_Age_Connection"".""Talentos"" t on t.id_talento = b.id_tipo
+                                                                            where i.fk_id_personagem = " + id_personagem + @" and b.valor_bonus != 0
+                                                                            group by i2.id_itens, i2.nome_itens, i.equipado, b.valor_bonus, b.id_tipo, b.tipo, a.desc_atributo, t.desc_talento 
+                                                                            order by i2.nome_itens, b.tipo desc, b.id_tipo", Conexao_BD.Caminho_DB());
+                using NpgsqlCommandBuilder cBuilder = new NpgsqlCommandBuilder(dt_adapter);
+                DataTable dt_table = new DataTable();
+
+                dt_adapter.Fill(dt_table);
+                return dt_table;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("ERRO ao nos bônus ativos: " + e);
+                return null;
+            }
+        }
+
+        public static DataTable select_bonus()
+        {
+            try
+            {
+                using NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"select b.id_bonus
+		                                                                            , b.valor_bonus
+		                                                                            , b.id_tipo
+		                                                                            , b.tipo 
+		                                                                            , case b.tipo 
+			                                                                            when true then a.desc_atributo 
+			                                                                            when false then t.desc_talento 
+		                                                                            end as nome_tipo
+                                                                            from ""Dark_Age_Connection"".""bonus"" b 
+                                                                            join ""Dark_Age_Connection"".""Atributos"" a on a.id_atributo = b.id_tipo
+                                                                            join ""Dark_Age_Connection"".""Talentos"" t on t.id_talento = b.id_tipo
+                                                                            order by b.tipo desc, b.id_tipo", Conexao_BD.Caminho_DB());
+                using NpgsqlCommandBuilder cBuilder = new NpgsqlCommandBuilder(dt_adapter);
+                DataTable dt_table = new DataTable();
+
+                dt_adapter.Fill(dt_table);
+                return dt_table;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("ERRO nos bônus: " + e);
+                return null;
+            }
+        }
+
+        public static void combinar_bonus_item(int id_itens, int id_bonus)
+        {
+            using NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
+            conn.Open();
+            using NpgsqlCommand comm = new NpgsqlCommand();
+
+            comm.Connection = conn;
+            comm.CommandType = CommandType.Text;
+            comm.CommandText = $@"insert into ""Dark_Age_Connection"".""inter_item_bonus"" (fk_id_item, fk_id_bonus)
+                                    values (@id_item, @id_bonus)";
+            comm.Parameters.AddWithValue("@id_item", id_itens);
+            comm.Parameters.AddWithValue("@id_bonus", id_bonus);
+            comm.ExecuteNonQuery();
+        }
+
+        public static void adicionar_bonus(int valor_bonus, int id_tipo, Boolean tipo)
+        {
+            using NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
+            conn.Open();
+            using NpgsqlCommand comm = new NpgsqlCommand();
+
+            comm.Connection = conn;
+            comm.CommandType = CommandType.Text;
+            comm.CommandText = $@"insert into ""Dark_Age_Connection"".""bonus"" (valor_bonus, id_tipo, tipo)
+                                    values (@valor_bonus, @id_tipo, @tipo)";
+            comm.Parameters.AddWithValue("@valor_bonus", valor_bonus);
+            comm.Parameters.AddWithValue("@id_tipo", id_tipo);
+            comm.Parameters.AddWithValue("@tipo", tipo);
+            comm.ExecuteNonQuery();
+        }
+        public static decimal[] select_peso_carga_total(int id_personagem)
+        {
+            using NpgsqlConnection conn = new NpgsqlConnection(Conexao_BD.Caminho_DB());
+            conn.Open();
+            using NpgsqlCommand comm = new NpgsqlCommand();
+            comm.Connection = conn;
+            comm.CommandType = CommandType.Text;
+            comm.CommandText = $@"select sum(case when i.equipado = false 
+				                                then i.quantidade * i2.peso 
+				                                else 0 
+			                                end) as peso_total
+		                                ,sum(case when i.equipado = true and i2.fk_id_tipo_itens = 13 
+					                                then i2.carga 
+					                                else 0 
+				                                end) + ia.valor_atributos + 5 as carga_total
+                                from ""Dark_Age_Connection"".""Inventario"" i 
+                                join ""Dark_Age_Connection"".""Itens"" i2 on i2.id_itens = i.fk_id_itens 
+                                join ""Dark_Age_Connection"".""Inter_atributos"" ia on ia.fk_id_personagem = i.fk_id_personagem and ia.fk_id_atributo = 1
+                                where i.fk_id_personagem = " + id_personagem +
+                                " group by ia.valor_atributos ";
+            using NpgsqlDataReader nds = comm.ExecuteReader();
+
+            while (nds.Read())
+            {
+                return new decimal[] { (decimal)nds.GetValue(0), (decimal)nds.GetValue(1) };
+            }
+            return null;
+        }
+        public static DataTable select_bonus_pers_ativos(int id_personagem)
+        {
+            try
+            {
+                using NpgsqlDataAdapter dt_adapter = new NpgsqlDataAdapter($@"select b.id_bonus
+		                                                                            , b.valor_bonus
+		                                                                            , case b.tipo 
+			                                                                            when true then a.desc_atributo 
+			                                                                            when false then t.desc_talento 
+		                                                                            end as nome_tipo
+                                                                            from ""Dark_Age_Connection"".""Personagens"" p 
+                                                                            left join ""Dark_Age_Connection"".""inter_bonus_pers"" ibp on p.id_personagem = ibp.fk_id_personagem
+                                                                            left join ""Dark_Age_Connection"".""bonus"" b on ibp.fk_id_bonus = b.id_bonus 
+                                                                            left join ""Dark_Age_Connection"".""Atributos"" a on b.id_tipo = a.id_atributo 
+                                                                            left join ""Dark_Age_Connection"".""Talentos"" t on b.id_tipo = t.id_talento 
+                                                                            where p.id_personagem = " + id_personagem, Conexao_BD.Caminho_DB());
+                using NpgsqlCommandBuilder cBuilder = new NpgsqlCommandBuilder(dt_adapter);
+                DataTable dt_table = new DataTable();
+
+                dt_adapter.Fill(dt_table);
+                return dt_table;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("ERRO nos bonus do personagem ativos: " + e);
+                return null;
+            }
+        }
+        public static void adicionar_bonus_personagem(int id_bonus, int id_personagem)
+        {
+            using NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
+            conn.Open();
+            using NpgsqlCommand comm = new NpgsqlCommand();
+
+            comm.Connection = conn;
+            comm.CommandType = CommandType.Text;
+            comm.CommandText = $@"insert into ""Dark_Age_Connection"".""inter_bonus_pers"" (fk_id_bonus, fk_id_personagem)
+                                    values (@id_bonus, @id_personagem)";
+            comm.Parameters.AddWithValue("@id_bonus", id_bonus);
+            comm.Parameters.AddWithValue("@id_personagem", id_personagem);
+            comm.ExecuteNonQuery();
+        }
+        public static void remover_bonus_personagem(int id_bonus, int id_personagem)
+        {
+            using NpgsqlConnection conn = new NpgsqlConnection(Caminho_DB());
+            conn.Open();
+            using NpgsqlCommand comt = new NpgsqlCommand();
+            comt.Connection = conn;
+            comt.CommandType = CommandType.Text;
+            comt.CommandText = $@"delete from ""Dark_Age_Connection"".""inter_bonus_pers""
+                                    where fk_id_bonus = " + id_bonus + " and fk_id_personagem = " + id_personagem;
+
+            comt.ExecuteNonQuery();
         }
     }
 }

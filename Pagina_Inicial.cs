@@ -1315,5 +1315,16 @@ namespace Dark_Age
             distancia += m_chat.Height;
         }
 
+        private void iconButton_Bonus_Click(object sender, EventArgs e)
+        {
+            Tela_bonus tela_Bonus = new();
+            tela_Bonus.Show();
+            tela_Bonus.TelaBonusFechada += Tela_bonus_TelaBonusFechada;
+        }
+        
+        private void Tela_bonus_TelaBonusFechada(object sender, EventArgs e)
+        {
+            preencher_info_tela();
+        }
     }
 }
