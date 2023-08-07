@@ -1080,6 +1080,7 @@ namespace Dark_Age.Enteties
 			                                                                            when true then a.desc_atributo 
 			                                                                            when false then t.desc_talento 
 		                                                                            end as nome_tipo
+                                                                                    , ibp.descricao
                                                                             from ""Dark_Age_Connection"".""Personagens"" p 
                                                                             left join ""Dark_Age_Connection"".""inter_bonus_pers"" ibp on p.id_personagem = ibp.fk_id_personagem
                                                                             left join ""Dark_Age_Connection"".""bonus"" b on ibp.fk_id_bonus = b.id_bonus 
@@ -1098,7 +1099,7 @@ namespace Dark_Age.Enteties
                 return null;
             }
         }
-        public static void adicionar_bonus_personagem(int id_bonus, int id_personagem)
+        public static void adicionar_bonus_personagem(int id_bonus, int id_personagem, string descricao)
         {
             using NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
             conn.Open();
@@ -1106,10 +1107,11 @@ namespace Dark_Age.Enteties
 
             comm.Connection = conn;
             comm.CommandType = CommandType.Text;
-            comm.CommandText = $@"insert into ""Dark_Age_Connection"".""inter_bonus_pers"" (fk_id_bonus, fk_id_personagem)
-                                    values (@id_bonus, @id_personagem)";
+            comm.CommandText = $@"insert into ""Dark_Age_Connection"".""inter_bonus_pers"" (fk_id_bonus, fk_id_personagem, descricao)
+                                    values (@id_bonus, @id_personagem, @descricao)";
             comm.Parameters.AddWithValue("@id_bonus", id_bonus);
             comm.Parameters.AddWithValue("@id_personagem", id_personagem);
+            comm.Parameters.AddWithValue("@descricao", descricao);
             comm.ExecuteNonQuery();
         }
         public static void remover_bonus_personagem(int id_bonus, int id_personagem)

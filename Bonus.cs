@@ -38,6 +38,11 @@ namespace Dark_Age
             iconButton_Combinar.BackColor = Temas.cor_principal_secundaria;
             panel1.BackColor = Temas.cor_principal_secundaria;
             iconButton_Add_bonus.BackColor = Temas.cor_principal_secundaria;
+            panel_desc.Visible = false;
+            panel_desc.BackColor = Temas.cor_principal;
+            button_desc.BackColor = Temas.cor_principal_secundaria;
+            iconButton1.BackColor = Temas.cor_principal_secundaria;
+
 
             Temas.mudar_cor_data_grid(dataGrid_Itens);
             Temas.mudar_cor_data_grid(dataGrid_Bonus);
@@ -282,8 +287,22 @@ namespace Dark_Age
             }
             else
             {
-                Conexao_BD.adicionar_bonus_personagem(id_bonus, Campanha.id_personagem);
+                panel_desc.Visible = true;
             }
+        }
+
+        private void button_desc_Click(object sender, EventArgs e)
+        {
+            Conexao_BD.adicionar_bonus_personagem(id_bonus, Campanha.id_personagem, textBox1.Text);
+
+            panel_desc.Visible = false;
+            textBox1.Text = string.Empty;
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            panel_desc.Visible = false;
+            textBox1.Text = string.Empty;
         }
     }
 }

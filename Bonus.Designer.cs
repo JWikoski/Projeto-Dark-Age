@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             iconButton_Combinar = new FontAwesome.Sharp.IconButton();
             panel1 = new System.Windows.Forms.Panel();
             iconButton_Add_bonus = new FontAwesome.Sharp.IconButton();
@@ -47,10 +47,16 @@
             dataGrid_Bonus = new System.Windows.Forms.DataGridView();
             timer1 = new System.Windows.Forms.Timer(components);
             iconButton_Add_bonus_pers = new FontAwesome.Sharp.IconButton();
+            panel_desc = new System.Windows.Forms.Panel();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
+            text_desc = new System.Windows.Forms.Label();
+            button_desc = new FontAwesome.Sharp.IconButton();
+            textBox1 = new System.Windows.Forms.TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown_Valor_bonus).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGrid_Itens).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGrid_Bonus).BeginInit();
+            panel_desc.SuspendLayout();
             SuspendLayout();
             // 
             // iconButton_Combinar
@@ -171,25 +177,25 @@
             dataGrid_Itens.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGrid_Itens.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGrid_Itens.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(130, 146, 182);
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(110, 126, 162);
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            dataGrid_Itens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(130, 146, 182);
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(110, 126, 162);
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGrid_Itens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dataGrid_Itens.ColumnHeadersHeight = 30;
             dataGrid_Itens.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(130, 146, 182);
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(110, 126, 162);
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            dataGrid_Itens.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(130, 146, 182);
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(110, 126, 162);
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dataGrid_Itens.DefaultCellStyle = dataGridViewCellStyle8;
             dataGrid_Itens.EnableHeadersVisualStyles = false;
             dataGrid_Itens.GridColor = System.Drawing.Color.FromArgb(18, 18, 27);
             dataGrid_Itens.Location = new System.Drawing.Point(12, 12);
@@ -197,14 +203,14 @@
             dataGrid_Itens.Name = "dataGrid_Itens";
             dataGrid_Itens.ReadOnly = true;
             dataGrid_Itens.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(130, 146, 182);
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(110, 126, 162);
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            dataGrid_Itens.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(130, 146, 182);
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(110, 126, 162);
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGrid_Itens.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             dataGrid_Itens.RowTemplate.Height = 10;
             dataGrid_Itens.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             dataGrid_Itens.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -226,25 +232,25 @@
             dataGrid_Bonus.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGrid_Bonus.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGrid_Bonus.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(130, 146, 182);
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(110, 126, 162);
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            dataGrid_Bonus.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(130, 146, 182);
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(110, 126, 162);
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGrid_Bonus.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             dataGrid_Bonus.ColumnHeadersHeight = 30;
             dataGrid_Bonus.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(130, 146, 182);
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(110, 126, 162);
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            dataGrid_Bonus.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(130, 146, 182);
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(110, 126, 162);
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dataGrid_Bonus.DefaultCellStyle = dataGridViewCellStyle11;
             dataGrid_Bonus.EnableHeadersVisualStyles = false;
             dataGrid_Bonus.GridColor = System.Drawing.Color.FromArgb(18, 18, 27);
             dataGrid_Bonus.Location = new System.Drawing.Point(588, 12);
@@ -252,14 +258,14 @@
             dataGrid_Bonus.Name = "dataGrid_Bonus";
             dataGrid_Bonus.ReadOnly = true;
             dataGrid_Bonus.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(130, 146, 182);
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(110, 126, 162);
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            dataGrid_Bonus.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(130, 146, 182);
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(110, 126, 162);
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGrid_Bonus.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             dataGrid_Bonus.RowTemplate.Height = 10;
             dataGrid_Bonus.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             dataGrid_Bonus.Size = new System.Drawing.Size(400, 272);
@@ -294,12 +300,80 @@
             iconButton_Add_bonus_pers.MouseEnter += iconButton_Add_bonus_MouseEnter;
             iconButton_Add_bonus_pers.MouseLeave += iconButton_Add_bonus_MouseLeave;
             // 
+            // panel_desc
+            // 
+            panel_desc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            panel_desc.Controls.Add(iconButton1);
+            panel_desc.Controls.Add(text_desc);
+            panel_desc.Controls.Add(button_desc);
+            panel_desc.Controls.Add(textBox1);
+            panel_desc.Location = new System.Drawing.Point(588, 287);
+            panel_desc.Name = "panel_desc";
+            panel_desc.Size = new System.Drawing.Size(400, 147);
+            panel_desc.TabIndex = 101;
+            // 
+            // iconButton1
+            // 
+            iconButton1.BackColor = System.Drawing.Color.FromArgb(18, 18, 27);
+            iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            iconButton1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.X;
+            iconButton1.IconColor = System.Drawing.Color.DarkRed;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconSize = 25;
+            iconButton1.Location = new System.Drawing.Point(370, 6);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Padding = new System.Windows.Forms.Padding(1, 2, 0, 0);
+            iconButton1.Size = new System.Drawing.Size(25, 25);
+            iconButton1.TabIndex = 3;
+            iconButton1.UseVisualStyleBackColor = false;
+            iconButton1.Click += iconButton1_Click;
+            iconButton1.MouseEnter += iconButton_Combinar_MouseEnter;
+            iconButton1.MouseLeave += iconButton_Combinar_MouseLeave;
+            // 
+            // text_desc
+            // 
+            text_desc.AutoSize = true;
+            text_desc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            text_desc.ForeColor = System.Drawing.Color.White;
+            text_desc.Location = new System.Drawing.Point(48, 42);
+            text_desc.Name = "text_desc";
+            text_desc.Size = new System.Drawing.Size(241, 21);
+            text_desc.TabIndex = 2;
+            text_desc.Text = "Escolha a descrição para o bônus:";
+            // 
+            // button_desc
+            // 
+            button_desc.BackColor = System.Drawing.Color.FromArgb(18, 18, 27);
+            button_desc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button_desc.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            button_desc.IconChar = FontAwesome.Sharp.IconChar.Check;
+            button_desc.IconColor = System.Drawing.Color.ForestGreen;
+            button_desc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            button_desc.Location = new System.Drawing.Point(303, 65);
+            button_desc.Name = "button_desc";
+            button_desc.Padding = new System.Windows.Forms.Padding(3, 3, 0, 0);
+            button_desc.Size = new System.Drawing.Size(50, 50);
+            button_desc.TabIndex = 1;
+            button_desc.UseVisualStyleBackColor = false;
+            button_desc.Click += button_desc_Click;
+            button_desc.MouseEnter += iconButton_Combinar_MouseEnter;
+            button_desc.MouseLeave += iconButton_Combinar_MouseLeave;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new System.Drawing.Point(48, 79);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new System.Drawing.Size(241, 23);
+            textBox1.TabIndex = 0;
+            // 
             // Bonus
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(10, 16, 20);
             ClientSize = new System.Drawing.Size(1000, 446);
+            Controls.Add(panel_desc);
             Controls.Add(iconButton_Add_bonus_pers);
             Controls.Add(checkBox_Itens);
             Controls.Add(panel1);
@@ -315,6 +389,8 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown_Valor_bonus).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGrid_Itens).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGrid_Bonus).EndInit();
+            panel_desc.ResumeLayout(false);
+            panel_desc.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -332,5 +408,10 @@
         public System.Windows.Forms.DataGridView dataGrid_Bonus;
         private System.Windows.Forms.Timer timer1;
         private FontAwesome.Sharp.IconButton iconButton_Add_bonus_pers;
+        private System.Windows.Forms.Panel panel_desc;
+        private FontAwesome.Sharp.IconButton button_desc;
+        private System.Windows.Forms.TextBox textBox1;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.Label text_desc;
     }
 }
