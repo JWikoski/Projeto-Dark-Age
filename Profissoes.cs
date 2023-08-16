@@ -108,6 +108,7 @@ namespace Dark_Age
             comboBox1.ValueMember = "id_profissao";
             comboBox1.DisplayMember = "nome_profissao";
 
+
             //Combobox para seleção de mestria
             comboBox2.DataSource = Conexao_BD.select_maestria();
             comboBox2.ValueMember = "id_maestria";
@@ -150,9 +151,9 @@ namespace Dark_Age
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            if (Conexao_BD.checar_profissao(Campanha.id_personagem, (int)comboBox1.SelectedIndex + 1) == true)
+            if (Conexao_BD.checar_profissao(Campanha.id_personagem, (int)comboBox1.SelectedValue) == true)
             {
-                Conexao_BD.remover_profissao(Campanha.id_personagem, (int)comboBox1.SelectedIndex + 1);
+                Conexao_BD.remover_profissao(Campanha.id_personagem, (int)comboBox1.SelectedValue);
 
                 carregar_data_grid_profissoes();
             }
@@ -164,9 +165,9 @@ namespace Dark_Age
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            if (Conexao_BD.checar_profissao(Campanha.id_personagem, (int)comboBox1.SelectedIndex + 1) == false)
+            if (Conexao_BD.checar_profissao(Campanha.id_personagem, (int)comboBox1.SelectedValue) == false)
             {
-                Conexao_BD.adicionar_profissao(Campanha.id_personagem, (int)comboBox1.SelectedIndex + 1, (int)comboBox2.SelectedIndex + 1);
+                Conexao_BD.adicionar_profissao(Campanha.id_personagem, (int)comboBox1.SelectedValue, (int)comboBox2.SelectedValue);
 
                 carregar_data_grid_profissoes();
             }

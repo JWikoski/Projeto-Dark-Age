@@ -76,6 +76,8 @@ namespace Dark_Age
             dataGrid_bonus_pers_ativos.Columns["valor_bonus"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGrid_bonus_pers_ativos.Columns["nome_tipo"].HeaderText = "Tipo";
             dataGrid_bonus_pers_ativos.Columns["nome_tipo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGrid_bonus_pers_ativos.Columns["descricao"].HeaderText = "Descrição";
+            dataGrid_bonus_pers_ativos.Columns["descricao"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             foreach (DataGridViewRow x in dataGrid_bonus_pers_ativos.Rows)
             {
@@ -124,6 +126,10 @@ namespace Dark_Age
 
         private void dataGrid_bonus_ativos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (dataGrid_bonus_ativos.Rows.Count == 0)
+            {
+                return;
+            }
             dataGrid_bonus_ativos.CurrentRow.Selected = true;
         }
 
@@ -137,6 +143,10 @@ namespace Dark_Age
 
         private void dataGrid_bonus_pers_ativos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (dataGrid_bonus_pers_ativos.Rows.Count == 0)
+            {
+                return;
+            }
             try
             {
                 if (e.RowIndex == -1)
