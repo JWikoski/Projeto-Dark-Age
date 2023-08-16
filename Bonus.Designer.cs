@@ -207,7 +207,7 @@
             dataGrid_Itens.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGrid_Itens.RowTemplate.Height = 10;
             dataGrid_Itens.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            dataGrid_Itens.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            dataGrid_Itens.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             dataGrid_Itens.Size = new System.Drawing.Size(400, 272);
             dataGrid_Itens.TabIndex = 98;
             dataGrid_Itens.VirtualMode = true;
