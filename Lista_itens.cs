@@ -654,14 +654,14 @@ namespace Dark_Age
                     lbl_qtd.Text = "1";
                     qtd = 1;
                     remove_qtd.Visible = false;
+                    remove_filtros();
                 }
                 else
                 {
                     MessageBox.Show("Selecione o item antes de inserir no inventario!");
                 }
                 pnl_producao.Visible = false;
-            }
-            remove_filtros();
+            } 
         }
 
         private void iconButton5_Click(object sender, EventArgs e)
