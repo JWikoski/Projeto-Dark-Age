@@ -208,6 +208,8 @@ namespace Dark_Age.Enteties
                                                                              , dano
                                                                              , quantidade
                                                                              , equipado
+                                                                             , peso
+                                                                             , carga
                                                                           from ""Dark_Age_Connection"".""Itens""
                                                                           join ""Dark_Age_Connection"".""Profissao"" on id_profissao = fk_id_profissao 
                                                                           join ""Dark_Age_Connection"".""Inventario"" on fk_id_itens = id_itens 
@@ -1049,19 +1051,28 @@ namespace Dark_Age.Enteties
             using NpgsqlCommand comm = new NpgsqlCommand();
             comm.Connection = conn;
             comm.CommandType = CommandType.Text;
-            comm.CommandText = $@"select sum(case when i.equipado = false 
-				                                then i.quantidade * i2.peso 
-				                                else 0 
-			                                end) as peso_total
-		                                ,sum(case when i.equipado = true and i2.fk_id_tipo_itens = 13 
-					                                then i2.carga 
-					                                else 0 
-				                                end) + ia.valor_atributos + 5 as carga_total
-                                from ""Dark_Age_Connection"".""Inventario"" i 
-                                join ""Dark_Age_Connection"".""Itens"" i2 on i2.id_itens = i.fk_id_itens 
-                                join ""Dark_Age_Connection"".""Inter_atributos"" ia on ia.fk_id_personagem = i.fk_id_personagem and ia.fk_id_atributo = 1
-                                where i.fk_id_personagem = " + id_personagem +
-                                " group by ia.valor_atributos ";
+            comm.CommandText = $@"SELECT
+                                        SUM(CASE WHEN i.equipado = false
+                                                 THEN
+                                                     CASE WHEN i2.fk_id_profissao IN (3, 4) AND mi.equipado = true
+                                                          THEN i.quantidade * (i2.peso * 0.5)
+                                                          WHEN i2.fk_id_profissao = 10 AND mi2.equipado = true
+                                                          THEN i.quantidade * (i2.peso * 0.5)
+                                                          ELSE i.quantidade * i2.peso
+                                                     END
+                                                 ELSE 0
+                                            END) AS peso_total,
+                                        SUM(CASE WHEN i.equipado = true AND i2.fk_id_tipo_itens = 13
+                                                 THEN i2.carga
+                                                 ELSE 0
+                                            END) + ia.valor_atributos + 5 AS carga_total
+                                  FROM ""Dark_Age_Connection"".""Inventario"" i
+                                  JOIN ""Dark_Age_Connection"".""Itens"" i2 ON i2.id_itens = i.fk_id_itens
+                                  LEFT JOIN ""Dark_Age_Connection"".""Inventario"" mi ON mi.fk_id_itens = 220 AND mi.fk_id_personagem = i.fk_id_personagem
+                                  LEFT JOIN ""Dark_Age_Connection"".""Inventario"" mi2 ON mi2.fk_id_itens = 221 AND mi2.fk_id_personagem = i.fk_id_personagem
+                                  JOIN ""Dark_Age_Connection"".""Inter_atributos"" ia ON ia.fk_id_personagem = i.fk_id_personagem AND ia.fk_id_atributo = 1
+                                  WHERE i.fk_id_personagem = 17
+                                  GROUP BY ia.valor_atributos";
             using NpgsqlDataReader nds = comm.ExecuteReader();
 
             while (nds.Read())
