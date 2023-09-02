@@ -1071,8 +1071,8 @@ namespace Dark_Age.Enteties
                                   LEFT JOIN ""Dark_Age_Connection"".""Inventario"" mi ON mi.fk_id_itens = 220 AND mi.fk_id_personagem = i.fk_id_personagem
                                   LEFT JOIN ""Dark_Age_Connection"".""Inventario"" mi2 ON mi2.fk_id_itens = 221 AND mi2.fk_id_personagem = i.fk_id_personagem
                                   JOIN ""Dark_Age_Connection"".""Inter_atributos"" ia ON ia.fk_id_personagem = i.fk_id_personagem AND ia.fk_id_atributo = 1
-                                  WHERE i.fk_id_personagem = 17
-                                  GROUP BY ia.valor_atributos";
+                                  WHERE i.fk_id_personagem = "+ id_personagem +
+                                  "GROUP BY ia.valor_atributos";
             using NpgsqlDataReader nds = comm.ExecuteReader();
 
             while (nds.Read())
