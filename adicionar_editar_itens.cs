@@ -18,7 +18,7 @@ namespace Dark_Age
 {
     public partial class adicionar_editar_itens : Form
     {
-        
+
         public string nome_item;
         public int id_profissao;
         public string dificuldade;
@@ -26,6 +26,8 @@ namespace Dark_Age
         public string descricao;
         public Boolean material;
         public int id_tipo_itens;
+        public decimal peso;
+        public decimal carga;
 
 
         public adicionar_editar_itens()
@@ -42,7 +44,7 @@ namespace Dark_Age
             richTextBox1.BackColor = Temas.cor_principal;
             txt_dano.BackColor = Temas.cor_principal;
         }
-        
+
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
         private void Form1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
@@ -61,19 +63,19 @@ namespace Dark_Age
             panel4.BackColor = Lista_itens.bordas;
 
             //Carrega as profissãoao abrir a tela
-                combox_profissao.DataSource = Conexao_BD.select_profissao();
-                combox_profissao.ValueMember = "id_profissao";
-                combox_profissao.DisplayMember = "nome_profissao";
+            combox_profissao.DataSource = Conexao_BD.select_profissao();
+            combox_profissao.ValueMember = "id_profissao";
+            combox_profissao.DisplayMember = "nome_profissao";
 
             //carrega os tipos dos itens
-                combox_tipo.DataSource = Conexao_BD.select_tipo_itens();
-                combox_tipo.ValueMember = "id_tipo_itens";
-                combox_tipo.DisplayMember = "nome_tipo_itens";
+            combox_tipo.DataSource = Conexao_BD.select_tipo_itens();
+            combox_tipo.ValueMember = "id_tipo_itens";
+            combox_tipo.DisplayMember = "nome_tipo_itens";
 
             //carrega os enum do dificuldade da base de dados
-                combox_dificuldade.DataSource = Conexao_BD.select_enums();
-                combox_dificuldade.ValueMember = "nome_enum_difi";
-                combox_dificuldade.DisplayMember = "nome_enum_difi";
+            combox_dificuldade.DataSource = Conexao_BD.select_enums();
+            combox_dificuldade.ValueMember = "nome_enum_difi";
+            combox_dificuldade.DisplayMember = "nome_enum_difi";
 
             // setar os valores de dos campos com oque esta na base para edição 
 
@@ -90,6 +92,8 @@ namespace Dark_Age
                                            , fk_id_profissao
                                            , descricao
                                            , material
+                                           , peso
+                                           , carga
                                         from ""Dark_Age_Connection"".""Itens""
                                        where id_itens = @id_itens";
                 comm.Parameters.AddWithValue("@id_itens", Lista_itens.id_item);
@@ -100,13 +104,15 @@ namespace Dark_Age
                     text_nome.Text = nds.GetValue(0).ToString();
                     combox_dificuldade.SelectedValue = nds.GetValue(1).ToString();
                     combox_tipo.SelectedValue = nds.GetValue(2).ToString();
-                    combox_profissao.SelectedValue = nds.GetValue(3).ToString() ;
+                    combox_profissao.SelectedValue = nds.GetValue(3).ToString();
                     richTextBox1.Text = nds.GetValue(4).ToString();
-                    if((Boolean)nds.GetValue(5) == true)
+                    if ((Boolean)nds.GetValue(5) == true)
                     {
                         cbx_material.Checked = true;
                     }
-                    
+                    numericUpDownCarga.Value = (decimal)nds.GetValue(6);
+                    numericUpDownPeso.Value = (int)nds.GetValue(7);
+
                 }
                 comm.Dispose();
                 nds.Close();
@@ -114,7 +120,7 @@ namespace Dark_Age
             }
         }
 
-       
+
         private void btn_finalizar_Click(object sender, EventArgs e)
         {
             nome_item = text_nome.Text;
@@ -123,7 +129,10 @@ namespace Dark_Age
             id_tipo_itens = (int)combox_tipo.SelectedValue;
             descricao = richTextBox1.Text;
             dano = txt_dano.Text;
-            if(cbx_material.Checked == true)
+            peso = numericUpDownPeso.Value;
+            carga = numericUpDownCarga.Value;
+            
+            if (cbx_material.Checked == true)
             {
                 material = true;
             }
@@ -139,8 +148,8 @@ namespace Dark_Age
                 NpgsqlCommand como = new NpgsqlCommand();
                 como.Connection = conn;
                 como.CommandType = CommandType.Text;
-                como.CommandText = $@"insert into ""Dark_Age_Connection"".""Itens"" (nome_itens, dificuldade, fk_id_profissao, descricao, fk_id_tipo_itens, material, dano) 
-                                       values (@nome_items, (@dificuldade)::""Dark_Age_Connection"".""enum_dificuldade"", @id_profissao, @descricao, @id_tipo_itens, @material, @dano)";
+                como.CommandText = $@"insert into ""Dark_Age_Connection"".""Itens"" (nome_itens, dificuldade, fk_id_profissao, descricao, fk_id_tipo_itens, material, dano, peso, carga) 
+                                       values (@nome_items, (@dificuldade)::""Dark_Age_Connection"".""enum_dificuldade"", @id_profissao, @descricao, @id_tipo_itens, @material, @dano, @peso, @carga)";
                 como.Parameters.AddWithValue("@nome_items", nome_item);
                 como.Parameters.AddWithValue("@dificuldade", dificuldade);
                 como.Parameters.AddWithValue("@id_profissao", id_profissao);
@@ -148,11 +157,13 @@ namespace Dark_Age
                 como.Parameters.AddWithValue("@id_tipo_itens", id_tipo_itens);
                 como.Parameters.AddWithValue("@material", material);
                 como.Parameters.AddWithValue("@dano", dano);
-
+                como.Parameters.AddWithValue("@peso", peso);
+                como.Parameters.AddWithValue("@carga", carga);
                 como.ExecuteNonQuery();
                 como.Dispose();
                 conn.Close();
-            } else if (Lista_itens.editar_adicionar == true)
+            }
+            else if (Lista_itens.editar_adicionar == true)
             {
                 NpgsqlConnection conn = new(Conexao_BD.Caminho_DB());
                 conn.Open();
@@ -167,6 +178,8 @@ namespace Dark_Age
                                            , fk_id_tipo_itens = @id_tipo_itens
                                            , material = @material
                                            , dano = @dano
+                                           , peso = @peso
+                                           , carga = @carga
                                        where id_itens =  @id_itens";
                 como.Parameters.AddWithValue("@nome_items", nome_item);
                 como.Parameters.AddWithValue("@dificuldade", dificuldade);
@@ -176,6 +189,8 @@ namespace Dark_Age
                 como.Parameters.AddWithValue("@id_itens", Lista_itens.id_item);
                 como.Parameters.AddWithValue("@material", material);
                 como.Parameters.AddWithValue("@dano", dano);
+                como.Parameters.AddWithValue("@peso", peso);
+                como.Parameters.AddWithValue("@carga", carga);
                 como.ExecuteNonQuery();
                 como.Dispose();
                 conn.Close();

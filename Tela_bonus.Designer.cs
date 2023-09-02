@@ -280,8 +280,10 @@
             Controls.Add(iconButton1);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Name = "Tela_bonus";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             FormClosed += Tela_bonus_FormClosed;
             Load += Tela_bonus_Load;
+            MouseDown += Form1_MouseDown;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGrid_bonus_pers_ativos).EndInit();

@@ -352,6 +352,12 @@ namespace Dark_Age
                 Grid_lista_inventario.Columns["material"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 Grid_lista_inventario.Columns["quantidade"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 Grid_lista_inventario.Columns["quantidade"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                Grid_lista_inventario.Columns["peso"].HeaderText = "Peso";
+                Grid_lista_inventario.Columns["peso"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                Grid_lista_inventario.Columns["peso"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                Grid_lista_inventario.Columns["carga"].HeaderText = "Carga";
+                Grid_lista_inventario.Columns["carga"].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                Grid_lista_inventario.Columns["carga"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 if (Grid_lista_inventario.Rows.Count > 0)
                 {
@@ -580,6 +586,7 @@ namespace Dark_Age
             Grid_lista_inventario.DataSource = Conexao_BD.select_inventário(item_especifico, Campanha.id_personagem);
             carregar_data_grid();
             carregar_data_grid_equipados();
+            Carregar_lbl_pesoCarga();
             limpar_filtros1.Visible = false;
         }
 
